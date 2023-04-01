@@ -126,7 +126,7 @@ void forEachBlock(bool &first, const BlockLegacy &legacy, stringstream &jsonBuil
         jsonBuilder << "\"burnChance\": " << legacy.getFlameOdds() << ",";
         jsonBuilder << "\"burnAbility\": " << legacy.getBurnOdds() << ",";
         jsonBuilder << "\"light\": " << (int) legacy.getLight().value << ",";
-        jsonBuilder << "\"lavaFlammable\": " << jsonBool(legacy.isLavaFlammable()) << ",";
+        jsonBuilder << "\"flammable\": " << jsonBool(legacy.isLavaFlammable()) << ",";
         jsonBuilder << "\"lightEmission\": " << (int) block.getLightEmission().value << ",";
         jsonBuilder << "\"isUnbreakable\": " << jsonBool(block.isUnbreakable()) << ",";
         jsonBuilder << "\"isPowerSource\": " << jsonBool(block.isSignalSource()) << ",";
@@ -138,7 +138,7 @@ void forEachBlock(bool &first, const BlockLegacy &legacy, stringstream &jsonBuil
         jsonBuilder << "\"waterSpreadCausesSpawn\": " << jsonBool(block.waterSpreadCausesSpawn()) << ",";
         jsonBuilder << "\"canContainLiquid\": " << jsonBool(legacy.canContainLiquid()) << ",";
         jsonBuilder << "\"color\": " << block.getColor() << ",";
-        jsonBuilder << "\"blocksMotion\": " << jsonBool(material.getBlocksMotion()) << ",";
+        jsonBuilder << "\"canBeMovingBlock\": " << jsonBool(material.getBlocksMotion()) << ",";
         jsonBuilder << "\"blocksPrecipitation\": " << jsonBool(material.getBlocksPrecipitation()) << ",";
         jsonBuilder << "\"superHot\": " << jsonBool(material.isSuperHot()) << ",";
         AABB tmp = AABB();
