@@ -84,7 +84,7 @@ void extractData() {
         createFolder("block_data");
     }
 
-    auto out = ofstream("block_data/blocks_attributes.json", ofstream::out | ofstream::trunc);
+    auto out = ofstream("block_data/block_attributes.json", ofstream::out | ofstream::trunc);
     out << json::parse(jsonBuilder.str()).dump(4);
     out.close();
     logger.info("Data have been saved to \"block_data/block_attributes.json\"");
