@@ -22,6 +22,7 @@
 #include <fstream>
 #include <direct.h>
 #include "llapi/mc/AABB.hpp"
+#include "llapi/mc/BlockSource.hpp"
 
 using json = nlohmann::json;
 using namespace std;
@@ -116,6 +117,9 @@ void forEachBlock(bool &first, const BlockLegacy &legacy, stringstream &jsonBuil
         jsonBuilder << "\"isSolid\": " << jsonBool(legacy.isSolid()) << ",";
         jsonBuilder << "\"isSolidBlocking\": " << jsonBool(material.isSolidBlocking()) << ",";
         jsonBuilder << "\"isContainerBlock\": " << jsonBool(block.isContainerBlock()) << ",";
+        jsonBuilder << "\"hasBlockEntity\": " << jsonBool(legacy.hasBlockEntity()) << ",";
+        //TODO: BlockEntityType
+        //jsonBuilder << "\"blockEntityType\": " << legacy.getBlockEntityType() << ",";
         jsonBuilder << "\"isLiquid\": " << jsonBool(material.isLiquid()) << ",";
         jsonBuilder << "\"isAlwaysDestroyable\": " << jsonBool(material.isAlwaysDestroyable()) << ",";
         jsonBuilder << "\"translucency\": " << material.getTranslucency() << ",";
