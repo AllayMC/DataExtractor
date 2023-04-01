@@ -21,6 +21,7 @@
 #include <Nlohmann/json.hpp>
 #include <fstream>
 #include <direct.h>
+#include "llapi/mc/AABB.hpp"
 
 using json = nlohmann::json;
 using namespace std;
@@ -135,7 +136,10 @@ void forEachBlock(bool &first, const BlockLegacy &legacy, stringstream &jsonBuil
         jsonBuilder << "\"color\": " << block.getColor() << ",";
         jsonBuilder << "\"blocksMotion\": " << jsonBool(material.getBlocksMotion()) << ",";
         jsonBuilder << "\"blocksPrecipitation\": " << jsonBool(material.getBlocksPrecipitation()) << ",";
-        jsonBuilder << "\"superHot\": " << jsonBool(material.isSuperHot()) << "";
+        jsonBuilder << "\"superHot\": " << jsonBool(material.isSuperHot()) << ",";
+        AABB tmp = AABB();
+        auto & aabb = legacy.getVisualShape(block, tmp, true);
+        jsonBuilder << "\"aabb\": \"" << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x << "," << aabb.max.y << "," << aabb.max.z << "\"";
         jsonBuilder << "}"; //end object
     } catch (exception &e) {
         logger.error("Exception caught : " + string(e.what()));
