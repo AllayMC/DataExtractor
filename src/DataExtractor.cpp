@@ -31,9 +31,12 @@ using json = nlohmann::json;
 using namespace std;
 
 void extractData();
-void forEachBlock(bool &first, const BlockLegacy &legacy, stringstream &jsonBuilder);
-bool folderExists(const char* folderName);
-void createFolder(const char* folderName);
+
+void forEachBlock(bool &first, const Block & block, stringstream &jsonBuilder);
+
+bool folderExists(const char *folderName);
+
+void createFolder(const char *folderName);
 
 void saveFile(string const &name, vector<string> &blocks) {
     sort(blocks.begin(), blocks.end(), [](string const &a, string const &b) { return a < b; });
@@ -75,13 +78,18 @@ void extractData() {
     jsonBuilder << "["; //start array
 
     bool first = true;
-    int count = 0;
-    BlockTypeRegistry::forEachBlock([&first, &jsonBuilder, &count](const BlockLegacy &legacy) -> bool {
-        forEachBlock(first, legacy, jsonBuilder);
-        count++;
-        return true;
-    });
-    logger.info("Successfully extract " + to_string(count) + " blocks' attributes!");
+    auto & palette = Global<Minecraft>->getLevel()->getBlockPalette();
+    unsigned int counter = 0;
+    while (true) {
+        auto & block = palette.getBlock(counter);
+        forEachBlock(first, block, jsonBuilder);
+        //HACK: 用于确定最大size
+        if (block.getName().str == "minecraft:air" && counter > 10000) {
+            break;
+        }
+        counter++;
+    }
+    logger.info("Successfully extract " + to_string(counter) + " block states' attributes!");
 
     jsonBuilder << "]"; //end array
 
@@ -95,13 +103,13 @@ void extractData() {
     logger.info("Data have been saved to \"block_data/block_attributes.json\"");
 }
 
-void forEachBlock(bool &first, const BlockLegacy &legacy, stringstream &jsonBuilder) {
+void forEachBlock(bool &first, const Block & block, stringstream &jsonBuilder) {
     Logger logger;
     try {
+        auto & legacy = block.getLegacyBlock();
         auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
         logger.info("Extracting Block - " + name);
-        const Block &block = legacy.getDefaultState();
-        const Material & material = legacy.getMaterial();
+        const Material &material = legacy.getMaterial();
 
         if (!first) {
             jsonBuilder << ",";
@@ -111,17 +119,18 @@ void forEachBlock(bool &first, const BlockLegacy &legacy, stringstream &jsonBuil
 
         jsonBuilder << "{"; //start object
 
-        jsonBuilder << R"("identifier": ")" << name << "\",";
-        jsonBuilder << "\"thickness\": " << legacy.getThickness() << ",";
-        jsonBuilder << "\"friction\": " << legacy.getFriction() << ",";
+        auto nbt = block.getSerializationId().clone()->toJson(4);
+        jsonBuilder << nbt.substr(1, nbt.length() - 2) << ",";
+        jsonBuilder << "\"runtimeId\": " << block.getRuntimeId() << ",";
+        jsonBuilder << "\"thickness\": " << block.getThickness() << ",";
+        jsonBuilder << "\"friction\": " << block.getFriction() << ",";
         jsonBuilder << "\"hardness\": " << block.getDestroySpeed() << ",";
-        jsonBuilder << "\"explosionResistance\": " << legacy.getExplosionResistance() << ",";
+        jsonBuilder << "\"explosionResistance\": " << block.getExplosionResistance() << ",";
         jsonBuilder << "\"canBeBrokenFromFalling\": " << jsonBool(block.canBeBrokenFromFalling()) << ",";
-        jsonBuilder << "\"isSolid\": " << jsonBool(legacy.isSolid()) << ",";
+        jsonBuilder << "\"isSolid\": " << jsonBool(block.isSolid()) << ",";
         jsonBuilder << "\"isSolidBlocking\": " << jsonBool(material.isSolidBlocking()) << ",";
         jsonBuilder << "\"isContainerBlock\": " << jsonBool(block.isContainerBlock()) << ",";
         jsonBuilder << "\"hasBlockEntity\": " << jsonBool(block.hasBlockEntity()) << ",";
-        legacy.
         //TODO: BlockEntityType
 //        jsonBuilder << "\"blockEntityType\": " << block.getBlockEntityType() << ",";
         jsonBuilder << "\"isLiquid\": " << jsonBool(material.isLiquid()) << ",";
@@ -134,7 +143,8 @@ void forEachBlock(bool &first, const BlockLegacy &legacy, stringstream &jsonBuil
         jsonBuilder << "\"lightEmission\": " << (int) block.getLightEmission().value << ",";
         jsonBuilder << "\"isUnbreakable\": " << jsonBool(block.isUnbreakable()) << ",";
         jsonBuilder << "\"isPowerSource\": " << jsonBool(block.isSignalSource()) << ",";
-        jsonBuilder << "\"breaksFallingBlocks\": "<< jsonBool(block.breaksFallingBlocks(legacy.getRequiredBaseGameVersion())) << ",";
+        jsonBuilder << "\"breaksFallingBlocks\": "
+                    << jsonBool(block.breaksFallingBlocks(legacy.getRequiredBaseGameVersion())) << ",";
         jsonBuilder << "\"isWaterBlocking\": " << jsonBool(block.isWaterBlocking()) << ",";
         jsonBuilder << "\"isMotionBlockingBlock\": " << jsonBool(block.isMotionBlockingBlock()) << ",";
         jsonBuilder << "\"hasComparatorSignal\": " << jsonBool(block.hasComparatorSignal()) << ",";
@@ -146,18 +156,16 @@ void forEachBlock(bool &first, const BlockLegacy &legacy, stringstream &jsonBuil
         jsonBuilder << "\"blocksPrecipitation\": " << jsonBool(material.getBlocksPrecipitation()) << ",";
         jsonBuilder << "\"superHot\": " << jsonBool(material.isSuperHot()) << ",";
         AABB tmp = AABB();
-        auto & aabb = legacy.getVisualShape(block, tmp, true);
-        jsonBuilder << "\"aabb\": \"" << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x << "," << aabb.max.y << "," << aabb.max.z << "\"";
+        auto &aabb = block.getVisualShape(tmp, true);
+        jsonBuilder << "\"aabb\": \"" << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
+                    << "," << aabb.max.y << "," << aabb.max.z << "\"";
         jsonBuilder << "}"; //end object
     } catch (exception &e) {
         logger.error("Exception caught : " + string(e.what()));
     }
-
-//    auto & palette = Global<Minecraft>->getLevel()->getBlockPalette();
-//    auto & state = palette.getBlock(1);
 }
 
-bool folderExists(const char* folderName) {
+bool folderExists(const char *folderName) {
     struct stat info{};
     if (stat(folderName, &info) != 0) {
         return false;
@@ -168,7 +176,7 @@ bool folderExists(const char* folderName) {
     }
 }
 
-void createFolder(const char* folderName) {
+void createFolder(const char *folderName) {
     Logger logger;
     int result = _mkdir(folderName);
     if (result != 0) {
