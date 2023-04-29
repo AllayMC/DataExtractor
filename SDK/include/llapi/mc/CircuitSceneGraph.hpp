@@ -8,6 +8,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "BlockPos.hpp"
+#include "BaseCircuitComponent.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -19,7 +21,24 @@ class CircuitSceneGraph {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    class PendingEntry {
+    public:
+        class BaseCircuitComponent* mRawComponentPtr;
+        std::unique_ptr<class BaseCircuitComponent> mComponent;
+        class BlockPos mPos;
+    };
 
+    std::unordered_map<BlockPos, std::unique_ptr<BaseCircuitComponent>> mAllComponents;
+    CircuitComponentList mActiveComponents;
+    std::unordered_map<BlockPos, CircuitComponentList> mActiveComponentsPerChunk;
+    std::unordered_map<BlockPos, CircuitComponentList> mPowerAssociationMap;
+    std::unordered_map<BlockPos, PendingEntry> mPendingAdds;
+    std::unordered_map<BlockPos, PendingEntry> mPendingUpdates;
+    std::unordered_map<BlockPos, std::vector<BlockPos>> mComponentsToReEvaluate;
+    std::vector<PendingEntry> mPendingRemoves;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITSCENEGRAPH
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITSCENEGRAPH
 public:
@@ -56,14 +75,6 @@ public:
      * @symbol ?preSetupPoweredBlocks\@CircuitSceneGraph\@\@QEAAXAEBVChunkPos\@\@\@Z
      */
     MCAPI void preSetupPoweredBlocks(class ChunkPos const &);
-    /**
-     * @symbol ?remove\@CircuitSceneGraph\@\@QEAAXAEBVBlockPos\@\@PEAVBaseCircuitComponent\@\@\@Z
-     */
-    MCAPI void remove(class BlockPos const &, class BaseCircuitComponent *);
-    /**
-     * @symbol ?update\@CircuitSceneGraph\@\@QEAAXPEAVBlockSource\@\@\@Z
-     */
-    MCAPI void update(class BlockSource *);
     /**
      * @symbol ??1CircuitSceneGraph\@\@QEAA\@XZ
      */

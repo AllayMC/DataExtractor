@@ -23,6 +23,9 @@
 #include <direct.h>
 #include "llapi/mc/AABB.hpp"
 #include "llapi/mc/BlockSource.hpp"
+#include "llapi/Global.h"
+#include "llapi/mc/Minecraft.hpp"
+#include "llapi/mc/BlockPalette.hpp"
 
 using json = nlohmann::json;
 using namespace std;
@@ -111,22 +114,23 @@ void forEachBlock(bool &first, const BlockLegacy &legacy, stringstream &jsonBuil
         jsonBuilder << R"("identifier": ")" << name << "\",";
         jsonBuilder << "\"thickness\": " << legacy.getThickness() << ",";
         jsonBuilder << "\"friction\": " << legacy.getFriction() << ",";
-        jsonBuilder << "\"hardness\": " << legacy.getDestroySpeed() << ",";
+        jsonBuilder << "\"hardness\": " << block.getDestroySpeed() << ",";
         jsonBuilder << "\"explosionResistance\": " << legacy.getExplosionResistance() << ",";
         jsonBuilder << "\"canBeBrokenFromFalling\": " << jsonBool(block.canBeBrokenFromFalling()) << ",";
         jsonBuilder << "\"isSolid\": " << jsonBool(legacy.isSolid()) << ",";
         jsonBuilder << "\"isSolidBlocking\": " << jsonBool(material.isSolidBlocking()) << ",";
         jsonBuilder << "\"isContainerBlock\": " << jsonBool(block.isContainerBlock()) << ",";
-        jsonBuilder << "\"hasBlockEntity\": " << jsonBool(legacy.hasBlockEntity()) << ",";
+        jsonBuilder << "\"hasBlockEntity\": " << jsonBool(block.hasBlockEntity()) << ",";
+        legacy.
         //TODO: BlockEntityType
-        //jsonBuilder << "\"blockEntityType\": " << legacy.getBlockEntityType() << ",";
+//        jsonBuilder << "\"blockEntityType\": " << block.getBlockEntityType() << ",";
         jsonBuilder << "\"isLiquid\": " << jsonBool(material.isLiquid()) << ",";
         jsonBuilder << "\"isAlwaysDestroyable\": " << jsonBool(material.isAlwaysDestroyable()) << ",";
         jsonBuilder << "\"translucency\": " << material.getTranslucency() << ",";
-        jsonBuilder << "\"burnChance\": " << legacy.getFlameOdds() << ",";
-        jsonBuilder << "\"burnAbility\": " << legacy.getBurnOdds() << ",";
-        jsonBuilder << "\"light\": " << (int) legacy.getLight().value << ",";
-        jsonBuilder << "\"flammable\": " << jsonBool(legacy.isLavaFlammable()) << ",";
+        jsonBuilder << "\"burnChance\": " << block.getFlameOdds() << ",";
+        jsonBuilder << "\"burnAbility\": " << block.getBurnOdds() << ",";
+        jsonBuilder << "\"light\": " << (int) block.getLight().value << ",";
+        jsonBuilder << "\"flammable\": " << jsonBool(block.isLavaFlammable()) << ",";
         jsonBuilder << "\"lightEmission\": " << (int) block.getLightEmission().value << ",";
         jsonBuilder << "\"isUnbreakable\": " << jsonBool(block.isUnbreakable()) << ",";
         jsonBuilder << "\"isPowerSource\": " << jsonBool(block.isSignalSource()) << ",";
@@ -148,6 +152,9 @@ void forEachBlock(bool &first, const BlockLegacy &legacy, stringstream &jsonBuil
     } catch (exception &e) {
         logger.error("Exception caught : " + string(e.what()));
     }
+
+//    auto & palette = Global<Minecraft>->getLevel()->getBlockPalette();
+//    auto & state = palette.getBlock(1);
 }
 
 bool folderExists(const char* folderName) {

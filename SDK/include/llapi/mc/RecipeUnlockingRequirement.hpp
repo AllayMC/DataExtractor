@@ -14,10 +14,19 @@
 class RecipeUnlockingRequirement {
 
 #define AFTER_EXTRA
-    char filler[32];
+public:
+    enum class UnlockingContext : int {
+        None = 0x0,
+        AlwaysUnlocked = 0x1,
+        PlayerInWater = 0x2,
+        PlayerHasManyItems = 0x3,
+    };
+
+    int unk0;
+    UnlockingContext mContext;
+    std::vector<RecipeIngredient> mValid;
 
 public:
-    enum class UnlockingContext;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPEUNLOCKINGREQUIREMENT
 public:
@@ -31,13 +40,25 @@ public:
      */
     MCAPI RecipeUnlockingRequirement(enum class RecipeUnlockingRequirement::UnlockingContext);
     /**
+     * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@V?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);
+    /**
      * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@XZ
      */
     MCAPI RecipeUnlockingRequirement();
     /**
-     * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@V?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?canBeUnlockedByContext\@RecipeUnlockingRequirement\@\@QEBA_NW4UnlockingContext\@1\@\@Z
      */
-    MCAPI RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);
+    MCAPI bool canBeUnlockedByContext(enum class RecipeUnlockingRequirement::UnlockingContext) const;
+    /**
+     * @symbol ?canBeUnlockedByIngredient\@RecipeUnlockingRequirement\@\@QEBA_NAEBVRecipeIngredient\@\@\@Z
+     */
+    MCAPI bool canBeUnlockedByIngredient(class RecipeIngredient const &) const;
+    /**
+     * @symbol ?isUnlockedByIngredients\@RecipeUnlockingRequirement\@\@QEBA_NXZ
+     */
+    MCAPI bool isUnlockedByIngredients() const;
     /**
      * @symbol ?isValid\@RecipeUnlockingRequirement\@\@QEBA_NXZ
      */
