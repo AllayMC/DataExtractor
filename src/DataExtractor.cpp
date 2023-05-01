@@ -80,13 +80,16 @@ void extractData() {
     bool first = true;
     auto & palette = Global<Minecraft>->getLevel()->getBlockPalette();
     unsigned int counter = 0;
+    int airCount = 0;
     while (true) {
         auto & block = palette.getBlock(counter);
-        forEachBlock(first, block, jsonBuilder);
         //HACK: 用于确定最大size
-        if (block.getName().str == "minecraft:air" && counter > 10000) {
-            break;
+        if (block.getName().str == "minecraft:air") {
+            airCount++;
+            if (airCount == 2)
+                break;
         }
+        forEachBlock(first, block, jsonBuilder);
         counter++;
     }
     logger.info("Successfully extract " + to_string(counter) + " block states' attributes!");
@@ -122,6 +125,9 @@ void forEachBlock(bool &first, const Block & block, stringstream &jsonBuilder) {
         auto nbt = block.getSerializationId().clone()->toJson(4);
         jsonBuilder << nbt.substr(1, nbt.length() - 2) << ",";
         jsonBuilder << "\"runtimeId\": " << block.getRuntimeId() << ",";
+        jsonBuilder << "\"blockStateHash\": " << ((name != "minecraft:unknown") ? block.computeRawSerializationIdHashForNetwork() : -2) << ",";
+        //TODO
+//        jsonBuilder << "\"serializationId\": " << "\"" + block.buildSerializationIdString() + "\"" << ",";
         jsonBuilder << "\"thickness\": " << block.getThickness() << ",";
         jsonBuilder << "\"friction\": " << block.getFriction() << ",";
         jsonBuilder << "\"hardness\": " << block.getDestroySpeed() << ",";
