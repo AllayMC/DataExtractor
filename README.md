@@ -1,12 +1,12 @@
 # DataExtractor
 
-This is a BDS[LiteLoaderBDS]() mod which allows generating useful data used in Allay Project (such as block_attributes.json) from BDS server.
+This is a BDS[LiteLoaderBDS]() mod which allows generating useful data used in Allay Project (such as block_attributes.json and item_data.json) from BDS server.
 
 ## How to use?
 
 1. Install LiteLoaderBDS. For about how to install it, see [here](https://github.com/LiteLDev/LiteLoaderBDS)
 2. Download the latest release and put it in the ```plugins``` folder
-3. Start your server, run command ```/extba```, the output files will located in ```block_data/*```
+3. Start your server, run command ```/ext```, the output files will located in ```data/*```
 
 ## I want to build it myself!
 

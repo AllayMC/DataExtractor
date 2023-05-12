@@ -24,6 +24,7 @@ class Value;
 class CommandIntegerRange;
 struct ActorDefinitionIdentifier;
 class CommandItem;
+class CommandBlockName;
 
 #undef BEFORE_EXTRA
 
@@ -138,15 +139,21 @@ public:
 
 template <typename T, typename T2>
 typeid_t<T> type_id() {
-    static typeid_t<T> id = typeid_t<T>::count++;
+    static typeid_t<T> id = typeid_t<T>::_getCounter().fetch_add(1);
     return id;
 }
 
 template <>
 class typeid_t<CommandRegistry> {
 public:
-    inline static unsigned short count = 0;
     unsigned short value;
+
+    inline static std::atomic<unsigned short>& _getCounter(){
+         std::atomic<unsigned short>& id = *(std::atomic<unsigned short>*)dlsym_real(
+            "?storage@?1??_getCounter@?$typeid_t@VCommandRegistry@@@Bedrock@@CAAEAU?$atomic@G@std@@XZ@4U45@A");
+        return id;
+    }
+    
     typeid_t<CommandRegistry>(typeid_t<CommandRegistry> const& id) : value(id.value){};
     typeid_t<CommandRegistry>(unsigned short value) : value(value){};
 };
@@ -155,8 +162,10 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDamageCause>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, AutomaticID<class Dimension, int>>();
-// template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class Block const*>();
-// template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
+template<>
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandBlockName>();
+template<>
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandMessage>();
 template <>
@@ -165,9 +174,6 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPosition>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
-template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
-// 编译说已经在bedrock_server.lib中定义，我就注释了
 //template <>
 //MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
 template <>
@@ -192,46 +198,25 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::unique_ptr<class Command>>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<class Actor>>();
-// template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
+template<>
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
+template<>
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
 
-// template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
-
-template <>
-inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>() {
-    static typeid_t<CommandRegistry> id =
-        *(typeid_t<CommandRegistry>*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@@"
-                                                "YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
-    // static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
-    //    CommandParameterData data =
-    //    SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
-    //             CommandParameterData, void*, char const*, uintptr_t)(nullptr, "entityType", 0);
-    //     return data.tid;
-    //     })();
-    return id;
-};
-
-template <>
-inline typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>() {
-    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real(
-        "?id@?1???$type_id@VCommandRegistry@@VCommandItem@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
-    return id;
-};
-
-template <>
-inline typeid_t<CommandRegistry> type_id<CommandRegistry, bool>() {
-    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real(
-        "?id@?1???$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
-    return id;
-};
-
-template <>
-inline typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandBlockName>() {
-    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real(
-        "?id@?1???$type_id@VCommandRegistry@@VCommandBlockName@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
-    return id;
-};
+//template <>
+//inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>() {
+//    static typeid_t<CommandRegistry> id =
+//        *(typeid_t<CommandRegistry>*)dlsym_real("??$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ");
+////     static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
+////        CommandParameterData data =
+////        SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
+////                 CommandParameterData, void*, char const*, uintptr_t)(nullptr, "entityType", 0);
+////         return data.tid;
+////         })();
+//    return id;
+//};
 
 
 #undef AFTER_EXTRA

@@ -7,7 +7,6 @@
 #include <llapi/mc/BlockTypeRegistry.hpp>
 #include <llapi/mc/BlockLegacy.hpp>
 #include <llapi/mc/Block.hpp>
-#include <llapi/mc/DiggerItem.hpp>
 #include <llapi/mc/Vec3.hpp>
 #include <llapi/mc/Material.hpp>
 #include <llapi/LoggerAPI.h>
@@ -27,20 +26,36 @@
 #include "llapi/mc/Minecraft.hpp"
 #include "llapi/mc/BlockPalette.hpp"
 #include "llapi/mc/ItemRegistryRef.hpp"
+#include "llapi/mc/ItemRegistryManager.hpp"
+#include "llapi/mc/Item.hpp"
+#include "llapi/mc/Experiments.hpp"
+#include "llapi/mc/ItemStack.hpp"
+#include "llapi/mc/CreativeItemRegistry.hpp"
+#include "llapi/mc/ItemColorUtil.hpp"
 
 using json = nlohmann::json;
 using namespace std;
 
-void extractData();
+bool folderExists(const char *folderName) {
+    struct stat info{};
+    if (stat(folderName, &info) != 0) {
+        return false;
+    } else if (info.st_mode & S_IFDIR) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-void dumpBlockStateData();
-
-nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
-generateJsonObjFromBlockState(const Block &block);
-
-bool folderExists(const char *folderName);
-
-void createFolder(const char *folderName);
+void createFolder(const char *folderName) {
+    Logger logger;
+    int result = _mkdir(folderName);
+    if (result != 0) {
+        logger.error("Failed to create folder.");
+    } else {
+        logger.info("Folder " + string(folderName) + " created successfully.");
+    }
+}
 
 void saveFile(string const &name, vector<string> &blocks) {
     sort(blocks.begin(), blocks.end(), [](string const &a, string const &b) { return a < b; });
@@ -51,12 +66,20 @@ void saveFile(string const &name, vector<string> &blocks) {
     out.close();
 }
 
+void extractData();
+void dumpBlockStateData();
+nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
+generateJsonObjFromBlockState(const Block &block);
+void dumpItemData();
+nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
+generateJsonFromItem(const Item &item);
+
 void PluginInit() {
     Logger logger;
     logger.info("DataExtractor plugin loaded!");
 
     DynamicCommand::setup(
-            /* name = */ "extba",
+            /* name = */ "ext",
             /* description = */ "extract block attributes",
             /* enums = */ {},
             /* params = */ {},
@@ -76,7 +99,9 @@ void extractData() {
     if (!folderExists("data")) {
         createFolder("data");
     }
+
     dumpBlockStateData();
+    dumpItemData();
 }
 
 void dumpBlockStateData() {
@@ -103,7 +128,7 @@ void dumpBlockStateData() {
     auto out = ofstream("data/block_attributes.json", ofstream::out | ofstream::trunc);
     out << array.dump(4);
     out.close();
-    logger.info("Block data have been saved to \"data/block_attributes.json\"");
+    logger.info("Block attribute data have been saved to \"data/block_attributes.json\"");
 }
 
 nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
@@ -113,7 +138,7 @@ generateJsonObjFromBlockState(const Block &block) {
     try {
         auto &legacy = block.getLegacyBlock();
         auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
-        logger.info("Extracting Block - " + name);
+        logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
         const Material &material = legacy.getMaterial();
 
         auto nbt = json::parse(block.getSerializationId().clone()->toJson(4));
@@ -163,23 +188,63 @@ generateJsonObjFromBlockState(const Block &block) {
     return obj;
 }
 
-bool folderExists(const char *folderName) {
-    struct stat info{};
-    if (stat(folderName, &info) != 0) {
-        return false;
-    } else if (info.st_mode & S_IFDIR) {
-        return true;
-    } else {
-        return false;
+void dumpItemData() {
+    Logger logger;
+
+    auto array = json::array();
+    int counter = 0;
+    for (short id = -2000; id <= 2000; id++) {
+        auto item = ItemRegistryManager::getItemRegistry().getItem(id);
+        if (item.expired())
+            continue;
+        auto obj = generateJsonFromItem(*item);
+        array[counter] = obj;
+        counter++;
     }
+
+    logger.info("Successfully extract " + to_string(counter) + " items' data!");
+
+    auto out = ofstream("data/item_data.json", ofstream::out | ofstream::trunc);
+    out << array.dump(4);
+    out.close();
+    logger.info("Item data have been saved to \"data/item_data.json\"");
 }
 
-void createFolder(const char *folderName) {
+nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
+generateJsonFromItem(const Item &item) {
+    auto obj = json::object();
     Logger logger;
-    int result = _mkdir(folderName);
-    if (result != 0) {
-        logger.error("Failed to create folder.");
-    } else {
-        logger.info("Folder " + string(folderName) + " created successfully.");
-    }
+
+    logger.info("Extracting item - " + item.getFullItemName());
+
+    obj["id"] = item.getId();
+    obj["name"] = item.getFullItemName();
+    obj["maxDamage"] = item.getMaxDamage();
+    obj["auxValuesDescription"] = item.getAuxValuesDescription();
+    obj["isArmor"] = item.isArmor();
+    obj["isBlockPlanterItem"] = item.isBlockPlanterItem();
+    obj["isDamageable"] = item.isDamageable();
+    obj["isDyeable"] = item.isDyeable();
+    obj["isDye"] = item.isDye();
+    obj["itemColorName"] = ItemColorUtil::getName(item.getItemColor());
+    obj["itemColorRGB"] = ItemColorUtil::getRGBColor(item.getItemColor());
+    obj["isFertilizer"] = item.isFertilizer();
+    obj["isThrowable"] = item.isThrowable();
+    obj["isFood"] = item.isFood();
+    obj["isUseable"] = item.isUseable();
+    obj["isElytra"] = item.isElytra();
+    obj["canBeDepleted"] = item.canBeDepleted();
+    obj["canDestroyInCreative"] = item.canDestroyInCreative();
+    obj["canUseOnSimTick"] = item.canUseOnSimTick();
+    obj["canBeCharged"] = item.canBeCharged();
+    obj["creativeGroup"] = item.getCreativeGroup();
+    obj["creativeCategory"] = item.getCreativeCategory();
+    obj["armorValue"] = item.getArmorValue();
+    obj["attackDamage"] = item.getAttackDamage();
+    obj["toughnessValue"] = item.getToughnessValue();
+    obj["viewDamping"] = item.getViewDamping();
+    obj["cooldownTime"] = item.getCooldownTime();
+    obj["cooldownType"] = item.getCooldownType();
+
+    return obj;
 }
