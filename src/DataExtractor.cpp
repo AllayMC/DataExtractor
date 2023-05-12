@@ -26,13 +26,14 @@
 #include "llapi/Global.h"
 #include "llapi/mc/Minecraft.hpp"
 #include "llapi/mc/BlockPalette.hpp"
+#include "llapi/mc/ItemRegistryRef.hpp"
 
 using json = nlohmann::json;
 using namespace std;
 
 void extractData();
 
-void forEachBlock(bool &first, const Block & block, stringstream &jsonBuilder);
+nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>> generateJsonObjFromBlockState(bool &first, const Block & block);
 
 bool folderExists(const char *folderName);
 
@@ -47,9 +48,9 @@ void saveFile(string const &name, vector<string> &blocks) {
     out.close();
 }
 
-string jsonBool(bool b) {
-    return b ? "true" : "false";
-}
+//string jsonBool(bool b) {
+//    return b ? "true" : "false";
+//}
 
 void PluginInit() {
     Logger logger;
@@ -74,13 +75,12 @@ void PluginInit() {
 
 void extractData() {
     Logger logger;
-    stringstream jsonBuilder;
-    jsonBuilder << "["; //start array
 
     bool first = true;
     auto & palette = Global<Minecraft>->getLevel()->getBlockPalette();
     unsigned int counter = 0;
     int airCount = 0;
+    auto array = json::array();
     while (true) {
         auto & block = palette.getBlock(counter);
         //HACK: 用于确定最大size
@@ -89,24 +89,24 @@ void extractData() {
             if (airCount == 2)
                 break;
         }
-        forEachBlock(first, block, jsonBuilder);
+        auto obj = generateJsonObjFromBlockState(first, block);
+        array[counter] = obj;
         counter++;
     }
     logger.info("Successfully extract " + to_string(counter) + " block states' attributes!");
-
-    jsonBuilder << "]"; //end array
 
     if (!folderExists("block_data")) {
         createFolder("block_data");
     }
 
     auto out = ofstream("block_data/block_attributes.json", ofstream::out | ofstream::trunc);
-    out << json::parse(jsonBuilder.str()).dump(4);
+    out << array.dump(4);
     out.close();
     logger.info("Data have been saved to \"block_data/block_attributes.json\"");
 }
 
-void forEachBlock(bool &first, const Block & block, stringstream &jsonBuilder) {
+nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>> generateJsonObjFromBlockState(bool &first, const Block & block) {
+    auto obj = json::object();
     Logger logger;
     try {
         auto & legacy = block.getLegacyBlock();
@@ -114,61 +114,90 @@ void forEachBlock(bool &first, const Block & block, stringstream &jsonBuilder) {
         logger.info("Extracting Block - " + name);
         const Material &material = legacy.getMaterial();
 
-        if (!first) {
-            jsonBuilder << ",";
-        } else {
-            first = false;
-        }
-
-        jsonBuilder << "{"; //start object
-
-        auto nbt = block.getSerializationId().clone()->toJson(4);
-        jsonBuilder << nbt.substr(1, nbt.length() - 2) << ",";
-        jsonBuilder << "\"runtimeId\": " << block.getRuntimeId() << ",";
-        jsonBuilder << "\"blockStateHash\": " << ((name != "minecraft:unknown") ? block.computeRawSerializationIdHashForNetwork() : -2) << ",";
+        auto nbt = json::parse(block.getSerializationId().clone()->toJson(4));
+        obj.update(nbt);
+//        jsonBuilder << nbt.substr(1, nbt.length() - 2) << ",";
+//        jsonBuilder << "\"runtimeId\": " << block.getRuntimeId() << ",";
+        obj["runtimeId"] = block.getRuntimeId();
+//        jsonBuilder << "\"blockStateHash\": " << ((name != "minecraft:unknown") ? block.computeRawSerializationIdHashForNetwork() : -2) << ",";
+        obj["blockStateHash"] = ((name != "minecraft:unknown") ? block.computeRawSerializationIdHashForNetwork() : -2);
         //TODO
 //        jsonBuilder << "\"serializationId\": " << "\"" + block.buildSerializationIdString() + "\"" << ",";
-        jsonBuilder << "\"thickness\": " << block.getThickness() << ",";
-        jsonBuilder << "\"friction\": " << block.getFriction() << ",";
-        jsonBuilder << "\"hardness\": " << block.getDestroySpeed() << ",";
-        jsonBuilder << "\"explosionResistance\": " << block.getExplosionResistance() << ",";
-        jsonBuilder << "\"canBeBrokenFromFalling\": " << jsonBool(block.canBeBrokenFromFalling()) << ",";
-        jsonBuilder << "\"isSolid\": " << jsonBool(block.isSolid()) << ",";
-        jsonBuilder << "\"isSolidBlocking\": " << jsonBool(material.isSolidBlocking()) << ",";
-        jsonBuilder << "\"isContainerBlock\": " << jsonBool(block.isContainerBlock()) << ",";
-        jsonBuilder << "\"hasBlockEntity\": " << jsonBool(block.hasBlockEntity()) << ",";
+//        jsonBuilder << "\"thickness\": " << block.getThickness() << ",";
+        obj["thickness"] = block.getThickness();
+//        jsonBuilder << "\"friction\": " << block.getFriction() << ",";
+        obj["friction"] = to_string(block.getFriction());
+//        jsonBuilder << "\"hardness\": " << block.getDestroySpeed() << ",";
+        obj["hardness"] = to_string(block.getDestroySpeed());
+//        jsonBuilder << "\"explosionResistance\": " << block.getExplosionResistance() << ",";
+        obj["explosionResistance"] = block.getExplosionResistance();
+//        jsonBuilder << "\"canBeBrokenFromFalling\": " << jsonBool(block.canBeBrokenFromFalling()) << ",";
+        obj["canBeBrokenFromFalling"] = block.canBeBrokenFromFalling();
+//        jsonBuilder << "\"isSolid\": " << jsonBool(block.isSolid()) << ",";
+        obj["isSolid"] = block.isSolid();
+//        jsonBuilder << "\"isSolidBlocking\": " << jsonBool(material.isSolidBlocking()) << ",";
+        obj["isSolidBlocking"] = material.isSolidBlocking();
+//        jsonBuilder << "\"isContainerBlock\": " << jsonBool(block.isContainerBlock()) << ",";
+        obj["isContainerBlock"] = block.isContainerBlock();
+//        jsonBuilder << "\"hasBlockEntity\": " << jsonBool(block.hasBlockEntity()) << ",";
+        obj["hasBlockEntity"] = block.hasBlockEntity();
+
         //TODO: BlockEntityType
 //        jsonBuilder << "\"blockEntityType\": " << block.getBlockEntityType() << ",";
-        jsonBuilder << "\"isLiquid\": " << jsonBool(material.isLiquid()) << ",";
-        jsonBuilder << "\"isAlwaysDestroyable\": " << jsonBool(material.isAlwaysDestroyable()) << ",";
-        jsonBuilder << "\"translucency\": " << material.getTranslucency() << ",";
-        jsonBuilder << "\"burnChance\": " << block.getFlameOdds() << ",";
-        jsonBuilder << "\"burnAbility\": " << block.getBurnOdds() << ",";
-        jsonBuilder << "\"light\": " << (int) block.getLight().value << ",";
-        jsonBuilder << "\"flammable\": " << jsonBool(block.isLavaFlammable()) << ",";
-        jsonBuilder << "\"lightEmission\": " << (int) block.getLightEmission().value << ",";
-        jsonBuilder << "\"isUnbreakable\": " << jsonBool(block.isUnbreakable()) << ",";
-        jsonBuilder << "\"isPowerSource\": " << jsonBool(block.isSignalSource()) << ",";
-        jsonBuilder << "\"breaksFallingBlocks\": "
-                    << jsonBool(block.breaksFallingBlocks(legacy.getRequiredBaseGameVersion())) << ",";
-        jsonBuilder << "\"isWaterBlocking\": " << jsonBool(block.isWaterBlocking()) << ",";
-        jsonBuilder << "\"isMotionBlockingBlock\": " << jsonBool(block.isMotionBlockingBlock()) << ",";
-        jsonBuilder << "\"hasComparatorSignal\": " << jsonBool(block.hasComparatorSignal()) << ",";
-        jsonBuilder << "\"pushesUpFallingBlocks\": " << jsonBool(block.pushesUpFallingBlocks()) << ",";
-        jsonBuilder << "\"waterSpreadCausesSpawn\": " << jsonBool(block.waterSpreadCausesSpawn()) << ",";
-        jsonBuilder << "\"canContainLiquid\": " << jsonBool(legacy.canContainLiquid()) << ",";
-        jsonBuilder << "\"color\": " << block.getColor() << ",";
-        jsonBuilder << "\"canBeMovingBlock\": " << jsonBool(material.getBlocksMotion()) << ",";
-        jsonBuilder << "\"blocksPrecipitation\": " << jsonBool(material.getBlocksPrecipitation()) << ",";
-        jsonBuilder << "\"superHot\": " << jsonBool(material.isSuperHot()) << ",";
+//        jsonBuilder << "\"isLiquid\": " << jsonBool(material.isLiquid()) << ",";
+        obj["isLiquid"] = material.isLiquid();
+//        jsonBuilder << "\"isAlwaysDestroyable\": " << jsonBool(material.isAlwaysDestroyable()) << ",";
+        obj["isAlwaysDestroyable"] = material.isAlwaysDestroyable();
+//        jsonBuilder << "\"translucency\": " << material.getTranslucency() << ",";
+        obj["translucency"] = material.getTranslucency();
+//        jsonBuilder << "\"burnChance\": " << block.getFlameOdds() << ",";
+        obj["burnChance"] = block.getFlameOdds();
+//        jsonBuilder << "\"burnAbility\": " << block.getBurnOdds() << ",";
+        obj["burnAbility"] = block.getBurnOdds();
+//        jsonBuilder << "\"light\": " << (int) block.getLight().value << ",";
+        obj["light"] = (int) block.getLight().value;
+//        jsonBuilder << "\"flammable\": " << jsonBool(block.isLavaFlammable()) << ",";
+        obj["flammable"] = block.isLavaFlammable();
+//        jsonBuilder << "\"lightEmission\": " << (int) block.getLightEmission().value << ",";
+        obj["lightEmission"] = (int) block.getLightEmission().value;
+//        jsonBuilder << "\"isUnbreakable\": " << jsonBool(block.isUnbreakable()) << ",";
+        obj["isUnbreakable"] = block.isUnbreakable();
+//        jsonBuilder << "\"isPowerSource\": " << jsonBool(block.isSignalSource()) << ",";
+        obj["isPowerSource"] = block.isSignalSource();
+//        jsonBuilder << "\"breaksFallingBlocks\": "
+//                    << jsonBool(block.breaksFallingBlocks(legacy.getRequiredBaseGameVersion())) << ",";
+        obj["breaksFallingBlocks"] = block.breaksFallingBlocks(legacy.getRequiredBaseGameVersion());
+//        jsonBuilder << "\"isWaterBlocking\": " << jsonBool(block.isWaterBlocking()) << ",";
+        obj["isWaterBlocking"] = block.isWaterBlocking();
+//        jsonBuilder << "\"isMotionBlockingBlock\": " << jsonBool(block.isMotionBlockingBlock()) << ",";
+        obj["isMotionBlockingBlock"] = block.isMotionBlockingBlock();
+//        jsonBuilder << "\"hasComparatorSignal\": " << jsonBool(block.hasComparatorSignal()) << ",";
+        obj["hasComparatorSignal"] = block.hasComparatorSignal();
+//        jsonBuilder << "\"pushesUpFallingBlocks\": " << jsonBool(block.pushesUpFallingBlocks()) << ",";
+        obj["pushesUpFallingBlocks"] = block.pushesUpFallingBlocks();
+//        jsonBuilder << "\"waterSpreadCausesSpawn\": " << jsonBool(block.waterSpreadCausesSpawn()) << ",";
+        obj["waterSpreadCausesSpawn"] = block.waterSpreadCausesSpawn();
+//        jsonBuilder << "\"canContainLiquid\": " << jsonBool(legacy.canContainLiquid()) << ",";
+        obj["canContainLiquid"] = legacy.canContainLiquid();
+//        jsonBuilder << "\"color\": " << block.getColor() << ",";
+        obj["color"] = block.getColor();
+//        jsonBuilder << "\"canBeMovingBlock\": " << jsonBool(material.getBlocksMotion()) << ",";
+        obj["canBeMovingBlock"] = material.getBlocksMotion();
+//        jsonBuilder << "\"blocksPrecipitation\": " << jsonBool(material.getBlocksPrecipitation()) << ",";
+        obj["blocksPrecipitation"] = material.getBlocksPrecipitation();
+//        jsonBuilder << "\"superHot\": " << jsonBool(material.isSuperHot()) << ",";
+        obj["superHot"] = material.isSuperHot();
         AABB tmp = AABB();
         auto &aabb = block.getVisualShape(tmp, true);
-        jsonBuilder << "\"aabb\": \"" << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
-                    << "," << aabb.max.y << "," << aabb.max.z << "\"";
-        jsonBuilder << "}"; //end object
+        stringstream aabbStr;
+        aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
+                    << "," << aabb.max.y << "," << aabb.max.z;
+        obj["aabb"] = aabbStr.str();
     } catch (exception &e) {
         logger.error("Exception caught : " + string(e.what()));
     }
+
+    return obj;
 }
 
 bool folderExists(const char *folderName) {
