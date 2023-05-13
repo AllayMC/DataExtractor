@@ -22,7 +22,6 @@
 #include <direct.h>
 #include "llapi/mc/AABB.hpp"
 #include "llapi/mc/BlockSource.hpp"
-#include "llapi/Global.h"
 #include "llapi/mc/Minecraft.hpp"
 #include "llapi/mc/BlockPalette.hpp"
 #include "llapi/mc/ItemRegistryRef.hpp"
@@ -32,6 +31,16 @@
 #include "llapi/mc/ItemStack.hpp"
 #include "llapi/mc/CreativeItemRegistry.hpp"
 #include "llapi/mc/ItemColorUtil.hpp"
+#include "llapi/mc/ActorDefinitionGroup.hpp"
+#include "llapi/mc/Types.hpp"
+#include "llapi/mc/ActorInfoRegistry.hpp"
+#include "llapi/mc/ActorInfo.hpp"
+#include "llapi/mc/ListTag.hpp"
+#include "llapi/mc/CompoundTag.hpp"
+#include "llapi/mc/BiomeRegistry.hpp"
+#include "llapi/mc/Biome.hpp"
+#include "llapi/mc/CommandRegistry.hpp"
+#include "llapi/mc/AvailableCommandsPacket.hpp"
 
 using json = nlohmann::json;
 using namespace std;
@@ -67,12 +76,28 @@ void saveFile(string const &name, vector<string> &blocks) {
 }
 
 void extractData();
+
 void dumpBlockStateData();
+
 nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
 generateJsonObjFromBlockState(const Block &block);
+
 void dumpItemData();
+
 nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
 generateJsonFromItem(const Item &item);
+
+void dumpEntityData();
+
+void dumpCreativeItemData();
+
+void dumpPalette();
+
+void dumpBiomeData();
+
+void dumpCommandArgData();
+
+void dumpAvailableCommand();
 
 void PluginInit() {
     Logger logger;
@@ -102,17 +127,24 @@ void extractData() {
 
     dumpBlockStateData();
     dumpItemData();
+    dumpEntityData();
+    dumpCreativeItemData();
+    dumpPalette();
+    dumpBiomeData();
+    dumpCommandArgData();
+    dumpAvailableCommand();
 }
+
+int blockStateCounter = 0;
 
 void dumpBlockStateData() {
     Logger logger;
 
     auto &palette = Global<Minecraft>->getLevel()->getBlockPalette();
-    unsigned int counter = 0;
     int airCount = 0;
     auto array = json::array();
     while (true) {
-        auto &block = palette.getBlock(counter);
+        auto &block = palette.getBlock(blockStateCounter);
         //HACK: 用于确定最大size
         if (block.getName().str == "minecraft:air") {
             airCount++;
@@ -120,10 +152,10 @@ void dumpBlockStateData() {
                 break;
         }
         auto obj = generateJsonObjFromBlockState(block);
-        array[counter] = obj;
-        counter++;
+        array[blockStateCounter] = obj;
+        blockStateCounter++;
     }
-    logger.info("Successfully extract " + to_string(counter) + " block states' attributes!");
+    logger.info("Successfully extract " + to_string(blockStateCounter) + " block states' attributes!");
 
     auto out = ofstream("data/block_attributes.json", ofstream::out | ofstream::trunc);
     out << array.dump(4);
@@ -247,4 +279,152 @@ generateJsonFromItem(const Item &item) {
     obj["cooldownType"] = item.getCooldownType();
 
     return obj;
+}
+
+void dumpEntityData() {
+    //TODO
+}
+
+void dumpCreativeItemData() {
+    //TODO
+}
+
+void dumpPalette() {
+    Logger logger;
+
+    auto &palette = Global<Minecraft>->getLevel()->getBlockPalette();
+
+    CompoundTag global;
+    ListTag blocks;
+    for (unsigned int i = 0; i < blockStateCounter; i++) {
+        blocks.add(palette.getBlock(i).getSerializationId().clone());
+    }
+    global.put("blocks", blocks.copyList());
+
+    auto out = ofstream("data/block_palette.json", ofstream::out | ofstream::trunc);
+    out << global.toJson(4);
+    out.close();
+    logger.info("Block palette table has been saved to \"data/block_palette.json\"");
+}
+
+void dumpBiomeData() {
+    Logger logger;
+    BiomeRegistry const &registry = Global<Minecraft>->getLevel()->getBiomeRegistry();
+
+    CompoundTag biomes;
+    registry.forEachBiome([&biomes, &registry, &logger](Biome &biome) {
+        logger.info("Extracting biome data - " + biome.getName());
+
+        CompoundTag tag;
+        biome.writePacketData(tag,const_cast<TagRegistry<IDType<BiomeTagIDType>, IDType<BiomeTagSetIDType>> &>(registry.getTagRegistry()));
+        biomes.put(biome.getName(), tag.copy());
+    });
+
+    auto out = ofstream("data/biome_definitions.json", ofstream::out | ofstream::trunc);
+    out << biomes.toJson(4);
+    out.close();
+    logger.info("Biome definitions has been saved to \"data/biome_definitions.json\"");
+}
+
+void dumpCommandArgData() {
+    Logger logger;
+
+    CommandRegistry *registry = Global<CommandRegistry>;
+    auto global = json::object();
+    registry->forEachNonTerminal([&logger, &registry, &global](auto symbol) {
+        logger.info("Extracting command arg type - " + symbol.toString());
+
+        auto obj = json::object();
+        obj["description"] = registry->describe(symbol);
+        obj["debugString"] = symbol.toDebugString();
+        obj["value"] = symbol.value();
+        obj["index"] = symbol.toIndex();
+
+        global[symbol.toString()] = obj;
+    });
+
+    auto out = ofstream("data/command_arg_types.json", ofstream::out | ofstream::trunc);
+    out << global.dump(4);
+    out.close();
+    logger.info("Command arg type data have been saved to \"data/command_arg_types.json\"");
+}
+
+void dumpAvailableCommand() {
+    Logger logger;
+
+    CommandRegistry *registry = Global<CommandRegistry>;
+    auto aCmdPk = registry->serializeAvailableCommands();
+    logger.info("Extracting available command data...");
+
+    auto global = json::object();
+
+    global["allEnums"] = aCmdPk.mAllEnums;
+    global["allSuffix"] = aCmdPk.mAllSuffix;
+
+    auto enumDataArray = json::array();
+    for(auto & enumData : aCmdPk.mEnumDatas) {
+        auto obj = json::object();
+
+        obj["name"] = enumData.name;
+        obj["valueIndices"] = enumData.valueIndices;
+
+        enumDataArray.push_back(obj);
+    }
+    global["enumDatas"] = enumDataArray;
+
+    auto commandDataArray = json::array();
+    for (auto & commandData : aCmdPk.mCommandDatas) {
+        auto obj = json::object();
+
+        obj["name"] = commandData.name;
+        obj["description"] = commandData.description;
+        obj["flag"] = commandData.flag.value;
+        obj["perm"] = commandData.perm;
+        auto overloads = json::array();
+        for (auto & overload : commandData.overloads) {
+            auto overloadParams = json::array();
+
+            for(auto & paramData : overload.datas) {
+                auto paramObj = json::object();
+
+                paramObj["description"] = paramData.desc;
+                paramObj["sym"] = paramData.sym;
+                overloadParams.push_back(paramObj);
+            }
+            overloads.push_back(overloadParams);
+        }
+        obj["overloads"] = overloads;
+        obj["aliasIndex"] = commandData.aliasIndex;
+
+        commandDataArray.push_back(obj);
+    }
+    global["commandData"] = commandDataArray;
+
+    auto softEnumDataArray = json::array();
+    for (auto & softEnumData : aCmdPk.mSoftEnums) {
+        auto softEnumDataObj = json::object();
+
+        softEnumDataObj["name"] = softEnumData.name;
+        softEnumDataObj["values"] = softEnumData.values;
+
+        softEnumDataArray.push_back(softEnumDataObj);
+    }
+    global["softEnumData"] = softEnumDataArray;
+
+    auto constrainedValueDataArray = json::array();
+    for (auto & constrainedValueData : aCmdPk.mConstrainedValueDatas) {
+        auto constrainedValueDataObj = json::object();
+
+        constrainedValueDataObj["enumIndex"] = constrainedValueData.enumIndex;
+        constrainedValueDataObj["enumNameIndex"] = constrainedValueData.enumNameIndex;
+        constrainedValueDataObj["indices"] = constrainedValueData.indices;
+
+        constrainedValueDataArray.push_back(constrainedValueDataObj);
+    }
+    global["constrainedValueData"] = constrainedValueDataArray;
+
+    auto out = ofstream("data/available_commands.json", ofstream::out | ofstream::trunc);
+    out << global.dump(4);
+    out.close();
+    logger.info("Available commands' data has been saved to \"data/available_commands.json\"");
 }
