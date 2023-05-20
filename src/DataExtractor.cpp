@@ -41,6 +41,10 @@
 #include "llapi/mc/Biome.hpp"
 #include "llapi/mc/CommandRegistry.hpp"
 #include "llapi/mc/AvailableCommandsPacket.hpp"
+#include "llapi/mc/ActorFactory.hpp"
+#include "llapi/mc/LevelData.hpp"
+#include "llapi/mc/PropertyGroupManager.hpp"
+#include "llapi/mc/Spawner.hpp"
 
 using json = nlohmann::json;
 using namespace std;
@@ -98,6 +102,9 @@ void dumpBiomeData();
 void dumpCommandArgData();
 
 void dumpAvailableCommand();
+
+void dumpEntityAABB(const Level *level, const pair<string, const ActorDefinitionIdentifier *> &pair,
+                    nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>> &obj);
 
 void PluginInit() {
     Logger logger;
@@ -239,7 +246,7 @@ void dumpItemData() {
     auto out = ofstream("data/item_data.json", ofstream::out | ofstream::trunc);
     out << array.dump(4);
     out.close();
-    logger.info("Item data have been saved to \"data/item_data.json\"");
+    logger.info("Items' data have been saved to \"data/item_data.json\"");
 }
 
 nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
@@ -282,7 +289,63 @@ generateJsonFromItem(const Item &item) {
 }
 
 void dumpEntityData() {
-    //TODO
+    Logger logger;
+
+    auto level = Global<Minecraft>->getLevel();
+    auto &exp = level->getLevelData().getExperiments();
+    auto &actorFactory = level->getActorFactory();
+    auto list = actorFactory.buildSummonEntityTypeEnum(exp);
+
+    auto global = json::object();
+    for (auto & pair : list) {
+        if (global.contains(pair.second->getCanonicalName()))
+            continue;
+        logger.info("Extracting entity - " + pair.second->getCanonicalName());
+
+        auto obj = json::object();
+        obj["canonicalName"] = pair.second->getCanonicalName();
+        obj["initEvent"] = pair.second->getInitEvent();
+        obj["legacyActorType"] = static_cast<__int32>(pair.second->_getLegacyActorType());
+        obj["isVanilla"] = pair.second->isVanilla();
+
+//        Unused
+//        obj["identifier"] = pair.second->getIdentifier();
+//        obj["fullName"] = pair.second->getFullName();
+//        obj["namespace"] = pair.second->getNamespace();
+//        obj["canonicalHash"] = pair.second->getCanonicalHash();
+
+        auto actorPropertyDataTag = level->getActorPropertyGroup().getActorPropertyDataTag(pair.second->getCanonicalHash()).toJson(4);
+        obj["actorPropertyDataTag"] = json::parse(actorPropertyDataTag);
+
+//      todo: dumpEntityAABB(level, pair, obj);
+
+        global[pair.second->getCanonicalName()] = obj;
+    }
+
+    auto out = ofstream("data/entity_data.json", ofstream::out | ofstream::trunc);
+    out << global.dump(4);
+    out.close();
+    logger.info("Entities' data have been saved to \"data/entity_data.json\"");
+}
+
+void dumpEntityAABB(const Level *level, const pair<string, const ActorDefinitionIdentifier *> &pair,
+                    nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>> &obj) {
+    Logger logger;
+
+    auto actor = level->getSpawner().spawnMob(*Level::getBlockSource(0), pair.first, nullptr, Vec3(0, 64, 0), false, true, false);
+    if (actor == nullptr) {
+        logger.warn("Failed to spawn entity: " + pair.first);
+        logger.warn("It is possible to solve this problem by adding a ticking area around 0 64 0");
+        logger.warn("AABB data for this entity will be missing!");
+    } else {
+        auto &aabb = actor->getAABB();
+        stringstream aabbStr;
+        aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
+                << "," << aabb.max.y << "," << aabb.max.z;
+        obj["aabb"] = aabbStr.str();
+//      todo: nbt
+        actor->kill();
+    }
 }
 
 void dumpCreativeItemData() {
@@ -361,6 +424,7 @@ void dumpAvailableCommand() {
     global["allEnums"] = aCmdPk.mAllEnums;
     global["allSuffix"] = aCmdPk.mAllSuffix;
 
+    logger.info("Extracting enum data array...");
     auto enumDataArray = json::array();
     for(auto & enumData : aCmdPk.mEnumDatas) {
         auto obj = json::object();
@@ -372,6 +436,7 @@ void dumpAvailableCommand() {
     }
     global["enumDatas"] = enumDataArray;
 
+    logger.info("Extracting command data array...");
     auto commandDataArray = json::array();
     for (auto & commandData : aCmdPk.mCommandDatas) {
         auto obj = json::object();
@@ -400,6 +465,7 @@ void dumpAvailableCommand() {
     }
     global["commandData"] = commandDataArray;
 
+    logger.info("Extracting soft enum data array...");
     auto softEnumDataArray = json::array();
     for (auto & softEnumData : aCmdPk.mSoftEnums) {
         auto softEnumDataObj = json::object();
@@ -411,6 +477,7 @@ void dumpAvailableCommand() {
     }
     global["softEnumData"] = softEnumDataArray;
 
+    logger.info("Extracting constrained value data array...");
     auto constrainedValueDataArray = json::array();
     for (auto & constrainedValueData : aCmdPk.mConstrainedValueDatas) {
         auto constrainedValueDataObj = json::object();
@@ -428,3 +495,4 @@ void dumpAvailableCommand() {
     out.close();
     logger.info("Available commands' data has been saved to \"data/available_commands.json\"");
 }
+
