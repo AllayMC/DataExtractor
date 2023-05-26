@@ -210,7 +210,15 @@ generateJsonObjFromBlockState(const Block &block) {
         obj["pushesUpFallingBlocks"] = block.pushesUpFallingBlocks();
         obj["waterSpreadCausesSpawn"] = block.waterSpreadCausesSpawn();
         obj["canContainLiquid"] = legacy.canContainLiquid();
-        obj["color"] = block.getColor();
+        auto color = block.getMapColor(*Level::getBlockSource(0), BlockPos(0, 64, 0));
+        auto colorObj = json::object();
+        colorObj["r"] = (int)(color.r * 255);
+        colorObj["g"] = (int)(color.g * 255);
+        colorObj["b"] = (int)(color.b * 255);
+        colorObj["a"] = (int)(color.a * 255);
+        colorObj["hexString"] = color.toHexString();
+        colorObj["nearestColorCode"] = color.toNearestColorCode();
+        obj["color"] = colorObj;
         obj["canBeMovingBlock"] = material.getBlocksMotion();
         obj["blocksPrecipitation"] = material.getBlocksPrecipitation();
         obj["superHot"] = material.isSuperHot();
