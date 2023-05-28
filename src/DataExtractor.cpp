@@ -182,6 +182,8 @@ generateJsonObjFromBlockState(const Block &block) {
 
         auto nbt = json::parse(block.getSerializationId().clone()->toJson(4));
         obj.update(nbt);
+        obj["descriptionId"] = block.getDescriptionId();
+        obj["legacyId"] = block.getId();
         obj["runtimeId"] = block.getRuntimeId();
         obj["blockStateHash"] = ((name != "minecraft:unknown") ? block.computeRawSerializationIdHashForNetwork() : -2);
         obj["thickness"] = block.getThickness();
@@ -210,7 +212,7 @@ generateJsonObjFromBlockState(const Block &block) {
         obj["pushesUpFallingBlocks"] = block.pushesUpFallingBlocks();
         obj["waterSpreadCausesSpawn"] = block.waterSpreadCausesSpawn();
         obj["canContainLiquid"] = legacy.canContainLiquid();
-        auto color = block.getMapColor(*Level::getBlockSource(0), BlockPos(0, 64, 0));
+        auto color = block.getMapColor(*Level::getBlockSource(0), BlockPos(0, -60, 0));
         auto colorObj = json::object();
         colorObj["r"] = (int)(color.r * 255);
         colorObj["g"] = (int)(color.g * 255);
@@ -265,6 +267,7 @@ generateJsonFromItem(const Item &item) {
     logger.info("Extracting item - " + item.getFullItemName());
 
     obj["id"] = item.getId();
+    obj["descriptionId"] = item.getDescriptionId();
     obj["name"] = item.getFullItemName();
     obj["maxDamage"] = item.getMaxDamage();
     obj["auxValuesDescription"] = item.getAuxValuesDescription();
