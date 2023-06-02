@@ -80,31 +80,21 @@ void saveFile(string const &name, vector<string> &blocks) {
 }
 
 void extractData();
-
 void dumpBlockStateData();
-
 nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
 generateJsonObjFromBlockState(const Block &block);
-
 void dumpItemData();
-
 nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
 generateJsonFromItem(const Item &item);
-
 void dumpEntityData();
-
 void dumpCreativeItemData();
-
 void dumpPalette();
-
 void dumpBiomeData();
-
 void dumpCommandArgData();
-
 void dumpAvailableCommand();
-
 void dumpEntityAABB(const Level *level, const pair<string, const ActorDefinitionIdentifier *> &pair,
                     nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>> &obj);
+void dumpPropertyTypeData();
 
 void PluginInit() {
     Logger logger;
@@ -140,12 +130,14 @@ void extractData() {
     dumpBiomeData();
     dumpCommandArgData();
     dumpAvailableCommand();
+    dumpPropertyTypeData();
 }
 
 int blockStateCounter = 0;
 
 void dumpBlockStateData() {
     Logger logger;
+    logger.info("Extracting block states' attributes...");
 
     auto &palette = Global<Minecraft>->getLevel()->getBlockPalette();
     int airCount = 0;
@@ -177,7 +169,7 @@ generateJsonObjFromBlockState(const Block &block) {
     try {
         auto &legacy = block.getLegacyBlock();
         auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
-        logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
+//        logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
         const Material &material = legacy.getMaterial();
 
         auto nbt = json::parse(block.getSerializationId().clone()->toJson(4));
@@ -507,3 +499,149 @@ void dumpAvailableCommand() {
     logger.info("Available commands' data has been saved to \"data/available_commands.json\"");
 }
 
+struct PropertyType {
+    std::string serializationName;
+    std::string valueType;
+    std::set<std::string> values;
+    bool multi = false;
+    std::string blockName;
+
+    bool operator==(const PropertyType &other) const {
+        return serializationName == other.serializationName && valueType == other.valueType && values.size() == other.values.size();
+    }
+};
+
+void dumpPropertyTypeData() {
+    Logger logger;
+    logger.info("Extracting property type data...");
+
+    std::map<std::string, std::vector<std::unique_ptr<class CompoundTag>>> blockToBlockStateData;
+
+    auto &palette = Global<Minecraft>->getLevel()->getBlockPalette();
+    for (unsigned int i = 0; i < blockStateCounter; i++) {
+        const Block & block = palette.getBlock(i);
+        auto &name = block.getSerializationId().getString("name");
+        if (!blockToBlockStateData.contains(name)) {
+            blockToBlockStateData[name] = std::vector<std::unique_ptr<class CompoundTag>>();
+        }
+        auto & blockStates = blockToBlockStateData[name];
+        auto nbt = block.getSerializationId().clone();
+        if (nbt->contains("states") && !nbt->getCompoundTag("states")->isEmpty()) {
+            blockStates.push_back(nbt->getCompoundTag("states")->clone());
+        }
+    }
+
+    std::map<std::string, PropertyType> globalPropertyTypeMap;
+    std::set<std::string> multiPropertyTypes;
+
+    for (auto & entry : blockToBlockStateData) {
+        auto & states = entry.second;
+        std::map<std::string, PropertyType> propertyTypeMap;
+
+        for (auto & state : states) {
+            for (auto & valueEntry : state->value()) {
+                if (!propertyTypeMap.contains(valueEntry.first)) {
+                    PropertyType p;
+                    p.serializationName = valueEntry.first;
+                    p.blockName = entry.first;
+                    propertyTypeMap[valueEntry.first] = p;
+                }
+                auto & propertyType = propertyTypeMap[valueEntry.first];
+                switch (valueEntry.second->getId()) {
+                    case Tag::Type::Byte:
+                        if (propertyType.valueType.empty()) {
+                            propertyType.valueType = "BOOLEAN";
+                        }
+                        propertyType.values.insert(state->getBoolean(valueEntry.first) ? "true" : "false");
+                        break;
+                    case Tag::Type::Int:
+                        if (propertyType.valueType.empty()) {
+                            propertyType.valueType = "INTEGER";
+                        }
+                        propertyType.values.insert(to_string(state->getInt(valueEntry.first)));
+                        break;
+                    case Tag::Type::String:
+                        if (propertyType.valueType.empty()) {
+                            propertyType.valueType = "ENUM";
+                        }
+                        propertyType.values.insert(state->getString(valueEntry.first));
+                        break;
+                    default :
+                        if (propertyType.valueType.empty()) {
+                            propertyType.valueType = "UNKNOWN";
+                        }
+                        logger.warn("Unknown tag type when dumping property type data: " + valueEntry.first);
+                        break;
+                }
+            }
+        }
+
+        for (auto & propertyTypeEntry : propertyTypeMap) {
+            auto & propertyName = propertyTypeEntry.first;
+            auto & propertyType = propertyTypeEntry.second;
+            if (!globalPropertyTypeMap.contains(propertyName)) {
+                globalPropertyTypeMap[propertyName] = propertyType;
+            } else {
+                auto & old = globalPropertyTypeMap[propertyName];
+                if (old == propertyType && !multiPropertyTypes.contains(propertyName)) {
+                    continue;
+                } else {
+                    logger.warn("Property type \"" + propertyName + "\" has different size in different blocks!");
+                    logger.warn("Old(" + old.blockName + ") size: " + to_string(old.values.size()) + ", new(" + entry.first + ") size: " + to_string(propertyType.values.size()));
+                    //标记为重复属性
+                    multiPropertyTypes.insert(propertyName);
+                    old.multi = true;
+                    propertyType.multi = true;
+                    //需要重新指定key，删除原来的k-v
+                    globalPropertyTypeMap.erase(propertyName);
+                    //给旧属性类型加上前缀
+                    auto & oldBlockName = old.blockName;
+                    std::string s1 = oldBlockName.substr(oldBlockName.find(':') + 1);
+                    globalPropertyTypeMap[s1 + "_" + old.serializationName] = old;
+                    //给重复名称的不同属性类型加上前缀
+                    auto & blockName = entry.first;
+                    std::string s2 = blockName.substr(blockName.find(':') + 1);
+                    globalPropertyTypeMap[s2 + "_" + propertyType.serializationName] = propertyType;
+                }
+            }
+        }
+    }
+
+    auto globalJson = json::object();
+    auto propertyTypes = json::object();
+
+    for (auto & propertyTypeEntry : globalPropertyTypeMap) {
+        if (propertyTypeEntry.second.serializationName.empty()) {
+            continue;
+        }
+        auto obj = json::object();
+
+        obj["serializationName"] = propertyTypeEntry.second.serializationName;
+        obj["valueType"] = propertyTypeEntry.second.valueType;
+        if (propertyTypeEntry.second.valueType == "INTEGER") {
+            //排序 propertyTypeEntry.second.values 中的值
+            std::vector<int> values;
+            for (auto & value : propertyTypeEntry.second.values) {
+                values.push_back(stoi(value));
+            }
+            std::sort(values.begin(), values.end());
+            obj["values"] = values;
+        } else if (propertyTypeEntry.second.valueType == "BOOLEAN") {
+            //转换成bool
+            std::vector<bool> values {false, true};
+            obj["values"] = values;
+        } else {
+            obj["values"] = propertyTypeEntry.second.values;
+        }
+        obj["multi"] = propertyTypeEntry.second.multi;
+
+        propertyTypes[propertyTypeEntry.first] = obj;
+    }
+    globalJson["propertyTypes"] = propertyTypes;
+    globalJson["multiple_propertyType"] = multiPropertyTypes;
+
+    auto out = ofstream("data/block_property_types.json", ofstream::out | ofstream::trunc);
+    out << globalJson.dump(4);
+    out.close();
+    logger.info("Block property type data have been saved to \"data/block_property_types.json\"");
+}
