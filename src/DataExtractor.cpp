@@ -520,7 +520,7 @@ void dumpPropertyTypeData() {
     auto &palette = Global<Minecraft>->getLevel()->getBlockPalette();
     for (unsigned int i = 0; i < blockStateCounter; i++) {
         const Block & block = palette.getBlock(i);
-        auto &name = block.getSerializationId().getString("name");
+        auto name = block.getLegacyBlock().getRawNameId();
         if (!blockToBlockStateData.contains(name)) {
             blockToBlockStateData[name] = std::vector<std::unique_ptr<class CompoundTag>>();
         }
@@ -592,16 +592,16 @@ void dumpPropertyTypeData() {
                     multiPropertyTypes.insert(propertyName);
                     old.multi = true;
                     propertyType.multi = true;
+                    //给旧属性类型加上前缀
+                    auto newOldKey = old.blockName + "_" + old.serializationName;
+                    logger.warn("Rename old property type to: " + newOldKey);
+                    globalPropertyTypeMap[newOldKey] = old;
+                    //给重复名称的不同属性类型加上前缀
+                    auto newKey = entry.first + "_" + propertyType.serializationName;
+                    logger.warn("Rename new property type to: " + newKey);
+                    globalPropertyTypeMap[newKey] = propertyType;
                     //需要重新指定key，删除原来的k-v
                     globalPropertyTypeMap.erase(propertyName);
-                    //给旧属性类型加上前缀
-                    auto & oldBlockName = old.blockName;
-                    std::string s1 = oldBlockName.substr(oldBlockName.find(':') + 1);
-                    globalPropertyTypeMap[s1 + "_" + old.serializationName] = old;
-                    //给重复名称的不同属性类型加上前缀
-                    auto & blockName = entry.first;
-                    std::string s2 = blockName.substr(blockName.find(':') + 1);
-                    globalPropertyTypeMap[s2 + "_" + propertyType.serializationName] = propertyType;
                 }
             }
         }
