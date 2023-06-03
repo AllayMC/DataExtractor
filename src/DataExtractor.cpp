@@ -503,7 +503,6 @@ struct PropertyType {
     std::string serializationName;
     std::string valueType;
     std::set<std::string> values;
-    bool multi = false;
     std::string blockName;
 
     bool operator==(const PropertyType &other) const {
@@ -531,8 +530,7 @@ void dumpPropertyTypeData() {
         }
     }
 
-    std::map<std::string, PropertyType> globalPropertyTypeMap;
-    std::set<std::string> multiPropertyTypes;
+    std::map<std::string, std::map<std::string, PropertyType>> blockToPropertyTypeMap;
 
     for (auto & entry : blockToBlockStateData) {
         auto & states = entry.second;
@@ -575,34 +573,35 @@ void dumpPropertyTypeData() {
                 }
             }
         }
+        blockToPropertyTypeMap[entry.first] = propertyTypeMap;
+    }
 
-        for (auto & propertyTypeEntry : propertyTypeMap) {
-            auto & propertyName = propertyTypeEntry.first;
-            auto & propertyType = propertyTypeEntry.second;
-            if (!globalPropertyTypeMap.contains(propertyName)) {
+    std::set<std::string> multiPropertyTypes;
+    std::map<std::string, PropertyType> tmpLookUp;
+
+    for (auto & entry : blockToPropertyTypeMap) {
+        for (auto & entryInside : entry.second) {
+            auto & propertyName = entryInside.first;
+            auto & propertyType = entryInside.second;
+            if (!tmpLookUp.contains(propertyName)) {
+                tmpLookUp[propertyName] = propertyType;
+            } else if (tmpLookUp[propertyName] != propertyType && !multiPropertyTypes.contains(propertyName)) {
+                logger.warn("Property type \"" + propertyName + "\" has different size in different blocks!");
+                multiPropertyTypes.insert(propertyName);
+            }
+        }
+    }
+
+    std::map<std::string, PropertyType> globalPropertyTypeMap;
+
+    for (auto & entry : blockToPropertyTypeMap) {
+        for (auto & entryInside : entry.second) {
+            auto & propertyName = entryInside.first;
+            auto & propertyType = entryInside.second;
+            if (!multiPropertyTypes.contains(propertyName)) {
                 globalPropertyTypeMap[propertyName] = propertyType;
             } else {
-                auto & old = globalPropertyTypeMap[propertyName];
-                if (old == propertyType && !multiPropertyTypes.contains(propertyName)) {
-                    continue;
-                } else {
-                    logger.warn("Property type \"" + propertyName + "\" has different size in different blocks!");
-                    logger.warn("Old(" + old.blockName + ") size: " + to_string(old.values.size()) + ", new(" + entry.first + ") size: " + to_string(propertyType.values.size()));
-                    //标记为重复属性
-                    multiPropertyTypes.insert(propertyName);
-                    old.multi = true;
-                    propertyType.multi = true;
-                    //给旧属性类型加上前缀
-                    auto newOldKey = old.blockName + "_" + old.serializationName;
-                    logger.warn("Rename old property type to: " + newOldKey);
-                    globalPropertyTypeMap[newOldKey] = old;
-                    //给重复名称的不同属性类型加上前缀
-                    auto newKey = entry.first + "_" + propertyType.serializationName;
-                    logger.warn("Rename new property type to: " + newKey);
-                    globalPropertyTypeMap[newKey] = propertyType;
-                    //需要重新指定key，删除原来的k-v
-                    globalPropertyTypeMap.erase(propertyName);
-                }
+                globalPropertyTypeMap[entry.first + "_" + propertyName] = propertyType;
             }
         }
     }
@@ -633,7 +632,6 @@ void dumpPropertyTypeData() {
         } else {
             obj["values"] = propertyTypeEntry.second.values;
         }
-        obj["multi"] = propertyTypeEntry.second.multi;
 
         propertyTypes[propertyTypeEntry.first] = obj;
     }
