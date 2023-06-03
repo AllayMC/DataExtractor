@@ -577,6 +577,7 @@ void dumpPropertyTypeData() {
     }
 
     std::set<std::string> differentSizePropertyTypes;
+    std::map<std::string, std::map<std::string, std::string>> specialBlockTypes;
     std::map<std::string, PropertyType> tmpLookUp;
 
     for (auto & entry : blockToPropertyTypeMap) {
@@ -589,6 +590,10 @@ void dumpPropertyTypeData() {
                 //取值范围不同的同名方块属性
                 logger.warn("Property type \"" + propertyName + "\" has different size in different blocks!");
                 differentSizePropertyTypes.insert(propertyName);
+                auto fullBlockName = "minecraft:" + entry.first;
+                if (!specialBlockTypes.contains(fullBlockName)) {
+                    specialBlockTypes[fullBlockName] = std::map<std::string, std::string>();
+                }
             }
         }
     }
@@ -602,7 +607,10 @@ void dumpPropertyTypeData() {
             if (!differentSizePropertyTypes.contains(propertyName)) {
                 globalPropertyTypeMap[propertyName] = propertyType;
             } else {
-                globalPropertyTypeMap[propertyName + "_" + to_string(propertyType.values.size())] = propertyType;
+                auto newKey = propertyName + "_" + to_string(propertyType.values.size());
+                auto fullBlockName = "minecraft:" + entry.first;
+                specialBlockTypes[fullBlockName][propertyName] = newKey;
+                globalPropertyTypeMap[newKey] = propertyType;
             }
         }
     }
@@ -638,6 +646,7 @@ void dumpPropertyTypeData() {
     }
     globalJson["propertyTypes"] = propertyTypes;
     globalJson["differentSizePropertyTypes"] = differentSizePropertyTypes;
+    globalJson["specialBlockTypes"] = specialBlockTypes;
 
     auto out = ofstream("data/block_property_types.json", ofstream::out | ofstream::trunc);
     out << globalJson.dump(4);
