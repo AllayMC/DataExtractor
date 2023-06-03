@@ -576,7 +576,7 @@ void dumpPropertyTypeData() {
         blockToPropertyTypeMap[entry.first] = propertyTypeMap;
     }
 
-    std::set<std::string> multiPropertyTypes;
+    std::set<std::string> differentSizePropertyTypes;
     std::map<std::string, PropertyType> tmpLookUp;
 
     for (auto & entry : blockToPropertyTypeMap) {
@@ -585,9 +585,10 @@ void dumpPropertyTypeData() {
             auto & propertyType = entryInside.second;
             if (!tmpLookUp.contains(propertyName)) {
                 tmpLookUp[propertyName] = propertyType;
-            } else if (tmpLookUp[propertyName] != propertyType && !multiPropertyTypes.contains(propertyName)) {
+            } else if (tmpLookUp[propertyName] != propertyType && !differentSizePropertyTypes.contains(propertyName)) {
+                //取值范围不同的同名方块属性
                 logger.warn("Property type \"" + propertyName + "\" has different size in different blocks!");
-                multiPropertyTypes.insert(propertyName);
+                differentSizePropertyTypes.insert(propertyName);
             }
         }
     }
@@ -598,10 +599,10 @@ void dumpPropertyTypeData() {
         for (auto & entryInside : entry.second) {
             auto & propertyName = entryInside.first;
             auto & propertyType = entryInside.second;
-            if (!multiPropertyTypes.contains(propertyName)) {
+            if (!differentSizePropertyTypes.contains(propertyName)) {
                 globalPropertyTypeMap[propertyName] = propertyType;
             } else {
-                globalPropertyTypeMap[entry.first + "_" + propertyName] = propertyType;
+                globalPropertyTypeMap[propertyName + "_" + to_string(propertyType.values.size())] = propertyType;
             }
         }
     }
@@ -636,7 +637,7 @@ void dumpPropertyTypeData() {
         propertyTypes[propertyTypeEntry.first] = obj;
     }
     globalJson["propertyTypes"] = propertyTypes;
-    globalJson["multiple_propertyType"] = multiPropertyTypes;
+    globalJson["differentSizePropertyTypes"] = differentSizePropertyTypes;
 
     auto out = ofstream("data/block_property_types.json", ofstream::out | ofstream::trunc);
     out << globalJson.dump(4);
