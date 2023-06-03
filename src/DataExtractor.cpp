@@ -373,23 +373,77 @@ void dumpPalette() {
     logger.info("Block palette table has been saved to \"data/block_palette.json\"");
 }
 
+std::string parseBiomeTypeStrById(VanillaBiomeTypes type) {
+    switch (type) {
+        case VanillaBiomeTypes::Beach:
+            return "BEACH";
+        case VanillaBiomeTypes::ExtremeHills:
+            return "EXTREME_HILLS";
+        case VanillaBiomeTypes::FlatWorld:
+            return "FLAT_WORLD";
+        case VanillaBiomeTypes::Forest:
+            return "FOREST";
+        case VanillaBiomeTypes::Hell:
+            return "HELL";
+        case VanillaBiomeTypes::IcePlainsSpikes:
+            return "ICE_PLAINS_SPIKES";
+        case VanillaBiomeTypes::Jungle:
+            return "JUNGLE";
+        case VanillaBiomeTypes::Mesa:
+            return "MESA";
+        case VanillaBiomeTypes::MushroomIsland:
+            return "MUSHROOM_ISLAND";
+        case VanillaBiomeTypes::Ocean:
+            return "OCEAN";
+        case VanillaBiomeTypes::Plain:
+            return "PLAINS";
+        case VanillaBiomeTypes::River:
+            return "RIVER";
+        case VanillaBiomeTypes::Savanna:
+            return "SAVANNA";
+        case VanillaBiomeTypes::RockyBeach:
+            return "ROCKY_BEACH";
+        case VanillaBiomeTypes::Swamp:
+            return "SWAMP";
+        case VanillaBiomeTypes::TaigaForest:
+            return "TAIGA_FOREST";
+        case VanillaBiomeTypes::TheEnd:
+            return "THE_END";
+        case VanillaBiomeTypes::Custom:
+            return "CUSTOM";
+        case VanillaBiomeTypes::Desert:
+            return "DESERT";
+    }
+}
+
 void dumpBiomeData() {
     Logger logger;
     BiomeRegistry const &registry = Global<Minecraft>->getLevel()->getBiomeRegistry();
 
+    auto biomeInfoMap = json::object();
     CompoundTag biomes;
-    registry.forEachBiome([&biomes, &registry, &logger](Biome &biome) {
+    registry.forEachBiome([&biomes, &registry, &logger, &biomeInfoMap](Biome &biome) {
         logger.info("Extracting biome data - " + biome.getName());
 
         CompoundTag tag;
         biome.writePacketData(tag,const_cast<TagRegistry<IDType<BiomeTagIDType>, IDType<BiomeTagSetIDType>> &>(registry.getTagRegistry()));
         biomes.put(biome.getName(), tag.copy());
+
+        auto obj = json::object();
+        obj["id"] = biome.getId();
+        obj["type"] = parseBiomeTypeStrById(biome.getBiomeType());
+        biomeInfoMap[biome.getName()] = obj;
     });
 
     auto out = ofstream("data/biome_definitions.json", ofstream::out | ofstream::trunc);
     out << biomes.toJson(4);
     out.close();
-    logger.info("Biome definitions has been saved to \"data/biome_definitions.json\"");
+
+    out = ofstream("data/biome_id_and_type.json", ofstream::out | ofstream::trunc);
+    out << biomeInfoMap.dump(4);
+    out.close();
+
+    logger.info(R"(Biome definitions has been saved to "data/biome_definitions.json" and "data/biome_id_and_type.json")");
 }
 
 void dumpCommandArgData() {
