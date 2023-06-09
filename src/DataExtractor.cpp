@@ -598,7 +598,7 @@ void dumpPropertyTypeData() {
                     PropertyType p;
                     p.serializationName = valueEntry.first;
                     p.blockName = entry.first;
-                    propertyTypeMap[valueEntry.first] = p;
+                    propertyTypeMap[p.serializationName] = p;
                 }
                 auto & propertyType = propertyTypeMap[valueEntry.first];
                 switch (valueEntry.second->getId()) {
@@ -660,12 +660,19 @@ void dumpPropertyTypeData() {
         for (auto & entryInside : entry.second) {
             auto & propertyName = entryInside.first;
             auto & propertyType = entryInside.second;
+            auto keyName = std::string(propertyName);
+            string::size_type pos = 0;
+            while ((pos = keyName.find(':', pos)) != string::npos)
+            {
+                keyName.replace(pos, 1, "_");
+                pos++;
+            }
             if (!differentSizePropertyTypes.contains(propertyName)) {
-                globalPropertyTypeMap[propertyName] = propertyType;
+                globalPropertyTypeMap[keyName] = propertyType;
             } else {
-                auto newKey = propertyName + "_" + to_string(propertyType.values.size());
+                auto newKey = keyName + "_" + to_string(propertyType.values.size());
                 auto fullBlockName = "minecraft:" + entry.first;
-                specialBlockTypes[fullBlockName][propertyName] = newKey;
+                specialBlockTypes[fullBlockName][keyName] = newKey;
                 globalPropertyTypeMap[newKey] = propertyType;
             }
         }
