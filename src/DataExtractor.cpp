@@ -133,7 +133,7 @@ void extractData() {
     dumpPropertyTypeData();
 }
 
-int blockStateCounter = -1;
+int blockStateCounter = 0;
 
 void dumpBlockStateData() {
     Logger logger;
@@ -142,18 +142,20 @@ void dumpBlockStateData() {
     auto &palette = Global<Minecraft>->getLevel()->getBlockPalette();
     int airCount = 0;
     auto array = json::array();
-    blockStateCounter = -1;
+    blockStateCounter = 0;
     while (true) {
         auto & block = palette.getBlock(blockStateCounter);
         //HACK: 用于确定最大size
         if (block.getName().str == "minecraft:air") {
             airCount++;
-            if (airCount == 2)
+            if (airCount == 2) {
+                blockStateCounter--;
                 break;
+            }
         }
         auto obj = generateJsonObjFromBlockState(block);
-        blockStateCounter++;
         array[blockStateCounter] = obj;
+        blockStateCounter++;
     }
     logger.info("Successfully extract " + to_string(blockStateCounter) + " block states' attributes!");
 
