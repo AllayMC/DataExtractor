@@ -413,6 +413,8 @@ std::string parseBiomeTypeStrById(VanillaBiomeTypes type) {
             return "CUSTOM";
         case VanillaBiomeTypes::Desert:
             return "DESERT";
+        default:
+            return "UNKNOWN";
     }
 }
 
