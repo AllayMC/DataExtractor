@@ -11,7 +11,8 @@ This is a BDS[LiteLoaderBDS]() mod which allows generating useful data used in A
 ## I want to build it myself!
 
 1. Make sure you have MSVC++ (Microsoft Visual C++ 17 and above) and CMake installed on your PC. Also you need to have an ide such as Clion (I'm using), Visual Studio or Visual Studio Code.
-2. After configuring the VC++ environment, click the ```Build``` button in your ide. If there are no accidents, you will get a file named ```DataExtractor.dll``` in the output folder that you specify
+2. Clone this repository to your PC. Before build, you need to generate the ```bedrock_server_api.lib``` and ```bedrock_server_var.lib``` yourself (because they are too large) and put them into ```SDK/lib``` folder. To generate these two files, you should use this tool [PeEditor](https://github.com/LiteLDev/LiteLoaderBDS/blob/adaptation/1.20.0/Tools/PeEditor.exe).
+3. After configuring the VC++ environment, click the ```Build``` button in your ide. If there are no accidents, you will get a file named ```DataExtractor.dll``` in the output folder that you specify
 
 ## I want to contribute!
 
