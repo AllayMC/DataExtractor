@@ -172,7 +172,7 @@ generateJsonObjFromBlockState(const Block &block) {
     try {
         auto &legacy = block.getLegacyBlock();
         auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
-//        logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
+        logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
         const Material &material = legacy.getMaterial();
 
         auto nbt = json::parse(block.getSerializationId().clone()->toJson(4));
@@ -207,7 +207,7 @@ generateJsonObjFromBlockState(const Block &block) {
         obj["pushesUpFallingBlocks"] = block.pushesUpFallingBlocks();
         obj["waterSpreadCausesSpawn"] = block.waterSpreadCausesSpawn();
         obj["canContainLiquid"] = legacy.canContainLiquid();
-        auto color = block.getMapColor(*Level::getBlockSource(0), BlockPos(0, -60, 0));
+        auto color = block.getMapColor(*Level::getBlockSource(0), BlockPos(0, 10, 0));
         auto colorObj = json::object();
         colorObj["r"] = (int)(color.r * 255);
         colorObj["g"] = (int)(color.g * 255);
