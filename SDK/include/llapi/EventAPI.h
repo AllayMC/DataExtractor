@@ -649,12 +649,6 @@ public:
     AABB mDestroyRange{{}, {}};
 };
 
-class EnderDragonDestroyEvent : public EventTemplate<EnderDragonDestroyEvent> {
-public:
-    EnderDragon* mEnderDragon = nullptr;
-    BlockLegacy* mBlockLegacy = nullptr;
-};
-
 class EntityRideEvent : public EventTemplate<EntityRideEvent> {
 public:
     Actor* mRider = nullptr;
@@ -665,13 +659,6 @@ class EntityStepOnPressurePlateEvent : public EventTemplate<EntityStepOnPressure
 public:
     Actor* mActor = nullptr;
     BlockInstance mBlockInstance;
-};
-
-class NpcCmdEvent : public EventTemplate<NpcCmdEvent> {
-public:
-    Actor* mNpc = nullptr;
-    std::string mCommand;
-    Player* mPlayer = nullptr;
 };
 
 class ProjectileSpawnEvent : public EventTemplate<ProjectileSpawnEvent> {

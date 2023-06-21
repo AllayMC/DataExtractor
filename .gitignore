@@ -41,6 +41,7 @@ out
 /cmake-build-release/
 /cmake-build-debug/
 /.vscode/
+.vs
 
 /SDK/lib/bedrock_server_api.lib
 /SDK/lib/bedrock_server_var.lib
