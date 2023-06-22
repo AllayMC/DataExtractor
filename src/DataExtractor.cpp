@@ -380,16 +380,18 @@ std::string parseBiomeTypeStrById(VanillaBiomeTypes type) {
     switch (type) {
         case VanillaBiomeTypes::Beach:
             return "BEACH";
+        case VanillaBiomeTypes::Desert:
+            return "DESERT";
         case VanillaBiomeTypes::ExtremeHills:
             return "EXTREME_HILLS";
-        case VanillaBiomeTypes::FlatWorld:
-            return "FLAT_WORLD";
+        case VanillaBiomeTypes::Flat:
+            return "FLAT";
         case VanillaBiomeTypes::Forest:
             return "FOREST";
         case VanillaBiomeTypes::Hell:
             return "HELL";
-        case VanillaBiomeTypes::IcePlainsSpikes:
-            return "ICE_PLAINS_SPIKES";
+        case VanillaBiomeTypes::Ice:
+            return "ICE";
         case VanillaBiomeTypes::Jungle:
             return "JUNGLE";
         case VanillaBiomeTypes::Mesa:
@@ -399,23 +401,21 @@ std::string parseBiomeTypeStrById(VanillaBiomeTypes type) {
         case VanillaBiomeTypes::Ocean:
             return "OCEAN";
         case VanillaBiomeTypes::Plain:
-            return "PLAINS";
+            return "PLAIN";
         case VanillaBiomeTypes::River:
             return "RIVER";
         case VanillaBiomeTypes::Savanna:
             return "SAVANNA";
-        case VanillaBiomeTypes::RockyBeach:
-            return "ROCKY_BEACH";
+        case VanillaBiomeTypes::StoneBeach:
+            return "STONE_BEACH";
         case VanillaBiomeTypes::Swamp:
             return "SWAMP";
-        case VanillaBiomeTypes::TaigaForest:
-            return "TAIGA_FOREST";
+        case VanillaBiomeTypes::Taiga:
+            return "TAIGA";
         case VanillaBiomeTypes::TheEnd:
             return "THE_END";
-        case VanillaBiomeTypes::Custom:
-            return "CUSTOM";
-        case VanillaBiomeTypes::Desert:
-            return "DESERT";
+        case VanillaBiomeTypes::DataDriven:
+            return "DataDriven";
         default:
             return "UNKNOWN";
     }
