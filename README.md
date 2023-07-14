@@ -10,6 +10,8 @@ This is a BDS[LiteLoaderBDS]() mod which allows generating useful data used in A
 
 Please note that you should enter the server before start extracting the data!
 
+Also remember to set the property ```block-network-ids-are-hashes``` in file ```server.properties``` to ```false```
+
 ## I want to build it myself!
 
 1. Make sure you have MSVC++ (Microsoft Visual C++ 17 and above) and CMake installed on your PC. Also you need to have an ide such as Clion (I'm using), Visual Studio or Visual Studio Code.

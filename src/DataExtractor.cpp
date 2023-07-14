@@ -5,7 +5,6 @@
 
 #include <llapi/mc/Level.hpp>
 #include <llapi/mc/BlockTypeRegistry.hpp>
-#include <llapi/mc/BlockLegacy.hpp>
 #include <llapi/mc/Block.hpp>
 #include <llapi/mc/Vec3.hpp>
 #include <llapi/mc/Material.hpp>
@@ -45,6 +44,7 @@
 #include "llapi/mc/LevelData.hpp"
 #include "llapi/mc/PropertyGroupManager.hpp"
 #include "llapi/mc/Spawner.hpp"
+#include "llapi/mc/MinecraftCommands.hpp"
 
 using json = nlohmann::json;
 using namespace std;
@@ -128,7 +128,7 @@ void extractData() {
     dumpCreativeItemData();
     dumpPalette();
     dumpBiomeData();
-    dumpCommandArgData();
+//    dumpCommandArgData();
     dumpAvailableCommand();
     dumpPropertyTypeData();
 }
@@ -454,14 +454,12 @@ void dumpBiomeData() {
 void dumpCommandArgData() {
     Logger logger;
 
-    CommandRegistry *registry = Global<CommandRegistry>;
+    CommandRegistry & registry = Global<MinecraftCommands>->getRegistry();
     auto global = json::object();
-    registry->forEachNonTerminal([&logger, &registry, &global](auto symbol) {
+    registry.forEachNonTerminal([&logger, &global](auto symbol) {
         logger.info("Extracting command arg type - " + symbol.toString());
 
         auto obj = json::object();
-        obj["description"] = registry->describe(symbol);
-        obj["debugString"] = symbol.toDebugString();
         obj["value"] = symbol.value();
         obj["index"] = symbol.toIndex();
 
@@ -549,7 +547,7 @@ void dumpAvailableCommand() {
                 overloadParams.push_back(paramObj);
             }
 
-            overloadData.push_back(overloadParams);
+            overloadData["datas"] = overloadParams;
             overloadData["chained"] = overload.chained;
 
             overloads.push_back(overloadData);
