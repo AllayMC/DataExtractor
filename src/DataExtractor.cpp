@@ -220,7 +220,7 @@ generateJsonObjFromBlockState(const Block &block) {
         obj["blocksPrecipitation"] = material.getBlocksPrecipitation();
         obj["superHot"] = material.isSuperHot();
         AABB tmp = AABB();
-        auto &aabb = block.getVisualShape(tmp, true);
+        auto &aabb = block.getVisualShape(tmp);
         stringstream aabbStr;
         aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
                 << "," << aabb.max.y << "," << aabb.max.z;
@@ -483,7 +483,9 @@ void dumpAvailableCommand() {
 
     auto global = json::object();
 
+    logger.info("Extracting all enums...");
     global["allEnums"] = aCmdPk.mAllEnums;
+    logger.info("Extracting all suffix...");
     global["allSuffix"] = aCmdPk.mAllSuffix;
 
     logger.info("Extracting enum data array...");
@@ -498,6 +500,31 @@ void dumpAvailableCommand() {
     }
     global["enumDatas"] = enumDataArray;
 
+    logger.info("Extracting chained subcommand value array...");
+    global["chainedSubcommandValues"] = aCmdPk.mChainedSubcommandValues;
+
+    logger.info("Extracting chained subcommand array...");
+    auto chainedSubcommandArray = json::array();
+    for (auto & chainedSubcommand : aCmdPk.mChainedSubcommands) {
+        auto chainedSubcommandDataObj = json::object();
+
+        chainedSubcommandDataObj["name"] = chainedSubcommand.name;
+
+        auto valueIndices = json::array();
+        for (auto & valueIndice : chainedSubcommand.valueIndices) {
+            auto valueIndicesObj = json::object();
+            valueIndicesObj["index"] = valueIndice.index;
+            valueIndicesObj["value"] = valueIndice.value;
+
+            valueIndices.push_back(valueIndicesObj);
+        }
+
+        chainedSubcommandDataObj["valueIndices"] = valueIndices;
+
+        chainedSubcommandArray.push_back(chainedSubcommandDataObj);
+    }
+    global["chainedSubcommands"] = chainedSubcommandArray;
+
     logger.info("Extracting command data array...");
     auto commandDataArray = json::array();
     for (auto & commandData : aCmdPk.mCommandDatas) {
@@ -509,6 +536,7 @@ void dumpAvailableCommand() {
         obj["perm"] = commandData.perm;
         auto overloads = json::array();
         for (auto & overload : commandData.overloads) {
+            auto overloadData = json::object();
             auto overloadParams = json::array();
 
             for(auto & paramData : overload.datas) {
@@ -516,11 +544,18 @@ void dumpAvailableCommand() {
 
                 paramObj["description"] = paramData.desc;
                 paramObj["sym"] = paramData.sym;
+                paramObj["optional"] = paramData.optional;
+                paramObj["paramOptions"] = paramData.paramOptions;
                 overloadParams.push_back(paramObj);
             }
-            overloads.push_back(overloadParams);
+
+            overloadData.push_back(overloadParams);
+            overloadData["chained"] = overload.chained;
+
+            overloads.push_back(overloadData);
         }
         obj["overloads"] = overloads;
+        obj["chainedOffsets"] = commandData.chainedOffsets;
         obj["aliasIndex"] = commandData.aliasIndex;
 
         commandDataArray.push_back(obj);

@@ -8,6 +8,8 @@ This is a BDS[LiteLoaderBDS]() mod which allows generating useful data used in A
 2. Download the latest release and put it in the ```plugins``` folder
 3. Start your server, run command ```/ext```, the output files will located in ```data/*```
 
+Please note that you should enter the server before start extracting the data!
+
 ## I want to build it myself!
 
 1. Make sure you have MSVC++ (Microsoft Visual C++ 17 and above) and CMake installed on your PC. Also you need to have an ide such as Clion (I'm using), Visual Studio or Visual Studio Code.
