@@ -13,10 +13,15 @@ Please note that you should enter the server before start extracting the data!
 Also remember to set the property ```block-network-ids-are-hashes``` in file ```server.properties``` to ```false```
 
 ## I want to build it myself!
-
-1. Make sure you have MSVC++ (Microsoft Visual C++ 17 and above) and CMake installed on your PC. Also you need to have an ide such as Clion (I'm using), Visual Studio or Visual Studio Code.
-2. Clone this repository to your PC. Before build, you need to generate the ```bedrock_server_api.lib``` and ```bedrock_server_var.lib``` yourself (because they are too large) and put them into ```SDK/lib``` folder. To generate these two files, you should use this tool [PeEditor](https://github.com/LiteLDev/LiteLoaderBDS/blob/adaptation/1.20.0/Tools/PeEditor.exe).
-3. After configuring the VC++ environment, click the ```Build``` button in your ide. If there are no accidents, you will get a file named ```DataExtractor.dll``` in the output folder that you specify
+1. Clone project source
+```
+   git clone https://github.com/AllayMC/DataExtractor
+   git submodule init
+   git submodule update
+   ```
+2. Make sure you have MSVC++ (Microsoft Visual C++ 17 and above) and CMake installed on your PC. Also you need to have an ide such as Clion (I'm using), Visual Studio or Visual Studio Code.
+3. Clone this repository to your PC. Before build, you need to generate the ```bedrock_server_api.lib``` and ```bedrock_server_var.lib``` yourself (because they are too large) and put them into ```SDK/lib``` folder. To generate these two files, you should run `prepare_libraries.cmd`
+4. After configuring the VC++ environment, click the ```Build``` button in your ide. If there are no accidents, you will get a file named ```DataExtractor.dll``` in the output folder that you specify
 
 ## I want to contribute!
 
