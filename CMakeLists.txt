@@ -13,10 +13,12 @@ file(GLOB_RECURSE SRC_FILES_DIR
 
 include_directories(
         ${CMAKE_SOURCE_DIR}/SDK/include
+        ${CMAKE_SOURCE_DIR}/zlib-ng/include
 )
 
 link_directories(
         ${CMAKE_SOURCE_DIR}/SDK/lib
+        ${CMAKE_SOURCE_DIR}/zlib-ng/lib
 )
 
 add_definitions(
@@ -69,4 +71,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
         "${CMAKE_SOURCE_DIR}/SDK/lib/bedrock_server_api.lib"
         "${CMAKE_SOURCE_DIR}/SDK/lib/bedrock_server_var.lib"
         "${CMAKE_SOURCE_DIR}/SDK/lib/SymDBHelper.lib"
+        "${CMAKE_SOURCE_DIR}/zlib-ng/lib/zlib-ng.lib"
+        "${CMAKE_SOURCE_DIR}/zlib-ng/lib/zlibstatic-ng.lib"
 )

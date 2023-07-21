@@ -6,7 +6,8 @@ This is a BDS[LiteLoaderBDS]() mod which allows generating useful data used in A
 
 1. Install LiteLoaderBDS. For about how to install it, see [here](https://github.com/LiteLDev/LiteLoaderBDS)
 2. Download the latest release and put it in the ```plugins``` folder
-3. Start your server, run command ```/ext```, the output files will located in ```data/*```
+3. put ```zlib-ng/bin/zlib-ng2.dll``` into BDS root folder
+4. Start your server, run command ```/ext```, the output files will located in ```data/*```
 
 Please note that you should enter the server before start extracting the data!
 

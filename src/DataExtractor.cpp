@@ -3,6 +3,9 @@
  * @brief The main file of DataExtractor plugin.
  */
 
+#include <iostream>
+#include <zlib-ng.h>
+#include <string>
 #include <llapi/mc/Level.hpp>
 #include <llapi/mc/BlockTypeRegistry.hpp>
 #include <llapi/mc/Block.hpp>
@@ -80,6 +83,27 @@ void saveFile(string const &name, vector<string> &blocks) {
         out << b << endl;
     }
     out.close();
+}
+
+bool gzip_compress(const std::string &original_str, std::string &str) {
+    zng_stream d_stream = { 0 };
+    if (Z_OK != zng_deflateInit2(&d_stream, Z_DEFAULT_COMPRESSION, Z_DEFLATED, MAX_WBITS + 16, 9, Z_DEFAULT_STRATEGY)) {
+        return false;
+    }
+    uLong len = zng_compressBound(original_str.size());
+    auto *buf = (unsigned char*)malloc(len);
+    if (!buf) {
+        return false;
+    }
+    d_stream.next_in = (unsigned char *)(original_str.c_str());
+    d_stream.avail_in  = original_str.size();
+    d_stream.next_out = buf;
+    d_stream.avail_out = len;
+    zng_deflate(&d_stream, Z_SYNC_FLUSH);
+    zng_deflateEnd(&d_stream);
+    str.assign((char *)buf, d_stream.total_out);
+    free(buf);
+    return true;
 }
 
 void extractData();
@@ -363,19 +387,32 @@ void dumpCreativeItemData() {
     logger.info("Extracting creative items...");
 
     auto global = CompoundTag::create();
-    for (auto & entry : CreativeItemRegistry::current()->getCreativeItemEntries()) {
+    unsigned int index = 0;
+    CreativeItemRegistry::forEachCreativeItemInstance([&logger, &index, &global](const ItemInstance & itemInstance) {
+        logger.info("index: " + to_string(index));
+        auto itemStack = ItemStack::fromItemInstance(itemInstance);
+        if (itemStack.getName().empty()) {
+            logger.warn("Failed to extract creative item - " + itemStack.getName() + ", index: " + to_string(index));
+            return true;
+        }
+        logger.info("Extracting creative item - " + itemStack.getName() + ", index: " + to_string(index));
         auto obj = CompoundTag::create();
-        obj->putInt64("index", entry.getIndex());
-        obj->putInt64("creativeNetId", entry.getCreativeNetId().netId);
-        obj->putCompound("nbt", std::move(entry.getItemInstance().getItem()->buildNetworkTag()));
+        obj->putInt64("index", index);
+        obj->putCompound("nbt", itemStack.getNbt()->clone());
 
-        global->putCompound(to_string(entry.getIndex()), obj->clone());
-    }
+        global->putCompound(to_string(index), obj->clone());
+        index++;
+        return true;
+    });
 
+    //TODO: 输出GZ压缩的nbt文件，这样子nbt viewer就可以直接打开了
     auto out = ofstream("data/creative_items.nbt", ofstream::out | ofstream::trunc);
-    out << global->toBinaryNBT();
+    out << global->toBinaryNBT(false);
     out.close();
-    logger.info("Creative items data has been saved to \"data/creative_items.nbt\"");
+    auto out2 = ofstream("data/creative_items_snbt.json", ofstream::out | ofstream::trunc);
+    out2 << global->toSNBT(4);
+    out2.close();
+    logger.info(R"(Creative items data has been saved to "data/creative_items.nbt" and "data/creative_items_snbt.json")");
 }
 
 void dumpPalette() {
