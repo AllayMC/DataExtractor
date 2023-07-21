@@ -45,6 +45,9 @@
 #include "llapi/mc/PropertyGroupManager.hpp"
 #include "llapi/mc/Spawner.hpp"
 #include "llapi/mc/MinecraftCommands.hpp"
+#include "llapi/mc/CreativeItemRegistry.hpp"
+#include "llapi/mc/CreativeItemEntry.hpp"
+#include "llapi/mc/ItemInstance.hpp"
 
 using json = nlohmann::json;
 using namespace std;
@@ -122,10 +125,10 @@ void extractData() {
         createFolder("data");
     }
 
+    dumpCreativeItemData();
     dumpBlockStateData();
     dumpItemData();
     dumpEntityData();
-    dumpCreativeItemData();
     dumpPalette();
     dumpBiomeData();
 //    dumpCommandArgData();
@@ -355,7 +358,24 @@ void dumpEntityAABB(const Level *level, const pair<string, const ActorDefinition
 }
 
 void dumpCreativeItemData() {
-    //TODO
+    Logger logger;
+
+    logger.info("Extracting creative items...");
+
+    auto global = CompoundTag::create();
+    for (auto & entry : CreativeItemRegistry::current()->getCreativeItemEntries()) {
+        auto obj = CompoundTag::create();
+        obj->putInt64("index", entry.getIndex());
+        obj->putInt64("creativeNetId", entry.getCreativeNetId().netId);
+        obj->putCompound("nbt", std::move(entry.getItemInstance().getItem()->buildNetworkTag()));
+
+        global->putCompound(to_string(entry.getIndex()), obj->clone());
+    }
+
+    auto out = ofstream("data/creative_items.nbt", ofstream::out | ofstream::trunc);
+    out << global->toBinaryNBT();
+    out.close();
+    logger.info("Creative items data has been saved to \"data/creative_items.nbt\"");
 }
 
 void dumpPalette() {
@@ -457,6 +477,7 @@ void dumpCommandArgData() {
     CommandRegistry & registry = Global<MinecraftCommands>->getRegistry();
     auto global = json::object();
     registry.forEachNonTerminal([&logger, &global](auto symbol) {
+        //buggy toString
         logger.info("Extracting command arg type - " + symbol.toString());
 
         auto obj = json::object();
