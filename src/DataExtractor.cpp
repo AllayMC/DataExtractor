@@ -51,6 +51,7 @@
 #include "llapi/mc/CreativeItemRegistry.hpp"
 #include "llapi/mc/CreativeItemEntry.hpp"
 #include "llapi/mc/ItemInstance.hpp"
+#include "llapi/mc/BinaryStream.hpp"
 
 using json = nlohmann::json;
 using namespace std;
@@ -405,10 +406,12 @@ void dumpCreativeItemData() {
         return true;
     });
 
-    //TODO: 输出GZ压缩的nbt文件，这样子nbt viewer就可以直接打开了
-    auto out = ofstream("data/creative_items.nbt", ofstream::out | ofstream::trunc);
-    out << global->toBinaryNBT(false);
-    out.close();
+    //TODO: 输出nbt文件
+//    BinaryStream binaryStream;
+//    binaryStream.writeCompoundTag(*global);
+//    auto out = ofstream("data/creative_items.nbt", ofstream::out | ofstream::trunc);
+//    out << binaryStream.getRaw();
+//    out.close();
     auto out2 = ofstream("data/creative_items_snbt.json", ofstream::out | ofstream::trunc);
     out2 << global->toSNBT(4);
     out2.close();
