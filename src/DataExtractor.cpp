@@ -402,7 +402,7 @@ void dumpCreativeItemData() {
     nbt::tags::compound_tag root(true);
     Compound_Helper(root, &global);
     auto out = ofstream("data/creative_items.nbt", ofstream::out | ofstream::trunc);
-    out << contexts::bedrock_disk << root;
+    out << context {context::orders::big_endian, context::formats::bin} << root;
     out.close();
     auto out2 = ofstream("data/creative_items.snbt", ofstream::out | ofstream::trunc);
     out2 << global.toSNBT(4);
