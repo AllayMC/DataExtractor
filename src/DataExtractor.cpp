@@ -144,6 +144,52 @@ inline void writeJSON(string fileName, nlohmann::json& json) {
 	out.close();
 }
 
+
+std::string parseBiomeTypeStrById(VanillaBiomeTypes type) {
+	switch (type) {
+	case VanillaBiomeTypes::Beach:
+		return "BEACH";
+	case VanillaBiomeTypes::Desert:
+		return "DESERT";
+	case VanillaBiomeTypes::ExtremeHills:
+		return "EXTREME_HILLS";
+	case VanillaBiomeTypes::Flat:
+		return "FLAT";
+	case VanillaBiomeTypes::Forest:
+		return "FOREST";
+	case VanillaBiomeTypes::Hell:
+		return "HELL";
+	case VanillaBiomeTypes::Ice:
+		return "ICE";
+	case VanillaBiomeTypes::Jungle:
+		return "JUNGLE";
+	case VanillaBiomeTypes::Mesa:
+		return "MESA";
+	case VanillaBiomeTypes::MushroomIsland:
+		return "MUSHROOM_ISLAND";
+	case VanillaBiomeTypes::Ocean:
+		return "OCEAN";
+	case VanillaBiomeTypes::Plain:
+		return "PLAIN";
+	case VanillaBiomeTypes::River:
+		return "RIVER";
+	case VanillaBiomeTypes::Savanna:
+		return "SAVANNA";
+	case VanillaBiomeTypes::StoneBeach:
+		return "STONE_BEACH";
+	case VanillaBiomeTypes::Swamp:
+		return "SWAMP";
+	case VanillaBiomeTypes::Taiga:
+		return "TAIGA";
+	case VanillaBiomeTypes::TheEnd:
+		return "THE_END";
+	case VanillaBiomeTypes::DataDriven:
+		return "DataDriven";
+	default:
+		return "UNKNOWN";
+	}
+}
+
 void PluginInit() {
 	Logger logger;
 	logger.info("DataExtractor plugin loaded!");
@@ -890,49 +936,4 @@ void dumpPropertyTypeData() {
 	globalJson["specialBlockTypes"] = specialBlockTypes;
 	writeJSON("data/block_property_types.json", globalJson);
 	logger.info("Block property type data have been saved to \"data/block_property_types.json\"");
-}
-
-std::string parseBiomeTypeStrById(VanillaBiomeTypes type) {
-	switch (type) {
-	case VanillaBiomeTypes::Beach:
-		return "BEACH";
-	case VanillaBiomeTypes::Desert:
-		return "DESERT";
-	case VanillaBiomeTypes::ExtremeHills:
-		return "EXTREME_HILLS";
-	case VanillaBiomeTypes::Flat:
-		return "FLAT";
-	case VanillaBiomeTypes::Forest:
-		return "FOREST";
-	case VanillaBiomeTypes::Hell:
-		return "HELL";
-	case VanillaBiomeTypes::Ice:
-		return "ICE";
-	case VanillaBiomeTypes::Jungle:
-		return "JUNGLE";
-	case VanillaBiomeTypes::Mesa:
-		return "MESA";
-	case VanillaBiomeTypes::MushroomIsland:
-		return "MUSHROOM_ISLAND";
-	case VanillaBiomeTypes::Ocean:
-		return "OCEAN";
-	case VanillaBiomeTypes::Plain:
-		return "PLAIN";
-	case VanillaBiomeTypes::River:
-		return "RIVER";
-	case VanillaBiomeTypes::Savanna:
-		return "SAVANNA";
-	case VanillaBiomeTypes::StoneBeach:
-		return "STONE_BEACH";
-	case VanillaBiomeTypes::Swamp:
-		return "SWAMP";
-	case VanillaBiomeTypes::Taiga:
-		return "TAIGA";
-	case VanillaBiomeTypes::TheEnd:
-		return "THE_END";
-	case VanillaBiomeTypes::DataDriven:
-		return "DataDriven";
-	default:
-		return "UNKNOWN";
-	}
 }
