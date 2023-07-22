@@ -580,7 +580,7 @@ void dumpCreativeItemData() {
 		obj.putInt64("index", index);
 		obj.putString("name", itemStack.getItem()->getFullItemName());
 		obj.putInt("count", itemStack.getCount());
-		obj.putInt("damage", itemStack.getDamageValue());
+		obj.putInt("damage", itemStack.getAux());
 		if (itemStack.isBlock()) {
 			obj.putInt("blockStateHash", itemStack.getBlock()->computeRawSerializationIdHashForNetwork());
 		}
