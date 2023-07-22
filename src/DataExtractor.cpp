@@ -278,7 +278,7 @@ generateJsonObjFromBlockState(const Block& block) {
 		logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
 		const Material& material = legacy.getMaterial();
 		auto nbt = json::parse(block.getSerializationId().clone()->toJson(4));
-		obj["block"] = nbt;
+		obj.update(nbt);
 		obj["descriptionId"] = block.getDescriptionId();
 		obj["legacyId"] = block.getId();
 		obj["runtimeId"] = block.getRuntimeId();
@@ -342,7 +342,10 @@ CompoundTag generateNBTFromBlockState(const Block& block) {
 		auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
 		logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
 		const Material& material = legacy.getMaterial();
-		nbt.putCompound("block", block.getSerializationId().clone());
+		auto sid = block.getSerializationId().clone();
+		nbt.putString("name", sid->getString("name"));
+		nbt.putCompound("states", sid->getCompound("states")->clone());
+		nbt.putInt("version", sid->getInt("version"));
 		nbt.putString("descriptionId", block.getDescriptionId());
 		nbt.putInt("legacyId", block.getId());
 		nbt.putInt("runtimeId", block.getRuntimeId());
@@ -419,7 +422,6 @@ void dumpItemData() {
 	}
 	tag.put("item", list.copyList());
 	logger.info("Successfully extract " + to_string(counter) + " items' data!");
-	writeJSON("data/item_data.json", array);
 	writeNBT("data/item_data.nbt", tag);
 	writeSNBT("data/item_data.snbt", tag);
 	logger.info(R"(Items' data have been saved to "data/item_data.nbt", "data/item_data.snbt" and "data/item_data.json")");
@@ -597,13 +599,9 @@ void dumpCreativeItemData() {
 		index++;
 		return true;
 		});
-
-	auto out = ofstream("data/creative_items.json", ofstream::out | ofstream::trunc);
-	out << global.toJson(4);
-	out.close();
 	writeNBT("data/creative_items.nbt", global);
     writeSNBT("data/creative_items.snbt", global);
-	logger.info(R"(Creative items data has been saved to "data/creative_items.snbt", "data/creative_items.nbt" and "data/creative_items.json")");
+	logger.info(R"(Creative items data has been saved to "data/creative_items.snbt", "data/creative_items.nbt")");
 }
 
 void dumpPalette() {
@@ -622,7 +620,7 @@ void dumpPalette() {
 	json.close();
 	writeNBT("data/block_palette.nbt", global);
 	writeSNBT("data/block_palette.snbt", global);
-	logger.info(R"(Block palette table has been saved to "data/block_palette.snbt", "data/block_palette.nbt" and "data/block_palette.json"))");
+	logger.info(R"(Block palette table has been saved to "data/block_palette.snbt", "data/block_palette.nbt"))");
 }
 
 void dumpBiomeData() {
@@ -644,8 +642,7 @@ void dumpBiomeData() {
 		});
 	writeNBT("data/biome_definitions.nbt", biomes);
 	writeSNBT("data/biome_definitions.snbt", biomes);
-	writeJSON("data/biome_definitions.json", biomeInfoMap);
-	logger.info(R"(Biome definitions has been saved to "data/biome_definitions.nbt", "data/biome_definitions.snbt" and "data/biome_definitions.json")");
+	logger.info(R"(Biome definitions has been saved to "data/biome_definitions.nbt", "data/biome_definitions.snbt")");
 }
 
 void dumpCommandArgData() {
