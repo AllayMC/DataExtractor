@@ -16,7 +16,6 @@ include_directories(
         ${CMAKE_SOURCE_DIR}/SDK/include
         ${PROJECT_SOURCE_DIR}/src/*.h
         ${CMAKE_SOURCE_DIR}/zlib-ng/include
-        ${CMAKE_SOURCE_DIR}/nbt-cpp/*.hpp
 )
 
 link_directories(
@@ -67,7 +66,7 @@ add_link_options(
         /SUBSYSTEM:CONSOLE
 )
 
-add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_FILES_DIR} nbt-cpp/nbt.cpp)
+add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_FILES_DIR})
 
 target_link_libraries(${CMAKE_PROJECT_NAME}
         "${CMAKE_SOURCE_DIR}/SDK/lib/LiteLoader.lib"
