@@ -492,9 +492,6 @@ void dumpPalette() {
 		blocks.add(palette.getBlock(i).getSerializationId().clone());
 	}
 	global.put("blocks", blocks.copyList());
-	auto json = ofstream("data/block_palette.json", ofstream::out | ofstream::trunc);
-	json << global.toJson(4);
-	json.close();
 	writeNBT("data/block_palette.nbt", global);
 	writeSNBT("data/block_palette.snbt", global);
 	logger.info(R"(Block palette table has been saved to "data/block_palette.snbt", "data/block_palette.nbt"))");
