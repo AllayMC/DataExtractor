@@ -392,7 +392,15 @@ void dumpCreativeItemData() {
         logger.info("Extracting creative item - " + itemStack.getName() + ", index: " + to_string(index));
         CompoundTag obj;
         obj.putInt64("index", index);
-        obj.put("nbt", itemStack.getNbt()->copy());
+        obj.putString("name", itemStack.getItem()->getFullItemName());
+        obj.putInt("count", itemStack.getCount());
+        obj.putInt("damage", itemStack.getDamageValue());
+        if (itemStack.isBlock()) {
+            obj.putInt("blockStateHash", itemStack.getBlock()->computeRawSerializationIdHashForNetwork());
+        }
+        if (itemStack.getNbt()->contains("tag")) {
+            obj.put("tag", itemStack.getNbt()->getCompoundTag("tag")->copy());
+        }
 
         global.put(to_string(index), obj.copy());
         index++;
