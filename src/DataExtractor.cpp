@@ -59,12 +59,12 @@ using namespace std;
 //define
 void extractData();
 void dumpBlockAttributesData();
-CompoundTag& generateNBTFromBlockState(const Block& block);
-nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>&
+CompoundTag generateNBTFromBlockState(const Block& block);
+nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
 generateJsonObjFromBlockState(const Block& block);
 void dumpItemData();
-CompoundTag& generateNBTFromItem(const Item& item);
-nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>&
+CompoundTag generateNBTFromItem(const Item& item);
+nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
 generateJsonFromItem(const Item& item);
 void dumpEntityData();
 void dumpCreativeItemData();
@@ -259,7 +259,7 @@ void dumpBlockAttributesData() {
 	logger.info(R"(Block attribute data have been saved to "data/block_attributes.nbt" and "data/block_attributes.json")");
 }
 
-nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>&
+nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
 generateJsonObjFromBlockState(const Block& block) {
 	auto obj = json::object();
 	Logger logger;
@@ -326,7 +326,7 @@ generateJsonObjFromBlockState(const Block& block) {
 	return obj;
 }
 
-CompoundTag& generateNBTFromBlockState(const Block& block) {
+CompoundTag generateNBTFromBlockState(const Block& block) {
 	Logger logger;
 	CompoundTag nbt;
 	try {
@@ -420,7 +420,7 @@ void dumpItemData() {
 	logger.info(R"(Items' data have been saved to "data/item_data.nbt" and "data/item_data.json")");
 }
 
-nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>&
+nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
 generateJsonFromItem(const Item& item) {
 	auto obj = json::object();
 	Logger logger;
@@ -467,7 +467,7 @@ generateJsonFromItem(const Item& item) {
 	return obj;
 }
 
-CompoundTag& generateNBTFromItem(const Item& item) {
+CompoundTag generateNBTFromItem(const Item& item) {
 	CompoundTag nbt;
 	Logger logger;
 
