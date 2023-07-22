@@ -499,8 +499,8 @@ CompoundTag generateNBTFromItem(const Item& item) {
 	nbt.putBoolean("canDestroyInCreative", item.canDestroyInCreative());
 	nbt.putBoolean("canUseOnSimTick", item.canUseOnSimTick());
 	nbt.putBoolean("canBeCharged", item.canBeCharged());
-	nbt.putBoolean("creativeGroup", item.canBeCharged());
-	nbt.putString("creativeCategory", item.getCreativeGroup());
+	nbt.putString("creativeGroup", item.getCreativeGroup());
+	nbt.putInt("creativeCategory", (int)item.getCreativeCategory());
 	nbt.putInt("armorValue", item.getArmorValue());
 	nbt.putInt("getAttackDamage", item.getAttackDamage());
 	nbt.putInt("toughnessValue", item.getToughnessValue());
