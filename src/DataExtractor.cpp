@@ -210,7 +210,7 @@ void dumpBlockAttributesData() {
 	logger.info("Successfully extract " + to_string(blockStateCounter) + " block states' attributes!");
 	writeJSON("data/block_attributes.json", array);
 	writeNBT("data/block_attributes.nbt", tag);
-	logger.info("Block attribute data have been saved to \"data/block_attributes.json\"");
+	logger.info(R"(Block attribute data have been saved to "data/block_attributes.nbt" and "data/block_attributes.json")");
 }
 
 nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>&
@@ -371,7 +371,7 @@ void dumpItemData() {
 	logger.info("Successfully extract " + to_string(counter) + " items' data!");
 	writeJSON("data/item_data.json", array);
 	writeNBT("data/item_data.nbt", tag);
-	logger.info("Items' data have been saved to \"data/item_data.json\"");
+	logger.info(R"(Items' data have been saved to "data/item_data.nbt" and "data/item_data.json")");
 }
 
 nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>&
@@ -551,6 +551,7 @@ void dumpCreativeItemData() {
 	out << global.toJson(4);
 	out.close();
 	writeNBT("data/creative_items.nbt", global);
+	logger.info(R"(Creative items data has been saved to "data/creative_items.nbt" and "data/creative_items.json")");
 }
 
 void dumpPalette() {
@@ -568,7 +569,7 @@ void dumpPalette() {
 	json << global.toJson(4);
 	json.close();
 	writeNBT("data/block_palette.nbt", global);
-	logger.info("Block palette table has been saved to \"data/block_palette.nbt\"");
+	logger.info(R"(Block palette table has been saved to "data/block_palette.nbt" and "data/block_palette.json"))");
 }
 
 void dumpBiomeData() {
