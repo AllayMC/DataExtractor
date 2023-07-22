@@ -254,8 +254,10 @@ void dumpBlockAttributesData() {
 				break;
 			}
 		}
-		list.add(generateNBTFromBlockState(block).clone());
-		array[blockStateCounter] = generateJsonObjFromBlockState(block);
+		auto obj = generateJsonObjFromBlockState(block);
+		array[blockStateCounter] = obj;
+		auto obj2 = generateNBTFromBlockState(block);
+		list.add(obj2.clone());
 		blockStateCounter++;
 	}
 	tag.put("block", list.copyList());
@@ -275,9 +277,8 @@ generateJsonObjFromBlockState(const Block& block) {
 		auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
 		logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
 		const Material& material = legacy.getMaterial();
-
 		auto nbt = json::parse(block.getSerializationId().clone()->toJson(4));
-		obj.update(nbt);
+		obj["block"] = nbt;
 		obj["descriptionId"] = block.getDescriptionId();
 		obj["legacyId"] = block.getId();
 		obj["runtimeId"] = block.getRuntimeId();
@@ -341,13 +342,7 @@ CompoundTag generateNBTFromBlockState(const Block& block) {
 		auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
 		logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
 		const Material& material = legacy.getMaterial();
-		map<std::string, CompoundTagVariant>& map = const_cast<CompoundTag&>(block.getSerializationId()).value();
-		auto iter = map.begin();
-		while (iter != map.end()) {
-			string key = iter->first;
-			nbt.put(key, std::move(*(iter->second.asTag())));
-			iter++;
-		}
+		nbt.putCompound("block", block.getSerializationId().clone());
 		nbt.putString("descriptionId", block.getDescriptionId());
 		nbt.putInt("legacyId", block.getId());
 		nbt.putInt("runtimeId", block.getRuntimeId());
@@ -416,8 +411,10 @@ void dumpItemData() {
 		auto item = ItemRegistryManager::getItemRegistry().getItem(id);
 		if (item.expired())
 			continue;
-		list.add(generateNBTFromItem(*item).clone());
-		array[counter] = generateJsonFromItem(*item);
+		auto obj = generateJsonFromItem(*item);
+		array[blockStateCounter] = obj;
+		auto obj2 = generateNBTFromItem(*item);
+		list.add(obj2.clone());
 		counter++;
 	}
 	tag.put("item", list.copyList());
