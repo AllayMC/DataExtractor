@@ -382,6 +382,13 @@ generateJsonFromItem(const Item& item) {
 	logger.info("Extracting item - " + item.getFullItemName());
 
 	obj["id"] = item.getId();
+	try {
+		if (!item.getLegacyBlock().expired() && item.getLegacyBlock().get() != nullptr)
+			obj["blockId"] = item.getLegacyBlock()->getNamespace() + ":" + item.getLegacyBlock()->getRawNameId();
+	}
+	catch (exception& e) {
+		logger.warn("Exception occur when trying to get block for item " + item.getFullItemName());
+	}
 	obj["descriptionId"] = item.getDescriptionId();
 	obj["name"] = item.getFullItemName();
 	obj["maxDamage"] = item.getMaxDamage();
@@ -414,12 +421,19 @@ generateJsonFromItem(const Item& item) {
 	return obj;
 }
 
-CompoundTag& generateNBTFromItem(const Item& item){
+CompoundTag& generateNBTFromItem(const Item& item) {
 	CompoundTag nbt;
 	Logger logger;
 
 	logger.info("Extracting item - " + item.getFullItemName());
 	nbt.putShort("id", item.getId());
+	try {
+		if (!item.getLegacyBlock().expired() && item.getLegacyBlock().get() != nullptr)
+			nbt.putString("blockId", item.getLegacyBlock()->getNamespace() + ":" + item.getLegacyBlock()->getRawNameId());
+	}
+	catch (exception& e) {
+		logger.warn("Exception occur when trying to get block for item " + item.getFullItemName());
+	}
 	nbt.putString("descriptionId", item.getDescriptionId());
 	nbt.putString("name", item.getFullItemName());
 	nbt.putShort("maxDamage", item.getMaxDamage());
@@ -507,7 +521,6 @@ void dumpCreativeItemData() {
 	logger.info("Extracting creative items...");
 
 	CompoundTag global;
-	auto array = json::array();
 	unsigned int index = 0;
 	CreativeItemRegistry::forEachCreativeItemInstance([&logger, &index, &global](const ItemInstance& itemInstance) {
 		logger.info("index: " + to_string(index));
@@ -518,16 +531,26 @@ void dumpCreativeItemData() {
 		}
 		logger.info("Extracting creative item - " + itemStack.getName() + ", index: " + to_string(index));
 		CompoundTag obj;
-		obj.put("nbt", itemStack.getNbt()->copy());
+		obj.putInt64("index", index);
+		obj.putString("name", itemStack.getItem()->getFullItemName());
+		obj.putInt("count", itemStack.getCount());
+		obj.putInt("damage", itemStack.getDamageValue());
+		if (itemStack.isBlock()) {
+			obj.putInt("blockStateHash", itemStack.getBlock()->computeRawSerializationIdHashForNetwork());
+		}
+		if (itemStack.getNbt()->contains("tag")) {
+			obj.put("tag", itemStack.getNbt()->getCompoundTag("tag")->copy());
+		}
+
 		global.put(to_string(index), obj.copy());
 		index++;
 		return true;
 		});
-	auto json = ofstream("data/creative_items.json", ofstream::out | ofstream::trunc);
-	json << global.toJson(4);
-	json.close();
+
+	auto out = ofstream("data/creative_items.json", ofstream::out | ofstream::trunc);
+	out << global.toJson(4);
+	out.close();
 	writeNBT("data/creative_items.nbt", global);
-	logger.info(R"(Creative items data has been saved to "data/creative_items.nbt" and "data/creative_items.snbt")");
 }
 
 void dumpPalette() {
