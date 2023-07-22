@@ -636,8 +636,8 @@ void dumpBiomeData() {
 		biomeInfoMap[biome.getName()] = obj;
 		});
 	writeNBT("data/biome_definitions.nbt", biomes);
-	writeJSON("data/biome_id_and_type.json", biomeInfoMap);
-	logger.info(R"(Biome definitions has been saved to "data/biome_definitions.snbt" and "data/biome_id_and_type.json")");
+	writeJSON("data/biome_definitions.json", biomeInfoMap);
+	logger.info(R"(Biome definitions has been saved to "data/biome_definitions.nbt" and "data/biome_definitions.json")");
 }
 
 void dumpCommandArgData() {
