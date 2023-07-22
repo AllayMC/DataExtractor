@@ -9,11 +9,14 @@ file(GLOB_RECURSE SRC_FILES_DIR
         ${PROJECT_SOURCE_DIR}/src/*.c
         ${PROJECT_SOURCE_DIR}/src/*.cpp
         ${PROJECT_SOURCE_DIR}/src/*.h
+        ${PROJECT_SOURCE_DIR}/src/*.hpp
 )
 
 include_directories(
         ${CMAKE_SOURCE_DIR}/SDK/include
+        ${PROJECT_SOURCE_DIR}/src/*.h
         ${CMAKE_SOURCE_DIR}/zlib-ng/include
+        ${CMAKE_SOURCE_DIR}/nbt-cpp/*.hpp
 )
 
 link_directories(
@@ -64,7 +67,7 @@ add_link_options(
         /SUBSYSTEM:CONSOLE
 )
 
-add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_FILES_DIR})
+add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_FILES_DIR} nbt-cpp/nbt.cpp)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}
         "${CMAKE_SOURCE_DIR}/SDK/lib/LiteLoader.lib"

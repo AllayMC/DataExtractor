@@ -48,10 +48,10 @@
 #include "llapi/mc/PropertyGroupManager.hpp"
 #include "llapi/mc/Spawner.hpp"
 #include "llapi/mc/MinecraftCommands.hpp"
-#include "llapi/mc/CreativeItemRegistry.hpp"
 #include "llapi/mc/CreativeItemEntry.hpp"
 #include "llapi/mc/ItemInstance.hpp"
 #include "llapi/mc/BinaryStream.hpp"
+#include "NBTHelpers.h"
 
 using json = nlohmann::json;
 using namespace std;
@@ -340,13 +340,6 @@ void dumpEntityData() {
         obj["canonicalName"] = pair.second->getCanonicalName();
         obj["initEvent"] = pair.second->getInitEvent();
         obj["legacyActorType"] = static_cast<__int32>(pair.second->_getLegacyActorType());
-        obj["isVanilla"] = pair.second->isVanilla();
-
-//        Unused
-//        obj["identifier"] = pair.second->getIdentifier();
-//        obj["fullName"] = pair.second->getFullName();
-//        obj["namespace"] = pair.second->getNamespace();
-//        obj["canonicalHash"] = pair.second->getCanonicalHash();
 
         auto actorPropertyDataTag = level->getActorPropertyGroup().getActorPropertyDataTag(pair.second->getCanonicalHash()).toJson(4);
         obj["actorPropertyDataTag"] = json::parse(actorPropertyDataTag);
@@ -387,7 +380,7 @@ void dumpCreativeItemData() {
 
     logger.info("Extracting creative items...");
 
-    auto global = CompoundTag::create();
+    CompoundTag global;
     unsigned int index = 0;
     CreativeItemRegistry::forEachCreativeItemInstance([&logger, &index, &global](const ItemInstance & itemInstance) {
         logger.info("index: " + to_string(index));
@@ -397,25 +390,24 @@ void dumpCreativeItemData() {
             return true;
         }
         logger.info("Extracting creative item - " + itemStack.getName() + ", index: " + to_string(index));
-        auto obj = CompoundTag::create();
-        obj->putInt64("index", index);
-        obj->putCompound("nbt", itemStack.getNbt()->clone());
+        CompoundTag obj;
+        obj.putInt64("index", index);
+        obj.put("nbt", itemStack.getNbt()->copy());
 
-        global->putCompound(to_string(index), obj->clone());
+        global.put(to_string(index), obj.copy());
         index++;
         return true;
     });
 
-    //TODO: 输出nbt文件
-//    BinaryStream binaryStream;
-//    binaryStream.writeCompoundTag(*global);
-//    auto out = ofstream("data/creative_items.nbt", ofstream::out | ofstream::trunc);
-//    out << binaryStream.getRaw();
-//    out.close();
-    auto out2 = ofstream("data/creative_items_snbt.json", ofstream::out | ofstream::trunc);
-    out2 << global->toSNBT(4);
+    nbt::tags::compound_tag root(true);
+    Compound_Helper(root, &global);
+    auto out = ofstream("data/creative_items.nbt", ofstream::out | ofstream::trunc);
+    out << contexts::bedrock_disk << root;
+    out.close();
+    auto out2 = ofstream("data/creative_items.snbt", ofstream::out | ofstream::trunc);
+    out2 << global.toSNBT(4);
     out2.close();
-    logger.info(R"(Creative items data has been saved to "data/creative_items.nbt" and "data/creative_items_snbt.json")");
+    logger.info(R"(Creative items data has been saved to "data/creative_items.nbt" and "data/creative_items.snbt")");
 }
 
 void dumpPalette() {
@@ -430,10 +422,10 @@ void dumpPalette() {
     }
     global.put("blocks", blocks.copyList());
 
-    auto out = ofstream("data/block_palette.json", ofstream::out | ofstream::trunc);
-    out << global.toJson(4);
+    auto out = ofstream("data/block_palette.snbt", ofstream::out | ofstream::trunc);
+    out << global.toSNBT(4);
     out.close();
-    logger.info("Block palette table has been saved to \"data/block_palette.json\"");
+    logger.info("Block palette table has been saved to \"data/block_palette.snbt\"");
 }
 
 std::string parseBiomeTypeStrById(VanillaBiomeTypes type) {
@@ -500,15 +492,15 @@ void dumpBiomeData() {
         biomeInfoMap[biome.getName()] = obj;
     });
 
-    auto out = ofstream("data/biome_definitions.json", ofstream::out | ofstream::trunc);
-    out << biomes.toJson(4);
+    auto out = ofstream("data/biome_definitions.snbt", ofstream::out | ofstream::trunc);
+    out << biomes.toSNBT(4);
     out.close();
 
     out = ofstream("data/biome_id_and_type.json", ofstream::out | ofstream::trunc);
     out << biomeInfoMap.dump(4);
     out.close();
 
-    logger.info(R"(Biome definitions has been saved to "data/biome_definitions.json" and "data/biome_id_and_type.json")");
+    logger.info(R"(Biome definitions has been saved to "data/biome_definitions.snbt" and "data/biome_id_and_type.json")");
 }
 
 void dumpCommandArgData() {
