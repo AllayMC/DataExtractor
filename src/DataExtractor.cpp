@@ -290,6 +290,12 @@ generateJsonFromItem(const Item &item) {
     logger.info("Extracting item - " + item.getFullItemName());
 
     obj["id"] = item.getId();
+    try {
+        if (!item.getLegacyBlock().expired() && item.getLegacyBlock().get() != nullptr)
+            obj["blockId"] = item.getLegacyBlock()->getNamespace() + ":" + item.getLegacyBlock()->getRawNameId();
+    } catch (exception &e) {
+        logger.warn("Exception occur when trying to get block for item " + item.getFullItemName());
+    }
     obj["descriptionId"] = item.getDescriptionId();
     obj["name"] = item.getFullItemName();
     obj["maxDamage"] = item.getMaxDamage();
