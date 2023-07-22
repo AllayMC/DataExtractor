@@ -60,12 +60,8 @@ using namespace std;
 void extractData();
 void dumpBlockAttributesData();
 CompoundTag generateNBTFromBlockState(const Block& block);
-nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
-generateJsonObjFromBlockState(const Block& block);
 void dumpItemData();
 CompoundTag generateNBTFromItem(const Item& item);
-nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
-generateJsonFromItem(const Item& item);
 void dumpEntityData();
 void dumpCreativeItemData();
 void dumpPalette();
@@ -254,84 +250,15 @@ void dumpBlockAttributesData() {
 				break;
 			}
 		}
-		auto obj = generateJsonObjFromBlockState(block);
-		array[blockStateCounter] = obj;
 		auto obj2 = generateNBTFromBlockState(block);
 		list.add(obj2.clone());
 		blockStateCounter++;
 	}
 	tag.put("block", list.copyList());
 	logger.info("Successfully extract " + to_string(blockStateCounter) + " block states' attributes!");
-	writeJSON("data/block_attributes.json", array);
 	writeNBT("data/block_attributes.nbt", tag);
 	writeSNBT("data/block_attributes.snbt", tag);
-	logger.info(R"(Block attribute data have been saved to "data/block_attributes.nbt", "data/block_attributes.snbt" and "data/block_attributes.json")");
-}
-
-nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
-generateJsonObjFromBlockState(const Block& block) {
-	auto obj = json::object();
-	Logger logger;
-	try {
-		auto& legacy = block.getLegacyBlock();
-		auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
-		logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
-		const Material& material = legacy.getMaterial();
-		auto nbt = json::parse(block.getSerializationId().clone()->toJson(4));
-		obj.update(nbt);
-		obj["descriptionId"] = block.getDescriptionId();
-		obj["legacyId"] = block.getId();
-		obj["runtimeId"] = block.getRuntimeId();
-		obj["blockStateHash"] = ((name != "minecraft:unknown") ? block.computeRawSerializationIdHashForNetwork() : -2);
-		obj["thickness"] = block.getThickness();
-		obj["friction"] = to_string(block.getFriction());
-		obj["hardness"] = to_string(block.getDestroySpeed());
-		obj["explosionResistance"] = block.getExplosionResistance();
-		obj["canBeBrokenFromFalling"] = block.canBeBrokenFromFalling();
-		obj["isSolid"] = block.isSolid();
-		obj["isSolidBlocking"] = material.isSolidBlocking();
-		obj["isContainerBlock"] = block.isContainerBlock();
-		obj["hasBlockEntity"] = block.hasBlockEntity();
-		obj["isLiquid"] = material.isLiquid();
-		obj["isAlwaysDestroyable"] = material.isAlwaysDestroyable();
-		obj["translucency"] = material.getTranslucency();
-		obj["burnChance"] = block.getFlameOdds();
-		obj["burnAbility"] = block.getBurnOdds();
-		obj["light"] = (int)block.getLight().value;
-		obj["flammable"] = block.isLavaFlammable();
-		obj["lightEmission"] = (int)block.getLightEmission().value;
-		obj["isUnbreakable"] = block.isUnbreakable();
-		obj["isPowerSource"] = block.isSignalSource();
-		obj["breaksFallingBlocks"] = block.breaksFallingBlocks(legacy.getRequiredBaseGameVersion());
-		obj["isWaterBlocking"] = block.isWaterBlocking();
-		obj["isMotionBlockingBlock"] = block.isMotionBlockingBlock();
-		obj["hasComparatorSignal"] = block.hasComparatorSignal();
-		obj["pushesUpFallingBlocks"] = block.pushesUpFallingBlocks();
-		obj["waterSpreadCausesSpawn"] = block.waterSpreadCausesSpawn();
-		obj["canContainLiquid"] = legacy.canContainLiquid();
-		auto color = block.getMapColor(*Level::getBlockSource(0), BlockPos(0, 10, 0));
-		auto colorObj = json::object();
-		colorObj["r"] = (int)(color.r * 255);
-		colorObj["g"] = (int)(color.g * 255);
-		colorObj["b"] = (int)(color.b * 255);
-		colorObj["a"] = (int)(color.a * 255);
-		colorObj["hexString"] = color.toHexString();
-		colorObj["nearestColorCode"] = color.toNearestColorCode();
-		obj["color"] = colorObj;
-		obj["canBeMovingBlock"] = material.getBlocksMotion();
-		obj["blocksPrecipitation"] = material.getBlocksPrecipitation();
-		obj["superHot"] = material.isSuperHot();
-		AABB tmp = AABB();
-		auto& aabb = block.getVisualShape(tmp);
-		stringstream aabbStr;
-		aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
-			<< "," << aabb.max.y << "," << aabb.max.z;
-		obj["aabb"] = aabbStr.str();
-	}
-	catch (exception& e) {
-		logger.error("Exception caught : " + string(e.what()));
-	}
-	return obj;
+	logger.info(R"(Block attribute data have been saved to "data/block_attributes.nbt", "data/block_attributes.snbt")");
 }
 
 CompoundTag generateNBTFromBlockState(const Block& block) {
@@ -408,14 +335,11 @@ void dumpItemData() {
 	Logger logger;
 	CompoundTag tag;
 	ListTag list;
-	auto array = json::array();
 	int counter = 0;
 	for (short id = -2000; id <= 2000; id++) {
 		auto item = ItemRegistryManager::getItemRegistry().getItem(id);
 		if (item.expired())
 			continue;
-		auto obj = generateJsonFromItem(*item);
-		array[blockStateCounter] = obj;
 		auto obj2 = generateNBTFromItem(*item);
 		list.add(obj2.clone());
 		counter++;
@@ -425,53 +349,6 @@ void dumpItemData() {
 	writeNBT("data/item_data.nbt", tag);
 	writeSNBT("data/item_data.snbt", tag);
 	logger.info(R"(Items' data have been saved to "data/item_data.nbt", "data/item_data.snbt" and "data/item_data.json")");
-}
-
-nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>
-generateJsonFromItem(const Item& item) {
-	auto obj = json::object();
-	Logger logger;
-
-	logger.info("Extracting item - " + item.getFullItemName());
-
-	obj["id"] = item.getId();
-	try {
-		if (!item.getLegacyBlock().expired() && item.getLegacyBlock().get() != nullptr)
-			obj["blockId"] = item.getLegacyBlock()->getNamespace() + ":" + item.getLegacyBlock()->getRawNameId();
-	}
-	catch (exception& e) {
-		logger.warn("Exception occur when trying to get block for item " + item.getFullItemName());
-	}
-	obj["descriptionId"] = item.getDescriptionId();
-	obj["name"] = item.getFullItemName();
-	obj["maxDamage"] = item.getMaxDamage();
-	obj["auxValuesDescription"] = item.getAuxValuesDescription();
-	obj["isArmor"] = item.isArmor();
-	obj["isBlockPlanterItem"] = item.isBlockPlanterItem();
-	obj["isDamageable"] = item.isDamageable();
-	obj["isDyeable"] = item.isDyeable();
-	obj["isDye"] = item.isDye();
-	obj["itemColorName"] = ItemColorUtil::getName(item.getItemColor());
-	obj["itemColorRGB"] = ItemColorUtil::getRGBColor(item.getItemColor());
-	obj["isFertilizer"] = item.isFertilizer();
-	obj["isThrowable"] = item.isThrowable();
-	obj["isFood"] = item.isFood();
-	obj["isUseable"] = item.isUseable();
-	obj["isElytra"] = item.isElytra();
-	obj["canBeDepleted"] = item.canBeDepleted();
-	obj["canDestroyInCreative"] = item.canDestroyInCreative();
-	obj["canUseOnSimTick"] = item.canUseOnSimTick();
-	obj["canBeCharged"] = item.canBeCharged();
-	obj["creativeGroup"] = item.getCreativeGroup();
-	obj["creativeCategory"] = item.getCreativeCategory();
-	obj["armorValue"] = item.getArmorValue();
-	obj["attackDamage"] = item.getAttackDamage();
-	obj["toughnessValue"] = item.getToughnessValue();
-	obj["viewDamping"] = item.getViewDamping();
-	obj["cooldownTime"] = item.getCooldownTime();
-	obj["cooldownType"] = item.getCooldownType();
-
-	return obj;
 }
 
 CompoundTag generateNBTFromItem(const Item& item) {
