@@ -107,7 +107,7 @@ void saveFile(string const& name, vector<string>& blocks) {
 
 bool gzip_compress(const std::string& original_str, std::string& str) {
 	zng_stream d_stream = { 0 };
-	if (Z_OK != zng_deflateInit2(&d_stream, Z_DEFAULT_COMPRESSION, Z_DEFLATED, MAX_WBITS + 16, 9, Z_DEFAULT_STRATEGY)) {
+	if (Z_OK != zng_deflateInit2(&d_stream, Z_BEST_COMPRESSION, Z_DEFLATED, MAX_WBITS + 16, 9, Z_DEFAULT_STRATEGY)) {
 		return false;
 	}
 	uLong len = zng_compressBound(original_str.size());
@@ -132,6 +132,14 @@ inline void writeNBT(string fileName, CompoundTag& tag) {
 	auto out = ofstream(fileName, ofstream::out | ofstream::binary | ofstream::trunc);
 	out << v;
 	out.close();
+}
+
+inline void writeNetworkNBT(string fileName, CompoundTag& tag) {
+    string v;
+    gzip_compress(tag.toNetworkNBT(), v);
+    auto out = ofstream(fileName, ofstream::out | ofstream::binary | ofstream::trunc);
+    out << v;
+    out.close();
 }
 
 inline void writeJSON(string fileName, nlohmann::json& json) {
@@ -515,8 +523,9 @@ void dumpBiomeData() {
 		biomeInfoMap[biome.getName()] = obj;
 		});
 	writeNBT("data/biome_definitions.nbt", biomes);
+    writeNetworkNBT("data/biome_definitions_network.nbt", biomes);
 	writeSNBT("data/biome_definitions.snbt", biomes);
-	logger.info(R"(Biome definitions has been saved to "data/biome_definitions.nbt", "data/biome_definitions.snbt")");
+	logger.info(R"(Biome definitions has been saved to "data/biome_definitions.nbt", "data/biome_definitions_network.nbt" and "data/biome_definitions.snbt")");
 }
 
 void dumpCommandArgData() {
