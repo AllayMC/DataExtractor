@@ -523,6 +523,7 @@ void dumpBiomeData() {
 	writeNBT("data/biome_definitions.nbt", biomes);
     writeNetworkNBT("data/biome_definitions_network.nbt", biomes);
 	writeSNBT("data/biome_definitions.snbt", biomes);
+    writeJSON("data/biome_id_and_type.json", biomeInfoMap);
 	logger.info(R"(Biome definitions has been saved to "data/biome_definitions.nbt", "data/biome_definitions_network.nbt" and "data/biome_definitions.snbt")");
 }
 
