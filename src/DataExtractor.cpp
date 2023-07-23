@@ -135,10 +135,8 @@ inline void writeNBT(string fileName, CompoundTag& tag) {
 }
 
 inline void writeNetworkNBT(string fileName, CompoundTag& tag) {
-    string v;
-    gzip_compress(tag.toNetworkNBT(), v);
     auto out = ofstream(fileName, ofstream::out | ofstream::binary | ofstream::trunc);
-    out << v;
+    out << tag.toNetworkNBT();
     out.close();
 }
 
