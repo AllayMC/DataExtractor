@@ -30,6 +30,7 @@
 #include "llapi/mc/ItemRegistryManager.hpp"
 #include "llapi/mc/Item.hpp"
 #include "llapi/mc/Experiments.hpp"
+#include "llapi/mc/ItemStackBase.hpp"
 #include "llapi/mc/ItemStack.hpp"
 #include "llapi/mc/CreativeItemRegistry.hpp"
 #include "llapi/mc/ItemColorUtil.hpp"
@@ -354,12 +355,13 @@ void dumpItemData() {
 	logger.info("Successfully extract " + to_string(counter) + " items' data!");
 	writeNBT("data/item_data.nbt", tag);
 	writeSNBT("data/item_data.snbt", tag);
-	logger.info(R"(Items' data have been saved to "data/item_data.nbt", "data/item_data.snbt" and "data/item_data.json")");
+	logger.info(R"(Items' data have been saved to "data/item_data.nbt", "data/item_data.snbt")");
 }
 
 CompoundTag generateNBTFromItem(const Item& item) {
 	CompoundTag nbt;
 	Logger logger;
+    auto stack = ItemStack::create(item.getFullItemName(), 1);
 
 	logger.info("Extracting item - " + item.getFullItemName());
 	nbt.putShort("id", item.getId());
@@ -373,6 +375,7 @@ CompoundTag generateNBTFromItem(const Item& item) {
 	nbt.putString("descriptionId", item.getDescriptionId());
 	nbt.putString("name", item.getFullItemName());
 	nbt.putShort("maxDamage", item.getMaxDamage());
+    nbt.putInt("maxStackSize", stack->getMaxStackSize());
 	nbt.putString("auxValuesDescription", item.getAuxValuesDescription());
 	nbt.putBoolean("isArmor", item.isArmor());
 	nbt.putBoolean("isBlockPlanterItem", item.isBlockPlanterItem());
