@@ -53,6 +53,8 @@
 #include "llapi/mc/ItemInstance.hpp"
 #include "llapi/mc/BinaryStream.hpp"
 #include "llapi/mc/CompoundTagVariant.hpp"
+#include "llapi/mc/BlockLegacy.hpp"
+#include "llapi/mc/IConstBlockSource.hpp"
 
 using json = nlohmann::json;
 using namespace std;
@@ -268,6 +270,13 @@ void dumpBlockAttributesData() {
 	logger.info(R"(Block attribute data have been saved to "data/block_attributes.nbt", "data/block_attributes.snbt")");
 }
 
+std::string aabbToStr(const AABB &aabb) {
+    stringstream aabbStr;
+    aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
+        << "," << aabb.max.y << "," << aabb.max.z;
+    return aabbStr.str();
+}
+
 CompoundTag generateNBTFromBlockState(const Block& block) {
 	Logger logger;
 	CompoundTag nbt;
@@ -324,14 +333,15 @@ CompoundTag generateNBTFromBlockState(const Block& block) {
 		nbt.putBoolean("canBeMovingBlock", material.getBlocksMotion());
 		nbt.putBoolean("blocksPrecipitation", material.getBlocksPrecipitation());
 		nbt.putBoolean("superHot", material.isSuperHot());
-		AABB tmp = AABB();
-		auto& aabb = block.getVisualShape(tmp);
-		stringstream aabbStr;
-		aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
-			<< "," << aabb.max.y << "," << aabb.max.z;
-		nbt.putString("aabb", aabbStr.str());
-	}
-	catch (exception& e) {
+        AABB tmp = AABB();
+        auto& aabb2 = block.getLegacyBlock().getAABB(*(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), block, tmp, true);
+        //TODO: 暂时不清楚这个aabb的作用，不过看样子是方块模型的aabb
+        nbt.putString("aabb-visual", aabbToStr(aabb2));
+        AABB tmp2 = AABB();
+        optional_ref<GetCollisionShapeInterface const> nullRef{};
+        block.getCollisionShape(tmp2, *(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), nullRef);
+        nbt.putString("aabb-collision", aabbToStr(tmp2));
+	} catch (exception& e) {
 		logger.error("Exception caught : " + string(e.what()));
 	}
 
