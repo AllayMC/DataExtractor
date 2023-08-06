@@ -336,11 +336,11 @@ CompoundTag generateNBTFromBlockState(const Block& block) {
         AABB tmp = AABB();
         auto& aabb2 = block.getLegacyBlock().getAABB(*(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), block, tmp, true);
         //TODO: 暂时不清楚这个aabb的作用，不过看样子是方块模型的aabb
-        nbt.putString("aabb-visual", aabbToStr(aabb2));
+        nbt.putString("aabbVisual", aabbToStr(aabb2));
         AABB tmp2 = AABB();
         optional_ref<GetCollisionShapeInterface const> nullRef{};
         block.getCollisionShape(tmp2, *(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), nullRef);
-        nbt.putString("aabb-collision", aabbToStr(tmp2));
+        nbt.putString("aabbCollision", aabbToStr(tmp2));
 	} catch (exception& e) {
 		logger.error("Exception caught : " + string(e.what()));
 	}
