@@ -59,6 +59,8 @@
 using json = nlohmann::json;
 using namespace std;
 
+AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
+
 //define
 void extractData();
 void dumpBlockAttributesData();
@@ -341,6 +343,7 @@ CompoundTag generateNBTFromBlockState(const Block& block) {
         optional_ref<GetCollisionShapeInterface const> nullRef{};
         block.getCollisionShape(tmp2, *(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), nullRef);
         nbt.putString("aabbCollision", aabbToStr(tmp2));
+        nbt.putBoolean("hasCollision", tmp2 != ZERO_AABB);
 	} catch (exception& e) {
 		logger.error("Exception caught : " + string(e.what()));
 	}
