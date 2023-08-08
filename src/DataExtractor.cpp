@@ -335,11 +335,11 @@ CompoundTag generateNBTFromBlockState(const Block& block) {
 		nbt.putBoolean("canBeMovingBlock", material.getBlocksMotion());
 		nbt.putBoolean("blocksPrecipitation", material.getBlocksPrecipitation());
 		nbt.putBoolean("superHot", material.isSuperHot());
-        AABB tmp = AABB();
+        AABB tmp = AABB(0, 0, 0, 0, 0, 0);
         auto& aabb2 = block.getLegacyBlock().getAABB(*(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), block, tmp, true);
         //TODO: 暂时不清楚这个aabb的作用，不过看样子是方块模型的aabb
         nbt.putString("aabbVisual", aabbToStr(aabb2));
-        AABB tmp2 = AABB();
+        AABB tmp2 = AABB(0, 0, 0, 0, 0, 0);
         optional_ref<GetCollisionShapeInterface const> nullRef{};
         block.getCollisionShape(tmp2, *(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), nullRef);
         nbt.putString("aabbCollision", aabbToStr(tmp2));
