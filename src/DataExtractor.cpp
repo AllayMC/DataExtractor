@@ -490,10 +490,19 @@ void dumpBlockIdToItemIdMap() {
         auto item = ItemRegistryManager::getItemRegistry().getItem(id);
         if (item.expired())
             continue;
+        string item_id = item->getFullItemName();
         auto & block = item->getLegacyBlock();
-        if (!block.expired() && block.get() != nullptr) {
-            string block_id = block->getNamespace() + ":" + block->getRawNameId();
-            string item_id = item->getFullItemName();
+        string block_id;
+        bool hasBlock = !block.expired() && block.get() != nullptr;
+        if (hasBlock)
+            block_id = block->getNamespace() + ":" + block->getRawNameId();
+        //HACK: 这是一个BDS的bug, 我们需要手动修复
+        //TODO: 删除这个HACK当BDS修复了之后
+        if (item_id.ends_with("_hanging_sign") || item_id == "minecraft:bamboo_door" || item_id == "minecraft:cherry_door") {
+            hasBlock = true;
+            block_id = item_id;
+        }
+        if (hasBlock) {
             nbt.putString(block_id, item_id);
             json[block_id] = item_id;
             logger.info(block_id + " -> " + item_id);
