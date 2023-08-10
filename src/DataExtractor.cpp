@@ -70,6 +70,7 @@ CompoundTag generateNBTFromItem(const Item& item);
 void dumpEntityData();
 void dumpCreativeItemData();
 void dumpPalette();
+void dumpBlockIdToItemIdMap();
 void dumpBiomeData();
 void dumpCommandArgData();
 void dumpAvailableCommand();
@@ -157,59 +158,13 @@ inline void writeSNBT(string fileName, CompoundTag& tag) {
     out.close();
 }
 
-
-std::string parseBiomeTypeStrById(VanillaBiomeTypes type) {
-	switch (type) {
-	case VanillaBiomeTypes::Beach:
-		return "BEACH";
-	case VanillaBiomeTypes::Desert:
-		return "DESERT";
-	case VanillaBiomeTypes::ExtremeHills:
-		return "EXTREME_HILLS";
-	case VanillaBiomeTypes::Flat:
-		return "FLAT";
-	case VanillaBiomeTypes::Forest:
-		return "FOREST";
-	case VanillaBiomeTypes::Hell:
-		return "HELL";
-	case VanillaBiomeTypes::Ice:
-		return "ICE";
-	case VanillaBiomeTypes::Jungle:
-		return "JUNGLE";
-	case VanillaBiomeTypes::Mesa:
-		return "MESA";
-	case VanillaBiomeTypes::MushroomIsland:
-		return "MUSHROOM_ISLAND";
-	case VanillaBiomeTypes::Ocean:
-		return "OCEAN";
-	case VanillaBiomeTypes::Plain:
-		return "PLAIN";
-	case VanillaBiomeTypes::River:
-		return "RIVER";
-	case VanillaBiomeTypes::Savanna:
-		return "SAVANNA";
-	case VanillaBiomeTypes::StoneBeach:
-		return "STONE_BEACH";
-	case VanillaBiomeTypes::Swamp:
-		return "SWAMP";
-	case VanillaBiomeTypes::Taiga:
-		return "TAIGA";
-	case VanillaBiomeTypes::TheEnd:
-		return "THE_END";
-	case VanillaBiomeTypes::DataDriven:
-		return "DataDriven";
-	default:
-		return "UNKNOWN";
-	}
-}
-
 void PluginInit() {
 	Logger logger;
 	logger.info("DataExtractor plugin loaded!");
 
 	DynamicCommand::setup(
 		/* name = */ "ext",
-		/* description = */ "extract block attributes",
+		/* description = */ "extract data",
 		/* enums = */{},
 		/* params = */{},
 		/* overloads = */{ {} },
@@ -234,6 +189,7 @@ void extractData() {
 	dumpItemData();
 	dumpEntityData();
 	dumpPalette();
+    dumpBlockIdToItemIdMap();
 	dumpBiomeData();
 	//dumpCommandArgData();
 	dumpAvailableCommand();
@@ -303,8 +259,9 @@ CompoundTag generateNBTFromBlockState(const Block& block) {
 		nbt.putBoolean("isSolid", block.isSolid());
 		nbt.putBoolean("isSolidBlocking", material.isSolidBlocking());
 		nbt.putBoolean("isContainerBlock", block.isContainerBlock());
-		nbt.putBoolean("hasBlockEntity", material.isLiquid());
-		nbt.putBoolean("isLiquid", block.canBeBrokenFromFalling());
+		nbt.putBoolean("hasBlockEntity", block.getBlockEntityType() != BlockActorType::Undefined);
+        nbt.putString("blockEntityName", asString(magic_enum::enum_name(block.getBlockEntityType())));
+		nbt.putBoolean("isLiquid", material.isLiquid());
 		nbt.putBoolean("isAlwaysDestroyable", material.isAlwaysDestroyable());
 		nbt.putFloat("translucency", material.getTranslucency());
 		nbt.putInt("burnChance", block.getFlameOdds());
@@ -355,14 +312,14 @@ void dumpItemData() {
 	Logger logger;
 	CompoundTag tag;
 	ListTag list;
-	int counter = 0;
+    short counter = 0;
 	for (short id = -2000; id <= 2000; id++) {
 		auto item = ItemRegistryManager::getItemRegistry().getItem(id);
 		if (item.expired())
 			continue;
 		auto obj2 = generateNBTFromItem(*item);
 		list.add(obj2.clone());
-		counter++;
+        counter++;
 	}
 	tag.put("item", list.copyList());
 	logger.info("Successfully extract " + to_string(counter) + " items' data!");
@@ -438,7 +395,7 @@ void dumpEntityData() {
 		auto actorPropertyDataTag = level->getActorPropertyGroup().getActorPropertyDataTag(pair.second->getCanonicalHash()).toJson(4);
 		obj["actorPropertyDataTag"] = json::parse(actorPropertyDataTag);
 
-		//      todo: dumpEntityAABB(level, pair, obj);
+		//todo: dumpEntityAABB(level, pair, obj);
 
 		global[pair.second->getCanonicalName()] = obj;
 	}
@@ -462,7 +419,7 @@ void dumpEntityAABB(const Level* level, const pair<string, const ActorDefinition
 		aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
 			<< "," << aabb.max.y << "," << aabb.max.z;
 		obj["aabb"] = aabbStr.str();
-		//      todo: nbt
+		//todo: nbt
 		actor->kill();
 	}
 }
@@ -506,6 +463,8 @@ void dumpCreativeItemData() {
 void dumpPalette() {
 	Logger logger;
 
+    logger.info("Extracting block palette...");
+
 	auto& palette = Global<Minecraft>->getLevel()->getBlockPalette();
 
 	CompoundTag global;
@@ -517,6 +476,33 @@ void dumpPalette() {
 	writeNBT("data/block_palette.nbt", global);
 	writeSNBT("data/block_palette.snbt", global);
 	logger.info(R"(Block palette table has been saved to "data/block_palette.snbt", "data/block_palette.nbt"))");
+}
+
+void dumpBlockIdToItemIdMap() {
+    Logger logger;
+
+    logger.info("Extracting block id to item id map...");
+
+    CompoundTag nbt;
+    json json;
+
+    for (short id = -2000; id <= 2000; id++) {
+        auto item = ItemRegistryManager::getItemRegistry().getItem(id);
+        if (item.expired())
+            continue;
+        auto & block = item->getLegacyBlock();
+        if (!block.expired() && block.get() != nullptr) {
+            string block_id = block->getNamespace() + ":" + block->getRawNameId();
+            string item_id = item->getFullItemName();
+            nbt.putString(block_id, item_id);
+            json[block_id] = item_id;
+            logger.info(block_id + " -> " + item_id);
+        }
+    }
+
+    writeNBT("data/block_id_to_item_id_map.nbt", nbt);
+    writeJSON("data/block_id_to_item_id_map.json", json);
+    logger.info(R"(Block id to item id map has been saved to "data/block_id_to_item_id_map.json", "data/block_id_to_item_id_map.nbt"))");
 }
 
 void dumpBiomeData() {
@@ -533,7 +519,7 @@ void dumpBiomeData() {
 
 		auto obj = json::object();
 		obj["id"] = biome.getId();
-		obj["type"] = parseBiomeTypeStrById(biome.getBiomeType());
+		obj["type"] = asString(magic_enum::enum_name(biome.getBiomeType()));
 		biomeInfoMap[biome.getName()] = obj;
 		});
 	writeNBT("data/biome_definitions.nbt", biomes);
