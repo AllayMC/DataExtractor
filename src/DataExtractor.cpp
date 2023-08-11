@@ -469,7 +469,7 @@ void dumpPalette() {
 
 	CompoundTag global;
 	ListTag blocks;
-	for (unsigned int i = 0; i < blockStateCounter; i++) {
+	for (unsigned int i = 0; i <= blockStateCounter; i++) {
 		blocks.add(palette.getBlock(i).getSerializationId().clone());
 	}
 	global.put("blocks", blocks.copyList());
