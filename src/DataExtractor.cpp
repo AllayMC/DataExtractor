@@ -78,7 +78,7 @@ void dumpEntityAABB(const Level* level, const pair<string, const ActorDefinition
 	nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>& obj);
 void dumpPropertyTypeData();
 
-bool folderExists(const char* folderName) {
+static bool folderExists(const char* folderName) {
 	struct stat info {};
 	if (stat(folderName, &info) != 0) {
 		return false;
@@ -91,7 +91,7 @@ bool folderExists(const char* folderName) {
 	}
 }
 
-void createFolder(const char* folderName) {
+static void createFolder(const char* folderName) {
 	Logger logger;
 	int result = _mkdir(folderName);
 	if (result != 0) {
@@ -102,7 +102,7 @@ void createFolder(const char* folderName) {
 	}
 }
 
-void saveFile(string const& name, vector<string>& blocks) {
+static void saveFile(string const& name, vector<string>& blocks) {
 	sort(blocks.begin(), blocks.end(), [](string const& a, string const& b) { return a < b; });
 	auto out = ofstream("block_categories/" + name + ".txt", ofstream::out | ofstream::trunc);
 	for (string& b : blocks) {
@@ -111,7 +111,7 @@ void saveFile(string const& name, vector<string>& blocks) {
 	out.close();
 }
 
-bool gzip_compress(const std::string& original_str, std::string& str) {
+static bool gzip_compress(const std::string& original_str, std::string& str) {
 	zng_stream d_stream = { 0 };
 	if (Z_OK != zng_deflateInit2(&d_stream, Z_BEST_COMPRESSION, Z_DEFLATED, MAX_WBITS + 16, 9, Z_DEFAULT_STRATEGY)) {
 		return false;
@@ -132,7 +132,7 @@ bool gzip_compress(const std::string& original_str, std::string& str) {
 	return true;
 }
 
-inline void writeNBT(string fileName, CompoundTag& tag) {
+static inline void writeNBT(string fileName, CompoundTag& tag) {
 	string v;
 	gzip_compress(tag.toBinaryNBT(false), v);
 	auto out = ofstream(fileName, ofstream::out | ofstream::binary | ofstream::trunc);
@@ -140,19 +140,19 @@ inline void writeNBT(string fileName, CompoundTag& tag) {
 	out.close();
 }
 
-inline void writeNetworkNBT(string fileName, CompoundTag& tag) {
+static inline void writeNetworkNBT(string fileName, CompoundTag& tag) {
     auto out = ofstream(fileName, ofstream::out | ofstream::binary | ofstream::trunc);
     out << tag.toNetworkNBT();
     out.close();
 }
 
-inline void writeJSON(string fileName, nlohmann::json& json) {
+static inline void writeJSON(string fileName, nlohmann::json& json) {
 	auto out = ofstream(fileName, ofstream::out | ofstream::trunc);
 	out << json.dump(4);
 	out.close();
 }
 
-inline void writeSNBT(string fileName, CompoundTag& tag) {
+static inline void writeSNBT(string fileName, CompoundTag& tag) {
     auto out = ofstream(fileName, ofstream::out | ofstream::trunc);
     out << tag.toSNBT(4);
     out.close();
@@ -245,9 +245,10 @@ CompoundTag generateNBTFromBlockState(const Block& block) {
 		const Material& material = legacy.getMaterial();
 		auto sid = block.getSerializationId().clone();
 		nbt.putString("name", sid->getString("name"));
+		nbt.putString("descriptionId", block.getDescriptionId());
+		nbt.putString("blockEntityName", asString(magic_enum::enum_name(block.getBlockEntityType())));
 		nbt.putCompound("states", sid->getCompound("states")->clone());
 		nbt.putInt("version", sid->getInt("version"));
-		nbt.putString("descriptionId", block.getDescriptionId());
 		nbt.putInt("legacyId", block.getId());
 		nbt.putInt("runtimeId", block.getRuntimeId());
 		nbt.putInt("blockStateHash", ((name != "minecraft:unknown") ? block.computeRawSerializationIdHashForNetwork() : -2));
@@ -255,29 +256,11 @@ CompoundTag generateNBTFromBlockState(const Block& block) {
 		nbt.putFloat("friction", block.getFriction());
 		nbt.putFloat("hardness", block.getDestroySpeed());
 		nbt.putFloat("explosionResistance", block.getExplosionResistance());
-		nbt.putBoolean("canBeBrokenFromFalling", block.canBeBrokenFromFalling());
-		nbt.putBoolean("isSolid", block.isSolid());
-		nbt.putBoolean("isSolidBlocking", material.isSolidBlocking());
-		nbt.putBoolean("isContainerBlock", block.isContainerBlock());
-		nbt.putBoolean("hasBlockEntity", block.getBlockEntityType() != BlockActorType::Undefined);
-        nbt.putString("blockEntityName", asString(magic_enum::enum_name(block.getBlockEntityType())));
-		nbt.putBoolean("isLiquid", material.isLiquid());
-		nbt.putBoolean("isAlwaysDestroyable", material.isAlwaysDestroyable());
 		nbt.putFloat("translucency", material.getTranslucency());
 		nbt.putInt("burnChance", block.getFlameOdds());
 		nbt.putInt("burnAbility", block.getBurnOdds());
-		nbt.putInt("light", (int)block.getLight().value);
-		nbt.putBoolean("flammable", block.isLavaFlammable());
-		nbt.putBoolean("lightEmission", (int)block.getLightEmission().value);
-		nbt.putBoolean("isUnbreakable", block.isUnbreakable());
-		nbt.putBoolean("isPowerSource", block.isSignalSource());
-		nbt.putBoolean("breaksFallingBlocks", block.isWaterBlocking());
-		nbt.putBoolean("isWaterBlocking", block.isWaterBlocking());
-		nbt.putBoolean("isMotionBlockingBlock", block.isMotionBlockingBlock());
-		nbt.putBoolean("hasComparatorSignal", block.hasComparatorSignal());
-		nbt.putBoolean("pushesUpFallingBlocks", block.pushesUpFallingBlocks());
-		nbt.putBoolean("waterSpreadCausesSpawn", block.waterSpreadCausesSpawn());
-		nbt.putBoolean("canContainLiquid", legacy.canContainLiquid());
+		nbt.putInt("lightDampening", (int)block.getLight().value);//挡光
+		nbt.putInt("lightEmission", (int)block.getLightEmission().value);//发光
 
 		auto color = block.getMapColor(*Level::getBlockSource(0), BlockPos(0, 10, 0));
 		CompoundTag colorNbt;
@@ -289,18 +272,48 @@ CompoundTag generateNBTFromBlockState(const Block& block) {
 		colorNbt.putString("nearestColorCode", color.toNearestColorCode());
 		nbt.putCompound("color", colorNbt.clone());
 
-		nbt.putBoolean("canBeMovingBlock", material.getBlocksMotion());
-		nbt.putBoolean("blocksPrecipitation", material.getBlocksPrecipitation());
-		nbt.putBoolean("superHot", material.isSuperHot());
-        AABB tmp = AABB(0, 0, 0, 0, 0, 0);
-        auto& aabb2 = block.getLegacyBlock().getAABB(*(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), block, tmp, true);
-        //TODO: 暂时不清楚这个aabb的作用，不过看样子是方块模型的aabb
-        nbt.putString("aabbVisual", aabbToStr(aabb2));
-        AABB tmp2 = AABB(0, 0, 0, 0, 0, 0);
-        optional_ref<GetCollisionShapeInterface const> nullRef{};
-        block.getCollisionShape(tmp2, *(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), nullRef);
-        nbt.putString("aabbCollision", aabbToStr(tmp2));
-        nbt.putBoolean("hasCollision", tmp2 != ZERO_AABB);
+		AABB tmp = AABB(0, 0, 0, 0, 0, 0);
+		auto& aabb2 = block.getLegacyBlock().getAABB(*(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), block, tmp, true);
+		//TODO: 暂时不清楚这个aabb的作用，不过看样子是方块模型的aabb
+		nbt.putString("aabbVisual", aabbToStr(aabb2));
+		AABB tmp2 = AABB(0, 0, 0, 0, 0, 0);
+		optional_ref<GetCollisionShapeInterface const> nullRef{};
+		block.getCollisionShape(tmp2, *(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), nullRef);
+		nbt.putString("aabbCollision", aabbToStr(tmp2));
+
+		nbt.putBoolean("hasCollision", tmp2 != ZERO_AABB);
+		nbt.putBoolean("hasBlockEntity", block.getBlockEntityType() != BlockActorType::Undefined);
+		nbt.putBoolean("isAir", block.isAir());
+		nbt.putBoolean("isBounceBlock", block.isAir());
+		nbt.putBoolean("isButtonBlock", block.isButtonBlock());
+		nbt.putBoolean("isCropBlock", block.isCropBlock());
+		nbt.putBoolean("isDoorBlock", block.isDoorBlock());
+		nbt.putBoolean("isFenceBlock", block.isFenceBlock());
+		nbt.putBoolean("isFenceGateBlock", block.isFenceGateBlock());
+		nbt.putBoolean("isThinFenceBlock", block.isThinFenceBlock());
+		nbt.putBoolean("isFallingBlock", block.isFallingBlock());
+		nbt.putBoolean("isStemBlock", block.isStemBlock());
+		nbt.putBoolean("isSlabBlock", block.isSlabBlock());
+		nbt.putBoolean("isLiquid", material.isLiquid());
+		nbt.putBoolean("isAlwaysDestroyable", material.isAlwaysDestroyable());//是否可以被空手破坏且获取方块
+		nbt.putBoolean("isLavaFlammable", block.isLavaFlammable());//是否可燃
+		nbt.putBoolean("isUnbreakable", block.isUnbreakable());//是否不可破坏
+		nbt.putBoolean("isPowerSource", block.isSignalSource());
+		//nbt.putBoolean("breaksFallingBlocks", block.breaksFallingBlocks(BaseGameVersion()));未知作用
+		nbt.putBoolean("isWaterBlocking", block.isWaterBlocking());//是否能阻挡水
+		nbt.putBoolean("isMotionBlockingBlock", block.isMotionBlockingBlock());//是否能阻挡移动
+		nbt.putBoolean("hasComparatorSignal", block.hasComparatorSignal());//是否能产生比较器信号
+		nbt.putBoolean("pushesUpFallingBlocks", block.pushesUpFallingBlocks());//活塞类方块
+		//nbt.putBoolean("waterSpreadCausesSpawn", block.waterSpreadCausesSpawn());未知作用
+		nbt.putBoolean("canContainLiquid", block.getLegacyBlock().canContainLiquid());
+		//nbt.putBoolean("canBeMovingBlock", material.getBlocksMotion());和isMotionBlockingBlock一个作用
+		//nbt.putBoolean("blocksPrecipitation", material.getBlocksPrecipitation());未知作用
+		nbt.putBoolean("superHot", material.isSuperHot());//可以导致着火的方块
+		//nbt.putBoolean("canBeBrokenFromFalling", block.canBeBrokenFromFalling());未知作用
+		nbt.putBoolean("isSolid", block.isSolid());
+		//nbt.putBoolean("isSolidBlocking", material.isSolidBlocking());未知作用
+		nbt.putBoolean("isContainerBlock", block.isContainerBlock());
+
 	} catch (exception& e) {
 		logger.error("Exception caught : " + string(e.what()));
 	}
