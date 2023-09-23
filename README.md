@@ -1,19 +1,16 @@
 # DataExtractor
 
-This is a BDS[LiteLoaderBDS]() mod which allows generating useful data used in Allay Project  
+This is a BDS mod which allows generating useful data used in Allay Project  
 (such as block_attributes and item_data) from BDS server.
 
 ## How to use?
 1. Install windows version BedrockServer. see [here](https://www.minecraft.net/en-us/download/server/bedrock).
-2. Download PeEditor. see [here](https://github.com/LiteLDev/PeEditor),then move `PeEditor.exe` in the same path as BDS  
+2. Set the property `block-network-ids-are-hashes` in file `server.properties` to `false`.
+3. Download PeEditor. see [here](https://github.com/LiteLDev/PeEditor),then move `PeEditor.exe` in the same path as BDS  
 run `PeEditor -m -n`.
-3. Download PreLoader. see [here](https://github.com/LiteLDev/PreLoader),then move `PreLoader.dll` in the same path as BDS.
-4. Download the latest release and put it in the `plugins` folder.
-5. Start your server, input `ext` in chat then enter, the output files will located in `data/*`.
-
-Please note that you should enter the server before start extracting the data!
-
-Also remember to set the property ```block-network-ids-are-hashes``` in file ```server.properties``` to ```false```
+4. Download PreLoader. see [here](https://github.com/LiteLDev/PreLoader),then move `PreLoader.dll` in the same path as BDS.
+5. Download the latest release and put it in the `plugins` folder.
+6. Run `bedrock_server_mod.exe`, then enter the game chat input `ext`, the output files will create in `data/*`.
 
 ## I want to build it myself!
 1. Clone project source `git clone https://github.com/AllayMC/DataExtractor`.
