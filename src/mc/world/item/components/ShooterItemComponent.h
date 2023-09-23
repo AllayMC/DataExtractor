@@ -1,0 +1,135 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/enums/AllExperiments.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
+class ShooterItemComponent {
+public:
+    // ShooterItemComponent inner types declare
+    // clang-format off
+    class DrawDuration;
+    struct ShooterAmmunitionEntry;
+    // clang-format on
+    
+    // ShooterItemComponent inner types define
+    class DrawDuration {
+    public:
+        // prevent constructor by default
+        DrawDuration& operator=(DrawDuration const &) = delete;
+        DrawDuration(DrawDuration const &) = delete;
+        DrawDuration() = delete;
+    
+    public:
+        // NOLINTBEGIN
+        // symbol: ?setValue@DrawDuration@ShooterItemComponent@@QEAAXM@Z
+        MCAPI void setValue(float);
+    
+        // NOLINTEND
+    
+    };
+    
+    struct ShooterAmmunitionEntry {
+    public:
+        // prevent constructor by default
+        ShooterAmmunitionEntry(ShooterAmmunitionEntry const &) = delete;
+        ShooterAmmunitionEntry() = delete;
+    
+    public:
+        // NOLINTBEGIN
+        // symbol: ??4ShooterAmmunitionEntry@ShooterItemComponent@@QEAAAEAU01@AEBU01@@Z
+        MCAPI struct ShooterItemComponent::ShooterAmmunitionEntry & operator=(struct ShooterItemComponent::ShooterAmmunitionEntry const &);
+    
+        // symbol: ??4ShooterAmmunitionEntry@ShooterItemComponent@@QEAAAEAU01@$$QEAU01@@Z
+        MCAPI struct ShooterItemComponent::ShooterAmmunitionEntry & operator=(struct ShooterItemComponent::ShooterAmmunitionEntry &&);
+    
+        // symbol: ??8ShooterAmmunitionEntry@ShooterItemComponent@@QEBA_NAEBU01@@Z
+        MCAPI bool operator==(struct ShooterItemComponent::ShooterAmmunitionEntry const &) const;
+    
+        // symbol: ??1ShooterAmmunitionEntry@ShooterItemComponent@@QEAA@XZ
+        MCAPI ~ShooterAmmunitionEntry();
+    
+        // NOLINTEND
+    
+    };
+    
+public:
+    // prevent constructor by default
+    ShooterItemComponent() = delete;
+
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ShooterItemComponent@@UEBA_NXZ
+    virtual bool checkComponentDataForContentErrors() const;
+
+    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
+    virtual void writeSettings();
+
+    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    virtual bool isNetworkComponent() const;
+
+    // vIndex: 4, symbol: ?buildNetworkTag@ItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
+
+    // vIndex: 5, symbol: ?initializeFromNetwork@ItemComponent@@UEAA_NAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
+    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
+
+    // vIndex: 6, symbol: ?handleVersionBasedInitialization@ItemComponent@@UEAAXAEBVSemVersion@@@Z
+    virtual void handleVersionBasedInitialization(class SemVersion const &);
+
+    // vIndex: 7, symbol: ?_canUseOn@ItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
+    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, uchar) const;
+
+    // vIndex: 8, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, uchar, class Vec3 const &) const;
+
+    // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEBAXXZ
+    virtual void _initializeComponent() const;
+
+    // symbol: ??0ShooterItemComponent@@QEAA@AEBV0@@Z
+    MCAPI ShooterItemComponent(class ShooterItemComponent const &);
+
+    // symbol: ??4ShooterItemComponent@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class ShooterItemComponent & operator=(class ShooterItemComponent const &);
+
+    // symbol: ??4ShooterItemComponent@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class ShooterItemComponent & operator=(class ShooterItemComponent &&);
+
+    // symbol: ?releaseUsing@ShooterItemComponent@@QEBA_NAEAVItemStack@@PEAVPlayer@@H@Z
+    MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
+
+    // symbol: ?bindType@ShooterItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx &, std::vector<::AllExperiments> const &, std::optional<class SemVersion>);
+
+    // symbol: ?getIdentifier@ShooterItemComponent@@SAAEBVHashedString@@XZ
+    MCAPI static class HashedString const & getIdentifier();
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_consumeAmmunition@ShooterItemComponent@@AEBAXPEAVPlayer@@AEBVItemStack@@H_N2@Z
+    MCAPI void _consumeAmmunition(class Player *, class ItemStack const &, int, bool, bool) const;
+
+    // symbol: ?_getAmmunition@ShooterItemComponent@@AEBAHPEBVPlayer@@_NAEAVItemStack@@AEA_N@Z
+    MCAPI int _getAmmunition(class Player const *, bool, class ItemStack &, bool &) const;
+
+    // symbol: ?_getMaxUseDuration@ShooterItemComponent@@AEBAHAEBVItemStack@@@Z
+    MCAPI int _getMaxUseDuration(class ItemStack const &) const;
+
+    // symbol: ?_shootProjectiles@ShooterItemComponent@@AEBAXAEAVItemStack@@PEAVPlayer@@H@Z
+    MCAPI void _shootProjectiles(class ItemStack &, class Player *, int) const;
+
+    // NOLINTEND
+
+};
+

@@ -1,83 +1,127 @@
-/**
- * @file DataExtractor.cpp
- * @brief The main file of DataExtractor plugin.
- */
-
-#include <iostream>
-#include <zlib-ng.h>
-#include <string>
-#include <llapi/mc/Level.hpp>
-#include <llapi/mc/BlockTypeRegistry.hpp>
-#include <llapi/mc/Block.hpp>
-#include <llapi/mc/Vec3.hpp>
-#include <llapi/mc/Material.hpp>
-#include <llapi/LoggerAPI.h>
-#include <llapi/mc/Brightness.hpp>
-#include <llapi/mc/BaseGameVersion.hpp>
-#include <llapi/mc/CommandOrigin.hpp>
-#include <llapi/mc/CommandOutput.hpp>
-#include <llapi/DynamicCommandAPI.h>
-#include <unordered_map>
-#include <vector>
-#include <Nlohmann/json.hpp>
-#include <fstream>
-#include <direct.h>
-#include "llapi/mc/AABB.hpp"
-#include "llapi/mc/BlockSource.hpp"
-#include "llapi/mc/Minecraft.hpp"
-#include "llapi/mc/BlockPalette.hpp"
-#include "llapi/mc/ItemRegistryRef.hpp"
-#include "llapi/mc/ItemRegistryManager.hpp"
-#include "llapi/mc/Item.hpp"
-#include "llapi/mc/Experiments.hpp"
-#include "llapi/mc/ItemStackBase.hpp"
-#include "llapi/mc/ItemStack.hpp"
-#include "llapi/mc/CreativeItemRegistry.hpp"
-#include "llapi/mc/ItemColorUtil.hpp"
-#include "llapi/mc/ActorDefinitionGroup.hpp"
-#include "llapi/mc/Types.hpp"
-#include "llapi/mc/ActorInfoRegistry.hpp"
-#include "llapi/mc/ActorInfo.hpp"
-#include "llapi/mc/ListTag.hpp"
-#include "llapi/mc/CompoundTag.hpp"
-#include "llapi/mc/BiomeRegistry.hpp"
-#include "llapi/mc/Biome.hpp"
-#include "llapi/mc/CommandRegistry.hpp"
-#include "llapi/mc/AvailableCommandsPacket.hpp"
-#include "llapi/mc/ActorFactory.hpp"
-#include "llapi/mc/LevelData.hpp"
-#include "llapi/mc/PropertyGroupManager.hpp"
-#include "llapi/mc/Spawner.hpp"
-#include "llapi/mc/MinecraftCommands.hpp"
-#include "llapi/mc/CreativeItemEntry.hpp"
-#include "llapi/mc/ItemInstance.hpp"
-#include "llapi/mc/BinaryStream.hpp"
-#include "llapi/mc/CompoundTagVariant.hpp"
-#include "llapi/mc/BlockLegacy.hpp"
-#include "llapi/mc/IConstBlockSource.hpp"
+#include "DataExtractor.h"
 
 using json = nlohmann::json;
+using ll::memory::dAccess;
 using namespace std;
 
-AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
+static Minecraft* mc = nullptr;
+static Dimension* overworld = nullptr;
+static MinecraftCommands* commands = nullptr;
+static std::unique_ptr<class CompoundTag> baseNBT = nullptr;
+static std::unique_ptr<class ListTag> baseListTag = nullptr;
+static unsigned int blockStateCounter = 0;
 
-//define
-void extractData();
-void dumpBlockAttributesData();
-CompoundTag generateNBTFromBlockState(const Block& block);
-void dumpItemData();
-CompoundTag generateNBTFromItem(const Item& item);
-void dumpEntityData();
-void dumpCreativeItemData();
-void dumpPalette();
-void dumpBlockIdToItemIdMap();
-void dumpBiomeData();
-void dumpCommandArgData();
-void dumpAvailableCommand();
-void dumpEntityAABB(const Level* level, const pair<string, const ActorDefinitionIdentifier*>& pair,
-	nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>& obj);
-void dumpPropertyTypeData();
+#pragma region HOOK
+LL_AUTO_TYPED_INSTANCE_HOOK(
+	PlayerChatEventHook,
+	ServerNetworkHandler,
+	ll::memory::HookPriority::Normal,
+	"?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z",
+	void,
+	NetworkIdentifier* id,
+	void* text
+) {
+	using ll::memory::dAccess;
+	std::string     originMessage = dAccess<std::string>(text, 88);
+	origin(id, text);
+	if (originMessage == "ext") {
+		extractData();
+	}
+	return;
+}
 
+// Minecraft
+LL_AUTO_TYPED_INSTANCE_HOOK(
+	MinecraftService,
+	Minecraft,
+	HookPriority::Normal,
+	"?initAsDedicatedServer@Minecraft@@QEAAXXZ",
+	void
+) {
+	std::cout << "INJECT MINECRAFT INSTANCE" << std::endl;
+	mc = this;
+	origin();
+}
+
+// Dimension
+LL_AUTO_TYPED_INSTANCE_HOOK(
+	DimensionService,
+	Dimension,
+	HookPriority::Normal,
+	"?init@Dimension@@UEAAXXZ",
+	void*,
+	Dimension* a1
+) {
+	if (a1->getHeight() > 256) {
+		std::cout << "INJECT DIMENSION INSTANCE" << std::endl;
+		overworld = a1;
+	}
+	return origin(a1);
+}
+
+// baseNBT
+static bool firstNBT = true;
+// baseNBT
+static bool firstList = true;
+
+LL_AUTO_TYPED_INSTANCE_HOOK(
+	NBTService,
+	CompoundTag,
+	HookPriority::Normal,
+	"??0CompoundTag@@QEAA@XZ",
+	CompoundTag*,
+	CompoundTag* a1
+) {
+	auto n = origin(a1);
+	if (firstNBT) {
+		firstNBT = false;
+		baseNBT = n->clone();
+		baseNBT->clear();
+		std::cout << "INJECT BASENBT INSTANCE" << std::endl;
+	}
+	return n;
+}
+
+LL_AUTO_TYPED_INSTANCE_HOOK(
+	ListTagService,
+	ListTag,
+	HookPriority::Normal,
+	"??0ListTag@@QEAA@XZ",
+	ListTag*,
+	ListTag* a1
+) {
+	auto n = origin(a1);
+	if (firstList) {
+		firstList = false;
+		baseListTag = n->copyList();
+		for (int i = 0; i < baseListTag->size(); ++i) {
+			baseListTag->popBack();
+		}
+		std::cout << "INJECT BASELISTNBT INSTANCE" << std::endl;
+	}
+	return n;
+}
+
+// MinecraftCommands
+LL_AUTO_TYPED_INSTANCE_HOOK(
+	MinecraftCommandsService,
+	MinecraftCommands,
+	HookPriority::Normal,
+	"?initCoreEnums@MinecraftCommands@@QEAAXVItemRegistryRef@@AEBVIWorldRegistriesProvider@@AEBVActorFactory@"
+	"@AEBVExperiments@@AEBVBaseGameVersion@@@Z",
+	void,
+	void* a2,
+	int64 a3,
+	int64 a4,
+	void* a5,
+	void* a6
+) {
+	origin(a2, a3, a4, a5, a6);
+	commands = this;
+}
+#pragma endregion HOOK
+
+#pragma region TOOL_FUNCTION
 static bool folderExists(const char* folderName) {
 	struct stat info {};
 	if (stat(folderName, &info) != 0) {
@@ -112,11 +156,11 @@ static void saveFile(string const& name, vector<string>& blocks) {
 }
 
 static bool gzip_compress(const std::string& original_str, std::string& str) {
-	zng_stream d_stream = { 0 };
-	if (Z_OK != zng_deflateInit2(&d_stream, Z_BEST_COMPRESSION, Z_DEFLATED, MAX_WBITS + 16, 9, Z_DEFAULT_STRATEGY)) {
+	z_stream d_stream = { 0 };
+	if (Z_OK != deflateInit2(&d_stream, Z_BEST_COMPRESSION, Z_DEFLATED, MAX_WBITS + 16, 9, Z_DEFAULT_STRATEGY)) {
 		return false;
 	}
-	uLong len = zng_compressBound(original_str.size());
+	unsigned long len = compressBound(original_str.size());
 	auto* buf = (unsigned char*)malloc(len);
 	if (!buf) {
 		return false;
@@ -125,58 +169,51 @@ static bool gzip_compress(const std::string& original_str, std::string& str) {
 	d_stream.avail_in = original_str.size();
 	d_stream.next_out = buf;
 	d_stream.avail_out = len;
-	zng_deflate(&d_stream, Z_SYNC_FLUSH);
-	zng_deflateEnd(&d_stream);
+	deflate(&d_stream, Z_SYNC_FLUSH);
+	deflateEnd(&d_stream);
 	str.assign((char*)buf, d_stream.total_out);
 	free(buf);
 	return true;
 }
 
-static inline void writeNBT(string fileName, CompoundTag& tag) {
+static void writeNBT(const string& fileName, CompoundTag* tag) {
+	void* vtbl;
+	auto tmp = BigEndianStringByteOutput();
+	vtbl = *(void**)&tmp;
+	string result = "";
+	void* iDataOutput[2] = { vtbl, &result };
+	NbtIo::write(tag, (IDataOutput&)iDataOutput);
 	string v;
-	gzip_compress(tag.toBinaryNBT(false), v);
+	gzip_compress(result, v);
 	auto out = ofstream(fileName, ofstream::out | ofstream::binary | ofstream::trunc);
 	out << v;
 	out.close();
 }
 
-static inline void writeNetworkNBT(string fileName, CompoundTag& tag) {
-    auto out = ofstream(fileName, ofstream::out | ofstream::binary | ofstream::trunc);
-    out << tag.toNetworkNBT();
-    out.close();
-}
-
-static inline void writeJSON(string fileName, nlohmann::json& json) {
+static void writeJSON(const string& fileName, nlohmann::json& json) {
 	auto out = ofstream(fileName, ofstream::out | ofstream::trunc);
 	out << json.dump(4);
 	out.close();
 }
 
-static inline void writeSNBT(string fileName, CompoundTag& tag) {
-    auto out = ofstream(fileName, ofstream::out | ofstream::trunc);
-    out << tag.toSNBT(4);
-    out.close();
+static std::unique_ptr<class CompoundTag> createCompound() {
+	return baseNBT->clone();
 }
+
+static std::unique_ptr<class ListTag> createListTag() {
+	return baseListTag->copyList();
+}
+
+static std::string aabbToStr(const AABB& aabb) {
+	stringstream aabbStr;
+	aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x << "," << aabb.max.y << "," << aabb.max.z;
+	return aabbStr.str();
+}
+#pragma endregion TOOL_FUNCTION
 
 void PluginInit() {
 	Logger logger;
 	logger.info("DataExtractor plugin loaded!");
-
-	DynamicCommand::setup(
-		/* name = */ "ext",
-		/* description = */ "extract data",
-		/* enums = */{},
-		/* params = */{},
-		/* overloads = */{ {} },
-		/* callback = */ [](
-			DynamicCommand const& command,
-			CommandOrigin const& origin,
-			CommandOutput& output,
-			std::unordered_map<std::string, DynamicCommand::Result>& results
-			) {
-				extractData();
-				return true;
-		});
 }
 
 void extractData() {
@@ -189,28 +226,142 @@ void extractData() {
 	dumpItemData();
 	dumpEntityData();
 	dumpPalette();
-    dumpBlockIdToItemIdMap();
+	dumpBlockIdToItemIdMap();
 	dumpBiomeData();
 	//dumpCommandArgData();
-	dumpAvailableCommand();
+	//dumpAvailableCommand();
 	dumpPropertyTypeData();
 }
 
-int blockStateCounter = 0;
+void dumpCreativeItemData() {
+	Logger logger;
+
+	logger.info("Extracting creative items...");
+
+	auto global = createCompound();
+	unsigned int index = 0;
+	CreativeItemRegistry::forEachCreativeItemInstance([&logger, &index, &global](const ItemInstance& itemInstance) {
+		if (itemInstance.getName().empty()) {
+			logger.warn("Failed to extract creative item - " + itemInstance.getName() + ", index: " + to_string(index));
+			return true;
+		}
+		logger.info("Extracting creative item - " + itemInstance.getName() + ", index: " + to_string(index));
+		CompoundTag obj;
+		obj.putInt64("index", index);
+		obj.putString("name", itemInstance.getItem()->getFullItemName());
+		obj.putInt("damage", itemInstance.getAuxValue());
+		if (itemInstance.isBlock()) {
+			obj.putInt("blockStateHash", itemInstance.getBlock()->computeRawSerializationIdHashForNetwork());
+		}
+		auto nbt = itemInstance.save();
+		if (nbt->contains("tag")) {
+			obj.put("tag", nbt->getCompound("tag")->copy());
+		}
+		global->put(to_string(index), obj.copy());
+		index++;
+		});
+	writeNBT("data/creative_items.nbt", global.get());
+	global.release();
+	logger.info(R"(Creative items data has been saved to "data/creative_items.snbt", "data/creative_items.nbt")");
+}
+
+std::unique_ptr<class CompoundTag> generateNBTFromBlockState(const Block& block) {
+	Logger logger;
+	auto nbt = createCompound();
+	try {
+		auto& legacy = block.getLegacyBlock();
+		auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
+		logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
+		const Material& material = legacy.getMaterial();
+		auto sid = block.getSerializationId().clone();
+		nbt->putString("name", sid->getString("name"));
+		nbt->putString("descriptionId", block.getDescriptionId());
+		nbt->putString("blockEntityName", string(magic_enum::enum_name(block.getBlockEntityType())));
+		nbt->putCompound("states", sid->getCompound("states")->clone());
+		nbt->putFloat("thickness", block.getThickness());
+		nbt->putFloat("friction", block.getFriction());
+		nbt->putFloat("hardness", block.getDestroySpeed());
+		nbt->putFloat("explosionResistance", block.getExplosionResistance());
+		nbt->putFloat("translucency", material.getTranslucency());
+		nbt->putInt("version", sid->getInt("version"));
+		nbt->putInt("runtimeId", block.getRuntimeId());
+		nbt->putInt("blockStateHash", ((name != "minecraft:unknown") ? block.computeRawSerializationIdHashForNetwork() : -2));
+		nbt->putInt("burnChance", block.getFlameOdds());
+		nbt->putInt("burnAbility", block.getBurnOdds());
+		nbt->putInt("lightDampening", (int)block.getLight().value);//挡光
+		nbt->putInt("lightEmission", (int)block.getLightEmission().value);//发光
+		mce::Color color = block.getMapColor(overworld->getBlockSourceFromMainChunkSource(), BlockPos(0, 10, 0));
+		auto colornbt = createCompound();
+		colornbt->putInt("r", (int)(color.r * 255));
+		colornbt->putInt("g", (int)(color.g * 255));
+		colornbt->putInt("b", (int)(color.b * 255));
+		colornbt->putInt("a", (int)(color.a * 255));
+		colornbt->putString("hexString", color.toHexString());
+		nbt->putCompound("color", colornbt->clone());
+
+		AABB tmp = AABB(0, 0, 0, 0, 0, 0);
+		block.getCollisionShapeForCamera(tmp, *(IConstBlockSource*)&overworld->getBlockSourceFromMainChunkSource(), BlockPos(0, 0, 0));
+		nbt->putString("aabbVisual", aabbToStr(tmp));
+		AABB tmp2 = AABB(0, 0, 0, 0, 0, 0);
+		class optional_ref<class GetCollisionShapeInterface const> nullRef {};
+		block.getCollisionShape(tmp2, *(IConstBlockSource*)&overworld->getBlockSourceFromMainChunkSource(), BlockPos(0, 0, 0), nullRef);
+		nbt->putString("aabbCollision", aabbToStr(tmp2));
+
+		nbt->putBoolean("hasCollision", tmp2 != ZERO_AABB);
+		nbt->putBoolean("hasBlockEntity", block.getBlockEntityType() != BlockActorType::Undefined);
+		nbt->putBoolean("isAir", block.isAir());
+		nbt->putBoolean("isBounceBlock", block.isAir());
+		nbt->putBoolean("isButtonBlock", block.isButtonBlock());
+		nbt->putBoolean("isCropBlock", block.isCropBlock());
+		nbt->putBoolean("isDoorBlock", block.isDoorBlock());
+		nbt->putBoolean("isFenceBlock", block.isFenceBlock());
+		nbt->putBoolean("isFenceGateBlock", block.isFenceGateBlock());
+		nbt->putBoolean("isThinFenceBlock", block.isThinFenceBlock());
+		nbt->putBoolean("isFallingBlock", block.isFallingBlock());
+		nbt->putBoolean("isStemBlock", block.isStemBlock());
+		nbt->putBoolean("isSlabBlock", block.isSlabBlock());
+		nbt->putBoolean("isLiquid", material.isLiquid());
+		nbt->putBoolean("isAlwaysDestroyable", material.isAlwaysDestroyable());//是否可以被空手破坏且获取方块
+		nbt->putBoolean("isLavaFlammable", block.isLavaFlammable());//是否可燃
+		nbt->putBoolean("isUnbreakable", block.isUnbreakable());//是否不可破坏
+		nbt->putBoolean("isPowerSource", block.isSignalSource());
+		//nbt->putBoolean("breaksFallingBlocks", block.breaksFallingBlocks(BaseGameVersion()));未知作用
+		nbt->putBoolean("isWaterBlocking", block.isWaterBlocking());//是否能阻挡水
+		nbt->putBoolean("isMotionBlockingBlock", block.isMotionBlockingBlock());//是否能阻挡移动
+		nbt->putBoolean("hasComparatorSignal", block.hasComparatorSignal());//是否能产生比较器信号
+		nbt->putBoolean("pushesUpFallingBlocks", block.pushesUpFallingBlocks());//活塞类方块
+		//nbt->putBoolean("waterSpreadCausesSpawn", block.waterSpreadCausesSpawn());未知作用
+		nbt->putBoolean("canContainLiquid", block.getLegacyBlock().canContainLiquid());
+		//nbt->putBoolean("canBeMovingBlock", material.getBlocksMotion());和isMotionBlockingBlock一个作用
+		//nbt->putBoolean("blocksPrecipitation", material.getBlocksPrecipitation());未知作用
+		nbt->putBoolean("superHot", material.isSuperHot());//可以导致着火的方块
+		//nbt->putBoolean("canBeBrokenFromFalling", block.canBeBrokenFromFalling());未知作用
+		nbt->putBoolean("isSolid", block.isSolid());
+		//nbt->putBoolean("isSolidBlocking", material.isSolidBlocking());未知作用
+		nbt->putBoolean("isContainerBlock", block.isContainerBlock());
+
+	}
+	catch (exception& e) {
+		logger.error("Exception caught : " + string(e.what()));
+	}
+
+	return nbt;
+}
 
 void dumpBlockAttributesData() {
 	Logger logger;
 	logger.info("Extracting block states' attributes...");
-	auto& palette = Global<Minecraft>->getLevel()->getBlockPalette();
+	auto& palette = mc->getLevel()->getBlockPalette();
 	int airCount = 0;
 	auto array = json::array();
-	CompoundTag tag;
-	ListTag list;
+
+	auto tag = createCompound();
+	auto list = createListTag();
 	blockStateCounter = 0;
 	while (true) {
 		auto& block = palette.getBlock(blockStateCounter);
 		//HACK: 用于确定最大size
-		if (block.getName().str == "minecraft:air") {
+		if (block.getName().getString() == "minecraft:air") {
 			airCount++;
 			if (airCount == 2) {
 				blockStateCounter--;
@@ -218,209 +369,87 @@ void dumpBlockAttributesData() {
 			}
 		}
 		auto obj2 = generateNBTFromBlockState(block);
-		list.add(obj2.clone());
+		list->add(obj2->copy());
 		blockStateCounter++;
 	}
-	tag.put("block", list.copyList());
+	tag->put("block", list->copyList());
 	logger.info("Successfully extract " + to_string(blockStateCounter) + " block states' attributes!");
-	writeNBT("data/block_attributes.nbt", tag);
-	writeSNBT("data/block_attributes.snbt", tag);
-	logger.info(R"(Block attribute data have been saved to "data/block_attributes.nbt", "data/block_attributes.snbt")");
+	writeNBT("data/block_attributes.nbt", tag.get());
+	logger.info(R"(Block attribute data have been saved to "data/block_attributes.nbt")");
+	tag.release();
+	list.release();
 }
 
-std::string aabbToStr(const AABB &aabb) {
-    stringstream aabbStr;
-    aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
-        << "," << aabb.max.y << "," << aabb.max.z;
-    return aabbStr.str();
-}
 
-CompoundTag generateNBTFromBlockState(const Block& block) {
+std::unique_ptr<class CompoundTag> generateNBTFromItem(const Item& item) {
 	Logger logger;
-	CompoundTag nbt;
+	auto nbt = createCompound();
+	logger.info("Extracting item - " + item.getFullItemName());
+	nbt->putShort("id", item.getId());
 	try {
-		auto& legacy = block.getLegacyBlock();
-		auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
-		logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
-		const Material& material = legacy.getMaterial();
-		auto sid = block.getSerializationId().clone();
-		nbt.putString("name", sid->getString("name"));
-		nbt.putString("descriptionId", block.getDescriptionId());
-		nbt.putString("blockEntityName", asString(magic_enum::enum_name(block.getBlockEntityType())));
-		nbt.putCompound("states", sid->getCompound("states")->clone());
-		nbt.putInt("version", sid->getInt("version"));
-		nbt.putInt("legacyId", block.getId());
-		nbt.putInt("runtimeId", block.getRuntimeId());
-		nbt.putInt("blockStateHash", ((name != "minecraft:unknown") ? block.computeRawSerializationIdHashForNetwork() : -2));
-		nbt.putFloat("thickness", block.getThickness());
-		nbt.putFloat("friction", block.getFriction());
-		nbt.putFloat("hardness", block.getDestroySpeed());
-		nbt.putFloat("explosionResistance", block.getExplosionResistance());
-		nbt.putFloat("translucency", material.getTranslucency());
-		nbt.putInt("burnChance", block.getFlameOdds());
-		nbt.putInt("burnAbility", block.getBurnOdds());
-		nbt.putInt("lightDampening", (int)block.getLight().value);//挡光
-		nbt.putInt("lightEmission", (int)block.getLightEmission().value);//发光
-
-		auto color = block.getMapColor(*Level::getBlockSource(0), BlockPos(0, 10, 0));
-		CompoundTag colorNbt;
-		colorNbt.putInt("r", (int)(color.r * 255));
-		colorNbt.putInt("g", (int)(color.g * 255));
-		colorNbt.putInt("b", (int)(color.b * 255));
-		colorNbt.putInt("a", (int)(color.a * 255));
-		colorNbt.putString("hexString", color.toHexString());
-		colorNbt.putString("nearestColorCode", color.toNearestColorCode());
-		nbt.putCompound("color", colorNbt.clone());
-
-		AABB tmp = AABB(0, 0, 0, 0, 0, 0);
-		auto& aabb2 = block.getLegacyBlock().getAABB(*(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), block, tmp, true);
-		//TODO: 暂时不清楚这个aabb的作用，不过看样子是方块模型的aabb
-		nbt.putString("aabbVisual", aabbToStr(aabb2));
-		AABB tmp2 = AABB(0, 0, 0, 0, 0, 0);
-		optional_ref<GetCollisionShapeInterface const> nullRef{};
-		block.getCollisionShape(tmp2, *(IConstBlockSource*)Level::getBlockSource(0), BlockPos(0, 0, 0), nullRef);
-		nbt.putString("aabbCollision", aabbToStr(tmp2));
-
-		nbt.putBoolean("hasCollision", tmp2 != ZERO_AABB);
-		nbt.putBoolean("hasBlockEntity", block.getBlockEntityType() != BlockActorType::Undefined);
-		nbt.putBoolean("isAir", block.isAir());
-		nbt.putBoolean("isBounceBlock", block.isAir());
-		nbt.putBoolean("isButtonBlock", block.isButtonBlock());
-		nbt.putBoolean("isCropBlock", block.isCropBlock());
-		nbt.putBoolean("isDoorBlock", block.isDoorBlock());
-		nbt.putBoolean("isFenceBlock", block.isFenceBlock());
-		nbt.putBoolean("isFenceGateBlock", block.isFenceGateBlock());
-		nbt.putBoolean("isThinFenceBlock", block.isThinFenceBlock());
-		nbt.putBoolean("isFallingBlock", block.isFallingBlock());
-		nbt.putBoolean("isStemBlock", block.isStemBlock());
-		nbt.putBoolean("isSlabBlock", block.isSlabBlock());
-		nbt.putBoolean("isLiquid", material.isLiquid());
-		nbt.putBoolean("isAlwaysDestroyable", material.isAlwaysDestroyable());//是否可以被空手破坏且获取方块
-		nbt.putBoolean("isLavaFlammable", block.isLavaFlammable());//是否可燃
-		nbt.putBoolean("isUnbreakable", block.isUnbreakable());//是否不可破坏
-		nbt.putBoolean("isPowerSource", block.isSignalSource());
-		//nbt.putBoolean("breaksFallingBlocks", block.breaksFallingBlocks(BaseGameVersion()));未知作用
-		nbt.putBoolean("isWaterBlocking", block.isWaterBlocking());//是否能阻挡水
-		nbt.putBoolean("isMotionBlockingBlock", block.isMotionBlockingBlock());//是否能阻挡移动
-		nbt.putBoolean("hasComparatorSignal", block.hasComparatorSignal());//是否能产生比较器信号
-		nbt.putBoolean("pushesUpFallingBlocks", block.pushesUpFallingBlocks());//活塞类方块
-		//nbt.putBoolean("waterSpreadCausesSpawn", block.waterSpreadCausesSpawn());未知作用
-		nbt.putBoolean("canContainLiquid", block.getLegacyBlock().canContainLiquid());
-		//nbt.putBoolean("canBeMovingBlock", material.getBlocksMotion());和isMotionBlockingBlock一个作用
-		//nbt.putBoolean("blocksPrecipitation", material.getBlocksPrecipitation());未知作用
-		nbt.putBoolean("superHot", material.isSuperHot());//可以导致着火的方块
-		//nbt.putBoolean("canBeBrokenFromFalling", block.canBeBrokenFromFalling());未知作用
-		nbt.putBoolean("isSolid", block.isSolid());
-		//nbt.putBoolean("isSolidBlocking", material.isSolidBlocking());未知作用
-		nbt.putBoolean("isContainerBlock", block.isContainerBlock());
-
-	} catch (exception& e) {
-		logger.error("Exception caught : " + string(e.what()));
+		if (!item.getLegacyBlock().expired() && item.getLegacyBlock().get() != nullptr)
+			nbt->putString("blockId", item.getLegacyBlock()->getNamespace() + ":" + item.getLegacyBlock()->getRawNameId());
 	}
-
+	catch (exception& e) {
+		logger.warn("Exception occur when trying to get block for item " + item.getFullItemName());
+	}
+	nbt->putString("descriptionId", item.getDescriptionId());
+	nbt->putString("name", item.getFullItemName());
+	nbt->putShort("maxDamage", item.getMaxDamage());
+	nbt->putString("auxValuesDescription", item.getAuxValuesDescription());
+	nbt->putBoolean("isArmor", item.isArmor());
+	nbt->putBoolean("isBlockPlanterItem", item.isBlockPlanterItem());
+	nbt->putBoolean("isDamageable", item.isDamageable());
+	nbt->putBoolean("isDye", item.isDye());
+	nbt->putString("itemColorName", ItemColorUtil::getName(item.getItemColor()));
+	nbt->putInt("itemColorRGB", ItemColorUtil::getRGBColor(item.getItemColor()));
+	nbt->putBoolean("isFertilizer", item.isFertilizer());
+	nbt->putBoolean("isThrowable", item.isThrowable());
+	nbt->putBoolean("isFood", item.isFood());
+	nbt->putBoolean("isUseable", item.isUseable());
+	nbt->putBoolean("isElytra", item.isElytra());
+	nbt->putBoolean("canBeDepleted", item.canBeDepleted());
+	nbt->putBoolean("canDestroyInCreative", item.canDestroyInCreative());
+	nbt->putBoolean("canUseOnSimTick", item.canUseOnSimTick());
+	nbt->putBoolean("canBeCharged", item.canBeCharged());
+	nbt->putString("creativeGroup", item.getCreativeGroup());
+	nbt->putInt("creativeCategory", (int)item.getCreativeCategory());
+	nbt->putInt("armorValue", item.getArmorValue());
+	nbt->putInt("getAttackDamage", item.getAttackDamage());
+	nbt->putInt("toughnessValue", item.getToughnessValue());
+	nbt->putFloat("viewDamping", item.getViewDamping());
+	nbt->putInt("cooldownTime", item.getCooldownTime());
+	nbt->putString("cooldownType", item.getCooldownType().getString());
+	//必须在最后，因为构建itemstack持有了item
+	nbt->putInt("maxStackSize", (int)ItemStack(item, 1, 0, 0).getMaxStackSize());
 	return nbt;
 }
 
 void dumpItemData() {
 	Logger logger;
-	CompoundTag tag;
-	ListTag list;
-    short counter = 0;
+	auto tag = createCompound();
+	auto list = createListTag();
+	short counter = 0;
 	for (short id = -2000; id <= 2000; id++) {
-		auto item = ItemRegistryManager::getItemRegistry().getItem(id);
-		if (item.expired())
+		WeakPtr<Item> item = ItemRegistryManager::getItemRegistry().getItem(id);
+		if (item.expired()) {
 			continue;
-		auto obj2 = generateNBTFromItem(*item);
-		list.add(obj2.clone());
-        counter++;
+		}
+		std::unique_ptr<class CompoundTag> obj2 = generateNBTFromItem(*item);
+		list->add(obj2->copy());
+		counter++;
 	}
-	tag.put("item", list.copyList());
+	tag->put("item", list->copyList());
 	logger.info("Successfully extract " + to_string(counter) + " items' data!");
-	writeNBT("data/item_data.nbt", tag);
-	writeSNBT("data/item_data.snbt", tag);
-	logger.info(R"(Items' data have been saved to "data/item_data.nbt", "data/item_data.snbt")");
-}
-
-CompoundTag generateNBTFromItem(const Item& item) {
-	CompoundTag nbt;
-	Logger logger;
-    auto stack = ItemStack::create(item.getFullItemName(), 1);
-
-	logger.info("Extracting item - " + item.getFullItemName());
-	nbt.putShort("id", item.getId());
-	try {
-		if (!item.getLegacyBlock().expired() && item.getLegacyBlock().get() != nullptr)
-			nbt.putString("blockId", item.getLegacyBlock()->getNamespace() + ":" + item.getLegacyBlock()->getRawNameId());
-	}
-	catch (exception& e) {
-		logger.warn("Exception occur when trying to get block for item " + item.getFullItemName());
-	}
-	nbt.putString("descriptionId", item.getDescriptionId());
-	nbt.putString("name", item.getFullItemName());
-	nbt.putShort("maxDamage", item.getMaxDamage());
-    nbt.putInt("maxStackSize", stack->getMaxStackSize());
-	nbt.putString("auxValuesDescription", item.getAuxValuesDescription());
-	nbt.putBoolean("isArmor", item.isArmor());
-	nbt.putBoolean("isBlockPlanterItem", item.isBlockPlanterItem());
-	nbt.putBoolean("isDamageable", item.isDamageable());
-	nbt.putBoolean("isDye", item.isDye());
-	nbt.putString("itemColorName", ItemColorUtil::getName(item.getItemColor()));
-	nbt.putInt("itemColorRGB", ItemColorUtil::getRGBColor(item.getItemColor()));
-	nbt.putBoolean("isFertilizer", item.isFertilizer());
-	nbt.putBoolean("isThrowable", item.isThrowable());
-	nbt.putBoolean("isFood", item.isFood());
-	nbt.putBoolean("isUseable", item.isUseable());
-	nbt.putBoolean("isElytra", item.isElytra());
-	nbt.putBoolean("canBeDepleted", item.canBeDepleted());
-	nbt.putBoolean("canDestroyInCreative", item.canDestroyInCreative());
-	nbt.putBoolean("canUseOnSimTick", item.canUseOnSimTick());
-	nbt.putBoolean("canBeCharged", item.canBeCharged());
-	nbt.putString("creativeGroup", item.getCreativeGroup());
-	nbt.putInt("creativeCategory", (int)item.getCreativeCategory());
-	nbt.putInt("armorValue", item.getArmorValue());
-	nbt.putInt("getAttackDamage", item.getAttackDamage());
-	nbt.putInt("toughnessValue", item.getToughnessValue());
-	nbt.putInt("viewDamping", item.getViewDamping());
-	nbt.putInt("cooldownTime", item.getCooldownTime());
-	nbt.putString("cooldownType", item.getCooldownType());
-	return nbt;
-}
-
-void dumpEntityData() {
-	Logger logger;
-
-	auto level = Global<Minecraft>->getLevel();
-	auto& exp = level->getLevelData().getExperiments();
-	auto& actorFactory = level->getActorFactory();
-	auto list = actorFactory.buildSummonEntityTypeEnum(exp);
-
-	auto global = json::object();
-	for (auto& pair : list) {
-		if (global.contains(pair.second->getCanonicalName()))
-			continue;
-		logger.info("Extracting entity - " + pair.second->getCanonicalName());
-
-		auto obj = json::object();
-		obj["canonicalName"] = pair.second->getCanonicalName();
-		obj["initEvent"] = pair.second->getInitEvent();
-		obj["legacyActorType"] = static_cast<__int32>(pair.second->_getLegacyActorType());
-
-		auto actorPropertyDataTag = level->getActorPropertyGroup().getActorPropertyDataTag(pair.second->getCanonicalHash()).toJson(4);
-		obj["actorPropertyDataTag"] = json::parse(actorPropertyDataTag);
-
-		//todo: dumpEntityAABB(level, pair, obj);
-
-		global[pair.second->getCanonicalName()] = obj;
-	}
-	writeJSON("data/entity_data.json", global);
-	logger.info("Entities' data have been saved to \"data/entity_data.json\"");
+	writeNBT("data/item_data.nbt", tag.get());
+	tag.release();
+	logger.info(R"(Items' data have been saved to "data/item_data.nbt")");
 }
 
 void dumpEntityAABB(const Level* level, const pair<string, const ActorDefinitionIdentifier*>& pair,
 	nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>& obj) {
 	Logger logger;
-
-	auto actor = level->getSpawner().spawnMob(*Level::getBlockSource(0), pair.first, nullptr, Vec3(0, 64, 0), false, true, false);
+	Mob* actor = level->getSpawner().spawnMob(overworld->getBlockSourceFromMainChunkSource(), pair.first, nullptr, Vec3(0, 64, 0), false, true, false);
 	if (actor == nullptr) {
 		logger.warn("Failed to spawn entity: " + pair.first);
 		logger.warn("It is possible to solve this problem by adding a ticking area around 0 64 0");
@@ -437,156 +466,152 @@ void dumpEntityAABB(const Level* level, const pair<string, const ActorDefinition
 	}
 }
 
-void dumpCreativeItemData() {
+void dumpEntityData() {
 	Logger logger;
 
-	logger.info("Extracting creative items...");
+	auto level = mc->getLevel();
+	auto& exp = level->getLevelData().getExperiments();
+	auto& actorFactory = level->getActorFactory();
+	auto list = actorFactory.buildSummonEntityTypeEnum(exp);
 
-	CompoundTag global;
-	unsigned int index = 0;
-	CreativeItemRegistry::forEachCreativeItemInstance([&logger, &index, &global](const ItemInstance& itemInstance) {
-		logger.info("index: " + to_string(index));
-		auto itemStack = ItemStack::fromItemInstance(itemInstance);
-		if (itemStack.getName().empty()) {
-			logger.warn("Failed to extract creative item - " + itemStack.getName() + ", index: " + to_string(index));
-			return true;
-		}
-		logger.info("Extracting creative item - " + itemStack.getName() + ", index: " + to_string(index));
-		CompoundTag obj;
-		obj.putInt64("index", index);
-		obj.putString("name", itemStack.getItem()->getFullItemName());
-		obj.putInt("count", itemStack.getCount());
-		obj.putInt("damage", itemStack.getAux());
-		if (itemStack.isBlock()) {
-			obj.putInt("blockStateHash", itemStack.getBlock()->computeRawSerializationIdHashForNetwork());
-		}
-		if (itemStack.getNbt()->contains("tag")) {
-			obj.put("tag", itemStack.getNbt()->getCompoundTag("tag")->copy());
-		}
+	auto global = json::object();
+	for (auto& pair : list) {
+		if (global.contains(pair.second->getCanonicalName()))
+			continue;
+		logger.info("Extracting entity - " + pair.second->getCanonicalName());
 
-		global.put(to_string(index), obj.copy());
-		index++;
-		return true;
-		});
-	writeNBT("data/creative_items.nbt", global);
-    writeSNBT("data/creative_items.snbt", global);
-	logger.info(R"(Creative items data has been saved to "data/creative_items.snbt", "data/creative_items.nbt")");
+		auto obj = json::object();
+		obj["canonicalName"] = pair.second->getCanonicalName();
+		obj["initEvent"] = pair.second->getInitEvent();
+		obj["legacyActorType"] = static_cast<__int32>(pair.second->_getLegacyActorType());
+
+		dumpEntityAABB(level, pair, obj);
+
+		global[pair.second->getCanonicalName()] = obj;
+	}
+	writeJSON("data/entity_data.json", global);
+	logger.info("Entities' data have been saved to \"data/entity_data.json\"");
 }
 
 void dumpPalette() {
 	Logger logger;
 
-    logger.info("Extracting block palette...");
+	logger.info("Extracting block palette...");
 
-	auto& palette = Global<Minecraft>->getLevel()->getBlockPalette();
+	auto& palette = mc->getLevel()->getBlockPalette();
 
-	CompoundTag global;
-	ListTag blocks;
+	auto global = createCompound();
+	auto blocks = createListTag();
 	for (unsigned int i = 0; i < blockStateCounter; i++) {
-		blocks.add(palette.getBlock(i).getSerializationId().clone());
+		blocks->add(palette.getBlock(i).getSerializationId().clone());
 	}
-	global.put("blocks", blocks.copyList());
-	writeNBT("data/block_palette.nbt", global);
-	writeSNBT("data/block_palette.snbt", global);
-	logger.info(R"(Block palette table has been saved to "data/block_palette.snbt", "data/block_palette.nbt"))");
+	global->put("blocks", blocks->copyList());
+	writeNBT("data/block_palette.nbt", global.get());
+	global.release();
+	blocks.release();
+	logger.info(R"(Block palette table has been saved to "data/block_palette.nbt"))");
 }
 
 void dumpBlockIdToItemIdMap() {
-    Logger logger;
+	Logger logger;
+	logger.info("Extracting block id to item id map...");
+	auto nbt = createCompound();
+	json json;
 
-    logger.info("Extracting block id to item id map...");
+	int i = -2000;
+	while (i <= 2000) {
+		auto item = ItemRegistryManager::getItemRegistry().getItem(static_cast<short>(i));
+		i++;
+		if (item.expired() || item.get()==nullptr) {
+			continue;
+		}
+		logger.info("Extracting block id to item id map:" + item.get()->getFullItemName());
+		string item_id = item->getFullItemName();
+		auto& block = item->getLegacyBlock();
+		string block_id;
+		bool hasBlock = !block.expired() && block.get() != nullptr;
+		if (hasBlock)
+			block_id = block->getNamespace() + ":" + block->getRawNameId();
+		//HACK: 这是一个BDS的bug, 我们需要手动修复
+		//TODO: 删除这个HACK当BDS修复了之后
+		if (item_id.ends_with("_hanging_sign") || item_id == "minecraft:bamboo_door" || item_id == "minecraft:cherry_door") {
+			hasBlock = true;
+			block_id = item_id;
+		}
+		if (hasBlock) {
+			nbt->putString(block_id, item_id);
+			json[block_id] = item_id;
+			logger.info(block_id + " -> " + item_id);
+		}
+	}
 
-    CompoundTag nbt;
-    json json;
-
-    for (short id = -2000; id <= 2000; id++) {
-        auto item = ItemRegistryManager::getItemRegistry().getItem(id);
-        if (item.expired())
-            continue;
-        string item_id = item->getFullItemName();
-        auto & block = item->getLegacyBlock();
-        string block_id;
-        bool hasBlock = !block.expired() && block.get() != nullptr;
-        if (hasBlock)
-            block_id = block->getNamespace() + ":" + block->getRawNameId();
-        //HACK: 这是一个BDS的bug, 我们需要手动修复
-        //TODO: 删除这个HACK当BDS修复了之后
-        if (item_id.ends_with("_hanging_sign") || item_id == "minecraft:bamboo_door" || item_id == "minecraft:cherry_door") {
-            hasBlock = true;
-            block_id = item_id;
-        }
-        if (hasBlock) {
-            nbt.putString(block_id, item_id);
-            json[block_id] = item_id;
-            logger.info(block_id + " -> " + item_id);
-        }
-    }
-
-    writeNBT("data/block_id_to_item_id_map.nbt", nbt);
-    writeJSON("data/block_id_to_item_id_map.json", json);
-    logger.info(R"(Block id to item id map has been saved to "data/block_id_to_item_id_map.json", "data/block_id_to_item_id_map.nbt"))");
+	writeNBT("data/block_id_to_item_id_map.nbt", nbt.get());
+	nbt.release();
+	writeJSON("data/block_id_to_item_id_map.json", json);
+	logger.info(R"(Block id to item id map has been saved to "data/block_id_to_item_id_map.json", "data/block_id_to_item_id_map.nbt"))");
 }
+
 
 void dumpBiomeData() {
 	Logger logger;
-	BiomeRegistry const& registry = Global<Minecraft>->getLevel()->getBiomeRegistry();
-
+	BiomeRegistry const& registry = mc->getLevel()->getBiomeRegistry();
 	auto biomeInfoMap = json::object();
-	CompoundTag biomes;
+	auto biomes = createCompound();
 	registry.forEachBiome([&biomes, &registry, &logger, &biomeInfoMap](Biome& biome) {
-		logger.info("Extracting biome data - " + biome.getName());
-		CompoundTag tag;
-		biome.writePacketData(tag, const_cast<TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> &>(registry.getTagRegistry()));
-		biomes.put(biome.getName(), tag.copy());
+		string name = dAccess<HashedString, 8>(&biome).getString();
+		int id = dAccess<int, 136>(&biome);
+		logger.info("Extracting biome data - " + name);
+		auto tag = createCompound();
+		TagRegistry<IDType<BiomeTagIDType>, IDType<BiomeTagSetIDType>>& tagRegistry = const_cast<TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>&>(registry.getTagRegistry());
+		biome.writePacketData(*tag, tagRegistry);
+		biomes->put(name, tag->copy());
 
 		auto obj = json::object();
-		obj["id"] = biome.getId();
-		obj["type"] = asString(magic_enum::enum_name(biome.getBiomeType()));
-		biomeInfoMap[biome.getName()] = obj;
+		obj["id"] = id;
+		obj["type"] = string(magic_enum::enum_name(biome.getBiomeType()));
+		biomeInfoMap[name] = obj;
 		});
-	writeNBT("data/biome_definitions.nbt", biomes);
-    writeNetworkNBT("data/biome_definitions_network.nbt", biomes);
-	writeSNBT("data/biome_definitions.snbt", biomes);
-    writeJSON("data/biome_id_and_type.json", biomeInfoMap);
-	logger.info(R"(Biome definitions has been saved to "data/biome_definitions.nbt", "data/biome_definitions_network.nbt" and "data/biome_definitions.snbt")");
+	writeNBT("data/biome_definitions.nbt", biomes.get());
+	biomes.release();
+	writeJSON("data/biome_id_and_type.json", biomeInfoMap);
+	logger.info(R"(Biome definitions has been saved to "data/biome_definitions.nbt" and "data/biome_id_and_type.json")");
 }
 
 void dumpCommandArgData() {
-	Logger logger;
+	//Logger logger;
 
-	CommandRegistry& registry = Global<MinecraftCommands>->getRegistry();
-	auto global = json::object();
-	registry.forEachNonTerminal([&logger, &global](auto symbol) {
-		//buggy toString
-		logger.info("Extracting command arg type - " + symbol.toString());
-
-		auto obj = json::object();
-		obj["value"] = symbol.value();
-		obj["index"] = symbol.toIndex();
-
-		global[symbol.toString()] = obj;
-		});
-	writeJSON("data/command_arg_types.json", global);
-	logger.info("Command arg type data have been saved to \"data/command_arg_types.json\"");
+	//CommandRegistry& registry = commands->getRegistry();
+	//auto global = json::object();
+	//registry.forEachNonTerminal([&logger, &global,&registry](auto symbol) {
+	//	//buggy toString
+	//	string sym = registry.symbolToString(symbol);
+	//	logger.info("Extracting command arg type - " + sym);
+	//	auto obj = json::object();
+	//	obj["value"] = symbol.value();
+	//	obj["index"] = symbol.toIndex();
+	//	global[sym] = obj;
+	//	});
+	//writeJSON("data/command_arg_types.json", global);
+	//logger.info("Command arg type data have been saved to \"data/command_arg_types.json\"");
 }
 
 void dumpAvailableCommand() {
 	Logger logger;
 
-	CommandRegistry* registry = Global<CommandRegistry>;
-	auto aCmdPk = registry->serializeAvailableCommands();
+	CommandRegistry& registry = commands->getRegistry();
+	auto aCmdPk = registry.serializeAvailableCommands();
 	logger.info("Extracting available command data...");
 
 	auto global = json::object();
 
 	logger.info("Extracting all enums...");
-	global["allEnums"] = aCmdPk.mAllEnums;
+	global["allEnums"] = aCmdPk.mEnumValues;
 	logger.info("Extracting all suffix...");
-	global["allSuffix"] = aCmdPk.mAllSuffix;
+	global["allSuffix"] = aCmdPk.mPostfixes;
 
 	logger.info("Extracting enum data array...");
 	auto enumDataArray = json::array();
-	for (auto& enumData : aCmdPk.mEnumDatas) {
+	for (auto& enumData : aCmdPk.mEnums) {
 		auto obj = json::object();
 
 		obj["name"] = enumData.name;
@@ -597,11 +622,11 @@ void dumpAvailableCommand() {
 	global["enumDatas"] = enumDataArray;
 
 	logger.info("Extracting chained subcommand value array...");
-	global["chainedSubcommandValues"] = aCmdPk.mChainedSubcommandValues;
+	global["chainedSubcommandValues"] = aCmdPk.mSubcommandValues;
 
 	logger.info("Extracting chained subcommand array...");
 	auto chainedSubcommandArray = json::array();
-	for (auto& chainedSubcommand : aCmdPk.mChainedSubcommands) {
+	for (auto& chainedSubcommand : aCmdPk.mSubcommands) {
 		auto chainedSubcommandDataObj = json::object();
 
 		chainedSubcommandDataObj["name"] = chainedSubcommand.name;
@@ -623,7 +648,7 @@ void dumpAvailableCommand() {
 
 	logger.info("Extracting command data array...");
 	auto commandDataArray = json::array();
-	for (auto& commandData : aCmdPk.mCommandDatas) {
+	for (auto& commandData : aCmdPk.mCommands) {
 		auto obj = json::object();
 
 		obj["name"] = commandData.name;
@@ -652,7 +677,7 @@ void dumpAvailableCommand() {
 		}
 		obj["overloads"] = overloads;
 		obj["chainedOffsets"] = commandData.chainedOffsets;
-		obj["aliasIndex"] = commandData.aliasIndex;
+		obj["aliasIndex"] = commandData.aliasEnumIndex;
 
 		commandDataArray.push_back(obj);
 	}
@@ -672,10 +697,10 @@ void dumpAvailableCommand() {
 
 	logger.info("Extracting constrained value data array...");
 	auto constrainedValueDataArray = json::array();
-	for (auto& constrainedValueData : aCmdPk.mConstrainedValueDatas) {
+	for (auto& constrainedValueData : aCmdPk.mConstraints) {
 		auto constrainedValueDataObj = json::object();
 
-		constrainedValueDataObj["enumIndex"] = constrainedValueData.enumIndex;
+		constrainedValueDataObj["enumIndex"] = constrainedValueData.enumValueIndex;
 		constrainedValueDataObj["enumNameIndex"] = constrainedValueData.enumNameIndex;
 		constrainedValueDataObj["indices"] = constrainedValueData.indices;
 
@@ -703,7 +728,7 @@ void dumpPropertyTypeData() {
 
 	std::map<std::string, std::vector<std::unique_ptr<class CompoundTag>>> blockToBlockStateData;
 
-	auto& palette = Global<Minecraft>->getLevel()->getBlockPalette();
+	auto& palette = mc->getLevel()->getBlockPalette();
 	for (unsigned int i = 0; i < blockStateCounter; i++) {
 		const Block& block = palette.getBlock(i);
 		auto name = block.getLegacyBlock().getRawNameId();
@@ -712,8 +737,8 @@ void dumpPropertyTypeData() {
 		}
 		auto& blockStates = blockToBlockStateData[name];
 		auto nbt = block.getSerializationId().clone();
-		if (nbt->contains("states") && !nbt->getCompoundTag("states")->isEmpty()) {
-			blockStates.push_back(nbt->getCompoundTag("states")->clone());
+		if (nbt->contains("states") && !nbt->getCompound("states")->isEmpty()) {
+			blockStates.push_back(nbt->getCompound("states")->clone());
 		}
 	}
 
@@ -724,7 +749,7 @@ void dumpPropertyTypeData() {
 		std::map<std::string, PropertyType> propertyTypeMap;
 
 		for (auto& state : states) {
-			for (auto& valueEntry : state->value()) {
+			for (auto& valueEntry : state->rawView()) {
 				if (!propertyTypeMap.contains(valueEntry.first)) {
 					PropertyType p;
 					p.serializationName = valueEntry.first;
@@ -732,7 +757,7 @@ void dumpPropertyTypeData() {
 					propertyTypeMap[p.serializationName] = p;
 				}
 				auto& propertyType = propertyTypeMap[valueEntry.first];
-				switch (valueEntry.second->getId()) {
+				switch (valueEntry.second.get()->getId()) {
 				case Tag::Type::Byte:
 					if (propertyType.valueType.empty()) {
 						propertyType.valueType = "BOOLEAN";
