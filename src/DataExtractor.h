@@ -67,6 +67,7 @@
 #include <mc/world/actor/Mob.h>
 #include <mc\common\TagRegistry.h>
 #include <mc\common\wrapper\IDType.h>
+#include <mc\world\level\dimension\Dimension.h>
 
 AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
 struct BiomeTagIDType;

@@ -6,8 +6,6 @@
 out/
 
 build/
-# We don't use CMakeLists, we only use it as a completion
-CMakeLists.txt
 
 # MacOS Cache
 .DS_Store
