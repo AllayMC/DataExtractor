@@ -395,8 +395,7 @@ std::unique_ptr<class CompoundTag> generateNBTFromItem(const Item& item) {
 	}
 	nbt->putString("descriptionId", item.getDescriptionId());
 	nbt->putString("name", item.getFullItemName());
-	nbt->putShort("maxDamage", item.getMaxDamage());
-	nbt->putString("auxValuesDescription", item.getAuxValuesDescription());
+	nbt->putShort("maxDamage", item.getMaxDamage());//最大耐久
 	nbt->putBoolean("isArmor", item.isArmor());
 	nbt->putBoolean("isBlockPlanterItem", item.isBlockPlanterItem());
 	nbt->putBoolean("isDamageable", item.isDamageable());
@@ -415,7 +414,7 @@ std::unique_ptr<class CompoundTag> generateNBTFromItem(const Item& item) {
 	nbt->putString("creativeGroup", item.getCreativeGroup());
 	nbt->putInt("creativeCategory", (int)item.getCreativeCategory());
 	nbt->putInt("armorValue", item.getArmorValue());
-	nbt->putInt("getAttackDamage", item.getAttackDamage());
+	nbt->putInt("attackDamage", item.getAttackDamage());
 	nbt->putInt("toughnessValue", item.getToughnessValue());
 	nbt->putFloat("viewDamping", item.getViewDamping());
 	nbt->putInt("cooldownTime", item.getCooldownTime());
