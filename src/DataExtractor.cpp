@@ -501,7 +501,7 @@ void dumpPalette() {
 
 	auto global = createCompound();
 	auto blocks = createListTag();
-	for (unsigned int i = 0; i <= blockStateCounter; i++) {
+	for (int i = 0; i <= blockStateCounter; ++i) {
 		blocks->add(palette.getBlock(i).getSerializationId().clone());
 	}
 	global->put("blocks", blocks->copyList());
@@ -728,7 +728,7 @@ void dumpPropertyTypeData() {
 	std::map<std::string, std::vector<std::unique_ptr<class CompoundTag>>> blockToBlockStateData;
 
 	auto& palette = mc->getLevel()->getBlockPalette();
-	for (unsigned int i = 0; i <= blockStateCounter; i++) {
+	for (int i = 0; i <= blockStateCounter; ++i) {
 		const Block& block = palette.getBlock(i);
 		auto name = block.getLegacyBlock().getRawNameId();
 		if (!blockToBlockStateData.contains(name)) {
