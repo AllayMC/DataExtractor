@@ -229,7 +229,7 @@ void extractData() {
 	dumpBlockIdToItemIdMap();
 	dumpBiomeData();
 	//dumpCommandArgData();
-	//dumpAvailableCommand();
+	dumpAvailableCommand();
 	dumpPropertyTypeData();
 }
 

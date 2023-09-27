@@ -1870,6 +1870,7 @@ target_sources(AllayDataExtractor PRIVATE
     src/mc/enums/BehaviorStatus.h
     src/mc/enums/BigDripleafTilt.h
     src/mc/enums/BlendVersion.h
+    src/mc/enums/BlockSlot.h
     src/mc/enums/BoneAnimationRelativeMode.h
     src/mc/enums/BoneTransformType.h
     src/mc/enums/BookEditAction.h
@@ -3219,6 +3220,7 @@ target_sources(AllayDataExtractor PRIVATE
     src/mc/server/commands/CommandBlockName.h
     src/mc/server/commands/CommandBlockNameResult.h
     src/mc/server/commands/CommandChainedSubcommand.h
+    src/mc/server/commands/CommandCompareOperator.h
     src/mc/server/commands/CommandContext.h
     src/mc/server/commands/CommandCooldown.h
     src/mc/server/commands/CommandFilePath.h
@@ -3286,7 +3288,14 @@ target_sources(AllayDataExtractor PRIVATE
     src/mc/server/commands/ExecuteCommandHelpers.h
     src/mc/server/commands/ExecuteContextCommandOrigin.h
     src/mc/server/commands/FacingResult.h
+    src/mc/server/commands/flags/CommandAsyncFlag.h
+    src/mc/server/commands/flags/CommandCheatFlag.h
+    src/mc/server/commands/flags/CommandEditorFlag.h
+    src/mc/server/commands/flags/CommandExecuteFlag.h
+    src/mc/server/commands/flags/CommandSyncFlag.h
     src/mc/server/commands/flags/CommandTypeFlag.h
+    src/mc/server/commands/flags/CommandUsageFlag.h
+    src/mc/server/commands/flags/CommandVisibilityFlag.h
     src/mc/server/commands/FogCommandUtil.h
     src/mc/server/commands/FunctionEntry.h
     src/mc/server/commands/functions/CommandDispatcher.h
