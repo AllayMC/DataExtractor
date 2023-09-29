@@ -185,6 +185,7 @@ void extractData() {
 	dumpPalette();
 	dumpBlockIdToItemIdMap();
 	dumpBiomeData();
+	//todo fix the bug
 	//dumpCommandArgData();
 	//dumpAvailableCommand();
 	dumpPropertyTypeData();
@@ -552,7 +553,7 @@ void dumpCommandArgData() {
 }
 
 void dumpAvailableCommand() {
-	Logger logger;
+	/*Logger logger;
 
 	CommandRegistry& registry = commands->getRegistry();
 	auto aCmdPk = registry.serializeAvailableCommands();
@@ -664,7 +665,7 @@ void dumpAvailableCommand() {
 	}
 	global["constrainedValueData"] = constrainedValueDataArray;
 	writeJSON("data/available_commands.json", global);
-	logger.info("Available commands' data has been saved to \"data/available_commands.json\"");
+	logger.info("Available commands' data has been saved to \"data/available_commands.json\"");*/
 }
 
 struct PropertyType {
