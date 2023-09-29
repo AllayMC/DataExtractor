@@ -44,7 +44,7 @@ public:
     virtual class HashedString const & getRawName() const;
 
     // symbol: ??0ActorAnimationControllerPlayer@@QEAA@AEBVHashedString@@AEBVActorAnimationControllerPtr@@AEAVAnimationComponent@@AEBVExpressionNode@@AEAV?$set@VHashedString@@U?$hash@VHashedString@@@std@@V?$allocator@VHashedString@@@3@@std@@@Z
-    MCAPI ActorAnimationControllerPlayer(class HashedString const &, class ActorAnimationControllerPtr const &, class AnimationComponent &, class ExpressionNode const &, std::set<class HashedString, std::hash<class HashedString>, std::allocator<class HashedString>> &);
+    MCAPI ActorAnimationControllerPlayer(class HashedString const &, class ActorAnimationControllerPtr const &, class AnimationComponent &, class ExpressionNode const &, std::set<class HashedString, std::hash<class HashedString>> &);
 
     // symbol: ?applyStateAnimationToPose@ActorAnimationControllerPlayer@@QEAAXAEAVRenderParams@@AEAV?$unordered_map@W4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@U?$hash@W4SkeletalHierarchyIndex@@@3@U?$equal_to@W4SkeletalHierarchyIndex@@@3@V?$allocator@U?$pair@$$CBW4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@@std@@@3@@std@@M@Z
     MCAPI void applyStateAnimationToPose(class RenderParams &, std::unordered_map<::SkeletalHierarchyIndex,std::vector<class BoneOrientation>> &, float);

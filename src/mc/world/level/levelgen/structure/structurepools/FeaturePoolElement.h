@@ -29,7 +29,7 @@ public:
     virtual bool place(class BlockSource &, class BlockPos, ::Rotation, class BoundingBox, class Random &, std::unordered_map<class BlockPos,std::optional<struct ActorDefinitionIdentifier>> &, class BlockPos) const;
 
     // symbol: ??0FeaturePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@V?$WeakRefT@UFeatureRefTraits@@@@@Z
-    MCAPI FeaturePoolElement(gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class WeakRefT<struct FeatureRefTraits>);
+    MCAPI FeaturePoolElement(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class WeakRefT<struct FeatureRefTraits>);
 
     // NOLINTEND
 

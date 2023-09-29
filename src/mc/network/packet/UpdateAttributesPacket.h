@@ -28,7 +28,7 @@ public:
         MCAPI AttributeData(struct UpdateAttributesPacket::AttributeData &&);
     
         // symbol: ?read@AttributeData@UpdateAttributesPacket@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-        MCAPI class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream &);
+        MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream &);
     
         // symbol: ??1AttributeData@UpdateAttributesPacket@@QEAA@XZ
         MCAPI ~AttributeData();
@@ -57,7 +57,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@UpdateAttributesPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1UpdateAttributesPacket@@UEAA@XZ
     MCVAPI ~UpdateAttributesPacket();

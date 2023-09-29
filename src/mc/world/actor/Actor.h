@@ -532,7 +532,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
-    virtual void changeDimension(class AutomaticID<class Dimension, int>);
+    virtual void changeDimension(DimensionType);
 
     // vIndex: 164, symbol: ?getControllingPlayer@Actor@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getControllingPlayer() const;
@@ -727,7 +727,7 @@ public:
     virtual std::optional<class BlockPos> getLastDeathPos() const;
 
     // vIndex: 228, symbol: ?getLastDeathDimension@Actor@@UEBA?AV?$optional@V?$AutomaticID@VDimension@@H@@@std@@XZ
-    virtual std::optional<class AutomaticID<class Dimension, int>> getLastDeathDimension() const;
+    virtual std::optional<DimensionType> getLastDeathDimension() const;
 
     // vIndex: 229, symbol: ?hasDiedBefore@Actor@@UEBA_NXZ
     virtual bool hasDiedBefore() const;
@@ -849,11 +849,11 @@ public:
     // symbol: ??1Actor@@UEAA@XZ
     MCVAPI ~Actor();
 
-    // symbol: ??0Actor@@QEAA@AEAVILevel@@AEAVEntityContext@@@Z
-    MCAPI Actor(class ILevel &, class EntityContext &);
-
     // symbol: ??0Actor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Actor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
+    // symbol: ??0Actor@@QEAA@AEAVILevel@@AEAVEntityContext@@@Z
+    MCAPI Actor(class ILevel &, class EntityContext &);
 
     // symbol: ?_sendDirtyActorData@Actor@@QEAAXXZ
     MCAPI void _sendDirtyActorData();
@@ -918,11 +918,11 @@ public:
     // symbol: ?clearFishingHookID@Actor@@QEAAXXZ
     MCAPI void clearFishingHookID();
 
-    // symbol: ?closerThan@Actor@@QEBA_NAEBV1@MM@Z
-    MCAPI bool closerThan(class Actor const &, float, float) const;
-
     // symbol: ?closerThan@Actor@@QEBA_NAEBV1@M@Z
     MCAPI bool closerThan(class Actor const &, float) const;
+
+    // symbol: ?closerThan@Actor@@QEBA_NAEBV1@MM@Z
+    MCAPI bool closerThan(class Actor const &, float, float) const;
 
     // symbol: ?consumeItem@Actor@@QEAAXAEAVItemActor@@H@Z
     MCAPI void consumeItem(class ItemActor &, int);
@@ -990,11 +990,11 @@ public:
     // symbol: ?getAllEffects@Actor@@QEBAAEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@XZ
     MCAPI std::vector<class MobEffectInstance> const & getAllEffects() const;
 
-    // symbol: ?getArmorContainer@Actor@@QEBAAEBVSimpleContainer@@XZ
-    MCAPI class SimpleContainer const & getArmorContainer() const;
-
     // symbol: ?getArmorContainer@Actor@@QEAAAEAVSimpleContainer@@XZ
     MCAPI class SimpleContainer & getArmorContainer();
+
+    // symbol: ?getArmorContainer@Actor@@QEBAAEBVSimpleContainer@@XZ
+    MCAPI class SimpleContainer const & getArmorContainer() const;
 
     // symbol: ?getAttachPos@Actor@@QEBA?AVVec3@@W4ActorLocation@@M@Z
     MCAPI class Vec3 getAttachPos(::ActorLocation, float) const;
@@ -1063,7 +1063,7 @@ public:
     MCAPI class Dimension const & getDimensionConst() const;
 
     // symbol: ?getDimensionId@Actor@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
-    MCAPI class AutomaticID<class Dimension, int> getDimensionId() const;
+    MCAPI DimensionType getDimensionId() const;
 
     // symbol: ?getEffect@Actor@@QEBAPEBVMobEffectInstance@@I@Z
     MCAPI class MobEffectInstance const * getEffect(uint) const;
@@ -1071,11 +1071,11 @@ public:
     // symbol: ?getEffect@Actor@@QEBAPEBVMobEffectInstance@@AEBVMobEffect@@@Z
     MCAPI class MobEffectInstance const * getEffect(class MobEffect const &) const;
 
-    // symbol: ?getEntityData@Actor@@QEBAAEBVSynchedActorDataEntityWrapper@@XZ
-    MCAPI class SynchedActorDataEntityWrapper const & getEntityData() const;
-
     // symbol: ?getEntityData@Actor@@QEAAAEAVSynchedActorDataEntityWrapper@@XZ
     MCAPI class SynchedActorDataEntityWrapper & getEntityData();
+
+    // symbol: ?getEntityData@Actor@@QEBAAEBVSynchedActorDataEntityWrapper@@XZ
+    MCAPI class SynchedActorDataEntityWrapper const & getEntityData() const;
 
     // symbol: ?getEntityRegistry@Actor@@QEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ
     MCAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
@@ -1146,11 +1146,11 @@ public:
     // symbol: ?getLeashHolder@Actor@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getLeashHolder() const;
 
-    // symbol: ?getLevel@Actor@@QEAAAEAVLevel@@XZ
-    MCAPI class Level & getLevel();
-
     // symbol: ?getLevel@Actor@@QEBAAEBVLevel@@XZ
     MCAPI class Level const & getLevel() const;
+
+    // symbol: ?getLevel@Actor@@QEAAAEAVLevel@@XZ
+    MCAPI class Level & getLevel();
 
     // symbol: ?getLevelTimeStamp@Actor@@QEBA_KXZ
     MCAPI uint64 getLevelTimeStamp() const;
@@ -1242,11 +1242,11 @@ public:
     // symbol: ?getSlideOffset@Actor@@QEBA?AVVec2@@XZ
     MCAPI class Vec2 getSlideOffset() const;
 
-    // symbol: ?getSpatialNetworkData@Actor@@QEAAAEAVSpatialActorNetworkData@@XZ
-    MCAPI class SpatialActorNetworkData & getSpatialNetworkData();
-
     // symbol: ?getSpatialNetworkData@Actor@@QEBAAEBVSpatialActorNetworkData@@XZ
     MCAPI class SpatialActorNetworkData const & getSpatialNetworkData() const;
+
+    // symbol: ?getSpatialNetworkData@Actor@@QEAAAEAVSpatialActorNetworkData@@XZ
+    MCAPI class SpatialActorNetworkData & getSpatialNetworkData();
 
     // symbol: ?getSpeedInMetersPerSecond@Actor@@QEBAMXZ
     MCAPI float getSpeedInMetersPerSecond() const;
@@ -1599,11 +1599,11 @@ public:
     // symbol: ?isWorldBuilder@Actor@@QEBA_NXZ
     MCAPI bool isWorldBuilder() const;
 
-    // symbol: ?lerpTo@Actor@@QEAAXAEBVVec3@@AEBVVec2@@MH@Z
-    MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, float, int);
-
     // symbol: ?lerpTo@Actor@@QEAAXAEBVVec3@@AEBVVec2@@H@Z
     MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, int);
+
+    // symbol: ?lerpTo@Actor@@QEAAXAEBVVec3@@AEBVVec2@@MH@Z
+    MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, float, int);
 
     // symbol: ?loadEntityFlags@Actor@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCAPI void loadEntityFlags(class CompoundTag const &, class DataLoadHelper &);
@@ -1650,11 +1650,11 @@ public:
     // symbol: ?playSound@Actor@@QEAAXW4LevelSoundEvent@@AEBVVec3@@H@Z
     MCAPI void playSound(::LevelSoundEvent, class Vec3 const &, int);
 
-    // symbol: ?playSynchronizedSound@Actor@@QEAAXW4LevelSoundEvent@@AEBVVec3@@H_N@Z
-    MCAPI void playSynchronizedSound(::LevelSoundEvent, class Vec3 const &, int, bool);
-
     // symbol: ?playSynchronizedSound@Actor@@QEAAXW4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@_N@Z
     MCAPI void playSynchronizedSound(::LevelSoundEvent, class Vec3 const &, class Block const &, bool);
+
+    // symbol: ?playSynchronizedSound@Actor@@QEAAXW4LevelSoundEvent@@AEBVVec3@@H_N@Z
+    MCAPI void playSynchronizedSound(::LevelSoundEvent, class Vec3 const &, int, bool);
 
     // symbol: ?positionAllPassengers@Actor@@QEAAXXZ
     MCAPI void positionAllPassengers();
@@ -2093,7 +2093,7 @@ public:
     MCAPI void _setArmorContainer(std::unique_ptr<class SimpleContainer>);
 
     // symbol: ?_setDimensionTransitionComponent@Actor@@IEAAXV?$AutomaticID@VDimension@@H@@0H@Z
-    MCAPI void _setDimensionTransitionComponent(class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>, int);
+    MCAPI void _setDimensionTransitionComponent(DimensionType, DimensionType, int);
 
     // symbol: ?_setHandContainer@Actor@@IEAAXV?$unique_ptr@VSimpleContainer@@U?$default_delete@VSimpleContainer@@@std@@@std@@@Z
     MCAPI void _setHandContainer(std::unique_ptr<class SimpleContainer>);

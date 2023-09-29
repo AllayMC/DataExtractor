@@ -28,10 +28,10 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 4, symbol: ?read@CameraInstructionPacket@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream &);
 
     // vIndex: 7, symbol: ?_read@CameraInstructionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1CameraInstructionPacket@@UEAA@XZ
     MCVAPI ~CameraInstructionPacket();

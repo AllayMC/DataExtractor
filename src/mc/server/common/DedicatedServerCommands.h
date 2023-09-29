@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?setupStandaloneServer@DedicatedServerCommands@@SAXAEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@AEAVIMinecraftApp@@AEAVLevel@@AEAVLevelStorage@@AEAVDedicatedServer@@AEAVAllowListFile@@PEAUScriptSettings@@@Z
-    MCAPI static void setupStandaloneServer(gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &, class IMinecraftApp &, class Level &, class LevelStorage &, class DedicatedServer &, class AllowListFile &, struct ScriptSettings *);
+    MCAPI static void setupStandaloneServer(Bedrock::NotNullNonOwnerPtr<class Minecraft> const &, class IMinecraftApp &, class Level &, class LevelStorage &, class DedicatedServer &, class AllowListFile &, struct ScriptSettings *);
 
     // NOLINTEND
 

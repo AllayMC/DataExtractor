@@ -32,7 +32,7 @@ public:
     MCAPI static void applyTarget(class Actor &, class TeleportTarget, bool);
 
     // symbol: ?computeTarget@TeleportCommand@@SA?AVTeleportTarget@@AEAVActor@@VVec3@@PEAV4@V?$AutomaticID@VDimension@@H@@AEBV?$optional@VRotationData@RotationCommandUtils@@@std@@H@Z
-    MCAPI static class TeleportTarget computeTarget(class Actor &, class Vec3, class Vec3 *, class AutomaticID<class Dimension, int>, std::optional<class RotationCommandUtils::RotationData> const &, int);
+    MCAPI static class TeleportTarget computeTarget(class Actor &, class Vec3, class Vec3 *, DimensionType, std::optional<class RotationCommandUtils::RotationData> const &, int);
 
     // symbol: ?setup@TeleportCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry &);

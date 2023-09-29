@@ -37,7 +37,7 @@ public:
     // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5() = 0;
 
-    // vIndex: 6, symbol: ?matches@ShapedChemistryRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 6, symbol: ?matches@ShapelessChemistryRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const &, class CraftingContext const &) const = 0;
 
     // vIndex: 7, symbol: ?size@DecoratedPotRecipe@@UEBAHXZ
@@ -80,7 +80,7 @@ public:
     MCAPI std::vector<class RecipeIngredient> const & getIngredients() const;
 
     // symbol: ?getNetId@Recipe@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
-    MCAPI class TypedServerNetId<struct RecipeNetIdTag, uint, 0> const & getNetId() const;
+    MCAPI class RecipeNetId const & getNetId() const;
 
     // symbol: ?getPriority@Recipe@@QEBAHXZ
     MCAPI int getPriority() const;
@@ -98,7 +98,7 @@ public:
     MCAPI int getWidth() const;
 
     // symbol: ?setNetId@Recipe@@QEAAXAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, uint, 0> const &);
+    MCAPI void setNetId(class RecipeNetId const &);
 
     // symbol: ?isAnyAuxValue@Recipe@@SA_NAEBVItemDescriptor@@@Z
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const &);

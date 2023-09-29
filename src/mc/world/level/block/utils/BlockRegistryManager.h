@@ -25,7 +25,7 @@ private:
     MCAPI static std::weak_ptr<class BlockTypeRegistry> mServerRegistry;
 
     // symbol: ?mThreadLocalRegistry@BlockRegistryManager@@0V?$ThreadLocalObject@V?$weak_ptr@VBlockTypeRegistry@@@std@@V?$allocator@V?$weak_ptr@VBlockTypeRegistry@@@std@@@2@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::weak_ptr<class BlockTypeRegistry>, std::allocator<std::weak_ptr<class BlockTypeRegistry>>> mThreadLocalRegistry;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::weak_ptr<class BlockTypeRegistry>> mThreadLocalRegistry;
 
     // NOLINTEND
 

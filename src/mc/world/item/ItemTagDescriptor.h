@@ -54,7 +54,7 @@ public:
     virtual uint64 getHash() const;
 
     // symbol: ?deserialize@ItemTagDescriptor@@SA?AV?$Result@V?$unique_ptr@UItemTagDescriptor@@U?$default_delete@UItemTagDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<struct ItemTagDescriptor>, std::error_code> deserialize(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct ItemTagDescriptor>> deserialize(class ReadOnlyBinaryStream &);
 
     // NOLINTEND
 

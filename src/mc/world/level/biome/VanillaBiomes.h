@@ -57,7 +57,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?addBiomeDimensionAttributeComponentHelper@VanillaBiomes@@CAXAEAVBiomeRegistry@@AEBVHashedString@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI static void addBiomeDimensionAttributeComponentHelper(class BiomeRegistry &, class HashedString const &, class AutomaticID<class Dimension, int>);
+    MCAPI static void addBiomeDimensionAttributeComponentHelper(class BiomeRegistry &, class HashedString const &, DimensionType);
 
     // NOLINTEND
 

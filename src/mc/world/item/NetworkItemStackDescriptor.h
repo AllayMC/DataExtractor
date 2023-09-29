@@ -39,13 +39,13 @@ public:
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
 
     // symbol: ?read@NetworkItemStackDescriptor@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream &);
+    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream &);
 
     // symbol: ?setIncludeNetIds@NetworkItemStackDescriptor@@QEBAX_N@Z
     MCAPI void setIncludeNetIds(bool) const;
 
     // symbol: ?tryGetServerNetId@NetworkItemStackDescriptor@@QEBAPEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@XZ
-    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetServerNetId() const;
+    MCAPI class ItemStackNetId const * tryGetServerNetId() const;
 
     // symbol: ?write@NetworkItemStackDescriptor@@QEBAXAEAVBinaryStream@@@Z
     MCAPI void write(class BinaryStream &) const;

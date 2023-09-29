@@ -304,7 +304,7 @@ public:
     virtual std::optional<class BlockPos> getLastDeathPos() const;
 
     // vIndex: 228, symbol: ?getLastDeathDimension@Player@@UEBA?AV?$optional@V?$AutomaticID@VDimension@@H@@@std@@XZ
-    virtual std::optional<class AutomaticID<class Dimension, int>> getLastDeathDimension() const;
+    virtual std::optional<DimensionType> getLastDeathDimension() const;
 
     // vIndex: 229, symbol: ?hasDiedBefore@Player@@UEBA_NXZ
     virtual bool hasDiedBefore() const;
@@ -406,7 +406,7 @@ public:
     virtual void _fireDimensionChanged();
 
     // vIndex: 324, symbol: ?changeDimensionWithCredits@Player@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
-    virtual void changeDimensionWithCredits(class AutomaticID<class Dimension, int>);
+    virtual void changeDimensionWithCredits(DimensionType);
 
     // vIndex: 325, symbol: ?tickWorld@Player@@UEAAXAEBUTick@@@Z
     virtual void tickWorld(struct Tick const &);
@@ -421,7 +421,7 @@ public:
     virtual void moveView();
 
     // vIndex: 329, symbol: ?moveSpawnView@Player@@UEAAXAEBVVec3@@V?$AutomaticID@VDimension@@H@@@Z
-    virtual void moveSpawnView(class Vec3 const &, class AutomaticID<class Dimension, int>);
+    virtual void moveSpawnView(class Vec3 const &, DimensionType);
 
     // vIndex: 330, symbol: ?setName@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void setName(std::string const &);
@@ -744,26 +744,26 @@ public:
     // symbol: ?dropCursorSelectedItemOnDeath@Player@@QEAAXXZ
     MCAPI void dropCursorSelectedItemOnDeath();
 
-    // symbol: ?eat@Player@@QEAAXAEBVItemStack@@@Z
-    MCAPI void eat(class ItemStack const &);
-
     // symbol: ?eat@Player@@QEAAXHM@Z
     MCAPI void eat(int, float);
+
+    // symbol: ?eat@Player@@QEAAXAEBVItemStack@@@Z
+    MCAPI void eat(class ItemStack const &);
 
     // symbol: ?equippedArmorItemCanBeMoved@Player@@QEBA_NAEBVItemStack@@@Z
     MCAPI bool equippedArmorItemCanBeMoved(class ItemStack const &) const;
 
     // symbol: ?fireDimensionChangedEvent@Player@@QEAAXV?$AutomaticID@VDimension@@H@@0@Z
-    MCAPI void fireDimensionChangedEvent(class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    MCAPI void fireDimensionChangedEvent(DimensionType, DimensionType);
 
     // symbol: ?forceAllowEating@Player@@QEBA_NXZ
     MCAPI bool forceAllowEating() const;
 
-    // symbol: ?getAbilities@Player@@QEAAAEAVLayeredAbilities@@XZ
-    MCAPI class LayeredAbilities & getAbilities();
-
     // symbol: ?getAbilities@Player@@QEBAAEBVLayeredAbilities@@XZ
     MCAPI class LayeredAbilities const & getAbilities() const;
+
+    // symbol: ?getAbilities@Player@@QEAAAEAVLayeredAbilities@@XZ
+    MCAPI class LayeredAbilities & getAbilities();
 
     // symbol: ?getAgent@Player@@QEBAPEAVAgent@@XZ
     MCAPI class Agent * getAgent() const;
@@ -811,7 +811,7 @@ public:
     MCAPI int getEnchantmentSeed() const;
 
     // symbol: ?getExpectedSpawnDimensionId@Player@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
-    MCAPI class AutomaticID<class Dimension, int> getExpectedSpawnDimensionId() const;
+    MCAPI DimensionType getExpectedSpawnDimensionId() const;
 
     // symbol: ?getExpectedSpawnPosition@Player@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const & getExpectedSpawnPosition() const;
@@ -895,16 +895,16 @@ public:
     MCAPI float getSleepRotation() const;
 
     // symbol: ?getSpawnDimension@Player@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
-    MCAPI class AutomaticID<class Dimension, int> getSpawnDimension() const;
+    MCAPI DimensionType getSpawnDimension() const;
 
     // symbol: ?getSpawnPosition@Player@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const & getSpawnPosition() const;
 
-    // symbol: ?getSupplies@Player@@QEBAAEBVPlayerInventory@@XZ
-    MCAPI class PlayerInventory const & getSupplies() const;
-
     // symbol: ?getSupplies@Player@@QEAAAEAVPlayerInventory@@XZ
     MCAPI class PlayerInventory & getSupplies();
+
+    // symbol: ?getSupplies@Player@@QEBAAEBVPlayerInventory@@XZ
+    MCAPI class PlayerInventory const & getSupplies() const;
 
     // symbol: ?getTrackedBosses@Player@@QEAAAEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@XZ
     MCAPI std::vector<struct ActorUniqueID> const & getTrackedBosses();
@@ -949,7 +949,7 @@ public:
     MCAPI bool interact(class Actor &, class Vec3 const &);
 
     // symbol: ?is2DPositionRelevant@Player@@QEAA_NV?$AutomaticID@VDimension@@H@@AEBVBlockPos@@@Z
-    MCAPI bool is2DPositionRelevant(class AutomaticID<class Dimension, int>, class BlockPos const &);
+    MCAPI bool is2DPositionRelevant(DimensionType, class BlockPos const &);
 
     // symbol: ?isEmoting@Player@@QEBA_NXZ
     MCAPI bool isEmoting() const;
@@ -993,11 +993,11 @@ public:
     // symbol: ?passengerCheckMovementStats@Player@@QEAAXXZ
     MCAPI void passengerCheckMovementStats();
 
-    // symbol: ?playPredictiveSynchronizedSound@Player@@QEAAXW4LevelSoundEvent@@AEBVVec3@@AEBUActorDefinitionIdentifier@@H_N@Z
-    MCAPI void playPredictiveSynchronizedSound(::LevelSoundEvent, class Vec3 const &, struct ActorDefinitionIdentifier const &, int, bool);
-
     // symbol: ?playPredictiveSynchronizedSound@Player@@QEAAXW4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@AEBUActorDefinitionIdentifier@@_N@Z
     MCAPI void playPredictiveSynchronizedSound(::LevelSoundEvent, class Vec3 const &, class Block const &, struct ActorDefinitionIdentifier const &, bool);
+
+    // symbol: ?playPredictiveSynchronizedSound@Player@@QEAAXW4LevelSoundEvent@@AEBVVec3@@AEBUActorDefinitionIdentifier@@H_N@Z
+    MCAPI void playPredictiveSynchronizedSound(::LevelSoundEvent, class Vec3 const &, struct ActorDefinitionIdentifier const &, int, bool);
 
     // symbol: ?recheckSpawnPosition@Player@@QEAAXXZ
     MCAPI void recheckSpawnPosition();
@@ -1054,7 +1054,7 @@ public:
     MCAPI void setHasSeenCredits(bool);
 
     // symbol: ?setLastDeathDimension@Player@@QEAAXV?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void setLastDeathDimension(class AutomaticID<class Dimension, int>);
+    MCAPI void setLastDeathDimension(DimensionType);
 
     // symbol: ?setLastDeathPos@Player@@QEAAXVBlockPos@@@Z
     MCAPI void setLastDeathPos(class BlockPos);
@@ -1078,7 +1078,7 @@ public:
     MCAPI void setPlayerUIItem(::PlayerUISlot, class ItemStack const &);
 
     // symbol: ?setRespawnPosition@Player@@QEAAXAEBVBlockPos@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void setRespawnPosition(class BlockPos const &, class AutomaticID<class Dimension, int>);
+    MCAPI void setRespawnPosition(class BlockPos const &, DimensionType);
 
     // symbol: ?setRespawnPositionCandidate@Player@@QEAAXXZ
     MCAPI void setRespawnPositionCandidate();
@@ -1093,7 +1093,7 @@ public:
     MCAPI class ItemStack const & setSelectedSlot(int);
 
     // symbol: ?setSpawnBlockRespawnPosition@Player@@QEAAXAEBVBlockPos@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void setSpawnBlockRespawnPosition(class BlockPos const &, class AutomaticID<class Dimension, int>);
+    MCAPI void setSpawnBlockRespawnPosition(class BlockPos const &, DimensionType);
 
     // symbol: ?setUsedPotion@Player@@QEAAX_N@Z
     MCAPI void setUsedPotion(bool);
@@ -1161,14 +1161,14 @@ public:
     // symbol: ?tryGetFromComponent@Player@@SAPEAV1@AEBV?$FlagComponent@UPlayerComponentFlag@@@@AEAVActorOwnerComponent@@_N@Z
     MCAPI static class Player * tryGetFromComponent(class FlagComponent<struct PlayerComponentFlag> const &, class ActorOwnerComponent &, bool);
 
+    // symbol: ?tryGetFromEntity@Player@@SAPEAV1@V?$StackRefResultT@UEntityRefTraits@@@@_N@Z
+    MCAPI static class Player * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
+
     // symbol: ?tryGetFromEntity@Player@@SAPEAV1@AEAVEntityContext@@_N@Z
     MCAPI static class Player * tryGetFromEntity(class EntityContext &, bool);
 
     // symbol: ?tryGetFromEntity@Player@@SAPEBV1@AEBVEntityContext@@_N@Z
     MCAPI static class Player const * tryGetFromEntity(class EntityContext const &, bool);
-
-    // symbol: ?tryGetFromEntity@Player@@SAPEAV1@V?$StackRefResultT@UEntityRefTraits@@@@_N@Z
-    MCAPI static class Player * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
 
     // symbol: ?DEFAULT_BB_HEIGHT@Player@@2MB
     MCAPI static float const DEFAULT_BB_HEIGHT;

@@ -32,10 +32,10 @@ public:
     MCVAPI void createBackupCopyOfWorld(std::string const &, std::string const &, std::string const &);
 
     // symbol: ?createLevelLooseStorage@LevelListCache@@UEAA?AV?$unique_ptr@VLevelLooseFileStorage@@U?$default_delete@VLevelLooseFileStorage@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-    MCVAPI std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage(std::string const &, class ContentIdentity const &, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
+    MCVAPI std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage(std::string const &, class ContentIdentity const &, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const &);
 
     // symbol: ?createLevelStorage@LevelListCache@@UEAA?AV?$OwnerPtrT@U?$SharePtrRefTraits@VLevelStorage@@@@@@AEAVScheduler@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@5@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@8@V?$unique_ptr@VLevelStorageEventing@@U?$default_delete@VLevelStorageEventing@@@std@@@5@@Z
-    MCVAPI class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>> createLevelStorage(class Scheduler &, std::string const &, class ContentIdentity const &, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, std::chrono::nanoseconds const &, gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>, std::unique_ptr<class LevelStorageEventing>);
+    MCVAPI class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>> createLevelStorage(class Scheduler &, std::string const &, class ContentIdentity const &, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const &, std::chrono::nanoseconds const &, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>, std::unique_ptr<class LevelStorageEventing>);
 
     // symbol: ?createLevelStorageObserver@LevelListCache@@UEAA?AV?$unique_ptr@VLevelStorageObserver@@U?$default_delete@VLevelStorageObserver@@@std@@@std@@XZ
     MCVAPI std::unique_ptr<class LevelStorageObserver> createLevelStorageObserver();
@@ -104,11 +104,11 @@ public:
     // symbol: ?_addOrReplaceCache@LevelListCache@@AEAAPEAVLevelCache@@AEBVPath@Core@@@Z
     MCAPI class LevelCache * _addOrReplaceCache(class Core::Path const &);
 
-    // symbol: ?_addToCache@LevelListCache@@AEAAPEAVLevelCache@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV2@@Z
-    MCAPI class LevelCache * _addToCache(std::string const &, class LevelCache &&);
-
     // symbol: ?_addToCache@LevelListCache@@AEAAPEAVLevelCache@@AEBVPath@Core@@@Z
     MCAPI class LevelCache * _addToCache(class Core::Path const &);
+
+    // symbol: ?_addToCache@LevelListCache@@AEAAPEAVLevelCache@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV2@@Z
+    MCAPI class LevelCache * _addToCache(std::string const &, class LevelCache &&);
 
     // symbol: ?_createAndAddToCache@LevelListCache@@AEAAPEAVLevelCache@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@@Z
     MCAPI class LevelCache * _createAndAddToCache(std::string const &, class Core::Path const &);

@@ -9,6 +9,3 @@ build/
 
 # MacOS Cache
 .DS_Store
-
-
-/CMakeLists.txt

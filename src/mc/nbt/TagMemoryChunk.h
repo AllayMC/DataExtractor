@@ -4,10 +4,6 @@
 
 struct TagMemoryChunk {
 public:
-    size_t                   mElements{ 0 };
-    size_t                   mSize{ 0 };
-    std::unique_ptr<uchar[]> mBuffer;
-
     // prevent constructor by default
     TagMemoryChunk& operator=(TagMemoryChunk const &) = delete;
     TagMemoryChunk(TagMemoryChunk const &) = delete;

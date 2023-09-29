@@ -23,7 +23,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptDimensionType@ScriptModuleMinecraft@@QEAA@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI ScriptDimensionType(class AutomaticID<class Dimension, int>);
+    MCAPI ScriptDimensionType(DimensionType);
 
     // symbol: ?getTypeId@ScriptDimensionType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getTypeId() const;

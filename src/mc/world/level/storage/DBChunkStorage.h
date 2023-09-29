@@ -103,7 +103,7 @@ public:
     MCAPI void _deserializeIndependentActorStorage(class LevelChunk &, std::string const &);
 
     // symbol: ?_getChunkNeighbors@DBChunkStorage@@AEAA?AVNeighbors@LevelChunk@@VChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI class LevelChunk::Neighbors _getChunkNeighbors(class ChunkPos, class AutomaticID<class Dimension, int>);
+    MCAPI class LevelChunk::Neighbors _getChunkNeighbors(class ChunkPos, DimensionType);
 
     // symbol: ?_getLevelChunkFormat@DBChunkStorage@@AEAA?AV?$optional@W4LevelChunkFormat@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI std::optional<::LevelChunkFormat> _getLevelChunkFormat(std::string_view, std::string &);
@@ -155,10 +155,10 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?threadBatch@DBChunkStorage@@0V?$ThreadLocalObject@VLevelStorageWriteBatch@@V?$allocator@VLevelStorageWriteBatch@@@std@@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch, std::allocator<class LevelStorageWriteBatch>> threadBatch;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch> threadBatch;
 
     // symbol: ?threadBuffer@DBChunkStorage@@0V?$ThreadLocalObject@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string, std::allocator<std::string>> threadBuffer;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string> threadBuffer;
 
     // NOLINTEND
 

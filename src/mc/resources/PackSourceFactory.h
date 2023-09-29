@@ -27,7 +27,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?createWorldTemplatePackSource@PackSourceFactory@@UEAAAEAVWorldTemplatePackSource@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVWorldTemplateManager@@@Bedrock@@@gsl@@AEBVUUID@mce@@W4PackType@@W4PackOrigin@@@Z
-    virtual class WorldTemplatePackSource & createWorldTemplatePackSource(gsl::not_null<class Bedrock::NonOwnerPointer<class WorldTemplateManager const>> const &, class mce::UUID const &, ::PackType, ::PackOrigin);
+    virtual class WorldTemplatePackSource & createWorldTemplatePackSource(Bedrock::NotNullNonOwnerPtr<class WorldTemplateManager const> const &, class mce::UUID const &, ::PackType, ::PackOrigin);
 
     // vIndex: 2, symbol: ?getWorldTemplatePackSource@PackSourceFactory@@UEBAPEAVWorldTemplatePackSource@@AEBVUUID@mce@@W4PackType@@@Z
     virtual class WorldTemplatePackSource * getWorldTemplatePackSource(class mce::UUID const &, ::PackType) const;

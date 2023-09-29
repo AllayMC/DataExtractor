@@ -234,7 +234,7 @@ public:
     MCAPI int _getItemEntityCount(class Item const &, class AABB const &);
 
     // symbol: ?_getServerNetworkHandler@MinecraftGameTestHelper@@AEBA?AV?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@XZ
-    MCAPI gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>> _getServerNetworkHandler() const;
+    MCAPI Bedrock::NotNullNonOwnerPtr<class ServerNetworkHandler> _getServerNetworkHandler() const;
 
     // symbol: ?_getStructureBlockMissingError@MinecraftGameTestHelper@@AEBA?AV?$optional@UGameTestError@gametest@@@std@@XZ
     MCAPI std::optional<struct gametest::GameTestError> _getStructureBlockMissingError() const;

@@ -28,7 +28,7 @@ public:
     virtual void tickSeasons(class BlockSource &, class Random &);
 
     // vIndex: 4, symbol: ?getDimensionId@TickingAreaView@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
-    virtual class AutomaticID<class Dimension, int> getDimensionId() const;
+    virtual DimensionType getDimensionId() const;
 
     // vIndex: 5, symbol: ?getBounds@TickingAreaView@@UEBAAEBUBounds@@XZ
     virtual struct Bounds const & getBounds() const;

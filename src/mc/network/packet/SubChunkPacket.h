@@ -92,7 +92,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@SubChunkPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1SubChunkPacket@@UEAA@XZ
     MCVAPI ~SubChunkPacket();
@@ -101,7 +101,7 @@ public:
     MCAPI SubChunkPacket();
 
     // symbol: ??0SubChunkPacket@@QEAA@AEBV?$AutomaticID@VDimension@@H@@AEBVSubChunkPos@@_N@Z
-    MCAPI SubChunkPacket(class AutomaticID<class Dimension, int> const &, class SubChunkPos const &, bool);
+    MCAPI SubChunkPacket(DimensionType const &, class SubChunkPos const &, bool);
 
     // NOLINTEND
 

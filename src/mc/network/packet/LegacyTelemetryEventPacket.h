@@ -60,7 +60,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@LegacyTelemetryEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1LegacyTelemetryEventPacket@@UEAA@XZ
     MCVAPI ~LegacyTelemetryEventPacket();
@@ -102,7 +102,7 @@ public:
     MCAPI LegacyTelemetryEventPacket(class Player const *, gsl::not_null<class Actor const *>, ::MinecraftEventing::InteractionType);
 
     // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const *, class AutomaticID<class Dimension, int>);
+    MCAPI LegacyTelemetryEventPacket(class Player const *, DimensionType);
 
     // symbol: ??0LegacyTelemetryEventPacket@@QEAA@AEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI LegacyTelemetryEventPacket(class Player const &, std::string const &);
@@ -114,7 +114,7 @@ public:
     MCAPI LegacyTelemetryEventPacket(class Player const *, int, int, ::ActorDamageCause, bool);
 
     // symbol: ??0LegacyTelemetryEventPacket@@QEAA@PEBVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-    MCAPI LegacyTelemetryEventPacket(class Player const *, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    MCAPI LegacyTelemetryEventPacket(class Player const *, DimensionType, DimensionType);
 
     // symbol: ??4LegacyTelemetryEventPacket@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class LegacyTelemetryEventPacket & operator=(class LegacyTelemetryEventPacket &&);

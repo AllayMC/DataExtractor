@@ -61,7 +61,7 @@ public:
     MCAPI void setLootTable(std::string const &, int);
 
     // symbol: ?unPackLootTable@RandomizableBlockActorContainerBase@@QEAAXAEAVLevel@@AEAVContainer@@V?$AutomaticID@VDimension@@H@@PEAVActor@@@Z
-    MCAPI void unPackLootTable(class Level &, class Container &, class AutomaticID<class Dimension, int>, class Actor *);
+    MCAPI void unPackLootTable(class Level &, class Container &, DimensionType, class Actor *);
 
     // NOLINTEND
 

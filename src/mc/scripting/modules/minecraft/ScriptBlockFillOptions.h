@@ -15,11 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptBlockFillOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptBlockFillOptions & operator=(struct ScriptModuleMinecraft::ScriptBlockFillOptions const &);
-
     // symbol: ??4ScriptBlockFillOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptBlockFillOptions & operator=(struct ScriptModuleMinecraft::ScriptBlockFillOptions &&);
+
+    // symbol: ??4ScriptBlockFillOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptBlockFillOptions & operator=(struct ScriptModuleMinecraft::ScriptBlockFillOptions const &);
 
     // symbol: ??1ScriptBlockFillOptions@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptBlockFillOptions();

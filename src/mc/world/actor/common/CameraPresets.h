@@ -74,7 +74,7 @@ public:
     MCAPI static bool isAllowedEaseTarget(std::string const &);
 
     // symbol: ?read@CameraPresets@@SA?AV?$Result@VCameraPresets@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<class CameraPresets, std::error_code> read(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<class CameraPresets> read(class ReadOnlyBinaryStream &);
 
     // NOLINTEND
 

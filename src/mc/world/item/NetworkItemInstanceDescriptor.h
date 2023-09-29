@@ -39,7 +39,7 @@ public:
     MCAPI class ItemInstance getItemInstance(class BlockPalette const &) const;
 
     // symbol: ?read@NetworkItemInstanceDescriptor@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream &);
+    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream &);
 
     // symbol: ?write@NetworkItemInstanceDescriptor@@QEBAXAEAVBinaryStream@@@Z
     MCAPI void write(class BinaryStream &) const;

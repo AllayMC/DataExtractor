@@ -59,49 +59,6 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 	return origin(a1);
 }
 
-// baseNBT
-static bool firstNBT = true;
-// baseNBT
-static bool firstList = true;
-
-LL_AUTO_TYPED_INSTANCE_HOOK(
-	NBTService,
-	CompoundTag,
-	HookPriority::Normal,
-	"??0CompoundTag@@QEAA@XZ",
-	CompoundTag*,
-	CompoundTag* a1
-) {
-	auto n = origin(a1);
-	if (firstNBT) {
-		firstNBT = false;
-		baseNBT = n->clone();
-		baseNBT->clear();
-		std::cout << "INJECT BASENBT INSTANCE" << std::endl;
-	}
-	return n;
-}
-
-LL_AUTO_TYPED_INSTANCE_HOOK(
-	ListTagService,
-	ListTag,
-	HookPriority::Normal,
-	"??0ListTag@@QEAA@XZ",
-	ListTag*,
-	ListTag* a1
-) {
-	auto n = origin(a1);
-	if (firstList) {
-		firstList = false;
-		baseListTag = n->copyList();
-		for (int i = 0; i < baseListTag->size(); ++i) {
-			baseListTag->popBack();
-		}
-		std::cout << "INJECT BASELISTNBT INSTANCE" << std::endl;
-	}
-	return n;
-}
-
 // MinecraftCommands
 LL_AUTO_TYPED_INSTANCE_HOOK(
 	MinecraftCommandsService,
@@ -197,11 +154,11 @@ static void writeJSON(const string& fileName, nlohmann::json& json) {
 }
 
 static std::unique_ptr<class CompoundTag> createCompound() {
-	return baseNBT->clone();
+	return std::make_unique<CompoundTag>();
 }
 
 static std::unique_ptr<class ListTag> createListTag() {
-	return baseListTag->copyList();
+	return std::make_unique<ListTag>();
 }
 
 static std::string aabbToStr(const AABB& aabb) {
@@ -246,18 +203,18 @@ void dumpCreativeItemData() {
 			return true;
 		}
 		logger.info("Extracting creative item - " + itemInstance.getName() + ", index: " + to_string(index));
-		CompoundTag obj;
-		obj.putInt64("index", index);
-		obj.putString("name", itemInstance.getItem()->getFullItemName());
-		obj.putInt("damage", itemInstance.getAuxValue());
+		auto obj = createCompound();
+		obj->putInt64("index", index);
+		obj->putString("name", itemInstance.getItem()->getFullItemName());
+		obj->putInt("damage", itemInstance.getAuxValue());
 		if (itemInstance.isBlock()) {
-			obj.putInt("blockStateHash", itemInstance.getBlock()->computeRawSerializationIdHashForNetwork());
+			obj->putInt("blockStateHash", itemInstance.getBlock()->computeRawSerializationIdHashForNetwork());
 		}
 		auto nbt = itemInstance.save();
 		if (nbt->contains("tag")) {
-			obj.put("tag", nbt->getCompound("tag")->copy());
+			obj->put("tag", nbt->getCompound("tag")->copy());
 		}
-		global->put(to_string(index), obj.copy());
+		global->put(to_string(index), obj->copy());
 		index++;
 		});
 	writeNBT("data/creative_items.nbt", global.get());

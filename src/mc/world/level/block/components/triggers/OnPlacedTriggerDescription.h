@@ -26,7 +26,7 @@ public:
     // vIndex: 1, symbol: ?getName@OnPlacedTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const & getName() const;
 
-    // vIndex: 2, symbol: ?initializeComponent@BlockGeometryDescription@@UEBAXAEAVEntityContext@@@Z
+    // vIndex: 2, symbol: ?initializeComponent@BlockComponentDescription@@UEBAXAEAVEntityContext@@@Z
     virtual void initializeComponent(class EntityContext &) const;
 
     // vIndex: 3, symbol: ?initializeComponent@BlockComponentDescription@@UEBAXAEAVBlockComponentStorage@@@Z

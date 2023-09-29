@@ -38,11 +38,14 @@ public:
     // symbol: ??0ItemStack@@QEAA@AEBVItemInstance@@@Z
     MCAPI ItemStack(class ItemInstance const &);
 
-    // symbol: ??0ItemStack@@QEAA@XZ
-    MCAPI ItemStack();
+    // symbol: ??0ItemStack@@QEAA@AEBVRecipeIngredient@@@Z
+    MCAPI ItemStack(class RecipeIngredient const &);
 
     // symbol: ??0ItemStack@@QEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
     MCAPI ItemStack(class Item const &, int, int, class CompoundTag const *);
+
+    // symbol: ??0ItemStack@@QEAA@XZ
+    MCAPI ItemStack();
 
     // symbol: ??0ItemStack@@QEAA@AEBV0@@Z
     MCAPI ItemStack(class ItemStack const &);
@@ -56,14 +59,11 @@ public:
     // symbol: ??0ItemStack@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
     MCAPI ItemStack(class Block const &, int, class CompoundTag const *);
 
-    // symbol: ??0ItemStack@@QEAA@AEBVRecipeIngredient@@@Z
-    MCAPI ItemStack(class RecipeIngredient const &);
-
     // symbol: ?_assignNetIdVariant@ItemStack@@QEBAXAEBV1@@Z
     MCAPI void _assignNetIdVariant(class ItemStack const &) const;
 
     // symbol: ?clientInitLegacyRequestId@ItemStack@@QEAAXAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@@Z
-    MCAPI void clientInitLegacyRequestId(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
+    MCAPI void clientInitLegacyRequestId(class ItemStackLegacyRequestId const &);
 
     // symbol: ?clone@ItemStack@@QEBA?AV1@XZ
     MCAPI class ItemStack clone() const;
@@ -111,7 +111,7 @@ public:
     MCAPI void serverInitNetId();
 
     // symbol: ?tryGetItemStackNetId@ItemStack@@QEBAPEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@XZ
-    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetItemStackNetId() const;
+    MCAPI class ItemStackNetId const * tryGetItemStackNetId() const;
 
     // symbol: ?use@ItemStack@@QEAAAEAV1@AEAVPlayer@@@Z
     MCAPI class ItemStack & use(class Player &);

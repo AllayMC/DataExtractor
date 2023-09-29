@@ -20,7 +20,7 @@ namespace DictionaryCompressionUtil {
     MCAPI std::string dictionaryCompressString(std::string const &);
 
     // symbol: ?dictionaryDecompressString@DictionaryCompressionUtil@@YA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Verror_code@2@@Bedrock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Bedrock::Result<std::string, std::error_code> dictionaryDecompressString(std::string const &);
+    MCAPI class Bedrock::Result<std::string> dictionaryDecompressString(std::string const &);
     // NOLINTEND
 
 };

@@ -106,10 +106,10 @@ public:
     MCVAPI ::EventResult onPlayerPiglinBarter(class Player &, std::string const &, bool);
 
     // symbol: ?onPlayerPortalBuilt@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
-    MCVAPI ::EventResult onPlayerPortalBuilt(class Player &, class AutomaticID<class Dimension, int>);
+    MCVAPI ::EventResult onPlayerPortalBuilt(class Player &, DimensionType);
 
     // symbol: ?onPlayerPortalUsed@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-    MCVAPI ::EventResult onPlayerPortalUsed(class Player &, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    MCVAPI ::EventResult onPlayerPortalUsed(class Player &, DimensionType, DimensionType);
 
     // symbol: ?onPlayerSaved@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onPlayerSaved(class Player &);

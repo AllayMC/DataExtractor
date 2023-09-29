@@ -120,7 +120,7 @@ public:
         // vIndex: 2, symbol: __unk_vfn_2
         virtual void __unk_vfn_2();
     
-        // vIndex: 3, symbol: ?getValueForKey@EditorImpl@DataStore@Bedrock@@UEBAPEBVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+        // vIndex: 3, symbol: ?getValueForKey@ViewerImpl@DataStore@Bedrock@@UEBAPEBVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
         virtual class Bedrock::JSONObject::Node const * getValueForKey(std::string_view) const = 0;
     
         // NOLINTEND

@@ -115,7 +115,7 @@ public:
     MCAPI void setLootTable(std::string const &, int);
 
     // symbol: ?unpackLootTable@ContainerComponent@@QEAAXAEAVLevel@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void unpackLootTable(class Level &, class AutomaticID<class Dimension, int>);
+    MCAPI void unpackLootTable(class Level &, DimensionType);
 
     // NOLINTEND
 

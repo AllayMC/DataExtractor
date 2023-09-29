@@ -126,10 +126,10 @@ public:
     MCAPI class NetworkIdentifier getPrimaryNetworkId() const;
 
     // symbol: ?getRemoteConnector@NetworkSystem@@QEAA?AV?$not_null@V?$NonOwnerPointer@VRemoteConnector@@@Bedrock@@@gsl@@XZ
-    MCAPI gsl::not_null<class Bedrock::NonOwnerPointer<class RemoteConnector>> getRemoteConnector();
+    MCAPI Bedrock::NotNullNonOwnerPtr<class RemoteConnector> getRemoteConnector();
 
     // symbol: ?getRemoteConnector@NetworkSystem@@QEBA?AV?$not_null@V?$NonOwnerPointer@$$CBVRemoteConnector@@@Bedrock@@@gsl@@XZ
-    MCAPI gsl::not_null<class Bedrock::NonOwnerPointer<class RemoteConnector const>> getRemoteConnector() const;
+    MCAPI Bedrock::NotNullNonOwnerPtr<class RemoteConnector const> getRemoteConnector() const;
 
     // symbol: ?getResourcePackUploadManager@NetworkSystem@@QEAAAEAVResourcePackFileUploadManager@@AEAVPacketSender@@AEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class ResourcePackFileUploadManager & getResourcePackUploadManager(class PacketSender &, class NetworkIdentifier const &, std::string const &);
@@ -178,7 +178,7 @@ public:
     MCAPI NetworkSystem(struct NetworkSystem::Dependencies &&);
 
     // symbol: ?_createNetworkStatistics@NetworkSystem@@IEAAXW4TrackerType@@$$QEAV?$function@$$A6A_NAEAURakNetStatistics@RakNet@@@Z@std@@$$QEAV?$not_null@V?$NonOwnerPointer@VNetworkDebugManager@@@Bedrock@@@gsl@@@Z
-    MCAPI void _createNetworkStatistics(::TrackerType, std::function<bool (struct RakNet::RakNetStatistics &)> &&, gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkDebugManager>> &&);
+    MCAPI void _createNetworkStatistics(::TrackerType, std::function<bool (struct RakNet::RakNetStatistics &)> &&, Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager> &&);
 
     // symbol: ?_getTransportLayer@NetworkSystem@@IEBA?AW4TransportLayer@@XZ
     MCAPI ::TransportLayer _getTransportLayer() const;

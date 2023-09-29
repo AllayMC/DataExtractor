@@ -52,7 +52,7 @@ public:
     MCAPI static bool checkTransactionItemsMatch(class ItemStack const &, class ItemStack const &);
 
     // symbol: ?deserialize@InventoryTransaction@@SA?AV?$Result@VInventoryTransaction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<class InventoryTransaction, std::error_code> deserialize(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<class InventoryTransaction> deserialize(class ReadOnlyBinaryStream &);
 
     // symbol: ?getInventoryTransactionErrorName@InventoryTransaction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4InventoryTransactionError@@@Z
     MCAPI static std::string const getInventoryTransactionErrorName(::InventoryTransactionError);

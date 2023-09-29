@@ -156,11 +156,11 @@ public:
     // vIndex: 183, symbol: __unk_vfn_183
     virtual void __unk_vfn_183();
 
-    // symbol: ??0CutCopperStairs@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@W4CopperType@@AEBVHashedString@@33@Z
-    MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, ::CopperType, class HashedString const &, class HashedString const &, class HashedString const &);
-
     // symbol: ??0CutCopperStairs@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@W4CopperType@@AEBVHashedString@@@Z
     MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, ::CopperType, class HashedString const &);
+
+    // symbol: ??0CutCopperStairs@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@W4CopperType@@AEBVHashedString@@33@Z
+    MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, ::CopperType, class HashedString const &, class HashedString const &, class HashedString const &);
 
     // NOLINTEND
 

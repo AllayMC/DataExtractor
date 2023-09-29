@@ -29,7 +29,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@ChangeDimensionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1ChangeDimensionPacket@@UEAA@XZ
     MCVAPI ~ChangeDimensionPacket();
@@ -38,7 +38,7 @@ public:
     MCAPI ChangeDimensionPacket();
 
     // symbol: ??0ChangeDimensionPacket@@QEAA@V?$AutomaticID@VDimension@@H@@VVec3@@_N@Z
-    MCAPI ChangeDimensionPacket(class AutomaticID<class Dimension, int>, class Vec3, bool);
+    MCAPI ChangeDimensionPacket(DimensionType, class Vec3, bool);
 
     // NOLINTEND
 

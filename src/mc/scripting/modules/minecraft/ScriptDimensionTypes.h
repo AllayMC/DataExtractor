@@ -38,10 +38,10 @@ public:
     MCAPI static void bind(class Scripting::ModuleBindingBuilder &);
 
     // symbol: ?fromString@ScriptDimensionTypes@ScriptModuleMinecraft@@SA?AV?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class AutomaticID<class Dimension, int> fromString(std::string const &);
+    MCAPI static DimensionType fromString(std::string const &);
 
     // symbol: ?toString@ScriptDimensionTypes@ScriptModuleMinecraft@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$AutomaticID@VDimension@@H@@@Z
-    MCAPI static std::string toString(class AutomaticID<class Dimension, int> const &);
+    MCAPI static std::string toString(DimensionType const &);
 
     // NOLINTEND
 

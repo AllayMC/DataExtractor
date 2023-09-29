@@ -38,10 +38,10 @@ public:
     MCAPI MapDataManager(class DimensionManager &, class LevelStorage *, std::function<struct ActorUniqueID (void)>);
 
     // symbol: ?createMapSavedData@MapDataManager@@QEAAAEAVMapItemSavedData@@AEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H_N331@Z
-    MCAPI class MapItemSavedData & createMapSavedData(std::vector<struct ActorUniqueID> const &, class BlockPos const &, class AutomaticID<class Dimension, int>, int, bool, bool, bool, class BlockPos const &);
+    MCAPI class MapItemSavedData & createMapSavedData(std::vector<struct ActorUniqueID> const &, class BlockPos const &, DimensionType, int, bool, bool, bool, class BlockPos const &);
 
     // symbol: ?createMapSavedData@MapDataManager@@QEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H_N331@Z
-    MCAPI class MapItemSavedData & createMapSavedData(struct ActorUniqueID const &, class BlockPos const &, class AutomaticID<class Dimension, int>, int, bool, bool, bool, class BlockPos const &);
+    MCAPI class MapItemSavedData & createMapSavedData(struct ActorUniqueID const &, class BlockPos const &, DimensionType, int, bool, bool, bool, class BlockPos const &);
 
     // symbol: ?getAllMapData@MapDataManager@@QEAAAEAV?$unordered_map@UActorUniqueID@@V?$unique_ptr@VMapItemSavedData@@U?$default_delete@VMapItemSavedData@@@std@@@std@@U?$hash@UActorUniqueID@@@3@U?$equal_to@UActorUniqueID@@@3@V?$allocator@U?$pair@$$CBUActorUniqueID@@V?$unique_ptr@VMapItemSavedData@@U?$default_delete@VMapItemSavedData@@@std@@@std@@@std@@@3@@std@@XZ
     MCAPI std::unordered_map<struct ActorUniqueID,std::unique_ptr<class MapItemSavedData>> & getAllMapData();

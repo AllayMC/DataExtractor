@@ -52,7 +52,7 @@ public:
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
 
     // symbol: ?deserialize@DeferredDescriptor@@SA?AV?$Result@V?$unique_ptr@UDeferredDescriptor@@U?$default_delete@UDeferredDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<struct DeferredDescriptor>, std::error_code> deserialize(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct DeferredDescriptor>> deserialize(class ReadOnlyBinaryStream &);
 
     // NOLINTEND
 

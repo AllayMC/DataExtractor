@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/IResourceDropsStrategy.h"
+#include "mc/world/level/block/utils/IResourceDropsStrategy.h"
 
 // auto generated forward declare list
 // clang-format off

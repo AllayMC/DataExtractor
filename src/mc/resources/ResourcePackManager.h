@@ -65,7 +65,7 @@ public:
     MCVAPI ~ResourcePackManager();
 
     // symbol: ??0ResourcePackManager@@QEAA@V?$function@$$A6A?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ@std@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@gsl@@_N@Z
-    MCAPI ResourcePackManager(std::function<class Core::PathBuffer<std::string> (void)>, gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, bool);
+    MCAPI ResourcePackManager(std::function<class Core::PathBuffer<std::string> (void)>, Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const &, bool);
 
     // symbol: ?clearStack@ResourcePackManager@@QEAAXW4ResourcePackStackType@@_N@Z
     MCAPI void clearStack(::ResourcePackStackType, bool);

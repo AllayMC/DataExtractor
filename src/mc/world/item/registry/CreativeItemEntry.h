@@ -14,9 +14,9 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 class CreativeItemEntry : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // prevent constructor by default
-    CreativeItemEntry& operator=(CreativeItemEntry const &);
-    CreativeItemEntry(CreativeItemEntry const &);
-    CreativeItemEntry();
+    CreativeItemEntry& operator=(CreativeItemEntry const &) = delete;
+    CreativeItemEntry(CreativeItemEntry const &) = delete;
+    CreativeItemEntry() = delete;
 
 public:
     // NOLINTBEGIN
@@ -24,7 +24,7 @@ public:
     MCAPI CreativeItemEntry(class CreativeItemEntry &&);
 
     // symbol: ?getCreativeNetId@CreativeItemEntry@@QEBAAEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@XZ
-    MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, uint, 0> const & getCreativeNetId() const;
+    MCAPI class CreativeItemNetId const & getCreativeNetId() const;
 
     // symbol: ?getGroup@CreativeItemEntry@@QEBAPEAVCreativeGroupInfo@@XZ
     MCAPI class CreativeGroupInfo * getGroup() const;

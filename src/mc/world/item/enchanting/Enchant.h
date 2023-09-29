@@ -122,7 +122,7 @@ public:
     MCAPI static std::unordered_map<class HashedString,::Enchant::Type> mEnchantNameToType;
 
     // symbol: ?mEnchantSlotTypeEnumToStringMap@Enchant@@2V?$unordered_map@W4Slot@Enchant@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UEnchantSlotEnumHasher@@U?$equal_to@W4Slot@Enchant@@@4@V?$allocator@U?$pair@$$CBW4Slot@Enchant@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@4@@std@@A
-    MCAPI static std::unordered_map<::Enchant::Slot, std::string, struct EnchantSlotEnumHasher, std::equal_to<::Enchant::Slot>, std::allocator<std::pair<::Enchant::Slot const, std::string>>> mEnchantSlotTypeEnumToStringMap;
+    MCAPI static std::unordered_map<::Enchant::Slot, std::string, struct EnchantSlotEnumHasher> mEnchantSlotTypeEnumToStringMap;
 
     // symbol: ?mEnchantSlotTypeNameToEnumMap@Enchant@@2V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Slot@Enchant@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Slot@Enchant@@@std@@@2@@std@@A
     MCAPI static std::unordered_map<std::string,::Enchant::Slot> mEnchantSlotTypeNameToEnumMap;

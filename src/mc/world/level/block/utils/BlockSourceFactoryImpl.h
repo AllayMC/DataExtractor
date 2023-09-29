@@ -15,7 +15,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_createOrUpdate@BlockSourceFactoryImpl@@IEBAXAEAVMockableOwnedBlockSource@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void _createOrUpdate(class MockableOwnedBlockSource &, class AutomaticID<class Dimension, int>) const;
+    MCAPI void _createOrUpdate(class MockableOwnedBlockSource &, DimensionType) const;
 
     // NOLINTEND
 

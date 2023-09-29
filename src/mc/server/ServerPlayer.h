@@ -114,7 +114,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?changeDimension@ServerPlayer@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
-    virtual void changeDimension(class AutomaticID<class Dimension, int>);
+    virtual void changeDimension(DimensionType);
 
     // vIndex: 164, symbol: ?getControllingPlayer@ServerPlayer@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getControllingPlayer() const;
@@ -198,7 +198,7 @@ public:
     virtual void destroyRegion();
 
     // vIndex: 324, symbol: ?changeDimensionWithCredits@ServerPlayer@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
-    virtual void changeDimensionWithCredits(class AutomaticID<class Dimension, int>);
+    virtual void changeDimensionWithCredits(DimensionType);
 
     // vIndex: 325, symbol: ?tickWorld@ServerPlayer@@UEAAXAEBUTick@@@Z
     virtual void tickWorld(struct Tick const &);
@@ -210,7 +210,7 @@ public:
     virtual void moveView();
 
     // vIndex: 329, symbol: ?moveSpawnView@ServerPlayer@@UEAAXAEBVVec3@@V?$AutomaticID@VDimension@@H@@@Z
-    virtual void moveSpawnView(class Vec3 const &, class AutomaticID<class Dimension, int>);
+    virtual void moveSpawnView(class Vec3 const &, DimensionType);
 
     // vIndex: 332, symbol: ?checkMovementStats@ServerPlayer@@UEAAXAEBVVec3@@@Z
     virtual void checkMovementStats(class Vec3 const &);

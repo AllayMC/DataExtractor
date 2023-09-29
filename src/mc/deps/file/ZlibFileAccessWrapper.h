@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ZlibFileAccessWrapper@@QEAA@V?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@@Z
-    MCAPI ZlibFileAccessWrapper(gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>);
+    MCAPI ZlibFileAccessWrapper(Bedrock::NotNullNonOwnerPtr<class IFileAccess>);
 
     // symbol: ??1ZlibFileAccessWrapper@@QEAA@XZ
     MCAPI ~ZlibFileAccessWrapper();

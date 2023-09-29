@@ -30,19 +30,19 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@SetSpawnPositionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1SetSpawnPositionPacket@@UEAA@XZ
     MCVAPI ~SetSpawnPositionPacket();
 
     // symbol: ??0SetSpawnPositionPacket@@QEAA@W4SpawnPositionType@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@@Z
-    MCAPI SetSpawnPositionPacket(::SpawnPositionType, class AutomaticID<class Dimension, int>, class BlockPos const &);
+    MCAPI SetSpawnPositionPacket(::SpawnPositionType, DimensionType, class BlockPos const &);
 
     // symbol: ??0SetSpawnPositionPacket@@QEAA@XZ
     MCAPI SetSpawnPositionPacket();
 
     // symbol: ??0SetSpawnPositionPacket@@QEAA@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@1@Z
-    MCAPI SetSpawnPositionPacket(class AutomaticID<class Dimension, int>, class BlockPos const &, class BlockPos const &);
+    MCAPI SetSpawnPositionPacket(DimensionType, class BlockPos const &, class BlockPos const &);
 
     // NOLINTEND
 

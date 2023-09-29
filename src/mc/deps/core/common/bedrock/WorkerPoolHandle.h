@@ -26,7 +26,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?get@WorkerPoolHandle@Bedrock@@UEBA?AV?$not_null@V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@@gsl@@XZ
-    virtual gsl::not_null<class Bedrock::NonOwnerPointer<class WorkerPool>> get() const;
+    virtual Bedrock::NotNullNonOwnerPtr<class WorkerPool> get() const;
 
     // NOLINTEND
 

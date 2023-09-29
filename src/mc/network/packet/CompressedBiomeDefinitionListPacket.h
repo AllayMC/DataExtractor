@@ -28,7 +28,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 4, symbol: ?read@CompressedBiomeDefinitionListPacket@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1CompressedBiomeDefinitionListPacket@@UEAA@XZ
     MCVAPI ~CompressedBiomeDefinitionListPacket();

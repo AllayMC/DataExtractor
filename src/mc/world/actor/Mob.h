@@ -591,7 +591,7 @@ public:
     MCAPI bool isTransitioningSitting() const;
 
     // symbol: ?onPlayerDimensionChanged@Mob@@QEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-    MCAPI void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    MCAPI void onPlayerDimensionChanged(class Player *, DimensionType, DimensionType);
 
     // symbol: ?onPlayerJump@Mob@@QEAAXH@Z
     MCAPI void onPlayerJump(int);

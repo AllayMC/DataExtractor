@@ -25,7 +25,7 @@ public:
     virtual bool writeTransform(std::vector<uchar> &) const;
 
     // symbol: ??0EncryptedZipTransforms@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-    MCAPI EncryptedZipTransforms(gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
+    MCAPI EncryptedZipTransforms(Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const &);
 
     // NOLINTEND
 

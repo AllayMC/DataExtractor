@@ -75,13 +75,13 @@ public:
     virtual bool isValid() const;
 
     // symbol: ??0ExecuteContextCommandOrigin@@QEAA@UActorUniqueID@@AEBVVec3@@AEBV?$optional@VVec2@@@std@@00W4ActorLocation@@V?$AutomaticID@VDimension@@H@@AEAVLevel@@H@Z
-    MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, ::ActorLocation, class AutomaticID<class Dimension, int>, class Level &, int);
+    MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, ::ActorLocation, DimensionType, class Level &, int);
 
     // symbol: ?getPositionEntity@ExecuteContextCommandOrigin@@QEAAPEBVActor@@XZ
     MCAPI class Actor const * getPositionEntity();
 
     // symbol: ?setDimension@ExecuteContextCommandOrigin@@QEAAXAEBV?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void setDimension(class AutomaticID<class Dimension, int> const &);
+    MCAPI void setDimension(DimensionType const &);
 
     // symbol: ?setDimension@ExecuteContextCommandOrigin@@QEAAXAEBVDimension@@@Z
     MCAPI void setDimension(class Dimension const &);

@@ -149,7 +149,7 @@ public:
     MCVAPI void fireCourseButtonPressed(std::string const &, std::string const &);
 
     // symbol: ?fireCurrentInputUpdated@MinecraftEventing@@UEAAXAEBV?$not_null@V?$NonOwnerPointer@VIClientInstance@@@Bedrock@@@gsl@@@Z
-    MCVAPI void fireCurrentInputUpdated(gsl::not_null<class Bedrock::NonOwnerPointer<class IClientInstance>> const &);
+    MCVAPI void fireCurrentInputUpdated(Bedrock::NotNullNonOwnerPtr<class IClientInstance> const &);
 
     // symbol: ?fireDBStorageError@MinecraftEventing@@UEAAXAEBULevelStorageEventingContext@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireDBStorageError(struct LevelStorageEventingContext const &, std::string const &);
@@ -974,7 +974,7 @@ public:
     MCVAPI bool getShouldHaveAchievementsEnabled();
 
     // symbol: ?init@MinecraftEventing@@UEAAXAEBV?$not_null@V?$NonOwnerPointer@VIUserManager@Social@@@Bedrock@@@gsl@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    MCVAPI void init(gsl::not_null<class Bedrock::NonOwnerPointer<class Social::IUserManager>> const &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
+    MCVAPI void init(Bedrock::NotNullNonOwnerPtr<class Social::IUserManager> const &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
 
     // symbol: ?initDeviceAndSessionIds@MinecraftEventing@@UEAAXXZ
     MCVAPI void initDeviceAndSessionIds();

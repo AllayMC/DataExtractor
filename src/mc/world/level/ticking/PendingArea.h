@@ -21,7 +21,7 @@ public:
     MCAPI struct PendingArea & operator=(struct PendingArea &&);
 
     // symbol: ?serialize@PendingArea@@QEBA?AVCompoundTag@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;
+    MCAPI class CompoundTag serialize(DimensionType) const;
 
     // symbol: ??1PendingArea@@QEAA@XZ
     MCAPI ~PendingArea();
