@@ -1,0 +1,53 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/events/LevelSoundEvent.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
+
+class AdmireItemGoal : public ::Goal {
+public:
+    // prevent constructor by default
+    AdmireItemGoal& operator=(AdmireItemGoal const &) = delete;
+    AdmireItemGoal(AdmireItemGoal const &) = delete;
+    AdmireItemGoal() = delete;
+
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol: ?canUse@AdmireItemGoal@@UEAA_NXZ
+    virtual bool canUse();
+
+    // vIndex: 2, symbol: ?canContinueToUse@AdmireItemGoal@@UEAA_NXZ
+    virtual bool canContinueToUse();
+
+    // vIndex: 4, symbol: ?start@AdmireItemGoal@@UEAAXXZ
+    virtual void start();
+
+    // vIndex: 5, symbol: ?stop@AdmireItemGoal@@UEAAXXZ
+    virtual void stop();
+
+    // vIndex: 6, symbol: ?tick@AdmireItemGoal@@UEAAXXZ
+    virtual void tick();
+
+    // vIndex: 7, symbol: ?appendDebugInfo@AdmireItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual void appendDebugInfo(std::string &) const;
+
+    // symbol: ??0AdmireItemGoal@@QEAA@AEAVMob@@W4LevelSoundEvent@@UFloatRange@@AEBVActorDefinitionTrigger@@3@Z
+    MCAPI AdmireItemGoal(class Mob &, ::LevelSoundEvent, struct FloatRange, class ActorDefinitionTrigger const &, class ActorDefinitionTrigger const &);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_tryPlaceItemInInventory@AdmireItemGoal@@AEAAXAEAVContainerComponent@@AEBVShareableComponent@@@Z
+    MCAPI void _tryPlaceItemInInventory(class ContainerComponent &, class ShareableComponent const &);
+
+    // NOLINTEND
+
+};
+

@@ -1,0 +1,86 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/client/social/IEventListener.h"
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class AppPlatform;
+namespace Core { class Path; }
+namespace Social::Events { class Event; }
+namespace Social::Events { class IEventListener; }
+namespace Social::Events { class SummaryEvent; }
+// clang-format on
+
+namespace Social::Events {
+
+class AggregationEventListener : public ::Social::Events::IEventListener {
+public:
+    // prevent constructor by default
+    AggregationEventListener& operator=(AggregationEventListener const &) = delete;
+    AggregationEventListener(AggregationEventListener const &) = delete;
+    AggregationEventListener() = delete;
+
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol: ?recordEvent@AggregationEventListener@Events@Social@@UEAAXAEBVEvent@23@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
+    virtual void recordEvent(class Social::Events::Event const &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
+
+    // vIndex: 3, symbol: ?sendEvents@AggregationEventListener@Events@Social@@UEAAX_N@Z
+    virtual void sendEvents(bool);
+
+    // vIndex: 5, symbol: ?stopDebugEventLogging@AggregationEventListener@Events@Social@@UEAAXXZ
+    virtual void stopDebugEventLogging();
+
+    // vIndex: 6, symbol: ?sendEvent@OneDSEventListener@Events@Social@@UEAAXAEBVEvent@23@@Z
+    virtual void sendEvent(class Social::Events::Event const &) = 0;
+
+    // vIndex: 7, symbol: ?_flushEventQueue@AggregationEventListener@Events@Social@@MEAAXXZ
+    virtual void _flushEventQueue();
+
+    // vIndex: 8, symbol: ?_checkAgainstEventAllowlist@AggregationEventListener@Events@Social@@MEBA_NAEBVEvent@23@@Z
+    virtual bool _checkAgainstEventAllowlist(class Social::Events::Event const &) const;
+
+    // vIndex: 9, symbol: ?_isListenerReadyForEvents@AggregationEventListener@Events@Social@@MEBA_NXZ
+    virtual bool _isListenerReadyForEvents() const;
+
+    // symbol: ??1AggregationEventListener@Events@Social@@UEAA@XZ
+    MCVAPI ~AggregationEventListener();
+
+    // NOLINTEND
+
+    // protected:
+    // NOLINTBEGIN
+    // symbol: ??0AggregationEventListener@Events@Social@@IEAA@AEBVPath@Core@@@Z
+    MCAPI AggregationEventListener(class Core::Path const &);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_needToSendAggregatedEvents@AggregationEventListener@Events@Social@@AEBA_NXZ
+    MCAPI bool _needToSendAggregatedEvents() const;
+
+    // symbol: ?_recordAggregatedEvent@AggregationEventListener@Events@Social@@AEAAXAEBVEvent@23@AEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$deque@VEvent@Events@Social@@V?$allocator@VEvent@Events@Social@@@std@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$deque@VEvent@Events@Social@@V?$allocator@VEvent@Events@Social@@@std@@@2@@std@@@2@@std@@@Z
+    MCAPI void _recordAggregatedEvent(class Social::Events::Event const &, std::unordered_map<std::string,std::deque<class Social::Events::Event>> &);
+
+    // symbol: ?_sendCustomAggregatedEvents@AggregationEventListener@Events@Social@@AEAAX_N@Z
+    MCAPI void _sendCustomAggregatedEvents(bool);
+
+    // symbol: ?_sendEvents@AggregationEventListener@Events@Social@@AEAAXAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$deque@VEvent@Events@Social@@V?$allocator@VEvent@Events@Social@@@std@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$deque@VEvent@Events@Social@@V?$allocator@VEvent@Events@Social@@@std@@@2@@std@@@2@@std@@@Z
+    MCAPI void _sendEvents(std::unordered_map<std::string,std::deque<class Social::Events::Event>> &);
+
+    // symbol: ?_sendNextEvent@AggregationEventListener@Events@Social@@AEAAXAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$deque@VEvent@Events@Social@@V?$allocator@VEvent@Events@Social@@@std@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$deque@VEvent@Events@Social@@V?$allocator@VEvent@Events@Social@@@std@@@2@@std@@@2@@std@@@Z
+    MCAPI void _sendNextEvent(std::unordered_map<std::string,std::deque<class Social::Events::Event>> &);
+
+    // NOLINTEND
+
+};
+
+};
