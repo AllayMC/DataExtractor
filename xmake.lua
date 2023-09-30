@@ -44,7 +44,7 @@ else
     add_requires("bdslibrary 1.20.15.01")
 end
 
-target("AllayDataExtractor")
+target("DataExtractor")
     set_license("LGPL-3")
     set_kind("shared")
     set_languages("c++20")
