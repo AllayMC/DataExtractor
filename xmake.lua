@@ -23,7 +23,6 @@ add_requires("gsl v3.1.0")
 add_requires("gtest 1.12.1")
 add_requires("leveldb 1.23")
 add_requires("openssl 1.1.1-t") -- should be installed before mariadb-connector-c
-add_requires("mariadb-connector-c 3.3.4")
 add_requires("magic_enum v0.8.2")
 add_requires("nlohmann_json v3.11.2")
 add_requires("rapidjson v1.1.0")
@@ -37,12 +36,7 @@ add_requires("pcg_cpp v1.0.0")
 add_requires("nbt_cpp v1.0.1")
 add_requires("preloader v1.1.0")
 add_requires("symbolprovider v1.0.1")
-
-if has_config("localbdslibrary") then
-    add_requires("localbdslibrary")
-else
-    add_requires("bdslibrary 1.20.15.01")
-end
+add_requires("localbdslibrary")
 
 target("DataExtractor")
     set_license("LGPL-3")
@@ -61,12 +55,10 @@ target("DataExtractor")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("src/**.cpp")
     -- xmake-repo
-    add_packages("zlib-ng","asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "mariadb-connector-c", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
+    add_packages("zlib-ng","asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
     -- liteldev-repo
     add_packages("fifo_map", "pcg_cpp", "nbt_cpp", "dyncall", "compact_enc_det", "preloader", "symbolprovider")
-    if has_config("localbdslibrary") then
-        add_packages("localbdslibrary")
-    end
+    add_packages("localbdslibrary")
 
 task("bds-lib")
     on_run(function ()
