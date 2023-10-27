@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -31,6 +32,9 @@ public:
 
     // vIndex: 6, symbol: ?getCollisionShape@ButtonBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual class AABB getCollisionShape(class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
+
+    // vIndex: 9, symbol: ?addAABBs@ButtonBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
+    virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
 
     // vIndex: 10, symbol: ?getOutline@ButtonBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
     virtual class AABB const & getOutline(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &) const;
@@ -110,8 +114,8 @@ public:
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 65, symbol: ?shouldConnectToRedstone@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-    virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
+    // vIndex: 65, symbol: ?shouldConnectToRedstone@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, ::Direction::Type) const;
 
     // vIndex: 70, symbol: ?checkIsPathable@ButtonBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
@@ -232,8 +236,8 @@ public:
     // symbol: ?_checkPressed@ButtonBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _checkPressed(class BlockSource &, class BlockPos const &) const;
 
-    // symbol: ?_getShape@ButtonBlock@@AEBAXAEAVAABB@@_NE1@Z
-    MCAPI void _getShape(class AABB &, bool, uchar, bool) const;
+    // symbol: ?_getShape@ButtonBlock@@AEBA?AVAABB@@_NE0@Z
+    MCAPI class AABB _getShape(bool, uchar, bool) const;
 
     // NOLINTEND
 

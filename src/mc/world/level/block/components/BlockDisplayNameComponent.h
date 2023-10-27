@@ -17,6 +17,9 @@ public:
     // symbol: ??1BlockDisplayNameComponent@@UEAA@XZ
     MCVAPI ~BlockDisplayNameComponent();
 
+    // symbol: ?usesNewComponentStorage@BlockDisplayNameComponent@@SA_NXZ
+    MCAPI static bool usesNewComponentStorage();
+
     // NOLINTEND
 
 };

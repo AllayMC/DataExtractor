@@ -23,11 +23,11 @@ public:
     // symbol: ??0ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAA@AEBVCompoundBlockVolumeItem@@@Z
     MCAPI ScriptCompoundBlockVolumeItem(class CompoundBlockVolumeItem const &);
 
-    // symbol: ??4ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem & operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem &&);
-
     // symbol: ??4ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem & operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const &);
+
+    // symbol: ??4ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
+    MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem & operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem &&);
 
     // symbol: ?toCompoundBlockVolumeItem@ScriptCompoundBlockVolumeItem@ScriptModuleMinecraft@@QEBA?AVCompoundBlockVolumeItem@@XZ
     MCAPI class CompoundBlockVolumeItem toCompoundBlockVolumeItem() const;

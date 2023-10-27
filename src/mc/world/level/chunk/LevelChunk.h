@@ -130,8 +130,8 @@ public:
     // symbol: ?clientSubChunkRequestGenerateLightingForSubChunk@LevelChunk@@QEAAXAEAVChunkViewSource@@F@Z
     MCAPI void clientSubChunkRequestGenerateLightingForSubChunk(class ChunkViewSource &, short);
 
-    // symbol: ?deserializeBiomes@LevelChunk@@QEAAXAEAVIDataInput@@@Z
-    MCAPI void deserializeBiomes(class IDataInput &);
+    // symbol: ?deserializeBiomes@LevelChunk@@QEAAXAEAVIDataInput@@_N@Z
+    MCAPI void deserializeBiomes(class IDataInput &, bool);
 
     // symbol: ?deserializeBlockEntities@LevelChunk@@QEAAXAEAVIDataInput@@@Z
     MCAPI void deserializeBlockEntities(class IDataInput &);
@@ -577,8 +577,8 @@ public:
     // symbol: ?deserialize2DData@LevelChunk@@SA?AV?$tuple@V?$array@VChunkLocalHeight@@$0BAA@@std@@V?$array@UBiomeChunkData@@$0BAA@@2@@std@@AEAVIDataInput@@@Z
     MCAPI static std::tuple<std::array<class ChunkLocalHeight, 256>, std::array<struct BiomeChunkData, 256>> deserialize2DData(class IDataInput &);
 
-    // symbol: ?deserialize3DBiomes@LevelChunk@@SA?AU?$pair@GV?$vector@V?$unique_ptr@V?$SubChunkStorage@VBiome@@@@U?$default_delete@V?$SubChunkStorage@VBiome@@@@@std@@@std@@V?$allocator@V?$unique_ptr@V?$SubChunkStorage@VBiome@@@@U?$default_delete@V?$SubChunkStorage@VBiome@@@@@std@@@std@@@2@@std@@@std@@AEAVIDataInput@@AEBVBiomeRegistry@@GPEAVBiome@@@Z
-    MCAPI static std::pair<ushort, std::vector<std::unique_ptr<class SubChunkStorage<class Biome>>>> deserialize3DBiomes(class IDataInput &, class BiomeRegistry const &, ushort, class Biome *);
+    // symbol: ?deserialize3DBiomes@LevelChunk@@SA?AU?$pair@GV?$vector@V?$unique_ptr@V?$SubChunkStorage@VBiome@@@@U?$default_delete@V?$SubChunkStorage@VBiome@@@@@std@@@std@@V?$allocator@V?$unique_ptr@V?$SubChunkStorage@VBiome@@@@U?$default_delete@V?$SubChunkStorage@VBiome@@@@@std@@@std@@@2@@std@@@std@@AEAVIDataInput@@AEBVBiomeRegistry@@GPEAVBiome@@_N@Z
+    MCAPI static std::pair<ushort, std::vector<std::unique_ptr<class SubChunkStorage<class Biome>>>> deserialize3DBiomes(class IDataInput &, class BiomeRegistry const &, ushort, class Biome *, bool);
 
     // symbol: ?deserialize3DData@LevelChunk@@SA?AV?$tuple@V?$array@VChunkLocalHeight@@$0BAA@@std@@GV?$vector@V?$unique_ptr@V?$SubChunkStorage@VBiome@@@@U?$default_delete@V?$SubChunkStorage@VBiome@@@@@std@@@std@@V?$allocator@V?$unique_ptr@V?$SubChunkStorage@VBiome@@@@U?$default_delete@V?$SubChunkStorage@VBiome@@@@@std@@@std@@@2@@2@@std@@AEAVIDataInput@@AEBVBiomeRegistry@@GPEAVBiome@@@Z
     MCAPI static std::tuple<std::array<class ChunkLocalHeight, 256>, ushort, std::vector<std::unique_ptr<class SubChunkStorage<class Biome>>>> deserialize3DData(class IDataInput &, class BiomeRegistry const &, ushort, class Biome *);

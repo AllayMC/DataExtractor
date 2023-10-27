@@ -66,11 +66,11 @@ public:
     // symbol: ?WebSocketSendMessageAsync@WinHttpConnection@httpclient@xbox@@QEAAJPEAUXAsyncBlock@@PEBD@Z
     MCAPI long WebSocketSendMessageAsync(struct XAsyncBlock *, char const *);
 
-    // symbol: ?Initialize@WinHttpConnection@httpclient@xbox@@SA?AV?$Result@V?$shared_ptr@VWinHttpConnection@httpclient@xbox@@@std@@@@PEAXPEAUHC_WEBSOCKET_OBSERVER@@PEBD2W4proxy_type@23@$$QEAUXPlatSecurityInformation@23@@Z
-    MCAPI static class Result<std::shared_ptr<class xbox::httpclient::WinHttpConnection>> Initialize(void *, struct HC_WEBSOCKET_OBSERVER *, char const *, char const *, ::xbox::httpclient::proxy_type, struct xbox::httpclient::XPlatSecurityInformation &&);
-
     // symbol: ?Initialize@WinHttpConnection@httpclient@xbox@@SA?AV?$Result@V?$shared_ptr@VWinHttpConnection@httpclient@xbox@@@std@@@@PEAXPEAUHC_CALL@@W4proxy_type@23@$$QEAUXPlatSecurityInformation@23@@Z
     MCAPI static class Result<std::shared_ptr<class xbox::httpclient::WinHttpConnection>> Initialize(void *, struct HC_CALL *, ::xbox::httpclient::proxy_type, struct xbox::httpclient::XPlatSecurityInformation &&);
+
+    // symbol: ?Initialize@WinHttpConnection@httpclient@xbox@@SA?AV?$Result@V?$shared_ptr@VWinHttpConnection@httpclient@xbox@@@std@@@@PEAXPEAUHC_WEBSOCKET_OBSERVER@@PEBD2W4proxy_type@23@$$QEAUXPlatSecurityInformation@23@@Z
+    MCAPI static class Result<std::shared_ptr<class xbox::httpclient::WinHttpConnection>> Initialize(void *, struct HC_WEBSOCKET_OBSERVER *, char const *, char const *, ::xbox::httpclient::proxy_type, struct xbox::httpclient::XPlatSecurityInformation &&);
 
     // NOLINTEND
 

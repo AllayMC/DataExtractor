@@ -122,8 +122,8 @@ public:
     // symbol: ??0ItemDescriptor@@QEAA@AEBV0@@Z
     MCAPI ItemDescriptor(class ItemDescriptor const &);
 
-    // symbol: ??0ItemDescriptor@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI ItemDescriptor(class ReadOnlyBinaryStream &);
+    // symbol: ??0ItemDescriptor@@QEAA@AEBVItem@@H@Z
+    MCAPI ItemDescriptor(class Item const &, int);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEBUItemTag@@@Z
     MCAPI ItemDescriptor(struct ItemTag const &);
@@ -140,8 +140,8 @@ public:
     // symbol: ??0ItemDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI ItemDescriptor(class ItemDescriptor &&);
 
-    // symbol: ??0ItemDescriptor@@QEAA@AEBVItem@@H@Z
-    MCAPI ItemDescriptor(class Item const &, int);
+    // symbol: ??0ItemDescriptor@@QEAA@AEAVReadOnlyBinaryStream@@@Z
+    MCAPI ItemDescriptor(class ReadOnlyBinaryStream &);
 
     // symbol: ?forEachItemUntil@ItemDescriptor@@QEBA_NV?$function@$$A6A_NAEBVItem@@F@Z@std@@@Z
     MCAPI bool forEachItemUntil(std::function<bool (class Item const &, short)>) const;

@@ -38,11 +38,11 @@ public:
     // symbol: ??0UnlockedRecipesServerComponent@@QEAA@XZ
     MCAPI UnlockedRecipesServerComponent();
 
-    // symbol: ??0UnlockedRecipesServerComponent@@QEAA@$$QEAV0@@Z
-    MCAPI UnlockedRecipesServerComponent(class UnlockedRecipesServerComponent &&);
-
     // symbol: ??0UnlockedRecipesServerComponent@@QEAA@AEBV0@@Z
     MCAPI UnlockedRecipesServerComponent(class UnlockedRecipesServerComponent const &);
+
+    // symbol: ??0UnlockedRecipesServerComponent@@QEAA@$$QEAV0@@Z
+    MCAPI UnlockedRecipesServerComponent(class UnlockedRecipesServerComponent &&);
 
     // symbol: ?addAdditionalSaveData@UnlockedRecipesServerComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;

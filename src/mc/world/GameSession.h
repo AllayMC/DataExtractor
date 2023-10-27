@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0GameSession@@QEAA@AEAVNetworkSystem@@V?$unique_ptr@VServerNetworkHandler@@U?$default_delete@VServerNetworkHandler@@@std@@@std@@AEAVLoopbackPacketSender@@V?$unique_ptr@VNetEventCallback@@U?$default_delete@VNetEventCallback@@@std@@@3@U?$pair@V?$unique_ptr@VLevel@@U?$default_delete@VLevel@@@std@@@std@@V?$OwnerPtrT@UEntityRefTraits@@@@@3@W4SubClientId@@@Z
-    MCAPI GameSession(class NetworkSystem &, std::unique_ptr<class ServerNetworkHandler>, class LoopbackPacketSender &, std::unique_ptr<class NetEventCallback>, std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>, ::SubClientId);
+    // symbol: ??0GameSession@@QEAA@AEAVServerNetworkSystem@@V?$unique_ptr@VServerNetworkHandler@@U?$default_delete@VServerNetworkHandler@@@std@@@std@@AEAVLoopbackPacketSender@@V?$unique_ptr@VNetEventCallback@@U?$default_delete@VNetEventCallback@@@std@@@3@U?$pair@V?$unique_ptr@VLevel@@U?$default_delete@VLevel@@@std@@@std@@V?$OwnerPtrT@UEntityRefTraits@@@@@3@W4SubClientId@@@Z
+    MCAPI GameSession(class ServerNetworkSystem &, std::unique_ptr<class ServerNetworkHandler>, class LoopbackPacketSender &, std::unique_ptr<class NetEventCallback>, std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>, ::SubClientId);
 
     // symbol: ?earlyShutdownMainthread@GameSession@@QEAAXXZ
     MCAPI void earlyShutdownMainthread();

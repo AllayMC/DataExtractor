@@ -103,11 +103,11 @@ public:
     // symbol: ?signum@Math@mce@@SAMM@Z
     MCAPI static float signum(float);
 
-    // symbol: ?sin@Math@mce@@SAMURadian@2@@Z
-    MCAPI static float sin(struct mce::Radian);
-
     // symbol: ?sin@Math@mce@@SAMM@Z
     MCAPI static float sin(float);
+
+    // symbol: ?sin@Math@mce@@SAMURadian@2@@Z
+    MCAPI static float sin(struct mce::Radian);
 
     // symbol: ?snapRotationToCardinal@Math@mce@@SAMM@Z
     MCAPI static float snapRotationToCardinal(float);

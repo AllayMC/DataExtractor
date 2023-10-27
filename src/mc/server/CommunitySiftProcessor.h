@@ -6,7 +6,6 @@
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
 #include "mc/enums/safety/ChatFloodingAction.h"
 #include "mc/events/TextFilteringEvent.h"
-#include "mc/server/TextFilteringProcessor.h"
 #include "mc/world/events/TextProcessingEventOrigin.h"
 
 // auto generated forward declare list
@@ -14,7 +13,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-class CommunitySiftProcessor : public ::TextFilteringProcessor {
+class CommunitySiftProcessor {
 public:
     // prevent constructor by default
     CommunitySiftProcessor& operator=(CommunitySiftProcessor const &) = delete;
@@ -63,8 +62,8 @@ public:
     // symbol: ?_processAnonymousMessages@CommunitySiftProcessor@@AEAA?AVCallbackToken@@PEAVIMinecraftEventing@@W4TextProcessingEventOrigin@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@6@V?$function@$$A6AXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@2@@Z@6@@Z
     MCAPI class CallbackToken _processAnonymousMessages(class IMinecraftEventing *, ::TextProcessingEventOrigin, std::vector<std::string> const &, std::string const &, std::function<void (std::vector<std::string> const &, std::vector<::Safety::TextFilteringEvent> const &)>);
 
-    // symbol: ?_processEvent@CommunitySiftProcessor@@AEAAXAEBVPlayer@@W4TextProcessingEventOrigin@@PEBVUserEntityIdentifierComponent@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void _processEvent(class Player const &, ::TextProcessingEventOrigin, class UserEntityIdentifierComponent const *, std::string const &);
+    // symbol: ?_processEvent@CommunitySiftProcessor@@AEAAXAEBVPlayer@@W4TextProcessingEventOrigin@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void _processEvent(class Player const &, ::TextProcessingEventOrigin, std::string const &);
 
     // symbol: ?_processMessages@CommunitySiftProcessor@@AEAA?AVCallbackToken@@AEBVPlayer@@_NW4TextProcessingEventOrigin@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@6@V?$function@$$A6AXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@2@@Z@6@@Z
     MCAPI class CallbackToken _processMessages(class Player const &, bool, ::TextProcessingEventOrigin, std::vector<std::string> const &, std::string const &, std::function<void (std::vector<std::string> const &, std::vector<::Safety::TextFilteringEvent> const &)>);

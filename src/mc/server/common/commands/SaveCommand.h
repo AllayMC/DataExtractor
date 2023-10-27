@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/server/commands/ServerCommand.h"
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
 
-class SaveCommand : public ::ServerCommand {
+class SaveCommand {
 public:
     // SaveCommand inner types define
     enum class State {};
@@ -21,8 +23,8 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?collectOptionalArguments@Command@@MEAA_NXZ
-    virtual bool collectOptionalArguments();
+    // vIndex: 1, symbol: __unk_vfn_1
+    virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?execute@SaveCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -50,8 +52,8 @@ private:
     // symbol: ?mSaveAllFileList@SaveCommand@@0V?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@A
     MCAPI static std::vector<struct SnapshotFilenameAndLength> mSaveAllFileList;
 
-    // symbol: ?mSaveAllMutex@SaveCommand@@0Vmutex@std@@A
-    MCAPI static std::mutex mSaveAllMutex;
+    // symbol: ?mSaveAllMutex@SaveCommand@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mSaveAllMutex;
 
     // symbol: ?mState@SaveCommand@@0W4State@1@A
     MCAPI static ::SaveCommand::State mState;

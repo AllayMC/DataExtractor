@@ -44,11 +44,11 @@ public:
     // symbol: ??1LevelContainerManagerModel@@UEAA@XZ
     MCVAPI ~LevelContainerManagerModel();
 
-    // symbol: ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
-    MCAPI LevelContainerManagerModel(::ContainerID, class Player &, struct ActorUniqueID);
-
     // symbol: ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@W4BlockActorType@@@Z
     MCAPI LevelContainerManagerModel(::ContainerID, class Player &, class BlockPos const &, ::BlockActorType);
+
+    // symbol: ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
+    MCAPI LevelContainerManagerModel(::ContainerID, class Player &, struct ActorUniqueID);
 
     // symbol: ?getBlockPos@LevelContainerManagerModel@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const & getBlockPos() const;

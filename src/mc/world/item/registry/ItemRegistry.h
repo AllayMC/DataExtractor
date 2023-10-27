@@ -19,28 +19,11 @@ class ItemRegistry {
 public:
     // ItemRegistry inner types declare
     // clang-format off
-    struct ComplexAlias;
     struct ItemAlias;
     struct ItemHashAlias;
     // clang-format on
     
     // ItemRegistry inner types define
-    struct ComplexAlias {
-    public:
-        // prevent constructor by default
-        ComplexAlias& operator=(ComplexAlias const &) = delete;
-        ComplexAlias(ComplexAlias const &) = delete;
-        ComplexAlias() = delete;
-    
-    public:
-        // NOLINTBEGIN
-        // symbol: ??1ComplexAlias@ItemRegistry@@QEAA@XZ
-        MCAPI ~ComplexAlias();
-    
-        // NOLINTEND
-    
-    };
-    
     struct ItemAlias {
     public:
         // prevent constructor by default
@@ -99,6 +82,9 @@ public:
     // symbol: ?_loadItemDefinition@ItemRegistry@@AEAAXAEAVValue@Json@@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@std@@AEBVExperiments@@W4ItemVersion@@W4PackType@@AEBVSemVersion@@AEAUReflectionCtx@cereal@@@Z
     MCAPI void _loadItemDefinition(class Json::Value &, bool, std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &, bool, class Experiments const &)>, class Experiments const &, ::ItemVersion, ::PackType, class SemVersion const &, struct cereal::ReflectionCtx &);
 
+    // symbol: ?_parseItemDefinition@ItemRegistry@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@3@AEBVExperiments@@W4ItemVersion@@W4PackType@@AEBVPath@Core@@@Z
+    MCAPI std::string _parseItemDefinition(std::string const &, bool, std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &, bool, class Experiments const &)>, class Experiments const &, ::ItemVersion, ::PackType, class Core::Path const &);
+
     // symbol: ?_parseItemDefinition@ItemRegistry@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@3@AEBVExperiments@@W4ItemVersion@@W4PackType@@AEBVPath@Core@@AEAUReflectionCtx@cereal@@@Z
     MCAPI std::string _parseItemDefinition(std::string const &, bool, std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &, bool, class Experiments const &)>, class Experiments const &, ::ItemVersion, ::PackType, class Core::Path const &, struct cereal::ReflectionCtx &);
 
@@ -138,11 +124,11 @@ public:
     // symbol: ?initServerData@ItemRegistry@@AEAAXAEAVResourcePackManager@@AEBVExperiments@@W4ItemVersion@@@Z
     MCAPI void initServerData(class ResourcePackManager &, class Experiments const &, ::ItemVersion);
 
-    // symbol: ?lookupByName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
-
     // symbol: ?lookupByName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEAHV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI class WeakPtr<class Item> lookupByName(int &, std::string_view) const;
+
+    // symbol: ?lookupByName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
+    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
 
     // symbol: ?lookupByNameNoAlias@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string_view) const;
@@ -153,8 +139,8 @@ public:
     // symbol: ?registerAlias@ItemRegistry@@AEAAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
     MCAPI void registerAlias(class HashedString const &, class HashedString const &, class BaseGameVersion const &);
 
-    // symbol: ?registerComplexAlias@ItemRegistry@@AEAA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@AEBUComplexAlias@1@@Z
-    MCAPI class WeakPtr<class Item> registerComplexAlias(class HashedString const &, struct ItemRegistry::ComplexAlias const &);
+    // symbol: ?registerComplexAlias@ItemRegistry@@AEAA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@AEBUItemRegistryComplexAlias@@@Z
+    MCAPI class WeakPtr<class Item> registerComplexAlias(class HashedString const &, struct ItemRegistryComplexAlias const &);
 
     // symbol: ?registerItem@ItemRegistry@@AEAAXV?$SharedPtr@VItem@@@@@Z
     MCAPI void registerItem(class SharedPtr<class Item>);
@@ -170,6 +156,12 @@ public:
 
     // symbol: ?validateServerItemComponents@ItemRegistry@@AEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@3@@Z
     MCAPI std::vector<std::string> validateServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const &);
+
+    // symbol: ?getBlockItemId@ItemRegistry@@CAFAEBVBlock@@@Z
+    MCAPI static short getBlockItemId(class Block const &);
+
+    // symbol: ?getBlockItemId@ItemRegistry@@CAFAEBVBlockLegacy@@@Z
+    MCAPI static short getBlockItemId(class BlockLegacy const &);
 
     // NOLINTEND
 

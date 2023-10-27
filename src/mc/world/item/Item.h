@@ -41,11 +41,11 @@ public:
         // symbol: ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVBlock@@PEBVCompoundTag@@@Z
         MCAPI ScopedCreativeGroup(std::string const &, class Block const *, class CompoundTag const *);
     
-        // symbol: ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z
-        MCAPI ScopedCreativeGroup(std::string const &, class Item *, short, class CompoundTag const *);
-    
         // symbol: ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@@Z
         MCAPI ScopedCreativeGroup(std::string const &, class ItemInstance const &);
+    
+        // symbol: ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@FFPEBVCompoundTag@@@Z
+        MCAPI ScopedCreativeGroup(std::string const &, short, short, class CompoundTag const *);
     
         // symbol: ??1ScopedCreativeGroup@Item@@QEAA@XZ
         MCAPI ~ScopedCreativeGroup();
@@ -555,11 +555,11 @@ public:
     // symbol: ?addOnResetBAIcallback@Item@@QEAAXAEBV?$function@$$A6AXXZ@std@@@Z
     MCAPI void addOnResetBAIcallback(std::function<void (void)> const &);
 
-    // symbol: ?addTag@Item@@QEAAAEAV1@AEBUItemTag@@@Z
-    MCAPI class Item & addTag(struct ItemTag const &);
-
     // symbol: ?addTag@Item@@QEAAAEAV1@AEBVHashedString@@@Z
     MCAPI class Item & addTag(class HashedString const &);
+
+    // symbol: ?addTag@Item@@QEAAAEAV1@AEBUItemTag@@@Z
+    MCAPI class Item & addTag(struct ItemTag const &);
 
     // symbol: ?addTags@Item@@QEAAAEAV1@V?$initializer_list@V?$reference_wrapper@$$CBUItemTag@@@std@@@std@@@Z
     MCAPI class Item & addTags(std::initializer_list<std::reference_wrapper<struct ItemTag const>>);
@@ -579,11 +579,11 @@ public:
     // symbol: ?destroySpeedBonus@Item@@QEBAMAEBVItemStackBase@@@Z
     MCAPI float destroySpeedBonus(class ItemStackBase const &) const;
 
-    // symbol: ?fixupOnLoad@Item@@QEBAXAEAVItemStackBase@@@Z
-    MCAPI void fixupOnLoad(class ItemStackBase &) const;
-
     // symbol: ?fixupOnLoad@Item@@QEBAXAEAVItemStackBase@@AEAVLevel@@@Z
     MCAPI void fixupOnLoad(class ItemStackBase &, class Level &) const;
+
+    // symbol: ?fixupOnLoad@Item@@QEBAXAEAVItemStackBase@@@Z
+    MCAPI void fixupOnLoad(class ItemStackBase &) const;
 
     // symbol: ?getCommandNames@Item@@QEBA?AV?$vector@UCommandName@@V?$allocator@UCommandName@@@std@@@std@@XZ
     MCAPI std::vector<struct CommandName> getCommandNames() const;
@@ -693,11 +693,11 @@ public:
     // symbol: ?addCreativeItem@Item@@SAXVItemRegistryRef@@AEBVBlock@@@Z
     MCAPI static void addCreativeItem(class ItemRegistryRef, class Block const &);
 
-    // symbol: ?addCreativeItem@Item@@SAXVItemRegistryRef@@AEBVItemInstance@@@Z
-    MCAPI static void addCreativeItem(class ItemRegistryRef, class ItemInstance const &);
-
     // symbol: ?addCreativeItem@Item@@SAXVItemRegistryRef@@AEBVItemStack@@@Z
     MCAPI static void addCreativeItem(class ItemRegistryRef, class ItemStack const &);
+
+    // symbol: ?addCreativeItem@Item@@SAXVItemRegistryRef@@AEBVItemInstance@@@Z
+    MCAPI static void addCreativeItem(class ItemRegistryRef, class ItemInstance const &);
 
     // symbol: ?addLooseCreativeItems@Item@@SAX_NAEBVBaseGameVersion@@VItemRegistryRef@@@Z
     MCAPI static void addLooseCreativeItems(bool, class BaseGameVersion const &, class ItemRegistryRef);
@@ -754,9 +754,6 @@ public:
     // NOLINTBEGIN
     // symbol: ?_addLooseCreativeItemsClient@Item@@CAXXZ
     MCAPI static void _addLooseCreativeItemsClient();
-
-    // symbol: ?_addLooseCreativeItemsServer@Item@@CAXAEBVBaseGameVersion@@VItemRegistryRef@@@Z
-    MCAPI static void _addLooseCreativeItemsServer(class BaseGameVersion const &, class ItemRegistryRef);
 
     // NOLINTEND
 

@@ -29,11 +29,11 @@ public:
     // symbol: ??0StringConstraint@cereal@@QEAA@AEBV01@@Z
     MCAPI StringConstraint(class cereal::StringConstraint const &);
 
-    // symbol: ??0StringConstraint@cereal@@QEAA@$$QEAV01@@Z
-    MCAPI StringConstraint(class cereal::StringConstraint &&);
-
     // symbol: ??0StringConstraint@cereal@@QEAA@XZ
     MCAPI StringConstraint();
+
+    // symbol: ??0StringConstraint@cereal@@QEAA@$$QEAV01@@Z
+    MCAPI StringConstraint(class cereal::StringConstraint &&);
 
     // symbol: ?maxSize@StringConstraint@cereal@@QEAAAEAV12@_K@Z
     MCAPI class cereal::StringConstraint & maxSize(uint64);

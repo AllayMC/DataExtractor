@@ -144,8 +144,8 @@ public:
     // vIndex: 19, symbol: __unk_vfn_19
     virtual void __unk_vfn_19();
 
-    // vIndex: 20, symbol: ?createSnapshot@DBStorage@@UEAA?AV?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const &);
+    // vIndex: 20, symbol: ?createSnapshot@DBStorage@@UEAA?AV?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@_N@Z
+    virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const &, bool);
 
     // vIndex: 21, symbol: ?releaseSnapshot@DBStorage@@UEAAXXZ
     virtual void releaseSnapshot();

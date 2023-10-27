@@ -14,13 +14,15 @@ class LoadResultAny {
 public:
     // prevent constructor by default
     LoadResultAny& operator=(LoadResultAny const &) = delete;
-    LoadResultAny(LoadResultAny const &) = delete;
     LoadResultAny() = delete;
 
 public:
     // NOLINTBEGIN
     // symbol: ??0LoadResultAny@Puv@@QEAA@$$QEAV01@@Z
     MCAPI LoadResultAny(class Puv::LoadResultAny &&);
+
+    // symbol: ??0LoadResultAny@Puv@@QEAA@AEBV01@@Z
+    MCAPI LoadResultAny(class Puv::LoadResultAny const &);
 
     // symbol: ?log@LoadResultAny@Puv@@QEAAAEAULogger@2@XZ
     MCAPI struct Puv::Logger & log();

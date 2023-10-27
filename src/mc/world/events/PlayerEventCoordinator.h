@@ -17,6 +17,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?getPlayerGameplayHandler@PlayerEventCoordinator@@QEAAAEAVPlayerGameplayHandler@@XZ
+    MCAPI class PlayerGameplayHandler & getPlayerGameplayHandler();
+
     // symbol: ?registerPlayerGameplayHandler@PlayerEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VPlayerGameplayHandler@@U?$default_delete@VPlayerGameplayHandler@@@std@@@std@@@Z
     MCAPI void registerPlayerGameplayHandler(std::unique_ptr<class PlayerGameplayHandler> &&);
 
@@ -50,11 +53,11 @@ public:
     // symbol: ?sendPlayerSlide@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
     MCAPI void sendPlayerSlide(class Player &);
 
-    // symbol: ?sendPlayerTeleported@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-    MCAPI void sendPlayerTeleported(class Player &);
-
     // symbol: ?sendPlayerTeleported@PlayerEventCoordinator@@QEAAXAEAVPlayer@@M@Z
     MCAPI void sendPlayerTeleported(class Player &, float);
+
+    // symbol: ?sendPlayerTeleported@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
+    MCAPI void sendPlayerTeleported(class Player &);
 
     // symbol: ?sendPlayerTick@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
     MCAPI void sendPlayerTick(class Player &);

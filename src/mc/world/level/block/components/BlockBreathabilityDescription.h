@@ -27,14 +27,17 @@ public:
     // vIndex: 1, symbol: ?getName@BlockBreathabilityDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const & getName() const;
 
+    // vIndex: 5, symbol: __unk_vfn_5
+    virtual void __unk_vfn_5();
+
     // vIndex: 7, symbol: ?isNetworkComponent@BlockBreathabilityDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 8, symbol: ?buildNetworkTag@BlockBreathabilityDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
+    // vIndex: 8, symbol: ?buildNetworkTag@BlockBreathabilityDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const &) const;
 
-    // vIndex: 9, symbol: ?initializeFromNetwork@BlockBreathabilityDescription@@UEAAXAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
+    // vIndex: 9, symbol: ?initializeFromNetwork@BlockBreathabilityDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    virtual void initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx const &);
 
     // symbol: ?bindType@BlockBreathabilityDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx &);

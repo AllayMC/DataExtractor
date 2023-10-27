@@ -10,11 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0FilterStringMap@@QEAA@V?$initializer_list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UFilterInputDefinition@@@std@@@std@@@Z
-    MCAPI FilterStringMap(std::initializer_list<std::pair<std::string const, struct FilterInputDefinition>>);
-
     // symbol: ??0FilterStringMap@@QEAA@AEBU0@@Z
     MCAPI FilterStringMap(struct FilterStringMap const &);
+
+    // symbol: ??0FilterStringMap@@QEAA@V?$initializer_list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UFilterInputDefinition@@@std@@@std@@@Z
+    MCAPI FilterStringMap(std::initializer_list<std::pair<std::string const, struct FilterInputDefinition>>);
 
     // symbol: ??4FilterStringMap@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct FilterStringMap & operator=(struct FilterStringMap &&);

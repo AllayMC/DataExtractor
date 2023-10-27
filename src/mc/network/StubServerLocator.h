@@ -46,16 +46,10 @@ public:
     // vIndex: 11, symbol: ?update@StubServerLocator@@UEAAXXZ
     virtual void update();
 
-    // vIndex: 12, symbol: ?isIPv4Supported@StubServerLocator@@UEBA_NXZ
-    virtual bool isIPv4Supported() const;
-
-    // vIndex: 13, symbol: ?isIPv6Supported@StubServerLocator@@UEBA_NXZ
-    virtual bool isIPv6Supported() const;
-
-    // vIndex: 14, symbol: ?getPingTimeForGUID@StubServerLocator@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 12, symbol: ?getPingTimeForGUID@StubServerLocator@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual float getPingTimeForGUID(std::string const &);
 
-    // vIndex: 15, symbol: ?checkCanConnectToCustomServerAsync@StubServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z
+    // vIndex: 13, symbol: ?checkCanConnectToCustomServerAsync@StubServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z
     virtual void checkCanConnectToCustomServerAsync(std::string, int, std::function<void (::ServerConnectivityTestResult)>);
 
     // symbol: ??1StubServerLocator@@UEAA@XZ

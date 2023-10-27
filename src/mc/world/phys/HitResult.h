@@ -8,11 +8,11 @@ public:
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@@Z
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &);
 
+    // symbol: ??0HitResult@@QEAA@AEBV0@@Z
+    MCAPI HitResult(class HitResult const &);
+
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@0@Z
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &, class Vec3 const &);
-
-    // symbol: ??0HitResult@@QEAA@XZ
-    MCAPI HitResult();
 
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@00@Z
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Vec3 const &);
@@ -20,11 +20,11 @@ public:
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEBVBlockPos@@E0@Z
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class BlockPos const &, uchar, class Vec3 const &);
 
-    // symbol: ??0HitResult@@QEAA@AEBV0@@Z
-    MCAPI HitResult(class HitResult const &);
-
     // symbol: ??0HitResult@@QEAA@$$QEAV0@@Z
     MCAPI HitResult(class HitResult &&);
+
+    // symbol: ??0HitResult@@QEAA@XZ
+    MCAPI HitResult();
 
     // symbol: ?distanceTo@HitResult@@QEBAMAEBVActor@@@Z
     MCAPI float distanceTo(class Actor const &) const;

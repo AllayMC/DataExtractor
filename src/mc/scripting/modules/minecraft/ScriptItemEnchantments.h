@@ -23,11 +23,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
-    MCAPI ScriptItemEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const &);
-
     // symbol: ??0ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptItemEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments &&);
+
+    // symbol: ??0ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptItemEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const &);
 
     // symbol: ?addEnchantment@ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA_NAEBUScriptItemEnchantmentInstance@2@@Z
     MCAPI bool addEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const &);
@@ -49,9 +49,6 @@ public:
 
     // symbol: ?removeEnchantment@ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@V?$variant@UScriptItemEnchantmentType@ScriptModuleMinecraft@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
     MCAPI class Scripting::Result<void> removeEnchantment(std::variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>);
-
-    // symbol: ??1ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptItemEnchantments();
 
     // symbol: ?bind@ScriptItemEnchantments@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemEnchantments@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemEnchantments> bind();

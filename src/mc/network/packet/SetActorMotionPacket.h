@@ -33,11 +33,11 @@ public:
     // symbol: ??1SetActorMotionPacket@@UEAA@XZ
     MCVAPI ~SetActorMotionPacket();
 
-    // symbol: ??0SetActorMotionPacket@@QEAA@XZ
-    MCAPI SetActorMotionPacket();
-
     // symbol: ??0SetActorMotionPacket@@QEAA@AEBVActor@@@Z
     MCAPI SetActorMotionPacket(class Actor const &);
+
+    // symbol: ??0SetActorMotionPacket@@QEAA@XZ
+    MCAPI SetActorMotionPacket();
 
     // NOLINTEND
 

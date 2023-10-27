@@ -18,14 +18,14 @@ public:
     // symbol: ?appendEnchantToFormattedText@EnchantUtils@@SAXW4Type@Enchant@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
     MCAPI static void appendEnchantToFormattedText(::Enchant::Type, std::string_view, std::string &);
 
-    // symbol: ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
-    MCAPI static bool applyEnchant(class ItemStackBase &, class EnchantmentInstance const &, bool);
+    // symbol: ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@W4Type@Enchant@@H_N@Z
+    MCAPI static bool applyEnchant(class ItemStackBase &, ::Enchant::Type, int, bool);
 
     // symbol: ?applyEnchant@EnchantUtils@@SAHAEAVItemStackBase@@AEBVItemEnchants@@_N@Z
     MCAPI static int applyEnchant(class ItemStackBase &, class ItemEnchants const &, bool);
 
-    // symbol: ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@W4Type@Enchant@@H_N@Z
-    MCAPI static bool applyEnchant(class ItemStackBase &, ::Enchant::Type, int, bool);
+    // symbol: ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
+    MCAPI static bool applyEnchant(class ItemStackBase &, class EnchantmentInstance const &, bool);
 
     // symbol: ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
     MCAPI static struct EnchantResult canEnchant(class ItemStackBase const &, class EnchantmentInstance const &, bool);

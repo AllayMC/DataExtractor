@@ -9,5 +9,12 @@ public:
     OnewayPhysicsBlocksComponent(OnewayPhysicsBlocksComponent const &) = delete;
     OnewayPhysicsBlocksComponent() = delete;
 
+public:
+    // NOLINTBEGIN
+    // symbol: ??1OnewayPhysicsBlocksComponent@@QEAA@XZ
+    MCAPI ~OnewayPhysicsBlocksComponent();
+
+    // NOLINTEND
+
 };
 

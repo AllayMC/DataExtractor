@@ -14,9 +14,6 @@ public:
     // symbol: ?cacheComponentData@CachedComponentData@@QEAAXAEBVBlock@@@Z
     MCAPI void cacheComponentData(class Block const &);
 
-    // symbol: ??1CachedComponentData@@QEAA@XZ
-    MCAPI ~CachedComponentData();
-
     // NOLINTEND
 
 };

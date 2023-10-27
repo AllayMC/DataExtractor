@@ -22,11 +22,11 @@ public:
     // symbol: ??0PerlinNoise@@QEAA@AEAVIRandom@@HH@Z
     MCAPI PerlinNoise(class IRandom &, int, int);
 
-    // symbol: ?getRegion@PerlinNoise@@QEBAXPEAMAEBVVec3@@HHH1@Z
-    MCAPI void getRegion(float *, class Vec3 const &, int, int, int, class Vec3 const &) const;
-
     // symbol: ?getRegion@PerlinNoise@@QEBAXPEAMAEBVVec2@@HH1M@Z
     MCAPI void getRegion(float *, class Vec2 const &, int, int, class Vec2 const &, float) const;
+
+    // symbol: ?getRegion@PerlinNoise@@QEBAXPEAMAEBVVec3@@HHH1@Z
+    MCAPI void getRegion(float *, class Vec3 const &, int, int, int, class Vec3 const &) const;
 
     // symbol: ?getValue@PerlinNoise@@QEBAMAEBVVec3@@@Z
     MCAPI float getValue(class Vec3 const &) const;

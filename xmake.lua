@@ -33,7 +33,6 @@ add_requires("dyncall 1.4")
 add_requires("compact_enc_det v1.0.1")
 add_requires("fifo_map v1.0.0")
 add_requires("pcg_cpp v1.0.0")
-add_requires("nbt_cpp v1.0.1")
 add_requires("preloader v1.1.0")
 add_requires("symbolprovider v1.0.1")
 add_requires("localbdslibrary")
@@ -57,7 +56,7 @@ target("DataExtractor")
     -- xmake-repo
     add_packages("zlib-ng","asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
     -- liteldev-repo
-    add_packages("fifo_map", "pcg_cpp", "nbt_cpp", "dyncall", "compact_enc_det", "preloader", "symbolprovider")
+    add_packages("fifo_map", "pcg_cpp", "dyncall", "compact_enc_det", "preloader", "symbolprovider")
     add_packages("localbdslibrary")
 
 task("bds-lib")

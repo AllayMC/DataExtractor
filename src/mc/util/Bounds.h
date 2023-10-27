@@ -18,11 +18,11 @@ public:
     // symbol: ??0Bounds@@QEAA@AEBVChunkPos@@0@Z
     MCAPI Bounds(class ChunkPos const &, class ChunkPos const &);
 
-    // symbol: ??0Bounds@@QEAA@AEBVBlockPos@@0HW4Option@0@@Z
-    MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, ::Bounds::Option);
-
     // symbol: ??0Bounds@@QEAA@AEBVBlockPos@@HHFF@Z
     MCAPI Bounds(class BlockPos const &, int, int, short, short);
+
+    // symbol: ??0Bounds@@QEAA@AEBVBlockPos@@0HW4Option@0@@Z
+    MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, ::Bounds::Option);
 
     // NOLINTEND
 

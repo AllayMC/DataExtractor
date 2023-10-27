@@ -34,11 +34,11 @@ public:
     // symbol: ??1MultiplayerSettingsPacket@@UEAA@XZ
     MCVAPI ~MultiplayerSettingsPacket();
 
-    // symbol: ??0MultiplayerSettingsPacket@@QEAA@W4MultiplayerSettingsPacketType@@@Z
-    MCAPI MultiplayerSettingsPacket(::MultiplayerSettingsPacketType);
-
     // symbol: ??0MultiplayerSettingsPacket@@QEAA@XZ
     MCAPI MultiplayerSettingsPacket();
+
+    // symbol: ??0MultiplayerSettingsPacket@@QEAA@W4MultiplayerSettingsPacketType@@@Z
+    MCAPI MultiplayerSettingsPacket(::MultiplayerSettingsPacketType);
 
     // NOLINTEND
 

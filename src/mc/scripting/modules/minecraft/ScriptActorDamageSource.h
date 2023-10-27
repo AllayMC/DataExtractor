@@ -17,9 +17,6 @@ public:
     // symbol: ??0ScriptActorDamageSource@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptActorDamageSource(struct ScriptModuleMinecraft::ScriptActorDamageSource const &);
 
-    // symbol: ??0ScriptActorDamageSource@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
-    MCAPI ScriptActorDamageSource(struct ScriptModuleMinecraft::ScriptActorDamageSource &&);
-
     // symbol: ??4ScriptActorDamageSource@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptActorDamageSource & operator=(struct ScriptModuleMinecraft::ScriptActorDamageSource const &);
 

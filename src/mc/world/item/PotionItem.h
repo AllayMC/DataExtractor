@@ -129,5 +129,12 @@ public:
 
     // NOLINTEND
 
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_isBlockConvertibleToMud@PotionItem@@AEBA?B_NAEBVBlockLegacy@@@Z
+    MCAPI bool const _isBlockConvertibleToMud(class BlockLegacy const &) const;
+
+    // NOLINTEND
+
 };
 

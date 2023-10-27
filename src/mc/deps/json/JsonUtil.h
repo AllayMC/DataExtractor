@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 namespace JsonUtil { class JsonSchemaNodeBase; }
 // clang-format on
@@ -24,6 +25,9 @@ namespace JsonUtil {
     // symbol: ?eraseSchema@JsonUtil@@YAXAEBVHashedString@@AEBVSemVersion@@@Z
     MCAPI void eraseSchema(class HashedString const &, class SemVersion const &);
 
+    // symbol: ?getBlockLegacy@JsonUtil@@YAPEBVBlockLegacy@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class BlockLegacy const * getBlockLegacy(std::string const &);
+
     // symbol: ?getMemberByCaseInsensitiveName@JsonUtil@@YAAEAVValue@Json@@AEAV23@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI class Json::Value & getMemberByCaseInsensitiveName(class Json::Value &, std::string_view const &);
 
@@ -33,8 +37,8 @@ namespace JsonUtil {
     // symbol: ?getSchemaMap@JsonUtil@@YAAEAV?$map@VHashedString@@V?$map@VSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@U?$less@VSemVersion@@@3@V?$allocator@U?$pair@$$CBVSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@@std@@@3@@std@@U?$less@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$map@VSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@U?$less@VSemVersion@@@3@V?$allocator@U?$pair@$$CBVSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@@std@@@3@@std@@@std@@@3@@std@@XZ
     MCAPI std::map<class HashedString,std::map<class SemVersion,std::shared_ptr<class JsonUtil::JsonSchemaNodeBase>>> & getSchemaMap();
 
-    // symbol: ?getSchemaMapLock@JsonUtil@@YAAEAVmutex@std@@XZ
-    MCAPI std::mutex & getSchemaMapLock();
+    // symbol: ?getSchemaMapLock@JsonUtil@@YAAEAVMutex@Threading@Bedrock@@XZ
+    MCAPI class Bedrock::Threading::Mutex & getSchemaMapLock();
 
     // symbol: ?parseBannerBlockType@JsonUtil@@YA_NAEAW4BannerBlockType@@AEBVValue@Json@@@Z
     MCAPI bool parseBannerBlockType(::BannerBlockType &, class Json::Value const &);

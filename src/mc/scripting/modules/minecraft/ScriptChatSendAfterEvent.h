@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace Scripting { class WeakLifetimeScope; }
 struct ChatEvent;
 // clang-format on
@@ -23,8 +24,8 @@ public:
     // symbol: ??0ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptChatSendAfterEvent(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent const &);
 
-    // symbol: ??0ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUChatEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptChatSendAfterEvent(struct ChatEvent const &, class Scripting::WeakLifetimeScope const &);
+    // symbol: ??0ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUChatEvent@@AEBVPlayer@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI ScriptChatSendAfterEvent(struct ChatEvent const &, class Player const &, class Scripting::WeakLifetimeScope const &);
 
     // symbol: ??0ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptChatSendAfterEvent(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent &&);
@@ -32,11 +33,11 @@ public:
     // symbol: ?copyTo@ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEBAXAEAUChatEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI void copyTo(struct ChatEvent &, class Scripting::WeakLifetimeScope const &) const;
 
-    // symbol: ??4ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptChatSendAfterEvent & operator=(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent &&);
-
     // symbol: ??4ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptChatSendAfterEvent & operator=(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent const &);
+
+    // symbol: ??4ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptChatSendAfterEvent & operator=(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent &&);
 
     // symbol: ??1ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptChatSendAfterEvent();

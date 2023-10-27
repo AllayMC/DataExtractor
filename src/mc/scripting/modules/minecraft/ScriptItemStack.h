@@ -31,6 +31,9 @@ public:
     // symbol: ??0ScriptItemStack@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptItemStack(class ScriptModuleMinecraft::ScriptItemStack &&);
 
+    // symbol: ??0ScriptItemStack@ScriptModuleMinecraft@@QEAA@AEBVScriptItemType@1@V?$StrongTypedObjectHandle@VScriptItemType@ScriptModuleMinecraft@@@Scripting@@HH@Z
+    MCAPI ScriptItemStack(class ScriptModuleMinecraft::ScriptItemType const &, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemType>, int, int);
+
     // symbol: ??0ScriptItemStack@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptItemStack(class ScriptModuleMinecraft::ScriptItemStack const &);
 

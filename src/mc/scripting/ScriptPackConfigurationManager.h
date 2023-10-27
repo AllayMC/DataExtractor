@@ -25,11 +25,11 @@ public:
     // symbol: ??0ScriptPackConfigurationManager@@QEAA@$$QEAV0@@Z
     MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager &&);
 
-    // symbol: ??0ScriptPackConfigurationManager@@QEAA@AEBV0@@Z
-    MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
-
     // symbol: ??0ScriptPackConfigurationManager@@QEAA@V?$optional@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@Z
     MCAPI ScriptPackConfigurationManager(std::optional<class Core::PathBuffer<std::string>>);
+
+    // symbol: ??0ScriptPackConfigurationManager@@QEAA@AEBV0@@Z
+    MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
 
     // symbol: ?getConfigPath@ScriptPackConfigurationManager@@QEBAAEBV?$optional@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@XZ
     MCAPI std::optional<class Core::PathBuffer<std::string>> const & getConfigPath() const;

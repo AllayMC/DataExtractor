@@ -86,11 +86,11 @@ public:
     // symbol: ??1StructurePoolElement@@UEAA@XZ
     MCVAPI ~StructurePoolElement();
 
-    // symbol: ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Projection@@W4PostProcessSettings@@@Z
-    MCAPI StructurePoolElement(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::string const &, ::Projection, ::PostProcessSettings);
-
     // symbol: ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UStructurePoolElementSettings@@@Z
     MCAPI StructurePoolElement(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::string const &, struct StructurePoolElementSettings);
+
+    // symbol: ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Projection@@W4PostProcessSettings@@@Z
+    MCAPI StructurePoolElement(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::string const &, ::Projection, ::PostProcessSettings);
 
     // symbol: ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBV?$vector@V?$unique_ptr@VStructurePoolBlockRule@@U?$default_delete@VStructurePoolBlockRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockRule@@U?$default_delete@VStructurePoolBlockRule@@@std@@@std@@@2@@4@PEBV?$vector@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@@2@@4@PEBV?$vector@V?$unique_ptr@VStructurePoolActorRule@@U?$default_delete@VStructurePoolActorRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolActorRule@@U?$default_delete@VStructurePoolActorRule@@@std@@@std@@@2@@4@W4Projection@@W4PostProcessSettings@@@Z
     MCAPI StructurePoolElement(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::string const &, std::vector<std::unique_ptr<class StructurePoolBlockRule>> const *, std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const *, std::vector<std::unique_ptr<class StructurePoolActorRule>> const *, ::Projection, ::PostProcessSettings);

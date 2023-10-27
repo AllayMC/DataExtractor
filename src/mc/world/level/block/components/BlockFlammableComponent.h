@@ -12,5 +12,12 @@ public:
     BlockFlammableComponent(BlockFlammableComponent const &) = delete;
     BlockFlammableComponent() = delete;
 
+public:
+    // NOLINTBEGIN
+    // symbol: ?usesNewComponentStorage@BlockFlammableComponent@@SA_NXZ
+    MCAPI static bool usesNewComponentStorage();
+
+    // NOLINTEND
+
 };
 

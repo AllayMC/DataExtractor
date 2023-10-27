@@ -8,6 +8,7 @@
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
 #include "mc/enums/SignTextSide.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -50,9 +51,6 @@ public:
 
     // vIndex: 6, symbol: ?getCollisionShape@SignBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual class AABB getCollisionShape(class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
-
-    // vIndex: 10, symbol: ?getOutline@SignBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
-    virtual class AABB const & getOutline(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &) const;
 
     // vIndex: 12, symbol: ?getVisualShape@SignBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const & getVisualShape(class Block const &, class AABB &) const;
@@ -225,9 +223,6 @@ public:
 
     // symbol: ?_getInteractResult@SignBlock@@CA?AUSignInteractionResult@1@AEAVSignBlockActor@@W4SignTextSide@@AEAVItemStack@@AEAVPlayer@@AEBVBlockPos@@E@Z
     MCAPI static struct SignBlock::SignInteractionResult _getInteractResult(class SignBlockActor &, ::SignTextSide, class ItemStack &, class Player &, class BlockPos const &, uchar);
-
-    // symbol: ?_getShape@SignBlock@@CAXHAEAVAABB@@@Z
-    MCAPI static void _getShape(int, class AABB &);
 
     // NOLINTEND
 

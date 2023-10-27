@@ -4,8 +4,8 @@
 
 namespace EconomyTradeableComponentInternal {
     // NOLINTBEGIN
-    // symbol: ?_filterTradeByBiome@EconomyTradeableComponentInternal@@YAHAEAV?$vector@UTradeItem@@V?$allocator@UTradeItem@@@std@@@std@@H@Z
-    MCAPI int _filterTradeByBiome(std::vector<struct TradeItem> &, int);
+    // symbol: ?_filterTrades@EconomyTradeableComponentInternal@@YAHAEAVActor@@AEAV?$vector@UTradeItem@@V?$allocator@UTradeItem@@@std@@@std@@@Z
+    MCAPI int _filterTrades(class Actor &, std::vector<struct TradeItem> &);
     // NOLINTEND
 
 };

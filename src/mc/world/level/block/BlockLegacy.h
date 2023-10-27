@@ -12,6 +12,7 @@
 #include "mc/enums/Flip.h"
 #include "mc/enums/LavaFlammable.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/utils/BlockActorType.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -169,8 +170,8 @@ public:
     // vIndex: 4, symbol: ?hasTag@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual bool hasTag(class BlockSource &, class BlockPos const &, class Block const &, std::string const &) const;
 
-    // vIndex: 5, symbol: ?clip@BlockLegacy@@UEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>) const;
+    // vIndex: 5, symbol: ?clip@BlockLegacy@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    virtual class HitResult clip(class Block const &, class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>) const;
 
     // vIndex: 6, symbol: ?getCollisionShape@BlockLegacy@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual class AABB getCollisionShape(class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -196,8 +197,8 @@ public:
     // vIndex: 13, symbol: ?getUIShape@BlockLegacy@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const & getUIShape(class Block const &, class AABB &) const;
 
-    // vIndex: 14, symbol: ?getLiquidClipVolume@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
-    virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
+    // vIndex: 14, symbol: ?getLiquidClipVolume@BlockLegacy@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
+    virtual bool getLiquidClipVolume(class Block const &, class BlockSource &, class BlockPos const &, class AABB &) const;
 
     // vIndex: 15, symbol: ?isObstructingChests@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
@@ -349,8 +350,8 @@ public:
     // vIndex: 64, symbol: ?getRequiredMedium@BlockLegacy@@UEBA?AV?$optional@VHashedString@@@std@@XZ
     virtual std::optional<class HashedString> getRequiredMedium() const;
 
-    // vIndex: 65, symbol: ?shouldConnectToRedstone@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-    virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
+    // vIndex: 65, symbol: ?shouldConnectToRedstone@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, ::Direction::Type) const;
 
     // vIndex: 66, symbol: ?handlePrecipitation@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@MM@Z
     virtual void handlePrecipitation(class BlockSource &, class BlockPos const &, float, float) const;
@@ -871,20 +872,17 @@ public:
     // symbol: ?addTrait@BlockLegacy@@QEAAAEAV1@AEBVITrait@BlockTrait@@@Z
     MCAPI class BlockLegacy & addTrait(class BlockTrait::ITrait const &);
 
-    // symbol: ?anyOf@BlockLegacy@@QEBA_NAEBV?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@@Z
-    MCAPI bool anyOf(std::vector<std::reference_wrapper<class HashedString const>> const &) const;
-
     // symbol: ?anyOf@BlockLegacy@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@@Z
     MCAPI bool anyOf(std::initializer_list<class HashedString const>) const;
+
+    // symbol: ?anyOf@BlockLegacy@@QEBA_NAEBV?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@@Z
+    MCAPI bool anyOf(std::vector<std::reference_wrapper<class HashedString const>> const &) const;
 
     // symbol: ?buildDescriptionName@BlockLegacy@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     MCAPI std::string buildDescriptionName(class Block const &) const;
 
     // symbol: ?canReactToNeighborsDuringInstatick@BlockLegacy@@QEBA_NXZ
     MCAPI bool canReactToNeighborsDuringInstatick() const;
-
-    // symbol: ?clip@BlockLegacy@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@AEBVAABB@@@Z
-    MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, ::ShapeType, class AABB const &) const;
 
     // symbol: ?createBlockPermutations@BlockLegacy@@QEAAXI@Z
     MCAPI void createBlockPermutations(uint);
@@ -970,11 +968,11 @@ public:
     // symbol: ?hasProperty@BlockLegacy@@QEBA_NW4BlockProperty@@@Z
     MCAPI bool hasProperty(::BlockProperty) const;
 
-    // symbol: ?hasState@BlockLegacy@@QEBA_NAEBVBlockState@@@Z
-    MCAPI bool hasState(class BlockState const &) const;
-
     // symbol: ?hasState@BlockLegacy@@QEBA_NAEBVHashedString@@@Z
     MCAPI bool hasState(class HashedString const &) const;
+
+    // symbol: ?hasState@BlockLegacy@@QEBA_NAEBVBlockState@@@Z
+    MCAPI bool hasState(class BlockState const &) const;
 
     // symbol: ?hasTag@BlockLegacy@@QEBA_NAEBVHashedString@@@Z
     MCAPI bool hasTag(class HashedString const &) const;
@@ -1042,11 +1040,11 @@ public:
     // symbol: ?setDefaultState@BlockLegacy@@QEAAXAEBVBlock@@@Z
     MCAPI void setDefaultState(class Block const &);
 
-    // symbol: ?setDestroyTime@BlockLegacy@@QEAAAEAV1@M@Z
-    MCAPI class BlockLegacy & setDestroyTime(float);
-
     // symbol: ?setDestroyTime@BlockLegacy@@QEAAAEAV1@MM@Z
     MCAPI class BlockLegacy & setDestroyTime(float, float);
+
+    // symbol: ?setDestroyTime@BlockLegacy@@QEAAAEAV1@M@Z
+    MCAPI class BlockLegacy & setDestroyTime(float);
 
     // symbol: ?setExperienceDrop@BlockLegacy@@QEAAAEAV1@UIntRange@@@Z
     MCAPI class BlockLegacy & setExperienceDrop(struct IntRange);
@@ -1102,11 +1100,11 @@ public:
     // symbol: ?setSolid@BlockLegacy@@QEAAX_N@Z
     MCAPI void setSolid(bool);
 
-    // symbol: ?setVisualShape@BlockLegacy@@QEAAXAEBVAABB@@@Z
-    MCAPI void setVisualShape(class AABB const &);
-
     // symbol: ?setVisualShape@BlockLegacy@@QEAAXAEBVVec3@@0@Z
     MCAPI void setVisualShape(class Vec3 const &, class Vec3 const &);
+
+    // symbol: ?setVisualShape@BlockLegacy@@QEAAXAEBVAABB@@@Z
+    MCAPI void setVisualShape(class AABB const &);
 
     // symbol: ?tryGetStateFromLegacyData@BlockLegacy@@QEBAPEBVBlock@@G@Z
     MCAPI class Block const * tryGetStateFromLegacyData(ushort) const;

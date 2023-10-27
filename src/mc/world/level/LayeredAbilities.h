@@ -21,11 +21,11 @@ public:
     // symbol: ?addSaveData@LayeredAbilities@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addSaveData(class CompoundTag &) const;
 
-    // symbol: ?forEachAbility@LayeredAbilities@@QEBAXAEBV?$function@$$A6AXAEBVAbility@@PEBD@Z@std@@W4Options@Ability@@@Z
-    MCAPI void forEachAbility(std::function<void (class Ability const &, char const *)> const &, ::Ability::Options) const;
-
     // symbol: ?forEachAbility@LayeredAbilities@@QEBAXAEBV?$function@$$A6AXAEBVAbility@@W4AbilitiesIndex@@@Z@std@@W4Options@Ability@@@Z
     MCAPI void forEachAbility(std::function<void (class Ability const &, ::AbilitiesIndex)> const &, ::Ability::Options) const;
+
+    // symbol: ?forEachAbility@LayeredAbilities@@QEBAXAEBV?$function@$$A6AXAEBVAbility@@PEBD@Z@std@@W4Options@Ability@@@Z
+    MCAPI void forEachAbility(std::function<void (class Ability const &, char const *)> const &, ::Ability::Options) const;
 
     // symbol: ?forEachLayer@LayeredAbilities@@QEAAXAEBV?$function@$$A6AXW4AbilitiesLayer@@AEAVAbilities@@@Z@std@@@Z
     MCAPI void forEachLayer(std::function<void (::AbilitiesLayer, class Abilities &)> const &);

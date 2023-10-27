@@ -9,5 +9,12 @@ public:
     PendingRemovePassengersComponent(PendingRemovePassengersComponent const &) = delete;
     PendingRemovePassengersComponent() = delete;
 
+public:
+    // NOLINTBEGIN
+    // symbol: ??1PendingRemovePassengersComponent@@QEAA@XZ
+    MCAPI ~PendingRemovePassengersComponent();
+
+    // NOLINTEND
+
 };
 

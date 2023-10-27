@@ -33,11 +33,11 @@ public:
     // symbol: ??0LevelData@@QEAA@_N@Z
     MCAPI LevelData(bool);
 
-    // symbol: ??0LevelData@@QEAA@$$QEAV0@@Z
-    MCAPI LevelData(class LevelData &&);
-
     // symbol: ??0LevelData@@QEAA@AEBVLevelSettings@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GeneratorType@@AEBVBlockPos@@_NW4EducationEditionOffer@@MM@Z
     MCAPI LevelData(class LevelSettings const &, std::string const &, ::GeneratorType, class BlockPos const &, bool, ::EducationEditionOffer, float, float);
+
+    // symbol: ??0LevelData@@QEAA@$$QEAV0@@Z
+    MCAPI LevelData(class LevelData &&);
 
     // symbol: ?achievementsWillBeDisabledOnLoad@LevelData@@QEBA_NXZ
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
@@ -108,11 +108,11 @@ public:
     // symbol: ?getEmoteChatMuted@LevelData@@QEBA_NXZ
     MCAPI bool getEmoteChatMuted() const;
 
-    // symbol: ?getExperiments@LevelData@@QEAAAEAVExperiments@@XZ
-    MCAPI class Experiments & getExperiments();
-
     // symbol: ?getExperiments@LevelData@@QEBAAEBVExperiments@@XZ
     MCAPI class Experiments const & getExperiments() const;
+
+    // symbol: ?getExperiments@LevelData@@QEAAAEAVExperiments@@XZ
+    MCAPI class Experiments & getExperiments();
 
     // symbol: ?getFlatWorldGeneratorOptions@LevelData@@QEBAAEBVValue@Json@@XZ
     MCAPI class Json::Value const & getFlatWorldGeneratorOptions() const;

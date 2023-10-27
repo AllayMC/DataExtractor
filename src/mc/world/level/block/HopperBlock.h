@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -29,8 +30,8 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 5, symbol: ?clip@HopperBlock@@UEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>) const;
+    // vIndex: 5, symbol: ?clip@HopperBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    virtual class HitResult clip(class Block const &, class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>) const;
 
     // vIndex: 8, symbol: ?addCollisionShapes@HopperBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -207,8 +208,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getSpoutAABB@HopperBlock@@AEBA?AVAABB@@AEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI class AABB _getSpoutAABB(class BlockSource const &, class BlockPos const &) const;
+    // symbol: ?_getSpoutAABB@HopperBlock@@AEBA?AVAABB@@AEBVBlock@@@Z
+    MCAPI class AABB _getSpoutAABB(class Block const &) const;
 
     // NOLINTEND
 

@@ -9,5 +9,12 @@ public:
     EmotePlayedTelemetryDataComponent(EmotePlayedTelemetryDataComponent const &) = delete;
     EmotePlayedTelemetryDataComponent() = delete;
 
+public:
+    // NOLINTBEGIN
+    // symbol: ??1EmotePlayedTelemetryDataComponent@@QEAA@XZ
+    MCAPI ~EmotePlayedTelemetryDataComponent();
+
+    // NOLINTEND
+
 };
 

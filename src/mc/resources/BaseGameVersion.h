@@ -11,14 +11,14 @@ public:
     // symbol: ??0BaseGameVersion@@QEAA@AEBV0@@Z
     MCAPI BaseGameVersion(class BaseGameVersion const &);
 
-    // symbol: ??0BaseGameVersion@@QEAA@XZ
-    MCAPI BaseGameVersion();
-
     // symbol: ??0BaseGameVersion@@QEAA@AEBVSemVersion@@@Z
     MCAPI BaseGameVersion(class SemVersion const &);
 
     // symbol: ??0BaseGameVersion@@QEAA@GII@Z
     MCAPI BaseGameVersion(ushort, uint, uint);
+
+    // symbol: ??0BaseGameVersion@@QEAA@XZ
+    MCAPI BaseGameVersion();
 
     // symbol: ?asSemVersion@BaseGameVersion@@QEBAAEBVSemVersion@@XZ
     MCAPI class SemVersion const & asSemVersion() const;

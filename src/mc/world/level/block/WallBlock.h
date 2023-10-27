@@ -8,6 +8,7 @@
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
 #include "mc/enums/WallConnectionType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -30,8 +31,8 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 5, symbol: ?clip@WallBlock@@UEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>) const;
+    // vIndex: 5, symbol: ?clip@WallBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    virtual class HitResult clip(class Block const &, class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>) const;
 
     // vIndex: 6, symbol: ?getCollisionShape@WallBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual class AABB getCollisionShape(class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -42,8 +43,8 @@ public:
     // vIndex: 11, symbol: ?getVisualShapeInWorld@WallBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &) const;
 
-    // vIndex: 14, symbol: ?getLiquidClipVolume@WallBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
-    virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
+    // vIndex: 14, symbol: ?getLiquidClipVolume@WallBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
+    virtual bool getLiquidClipVolume(class Block const &, class BlockSource &, class BlockPos const &, class AABB &) const;
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();

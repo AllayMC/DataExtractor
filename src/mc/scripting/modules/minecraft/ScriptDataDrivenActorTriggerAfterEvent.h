@@ -23,11 +23,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptDataDrivenActorTriggerAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUActorDefinitionEndedEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptDataDrivenActorTriggerAfterEvent(struct ActorDefinitionEndedEvent const &, class Scripting::WeakLifetimeScope const &);
-
     // symbol: ??0ScriptDataDrivenActorTriggerAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptDataDrivenActorTriggerAfterEvent(struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent &&);
+
+    // symbol: ??0ScriptDataDrivenActorTriggerAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUActorDefinitionEndedEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI ScriptDataDrivenActorTriggerAfterEvent(struct ActorDefinitionEndedEvent const &, class Scripting::WeakLifetimeScope const &);
 
     // symbol: ?getModifiers@ScriptDataDrivenActorTriggerAfterEvent@ScriptModuleMinecraft@@QEBA?AV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@std@@XZ
     MCAPI std::vector<struct ActorDefinitionModifier> getModifiers() const;

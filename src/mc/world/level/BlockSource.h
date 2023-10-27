@@ -163,11 +163,11 @@ public:
     // symbol: ??1BlockSource@@UEAA@XZ
     MCVAPI ~BlockSource();
 
-    // symbol: ??0BlockSource@@QEAA@AEAVLevel@@AEAVDimension@@AEAVChunkSource@@_N33@Z
-    MCAPI BlockSource(class Level &, class Dimension &, class ChunkSource &, bool, bool, bool);
-
     // symbol: ??0BlockSource@@QEAA@AEAVChunkSource@@_N1@Z
     MCAPI BlockSource(class ChunkSource &, bool, bool);
+
+    // symbol: ??0BlockSource@@QEAA@AEAVLevel@@AEAVDimension@@AEAVChunkSource@@_N33@Z
+    MCAPI BlockSource(class Level &, class Dimension &, class ChunkSource &, bool, bool, bool);
 
     // symbol: ?addToRandomTickingQueue@BlockSource@@QEAAXAEBVBlockPos@@AEBVBlock@@HH_N@Z
     MCAPI void addToRandomTickingQueue(class BlockPos const &, class Block const &, int, int, bool);
@@ -211,11 +211,11 @@ public:
     // symbol: ?checkValidity@BlockSource@@QEBAXXZ
     MCAPI void checkValidity() const;
 
-    // symbol: ?clip@BlockSource@@QEBA?AVHitResult@@AEBUClipParameters@@@Z
-    MCAPI class HitResult clip(struct ClipParameters const &) const;
-
     // symbol: ?clip@BlockSource@@QEBA?AVHitResult@@AEBVVec3@@0_NW4ShapeType@@H11PEAVActor@@AEBV?$function@$$A6A_NAEBVBlockSource@@AEBVBlock@@_N@Z@std@@@Z
     MCAPI class HitResult clip(class Vec3 const &, class Vec3 const &, bool, ::ShapeType, int, bool, bool, class Actor *, std::function<bool (class BlockSource const &, class Block const &, bool)> const &) const;
+
+    // symbol: ?clip@BlockSource@@QEBA?AVHitResult@@AEBUClipParameters@@@Z
+    MCAPI class HitResult clip(struct ClipParameters const &) const;
 
     // symbol: ?containsAnyBlockInBox@BlockSource@@QEAA_NAEBVBoundingBox@@V?$function@$$A6A_NAEBVBlock@@@Z@std@@@Z
     MCAPI bool containsAnyBlockInBox(class BoundingBox const &, std::function<bool (class Block const &)>);
@@ -298,11 +298,11 @@ public:
     // symbol: ?getAABBFetchResultCache@BlockSource@@QEAAAEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@XZ
     MCAPI std::vector<class AABB> & getAABBFetchResultCache();
 
-    // symbol: ?getAboveTopSolidBlock@BlockSource@@QEAAFHH_N0@Z
-    MCAPI short getAboveTopSolidBlock(int, int, bool, bool);
-
     // symbol: ?getAboveTopSolidBlock@BlockSource@@QEAAFAEBVBlockPos@@_N1@Z
     MCAPI short getAboveTopSolidBlock(class BlockPos const &, bool, bool);
+
+    // symbol: ?getAboveTopSolidBlock@BlockSource@@QEAAFHH_N0@Z
+    MCAPI short getAboveTopSolidBlock(int, int, bool, bool);
 
     // symbol: ?getAllocatedHeightAt@BlockSource@@QEAAFAEBVBlockPos@@@Z
     MCAPI short getAllocatedHeightAt(class BlockPos const &);
@@ -310,20 +310,20 @@ public:
     // symbol: ?getBiome@BlockSource@@QEAAAEAVBiome@@AEBVBlockPos@@@Z
     MCAPI class Biome & getBiome(class BlockPos const &);
 
-    // symbol: ?getBlockEntity@BlockSource@@QEAAPEAVBlockActor@@AEBVBlockPos@@@Z
-    MCAPI class BlockActor * getBlockEntity(class BlockPos const &);
-
     // symbol: ?getBlockEntity@BlockSource@@QEAAPEAVBlockActor@@HHH@Z
     MCAPI class BlockActor * getBlockEntity(int, int, int);
+
+    // symbol: ?getBlockEntity@BlockSource@@QEAAPEAVBlockActor@@AEBVBlockPos@@@Z
+    MCAPI class BlockActor * getBlockEntity(class BlockPos const &);
 
     // symbol: ?getBrightnessPair@BlockSource@@QEBA?AUBrightnessPair@@AEBVBlockPos@@@Z
     MCAPI struct BrightnessPair getBrightnessPair(class BlockPos const &) const;
 
-    // symbol: ?getChunk@BlockSource@@QEBAPEAVLevelChunk@@HH@Z
-    MCAPI class LevelChunk * getChunk(int, int) const;
-
     // symbol: ?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z
     MCAPI class LevelChunk * getChunk(class ChunkPos const &) const;
+
+    // symbol: ?getChunk@BlockSource@@QEBAPEAVLevelChunk@@HH@Z
+    MCAPI class LevelChunk * getChunk(int, int) const;
 
     // symbol: ?getConstBiome@BlockSource@@QEBAAEBVBiome@@AEBVBlockPos@@@Z
     MCAPI class Biome const & getConstBiome(class BlockPos const &) const;
@@ -385,29 +385,29 @@ public:
     // symbol: ?hasSubChunksAt@BlockSource@@QEBA?AU?$pair@_NV?$optional@VSubChunkPos@@@std@@@std@@AEBVBlockPos@@0@Z
     MCAPI std::pair<bool, std::optional<class SubChunkPos>> hasSubChunksAt(class BlockPos const &, class BlockPos const &) const;
 
-    // symbol: ?hasTickInCurrentTick@BlockSource@@QEBA_NAEBVBlockPos@@@Z
-    MCAPI bool hasTickInCurrentTick(class BlockPos const &) const;
-
     // symbol: ?hasTickInCurrentTick@BlockSource@@QEBA_NAEBVBlockPos@@W4TickingQueueType@@@Z
     MCAPI bool hasTickInCurrentTick(class BlockPos const &, ::TickingQueueType) const;
 
+    // symbol: ?hasTickInCurrentTick@BlockSource@@QEBA_NAEBVBlockPos@@@Z
+    MCAPI bool hasTickInCurrentTick(class BlockPos const &) const;
+
+    // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@W4TickingQueueType@@@Z
+    MCAPI bool hasTickInPendingTicks(class BlockPos const &, ::TickingQueueType) const;
+
+    // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@AEBVBlock@@W4TickingQueueType@@@Z
+    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class Block const &, ::TickingQueueType) const;
+
     // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@AEBVBlockLegacy@@@Z
     MCAPI bool hasTickInPendingTicks(class BlockPos const &, class BlockLegacy const &) const;
+
+    // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@AEBVBlockLegacy@@W4TickingQueueType@@@Z
+    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class BlockLegacy const &, ::TickingQueueType) const;
 
     // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@AEBVBlock@@@Z
     MCAPI bool hasTickInPendingTicks(class BlockPos const &, class Block const &) const;
 
     // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool hasTickInPendingTicks(class BlockPos const &) const;
-
-    // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@AEBVBlock@@W4TickingQueueType@@@Z
-    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class Block const &, ::TickingQueueType) const;
-
-    // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@AEBVBlockLegacy@@W4TickingQueueType@@@Z
-    MCAPI bool hasTickInPendingTicks(class BlockPos const &, class BlockLegacy const &, ::TickingQueueType) const;
-
-    // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@W4TickingQueueType@@@Z
-    MCAPI bool hasTickInPendingTicks(class BlockPos const &, ::TickingQueueType) const;
 
     // symbol: ?hasUntickedNeighborChunk@BlockSource@@QEBA_NAEBVChunkPos@@H@Z
     MCAPI bool hasUntickedNeighborChunk(class ChunkPos const &, int) const;
@@ -418,11 +418,11 @@ public:
     // symbol: ?isConsideredSolidBlock@BlockSource@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool isConsideredSolidBlock(class BlockPos const &) const;
 
-    // symbol: ?isEmptyBlock@BlockSource@@QEAA_NHHH@Z
-    MCAPI bool isEmptyBlock(int, int, int);
-
     // symbol: ?isEmptyBlock@BlockSource@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool isEmptyBlock(class BlockPos const &) const;
+
+    // symbol: ?isEmptyBlock@BlockSource@@QEAA_NHHH@Z
+    MCAPI bool isEmptyBlock(int, int, int);
 
     // symbol: ?isEmptyWaterBlock@BlockSource@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool isEmptyWaterBlock(class BlockPos const &) const;
@@ -454,11 +454,11 @@ public:
     // symbol: ?neighborChanged@BlockSource@@QEAAXAEBVBlockPos@@0@Z
     MCAPI void neighborChanged(class BlockPos const &, class BlockPos const &);
 
-    // symbol: ?postGameEvent@BlockSource@@QEAAXPEAVActor@@AEBVGameEvent@@AEBVBlockPos@@PEBVBlock@@@Z
-    MCAPI void postGameEvent(class Actor *, class GameEvent const &, class BlockPos const &, class Block const *);
-
     // symbol: ?postGameEvent@BlockSource@@QEAAXPEAVActor@@AEBVGameEvent@@AEBVVec3@@PEBVBlock@@@Z
     MCAPI void postGameEvent(class Actor *, class GameEvent const &, class Vec3 const &, class Block const *);
+
+    // symbol: ?postGameEvent@BlockSource@@QEAAXPEAVActor@@AEBVGameEvent@@AEBVBlockPos@@PEBVBlock@@@Z
+    MCAPI void postGameEvent(class Actor *, class GameEvent const &, class BlockPos const &, class Block const *);
 
     // symbol: ?removeBlock@BlockSource@@QEAA_NAEBVBlockPos@@@Z
     MCAPI bool removeBlock(class BlockPos const &);

@@ -63,11 +63,11 @@ public:
     // symbol: ?getModifiers@AttributeInstance@@QEBA?AV?$vector@VAttributeModifier@@V?$allocator@VAttributeModifier@@@std@@@std@@H@Z
     MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
 
-    // symbol: ?hasModifier@AttributeInstance@@QEBA_NAEBVAttributeModifier@@@Z
-    MCAPI bool hasModifier(class AttributeModifier const &) const;
-
     // symbol: ?hasModifier@AttributeInstance@@QEBA_NV?$shared_ptr@VAttributeModifier@@@std@@@Z
     MCAPI bool hasModifier(std::shared_ptr<class AttributeModifier>) const;
+
+    // symbol: ?hasModifier@AttributeInstance@@QEBA_NAEBVAttributeModifier@@@Z
+    MCAPI bool hasModifier(class AttributeModifier const &) const;
 
     // symbol: ?hasModifier@AttributeInstance@@QEBA_NAEBVUUID@mce@@@Z
     MCAPI bool hasModifier(class mce::UUID const &) const;
@@ -99,11 +99,11 @@ public:
     // symbol: ?removeBuffs@AttributeInstance@@QEAAXXZ
     MCAPI void removeBuffs();
 
-    // symbol: ?removeModifier@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeModifier@@@std@@@Z
-    MCAPI void removeModifier(std::shared_ptr<class AttributeModifier>);
-
     // symbol: ?removeModifier@AttributeInstance@@QEAA_NAEBVUUID@mce@@@Z
     MCAPI bool removeModifier(class mce::UUID const &);
+
+    // symbol: ?removeModifier@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeModifier@@@std@@@Z
+    MCAPI void removeModifier(std::shared_ptr<class AttributeModifier>);
 
     // symbol: ?removeModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
     MCAPI void removeModifier(class AttributeModifier const &);

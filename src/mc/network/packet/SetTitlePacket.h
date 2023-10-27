@@ -36,14 +36,14 @@ public:
     // symbol: ??1SetTitlePacket@@UEAA@XZ
     MCVAPI ~SetTitlePacket();
 
+    // symbol: ??0SetTitlePacket@@QEAA@AEBV0@@Z
+    MCAPI SetTitlePacket(class SetTitlePacket const &);
+
     // symbol: ??0SetTitlePacket@@QEAA@XZ
     MCAPI SetTitlePacket();
 
     // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@@Z
     MCAPI SetTitlePacket(::SetTitlePacket::TitleType);
-
-    // symbol: ??0SetTitlePacket@@QEAA@AEBV0@@Z
-    MCAPI SetTitlePacket(class SetTitlePacket const &);
 
     // symbol: ??0SetTitlePacket@@QEAA@HHH@Z
     MCAPI SetTitlePacket(int, int, int);

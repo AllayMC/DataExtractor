@@ -37,8 +37,8 @@ public:
     // symbol: ?bind@ScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockRecordPlayerComponent> bind();
 
-    // symbol: ?tryCreate@ScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@@Scripting@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockRecordPlayerComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
+    // symbol: ?tryCreate@ScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockRecordPlayerComponent>> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
     // symbol: ?ComponentId@ScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const * ComponentId;

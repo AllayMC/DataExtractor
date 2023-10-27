@@ -18,11 +18,11 @@ public:
     // symbol: ?canTrigger@DefinitionTrigger@@QEBA_NAEAVRenderParams@@@Z
     MCAPI bool canTrigger(class RenderParams &) const;
 
-    // symbol: ??4DefinitionTrigger@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class DefinitionTrigger & operator=(class DefinitionTrigger &&);
-
     // symbol: ??4DefinitionTrigger@@QEAAAEAV0@AEBV0@@Z
     MCAPI class DefinitionTrigger & operator=(class DefinitionTrigger const &);
+
+    // symbol: ??4DefinitionTrigger@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class DefinitionTrigger & operator=(class DefinitionTrigger &&);
 
     // symbol: ??1DefinitionTrigger@@QEAA@XZ
     MCAPI ~DefinitionTrigger();

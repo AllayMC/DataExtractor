@@ -30,14 +30,14 @@ public:
     
 public:
     // NOLINTBEGIN
+    // symbol: ??0SemVersion@@QEAA@GGGAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    MCAPI SemVersion(ushort, ushort, ushort, std::string const &, std::string const &);
+
     // symbol: ??0SemVersion@@QEAA@XZ
     MCAPI SemVersion();
 
     // symbol: ??0SemVersion@@QEAA@Uany_version_constructor@0@@Z
     MCAPI SemVersion(struct SemVersion::any_version_constructor);
-
-    // symbol: ??0SemVersion@@QEAA@GGGAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI SemVersion(ushort, ushort, ushort, std::string const &, std::string const &);
 
     // symbol: ??0SemVersion@@QEAA@AEBV0@@Z
     MCAPI SemVersion(class SemVersion const &);

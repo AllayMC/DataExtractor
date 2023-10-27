@@ -20,11 +20,11 @@ public:
     // vIndex: 3, symbol: ?isNetworkComponent@ChargeableItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 4, symbol: ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
+    // vIndex: 4, symbol: ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const &) const;
 
-    // vIndex: 5, symbol: ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
-    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
+    // vIndex: 5, symbol: ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx const &);
 
     // symbol: ??1ChargeableItemComponent@@UEAA@XZ
     MCVAPI ~ChargeableItemComponent();

@@ -45,11 +45,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BlockDefinitionGroup@@QEAA@AEAUReflectionCtx@cereal@@@Z
-    MCAPI BlockDefinitionGroup(struct cereal::ReflectionCtx &);
-
     // symbol: ??0BlockDefinitionGroup@@QEAA@XZ
     MCAPI BlockDefinitionGroup();
+
+    // symbol: ??0BlockDefinitionGroup@@QEAA@AEAUReflectionCtx@cereal@@@Z
+    MCAPI BlockDefinitionGroup(struct cereal::ReflectionCtx &);
 
     // symbol: ?buildBlockSchema@BlockDefinitionGroup@@QEAAXAEBVBlockComponentFactory@@@Z
     MCAPI void buildBlockSchema(class BlockComponentFactory const &);

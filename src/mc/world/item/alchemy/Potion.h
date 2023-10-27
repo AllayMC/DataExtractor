@@ -28,11 +28,11 @@ public:
     // symbol: ?effectPotencyToString@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVMobEffectInstance@@@Z
     MCAPI std::string effectPotencyToString(class MobEffectInstance const &) const;
 
-    // symbol: ?getDescriptionId@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string getDescriptionId() const;
-
     // symbol: ?getDescriptionId@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@@Z
     MCAPI std::string getDescriptionId(::Potion::PotionType) const;
+
+    // symbol: ?getDescriptionId@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string getDescriptionId() const;
 
     // symbol: ?getMobEffect@Potion@@QEBAAEBVMobEffectInstance@@XZ
     MCAPI class MobEffectInstance const & getMobEffect() const;
@@ -43,11 +43,11 @@ public:
     // symbol: ?getMobEffects@Potion@@QEBAAEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@XZ
     MCAPI std::vector<class MobEffectInstance> const & getMobEffects() const;
 
-    // symbol: ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MV?$basic_string_view@DU?$char_traits@D@std@@@3@AEBVMobEffectInstance@@@Z
-    MCAPI std::string getPotentencyDescription(::Potion::PotionType, float, std::string_view, class MobEffectInstance const &) const;
-
     // symbol: ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@M@Z
     MCAPI std::string getPotentencyDescription(::Potion::PotionType, float) const;
+
+    // symbol: ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MV?$basic_string_view@DU?$char_traits@D@std@@@3@AEBVMobEffectInstance@@@Z
+    MCAPI std::string getPotentencyDescription(::Potion::PotionType, float, std::string_view, class MobEffectInstance const &) const;
 
     // symbol: ?getPotionId@Potion@@QEBAHXZ
     MCAPI int getPotionId() const;
@@ -64,11 +64,11 @@ public:
     // symbol: ?getBasePotion@Potion@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@@Z
     MCAPI static std::string getBasePotion(::Potion::PotionType);
 
-    // symbol: ?getPotion@Potion@@SA?AV?$shared_ptr@$$CBVPotion@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
-    MCAPI static std::shared_ptr<class Potion const> getPotion(std::string_view);
-
     // symbol: ?getPotion@Potion@@SA?AV?$shared_ptr@$$CBVPotion@@@std@@H@Z
     MCAPI static std::shared_ptr<class Potion const> getPotion(int);
+
+    // symbol: ?getPotion@Potion@@SA?AV?$shared_ptr@$$CBVPotion@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
+    MCAPI static std::shared_ptr<class Potion const> getPotion(std::string_view);
 
     // symbol: ?getPotionCount@Potion@@SAHXZ
     MCAPI static int getPotionCount();
@@ -212,11 +212,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ??0Potion@@AEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@0AEBVMobEffectInstance@@W4PotionVariant@0@@Z
-    MCAPI Potion(std::string_view, std::string_view, class MobEffectInstance const &, ::Potion::PotionVariant);
-
     // symbol: ??0Potion@@AEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@V?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@2@W4PotionVariant@0@@Z
     MCAPI Potion(std::string_view, std::vector<std::string>, std::vector<class MobEffectInstance>, ::Potion::PotionVariant);
+
+    // symbol: ??0Potion@@AEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@0AEBVMobEffectInstance@@W4PotionVariant@0@@Z
+    MCAPI Potion(std::string_view, std::string_view, class MobEffectInstance const &, ::Potion::PotionVariant);
 
     // symbol: ?_getDescriptionIdCombiningStrings@Potion@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@@Z
     MCAPI std::string _getDescriptionIdCombiningStrings(::Potion::PotionType) const;

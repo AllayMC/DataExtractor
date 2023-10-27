@@ -12,5 +12,12 @@ public:
     BlockDestructibleByMiningComponent(BlockDestructibleByMiningComponent const &) = delete;
     BlockDestructibleByMiningComponent() = delete;
 
+public:
+    // NOLINTBEGIN
+    // symbol: ?usesNewComponentStorage@BlockDestructibleByMiningComponent@@SA_NXZ
+    MCAPI static bool usesNewComponentStorage();
+
+    // NOLINTEND
+
 };
 

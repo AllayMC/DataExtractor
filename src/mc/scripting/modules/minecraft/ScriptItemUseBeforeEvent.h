@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseAfterEvent; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -21,6 +22,7 @@ struct ScriptItemUseBeforeEvent : public ::ScriptModuleMinecraft::ScriptItemUseA
 public:
     // prevent constructor by default
     ScriptItemUseBeforeEvent& operator=(ScriptItemUseBeforeEvent const &) = delete;
+    ScriptItemUseBeforeEvent(ScriptItemUseBeforeEvent const &) = delete;
     ScriptItemUseBeforeEvent() = delete;
 
 public:
@@ -28,14 +30,8 @@ public:
     // symbol: ??1ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptItemUseBeforeEvent();
 
-    // symbol: ??0ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptItemUseBeforeEvent(struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent const &);
-
-    // symbol: ??0ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEAUItemUseEvent@@AEBVWeakLifetimeScope@3@@Z
-    MCAPI ScriptItemUseBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemUseEvent &, class Scripting::WeakLifetimeScope const &);
-
-    // symbol: ??4ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent & operator=(struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent &&);
+    // symbol: ??0ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBVPlayer@@AEAUItemUseEvent@@AEBVWeakLifetimeScope@3@@Z
+    MCAPI ScriptItemUseBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Player const &, struct ItemUseEvent &, class Scripting::WeakLifetimeScope const &);
 
     // symbol: ?bind@ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemUseBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent> bind();

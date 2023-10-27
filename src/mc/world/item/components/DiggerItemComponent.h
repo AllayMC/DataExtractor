@@ -21,11 +21,11 @@ public:
     struct BlockInfo {
     public:
         // NOLINTBEGIN
-        // symbol: ??0BlockInfo@DiggerItemComponent@@QEAA@XZ
-        MCAPI BlockInfo();
-    
         // symbol: ??0BlockInfo@DiggerItemComponent@@QEAA@AEBU01@@Z
         MCAPI BlockInfo(struct DiggerItemComponent::BlockInfo const &);
+    
+        // symbol: ??0BlockInfo@DiggerItemComponent@@QEAA@XZ
+        MCAPI BlockInfo();
     
         // symbol: ??4BlockInfo@DiggerItemComponent@@QEAAAEAU01@AEBU01@@Z
         MCAPI struct DiggerItemComponent::BlockInfo & operator=(struct DiggerItemComponent::BlockInfo const &);
@@ -57,11 +57,11 @@ public:
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 4, symbol: ?buildNetworkTag@ItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
+    // vIndex: 4, symbol: ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const &) const;
 
-    // vIndex: 5, symbol: ?initializeFromNetwork@ItemComponent@@UEAA_NAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
-    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
+    // vIndex: 5, symbol: ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx const &);
 
     // vIndex: 6, symbol: ?handleVersionBasedInitialization@DiggerItemComponent@@UEAAXAEBVSemVersion@@@Z
     virtual void handleVersionBasedInitialization(class SemVersion const &);
@@ -78,17 +78,17 @@ public:
     // symbol: ??1DiggerItemComponent@@UEAA@XZ
     MCVAPI ~DiggerItemComponent();
 
-    // symbol: ??0DiggerItemComponent@@QEAA@XZ
-    MCAPI DiggerItemComponent();
-
     // symbol: ??0DiggerItemComponent@@QEAA@AEBV0@@Z
     MCAPI DiggerItemComponent(class DiggerItemComponent const &);
 
-    // symbol: ??4DiggerItemComponent@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class DiggerItemComponent & operator=(class DiggerItemComponent const &);
+    // symbol: ??0DiggerItemComponent@@QEAA@XZ
+    MCAPI DiggerItemComponent();
 
     // symbol: ??4DiggerItemComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class DiggerItemComponent & operator=(class DiggerItemComponent &&);
+
+    // symbol: ??4DiggerItemComponent@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class DiggerItemComponent & operator=(class DiggerItemComponent const &);
 
     // symbol: ?bindType@DiggerItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx &, std::vector<::AllExperiments> const &, std::optional<class SemVersion>);

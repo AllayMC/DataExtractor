@@ -26,8 +26,8 @@ public:
     // symbol: ?bind@ScriptBlockStates@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockStates@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockStates> bind();
 
-    // symbol: ?get@ScriptBlockStates@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptBlockStateType@ScriptModuleMinecraft@@@Scripting@@AEBVWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockStateType> get(class Scripting::WeakLifetimeScope const &, std::string const &);
+    // symbol: ?get@ScriptBlockStates@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockStateType@ScriptModuleMinecraft@@@Scripting@@@std@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
+    MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockStateType>> get(class Scripting::WeakLifetimeScope const &, std::string const &);
 
     // symbol: ?getAll@ScriptBlockStates@ScriptModuleMinecraft@@SA?AV?$vector@V?$StrongTypedObjectHandle@VScriptBlockStateType@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptBlockStateType@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI static std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockStateType>> getAll(class Scripting::WeakLifetimeScope const &);

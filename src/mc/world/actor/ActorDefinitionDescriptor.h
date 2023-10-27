@@ -8,11 +8,11 @@ public:
     // symbol: ??0ActorDefinitionDescriptor@@QEAA@XZ
     MCAPI ActorDefinitionDescriptor();
 
-    // symbol: ??0ActorDefinitionDescriptor@@QEAA@AEBV0@@Z
-    MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const &);
-
     // symbol: ??0ActorDefinitionDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor &&);
+
+    // symbol: ??0ActorDefinitionDescriptor@@QEAA@AEBV0@@Z
+    MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const &);
 
     // symbol: ?combine@ActorDefinitionDescriptor@@QEAAAEAV1@AEBV1@@Z
     MCAPI class ActorDefinitionDescriptor & combine(class ActorDefinitionDescriptor const &);

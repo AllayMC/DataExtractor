@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Threading { class Mutex; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct SessionState; }
 namespace Social { class GameConnectionInfo; }
@@ -146,8 +147,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getOrCreatePeer@NetherNetConnector@@AEAA?AV?$not_null@V?$shared_ptr@VWebRTCNetworkPeer@@@std@@@gsl@@_KAEBV?$UniqueLock@Vmutex@std@@@Threading@Bedrock@@@Z
-    MCAPI gsl::not_null<std::shared_ptr<class WebRTCNetworkPeer>> _getOrCreatePeer(uint64, class Bedrock::Threading::UniqueLock<std::mutex> const &);
+    // symbol: ?_getOrCreatePeer@NetherNetConnector@@AEAA?AV?$not_null@V?$shared_ptr@VWebRTCNetworkPeer@@@std@@@gsl@@_KAEBV?$UniqueLock@VMutex@Threading@Bedrock@@@Threading@Bedrock@@@Z
+    MCAPI gsl::not_null<std::shared_ptr<class WebRTCNetworkPeer>> _getOrCreatePeer(uint64, class Bedrock::Threading::UniqueLock<class Bedrock::Threading::Mutex> const &);
 
     // NOLINTEND
 

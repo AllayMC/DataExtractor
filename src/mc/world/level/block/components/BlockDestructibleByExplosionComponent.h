@@ -12,5 +12,12 @@ public:
     BlockDestructibleByExplosionComponent(BlockDestructibleByExplosionComponent const &) = delete;
     BlockDestructibleByExplosionComponent() = delete;
 
+public:
+    // NOLINTBEGIN
+    // symbol: ?usesNewComponentStorage@BlockDestructibleByExplosionComponent@@SA_NXZ
+    MCAPI static bool usesNewComponentStorage();
+
+    // NOLINTEND
+
 };
 

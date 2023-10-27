@@ -9,5 +9,12 @@ public:
     PlayerSkinLoadedClientEvent(PlayerSkinLoadedClientEvent const &) = delete;
     PlayerSkinLoadedClientEvent() = delete;
 
+public:
+    // NOLINTBEGIN
+    // symbol: ??1PlayerSkinLoadedClientEvent@@QEAA@XZ
+    MCAPI ~PlayerSkinLoadedClientEvent();
+
+    // NOLINTEND
+
 };
 

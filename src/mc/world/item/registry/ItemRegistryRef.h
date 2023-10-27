@@ -4,7 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakPtr.h"
-#include "mc/world/item/registry/ItemRegistry.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
 
 class ItemRegistryRef {
 public:
@@ -23,8 +27,8 @@ public:
     
     public:
         // NOLINTBEGIN
-        // symbol: ??0LockGuard@ItemRegistryRef@@QEAA@V?$shared_ptr@Vmutex@std@@@std@@@Z
-        MCAPI LockGuard(std::shared_ptr<std::mutex>);
+        // symbol: ??0LockGuard@ItemRegistryRef@@QEAA@V?$shared_ptr@VMutex@Threading@Bedrock@@@std@@@Z
+        MCAPI LockGuard(std::shared_ptr<class Bedrock::Threading::Mutex>);
     
         // symbol: ??1LockGuard@ItemRegistryRef@@QEAA@XZ
         MCAPI ~LockGuard();
@@ -36,12 +40,17 @@ public:
 public:
     // prevent constructor by default
     ItemRegistryRef& operator=(ItemRegistryRef const &) = delete;
-    ItemRegistryRef() = delete;
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ItemRegistryRef@@QEAA@V?$weak_ptr@VItemRegistry@@@std@@@Z
+    MCAPI ItemRegistryRef(std::weak_ptr<class ItemRegistry>);
+
     // symbol: ??0ItemRegistryRef@@QEAA@AEBV0@@Z
     MCAPI ItemRegistryRef(class ItemRegistryRef const &);
+
+    // symbol: ??0ItemRegistryRef@@QEAA@XZ
+    MCAPI ItemRegistryRef();
 
     // symbol: ?addItemToTagMap@ItemRegistryRef@@QEBAXAEBVItem@@@Z
     MCAPI void addItemToTagMap(class Item const &) const;
@@ -64,11 +73,11 @@ public:
     // symbol: ?getComplexAliasSplitNames@ItemRegistryRef@@QEBAAEBV?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@AEBVHashedString@@@Z
     MCAPI std::vector<std::reference_wrapper<class HashedString const>> const & getComplexAliasSplitNames(class HashedString const &) const;
 
-    // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@F@Z
-    MCAPI class WeakPtr<class Item> getItem(short) const;
-
     // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
     MCAPI class WeakPtr<class Item> getItem(class HashedString const &) const;
+
+    // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@F@Z
+    MCAPI class WeakPtr<class Item> getItem(short) const;
 
     // symbol: ?getItemCount@ItemRegistryRef@@QEBAHXZ
     MCAPI int getItemCount() const;
@@ -100,6 +109,9 @@ public:
     // symbol: ?isServerInitializingCreativeItems@ItemRegistryRef@@QEBA_NXZ
     MCAPI bool isServerInitializingCreativeItems() const;
 
+    // symbol: ?isValid@ItemRegistryRef@@QEBA_NXZ
+    MCAPI bool isValid() const;
+
     // symbol: ?lockItemWorldCompatibilityMutex@ItemRegistryRef@@QEBA?AVLockGuard@1@XZ
     MCAPI class ItemRegistryRef::LockGuard lockItemWorldCompatibilityMutex() const;
 
@@ -112,11 +124,11 @@ public:
     // symbol: ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAH0V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI class WeakPtr<class Item> lookupByName(int &, int &, std::string_view) const;
 
-    // symbol: ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string_view) const;
-
     // symbol: ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const &) const;
+
+    // symbol: ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string_view) const;
 
     // symbol: ?lookupByNameNoParsing@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAHAEBVHashedString@@@Z
     MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int &, class HashedString const &) const;
@@ -130,8 +142,8 @@ public:
     // symbol: ?registerAlias@ItemRegistryRef@@QEBAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
     MCAPI void registerAlias(class HashedString const &, class HashedString const &, class BaseGameVersion const &) const;
 
-    // symbol: ?registerComplexAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@AEBUComplexAlias@ItemRegistry@@@Z
-    MCAPI class WeakPtr<class Item> registerComplexAlias(class HashedString const &, struct ItemRegistry::ComplexAlias const &) const;
+    // symbol: ?registerComplexAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@AEBUItemRegistryComplexAlias@@@Z
+    MCAPI class WeakPtr<class Item> registerComplexAlias(class HashedString const &, struct ItemRegistryComplexAlias const &) const;
 
     // symbol: ?registerExtraItemInitCallback@ItemRegistryRef@@QEBAXV?$function@$$A6AXVItemRegistryRef@@@Z@std@@@Z
     MCAPI void registerExtraItemInitCallback(std::function<void (class ItemRegistryRef)>) const;

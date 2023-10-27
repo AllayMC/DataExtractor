@@ -88,9 +88,6 @@ public:
     // symbol: ?titleV010@ScriptActionFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptActionFormData@ScriptModuleMinecraftServerUI@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormData> titleV010(std::string const &);
 
-    // symbol: ??1ScriptActionFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
-    MCAPI ~ScriptActionFormData();
-
     // symbol: ?bind@ScriptActionFormData@ScriptModuleMinecraftServerUI@@SA?AV?$ClassBindingBuilder@VScriptActionFormData@ScriptModuleMinecraftServerUI@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptActionFormData> bind();
 

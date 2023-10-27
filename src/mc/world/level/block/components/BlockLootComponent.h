@@ -22,6 +22,9 @@ public:
     // symbol: ?getLootTable@BlockLootComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getLootTable() const;
 
+    // symbol: ?usesNewComponentStorage@BlockLootComponent@@SA_NXZ
+    MCAPI static bool usesNewComponentStorage();
+
     // NOLINTEND
 
 };

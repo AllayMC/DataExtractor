@@ -57,6 +57,7 @@ namespace Bedrock { struct CrashUploadStatus; }
 namespace Bedrock { struct DeviceIdContext; }
 namespace Bedrock { struct DirectoryEntry; }
 namespace Bedrock { struct WorldRecoveryTelemetryEvent; }
+namespace Bedrock::Threading { class Mutex; }
 namespace Core { class Path; }
 namespace Core::Profile { struct FileCounters; }
 namespace Json { class Value; }
@@ -112,8 +113,8 @@ public:
     // symbol: ?fileEventCloudWorldPullFailed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
     MCVAPI void fileEventCloudWorldPullFailed(std::string const &, std::string const &, bool);
 
-    // symbol: ?fireBannedSkinVerificationEvent@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCVAPI void fireBannedSkinVerificationEvent(uint const &, std::string const &, std::string const &);
+    // symbol: ?fireBannedSkinVerificationEvent@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N2@Z
+    MCVAPI void fireBannedSkinVerificationEvent(uint const &, std::string const &, std::string const &, bool, bool);
 
     // symbol: ?fireCDNDownloadEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00AEBW4CDNDownloadResult@IMinecraftEventing@@AEBW4CDNDownloadEventOrigin@5@AEBM@Z
     MCVAPI void fireCDNDownloadEvent(std::string const &, std::string const &, std::string const &, ::IMinecraftEventing::CDNDownloadResult const &, ::IMinecraftEventing::CDNDownloadEventOrigin const &, float const &);
@@ -337,14 +338,14 @@ public:
     // symbol: ?fireEventFeedbackSubmitted@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
     MCVAPI void fireEventFeedbackSubmitted(std::string const &, bool, bool);
 
-    // symbol: ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXMMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventGameRulesUpdated(float, float, std::string const &);
+    // symbol: ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void fireEventGameRulesUpdated(int, int, std::string const &);
 
     // symbol: ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAX_N0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const &);
 
-    // symbol: ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventGameRulesUpdated(int, int, std::string const &);
+    // symbol: ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXMMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void fireEventGameRulesUpdated(float, float, std::string const &);
 
     // symbol: ?fireEventGoogleAccountHoldWarning@MinecraftEventing@@UEAAX_N@Z
     MCVAPI void fireEventGoogleAccountHoldWarning(bool);
@@ -409,9 +410,6 @@ public:
     // symbol: ?fireEventMessageServiceImpression@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
     MCVAPI void fireEventMessageServiceImpression(std::string const &, std::string const &, std::string const &, std::string const &);
 
-    // symbol: ?fireEventMultiplayerConnectionStateChanged@MinecraftEventing@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1III1@Z
-    MCVAPI void fireEventMultiplayerConnectionStateChanged(bool, std::string const &, std::string const &, uint, uint, uint, std::string const &);
-
     // symbol: ?fireEventMultiplayerSessionUpdate@MinecraftEventing@@UEAAXV?$not_null@PEBVLevel@@@gsl@@PEBVPlayer@@@Z
     MCVAPI void fireEventMultiplayerSessionUpdate(gsl::not_null<class Level const *>, class Player const *);
 
@@ -444,6 +442,9 @@ public:
 
     // symbol: ?fireEventOnSuccessfulClientLogin@MinecraftEventing@@UEAAXPEBVLevel@@@Z
     MCVAPI void fireEventOnSuccessfulClientLogin(class Level const *);
+
+    // symbol: ?fireEventOnboardingWorldCreationUsage@MinecraftEventing@@UEAAX_N00@Z
+    MCVAPI void fireEventOnboardingWorldCreationUsage(bool, bool, bool);
 
     // symbol: ?fireEventOneDSPlayerReportPayload@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCVAPI void fireEventOneDSPlayerReportPayload(std::string const &, std::string const &);
@@ -591,6 +592,9 @@ public:
 
     // symbol: ?fireEventPushNotificationReceived@MinecraftEventing@@UEAAXAEBVPushNotificationMessage@@@Z
     MCVAPI void fireEventPushNotificationReceived(class PushNotificationMessage const &);
+
+    // symbol: ?fireEventQueryPurchasesResult@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
+    MCVAPI void fireEventQueryPurchasesResult(std::string const &, int, bool);
 
     // symbol: ?fireEventRealmDownload@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0HHH@Z
     MCVAPI void fireEventRealmDownload(std::string const &, std::string const &, int, int, int);
@@ -1134,14 +1138,14 @@ private:
     // symbol: ?mUseMethodMap@MinecraftEventing@@0V?$unordered_map@W4ItemUseMethod@@W4UseMethod@MinecraftEventing@@U?$hash@W4ItemUseMethod@@@std@@U?$equal_to@W4ItemUseMethod@@@5@V?$allocator@U?$pair@$$CBW4ItemUseMethod@@W4UseMethod@MinecraftEventing@@@std@@@5@@std@@B
     MCAPI static std::unordered_map<::ItemUseMethod,::MinecraftEventing::UseMethod> const mUseMethodMap;
 
-    // symbol: ?sHeartbeatMutex@MinecraftEventing@@0Vmutex@std@@A
-    MCAPI static std::mutex sHeartbeatMutex;
+    // symbol: ?sHeartbeatMutex@MinecraftEventing@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex sHeartbeatMutex;
 
-    // symbol: ?sMutex@MinecraftEventing@@0Vmutex@std@@A
-    MCAPI static std::mutex sMutex;
+    // symbol: ?sMutex@MinecraftEventing@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex sMutex;
 
-    // symbol: ?sPlayerTelemetryMutex@MinecraftEventing@@0Vmutex@std@@A
-    MCAPI static std::mutex sPlayerTelemetryMutex;
+    // symbol: ?sPlayerTelemetryMutex@MinecraftEventing@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex sPlayerTelemetryMutex;
 
     // NOLINTEND
 

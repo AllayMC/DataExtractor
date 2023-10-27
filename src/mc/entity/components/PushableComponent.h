@@ -13,11 +13,11 @@ public:
     // symbol: ??0PushableComponent@@QEAA@XZ
     MCAPI PushableComponent();
 
-    // symbol: ?initFromDefinition@PushableComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor &);
-
     // symbol: ?initFromDefinition@PushableComponent@@QEAAXAEAVActor@@AEBUPushableDescription@@@Z
     MCAPI void initFromDefinition(class Actor &, struct PushableDescription const &);
+
+    // symbol: ?initFromDefinition@PushableComponent@@QEAAXAEAVActor@@@Z
+    MCAPI void initFromDefinition(class Actor &);
 
     // symbol: ?isPushable@PushableComponent@@QEAA_NXZ
     MCAPI bool isPushable();

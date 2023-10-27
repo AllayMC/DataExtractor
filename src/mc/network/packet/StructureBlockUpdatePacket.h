@@ -29,11 +29,11 @@ public:
     // vIndex: 7, symbol: ?_read@StructureBlockUpdatePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
 
-    // symbol: ??0StructureBlockUpdatePacket@@QEAA@XZ
-    MCAPI StructureBlockUpdatePacket();
-
     // symbol: ??0StructureBlockUpdatePacket@@QEAA@AEBV0@@Z
     MCAPI StructureBlockUpdatePacket(class StructureBlockUpdatePacket const &);
+
+    // symbol: ??0StructureBlockUpdatePacket@@QEAA@XZ
+    MCAPI StructureBlockUpdatePacket();
 
     // NOLINTEND
 

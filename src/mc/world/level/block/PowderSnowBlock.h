@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -18,29 +19,6 @@ namespace mce { class Color; }
 // clang-format on
 
 class PowderSnowBlock : public ::BlockLegacy {
-public:
-    // PowderSnowBlock inner types declare
-    // clang-format off
-    class PowderSnowInternal;
-    // clang-format on
-    
-    // PowderSnowBlock inner types define
-    class PowderSnowInternal {
-    public:
-        // prevent constructor by default
-        PowderSnowInternal& operator=(PowderSnowInternal const &) = delete;
-        PowderSnowInternal(PowderSnowInternal const &) = delete;
-        PowderSnowInternal() = delete;
-    
-    public:
-        // NOLINTBEGIN
-        // symbol: ?fallingCollisionShape@PowderSnowInternal@PowderSnowBlock@@2VAABB@@B
-        MCAPI static class AABB const fallingCollisionShape;
-    
-        // NOLINTEND
-    
-    };
-    
 public:
     // prevent constructor by default
     PowderSnowBlock& operator=(PowderSnowBlock const &) = delete;
@@ -69,9 +47,6 @@ public:
 
     // vIndex: 32, symbol: __unk_vfn_32
     virtual void __unk_vfn_32();
-
-    // vIndex: 33, symbol: ?isClimbable@PowderSnowBlock@@UEBA_NAEBVActor@@@Z
-    virtual bool isClimbable(class Actor const &) const;
 
     // vIndex: 34, symbol: __unk_vfn_34
     virtual void __unk_vfn_34();

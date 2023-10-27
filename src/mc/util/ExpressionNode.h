@@ -18,20 +18,20 @@ namespace cereal { struct ReflectionCtx; }
 class ExpressionNode {
 public:
     // NOLINTBEGIN
+    // symbol: ??0ExpressionNode@@QEAA@XZ
+    MCAPI ExpressionNode();
+
     // symbol: ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI ExpressionNode(std::string const &, ::MolangVersion, gsl::span<class HashedString const>);
+
+    // symbol: ??0ExpressionNode@@QEAA@AEBV0@@Z
+    MCAPI ExpressionNode(class ExpressionNode const &);
 
     // symbol: ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI ExpressionNode(std::string const &, class SemVersion const &, gsl::span<class HashedString const>);
 
     // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI ExpressionNode(class Json::Value const &, ::MolangVersion, gsl::span<class HashedString const>);
-
-    // symbol: ??0ExpressionNode@@QEAA@AEBV0@@Z
-    MCAPI ExpressionNode(class ExpressionNode const &);
-
-    // symbol: ??0ExpressionNode@@QEAA@XZ
-    MCAPI ExpressionNode();
 
     // symbol: ??0ExpressionNode@@QEAA@AEAUMolangScriptArg@@W4ExpressionOp@@@Z
     MCAPI ExpressionNode(struct MolangScriptArg &, ::ExpressionOp);
@@ -54,11 +54,11 @@ public:
     // symbol: ?evalGeneric@ExpressionNode@@QEBAAEBUMolangScriptArg@@AEAVRenderParams@@@Z
     MCAPI struct MolangScriptArg const & evalGeneric(class RenderParams &) const;
 
-    // symbol: ?getExpressionString@ExpressionNode@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const getExpressionString() const;
-
     // symbol: ?getExpressionString@ExpressionNode@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getExpressionString();
+
+    // symbol: ?getExpressionString@ExpressionNode@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const getExpressionString() const;
 
     // symbol: ?getMolangVersion@ExpressionNode@@QEBA?BW4MolangVersion@@XZ
     MCAPI ::MolangVersion const getMolangVersion() const;

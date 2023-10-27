@@ -9,5 +9,12 @@ public:
     ItemInUseComponent(ItemInUseComponent const &) = delete;
     ItemInUseComponent() = delete;
 
+public:
+    // NOLINTBEGIN
+    // symbol: ??1ItemInUseComponent@@QEAA@XZ
+    MCAPI ~ItemInUseComponent();
+
+    // NOLINTEND
+
 };
 

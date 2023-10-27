@@ -7,6 +7,7 @@
 namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal { struct ReflectionCtx; }
+namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
@@ -66,6 +67,9 @@ public:
 
     // vIndex: 5, symbol: ?unpack@BasicSchema@internal@cereal@@UEBAXAEAV?$vector@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@V?$allocator@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@@2@@std@@AEAV?$dense_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@@std@@@2@@entt@@@Z
     virtual void unpack(std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>> &, entt::dense_map<std::string,std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>> &) const;
+
+    // vIndex: 6, symbol: ?description@?$CompositeSchema@MX@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
+    virtual struct cereal::SchemaDescription description() const = 0;
 
     // symbol: ??1BasicSchema@internal@cereal@@UEAA@XZ
     MCVAPI ~BasicSchema();

@@ -29,11 +29,11 @@ public:
     // symbol: ??1ScriptBoolBlockProperty@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptBoolBlockProperty();
 
-    // symbol: ??0ScriptBoolBlockProperty@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptBoolBlockProperty(class ScriptModuleMinecraft::ScriptBoolBlockProperty &&);
-
     // symbol: ??0ScriptBoolBlockProperty@ScriptModuleMinecraft@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockState@@V?$vector@_NV?$allocator@_N@std@@@3@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI ScriptBoolBlockProperty(std::string, class BlockState const &, std::vector<bool>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>);
+
+    // symbol: ??0ScriptBoolBlockProperty@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
+    MCAPI ScriptBoolBlockProperty(class ScriptModuleMinecraft::ScriptBoolBlockProperty &&);
 
     // symbol: ?getState@ScriptBoolBlockProperty@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getState() const;

@@ -35,11 +35,11 @@ public:
         // symbol: ??4TickDataSet@BlockTickingQueue@@QEAAAEAV01@$$QEAV01@@Z
         MCAPI class BlockTickingQueue::TickDataSet & operator=(class BlockTickingQueue::TickDataSet &&);
     
-        // symbol: ?remove@TickDataSet@BlockTickingQueue@@QEAA_NAEBVBlockPos@@AEBVBlock@@@Z
-        MCAPI bool remove(class BlockPos const &, class Block const &);
-    
         // symbol: ?remove@TickDataSet@BlockTickingQueue@@QEAA_NAEBV?$function@$$A6A_NAEBVTickNextTickData@@@Z@std@@@Z
         MCAPI bool remove(std::function<bool (class TickNextTickData const &)> const &);
+    
+        // symbol: ?remove@TickDataSet@BlockTickingQueue@@QEAA_NAEBVBlockPos@@AEBVBlock@@@Z
+        MCAPI bool remove(class BlockPos const &, class Block const &);
     
         // symbol: ??1TickDataSet@BlockTickingQueue@@QEAA@XZ
         MCAPI ~TickDataSet();

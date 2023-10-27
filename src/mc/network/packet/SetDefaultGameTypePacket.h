@@ -31,11 +31,11 @@ public:
     // vIndex: 7, symbol: ?_read@SetDefaultGameTypePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
 
-    // symbol: ??0SetDefaultGameTypePacket@@QEAA@XZ
-    MCAPI SetDefaultGameTypePacket();
-
     // symbol: ??0SetDefaultGameTypePacket@@QEAA@W4GameType@@@Z
     MCAPI SetDefaultGameTypePacket(::GameType);
+
+    // symbol: ??0SetDefaultGameTypePacket@@QEAA@XZ
+    MCAPI SetDefaultGameTypePacket();
 
     // NOLINTEND
 

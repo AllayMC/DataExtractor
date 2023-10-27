@@ -62,11 +62,11 @@ public:
     // symbol: ?addComponents@ItemStackBase@@QEAA_NAEBVValue@Json@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool addComponents(class Json::Value const &, std::string &);
 
-    // symbol: ?addCustomUserData@ItemStackBase@@QEAAXAEAVBlockActor@@AEAVBlockSource@@@Z
-    MCAPI void addCustomUserData(class BlockActor &, class BlockSource &);
-
     // symbol: ?addCustomUserData@ItemStackBase@@QEAAXAEAVContainerComponent@@@Z
     MCAPI void addCustomUserData(class ContainerComponent &);
+
+    // symbol: ?addCustomUserData@ItemStackBase@@QEAAXAEAVBlockActor@@AEAVBlockSource@@@Z
+    MCAPI void addCustomUserData(class BlockActor &, class BlockSource &);
 
     // symbol: ?canBeCharged@ItemStackBase@@QEBA_NXZ
     MCAPI bool canBeCharged() const;
@@ -203,11 +203,11 @@ public:
     // symbol: ?getUseAnimation@ItemStackBase@@QEBA?AW4UseAnimation@@XZ
     MCAPI ::UseAnimation getUseAnimation() const;
 
-    // symbol: ?getUserData@ItemStackBase@@QEAAPEAVCompoundTag@@XZ
-    MCAPI class CompoundTag * getUserData();
-
     // symbol: ?getUserData@ItemStackBase@@QEBAPEBVCompoundTag@@XZ
     MCAPI class CompoundTag const * getUserData() const;
+
+    // symbol: ?getUserData@ItemStackBase@@QEAAPEAVCompoundTag@@XZ
+    MCAPI class CompoundTag * getUserData();
 
     // symbol: ?getWasPickedUp@ItemStackBase@@QEBA_NXZ
     MCAPI bool getWasPickedUp() const;
@@ -230,11 +230,11 @@ public:
     // symbol: ?hasSameUserData@ItemStackBase@@QEBA_NAEBV1@@Z
     MCAPI bool hasSameUserData(class ItemStackBase const &) const;
 
-    // symbol: ?hasTag@ItemStackBase@@QEBA_NAEBUItemTag@@@Z
-    MCAPI bool hasTag(struct ItemTag const &) const;
-
     // symbol: ?hasTag@ItemStackBase@@QEBA_NAEB_K@Z
     MCAPI bool hasTag(uint64 const &) const;
+
+    // symbol: ?hasTag@ItemStackBase@@QEBA_NAEBUItemTag@@@Z
+    MCAPI bool hasTag(struct ItemTag const &) const;
 
     // symbol: ?hasUserData@ItemStackBase@@QEBA_NXZ
     MCAPI bool hasUserData() const;
@@ -284,6 +284,9 @@ public:
     // symbol: ?isInstance@ItemStackBase@@QEBA_NAEBVHashedString@@_N@Z
     MCAPI bool isInstance(class HashedString const &, bool) const;
 
+    // symbol: ?isItem@ItemStackBase@@QEBA_NXZ
+    MCAPI bool isItem() const;
+
     // symbol: ?isLiquidClipItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isLiquidClipItem() const;
 
@@ -311,11 +314,11 @@ public:
     // symbol: ?isPotionItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isPotionItem() const;
 
-    // symbol: ?isStackable@ItemStackBase@@QEBA_NXZ
-    MCAPI bool isStackable() const;
-
     // symbol: ?isStackable@ItemStackBase@@QEBA_NAEBV1@@Z
     MCAPI bool isStackable(class ItemStackBase const &) const;
+
+    // symbol: ?isStackable@ItemStackBase@@QEBA_NXZ
+    MCAPI bool isStackable() const;
 
     // symbol: ?isStackedByData@ItemStackBase@@QEBA_NXZ
     MCAPI bool isStackedByData() const;
@@ -326,11 +329,11 @@ public:
     // symbol: ?isWearableItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isWearableItem() const;
 
-    // symbol: ?load@ItemStackBase@@QEAAXAEBVCompoundTag@@@Z
-    MCAPI void load(class CompoundTag const &);
-
     // symbol: ?load@ItemStackBase@@QEAAXAEBVCompoundTag@@AEAVLevel@@@Z
     MCAPI void load(class CompoundTag const &, class Level &);
+
+    // symbol: ?load@ItemStackBase@@QEAAXAEBVCompoundTag@@@Z
+    MCAPI void load(class CompoundTag const &);
 
     // symbol: ?matches@ItemStackBase@@QEBA_NAEBV1@@Z
     MCAPI bool matches(class ItemStackBase const &) const;
@@ -365,11 +368,11 @@ public:
     // symbol: ?resetHoverName@ItemStackBase@@QEAAXXZ
     MCAPI void resetHoverName();
 
-    // symbol: ?sameItem@ItemStackBase@@QEBA_NAEBV1@AEBUComparisonOptions@1@@Z
-    MCAPI bool sameItem(class ItemStackBase const &, struct ItemStackBase::ComparisonOptions const &) const;
-
     // symbol: ?sameItem@ItemStackBase@@QEBA_NHH@Z
     MCAPI bool sameItem(int, int) const;
+
+    // symbol: ?sameItem@ItemStackBase@@QEBA_NAEBV1@AEBUComparisonOptions@1@@Z
+    MCAPI bool sameItem(class ItemStackBase const &, struct ItemStackBase::ComparisonOptions const &) const;
 
     // symbol: ?sameItemAndAux@ItemStackBase@@QEBA_NAEBV1@@Z
     MCAPI bool sameItemAndAux(class ItemStackBase const &) const;
@@ -474,23 +477,23 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0ItemStackBase@@IEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
-    MCAPI ItemStackBase(class Item const &, int, int, class CompoundTag const *);
-
-    // symbol: ??0ItemStackBase@@IEAA@AEBV0@@Z
-    MCAPI ItemStackBase(class ItemStackBase const &);
-
     // symbol: ??0ItemStackBase@@IEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
     MCAPI ItemStackBase(std::string_view, int, int, class CompoundTag const *);
 
-    // symbol: ??0ItemStackBase@@IEAA@AEBVBlockLegacy@@H@Z
-    MCAPI ItemStackBase(class BlockLegacy const &, int);
+    // symbol: ??0ItemStackBase@@IEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
+    MCAPI ItemStackBase(class Item const &, int, int, class CompoundTag const *);
 
     // symbol: ??0ItemStackBase@@IEAA@XZ
     MCAPI ItemStackBase();
 
+    // symbol: ??0ItemStackBase@@IEAA@AEBVBlockLegacy@@H@Z
+    MCAPI ItemStackBase(class BlockLegacy const &, int);
+
     // symbol: ??0ItemStackBase@@IEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
     MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
+
+    // symbol: ??0ItemStackBase@@IEAA@AEBV0@@Z
+    MCAPI ItemStackBase(class ItemStackBase const &);
 
     // symbol: ??0ItemStackBase@@IEAA@AEBVRecipeIngredient@@@Z
     MCAPI ItemStackBase(class RecipeIngredient const &);
@@ -501,11 +504,11 @@ public:
     // symbol: ?_setItem@ItemStackBase@@IEAA_NH_N@Z
     MCAPI bool _setItem(int, bool);
 
-    // symbol: ?init@ItemStackBase@@IEAAXAEBVItem@@HHPEBVCompoundTag@@_N@Z
-    MCAPI void init(class Item const &, int, int, class CompoundTag const *, bool);
-
     // symbol: ?init@ItemStackBase@@IEAAXAEBVBlockLegacy@@H@Z
     MCAPI void init(class BlockLegacy const &, int);
+
+    // symbol: ?init@ItemStackBase@@IEAAXAEBVItem@@HHPEBVCompoundTag@@_N@Z
+    MCAPI void init(class Item const &, int, int, class CompoundTag const *, bool);
 
     // symbol: ?init@ItemStackBase@@IEAAXHHH_N@Z
     MCAPI void init(int, int, int, bool);
@@ -525,9 +528,6 @@ public:
 
     // symbol: ?_cloneComponents@ItemStackBase@@AEAAXAEBV1@@Z
     MCAPI void _cloneComponents(class ItemStackBase const &);
-
-    // symbol: ?_isInstance@ItemStackBase@@AEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI bool _isInstance(std::string_view) const;
 
     // symbol: ?_loadItem@ItemStackBase@@AEAAXAEBVCompoundTag@@@Z
     MCAPI void _loadItem(class CompoundTag const &);

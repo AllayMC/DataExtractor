@@ -28,8 +28,8 @@ public:
     // symbol: ??0ScriptContainerWrapper@ScriptModuleMinecraft@@QEAA@V?$unique_ptr@VScriptContainer@ScriptModuleMinecraft@@U?$default_delete@VScriptContainer@ScriptModuleMinecraft@@@std@@@std@@@Z
     MCAPI ScriptContainerWrapper(std::unique_ptr<class ScriptModuleMinecraft::ScriptContainer>);
 
-    // symbol: ?addItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBVScriptItemStack@2@@Z
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>> addItem(class ScriptModuleMinecraft::ScriptItemStack const &) const;
+    // symbol: ?addItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@AEBVScriptItemStack@2@@Z
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>> addItem(class ScriptModuleMinecraft::ScriptItemStack const &) const;
 
     // symbol: ?clearAll@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> clearAll() const;
@@ -55,8 +55,8 @@ public:
     // symbol: ?swapItems@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@HHAEAV12@@Z
     MCAPI class Scripting::Result<void> swapItems(int, int, class ScriptModuleMinecraft::ScriptContainerWrapper &) const;
 
-    // symbol: ?transferItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@HAEAV12@@Z
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>> transferItem(int, class ScriptModuleMinecraft::ScriptContainerWrapper &) const;
+    // symbol: ?transferItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@HAEAV12@@Z
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>> transferItem(int, class ScriptModuleMinecraft::ScriptContainerWrapper &) const;
 
     // symbol: ?bind@ScriptContainerWrapper@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptContainerWrapper> bind();

@@ -33,11 +33,11 @@ public:
     // symbol: ??1RemoveActorPacket@@UEAA@XZ
     MCVAPI ~RemoveActorPacket();
 
-    // symbol: ??0RemoveActorPacket@@QEAA@UActorUniqueID@@@Z
-    MCAPI RemoveActorPacket(struct ActorUniqueID);
-
     // symbol: ??0RemoveActorPacket@@QEAA@XZ
     MCAPI RemoveActorPacket();
+
+    // symbol: ??0RemoveActorPacket@@QEAA@UActorUniqueID@@@Z
+    MCAPI RemoveActorPacket(struct ActorUniqueID);
 
     // NOLINTEND
 

@@ -25,7 +25,7 @@ public:
     // vIndex: 1, symbol: ?assemble@ShulkerBoxRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, class CraftingContext &) const = 0;
 
-    // vIndex: 2, symbol: ?getCraftingSize@DecoratedPotRecipe@@UEBAHXZ
+    // vIndex: 2, symbol: ?getCraftingSize@BannerAddPatternRecipe@@UEBAHXZ
     virtual int getCraftingSize() const = 0;
 
     // vIndex: 3, symbol: ?getIngredient@ShapelessRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
@@ -37,10 +37,10 @@ public:
     // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5() = 0;
 
-    // vIndex: 6, symbol: ?matches@ShapelessChemistryRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 6, symbol: ?matches@ShapedChemistryRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const &, class CraftingContext const &) const = 0;
 
-    // vIndex: 7, symbol: ?size@DecoratedPotRecipe@@UEBAHXZ
+    // vIndex: 7, symbol: ?size@BannerAddPatternRecipe@@UEBAHXZ
     virtual int size() const = 0;
 
     // vIndex: 8, symbol: ?getId@Recipe@@UEBAAEBVUUID@mce@@XZ
@@ -80,7 +80,7 @@ public:
     MCAPI std::vector<class RecipeIngredient> const & getIngredients() const;
 
     // symbol: ?getNetId@Recipe@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
-    MCAPI class RecipeNetId const & getNetId() const;
+    MCAPI RecipeNetId const & getNetId() const;
 
     // symbol: ?getPriority@Recipe@@QEBAHXZ
     MCAPI int getPriority() const;
@@ -98,7 +98,7 @@ public:
     MCAPI int getWidth() const;
 
     // symbol: ?setNetId@Recipe@@QEAAXAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI void setNetId(class RecipeNetId const &);
+    MCAPI void setNetId(RecipeNetId const &);
 
     // symbol: ?isAnyAuxValue@Recipe@@SA_NAEBVItemDescriptor@@@Z
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const &);

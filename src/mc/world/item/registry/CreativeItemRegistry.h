@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class EnableNonOwnerReferences; }
+namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class CreativeItemRegistry : public ::Bedrock::EnableNonOwnerReferences {
@@ -27,7 +28,7 @@ public:
     MCAPI CreativeItemRegistry();
 
     // symbol: ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@@Z
-    MCAPI class CreativeItemEntry * findCreativeItemEntry(class CreativeItemNetId const &);
+    MCAPI class CreativeItemEntry * findCreativeItemEntry(CreativeItemNetId const &);
 
     // symbol: ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBVItemInstance@@@Z
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class ItemInstance const &);
@@ -48,7 +49,7 @@ public:
     MCAPI class CreativeGroupInfo * newCreativeGroup(::CreativeItemCategory, class HashedString const &, class ItemInstance const &);
 
     // symbol: ?newItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@AEBVItemInstance@@@Z
-    MCAPI class CreativeItemEntry * newItemEntry(class CreativeItemNetId const &, class ItemInstance const &);
+    MCAPI class CreativeItemEntry * newItemEntry(CreativeItemNetId const &, class ItemInstance const &);
 
     // symbol: ?resetGroups@CreativeItemRegistry@@QEAAXXZ
     MCAPI void resetGroups();
@@ -71,8 +72,8 @@ public:
     // symbol: ?setCurrentRegistry@CreativeItemRegistry@@SAX$$QEAV?$unique_ptr@VCreativeItemRegistry@@U?$default_delete@VCreativeItemRegistry@@@std@@@std@@@Z
     MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry> &&);
 
-    // symbol: ?mCreativeListMutex@CreativeItemRegistry@@2Vmutex@std@@A
-    MCAPI static std::mutex mCreativeListMutex;
+    // symbol: ?mCreativeListMutex@CreativeItemRegistry@@2VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mCreativeListMutex;
 
     // NOLINTEND
 

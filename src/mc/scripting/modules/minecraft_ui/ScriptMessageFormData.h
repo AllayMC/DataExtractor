@@ -29,11 +29,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
-    MCAPI ScriptMessageFormData();
-
     // symbol: ??0ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@AEBV01@@Z
     MCAPI ScriptMessageFormData(class ScriptModuleMinecraftServerUI::ScriptMessageFormData const &);
+
+    // symbol: ??0ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
+    MCAPI ScriptMessageFormData();
 
     // symbol: ?body@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData> body(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>);
@@ -67,9 +67,6 @@ public:
 
     // symbol: ?titleV010@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData> titleV010(std::string const &);
-
-    // symbol: ??1ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
-    MCAPI ~ScriptMessageFormData();
 
     // symbol: ?bind@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@SA?AV?$ClassBindingBuilder@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptMessageFormData> bind();

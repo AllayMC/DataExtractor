@@ -75,11 +75,11 @@ public:
     // symbol: ?_addContainer@ContainerManagerModel@@IEAAXV?$shared_ptr@VContainerModel@@@std@@@Z
     MCAPI void _addContainer(std::shared_ptr<class ContainerModel>);
 
-    // symbol: ?_containerScreenContext@ContainerManagerModel@@IEAA?AVContainerScreenContext@@AEBVBlockPos@@@Z
-    MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const &);
-
     // symbol: ?_containerScreenContext@ContainerManagerModel@@IEAA?AVContainerScreenContext@@UActorUniqueID@@@Z
     MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID);
+
+    // symbol: ?_containerScreenContext@ContainerManagerModel@@IEAA?AVContainerScreenContext@@AEBVBlockPos@@@Z
+    MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const &);
 
     // symbol: ?_getContainer@ContainerManagerModel@@IEBA?AV?$shared_ptr@VContainerModel@@@std@@W4ContainerEnumName@@@Z
     MCAPI std::shared_ptr<class ContainerModel> _getContainer(::ContainerEnumName) const;

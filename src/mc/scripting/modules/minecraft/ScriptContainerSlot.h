@@ -29,11 +29,11 @@ public:
     // symbol: ??0ScriptContainerSlot@ScriptModuleMinecraft@@QEAA@VItemContext@@VWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptContainerSlot(class ItemContext, class Scripting::WeakLifetimeScope);
 
-    // symbol: ??0ScriptContainerSlot@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptContainerSlot(class ScriptModuleMinecraft::ScriptContainerSlot &&);
-
     // symbol: ??0ScriptContainerSlot@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptContainerSlot(class ScriptModuleMinecraft::ScriptContainerSlot const &);
+
+    // symbol: ??0ScriptContainerSlot@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
+    MCAPI ScriptContainerSlot(class ScriptModuleMinecraft::ScriptContainerSlot &&);
 
     // symbol: ?getAmount@ScriptContainerSlot@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getAmount() const;
@@ -100,9 +100,6 @@ public:
 
     // symbol: ?setNameTag@ScriptContainerSlot@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
     MCAPI class Scripting::Result<void> setNameTag(std::optional<std::string>);
-
-    // symbol: ??1ScriptContainerSlot@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptContainerSlot();
 
     // symbol: ?bind@ScriptContainerSlot@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptContainerSlot@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptContainerSlot> bind();

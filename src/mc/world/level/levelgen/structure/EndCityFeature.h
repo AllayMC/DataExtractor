@@ -20,8 +20,8 @@ public:
     // vIndex: 2, symbol: ?shouldPostProcessMobs@EndCityFeature@@UEBA_NXZ
     virtual bool shouldPostProcessMobs() const;
 
-    // vIndex: 3, symbol: ?getNearestGeneratedFeature@EndCityFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
-    virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
+    // vIndex: 3, symbol: ?getNearestGeneratedFeature@EndCityFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_NAEBV?$optional@VHashedString@@@std@@@Z
+    virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool, std::optional<class HashedString> const &);
 
     // vIndex: 5, symbol: ?isFeatureChunk@EndCityFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
     virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, uint, class IPreliminarySurfaceProvider const &, class Dimension const &);

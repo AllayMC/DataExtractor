@@ -35,11 +35,11 @@ public:
     // symbol: ??1BaseScriptBlockComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~BaseScriptBlockComponent();
 
-    // symbol: ??0BaseScriptBlockComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
-    MCAPI BaseScriptBlockComponent(class ScriptModuleMinecraft::BaseScriptBlockComponent const &);
-
     // symbol: ??0BaseScriptBlockComponent@ScriptModuleMinecraft@@QEAA@AEAVBlockActor@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI BaseScriptBlockComponent(class BlockActor &, class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &, std::string const &);
+
+    // symbol: ??0BaseScriptBlockComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI BaseScriptBlockComponent(class ScriptModuleMinecraft::BaseScriptBlockComponent const &);
 
     // symbol: ?getBlock@BaseScriptBlockComponent@ScriptModuleMinecraft@@QEBA?AV?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock> getBlock() const;

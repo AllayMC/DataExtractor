@@ -32,7 +32,7 @@ public:
     // vIndex: 6, symbol: ?nextDouble@DelegatingRandom@NoiseUtils@@UEAANXZ
     virtual double nextDouble() = 0;
 
-    // vIndex: 7, symbol: ?nextGaussianDouble@XoroshiroRandom@@UEAANXZ
+    // vIndex: 7, symbol: ?nextGaussianDouble@Random@Core@@UEAANXZ
     virtual double nextGaussianDouble() = 0;
 
     // vIndex: 8, symbol: ?consumeCount@DelegatingRandom@NoiseUtils@@UEAAXI@Z

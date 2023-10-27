@@ -9,5 +9,12 @@ public:
     SubBBsComponent(SubBBsComponent const &) = delete;
     SubBBsComponent() = delete;
 
+public:
+    // NOLINTBEGIN
+    // symbol: ??1SubBBsComponent@@QEAA@XZ
+    MCAPI ~SubBBsComponent();
+
+    // NOLINTEND
+
 };
 

@@ -32,6 +32,7 @@ namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptVector; }
 namespace ScriptModuleMinecraft { struct ScriptActorApplyDamageByProjectileOptions; }
 namespace ScriptModuleMinecraft { struct ScriptActorApplyDamageOptions; }
+namespace ScriptModuleMinecraft { struct ScriptActorQueryOptions; }
 namespace ScriptModuleMinecraft { struct ScriptBlockRaycastOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCommandResult; }
@@ -43,6 +44,7 @@ namespace ScriptModuleMinecraft { struct ScriptXYRotation; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct EngineError; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct JSON; }
 struct DynamicPropertyDefinition;
@@ -97,11 +99,11 @@ public:
     // symbol: ??1ScriptActor@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptActor();
 
-    // symbol: ??0ScriptActor@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptActor(class ScriptModuleMinecraft::ScriptActor &&);
-
     // symbol: ??0ScriptActor@ScriptModuleMinecraft@@QEAA@AEBVActor@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptActor(class Actor const &, class Scripting::WeakLifetimeScope const &);
+
+    // symbol: ??0ScriptActor@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
+    MCAPI ScriptActor(class ScriptModuleMinecraft::ScriptActor &&);
 
     // symbol: ?addEffect@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptEffectType@ScriptModuleMinecraft@@@Scripting@@@std@@HAEBV?$optional@UScriptEntityEffectOptions@ScriptModuleMinecraft@@@7@@Z
     MCAPI class Scripting::Result<void> addEffect(class Actor &, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const &, int, std::optional<struct ScriptModuleMinecraft::ScriptEntityEffectOptions> const &);
@@ -121,6 +123,9 @@ public:
     // symbol: ?applyKnockback@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@MMMM@Z
     MCAPI class Scripting::Result<void> applyKnockback(class Actor &, float, float, float, float);
 
+    // symbol: ?clearDynamicProperties@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@@Z
+    MCAPI class Scripting::Result<void> clearDynamicProperties(class Actor &, struct Scripting::ContextConfig const &);
+
     // symbol: ?extinguishFire@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@V?$optional@_N@std@@@Z
     MCAPI class Scripting::Result<bool> extinguishFire(class Actor &, std::optional<bool>);
 
@@ -136,8 +141,17 @@ public:
     // symbol: ?getDimension@ScriptActor@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptDimension@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBVActor@@@Z
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>> getDimension(class Actor const &) const;
 
-    // symbol: ?getDynamicProperty@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@std@@$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Scripting::Result<std::optional<std::variant<float, bool, std::string, class Vec3>>> getDynamicProperty(class Actor &, struct Scripting::ContextConfig const &, std::string const &);
+    // symbol: ?getDynamicProperty@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@std@@$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class Scripting::Result<std::optional<std::variant<double, float, bool, std::string, class Vec3>>> getDynamicProperty(class Actor &, struct Scripting::ContextConfig const &, std::string const &);
+
+    // symbol: ?getDynamicPropertyIds@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@@Z
+    MCAPI class Scripting::Result<std::vector<std::string>> getDynamicPropertyIds(class Actor &, struct Scripting::ContextConfig const &);
+
+    // symbol: ?getDynamicPropertyTotalByteCount@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@@Z
+    MCAPI class Scripting::Result<int> getDynamicPropertyTotalByteCount(class Actor &, struct Scripting::ContextConfig const &);
+
+    // symbol: ?getDynamicProperty_V010@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@std@@$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class Scripting::Result<std::optional<std::variant<double, float, bool, std::string, class Vec3>>> getDynamicProperty_V010(class Actor &, struct Scripting::ContextConfig const &, std::string const &);
 
     // symbol: ?getEffect@ScriptActor@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptMobEffectInstance@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@AEBVActor@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptEffectType@ScriptModuleMinecraft@@@Scripting@@@std@@@Z
     MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance>>> getEffect(class Actor const &, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const &) const;
@@ -241,14 +255,17 @@ public:
     // symbol: ?kill_010@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@@Z
     MCAPI class Scripting::Result<void> kill_010(class Actor &);
 
+    // symbol: ?matches@ScriptActor@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVActor@@UScriptActorQueryOptions@2@@Z
+    MCAPI class Scripting::Result<bool> matches(class Actor const &, struct ScriptModuleMinecraft::ScriptActorQueryOptions) const;
+
     // symbol: ??4ScriptActor@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptActor & operator=(class ScriptModuleMinecraft::ScriptActor &&);
 
     // symbol: ?playAnimation@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$optional@UScriptPlayAnimationOptions@ScriptModuleMinecraft@@@7@@Z
     MCAPI class Scripting::Result<void> playAnimation(class Actor &, std::string const &, std::optional<struct ScriptModuleMinecraft::ScriptPlayAnimationOptions> const &);
 
-    // symbol: ?removeDynamicProperty@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Scripting::Result<bool> removeDynamicProperty(class Actor &, struct Scripting::ContextConfig const &, std::string const &);
+    // symbol: ?removeDynamicProperty_V010@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class Scripting::Result<bool> removeDynamicProperty_V010(class Actor &, struct Scripting::ContextConfig const &, std::string const &);
 
     // symbol: ?removeEffect@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptEffectType@ScriptModuleMinecraft@@@Scripting@@@std@@@Z
     MCAPI class Scripting::Result<bool> removeEffect(class Actor &, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const &);
@@ -256,8 +273,8 @@ public:
     // symbol: ?removeTag@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<bool> removeTag(class Actor &, std::string const &);
 
-    // symbol: ?resetProperty@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@$$V@Scripting@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Scripting::Result<std::variant<float, bool, std::string>> resetProperty(class Actor &, std::string const &);
+    // symbol: ?resetProperty@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@UEngineError@Scripting@@UError@4@@Scripting@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class Scripting::Result<std::variant<float, bool, std::string>, struct Scripting::EngineError, struct Scripting::Error> resetProperty(class Actor &, std::string const &);
 
     // symbol: ?runCommand@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@UScriptCommandResult@ScriptModuleMinecraft@@@Scripting@@UScriptCommandError@ScriptModuleMinecraft@@UError@2@@Scripting@@AEAVActor@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>, struct ScriptModuleMinecraft::ScriptCommandError, struct Scripting::Error> runCommand(class Actor &, struct Scripting::ContextConfig const &, std::string const &);
@@ -268,8 +285,11 @@ public:
     // symbol: ?runCommand_V010@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@UJSON@Scripting@@$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<struct Scripting::JSON> runCommand_V010(class Actor &, struct Scripting::ContextConfig const &, std::string const &);
 
-    // symbol: ?setDynamicProperty@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@8@@Z
-    MCAPI class Scripting::Result<void> setDynamicProperty(class Actor &, struct Scripting::ContextConfig const &, std::string const &, std::variant<float, bool, std::string, class Vec3> const &);
+    // symbol: ?setDynamicProperty@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$optional@V?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@8@@Z
+    MCAPI class Scripting::Result<void> setDynamicProperty(class Actor &, struct Scripting::ContextConfig const &, std::string const &, std::optional<std::variant<double, float, bool, std::string, class Vec3>> const &);
+
+    // symbol: ?setDynamicProperty_V010@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@8@@Z
+    MCAPI class Scripting::Result<void> setDynamicProperty_V010(class Actor &, struct Scripting::ContextConfig const &, std::string const &, std::variant<double, float, bool, std::string, class Vec3> &);
 
     // symbol: ?setLoaded@ScriptActor@ScriptModuleMinecraft@@QEAAXXZ
     MCAPI void setLoaded();
@@ -353,8 +373,8 @@ public:
     // symbol: ?_teleport@ScriptActor@ScriptModuleMinecraft@@IEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@AEBVVec3@@AEBV?$optional@UScriptTeleportOptions@ScriptModuleMinecraft@@@std@@_N@Z
     MCAPI class Scripting::Result<bool> _teleport(class Actor &, class Vec3 const &, std::optional<struct ScriptModuleMinecraft::ScriptTeleportOptions> const &, bool);
 
-    // symbol: ?_validateDynamicProperty@ScriptActor@ScriptModuleMinecraft@@IEAA?AV?$optional@UError@Scripting@@@std@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@PEBV?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@4@1@Z
-    MCAPI std::optional<struct Scripting::Error> _validateDynamicProperty(class Actor &, std::string const &, std::variant<float, bool, std::string, class Vec3> const *, std::string const &);
+    // symbol: ?_validateDynamicProperty_V010@ScriptActor@ScriptModuleMinecraft@@IEAA?AV?$optional@UError@Scripting@@@std@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@PEBV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@4@1@Z
+    MCAPI std::optional<struct Scripting::Error> _validateDynamicProperty_V010(class Actor &, std::string const &, std::variant<double, float, bool, std::string, class Vec3> const *, std::string const &);
 
     // NOLINTEND
 

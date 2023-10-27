@@ -32,11 +32,11 @@ public:
     // symbol: ?Scheme@Uri@httpclient@xbox@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$http_stl_allocator@D@@@std@@XZ
     MCAPI http_string const & Scheme() const;
 
-    // symbol: ??0Uri@httpclient@xbox@@QEAA@XZ
-    MCAPI Uri();
-
     // symbol: ??0Uri@httpclient@xbox@@QEAA@AEBV012@@Z
     MCAPI Uri(class xbox::httpclient::Uri const &);
+
+    // symbol: ??0Uri@httpclient@xbox@@QEAA@XZ
+    MCAPI Uri();
 
     // symbol: ??0Uri@httpclient@xbox@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$http_stl_allocator@D@@@std@@@Z
     MCAPI Uri(http_string const &);

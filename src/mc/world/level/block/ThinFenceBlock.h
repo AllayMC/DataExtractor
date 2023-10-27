@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -47,8 +48,8 @@ public:
     // vIndex: 11, symbol: ?getVisualShapeInWorld@ThinFenceBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &) const;
 
-    // vIndex: 14, symbol: ?getLiquidClipVolume@ThinFenceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
-    virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
+    // vIndex: 14, symbol: ?getLiquidClipVolume@ThinFenceBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
+    virtual bool getLiquidClipVolume(class Block const &, class BlockSource &, class BlockPos const &, class AABB &) const;
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();

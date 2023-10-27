@@ -118,11 +118,11 @@ public:
     // symbol: ?getScoreboardId@Scoreboard@@QEBAAEBUScoreboardId@@AEBVActor@@@Z
     MCAPI struct ScoreboardId const & getScoreboardId(class Actor const &) const;
 
-    // symbol: ?getScoreboardId@Scoreboard@@QEBAAEBUScoreboardId@@AEBVPlayer@@@Z
-    MCAPI struct ScoreboardId const & getScoreboardId(class Player const &) const;
-
     // symbol: ?getScoreboardId@Scoreboard@@QEBAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI struct ScoreboardId const & getScoreboardId(std::string const &) const;
+
+    // symbol: ?getScoreboardId@Scoreboard@@QEBAAEBUScoreboardId@@AEBVPlayer@@@Z
+    MCAPI struct ScoreboardId const & getScoreboardId(class Player const &) const;
 
     // symbol: ?getScoreboardId@Scoreboard@@QEBAAEBUScoreboardId@@AEBUActorUniqueID@@@Z
     MCAPI struct ScoreboardId const & getScoreboardId(struct ActorUniqueID const &) const;
@@ -142,17 +142,17 @@ public:
     // symbol: ?hasIdentityFor@Scoreboard@@QEBA_NAEBUScoreboardId@@@Z
     MCAPI bool hasIdentityFor(struct ScoreboardId const &) const;
 
-    // symbol: ?modifyPlayerScore@Scoreboard@@QEAAHAEA_NPEAVScoreboardIdentityRef@@AEAVObjective@@HW4PlayerScoreSetFunction@@@Z
-    MCAPI int modifyPlayerScore(bool &, class ScoreboardIdentityRef *, class Objective &, int, ::PlayerScoreSetFunction);
-
     // symbol: ?modifyPlayerScore@Scoreboard@@QEAAHAEA_NAEBUScoreboardId@@AEAVObjective@@HW4PlayerScoreSetFunction@@@Z
     MCAPI int modifyPlayerScore(bool &, struct ScoreboardId const &, class Objective &, int, ::PlayerScoreSetFunction);
 
-    // symbol: ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBUPlayerScoreboardId@@@Z
-    MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, struct PlayerScoreboardId const &);
+    // symbol: ?modifyPlayerScore@Scoreboard@@QEAAHAEA_NPEAVScoreboardIdentityRef@@AEAVObjective@@HW4PlayerScoreSetFunction@@@Z
+    MCAPI int modifyPlayerScore(bool &, class ScoreboardIdentityRef *, class Objective &, int, ::PlayerScoreSetFunction);
 
     // symbol: ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBUActorUniqueID@@@Z
     MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, struct ActorUniqueID const &);
+
+    // symbol: ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBUPlayerScoreboardId@@@Z
+    MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, struct PlayerScoreboardId const &);
 
     // symbol: ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, std::string const &);
@@ -160,17 +160,17 @@ public:
     // symbol: ?removeObjective@Scoreboard@@QEAA_NPEAVObjective@@@Z
     MCAPI bool removeObjective(class Objective *);
 
-    // symbol: ?removeScoreListener@Scoreboard@@QEAAXAEBVPlayer@@@Z
-    MCAPI void removeScoreListener(class Player const &);
-
     // symbol: ?removeScoreListener@Scoreboard@@QEAAXAEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void removeScoreListener(class Player const &, std::string const &);
 
-    // symbol: ?resetPlayerScore@Scoreboard@@QEAA_NAEBUScoreboardId@@AEAVObjective@@@Z
-    MCAPI bool resetPlayerScore(struct ScoreboardId const &, class Objective &);
+    // symbol: ?removeScoreListener@Scoreboard@@QEAAXAEBVPlayer@@@Z
+    MCAPI void removeScoreListener(class Player const &);
 
     // symbol: ?resetPlayerScore@Scoreboard@@QEAAXAEBUScoreboardId@@@Z
     MCAPI void resetPlayerScore(struct ScoreboardId const &);
+
+    // symbol: ?resetPlayerScore@Scoreboard@@QEAA_NAEBUScoreboardId@@AEAVObjective@@@Z
+    MCAPI bool resetPlayerScore(struct ScoreboardId const &, class Objective &);
 
     // symbol: ?shouldClearScoresOnDeath@Scoreboard@@SA_NAEBVActor@@@Z
     MCAPI static bool shouldClearScoresOnDeath(class Actor const &);

@@ -11,12 +11,14 @@ public:
     // prevent constructor by default
     BeaconContainerScreenValidator& operator=(BeaconContainerScreenValidator const &) = delete;
     BeaconContainerScreenValidator(BeaconContainerScreenValidator const &) = delete;
-    BeaconContainerScreenValidator() = delete;
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
+
+    // symbol: ??0BeaconContainerScreenValidator@@QEAA@XZ
+    MCAPI BeaconContainerScreenValidator();
 
     // NOLINTEND
 

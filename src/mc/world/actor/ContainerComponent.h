@@ -4,10 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/AutomaticID.h"
-#include "mc/world/ContainerContentChangeListener.h"
 #include "mc/world/containers/ContainerType.h"
 
-class ContainerComponent : public ::ContainerContentChangeListener {
+class ContainerComponent {
 public:
     // prevent constructor by default
     ContainerComponent& operator=(ContainerComponent const &) = delete;
@@ -15,8 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?containerContentChanged@ContainerComponent@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    // symbol: ?containerClosed@ContainerComponent@@UEAAXAEAVPlayer@@@Z
+    MCVAPI void containerClosed(class Player &);
+
+    // symbol: ?containerContentChanged@ContainerComponent@@UEAAXH@Z
+    MCVAPI void containerContentChanged(int);
 
     // symbol: ??1ContainerComponent@@UEAA@XZ
     MCVAPI ~ContainerComponent();
@@ -33,11 +35,11 @@ public:
     // symbol: ?addAdditionalSaveData@ContainerComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
 
-    // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@HH@Z
-    MCAPI bool addItem(class ItemStack &, int, int);
-
     // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemActor@@@Z
     MCAPI bool addItem(class ItemActor &);
+
+    // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@HH@Z
+    MCAPI bool addItem(class ItemStack &, int, int);
 
     // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@@Z
     MCAPI bool addItem(class ItemStack &);
@@ -69,11 +71,11 @@ public:
     // symbol: ?getSlots@ContainerComponent@@QEBA?BV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
     MCAPI std::vector<class ItemStack const *> const getSlots() const;
 
-    // symbol: ?hasRoomForItem@ContainerComponent@@QEAA_NAEBVItemActor@@@Z
-    MCAPI bool hasRoomForItem(class ItemActor const &);
-
     // symbol: ?hasRoomForItem@ContainerComponent@@QEAA_NAEBVItemStack@@@Z
     MCAPI bool hasRoomForItem(class ItemStack const &);
+
+    // symbol: ?hasRoomForItem@ContainerComponent@@QEAA_NAEBVItemActor@@@Z
+    MCAPI bool hasRoomForItem(class ItemActor const &);
 
     // symbol: ?initFromDefinition@ContainerComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor &);

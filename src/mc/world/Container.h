@@ -72,8 +72,8 @@ public:
     // vIndex: 18, symbol: ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player &) = 0;
 
-    // vIndex: 19, symbol: ?stopOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
-    virtual void stopOpen(class Player &) = 0;
+    // vIndex: 19, symbol: ?stopOpen@Container@@UEAAXAEAVPlayer@@@Z
+    virtual void stopOpen(class Player &);
 
     // vIndex: 20, symbol: ?getSlotCopies@Container@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
     virtual std::vector<class ItemStack> getSlotCopies() const;
@@ -132,11 +132,14 @@ public:
     // symbol: ??1Container@@UEAA@XZ
     MCVAPI ~Container();
 
+    // symbol: ??0Container@@QEAA@W4ContainerType@@@Z
+    MCAPI Container(::ContainerType);
+
     // symbol: ??0Container@@QEAA@AEBV0@@Z
     MCAPI Container(class Container const &);
 
-    // symbol: ??0Container@@QEAA@W4ContainerType@@@Z
-    MCAPI Container(::ContainerType);
+    // symbol: ?addCloseListener@Container@@QEAAXPEAVContainerCloseListener@@@Z
+    MCAPI void addCloseListener(class ContainerCloseListener *);
 
     // symbol: ?getContainerType@Container@@QEBA?AW4ContainerType@@XZ
     MCAPI ::ContainerType getContainerType() const;
@@ -151,10 +154,13 @@ public:
     MCAPI int getRedstoneSignalFromContainer(class BlockSource &);
 
     // symbol: ?getRuntimeId@Container@@QEBAAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@XZ
-    MCAPI class ContainerRuntimeId const & getRuntimeId() const;
+    MCAPI ContainerRuntimeId const & getRuntimeId() const;
 
     // symbol: ?initRuntimeId@Container@@QEAAXXZ
     MCAPI void initRuntimeId();
+
+    // symbol: ?removeCloseListener@Container@@QEAAXPEAVContainerCloseListener@@@Z
+    MCAPI void removeCloseListener(class ContainerCloseListener *);
 
     // symbol: ?serverInitItemStackIdsAll@Container@@QEAAXV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     MCAPI void serverInitItemStackIdsAll(std::function<void (int, class ItemStack const &)>);
@@ -179,7 +185,7 @@ public:
     MCAPI int _getEmptySlotsCount(int, int) const;
 
     // symbol: ?_initRuntimeId@Container@@IEAAXAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
-    MCAPI void _initRuntimeId(class ContainerRuntimeId const &);
+    MCAPI void _initRuntimeId(ContainerRuntimeId const &);
 
     // symbol: ?_serverInitId@Container@@IEAAXHAEAVItemStack@@V?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     MCAPI void _serverInitId(int, class ItemStack &, std::function<void (int, class ItemStack const &)>);

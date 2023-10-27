@@ -24,7 +24,7 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?getPlacementBlock@UpdateFacingGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // vIndex: 1, symbol: ?getPlacementBlock@UpdateCardinalGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual gsl::not_null<class Block const *> getPlacementBlock(gsl::not_null<class Block const *>, class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const = 0;
 
     // NOLINTEND

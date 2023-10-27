@@ -45,6 +45,9 @@ namespace SharedConstants {
     // symbol: ?IsBeta@SharedConstants@@3_NB
     MCAPI extern bool const IsBeta;
 
+    // symbol: ?IsCreatorEditorBuild@SharedConstants@@3_NB
+    MCAPI extern bool const IsCreatorEditorBuild;
+
     // symbol: ?IsDevBuild@SharedConstants@@3_NB
     MCAPI extern bool const IsDevBuild;
 

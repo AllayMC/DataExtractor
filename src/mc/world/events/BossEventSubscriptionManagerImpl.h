@@ -22,11 +22,11 @@ public:
     // symbol: ?areBossEventSubscribersReady@BossEventSubscriptionManagerImpl@@UEBA_NXZ
     MCVAPI bool areBossEventSubscribersReady() const;
 
-    // symbol: ?broadcastBossEvent@BossEventSubscriptionManagerImpl@@UEAAXW4BossEventUpdateType@@AEBUActorUniqueID@@AEBVBossEventPacket@@@Z
-    MCVAPI void broadcastBossEvent(::BossEventUpdateType, struct ActorUniqueID const &, class BossEventPacket const &);
-
     // symbol: ?broadcastBossEvent@BossEventSubscriptionManagerImpl@@UEAAXW4BossEventUpdateType@@@Z
     MCVAPI void broadcastBossEvent(::BossEventUpdateType);
+
+    // symbol: ?broadcastBossEvent@BossEventSubscriptionManagerImpl@@UEAAXW4BossEventUpdateType@@AEBUActorUniqueID@@AEBVBossEventPacket@@@Z
+    MCVAPI void broadcastBossEvent(::BossEventUpdateType, struct ActorUniqueID const &, class BossEventPacket const &);
 
     // symbol: ?subscribeToBossEvent@BossEventSubscriptionManagerImpl@@UEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXW4BossEventUpdateType@@@Z@std@@@Z
     MCVAPI class Bedrock::PubSub::Subscription subscribeToBossEvent(std::function<void (::BossEventUpdateType)>);

@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { struct ScriptItemDefinitionAfterEvent; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -28,11 +29,14 @@ public:
     // symbol: ??1ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptItemDefinitionBeforeEvent();
 
+    // symbol: ??0ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEAUItemDefinitionEventTriggeredEvent@@@Z
+    MCAPI ScriptItemDefinitionBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemDefinitionEventTriggeredEvent &);
+
     // symbol: ??0ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptItemDefinitionBeforeEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent const &);
 
-    // symbol: ??0ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEAUItemDefinitionEventTriggeredEvent@@AEBVWeakLifetimeScope@3@@Z
-    MCAPI ScriptItemDefinitionBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemDefinitionEventTriggeredEvent &, class Scripting::WeakLifetimeScope const &);
+    // symbol: ??0ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBVPlayer@@AEAUItemDefinitionEventTriggeredEvent@@AEBVWeakLifetimeScope@3@@Z
+    MCAPI ScriptItemDefinitionBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Player const &, struct ItemDefinitionEventTriggeredEvent &, class Scripting::WeakLifetimeScope const &);
 
     // symbol: ??0ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptItemDefinitionBeforeEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent &&);

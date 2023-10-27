@@ -35,12 +35,5 @@ public:
 
     // NOLINTEND
 
-    // protected:
-    // NOLINTBEGIN
-    // symbol: ?_getWaterHeights@RandomSwimmingGoal@@IEAAXVBlockPos@@AEAFAEAM22@Z
-    MCAPI void _getWaterHeights(class BlockPos, short &, float &, float &, float &);
-
-    // NOLINTEND
-
 };
 

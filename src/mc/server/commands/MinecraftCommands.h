@@ -48,11 +48,11 @@ public:
     // symbol: ?requestCommandExecution@MinecraftCommands@@QEAA?AUMCRESULT@@AEAVCommandContext@@_N@Z
     MCAPI struct MCRESULT requestCommandExecution(class CommandContext &, bool);
 
-    // symbol: ?runCommand@MinecraftCommands@@QEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
-    MCAPI void runCommand(class HashedString const &, class CommandOrigin &, ::CurrentCmdVersion);
-
     // symbol: ?runCommand@MinecraftCommands@@QEAAXAEAVCommand@@AEAVCommandOrigin@@@Z
     MCAPI void runCommand(class Command &, class CommandOrigin &);
+
+    // symbol: ?runCommand@MinecraftCommands@@QEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
+    MCAPI void runCommand(class HashedString const &, class CommandOrigin &, ::CurrentCmdVersion);
 
     // symbol: ?runOrDeferCommand@MinecraftCommands@@QEAAXV?$not_null@PEAVCommand@@@gsl@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
     MCAPI void runOrDeferCommand(gsl::not_null<class Command *>, class CommandOrigin &, ::CurrentCmdVersion);

@@ -11,6 +11,13 @@ public:
     ValueConstIterator(ValueConstIterator const &) = delete;
     ValueConstIterator() = delete;
 
+public:
+    // NOLINTBEGIN
+    // symbol: ??1ValueConstIterator@Json@@QEAA@XZ
+    MCAPI ~ValueConstIterator();
+
+    // NOLINTEND
+
 };
 
 };

@@ -39,11 +39,11 @@ public:
     // vIndex: 7, symbol: ?_read@AddItemActorPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
 
-    // symbol: ??0AddItemActorPacket@@QEAA@AEAVItemActor@@@Z
-    MCAPI AddItemActorPacket(class ItemActor &);
-
     // symbol: ??0AddItemActorPacket@@QEAA@XZ
     MCAPI AddItemActorPacket();
+
+    // symbol: ??0AddItemActorPacket@@QEAA@AEAVItemActor@@@Z
+    MCAPI AddItemActorPacket(class ItemActor &);
 
     // NOLINTEND
 

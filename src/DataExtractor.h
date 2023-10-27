@@ -7,7 +7,6 @@
 #include <direct.h>
 #include "zlib.h"
 #include "magic_enum.hpp"
-#include "nbt_cpp/nbt.hpp"
 
 //liteloader header
 #include "liteloader/api/memory/Hook.h"

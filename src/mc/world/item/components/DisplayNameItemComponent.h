@@ -13,7 +13,9 @@ namespace cereal { struct ReflectionCtx; }
 class DisplayNameItemComponent {
 public:
     // prevent constructor by default
+    DisplayNameItemComponent& operator=(DisplayNameItemComponent const &) = delete;
     DisplayNameItemComponent(DisplayNameItemComponent const &) = delete;
+    DisplayNameItemComponent() = delete;
 
 public:
     // NOLINTBEGIN
@@ -29,11 +31,11 @@ public:
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 4, symbol: ?buildNetworkTag@ItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
+    // vIndex: 4, symbol: ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const &) const;
 
-    // vIndex: 5, symbol: ?initializeFromNetwork@ItemComponent@@UEAA_NAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
-    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
+    // vIndex: 5, symbol: ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx const &);
 
     // vIndex: 6, symbol: ?handleVersionBasedInitialization@ItemComponent@@UEAAXAEBVSemVersion@@@Z
     virtual void handleVersionBasedInitialization(class SemVersion const &);
@@ -46,15 +48,6 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEBAXXZ
     virtual void _initializeComponent() const;
-
-    // symbol: ??1DisplayNameItemComponent@@UEAA@XZ
-    MCVAPI ~DisplayNameItemComponent();
-
-    // symbol: ??0DisplayNameItemComponent@@QEAA@XZ
-    MCAPI DisplayNameItemComponent();
-
-    // symbol: ??4DisplayNameItemComponent@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class DisplayNameItemComponent & operator=(class DisplayNameItemComponent const &);
 
     // symbol: ?setDescriptionId@DisplayNameItemComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setDescriptionId(std::string const &);

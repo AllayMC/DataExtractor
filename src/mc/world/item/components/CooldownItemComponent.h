@@ -15,6 +15,7 @@ public:
     // prevent constructor by default
     CooldownItemComponent& operator=(CooldownItemComponent const &) = delete;
     CooldownItemComponent(CooldownItemComponent const &) = delete;
+    CooldownItemComponent() = delete;
 
 public:
     // NOLINTBEGIN
@@ -30,11 +31,11 @@ public:
     // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
-    // vIndex: 4, symbol: ?buildNetworkTag@ItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx &) const;
+    // vIndex: 4, symbol: ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const &) const;
 
-    // vIndex: 5, symbol: ?initializeFromNetwork@ItemComponent@@UEAA_NAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
-    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx &);
+    // vIndex: 5, symbol: ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    virtual bool initializeFromNetwork(class CompoundTag const &, struct cereal::ReflectionCtx const &);
 
     // vIndex: 6, symbol: ?handleVersionBasedInitialization@ItemComponent@@UEAAXAEBVSemVersion@@@Z
     virtual void handleVersionBasedInitialization(class SemVersion const &);
@@ -50,9 +51,6 @@ public:
 
     // symbol: ??1CooldownItemComponent@@UEAA@XZ
     MCVAPI ~CooldownItemComponent();
-
-    // symbol: ??0CooldownItemComponent@@QEAA@XZ
-    MCAPI CooldownItemComponent();
 
     // symbol: ?bindType@CooldownItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx &, std::vector<::AllExperiments> const &, std::optional<class SemVersion>);

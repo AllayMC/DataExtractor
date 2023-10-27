@@ -282,11 +282,11 @@ public:
     // symbol: ?OnRNS2Recv@RakPeer@RakNet@@MEAAXPEAURNS2RecvStruct@2@@Z
     MCVAPI void OnRNS2Recv(struct RakNet::RNS2RecvStruct *);
 
-    // symbol: ?Ping@RakPeer@RakNet@@UEAA_NPEBDG_NI@Z
-    MCVAPI bool Ping(char const *, ushort, bool, uint);
-
     // symbol: ?Ping@RakPeer@RakNet@@UEAAXUSystemAddress@2@@Z
     MCVAPI void Ping(struct RakNet::SystemAddress);
+
+    // symbol: ?Ping@RakPeer@RakNet@@UEAA_NPEBDG_NI@Z
+    MCVAPI bool Ping(char const *, ushort, bool, uint);
 
     // symbol: ?PushBackPacket@RakPeer@RakNet@@UEAAXPEAUPacket@2@_N@Z
     MCVAPI void PushBackPacket(struct RakNet::Packet *, bool);
@@ -306,11 +306,11 @@ public:
     // symbol: ?RunUpdateCycle@RakPeer@RakNet@@UEAA_NAEAVBitStream@2@@Z
     MCVAPI bool RunUpdateCycle(class RakNet::BitStream &);
 
-    // symbol: ?Send@RakPeer@RakNet@@UEAAIPEBVBitStream@2@W4PacketPriority@@W4PacketReliability@@DUAddressOrGUID@2@_NI@Z
-    MCVAPI uint Send(class RakNet::BitStream const *, ::PacketPriority, ::PacketReliability, char, struct RakNet::AddressOrGUID, bool, uint);
-
     // symbol: ?Send@RakPeer@RakNet@@UEAAIPEBDHW4PacketPriority@@W4PacketReliability@@DUAddressOrGUID@2@_NI@Z
     MCVAPI uint Send(char const *, int, ::PacketPriority, ::PacketReliability, char, struct RakNet::AddressOrGUID, bool, uint);
+
+    // symbol: ?Send@RakPeer@RakNet@@UEAAIPEBVBitStream@2@W4PacketPriority@@W4PacketReliability@@DUAddressOrGUID@2@_NI@Z
+    MCVAPI uint Send(class RakNet::BitStream const *, ::PacketPriority, ::PacketReliability, char, struct RakNet::AddressOrGUID, bool, uint);
 
     // symbol: ?SendList@RakPeer@RakNet@@UEAAIPEAPEBDPEBHHW4PacketPriority@@W4PacketReliability@@DUAddressOrGUID@2@_NI@Z
     MCVAPI uint SendList(char const **, int const *, int, ::PacketPriority, ::PacketReliability, char, struct RakNet::AddressOrGUID, bool, uint);
@@ -472,11 +472,11 @@ public:
     // symbol: ?SendBufferedList@RakPeer@RakNet@@IEAAXPEAPEBDPEBHHW4PacketPriority@@W4PacketReliability@@DUAddressOrGUID@2@_NW4ConnectMode@RemoteSystemStruct@12@I@Z
     MCAPI void SendBufferedList(char const **, int const *, int, ::PacketPriority, ::PacketReliability, char, struct RakNet::AddressOrGUID, bool, ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode, uint);
 
-    // symbol: ?SendConnectionRequest@RakPeer@RakNet@@IEAA?AW4ConnectionAttemptResult@2@PEBDG0HPEAUPublicKey@2@IIIIIPEAVRakNetSocket2@2@@Z
-    MCAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(char const *, ushort, char const *, int, struct RakNet::PublicKey *, uint, uint, uint, uint, uint, class RakNet::RakNetSocket2 *);
-
     // symbol: ?SendConnectionRequest@RakPeer@RakNet@@IEAA?AW4ConnectionAttemptResult@2@PEBDG0HPEAUPublicKey@2@IIIII@Z
     MCAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(char const *, ushort, char const *, int, struct RakNet::PublicKey *, uint, uint, uint, uint, uint);
+
+    // symbol: ?SendConnectionRequest@RakPeer@RakNet@@IEAA?AW4ConnectionAttemptResult@2@PEBDG0HPEAUPublicKey@2@IIIIIPEAVRakNetSocket2@2@@Z
+    MCAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(char const *, ushort, char const *, int, struct RakNet::PublicKey *, uint, uint, uint, uint, uint, class RakNet::RakNetSocket2 *);
 
     // symbol: ?SendImmediate@RakPeer@RakNet@@IEAA_NPEADIW4PacketPriority@@W4PacketReliability@@DUAddressOrGUID@2@_N4_KI@Z
     MCAPI bool SendImmediate(char *, uint, ::PacketPriority, ::PacketReliability, char, struct RakNet::AddressOrGUID, bool, bool, uint64, uint);

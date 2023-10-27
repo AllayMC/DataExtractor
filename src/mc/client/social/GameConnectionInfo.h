@@ -18,14 +18,14 @@ namespace Social {
 class GameConnectionInfo {
 public:
     // NOLINTBEGIN
-    // symbol: ??0GameConnectionInfo@Social@@QEAA@AEBV01@@Z
-    MCAPI GameConnectionInfo(class Social::GameConnectionInfo const &);
-
     // symbol: ??0GameConnectionInfo@Social@@QEAA@USystemAddress@RakNet@@AEBURakNetGUID@3@AEBVThirdPartyInfo@@AEBVGatheringServerInfo@@@Z
     MCAPI GameConnectionInfo(struct RakNet::SystemAddress, struct RakNet::RakNetGUID const &, class ThirdPartyInfo const &, class GatheringServerInfo const &);
 
     // symbol: ??0GameConnectionInfo@Social@@QEAA@XZ
     MCAPI GameConnectionInfo();
+
+    // symbol: ??0GameConnectionInfo@Social@@QEAA@AEBV01@@Z
+    MCAPI GameConnectionInfo(class Social::GameConnectionInfo const &);
 
     // symbol: ?getHostIpAddress@GameConnectionInfo@Social@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getHostIpAddress() const;

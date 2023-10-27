@@ -121,8 +121,8 @@ public:
     // symbol: ?getFenceConnectivity@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptGameTestConnectivity@ScriptModuleGameTest@@@Scripting@@UGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestConnectivity>, struct gametest::GameTestError> getFenceConnectivity(class Vec3 const &);
 
-    // symbol: ?getSculkSpreader@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptSculkSpreader@ScriptModuleGameTest@@@Scripting@@UGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptSculkSpreader>, struct gametest::GameTestError> getSculkSpreader(class Vec3 const &);
+    // symbol: ?getSculkSpreader@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptSculkSpreader@ScriptModuleGameTest@@@Scripting@@@std@@UGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptSculkSpreader>>, struct gametest::GameTestError> getSculkSpreader(class Vec3 const &);
 
     // symbol: ?getTestDirection@ScriptGameTestHelper@ScriptModuleGameTest@@QEBA?AW4ScriptFacing@ScriptModuleMinecraft@@XZ
     MCAPI ::ScriptModuleMinecraft::ScriptFacing getTestDirection() const;

@@ -192,11 +192,11 @@ public:
     // symbol: ?isValidRegisteredPOI@Village@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isValidRegisteredPOI(class BlockSource &, class BlockPos const &);
 
-    // symbol: ?isVillagePOI@Village@@SA_NAEBVVillageManager@@AEBVBlock@@@Z
-    MCAPI static bool isVillagePOI(class VillageManager const &, class Block const &);
-
     // symbol: ?isVillagePOI@Village@@SA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isVillagePOI(class BlockSource const &, class BlockPos const &);
+
+    // symbol: ?isVillagePOI@Village@@SA_NAEBVVillageManager@@AEBVBlock@@@Z
+    MCAPI static bool isVillagePOI(class VillageManager const &, class Block const &);
 
     // symbol: ?DEBUG_DRAWING@Village@@2_NA
     MCAPI static bool DEBUG_DRAWING;
@@ -212,6 +212,9 @@ public:
 
     // symbol: ?STORAGE_KEY_PREFIX@Village@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const STORAGE_KEY_PREFIX;
+
+    // symbol: ?STORAGE_KEY_SEPARATOR@Village@@2DB
+    MCAPI static char const STORAGE_KEY_SEPARATOR;
 
     // symbol: ?VILLAGE_START_XZ_BOUNDS@Village@@2HB
     MCAPI static int const VILLAGE_START_XZ_BOUNDS;
@@ -271,20 +274,20 @@ public:
     // symbol: ?_ringBells@Village@@AEBAXAEAVBlockSource@@AEAVRandom@@@Z
     MCAPI void _ringBells(class BlockSource &, class Random &) const;
 
-    // symbol: ?_saveVillageData@Village@@AEBAXXZ
-    MCAPI void _saveVillageData() const;
+    // symbol: ?_saveVillageData@Village@@AEBAXAEAVLevelStorage@@@Z
+    MCAPI void _saveVillageData(class LevelStorage &) const;
 
-    // symbol: ?_saveVillageDwellers@Village@@AEBAXXZ
-    MCAPI void _saveVillageDwellers() const;
+    // symbol: ?_saveVillageDwellers@Village@@AEBAXAEAVLevelStorage@@@Z
+    MCAPI void _saveVillageDwellers(class LevelStorage &) const;
 
-    // symbol: ?_saveVillagePOIs@Village@@AEBAXXZ
-    MCAPI void _saveVillagePOIs() const;
+    // symbol: ?_saveVillagePOIs@Village@@AEBAXAEAVLevelStorage@@@Z
+    MCAPI void _saveVillagePOIs(class LevelStorage &) const;
 
-    // symbol: ?_saveVillagePlayerStanding@Village@@AEBAXXZ
-    MCAPI void _saveVillagePlayerStanding() const;
+    // symbol: ?_saveVillagePlayerStanding@Village@@AEBAXAEAVLevelStorage@@@Z
+    MCAPI void _saveVillagePlayerStanding(class LevelStorage &) const;
 
-    // symbol: ?_saveVillageRaid@Village@@AEBAXXZ
-    MCAPI void _saveVillageRaid() const;
+    // symbol: ?_saveVillageRaid@Village@@AEBAXAEAVLevelStorage@@@Z
+    MCAPI void _saveVillageRaid(class LevelStorage &) const;
 
     // symbol: ?_spawnPassiveDwellers@Village@@AEAAXAEAVBlockSource@@H@Z
     MCAPI void _spawnPassiveDwellers(class BlockSource &, int);

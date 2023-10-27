@@ -6,12 +6,14 @@ class RideableComponent {
 public:
     // prevent constructor by default
     RideableComponent& operator=(RideableComponent const &) = delete;
-    RideableComponent(RideableComponent const &) = delete;
 
 public:
     // NOLINTBEGIN
     // symbol: ??0RideableComponent@@QEAA@XZ
     MCAPI RideableComponent();
+
+    // symbol: ??0RideableComponent@@QEAA@AEBV0@@Z
+    MCAPI RideableComponent(class RideableComponent const &);
 
     // symbol: ??0RideableComponent@@QEAA@$$QEAV0@@Z
     MCAPI RideableComponent(class RideableComponent &&);
@@ -39,6 +41,9 @@ public:
 
     // symbol: ?pullInEntity@RideableComponent@@QEBA_NAEAVActor@@0@Z
     MCAPI bool pullInEntity(class Actor &, class Actor &) const;
+
+    // symbol: ??1RideableComponent@@QEAA@XZ
+    MCAPI ~RideableComponent();
 
     // NOLINTEND
 

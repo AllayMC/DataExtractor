@@ -21,7 +21,6 @@ class ScriptBlockInventoryComponent : public ::ScriptModuleMinecraft::BaseScript
 public:
     // prevent constructor by default
     ScriptBlockInventoryComponent& operator=(ScriptBlockInventoryComponent const &) = delete;
-    ScriptBlockInventoryComponent(ScriptBlockInventoryComponent const &) = delete;
     ScriptBlockInventoryComponent() = delete;
 
 public:
@@ -32,11 +31,14 @@ public:
     // symbol: ??1ScriptBlockInventoryComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptBlockInventoryComponent();
 
-    // symbol: ?getOrCreateContainer@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerWrapper>> getOrCreateContainer();
+    // symbol: ??0ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptBlockInventoryComponent(class ScriptModuleMinecraft::ScriptBlockInventoryComponent const &);
 
-    // symbol: ?getOrCreateContainerV010@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer>> getOrCreateContainerV010();
+    // symbol: ?getOrCreateContainer@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerWrapper>>> getOrCreateContainer();
+
+    // symbol: ?getOrCreateContainerV010@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer>>> getOrCreateContainerV010();
 
     // symbol: ??4ScriptBlockInventoryComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptBlockInventoryComponent & operator=(class ScriptModuleMinecraft::ScriptBlockInventoryComponent &&);

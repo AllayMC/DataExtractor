@@ -17,9 +17,6 @@ public:
     // symbol: ??0ActorDefinitionIdentifier@@QEAA@XZ
     MCAPI ActorDefinitionIdentifier();
 
-    // symbol: ??0ActorDefinitionIdentifier@@QEAA@PEBD@Z
-    MCAPI ActorDefinitionIdentifier(char const *);
-
     // symbol: ??0ActorDefinitionIdentifier@@QEAA@$$QEAU0@@Z
     MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier &&);
 
@@ -28,6 +25,9 @@ public:
 
     // symbol: ??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI ActorDefinitionIdentifier(std::string const &);
+
+    // symbol: ??0ActorDefinitionIdentifier@@QEAA@PEBD@Z
+    MCAPI ActorDefinitionIdentifier(char const *);
 
     // symbol: ?_getLegacyActorType@ActorDefinitionIdentifier@@QEBA?AW4ActorType@@XZ
     MCAPI ::ActorType _getLegacyActorType() const;

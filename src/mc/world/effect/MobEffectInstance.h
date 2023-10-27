@@ -26,17 +26,17 @@ public:
     // symbol: ??0MobEffectInstance@@QEAA@IHH@Z
     MCAPI MobEffectInstance(uint, int, int);
 
-    // symbol: ??0MobEffectInstance@@QEAA@IHH_N00@Z
-    MCAPI MobEffectInstance(uint, int, int, bool, bool, bool);
-
-    // symbol: ??0MobEffectInstance@@QEAA@$$QEAV0@@Z
-    MCAPI MobEffectInstance(class MobEffectInstance &&);
-
     // symbol: ??0MobEffectInstance@@QEAA@I@Z
     MCAPI MobEffectInstance(uint);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHHHHH_N00@Z
     MCAPI MobEffectInstance(uint, int, int, int, int, int, bool, bool, bool);
+
+    // symbol: ??0MobEffectInstance@@QEAA@IHH_N00@Z
+    MCAPI MobEffectInstance(uint, int, int, bool, bool, bool);
+
+    // symbol: ??0MobEffectInstance@@QEAA@$$QEAV0@@Z
+    MCAPI MobEffectInstance(class MobEffectInstance &&);
 
     // symbol: ?applyEffects@MobEffectInstance@@QEAAXPEAVActor@@@Z
     MCAPI void applyEffects(class Actor *);

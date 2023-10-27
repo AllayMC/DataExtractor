@@ -7,13 +7,12 @@
 
 class MolangVariableMap {
 public:
-    // prevent constructor by default
-    MolangVariableMap() = delete;
-
-public:
     // NOLINTBEGIN
     // symbol: ??0MolangVariableMap@@QEAA@AEBV0@@Z
     MCAPI MolangVariableMap(class MolangVariableMap const &);
+
+    // symbol: ??0MolangVariableMap@@QEAA@XZ
+    MCAPI MolangVariableMap();
 
     // symbol: ??0MolangVariableMap@@QEAA@$$QEAV0@@Z
     MCAPI MolangVariableMap(class MolangVariableMap &&);

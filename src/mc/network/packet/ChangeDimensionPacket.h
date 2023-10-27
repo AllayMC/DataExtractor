@@ -34,11 +34,11 @@ public:
     // symbol: ??1ChangeDimensionPacket@@UEAA@XZ
     MCVAPI ~ChangeDimensionPacket();
 
-    // symbol: ??0ChangeDimensionPacket@@QEAA@XZ
-    MCAPI ChangeDimensionPacket();
-
     // symbol: ??0ChangeDimensionPacket@@QEAA@V?$AutomaticID@VDimension@@H@@VVec3@@_N@Z
     MCAPI ChangeDimensionPacket(DimensionType, class Vec3, bool);
+
+    // symbol: ??0ChangeDimensionPacket@@QEAA@XZ
+    MCAPI ChangeDimensionPacket();
 
     // NOLINTEND
 

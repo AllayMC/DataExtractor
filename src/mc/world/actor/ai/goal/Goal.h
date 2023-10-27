@@ -34,7 +34,7 @@ public:
     // vIndex: 6, symbol: ?tick@Goal@@UEAAXXZ
     virtual void tick();
 
-    // vIndex: 7, symbol: ?appendDebugInfo@CroakGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // vIndex: 7, symbol: ?appendDebugInfo@FleeSunGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string &) const = 0;
 
     // vIndex: 8, symbol: ?isTargetGoal@Goal@@UEBA_NXZ
