@@ -13,10 +13,10 @@ namespace CaveFeatureUtils {
     MCAPI struct CaveFeatureUtils::CarverConfiguration const & getCurrentConfiguration(bool);
 
     // symbol: ?getDistance_1_16@CaveFeatureUtils@@YAHAEAVRandom@@@Z
-    MCAPI int getDistance_1_16(class Random &);
+    MCAPI int32_t getDistance_1_16(class Random &);
 
     // symbol: ?getDistance_1_18@CaveFeatureUtils@@YAHAEAVRandom@@@Z
-    MCAPI int getDistance_1_18(class Random &);
+    MCAPI int32_t getDistance_1_18(class Random &);
 
     // symbol: ?getTunnelThickness_1_16@CaveFeatureUtils@@YAMAEAVRandom@@@Z
     MCAPI float getTunnelThickness_1_16(class Random &);

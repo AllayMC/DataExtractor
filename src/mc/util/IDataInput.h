@@ -30,19 +30,19 @@ public:
     virtual char readByte() = 0;
 
     // vIndex: 6, symbol: ?readShort@BigEndianStringByteInput@@UEAAFXZ
-    virtual short readShort() = 0;
+    virtual int16_t readShort() = 0;
 
     // vIndex: 7, symbol: ?readInt@BigEndianStringByteInput@@UEAAHXZ
-    virtual int readInt() = 0;
+    virtual int32_t readInt() = 0;
 
     // vIndex: 8, symbol: ?readLongLong@BigEndianStringByteInput@@UEAA_JXZ
-    virtual int64 readLongLong() = 0;
+    virtual int64_t readLongLong() = 0;
 
     // vIndex: 9, symbol: ?readBytes@StringByteInput@@UEAA_NPEAX_K@Z
-    virtual bool readBytes(void *, uint64) = 0;
+    virtual bool readBytes(void *, uint64_t) = 0;
 
     // vIndex: 10, symbol: ?numBytesLeft@StringByteInput@@UEBA_KXZ
-    virtual uint64 numBytesLeft() const = 0;
+    virtual uint64_t numBytesLeft() const = 0;
 
     // NOLINTEND
 

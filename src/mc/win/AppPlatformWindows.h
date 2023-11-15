@@ -36,7 +36,7 @@ public:
     MCVAPI bool allowContentLogWriteToDisk();
 
     // symbol: ?calculateAvailableDiskFreeSpace@AppPlatformWindows@@UEAA_KAEBVPath@Core@@@Z
-    MCVAPI uint64 calculateAvailableDiskFreeSpace(class Core::Path const &);
+    MCVAPI uint64_t calculateAvailableDiskFreeSpace(class Core::Path const &);
 
     // symbol: ?canAppSelfTerminate@AppPlatformWindows@@UEBA_NXZ
     MCVAPI bool canAppSelfTerminate() const;
@@ -45,7 +45,7 @@ public:
     MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const &);
 
     // symbol: ?getHighPerformanceThreadsCount@AppPlatformWindows@@UEBA_KXZ
-    MCVAPI uint64 getHighPerformanceThreadsCount() const;
+    MCVAPI uint64_t getHighPerformanceThreadsCount() const;
 
     // symbol: ?getMainThreadQueue@AppPlatformWindows@@UEAAAEAV?$MPMCQueue@V?$function@$$A6AXXZ@std@@@@XZ
     MCVAPI class MPMCQueue<std::function<void (void)>> & getMainThreadQueue();
@@ -63,7 +63,7 @@ public:
     MCVAPI class Core::PathBuffer<std::string> getPlatformTempPath() const;
 
     // symbol: ?getTotalHardwareThreadsCount@AppPlatformWindows@@UEBA_KXZ
-    MCVAPI uint64 getTotalHardwareThreadsCount() const;
+    MCVAPI uint64_t getTotalHardwareThreadsCount() const;
 
     // symbol: ?queueForMainThread_DEPRECATED@AppPlatformWindows@@UEAAXV?$function@$$A6AXXZ@std@@@Z
     MCVAPI void queueForMainThread_DEPRECATED(std::function<void (void)>);
@@ -82,7 +82,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_findHighPerformanceThreadsCount@AppPlatformWindows@@IEBA_KXZ
-    MCAPI uint64 _findHighPerformanceThreadsCount() const;
+    MCAPI uint64_t _findHighPerformanceThreadsCount() const;
 
     // NOLINTEND
 

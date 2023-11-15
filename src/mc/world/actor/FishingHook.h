@@ -70,7 +70,7 @@ public:
     virtual void __unk_vfn_63();
 
     // vIndex: 84, symbol: ?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 98, symbol: ?save@FishingHook@@UEBA_NAEAVCompoundTag@@@Z
     virtual bool save(class CompoundTag &) const;
@@ -112,7 +112,7 @@ public:
     MCAPI void postNormalTick();
 
     // symbol: ?retrieve@FishingHook@@QEAAHXZ
-    MCAPI int retrieve();
+    MCAPI int32_t retrieve();
 
     // symbol: ?BOBBER_SIZE@FishingHook@@2MB
     MCAPI static float const BOBBER_SIZE;

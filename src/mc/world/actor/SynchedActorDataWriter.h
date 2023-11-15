@@ -25,7 +25,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_get@SynchedActorDataWriter@@AEAA?AV?$not_null@PEAVSynchedActorData@@@gsl@@XZ
-    MCAPI gsl::not_null<class SynchedActorData *> _get();
+    MCAPI class gsl::not_null<class SynchedActorData *> _get();
 
     // NOLINTEND
 

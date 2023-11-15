@@ -18,25 +18,25 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z
-    virtual bool startDestroyBlock(class BlockPos const &, uchar, bool &);
+    virtual bool startDestroyBlock(class BlockPos const &, uint8_t, bool &);
 
     // vIndex: 2, symbol: ?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z
-    virtual bool destroyBlock(class BlockPos const &, uchar);
+    virtual bool destroyBlock(class BlockPos const &, uint8_t);
 
     // vIndex: 3, symbol: ?continueDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEBVVec3@@AEA_N@Z
-    virtual bool continueDestroyBlock(class BlockPos const &, uchar, class Vec3 const &, bool &);
+    virtual bool continueDestroyBlock(class BlockPos const &, uint8_t, class Vec3 const &, bool &);
 
     // vIndex: 4, symbol: ?stopDestroyBlock@GameMode@@UEAAXAEBVBlockPos@@@Z
     virtual void stopDestroyBlock(class BlockPos const &);
 
     // vIndex: 5, symbol: ?startBuildBlock@GameMode@@UEAAXAEBVBlockPos@@E@Z
-    virtual void startBuildBlock(class BlockPos const &, uchar);
+    virtual void startBuildBlock(class BlockPos const &, uint8_t);
 
     // vIndex: 6, symbol: ?buildBlock@GameMode@@UEAA_NAEBVBlockPos@@E_N@Z
-    virtual bool buildBlock(class BlockPos const &, uchar, bool);
+    virtual bool buildBlock(class BlockPos const &, uint8_t, bool);
 
     // vIndex: 7, symbol: ?continueBuildBlock@GameMode@@UEAAXAEBVBlockPos@@E@Z
-    virtual void continueBuildBlock(class BlockPos const &, uchar);
+    virtual void continueBuildBlock(class BlockPos const &, uint8_t);
 
     // vIndex: 8, symbol: ?stopBuildBlock@GameMode@@UEAAXXZ
     virtual void stopBuildBlock();
@@ -51,7 +51,7 @@ public:
     virtual bool useItem(class ItemStack &);
 
     // vIndex: 12, symbol: ?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z
-    virtual class InteractionResult useItemOn(class ItemStack &, class BlockPos const &, uchar, class Vec3 const &, class Block const *);
+    virtual class InteractionResult useItemOn(class ItemStack &, class BlockPos const &, uint8_t, class Vec3 const &, class Block const *);
 
     // vIndex: 13, symbol: ?interact@GameMode@@UEAA_NAEAVActor@@AEBVVec3@@@Z
     virtual bool interact(class Actor &, class Vec3 const &);
@@ -75,19 +75,19 @@ public:
     MCAPI GameMode(class Player &, std::unique_ptr<struct IGameModeTimer>, std::unique_ptr<struct IGameModeMessenger>);
 
     // symbol: ?_startDestroyBlock@GameMode@@QEAA_NAEBVBlockPos@@AEBVVec3@@EAEA_N@Z
-    MCAPI bool _startDestroyBlock(class BlockPos const &, class Vec3 const &, uchar, bool &);
+    MCAPI bool _startDestroyBlock(class BlockPos const &, class Vec3 const &, uint8_t, bool &);
 
     // symbol: ?_tickContinueDestroyBlock@GameMode@@QEAA_NAEBVBlockPos@@AEBVVec3@@EAEA_NAEBV?$function@$$A6AXXZ@std@@@Z
-    MCAPI bool _tickContinueDestroyBlock(class BlockPos const &, class Vec3 const &, uchar, bool &, std::function<void (void)> const &);
+    MCAPI bool _tickContinueDestroyBlock(class BlockPos const &, class Vec3 const &, uint8_t, bool &, std::function<void (void)> const &);
 
     // symbol: ?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z
     MCAPI bool baseUseItem(class ItemStack &);
 
     // symbol: ?createBlockBreakCaptureScope@GameMode@@QEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@V?$function@$$A6AXAEBVItemStack@@0AEBVBlockPos@@@Z@std@@@Z
-    MCAPI gsl::final_action<std::function<void (void)>> createBlockBreakCaptureScope(std::function<void (class ItemStack const &, class ItemStack const &, class BlockPos const &)>);
+    MCAPI class gsl::final_action<std::function<void (void)>> createBlockBreakCaptureScope(std::function<void (class ItemStack const &, class ItemStack const &, class BlockPos const &)>);
 
     // symbol: ?getDestroyBlockFace@GameMode@@QEBAEXZ
-    MCAPI uchar getDestroyBlockFace() const;
+    MCAPI uint8_t getDestroyBlockFace() const;
 
     // symbol: ?getDestroyBlockPos@GameMode@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const & getDestroyBlockPos() const;
@@ -139,19 +139,19 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_canDestroy@GameMode@@AEAA_NAEBVBlockPos@@E@Z
-    MCAPI bool _canDestroy(class BlockPos const &, uchar);
+    MCAPI bool _canDestroy(class BlockPos const &, uint8_t);
 
     // symbol: ?_canUseBlock@GameMode@@AEAA_NAEBVBlock@@@Z
     MCAPI bool _canUseBlock(class Block const &);
 
     // symbol: ?_creativeDestroyBlock@GameMode@@AEAA_NAEBVBlockPos@@E@Z
-    MCAPI bool _creativeDestroyBlock(class BlockPos const &, uchar);
+    MCAPI bool _creativeDestroyBlock(class BlockPos const &, uint8_t);
 
     // symbol: ?_enableBlockBreakDelay@GameMode@@AEBA_NXZ
     MCAPI bool _enableBlockBreakDelay() const;
 
     // symbol: ?_sendTryUseItemOnEvent@GameMode@@AEBA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@_N@Z
-    MCAPI class InteractionResult _sendTryUseItemOnEvent(class ItemStack &, class BlockPos const &, uchar, class Vec3 const &, class Block const *, bool) const;
+    MCAPI class InteractionResult _sendTryUseItemOnEvent(class ItemStack &, class BlockPos const &, uint8_t, class Vec3 const &, class Block const *, bool) const;
 
     // NOLINTEND
 

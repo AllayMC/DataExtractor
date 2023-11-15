@@ -31,7 +31,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 6, symbol: ?getMaxUseDuration@CrossbowItem@@UEBAHPEBVItemStack@@@Z
-    virtual int getMaxUseDuration(class ItemStack const *) const;
+    virtual int32_t getMaxUseDuration(class ItemStack const *) const;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -52,7 +52,7 @@ public:
     virtual void __unk_vfn_53();
 
     // vIndex: 62, symbol: ?getEnchantSlot@CrossbowItem@@UEBAHXZ
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
@@ -82,7 +82,7 @@ public:
     virtual ::ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
 
     // vIndex: 87, symbol: ?releaseUsing@CrossbowItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    virtual void releaseUsing(class ItemStack &, class Player *, int) const;
+    virtual void releaseUsing(class ItemStack &, class Player *, int32_t) const;
 
     // vIndex: 112, symbol: ?enchantProjectile@CrossbowItem@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
     virtual void enchantProjectile(class ItemStackBase const &, class Actor &) const;
@@ -94,13 +94,13 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 119, symbol: ?setIconInfo@CrossbowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item & setIconInfo(std::string const &, int);
+    virtual class Item & setIconInfo(std::string const &, int32_t);
 
     // vIndex: 120, symbol: ?getIconInfo@CrossbowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int32_t, bool) const;
 
     // vIndex: 122, symbol: ?getAnimationFrameFor@CrossbowItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-    virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    virtual int32_t getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
 
     // vIndex: 126, symbol: ?canBeCharged@CrossbowItem@@UEBA_NXZ
     virtual bool canBeCharged() const;
@@ -109,14 +109,14 @@ public:
     virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
 
     // symbol: ??0CrossbowItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CrossbowItem(std::string const &, int);
+    MCAPI CrossbowItem(std::string const &, int32_t);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getMaxUseDuration@CrossbowItem@@AEBA?BHAEBVItemStack@@@Z
-    MCAPI int const _getMaxUseDuration(class ItemStack const &) const;
+    MCAPI int32_t const _getMaxUseDuration(class ItemStack const &) const;
 
     // symbol: ?_getShootDir@CrossbowItem@@AEBA?AVVec3@@AEBVPlayer@@M@Z
     MCAPI class Vec3 _getShootDir(class Player const &, float) const;
@@ -132,7 +132,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?DEFAULT_USE_DURATION@CrossbowItem@@0HB
-    MCAPI static int const DEFAULT_USE_DURATION;
+    MCAPI static int32_t const DEFAULT_USE_DURATION;
 
     // NOLINTEND
 

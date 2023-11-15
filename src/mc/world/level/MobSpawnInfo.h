@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?categoryID@MobSpawnInfo@@SAHW4ActorType@@@Z
-    MCAPI static int categoryID(::ActorType);
+    MCAPI static int32_t categoryID(::ActorType);
 
     // NOLINTEND
 

@@ -143,7 +143,7 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 142, symbol: ?getVariant@SaplingBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -182,7 +182,7 @@ public:
     MCVAPI ~SaplingBlock();
 
     // symbol: ??0SaplingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SaplingBlock(std::string const &, int);
+    MCAPI SaplingBlock(std::string const &, int32_t);
 
     // NOLINTEND
 
@@ -196,16 +196,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_generateJungleTree@SaplingBlock@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEAH0AEA_NAEBVBlockPos@@AEAVBlockSource@@AEBVFeatureRegistry@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits> _generateJungleTree(int &, int &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
+    MCAPI class WeakRefT<struct FeatureRefTraits> _generateJungleTree(int32_t &, int32_t &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
 
     // symbol: ?_generateOakTree@SaplingBlock@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBVFeatureRegistry@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@_N@Z
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateOakTree(class FeatureRegistry const &, class BlockPos const &, class BlockSource &, class Random &, bool) const;
 
     // symbol: ?_generateRedwoodTree@SaplingBlock@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEAH0AEA_NAEBVBlockPos@@AEAVBlockSource@@AEBVFeatureRegistry@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits> _generateRedwoodTree(int &, int &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
+    MCAPI class WeakRefT<struct FeatureRefTraits> _generateRedwoodTree(int32_t &, int32_t &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
 
     // symbol: ?_generateRoofTree@SaplingBlock@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEAH0AEA_NAEBVBlockPos@@AEAVBlockSource@@AEBVFeatureRegistry@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits> _generateRoofTree(int &, int &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
+    MCAPI class WeakRefT<struct FeatureRefTraits> _generateRoofTree(int32_t &, int32_t &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
 
     // symbol: ?_growTree@SaplingBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
     MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &, bool) const;

@@ -92,7 +92,7 @@ public:
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
 
     // vIndex: 101, symbol: ?inventoryTick@SparklerItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
-    virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
+    virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int32_t, bool) const;
 
     // vIndex: 115, symbol: __unk_vfn_115
     virtual void __unk_vfn_115();
@@ -101,19 +101,19 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 119, symbol: ?setIconInfo@SparklerItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item & setIconInfo(std::string const &, int);
+    virtual class Item & setIconInfo(std::string const &, int32_t);
 
     // vIndex: 120, symbol: ?getIconInfo@SparklerItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int32_t, bool) const;
 
     // vIndex: 124, symbol: ?getLightEmission@SparklerItem@@UEBA?AUBrightness@@H@Z
-    virtual struct Brightness getLightEmission(int) const;
+    virtual struct Brightness getLightEmission(int32_t) const;
 
     // symbol: ?COLORS@SparklerItem@@2QBUColorInfo@1@B
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];
 
     // symbol: ?MAX_ACTIVE_TICKS@SparklerItem@@2HB
-    MCAPI static int const MAX_ACTIVE_TICKS;
+    MCAPI static int32_t const MAX_ACTIVE_TICKS;
 
     // NOLINTEND
 

@@ -59,7 +59,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?getEnTTMetaType@BlockTraitFactory@@CA?AVmeta_type@entt@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI static entt::meta_type getEnTTMetaType(struct cereal::ReflectionCtx &);
+    MCAPI static class entt::meta_type getEnTTMetaType(struct cereal::ReflectionCtx &);
 
     // NOLINTEND
 

@@ -39,7 +39,7 @@ public:
     MCAPI std::vector<class CommandOutputMessage> const & getMessages() const;
 
     // symbol: ?getSuccessCount@CommandOutput@@QEBAHXZ
-    MCAPI int getSuccessCount() const;
+    MCAPI int32_t getSuccessCount() const;
 
     // symbol: ?getType@CommandOutput@@QEBA?AW4CommandOutputType@@XZ
     MCAPI ::CommandOutputType getType() const;
@@ -48,7 +48,7 @@ public:
     MCAPI bool hasErrorMessage() const;
 
     // symbol: ?load@CommandOutput@@QEAAXW4CommandOutputType@@H$$QEAV?$vector@VCommandOutputMessage@@V?$allocator@VCommandOutputMessage@@@std@@@std@@$$QEAV?$unique_ptr@VCommandPropertyBag@@U?$default_delete@VCommandPropertyBag@@@std@@@4@@Z
-    MCAPI void load(::CommandOutputType, int, std::vector<class CommandOutputMessage> &&, std::unique_ptr<class CommandPropertyBag> &&);
+    MCAPI void load(::CommandOutputType, int32_t, std::vector<class CommandOutputMessage> &&, std::unique_ptr<class CommandPropertyBag> &&);
 
     // symbol: ?setHasPlayerText@CommandOutput@@QEAAXXZ
     MCAPI void setHasPlayerText();

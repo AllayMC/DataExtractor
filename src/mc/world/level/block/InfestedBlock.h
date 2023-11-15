@@ -133,7 +133,7 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 142, symbol: ?getVariant@InfestedBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -163,13 +163,13 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 186, symbol: ?getResourceCount@InfestedBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@InfestedBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 
     // symbol: ??0InfestedBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI InfestedBlock(std::string const &, int);
+    MCAPI InfestedBlock(std::string const &, int32_t);
 
     // symbol: ?spawnSilverfish@InfestedBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void spawnSilverfish(class BlockSource &, class BlockPos const &);

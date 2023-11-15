@@ -139,7 +139,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@SmithingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -154,7 +154,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0SmithingTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SmithingTableBlock(std::string const &, int, class Material const &);
+    MCAPI SmithingTableBlock(std::string const &, int32_t, class Material const &);
 
     // NOLINTEND
 

@@ -21,7 +21,7 @@ public:
     virtual void tick();
 
     // vIndex: 2, symbol: ?notify@HungerAttributeDelegate@@UEAAX_J@Z
-    virtual void notify(int64);
+    virtual void notify(int64_t);
 
     // symbol: ??0HungerAttributeDelegate@@QEAA@AEBVAttributeInstance@@PEAVPlayer@@@Z
     MCAPI HungerAttributeDelegate(class AttributeInstance const &, class Player *);

@@ -25,7 +25,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol: ?uploadFileToRealmStorage@ResourcePackFileUploadManager@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
-    virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
+    virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int32_t, std::string const &);
 
     // symbol: ??1ResourcePackFileUploadManager@@UEAA@XZ
     MCVAPI ~ResourcePackFileUploadManager();
@@ -38,7 +38,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_uploadPackToRealmStorage@ResourcePackFileUploadManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
-    MCAPI void _uploadPackToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
+    MCAPI void _uploadPackToRealmStorage(std::string const &, class Core::Path const &, int32_t, std::string const &);
 
     // symbol: ?_uploadResourcePackFolder@ResourcePackFileUploadManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceLocation@@AEBVPath@Core@@AEBVValue@Json@@@Z
     MCAPI void _uploadResourcePackFolder(std::string const &, class ResourceLocation const &, class Core::Path const &, class Json::Value const &);

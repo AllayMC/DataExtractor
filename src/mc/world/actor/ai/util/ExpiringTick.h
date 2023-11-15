@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ExpiringTick@@QEAA@UTick@@G@Z
-    MCAPI ExpiringTick(struct Tick, ushort);
+    MCAPI ExpiringTick(struct Tick, uint16_t);
 
     // symbol: ?getExpireAtTick@ExpiringTick@@QEBA?AUTick@@XZ
     MCAPI struct Tick getExpireAtTick() const;

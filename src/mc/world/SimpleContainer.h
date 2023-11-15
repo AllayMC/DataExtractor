@@ -19,19 +19,19 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol: ?serverInitItemStackIds@SimpleContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    virtual void serverInitItemStackIds(int, int, std::function<void (int, class ItemStack const &)>);
+    virtual void serverInitItemStackIds(int32_t, int32_t, std::function<void (int32_t, class ItemStack const &)>);
 
     // vIndex: 5, symbol: ?getItem@SimpleContainer@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const & getItem(int) const;
+    virtual class ItemStack const & getItem(int32_t) const;
 
     // vIndex: 10, symbol: ?setItem@SimpleContainer@@UEAAXHAEBVItemStack@@@Z
-    virtual void setItem(int, class ItemStack const &);
+    virtual void setItem(int32_t, class ItemStack const &);
 
     // vIndex: 16, symbol: ?getContainerSize@SimpleContainer@@UEBAHXZ
-    virtual int getContainerSize() const;
+    virtual int32_t getContainerSize() const;
 
     // vIndex: 17, symbol: ?getMaxStackSize@SimpleContainer@@UEBAHXZ
-    virtual int getMaxStackSize() const;
+    virtual int32_t getMaxStackSize() const;
 
     // vIndex: 18, symbol: ?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player &);
@@ -49,7 +49,7 @@ public:
     MCVAPI ~SimpleContainer();
 
     // symbol: ??0SimpleContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
-    MCAPI SimpleContainer(std::string const &, bool, int, ::ContainerType);
+    MCAPI SimpleContainer(std::string const &, bool, int32_t, ::ContainerType);
 
     // NOLINTEND
 

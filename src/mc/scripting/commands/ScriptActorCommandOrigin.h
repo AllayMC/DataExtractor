@@ -37,7 +37,7 @@ public:
     MCVAPI ~ScriptActorCommandOrigin();
 
     // symbol: ??0ScriptActorCommandOrigin@@QEAA@AEBVActor@@V?$function@$$A6AXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z@std@@V?$optional@W4CommandPermissionLevel@@@3@@Z
-    MCAPI ScriptActorCommandOrigin(class Actor const &, std::function<void (int, std::string &&, class Json::Value &&)>, std::optional<::CommandPermissionLevel>);
+    MCAPI ScriptActorCommandOrigin(class Actor const &, std::function<void (int32_t, std::string &&, class Json::Value &&)>, std::optional<::CommandPermissionLevel>);
 
     // NOLINTEND
 

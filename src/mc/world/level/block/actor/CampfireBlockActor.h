@@ -75,23 +75,23 @@ public:
     MCAPI class HashedString const & getCampfireTag(class BlockSource const &) const;
 
     // symbol: ?getCookingItem@CampfireBlockActor@@QEAAAEBVItemInstance@@H@Z
-    MCAPI class ItemInstance const & getCookingItem(int);
+    MCAPI class ItemInstance const & getCookingItem(int32_t);
 
     // symbol: ?setItem@CampfireBlockActor@@QEAA_NAEAVBlockSource@@AEBVItemInstance@@@Z
     MCAPI bool setItem(class BlockSource &, class ItemInstance const &);
 
     // symbol: ?MAX_SMOKE_THRESHOLD_COUNTER@CampfireBlockActor@@2HB
-    MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
+    MCAPI static int32_t const MAX_SMOKE_THRESHOLD_COUNTER;
 
     // symbol: ?MIN_SMOKE_THRESHOLD_COUNTER@CampfireBlockActor@@2HB
-    MCAPI static int const MIN_SMOKE_THRESHOLD_COUNTER;
+    MCAPI static int32_t const MIN_SMOKE_THRESHOLD_COUNTER;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_finishCooking@CampfireBlockActor@@AEAAXAEAVBlockSource@@H@Z
-    MCAPI void _finishCooking(class BlockSource &, int);
+    MCAPI void _finishCooking(class BlockSource &, int32_t);
 
     // NOLINTEND
 

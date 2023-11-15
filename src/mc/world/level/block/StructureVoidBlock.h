@@ -163,7 +163,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0StructureVoidBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI StructureVoidBlock(std::string const &, int);
+    MCAPI StructureVoidBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

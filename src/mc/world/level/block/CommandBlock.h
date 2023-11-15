@@ -98,7 +98,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 74, symbol: ?onRedstoneUpdate@CommandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int32_t, bool) const;
 
     // vIndex: 76, symbol: __unk_vfn_76
     virtual void __unk_vfn_76();
@@ -119,7 +119,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@CommandBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -131,7 +131,7 @@ public:
     virtual void __unk_vfn_124();
 
     // vIndex: 125, symbol: ?getComparatorSignal@CommandBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uchar) const;
+    virtual int32_t getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uint8_t) const;
 
     // vIndex: 127, symbol: __unk_vfn_127
     virtual void __unk_vfn_127();
@@ -140,10 +140,10 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@CommandBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 145, symbol: ?getMappedFace@CommandBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const &) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -170,7 +170,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@CommandBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -188,7 +188,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0CommandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CommandBlockMode@@@Z
-    MCAPI CommandBlock(std::string const &, int, ::CommandBlockMode);
+    MCAPI CommandBlock(std::string const &, int32_t, ::CommandBlockMode);
 
     // symbol: ?execute@CommandBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void execute(class BlockSource &, class BlockPos const &) const;
@@ -223,7 +223,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?mCBModeMap@CommandBlock@@0PAHA
-    MCAPI static int mCBModeMap[];
+    MCAPI static int32_t mCBModeMap[];
 
     // NOLINTEND
 

@@ -14,13 +14,13 @@ public:
     MCAPI ActorInfoRegistry();
 
     // symbol: ?getActorInfo@ActorInfoRegistry@@QEBAAEBUActorInfo@@I@Z
-    MCAPI struct ActorInfo const & getActorInfo(uint) const;
+    MCAPI struct ActorInfo const & getActorInfo(uint32_t) const;
 
     // symbol: ?getActorInfoId@ActorInfoRegistry@@QEBAIAEB_K@Z
-    MCAPI uint getActorInfoId(uint64 const &) const;
+    MCAPI uint32_t getActorInfoId(uint64_t const &) const;
 
     // symbol: ?getActorInfoId@ActorInfoRegistry@@QEBAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI uint getActorInfoId(std::string const &) const;
+    MCAPI uint32_t getActorInfoId(std::string const &) const;
 
     // symbol: ?getActorInfoList@ActorInfoRegistry@@QEBA?AV?$vector@UActorInfo@@V?$allocator@UActorInfo@@@std@@@std@@XZ
     MCAPI std::vector<struct ActorInfo> getActorInfoList() const;

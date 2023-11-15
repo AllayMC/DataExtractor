@@ -37,17 +37,17 @@ public:
     virtual void appendDebugInfo(std::string &) const;
 
     // symbol: ??0EatCarriedItemGoal@@QEAA@AEAVMob@@H@Z
-    MCAPI EatCarriedItemGoal(class Mob &, int);
+    MCAPI EatCarriedItemGoal(class Mob &, int32_t);
 
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
     // symbol: ?CHEW_CHANCE@EatCarriedItemGoal@@0HB
-    MCAPI static int const CHEW_CHANCE;
+    MCAPI static int32_t const CHEW_CHANCE;
 
     // symbol: ?EATING_TIME@EatCarriedItemGoal@@0HB
-    MCAPI static int const EATING_TIME;
+    MCAPI static int32_t const EATING_TIME;
 
     // NOLINTEND
 

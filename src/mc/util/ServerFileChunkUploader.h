@@ -27,7 +27,7 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?initFileUploader@ServerFileChunkUploader@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUFileInfo@@HAEBVValue@Json@@V?$function@$$A6AX_N@Z@3@@Z
-    virtual void initFileUploader(std::string const &, struct FileInfo const &, int, class Json::Value const &, std::function<void (bool)>);
+    virtual void initFileUploader(std::string const &, struct FileInfo const &, int32_t, class Json::Value const &, std::function<void (bool)>);
 
     // vIndex: 3, symbol: ?getServerMissingChunks@ServerFileChunkUploader@@UEBAXAEBUFileInfo@@V?$function@$$A6AXV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@@Z@std@@@Z
     virtual void getServerMissingChunks(struct FileInfo const &, std::function<void (std::vector<struct FileChunkInfo>)>) const;
@@ -36,10 +36,10 @@ public:
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol: ?uploadChunk@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@AEBV?$vector@EV?$allocator@E@std@@@std@@V?$function@$$A6AX_N@Z@5@@Z
-    virtual void uploadChunk(struct FileInfo const &, struct FileChunkInfo const &, std::vector<uchar> const &, std::function<void (bool)>);
+    virtual void uploadChunk(struct FileInfo const &, struct FileChunkInfo const &, std::vector<uint8_t> const &, std::function<void (bool)>);
 
     // vIndex: 6, symbol: ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
-    virtual void uploadStream(struct FileInfo const &, uint64, std::string const &, std::function<void (::IFileChunkUploader::UploadStreamResult)>);
+    virtual void uploadStream(struct FileInfo const &, uint64_t, std::string const &, std::function<void (::IFileChunkUploader::UploadStreamResult)>);
 
     // vIndex: 7, symbol: ?canCancelUpload@ServerFileChunkUploader@@UEBA_NAEBUFileInfo@@@Z
     virtual bool canCancelUpload(struct FileInfo const &) const;
@@ -54,7 +54,7 @@ public:
     virtual float getUploadProgress(struct FileInfo const &) const;
 
     // vIndex: 11, symbol: ?getChunkInfo@ServerFileChunkUploader@@UEBA?AUFileChunkInfo@@AEBUFileInfo@@H@Z
-    virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
+    virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int32_t) const;
 
     // symbol: ?cancelUpload@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@@Z
     MCVAPI void cancelUpload(struct FileInfo const &);

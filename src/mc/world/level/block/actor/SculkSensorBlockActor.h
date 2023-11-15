@@ -64,13 +64,13 @@ public:
     MCVAPI ~SculkSensorBlockActor();
 
     // symbol: ??0SculkSensorBlockActor@@QEAA@W4BlockActorType@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I$$QEAV?$unique_ptr@VSculkSensorVibrationConfig@@U?$default_delete@VSculkSensorVibrationConfig@@@std@@@4@@Z
-    MCAPI SculkSensorBlockActor(::BlockActorType, class BlockPos const &, std::string const &, uint, std::unique_ptr<class SculkSensorVibrationConfig> &&);
+    MCAPI SculkSensorBlockActor(::BlockActorType, class BlockPos const &, std::string const &, uint32_t, std::unique_ptr<class SculkSensorVibrationConfig> &&);
 
     // symbol: ??0SculkSensorBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI SculkSensorBlockActor(class BlockPos const &);
 
     // symbol: ?getLatestReceivedVibrationFrequency@SculkSensorBlockActor@@QEBAHXZ
-    MCAPI int getLatestReceivedVibrationFrequency() const;
+    MCAPI int32_t getLatestReceivedVibrationFrequency() const;
 
     // NOLINTEND
 

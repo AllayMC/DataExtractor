@@ -5,7 +5,7 @@
 namespace GameplayUserManagerUtils {
     // NOLINTBEGIN
     // symbol: ?countUsersWithMatchingNetworkId@GameplayUserManagerUtils@@YA_KAEBVGameplayUserManager@@AEBVNetworkIdentifier@@@Z
-    MCAPI uint64 countUsersWithMatchingNetworkId(class GameplayUserManager const &, class NetworkIdentifier const &);
+    MCAPI uint64_t countUsersWithMatchingNetworkId(class GameplayUserManager const &, class NetworkIdentifier const &);
     // NOLINTEND
 
 };

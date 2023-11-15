@@ -63,7 +63,7 @@ public:
         virtual struct ItemDescriptor::ItemEntry getItem() const;
     
         // vIndex: 5, symbol: ?forEachItemUntil@BaseDescriptor@ItemDescriptor@@UEBA_NV?$function@$$A6A_NAEBVItem@@F@Z@std@@@Z
-        virtual bool forEachItemUntil(std::function<bool (class Item const &, short)>) const;
+        virtual bool forEachItemUntil(std::function<bool (class Item const &, int16_t)>) const;
     
         // vIndex: 6, symbol: ?toMap@ComplexAliasDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
         virtual std::map<std::string,std::string> toMap() const = 0;
@@ -84,7 +84,7 @@ public:
         virtual bool isValid() const;
     
         // vIndex: 12, symbol: ?getHash@ComplexAliasDescriptor@@UEBA_KXZ
-        virtual uint64 getHash() const = 0;
+        virtual uint64_t getHash() const = 0;
     
         // vIndex: 13, symbol: ?shouldResolve@BaseDescriptor@ItemDescriptor@@UEBA_NXZ
         virtual bool shouldResolve() const;
@@ -114,7 +114,7 @@ public:
     MCVAPI ~ItemDescriptor();
 
     // symbol: ??0ItemDescriptor@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@H@Z
-    MCAPI ItemDescriptor(std::string_view, int);
+    MCAPI ItemDescriptor(std::string_view, int32_t);
 
     // symbol: ??0ItemDescriptor@@QEAA@XZ
     MCAPI ItemDescriptor();
@@ -123,7 +123,7 @@ public:
     MCAPI ItemDescriptor(class ItemDescriptor const &);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEBVItem@@H@Z
-    MCAPI ItemDescriptor(class Item const &, int);
+    MCAPI ItemDescriptor(class Item const &, int32_t);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEBUItemTag@@@Z
     MCAPI ItemDescriptor(struct ItemTag const &);
@@ -144,10 +144,10 @@ public:
     MCAPI ItemDescriptor(class ReadOnlyBinaryStream &);
 
     // symbol: ?forEachItemUntil@ItemDescriptor@@QEBA_NV?$function@$$A6A_NAEBVItem@@F@Z@std@@@Z
-    MCAPI bool forEachItemUntil(std::function<bool (class Item const &, short)>) const;
+    MCAPI bool forEachItemUntil(std::function<bool (class Item const &, int16_t)>) const;
 
     // symbol: ?getAuxValue@ItemDescriptor@@QEBAFXZ
-    MCAPI short getAuxValue() const;
+    MCAPI int16_t getAuxValue() const;
 
     // symbol: ?getBlock@ItemDescriptor@@QEBAPEBVBlock@@XZ
     MCAPI class Block const * getBlock() const;
@@ -156,13 +156,13 @@ public:
     MCAPI std::string getFullName() const;
 
     // symbol: ?getHash@ItemDescriptor@@QEBA_KXZ
-    MCAPI uint64 getHash() const;
+    MCAPI uint64_t getHash() const;
 
     // symbol: ?getId@ItemDescriptor@@QEBAFXZ
-    MCAPI short getId() const;
+    MCAPI int16_t getId() const;
 
     // symbol: ?getIdAux@ItemDescriptor@@QEBAHXZ
-    MCAPI int getIdAux() const;
+    MCAPI int32_t getIdAux() const;
 
     // symbol: ?getItem@ItemDescriptor@@QEBAPEBVItem@@XZ
     MCAPI class Item const * getItem() const;

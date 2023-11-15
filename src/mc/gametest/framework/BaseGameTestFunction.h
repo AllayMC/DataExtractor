@@ -33,7 +33,7 @@ public:
     MCVAPI ~BaseGameTestFunction();
 
     // symbol: ??0BaseGameTestFunction@gametest@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00HHH_N1HHV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-    MCAPI BaseGameTestFunction(std::string, std::string, std::string, int, int, int, bool, bool, int, int, std::vector<std::string>);
+    MCAPI BaseGameTestFunction(std::string, std::string, std::string, int32_t, int32_t, int32_t, bool, bool, int32_t, int32_t, std::vector<std::string>);
 
     // symbol: ?getRotate@BaseGameTestFunction@gametest@@QEBA_NXZ
     MCAPI bool getRotate() const;

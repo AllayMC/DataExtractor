@@ -26,10 +26,10 @@ public:
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, class CraftingContext &) const;
 
     // vIndex: 2, symbol: ?getCraftingSize@ShapedRecipe@@UEBAHXZ
-    virtual int getCraftingSize() const;
+    virtual int32_t getCraftingSize() const;
 
     // vIndex: 3, symbol: ?getIngredient@ShapedRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-    virtual class RecipeIngredient const & getIngredient(int, int) const;
+    virtual class RecipeIngredient const & getIngredient(int32_t, int32_t) const;
 
     // vIndex: 4, symbol: ?getResultItem@ShapedRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const & getResultItem() const;
@@ -41,7 +41,7 @@ public:
     virtual bool matches(class CraftingContainer const &, class CraftingContext const &) const;
 
     // vIndex: 7, symbol: ?size@ShapedRecipe@@UEBAHXZ
-    virtual int size() const;
+    virtual int32_t size() const;
 
     // vIndex: 15, symbol: ?loadResultList@ShapedRecipe@@UEBAXAEBVBlockPalette@@@Z
     virtual void loadResultList(class BlockPalette const &) const;
@@ -53,17 +53,17 @@ public:
     MCVAPI ~ShapedRecipe();
 
     // symbol: ??0ShapedRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@HPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z
-    MCAPI ShapedRecipe(std::string_view, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *, std::optional<class RecipeUnlockingRequirement>, class SemVersion const &);
+    MCAPI ShapedRecipe(std::string_view, int32_t, int32_t, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int32_t, class mce::UUID const *, std::optional<class RecipeUnlockingRequirement>, class SemVersion const &);
 
     // symbol: ?getIngredientsHashOffset@ShapedRecipe@@QEBA_KHHHH@Z
-    MCAPI uint64 getIngredientsHashOffset(int, int, int, int) const;
+    MCAPI uint64_t getIngredientsHashOffset(int32_t, int32_t, int32_t, int32_t) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?matches@ShapedRecipe@@AEBA_NAEBVCraftingContainer@@HH_N@Z
-    MCAPI bool matches(class CraftingContainer const &, int, int, bool) const;
+    MCAPI bool matches(class CraftingContainer const &, int32_t, int32_t, bool) const;
 
     // NOLINTEND
 

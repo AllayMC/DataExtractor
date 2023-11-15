@@ -14,10 +14,10 @@ namespace Core::Profile { class CounterTokenMarker; }
 namespace Core::Profile {
     // NOLINTBEGIN
     // symbol: ?counterSet@Profile@Core@@YAXVCounterTokenMarker@12@_J@Z
-    MCAPI void counterSet(class Core::Profile::CounterTokenMarker, int64);
+    MCAPI void counterSet(class Core::Profile::CounterTokenMarker, int64_t);
 
     // symbol: ?generateCounterTokenWithConfig@Profile@Core@@YA?AVCounterTokenMarker@12@PEBDW4CounterFormat@12@_JW4CounterFlags@12@@Z
-    MCAPI class Core::Profile::CounterTokenMarker generateCounterTokenWithConfig(char const *, ::Core::Profile::CounterFormat, int64, ::Core::Profile::CounterFlags);
+    MCAPI class Core::Profile::CounterTokenMarker generateCounterTokenWithConfig(char const *, ::Core::Profile::CounterFormat, int64_t, ::Core::Profile::CounterFlags);
 
     // symbol: ?initializeProfile@Profile@Core@@YAXXZ
     MCAPI void initializeProfile();

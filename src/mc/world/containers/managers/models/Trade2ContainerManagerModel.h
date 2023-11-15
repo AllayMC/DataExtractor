@@ -23,10 +23,10 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@Trade2ContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const &, bool);
+    virtual void setSlot(int32_t, class ItemStack const &, bool);
 
     // vIndex: 8, symbol: ?getSlot@Trade2ContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const & getSlot(int) const;
+    virtual class ItemStack const & getSlot(int32_t) const;
 
     // vIndex: 10, symbol: ?broadcastChanges@Trade2ContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();

@@ -41,7 +41,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 26, symbol: ?teleportTo@FallingBlockActor@@UEAAXAEBVVec3@@_NHH1@Z
-    virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const &, bool, int32_t, int32_t, bool);
 
     // vIndex: 29, symbol: ?normalTick@FallingBlockActor@@UEAAXXZ
     virtual void normalTick();
@@ -86,7 +86,7 @@ public:
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
     // vIndex: 114, symbol: ?onSynchedDataUpdate@FallingBlockActor@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
 
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();

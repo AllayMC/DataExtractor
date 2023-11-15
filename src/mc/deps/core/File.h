@@ -32,7 +32,7 @@ public:
     MCAPI class Core::Result open(class Core::Path const &, class Core::FileOpenMode, ::Core::FileBufferingMode);
 
     // symbol: ?write@File@Core@@QEAA?AVResult@2@PEBX_K@Z
-    MCAPI class Core::Result write(void const *, uint64);
+    MCAPI class Core::Result write(void const *, uint64_t);
 
     // symbol: ??1File@Core@@QEAA@XZ
     MCAPI ~File();
@@ -44,10 +44,10 @@ public:
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> cleanPathSeparators(class Core::Path const &);
 
     // symbol: ?writeCreateOrAppendFileData@File@Core@@SA?AVResult@2@AEBVPath@2@_K1AEBV?$vector@EV?$allocator@E@std@@@std@@@Z
-    MCAPI static class Core::Result writeCreateOrAppendFileData(class Core::Path const &, uint64, uint64, std::vector<uchar> const &);
+    MCAPI static class Core::Result writeCreateOrAppendFileData(class Core::Path const &, uint64_t, uint64_t, std::vector<uint8_t> const &);
 
     // symbol: ?writeCreateOrAppendFileData@File@Core@@SA?AVResult@2@AEBVPath@2@_K1PEBE@Z
-    MCAPI static class Core::Result writeCreateOrAppendFileData(class Core::Path const &, uint64, uint64, uchar const *);
+    MCAPI static class Core::Result writeCreateOrAppendFileData(class Core::Path const &, uint64_t, uint64_t, uint8_t const *);
 
     // NOLINTEND
 

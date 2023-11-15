@@ -40,7 +40,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@UndyedShulkerBoxBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -106,7 +106,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 72, symbol: ?dispense@UndyedShulkerBoxBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 76, symbol: __unk_vfn_76
     virtual void __unk_vfn_76();
@@ -133,7 +133,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@UndyedShulkerBoxBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -151,7 +151,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 134, symbol: ?getColor@UndyedShulkerBoxBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const &) const;
+    virtual int32_t getColor(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -178,24 +178,24 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@UndyedShulkerBoxBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ??0UndyedShulkerBoxBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI UndyedShulkerBoxBlock(std::string const &, int);
+    MCAPI UndyedShulkerBoxBlock(std::string const &, int32_t);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?spawnBoxInstance@UndyedShulkerBoxBlock@@IEBAXAEAVBlockSource@@AEAVLevel@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@7@H@Z
-    MCAPI void spawnBoxInstance(class BlockSource &, class Level &, class BlockPos const &, class Block const &, std::string const &, std::unique_ptr<class CompoundTag>, int) const;
+    MCAPI void spawnBoxInstance(class BlockSource &, class Level &, class BlockPos const &, class Block const &, std::string const &, std::unique_ptr<class CompoundTag>, int32_t) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_isValidAttach@UndyedShulkerBoxBlock@@AEBA_NAEAVBlockSource@@VBlockPos@@E@Z
-    MCAPI bool _isValidAttach(class BlockSource &, class BlockPos, uchar) const;
+    MCAPI bool _isValidAttach(class BlockSource &, class BlockPos, uint8_t) const;
 
     // symbol: ?_tryGetShape@UndyedShulkerBoxBlock@@CA_NAEBVIConstBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
     MCAPI static bool _tryGetShape(class IConstBlockSource const &, class BlockPos const &, class AABB &);

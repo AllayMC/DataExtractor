@@ -18,25 +18,25 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol: ?serverInitItemStackIds@FillingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    virtual void serverInitItemStackIds(int, int, std::function<void (int, class ItemStack const &)>);
+    virtual void serverInitItemStackIds(int32_t, int32_t, std::function<void (int32_t, class ItemStack const &)>);
 
     // vIndex: 5, symbol: ?getItem@FillingContainer@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const & getItem(int) const;
+    virtual class ItemStack const & getItem(int32_t) const;
 
     // vIndex: 10, symbol: ?setItem@FillingContainer@@UEAAXHAEBVItemStack@@@Z
-    virtual void setItem(int, class ItemStack const &);
+    virtual void setItem(int32_t, class ItemStack const &);
 
     // vIndex: 11, symbol: ?setItemWithForceBalance@FillingContainer@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
+    virtual void setItemWithForceBalance(int32_t, class ItemStack const &, bool);
 
     // vIndex: 12, symbol: ?removeItem@FillingContainer@@UEAAXHH@Z
-    virtual void removeItem(int, int);
+    virtual void removeItem(int32_t, int32_t);
 
     // vIndex: 16, symbol: ?getContainerSize@FillingContainer@@UEBAHXZ
-    virtual int getContainerSize() const;
+    virtual int32_t getContainerSize() const;
 
     // vIndex: 17, symbol: ?getMaxStackSize@FillingContainer@@UEBAHXZ
-    virtual int getMaxStackSize() const;
+    virtual int32_t getMaxStackSize() const;
 
     // vIndex: 18, symbol: ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player &);
@@ -54,10 +54,10 @@ public:
     virtual bool canAdd(class ItemStack const &) const;
 
     // vIndex: 38, symbol: ?clearSlot@FillingContainer@@UEAAXH@Z
-    virtual void clearSlot(int);
+    virtual void clearSlot(int32_t);
 
     // vIndex: 39, symbol: ?clearInventory@FillingContainer@@UEAAHH@Z
-    virtual int clearInventory(int);
+    virtual int32_t clearInventory(int32_t);
 
     // vIndex: 40, symbol: ?load@FillingContainer@@UEAAXAEBVListTag@@AEBVSemVersion@@AEAVLevel@@@Z
     virtual void load(class ListTag const &, class SemVersion const &, class Level &);
@@ -66,38 +66,38 @@ public:
     MCVAPI ~FillingContainer();
 
     // symbol: ??0FillingContainer@@QEAA@PEAVPlayer@@HW4ContainerType@@@Z
-    MCAPI FillingContainer(class Player *, int, ::ContainerType);
+    MCAPI FillingContainer(class Player *, int32_t, ::ContainerType);
 
     // symbol: ?getHotbarSize@FillingContainer@@QEBAHXZ
-    MCAPI int getHotbarSize() const;
+    MCAPI int32_t getHotbarSize() const;
 
     // symbol: ?getSlotWithItem@FillingContainer@@QEBAHAEBVItemStack@@_N1@Z
-    MCAPI int getSlotWithItem(class ItemStack const &, bool, bool) const;
+    MCAPI int32_t getSlotWithItem(class ItemStack const &, bool, bool) const;
 
     // symbol: ?hasResource@FillingContainer@@QEAA_NH@Z
-    MCAPI bool hasResource(int);
+    MCAPI bool hasResource(int32_t);
 
     // symbol: ??4FillingContainer@@QEAAAEAV0@AEBV0@@Z
     MCAPI class FillingContainer & operator=(class FillingContainer const &);
 
     // symbol: ?removeResource@FillingContainer@@QEAAHAEBVItemStack@@_N1H@Z
-    MCAPI int removeResource(class ItemStack const &, bool, bool, int);
+    MCAPI int32_t removeResource(class ItemStack const &, bool, bool, int32_t);
 
     // symbol: ?removeResource@FillingContainer@@QEAA_NH@Z
-    MCAPI bool removeResource(int);
+    MCAPI bool removeResource(int32_t);
 
     // symbol: ?save@FillingContainer@@QEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class ListTag> save() const;
 
     // symbol: ?swapSlots@FillingContainer@@QEAAXHH@Z
-    MCAPI void swapSlots(int, int);
+    MCAPI void swapSlots(int32_t, int32_t);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_addResource@FillingContainer@@IEAAHAEBVItemStack@@@Z
-    MCAPI int _addResource(class ItemStack const &);
+    MCAPI int32_t _addResource(class ItemStack const &);
 
     // symbol: ?_doDrop@FillingContainer@@IEAAXAEAVItemStack@@_N@Z
     MCAPI void _doDrop(class ItemStack &, bool);
@@ -106,19 +106,19 @@ public:
     MCAPI void _fixBackwardCompabilityItem(class ItemStack &);
 
     // symbol: ?_getFreeSlot@FillingContainer@@IEBAHXZ
-    MCAPI int _getFreeSlot() const;
+    MCAPI int32_t _getFreeSlot() const;
 
     // symbol: ?_getSlot@FillingContainer@@IEBAHH@Z
-    MCAPI int _getSlot(int) const;
+    MCAPI int32_t _getSlot(int32_t) const;
 
     // symbol: ?_getSlotWithRemainingSpace@FillingContainer@@IEBAHAEBVItemStack@@@Z
-    MCAPI int _getSlotWithRemainingSpace(class ItemStack const &) const;
+    MCAPI int32_t _getSlotWithRemainingSpace(class ItemStack const &) const;
 
     // symbol: ?_isCreative@FillingContainer@@IEBA_NXZ
     MCAPI bool _isCreative() const;
 
     // symbol: ?_release@FillingContainer@@IEAAXH@Z
-    MCAPI void _release(int);
+    MCAPI void _release(int32_t);
 
     // NOLINTEND
 

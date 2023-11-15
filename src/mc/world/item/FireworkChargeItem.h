@@ -62,7 +62,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 67, symbol: ?isValidAuxValue@FireworkChargeItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 70, symbol: __unk_vfn_70
     virtual void __unk_vfn_70();
@@ -95,16 +95,16 @@ public:
     virtual bool hasSameRelevantUserData(class ItemStackBase const &, class ItemStackBase const &) const;
 
     // symbol: ??0FireworkChargeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FireworkChargeItem(std::string const &, int);
+    MCAPI FireworkChargeItem(std::string const &, int32_t);
 
     // symbol: ?getFormattedHoverText@FireworkChargeItem@@SAXAEBVCompoundTag@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
     MCAPI static void getFormattedHoverText(class CompoundTag const &, std::string &, std::string const &);
 
     // symbol: ?initFireworkChargeItem@FireworkChargeItem@@SAAEBVItemInstance@@AEAV2@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
-    MCAPI static class ItemInstance const & initFireworkChargeItem(class ItemInstance &, ::FireworkChargeItem::Shape, std::vector<uchar>, std::vector<uchar>, bool, bool);
+    MCAPI static class ItemInstance const & initFireworkChargeItem(class ItemInstance &, ::FireworkChargeItem::Shape, std::vector<uint8_t>, std::vector<uint8_t>, bool, bool);
 
     // symbol: ?initFireworkChargeItem@FireworkChargeItem@@SAAEBVItemStack@@AEAV2@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
-    MCAPI static class ItemStack const & initFireworkChargeItem(class ItemStack &, ::FireworkChargeItem::Shape, std::vector<uchar>, std::vector<uchar>, bool, bool);
+    MCAPI static class ItemStack const & initFireworkChargeItem(class ItemStack &, ::FireworkChargeItem::Shape, std::vector<uint8_t>, std::vector<uint8_t>, bool, bool);
 
     // symbol: ?setColor@FireworkChargeItem@@SAXAEAVItemStackBase@@@Z
     MCAPI static void setColor(class ItemStackBase &);
@@ -132,10 +132,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_initFireworkChargeItem@FireworkChargeItem@@CAXAEAVItemStackBase@@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
-    MCAPI static void _initFireworkChargeItem(class ItemStackBase &, ::FireworkChargeItem::Shape, std::vector<uchar>, std::vector<uchar>, bool, bool);
+    MCAPI static void _initFireworkChargeItem(class ItemStackBase &, ::FireworkChargeItem::Shape, std::vector<uint8_t>, std::vector<uint8_t>, bool, bool);
 
     // symbol: ?appendColors@FireworkChargeItem@@CAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@EV?$allocator@E@std@@@3@@Z
-    MCAPI static void appendColors(std::string &, std::vector<uchar>);
+    MCAPI static void appendColors(std::string &, std::vector<uint8_t>);
 
     // NOLINTEND
 

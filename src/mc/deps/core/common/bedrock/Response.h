@@ -31,7 +31,7 @@ public:
     MCAPI Response(class Bedrock::Http::Status);
 
     // symbol: ?getBodyAsBytes@Response@Http@Bedrock@@QEBA?AV?$span@$$CBE$0?0@gsl@@XZ
-    MCAPI gsl::span<uchar const> getBodyAsBytes() const;
+    MCAPI class gsl::span<uint8_t const> getBodyAsBytes() const;
 
     // symbol: ?getBodyAsUtf8String@Response@Http@Bedrock@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getBodyAsUtf8String() const;
@@ -43,7 +43,7 @@ public:
     MCAPI class Bedrock::Http::Status getStatus() const;
 
     // symbol: ?setBody@Response@Http@Bedrock@@QEAAXV?$not_null@V?$shared_ptr@VIResponseBody@Internal@Http@Bedrock@@@std@@@gsl@@@Z
-    MCAPI void setBody(gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>>);
+    MCAPI void setBody(class gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>>);
 
     // symbol: ?setHeaders@Response@Http@Bedrock@@QEAAXAEBVHeaderCollection@23@@Z
     MCAPI void setHeaders(class Bedrock::Http::HeaderCollection const &);

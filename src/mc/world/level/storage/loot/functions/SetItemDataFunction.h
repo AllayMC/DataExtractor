@@ -43,10 +43,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_applyImplForComplexAliasBlock@SetItemDataFunction@@AEAA?AW4ApplyForComplexAliasBlockResult@1@AEAPEBVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@AEAH@Z
-    MCAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(class Item const *&, std::string const &, class Random &, int &);
+    MCAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(class Item const *&, std::string const &, class Random &, int32_t &);
 
     // symbol: ?_applyImplForItem@SetItemDataFunction@@AEAA?AW4ApplyForItemResult@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVRandom@@AEAHAEAV?$WeakPtr@VItem@@@@@Z
-    MCAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(std::string const &, std::string const &, class Random &, int &, class WeakPtr<class Item> &);
+    MCAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(std::string const &, std::string const &, class Random &, int32_t &, class WeakPtr<class Item> &);
 
     // symbol: ?_applyImplForNormalBlock@SetItemDataFunction@@AEAAXAEAPEBVBlock@@AEAVRandom@@@Z
     MCAPI void _applyImplForNormalBlock(class Block const *&, class Random &);

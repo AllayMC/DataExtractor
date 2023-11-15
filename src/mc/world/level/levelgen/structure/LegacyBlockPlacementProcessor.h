@@ -18,7 +18,7 @@ public:
     MCAPI class Block const * applyBlockRules(class BlockSource &, class BlockPos &, class Block const *, class BlockPos const &);
 
     // symbol: ?applyGravity@LegacyBlockPlacementProcessor@@QEBAAEAVBlockPos@@AEAVBlockSource@@HAEAV2@@Z
-    MCAPI class BlockPos & applyGravity(class BlockSource &, int, class BlockPos &) const;
+    MCAPI class BlockPos & applyGravity(class BlockSource &, int32_t, class BlockPos &) const;
 
     // symbol: ??1LegacyBlockPlacementProcessor@@QEAA@XZ
     MCAPI ~LegacyBlockPlacementProcessor();

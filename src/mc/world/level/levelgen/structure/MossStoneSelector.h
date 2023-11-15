@@ -18,7 +18,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?next@MossStoneSelector@@UEBAAEBVBlock@@AEAVRandom@@HHH_N@Z
-    virtual class Block const & next(class Random &, int, int, int, bool) const;
+    virtual class Block const & next(class Random &, int32_t, int32_t, int32_t, bool) const;
 
     // symbol: ??1MossStoneSelector@@UEAA@XZ
     MCVAPI ~MossStoneSelector();

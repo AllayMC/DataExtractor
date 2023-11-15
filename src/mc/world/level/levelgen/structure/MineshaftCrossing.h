@@ -28,7 +28,7 @@ public:
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 
     // symbol: ?_placeSupportPillar@MineshaftCrossing@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHH@Z
-    MCAPI void _placeSupportPillar(class BlockSource &, class BoundingBox const &, int, int, int, int);
+    MCAPI void _placeSupportPillar(class BlockSource &, class BoundingBox const &, int32_t, int32_t, int32_t, int32_t);
 
     // NOLINTEND
 

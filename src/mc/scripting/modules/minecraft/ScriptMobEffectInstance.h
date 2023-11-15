@@ -25,7 +25,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getAmplifier@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getAmplifier() const;
+    MCAPI class Scripting::Result<int32_t> getAmplifier() const;
 
     // symbol: ?getDisplayName@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getDisplayName() const;
@@ -34,7 +34,7 @@ public:
     MCAPI std::string getDisplayName_010() const;
 
     // symbol: ?getDuration@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getDuration() const;
+    MCAPI class Scripting::Result<int32_t> getDuration() const;
 
     // symbol: ?getTypeId@ScriptMobEffectInstance@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getTypeId() const;
@@ -46,7 +46,7 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMobEffectInstance> bind();
 
     // symbol: ?getHandle@ScriptMobEffectInstance@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptMobEffectInstance@ScriptModuleMinecraft@@@Scripting@@AEBVActor@@IAEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance> getHandle(class Actor const &, uint, class Scripting::WeakLifetimeScope const &);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance> getHandle(class Actor const &, uint32_t, class Scripting::WeakLifetimeScope const &);
 
     // NOLINTEND
 

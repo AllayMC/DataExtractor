@@ -49,10 +49,10 @@ public:
     MCAPI RakPeerHelper(class RakPeerHelper::IPSupportInterface &);
 
     // symbol: ?getIPv4ConnectionIndex@RakPeerHelper@@QEBAHXZ
-    MCAPI int getIPv4ConnectionIndex() const;
+    MCAPI int32_t getIPv4ConnectionIndex() const;
 
     // symbol: ?getIPv6ConnectionIndex@RakPeerHelper@@QEBAHXZ
-    MCAPI int getIPv6ConnectionIndex() const;
+    MCAPI int32_t getIPv6ConnectionIndex() const;
 
     // symbol: ?isIPv4Supported@RakPeerHelper@@QEBA_NXZ
     MCAPI bool isIPv4Supported() const;
@@ -74,10 +74,10 @@ public:
     MCAPI void LogIPSupport(::RakPeerHelper::PeerPurpose);
 
     // symbol: ?_resetToIPv6Only@RakPeerHelper@@AEAAXV?$span@USocketDescriptor@RakNet@@$01@gsl@@AEAH@Z
-    MCAPI void _resetToIPv6Only(gsl::span<struct RakNet::SocketDescriptor, 2>, int &);
+    MCAPI void _resetToIPv6Only(class gsl::span<struct RakNet::SocketDescriptor, 2>, int32_t &);
 
     // symbol: ?_startupInternal@RakPeerHelper@@AEAA?AW4StartupResult@RakNet@@V?$not_null@PEAVRakPeerInterface@RakNet@@@gsl@@AEBUConnectionDefinition@@PEAUSocketDescriptor@3@AEAHH@Z
-    MCAPI ::RakNet::StartupResult _startupInternal(gsl::not_null<class RakNet::RakPeerInterface *>, struct ConnectionDefinition const &, struct RakNet::SocketDescriptor *, int &, int);
+    MCAPI ::RakNet::StartupResult _startupInternal(class gsl::not_null<class RakNet::RakPeerInterface *>, struct ConnectionDefinition const &, struct RakNet::SocketDescriptor *, int32_t &, int32_t);
 
     // NOLINTEND
 

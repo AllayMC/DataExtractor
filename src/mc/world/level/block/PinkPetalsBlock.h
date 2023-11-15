@@ -136,7 +136,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@PinkPetalsBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -160,7 +160,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@PinkPetalsBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -172,7 +172,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 186, symbol: ?getResourceCount@PinkPetalsBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ?canBeDestroyedByWaterSpread@PinkPetalsBlock@@UEBA_NXZ
     MCVAPI bool canBeDestroyedByWaterSpread() const;
@@ -184,7 +184,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0PinkPetalsBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PinkPetalsBlock(std::string const &, int);
+    MCAPI PinkPetalsBlock(std::string const &, int32_t);
 
     // symbol: ?tryGrow@PinkPetalsBlock@@SA_NAEAVBlockSource@@VBlockPos@@@Z
     MCAPI static bool tryGrow(class BlockSource &, class BlockPos);

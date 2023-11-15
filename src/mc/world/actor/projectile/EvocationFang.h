@@ -67,7 +67,7 @@ public:
     virtual void __unk_vfn_63();
 
     // vIndex: 84, symbol: ?handleEntityEvent@EvocationFang@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 102, symbol: ?getSourceUniqueID@EvocationFang@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;

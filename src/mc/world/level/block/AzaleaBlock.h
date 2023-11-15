@@ -37,7 +37,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 27, symbol: ?canProvideMultifaceSupport@AzaleaBlock@@UEBA_NAEBVBlock@@E@Z
-    virtual bool canProvideMultifaceSupport(class Block const &, uchar) const;
+    virtual bool canProvideMultifaceSupport(class Block const &, uint8_t) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -163,7 +163,7 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0AzaleaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI AzaleaBlock(std::string const &, int);
+    MCAPI AzaleaBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

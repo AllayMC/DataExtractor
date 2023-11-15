@@ -18,10 +18,10 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?AddRef@TaskQueuePortContextImpl@@UEAAIXZ
-    virtual uint AddRef();
+    virtual uint32_t AddRef();
 
     // vIndex: 1, symbol: ?Release@TaskQueuePortContextImpl@@UEAAIXZ
-    virtual uint Release();
+    virtual uint32_t Release();
 
     // vIndex: 2, symbol: ?QueryApi@TaskQueuePortContextImpl@@UEAAJW4ApiId@@PEAPEAX@Z
     virtual long QueryApi(::ApiId, void **);

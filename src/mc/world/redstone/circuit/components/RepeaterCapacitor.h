@@ -18,13 +18,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getStrength@RepeaterCapacitor@@UEBAHXZ
-    virtual int getStrength() const;
+    virtual int32_t getStrength() const;
 
     // vIndex: 3, symbol: ?setStrength@RepeaterCapacitor@@UEAAXH@Z
-    virtual void setStrength(int);
+    virtual void setStrength(int32_t);
 
     // vIndex: 11, symbol: ?addSource@RepeaterCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-    virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
+    virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int32_t &, bool &);
 
     // vIndex: 13, symbol: ?checkLock@RepeaterCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
     virtual void checkLock(class CircuitSystem &, class BlockPos const &);
@@ -51,7 +51,7 @@ public:
     MCAPI RepeaterCapacitor();
 
     // symbol: ?setDelay@RepeaterCapacitor@@QEAAXH@Z
-    MCAPI void setDelay(int);
+    MCAPI void setDelay(int32_t);
 
     // NOLINTEND
 

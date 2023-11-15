@@ -18,7 +18,7 @@ public:
     MCAPI void sendPlayerDestroyedBlock(class Player &, class Block const &);
 
     // symbol: ?sendStartDestroyBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@AEAE@Z
-    MCAPI void sendStartDestroyBlock(class Player &, class BlockPos const &, uchar &);
+    MCAPI void sendStartDestroyBlock(class Player &, class BlockPos const &, uint8_t &);
 
     // NOLINTEND
 

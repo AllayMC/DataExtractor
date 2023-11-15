@@ -25,7 +25,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getId@AppIsland@Bedrock@@UEAAGXZ
-    virtual ushort getId();
+    virtual uint16_t getId();
 
     // symbol: ?mainUpdate@AppIsland@Bedrock@@UEAAXXZ
     MCVAPI void mainUpdate();

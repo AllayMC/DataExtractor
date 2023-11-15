@@ -135,7 +135,7 @@ public:
     virtual void requestReloadDynamicPackagePacks() = 0;
 
     // vIndex: 36, symbol: ?getKeyProvider@ResourcePackRepository@@UEBA?AV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@XZ
-    virtual Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> getKeyProvider() const = 0;
+    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> getKeyProvider() const = 0;
 
     // vIndex: 37, symbol: ?getPackManifestFactory@ResourcePackRepository@@UEAAAEAVPackManifestFactory@@XZ
     virtual class PackManifestFactory & getPackManifestFactory() = 0;

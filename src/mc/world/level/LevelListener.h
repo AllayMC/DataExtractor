@@ -91,7 +91,7 @@ public:
     virtual void __unk_vfn_24();
 
     // vIndex: 25, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
-    virtual void levelEvent(::LevelEvent, class Vec3 const &, int);
+    virtual void levelEvent(::LevelEvent, class Vec3 const &, int32_t);
 
     // symbol: ?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUResolvedItemIconInfo@@@Z
     MCVAPI void addBreakingItemParticleEffect(class Vec3 const &, ::ParticleType, struct ResolvedItemIconInfo const &);
@@ -121,19 +121,19 @@ public:
     MCVAPI void onEntityRemoved(class Actor &);
 
     // symbol: ?onSubChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@F_N@Z
-    MCVAPI void onSubChunkLoaded(class ChunkSource &, class LevelChunk &, short, bool);
+    MCVAPI void onSubChunkLoaded(class ChunkSource &, class LevelChunk &, int16_t, bool);
 
     // symbol: ?playMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
     MCVAPI void playMusic(std::string const &, class Vec3 const &, float, float);
 
     // symbol: ?playStreamingMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
-    MCVAPI void playStreamingMusic(std::string const &, int, int, int);
+    MCVAPI void playStreamingMusic(std::string const &, int32_t, int32_t, int32_t);
 
     // symbol: ?playerListChanged@LevelListener@@UEAAXXZ
     MCVAPI void playerListChanged();
 
     // symbol: ?sendServerLegacyParticle@LevelListener@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
-    MCVAPI void sendServerLegacyParticle(::ParticleType, class Vec3 const &, class Vec3 const &, int);
+    MCVAPI void sendServerLegacyParticle(::ParticleType, class Vec3 const &, class Vec3 const &, int32_t);
 
     // symbol: ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
     MCVAPI void takePicture(class cg::ImageBuffer &, class Actor *, class Actor *, struct ScreenshotOptions &);

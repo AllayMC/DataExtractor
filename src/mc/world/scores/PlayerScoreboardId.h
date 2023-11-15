@@ -14,7 +14,7 @@ public:
     MCAPI PlayerScoreboardId();
 
     // symbol: ??0PlayerScoreboardId@@QEAA@_J@Z
-    MCAPI PlayerScoreboardId(int64);
+    MCAPI PlayerScoreboardId(int64_t);
 
     // symbol: ?INVALID@PlayerScoreboardId@@2U1@B
     MCAPI static struct PlayerScoreboardId const INVALID;

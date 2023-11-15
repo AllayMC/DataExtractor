@@ -98,7 +98,7 @@ public:
     virtual bool checkSpawnRules(bool);
 
     // vIndex: 191, symbol: ?getArmorValue@Zombie@@MEBAHXZ
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
 
     // symbol: ??1Zombie@@UEAA@XZ
     MCVAPI ~Zombie();

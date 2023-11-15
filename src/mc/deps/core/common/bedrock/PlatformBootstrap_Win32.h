@@ -29,19 +29,19 @@ public:
     virtual std::string_view getSaveDataRoot();
 
     // vIndex: 4, symbol: ?rawLoadAssetFile@PlatformBootstrap_Win32@Bedrock@@UEAA?AULoadResult@PlatformBootstrap@2@PEAD_KPEBD01@Z
-    virtual struct Bedrock::PlatformBootstrap::LoadResult rawLoadAssetFile(char *, uint64, char const *, char *, uint64);
+    virtual struct Bedrock::PlatformBootstrap::LoadResult rawLoadAssetFile(char *, uint64_t, char const *, char *, uint64_t);
 
     // vIndex: 5, symbol: ?rawLoadDataFile@PlatformBootstrap_Win32@Bedrock@@UEAA?AULoadResult@PlatformBootstrap@2@PEAD_KPEBD01@Z
-    virtual struct Bedrock::PlatformBootstrap::LoadResult rawLoadDataFile(char *, uint64, char const *, char *, uint64);
+    virtual struct Bedrock::PlatformBootstrap::LoadResult rawLoadDataFile(char *, uint64_t, char const *, char *, uint64_t);
 
     // vIndex: 6, symbol: ?rawSaveDataFile@PlatformBootstrap_Win32@Bedrock@@UEAA?AUSaveResult@PlatformBootstrap@2@PEBD_K0_NPEAD1@Z
-    virtual struct Bedrock::PlatformBootstrap::SaveResult rawSaveDataFile(char const *, uint64, char const *, bool, char *, uint64);
+    virtual struct Bedrock::PlatformBootstrap::SaveResult rawSaveDataFile(char const *, uint64_t, char const *, bool, char *, uint64_t);
 
     // vIndex: 7, symbol: ?rawLoadFromCustomRoot@PlatformBootstrap_Win32@Bedrock@@UEAA?AULoadResult@PlatformBootstrap@2@PEAD_KPEBD01@Z
-    virtual struct Bedrock::PlatformBootstrap::LoadResult rawLoadFromCustomRoot(char *, uint64, char const *, char *, uint64);
+    virtual struct Bedrock::PlatformBootstrap::LoadResult rawLoadFromCustomRoot(char *, uint64_t, char const *, char *, uint64_t);
 
     // vIndex: 8, symbol: ?rawCreateDirectory@PlatformBootstrap_Win32@Bedrock@@UEAA?AUCreateDirectoryResult@PlatformBootstrap@2@PEBDPEAD_K@Z
-    virtual struct Bedrock::PlatformBootstrap::CreateDirectoryResult rawCreateDirectory(char const *, char *, uint64);
+    virtual struct Bedrock::PlatformBootstrap::CreateDirectoryResult rawCreateDirectory(char const *, char *, uint64_t);
 
     // NOLINTEND
 

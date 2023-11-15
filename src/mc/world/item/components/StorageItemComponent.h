@@ -23,7 +23,7 @@ public:
     virtual void __unk_vfn_0();
 
     // symbol: ?calculateAddableCount@StorageItemComponent@@QEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
-    MCAPI uint calculateAddableCount(class ItemStack const &, class ItemStackBase const &) const;
+    MCAPI uint32_t calculateAddableCount(class ItemStack const &, class ItemStackBase const &) const;
 
     // symbol: ?tryAddItemStack@StorageItemComponent@@QEBA_NAEAVItemStack@@0@Z
     MCAPI bool tryAddItemStack(class ItemStack &, class ItemStack &) const;
@@ -41,26 +41,26 @@ public:
     MCAPI static class HashedString const & getIdentifier();
 
     // symbol: ?DEFAULT_MAX_CARRY_WEIGHT@StorageItemComponent@@2IB
-    MCAPI static uint const DEFAULT_MAX_CARRY_WEIGHT;
+    MCAPI static uint32_t const DEFAULT_MAX_CARRY_WEIGHT;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_calculateAddableCountForBasicStorage@StorageItemComponent@@AEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
-    MCAPI uint _calculateAddableCountForBasicStorage(class ItemStack const &, class ItemStackBase const &) const;
+    MCAPI uint32_t _calculateAddableCountForBasicStorage(class ItemStack const &, class ItemStackBase const &) const;
 
     // symbol: ?_getItemListSize@StorageItemComponent@@AEBAIAEAVItemStack@@@Z
-    MCAPI uint _getItemListSize(class ItemStack &) const;
+    MCAPI uint32_t _getItemListSize(class ItemStack &) const;
 
     // symbol: ?_getPerItemCost@StorageItemComponent@@AEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
-    MCAPI uint _getPerItemCost(class ItemStack const &, class ItemStackBase const &) const;
+    MCAPI uint32_t _getPerItemCost(class ItemStack const &, class ItemStackBase const &) const;
 
     // symbol: ?_storeItemInNewOrExistingSlot@StorageItemComponent@@AEBAXAEAVItemStack@@0I@Z
-    MCAPI void _storeItemInNewOrExistingSlot(class ItemStack &, class ItemStack &, uint) const;
+    MCAPI void _storeItemInNewOrExistingSlot(class ItemStack &, class ItemStack &, uint32_t) const;
 
     // symbol: ?_updateRemainingWeight@StorageItemComponent@@AEBAXAEAVItemStack@@AEBV2@H@Z
-    MCAPI void _updateRemainingWeight(class ItemStack &, class ItemStack const &, int) const;
+    MCAPI void _updateRemainingWeight(class ItemStack &, class ItemStack const &, int32_t) const;
 
     // NOLINTEND
 

@@ -19,7 +19,7 @@ public:
     MCAPI ItemStackRequestActionCraftHandler(class ItemStackRequestActionHandler &, class Player &);
 
     // symbol: ?_initCraftResults@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@E@Z
-    MCAPI ::ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const &, uchar);
+    MCAPI ::ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const &, uint8_t);
 
     // symbol: ?_initSingleCraftResult@ItemStackRequestActionCraftHandler@@QEAAPEAVItemInstance@@AEBV2@@Z
     MCAPI class ItemInstance * _initSingleCraftResult(class ItemInstance const &);
@@ -62,7 +62,7 @@ public:
     MCAPI std::unique_ptr<struct ContainerValidationCraftInputs> _createCraftInputs(class ItemStackRequestActionCraftBase const &);
 
     // symbol: ?_setCreatedItemOutputSlot@ItemStackRequestActionCraftHandler@@AEAA?AW4ItemStackNetResult@@E@Z
-    MCAPI ::ItemStackNetResult _setCreatedItemOutputSlot(uchar);
+    MCAPI ::ItemStackNetResult _setCreatedItemOutputSlot(uint8_t);
 
     // NOLINTEND
 

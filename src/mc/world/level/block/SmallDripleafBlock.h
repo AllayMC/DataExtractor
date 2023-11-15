@@ -136,7 +136,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@SmallDripleafBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -190,7 +190,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@SmallDripleafBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ?canBeSilkTouched@SmallDripleafBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -199,10 +199,10 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SmallDripleafBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SmallDripleafBlock(std::string const &, int);
+    MCAPI SmallDripleafBlock(std::string const &, int32_t);
 
     // symbol: ?tryPlaceSmallDripleaf@SmallDripleafBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@HH@Z
-    MCAPI static bool tryPlaceSmallDripleaf(class BlockSource &, class BlockPos const &, int, int);
+    MCAPI static bool tryPlaceSmallDripleaf(class BlockSource &, class BlockPos const &, int32_t, int32_t);
 
     // NOLINTEND
 
@@ -212,7 +212,7 @@ public:
     MCAPI bool _isViablePlacePos(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ?placeUpperBlock@SmallDripleafBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI static void placeUpperBlock(class BlockSource &, class BlockPos const &, int);
+    MCAPI static void placeUpperBlock(class BlockSource &, class BlockPos const &, int32_t);
 
     // NOLINTEND
 

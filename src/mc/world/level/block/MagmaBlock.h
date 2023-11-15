@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@MagmaBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 147, symbol: ?animateTickBedrockLegacy@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource &, class BlockPos const &, class Random &) const;
@@ -166,7 +166,7 @@ public:
     MCVAPI bool shouldTickOnSetBlock() const;
 
     // symbol: ??0MagmaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MagmaBlock(std::string const &, int);
+    MCAPI MagmaBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

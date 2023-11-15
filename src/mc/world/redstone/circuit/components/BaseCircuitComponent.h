@@ -18,16 +18,16 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getStrength@BaseCircuitComponent@@UEBAHXZ
-    virtual int getStrength() const;
+    virtual int32_t getStrength() const;
 
     // vIndex: 2, symbol: ?getDirection@BaseCircuitComponent@@UEBAHXZ
-    virtual int getDirection() const;
+    virtual int32_t getDirection() const;
 
     // vIndex: 3, symbol: ?setStrength@BaseCircuitComponent@@UEAAXH@Z
-    virtual void setStrength(int);
+    virtual void setStrength(int32_t);
 
     // vIndex: 4, symbol: ?setDirection@BaseCircuitComponent@@UEAAXE@Z
-    virtual void setDirection(uchar);
+    virtual void setDirection(uint8_t);
 
     // vIndex: 5, symbol: ?setConsumePowerAnyDirection@BaseCircuitComponent@@UEAAX_N@Z
     virtual void setConsumePowerAnyDirection(bool);
@@ -48,7 +48,7 @@ public:
     virtual void removeSource(class BlockPos const &, class BaseCircuitComponent const *);
 
     // vIndex: 11, symbol: ?addSource@BaseCircuitComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-    virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
+    virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int32_t &, bool &);
 
     // vIndex: 12, symbol: ?allowConnection@BaseCircuitComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
@@ -112,7 +112,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?trackPowerSource@BaseCircuitComponent@@IEAA_NAEBVCircuitTrackingInfo@@H_NH1@Z
-    MCAPI bool trackPowerSource(class CircuitTrackingInfo const &, int, bool, int, bool);
+    MCAPI bool trackPowerSource(class CircuitTrackingInfo const &, int32_t, bool, int32_t, bool);
 
     // NOLINTEND
 

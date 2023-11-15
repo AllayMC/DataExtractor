@@ -41,7 +41,7 @@ public:
     virtual void removeFromAnySourceList(class BaseCircuitComponent const *);
 
     // vIndex: 25, symbol: ?getPoweroutDirection@SidePoweredComponent@@UEBAEXZ
-    virtual uchar getPoweroutDirection() const;
+    virtual uint8_t getPoweroutDirection() const;
 
     // symbol: ??1SidePoweredComponent@@UEAA@XZ
     MCVAPI ~SidePoweredComponent();

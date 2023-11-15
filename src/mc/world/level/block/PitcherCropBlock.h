@@ -121,7 +121,7 @@ public:
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 92, symbol: ?mayPlace@PitcherCropBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 93, symbol: ?mayPlace@PitcherCropBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
@@ -193,13 +193,13 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@PitcherCropBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ?canBeSilkTouched@PitcherCropBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0PitcherCropBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PitcherCropBlock(std::string const &, int);
+    MCAPI PitcherCropBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

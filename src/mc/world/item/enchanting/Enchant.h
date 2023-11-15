@@ -26,28 +26,28 @@ public:
     virtual bool isCompatibleWith(::Enchant::Type) const;
 
     // vIndex: 2, symbol: ?getMinCost@Enchant@@UEBAHH@Z
-    virtual int getMinCost(int) const;
+    virtual int32_t getMinCost(int32_t) const;
 
     // vIndex: 3, symbol: ?getMaxCost@Enchant@@UEBAHH@Z
-    virtual int getMaxCost(int) const;
+    virtual int32_t getMaxCost(int32_t) const;
 
     // vIndex: 4, symbol: ?getMinLevel@Enchant@@UEBAHXZ
-    virtual int getMinLevel() const;
+    virtual int32_t getMinLevel() const;
 
     // vIndex: 5, symbol: ?getMaxLevel@Enchant@@UEBAHXZ
-    virtual int getMaxLevel() const;
+    virtual int32_t getMaxLevel() const;
 
     // vIndex: 6, symbol: ?getDamageProtection@Enchant@@UEBAHHAEBVActorDamageSource@@@Z
-    virtual int getDamageProtection(int, class ActorDamageSource const &) const;
+    virtual int32_t getDamageProtection(int32_t, class ActorDamageSource const &) const;
 
     // vIndex: 7, symbol: ?getDamageBonus@Enchant@@UEBAMHAEBVActor@@@Z
-    virtual float getDamageBonus(int, class Actor const &) const;
+    virtual float getDamageBonus(int32_t, class Actor const &) const;
 
     // vIndex: 8, symbol: ?doPostAttack@Enchant@@UEBAXAEAVActor@@0H@Z
-    virtual void doPostAttack(class Actor &, class Actor &, int) const;
+    virtual void doPostAttack(class Actor &, class Actor &, int32_t) const;
 
     // vIndex: 9, symbol: ?doPostHurt@Enchant@@UEBAXAEAVItemInstance@@AEAVActor@@1H@Z
-    virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
+    virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int32_t) const;
 
     // vIndex: 10, symbol: __unk_vfn_10
     virtual void __unk_vfn_10();
@@ -80,7 +80,7 @@ public:
     MCVAPI ~Enchant();
 
     // symbol: ??0Enchant@@QEAA@W4Type@0@W4Frequency@0@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH_N@Z
-    MCAPI Enchant(::Enchant::Type, ::Enchant::Frequency, std::string_view, std::string_view, int, int, bool);
+    MCAPI Enchant(::Enchant::Type, ::Enchant::Frequency, std::string_view, std::string_view, int32_t, int32_t, bool);
 
     // symbol: ?getDescriptionId@Enchant@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getDescriptionId() const;
@@ -122,7 +122,7 @@ public:
     MCAPI static std::unordered_map<class HashedString,::Enchant::Type> mEnchantNameToType;
 
     // symbol: ?mEnchantSlotTypeEnumToStringMap@Enchant@@2V?$unordered_map@W4Slot@Enchant@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UEnchantSlotEnumHasher@@U?$equal_to@W4Slot@Enchant@@@4@V?$allocator@U?$pair@$$CBW4Slot@Enchant@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@4@@std@@A
-    MCAPI static std::unordered_map<::Enchant::Slot, std::string, struct EnchantSlotEnumHasher> mEnchantSlotTypeEnumToStringMap;
+    MCAPI static std::unordered_map<::Enchant::Slot, std::string, struct EnchantSlotEnumHasher, std::equal_to<::Enchant::Slot>, std::allocator<std::pair<::Enchant::Slot const, std::string>>> mEnchantSlotTypeEnumToStringMap;
 
     // symbol: ?mEnchantSlotTypeNameToEnumMap@Enchant@@2V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Slot@Enchant@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Slot@Enchant@@@std@@@2@@std@@A
     MCAPI static std::unordered_map<std::string,::Enchant::Slot> mEnchantSlotTypeNameToEnumMap;

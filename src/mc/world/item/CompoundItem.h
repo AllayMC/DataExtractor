@@ -53,7 +53,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 67, symbol: ?isValidAuxValue@CompoundItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 70, symbol: __unk_vfn_70
     virtual void __unk_vfn_70();
@@ -83,13 +83,13 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 119, symbol: ?setIconInfo@CompoundItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item & setIconInfo(std::string const &, int);
+    virtual class Item & setIconInfo(std::string const &, int32_t);
 
     // vIndex: 120, symbol: ?getIconInfo@CompoundItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int32_t, bool) const;
 
     // symbol: ??0CompoundItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVExperiments@@@Z
-    MCAPI CompoundItem(std::string const &, int, class Experiments const &);
+    MCAPI CompoundItem(std::string const &, int32_t, class Experiments const &);
 
     // symbol: ?getCompoundType@CompoundItem@@SA?AW4CompoundType@@AEBVItemDescriptor@@@Z
     MCAPI static ::CompoundType getCompoundType(class ItemDescriptor const &);
@@ -98,7 +98,7 @@ public:
     MCAPI static class RecipeIngredient getIngredientForCompound(::CompoundType);
 
     // symbol: ?getItemForCompound@CompoundItem@@SA?AVItemInstance@@W4CompoundType@@H@Z
-    MCAPI static class ItemInstance getItemForCompound(::CompoundType, int);
+    MCAPI static class ItemInstance getItemForCompound(::CompoundType, int32_t);
 
     // symbol: ?isCompoundItem@CompoundItem@@SA_NAEBVItemStackBase@@@Z
     MCAPI static bool isCompoundItem(class ItemStackBase const &);
@@ -121,10 +121,10 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?mIdToSpecialCompound@CompoundItem@@0V?$unordered_map@HHU?$hash@H@std@@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHH@std@@@2@@std@@A
-    MCAPI static std::unordered_map<int,int> mIdToSpecialCompound;
+    MCAPI static std::unordered_map<int32_t,int32_t> mIdToSpecialCompound;
 
     // symbol: ?mTypeToSpecialCompound@CompoundItem@@0V?$unordered_map@HVItemInstance@@U?$hash@H@std@@U?$equal_to@H@3@V?$allocator@U?$pair@$$CBHVItemInstance@@@std@@@3@@std@@A
-    MCAPI static std::unordered_map<int,class ItemInstance> mTypeToSpecialCompound;
+    MCAPI static std::unordered_map<int32_t,class ItemInstance> mTypeToSpecialCompound;
 
     // NOLINTEND
 

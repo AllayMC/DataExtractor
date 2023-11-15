@@ -109,19 +109,19 @@ public:
     virtual void __unk_vfn_172();
 
     // vIndex: 173, symbol: ?setDir@HangingActor@@UEAAXH@Z
-    virtual void setDir(int);
+    virtual void setDir(int32_t);
 
     // vIndex: 174, symbol: ?getWidth@LeashFenceKnotActor@@UEBAHXZ
-    virtual int getWidth() const = 0;
+    virtual int32_t getWidth() const = 0;
 
     // vIndex: 175, symbol: ?getHeight@LeashFenceKnotActor@@UEBAHXZ
-    virtual int getHeight() const = 0;
+    virtual int32_t getHeight() const = 0;
 
     // vIndex: 176, symbol: ?dropItem@LeashFenceKnotActor@@UEAAXXZ
     virtual void dropItem() = 0;
 
     // vIndex: 177, symbol: ?placeHangingEntity@HangingActor@@UEAA_NAEAVBlockSource@@H@Z
-    virtual bool placeHangingEntity(class BlockSource &, int);
+    virtual bool placeHangingEntity(class BlockSource &, int32_t);
 
     // vIndex: 178, symbol: ?wouldSurvive@HangingActor@@UEAA_NAEAVBlockSource@@@Z
     virtual bool wouldSurvive(class BlockSource &);
@@ -133,7 +133,7 @@ public:
     MCAPI HangingActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
     // symbol: ?getDirection@HangingActor@@QEBAHXZ
-    MCAPI int getDirection() const;
+    MCAPI int32_t getDirection() const;
 
     // NOLINTEND
 

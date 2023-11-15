@@ -29,7 +29,7 @@ public:
     MCVAPI ~ScriptOnFireComponent();
 
     // symbol: ?getOnFireTicksRemaining@ScriptOnFireComponent@ScriptModuleMinecraft@@QEBAHXZ
-    MCAPI int getOnFireTicksRemaining() const;
+    MCAPI int32_t getOnFireTicksRemaining() const;
 
     // symbol: ?bind@ScriptOnFireComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptOnFireComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptOnFireComponent> bind();

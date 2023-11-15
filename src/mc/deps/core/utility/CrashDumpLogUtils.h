@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getTagFromOptions@CrashDumpLogUtils@@SA?AW4CrashDumpLogStringID@@_KV?$span@$$CBW4CrashDumpLogStringID@@$0?0@gsl@@@Z
-    MCAPI static ::CrashDumpLogStringID getTagFromOptions(uint64, gsl::span<::CrashDumpLogStringID const>);
+    MCAPI static ::CrashDumpLogStringID getTagFromOptions(uint64_t, class gsl::span<::CrashDumpLogStringID const>);
 
     // NOLINTEND
 

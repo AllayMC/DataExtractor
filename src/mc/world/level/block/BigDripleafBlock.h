@@ -116,7 +116,7 @@ public:
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
 
     // vIndex: 74, symbol: ?onRedstoneUpdate@BigDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int32_t, bool) const;
 
     // vIndex: 76, symbol: __unk_vfn_76
     virtual void __unk_vfn_76();
@@ -203,13 +203,13 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0BigDripleafBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BigDripleafBlock(std::string const &, int);
+    MCAPI BigDripleafBlock(std::string const &, int32_t);
 
     // symbol: ?placeWithRandomHeight@BigDripleafBlock@@SAXAEAVBlockSource@@AEAVRandom@@VBlockPos@@H@Z
-    MCAPI static void placeWithRandomHeight(class BlockSource &, class Random &, class BlockPos, int);
+    MCAPI static void placeWithRandomHeight(class BlockSource &, class Random &, class BlockPos, int32_t);
 
     // symbol: ?MAX_DRIPLEAF_GROWTH_HEIGHT@BigDripleafBlock@@2HB
-    MCAPI static int const MAX_DRIPLEAF_GROWTH_HEIGHT;
+    MCAPI static int32_t const MAX_DRIPLEAF_GROWTH_HEIGHT;
 
     // NOLINTEND
 

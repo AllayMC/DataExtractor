@@ -133,7 +133,7 @@ public:
     virtual std::string buildDescriptionId(class Block const &) const;
 
     // vIndex: 142, symbol: ?getVariant@BorderBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 147, symbol: ?animateTickBedrockLegacy@BorderBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource &, class BlockPos const &, class Random &) const;
@@ -169,10 +169,10 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@BorderBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ??0BorderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BorderBlock(std::string const &, int);
+    MCAPI BorderBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

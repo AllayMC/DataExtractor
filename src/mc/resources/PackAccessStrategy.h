@@ -24,7 +24,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getPackSize@ZipPackAccessStrategy@@UEBA_KXZ
-    virtual uint64 getPackSize() const = 0;
+    virtual uint64_t getPackSize() const = 0;
 
     // vIndex: 2, symbol: ?getPackLocation@ZipPackAccessStrategy@@UEBAAEBVResourceLocation@@XZ
     virtual class ResourceLocation const & getPackLocation() const = 0;

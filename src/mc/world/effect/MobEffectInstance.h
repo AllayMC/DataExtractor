@@ -18,22 +18,22 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0MobEffectInstance@@QEAA@IH@Z
-    MCAPI MobEffectInstance(uint, int);
+    MCAPI MobEffectInstance(uint32_t, int32_t);
 
     // symbol: ??0MobEffectInstance@@QEAA@AEBV0@@Z
     MCAPI MobEffectInstance(class MobEffectInstance const &);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHH@Z
-    MCAPI MobEffectInstance(uint, int, int);
+    MCAPI MobEffectInstance(uint32_t, int32_t, int32_t);
 
     // symbol: ??0MobEffectInstance@@QEAA@I@Z
-    MCAPI MobEffectInstance(uint);
+    MCAPI MobEffectInstance(uint32_t);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHHHHH_N00@Z
-    MCAPI MobEffectInstance(uint, int, int, int, int, int, bool, bool, bool);
+    MCAPI MobEffectInstance(uint32_t, int32_t, int32_t, int32_t, int32_t, int32_t, bool, bool, bool);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHH_N00@Z
-    MCAPI MobEffectInstance(uint, int, int, bool, bool, bool);
+    MCAPI MobEffectInstance(uint32_t, int32_t, int32_t, bool, bool, bool);
 
     // symbol: ??0MobEffectInstance@@QEAA@$$QEAV0@@Z
     MCAPI MobEffectInstance(class MobEffectInstance &&);
@@ -45,7 +45,7 @@ public:
     MCAPI bool displaysOnScreenTextureAnimation() const;
 
     // symbol: ?getAmplifier@MobEffectInstance@@QEBAHXZ
-    MCAPI int getAmplifier() const;
+    MCAPI int32_t getAmplifier() const;
 
     // symbol: ?getComponentName@MobEffectInstance@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const & getComponentName() const;
@@ -54,22 +54,22 @@ public:
     MCAPI std::string getDescriptionId() const;
 
     // symbol: ?getDifficulityDuration@MobEffectInstance@@QEBAHW4Difficulty@@@Z
-    MCAPI int getDifficulityDuration(::Difficulty) const;
+    MCAPI int32_t getDifficulityDuration(::Difficulty) const;
 
     // symbol: ?getDisplayName@MobEffectInstance@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getDisplayName() const;
 
     // symbol: ?getDuration@MobEffectInstance@@QEBAHXZ
-    MCAPI int getDuration() const;
+    MCAPI int32_t getDuration() const;
 
     // symbol: ?getId@MobEffectInstance@@QEBAIXZ
-    MCAPI uint getId() const;
+    MCAPI uint32_t getId() const;
 
     // symbol: ?getLingerDuration@MobEffectInstance@@QEBAHXZ
-    MCAPI int getLingerDuration() const;
+    MCAPI int32_t getLingerDuration() const;
 
     // symbol: ?getSplashDuration@MobEffectInstance@@QEBAHXZ
-    MCAPI int getSplashDuration() const;
+    MCAPI int32_t getSplashDuration() const;
 
     // symbol: ?getSplashEffect@MobEffectInstance@@QEBA?AV1@XZ
     MCAPI class MobEffectInstance getSplashEffect() const;
@@ -99,10 +99,10 @@ public:
     MCAPI std::unique_ptr<class CompoundTag> save() const;
 
     // symbol: ?setDifficulityDuration@MobEffectInstance@@QEAAXW4Difficulty@@H@Z
-    MCAPI void setDifficulityDuration(::Difficulty, int);
+    MCAPI void setDifficulityDuration(::Difficulty, int32_t);
 
     // symbol: ?setDuration@MobEffectInstance@@QEAAXH@Z
-    MCAPI void setDuration(int);
+    MCAPI void setDuration(int32_t);
 
     // symbol: ?tick@MobEffectInstance@@QEAA_NPEAVActor@@@Z
     MCAPI bool tick(class Actor *);
@@ -129,7 +129,7 @@ public:
     MCAPI static class MobEffectInstance load(class CompoundTag const &);
 
     // symbol: ?MAX_AMPLIFIER_COUNT@MobEffectInstance@@2HB
-    MCAPI static int const MAX_AMPLIFIER_COUNT;
+    MCAPI static int32_t const MAX_AMPLIFIER_COUNT;
 
     // symbol: ?NO_EFFECT@MobEffectInstance@@2V1@B
     MCAPI static class MobEffectInstance const NO_EFFECT;

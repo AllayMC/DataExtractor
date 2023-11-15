@@ -35,10 +35,10 @@ public:
     virtual void handleVersionBasedInitialization(class SemVersion const &);
 
     // vIndex: 7, symbol: ?_canUseOn@EntityPlacerItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
-    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, uchar) const;
+    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 8, symbol: ?_useOn@EntityPlacerItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, uchar, class Vec3 const &) const;
+    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, uint8_t, class Vec3 const &) const;
 
     // vIndex: 9, symbol: ?_initializeComponent@EntityPlacerItemComponent@@UEBAXXZ
     virtual void _initializeComponent() const;
@@ -53,7 +53,7 @@ public:
     MCAPI EntityPlacerItemComponent();
 
     // symbol: ?dispense@EntityPlacerItemComponent@@QEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    MCAPI bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // symbol: ??4EntityPlacerItemComponent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class EntityPlacerItemComponent & operator=(class EntityPlacerItemComponent const &);

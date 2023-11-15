@@ -23,7 +23,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?handleConsumedItem@CraftHandlerTrade@@EEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
-    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uchar, class ItemStack const &);
+    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uint8_t, class ItemStack const &);
 
     // vIndex: 4, symbol: ?_handleCraftAction@CraftHandlerTrade@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
@@ -36,13 +36,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getMerchantRecipeFromNetId@CraftHandlerTrade@@AEAA?AV?$tuple@W4ItemStackNetResult@@PEBVMerchantRecipe@@@std@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI std::tuple<::ItemStackNetResult, class MerchantRecipe const *> _getMerchantRecipeFromNetId(RecipeNetId const &);
+    MCAPI std::tuple<::ItemStackNetResult, class MerchantRecipe const *> _getMerchantRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0> const &);
 
     // symbol: ?_handleTrade1@CraftHandlerTrade@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionCraft@V?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@$0M@@@@Z
-    MCAPI ::ItemStackNetResult _handleTrade1(class ItemStackRequestActionCraft<RecipeNetId, 12> const &);
+    MCAPI ::ItemStackNetResult _handleTrade1(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0>, 12> const &);
 
     // symbol: ?_initResultItem@CraftHandlerTrade@@AEAA?AW4ItemStackNetResult@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI ::ItemStackNetResult _initResultItem(RecipeNetId const &);
+    MCAPI ::ItemStackNetResult _initResultItem(class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0> const &);
 
     // symbol: ?_initTrade2Consumes@CraftHandlerTrade@@AEAA?AW4ItemStackNetResult@@XZ
     MCAPI ::ItemStackNetResult _initTrade2Consumes();

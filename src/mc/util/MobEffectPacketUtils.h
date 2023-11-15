@@ -5,7 +5,7 @@
 namespace MobEffectPacketUtils {
     // NOLINTBEGIN
     // symbol: ?shouldAlwaysSendToClient@MobEffectPacketUtils@@YA_NI@Z
-    MCAPI bool shouldAlwaysSendToClient(uint);
+    MCAPI bool shouldAlwaysSendToClient(uint32_t);
     // NOLINTEND
 
 };

@@ -28,7 +28,7 @@ public:
     MCAPI bool _isLushGroundReplaceable(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ?_tryPlaceAzaleaTree@AzaleaTreeAndRootsFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@I@Z
-    MCAPI bool _tryPlaceAzaleaTree(class BlockSource &, class BlockPos const &, class Random &, uint) const;
+    MCAPI bool _tryPlaceAzaleaTree(class BlockSource &, class BlockPos const &, class Random &, uint32_t) const;
 
     // NOLINTEND
 

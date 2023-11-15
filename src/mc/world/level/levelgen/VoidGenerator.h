@@ -30,7 +30,7 @@ public:
     MCVAPI class BlockPos findSpawnPosition() const;
 
     // symbol: ?getBiomeArea@VoidGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, uint) const;
+    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, uint32_t) const;
 
     // symbol: ?getBiomeSource@VoidGenerator@@UEBAAEBVBiomeSource@@XZ
     MCVAPI class BiomeSource const & getBiomeSource() const;
@@ -45,7 +45,7 @@ public:
     MCVAPI bool postProcess(class ChunkViewSource &);
 
     // symbol: ?prepareAndComputeHeights@VoidGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
-    MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
+    MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<int16_t> &, bool, int32_t);
 
     // symbol: ?prepareHeights@VoidGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
     MCVAPI void prepareHeights(class BlockVolume &, class ChunkPos const &, bool);

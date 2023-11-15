@@ -75,7 +75,7 @@ public:
     virtual void __unk_vfn_109();
 
     // vIndex: 126, symbol: ?canBeAffected@Spider@@UEBA_NI@Z
-    virtual bool canBeAffected(uint) const;
+    virtual bool canBeAffected(uint32_t) const;
 
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();

@@ -76,10 +76,10 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 135, symbol: ?_useOn@ArmorStandItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // symbol: ??0ArmorStandItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI ArmorStandItem(std::string const &, short);
+    MCAPI ArmorStandItem(std::string const &, int16_t);
 
     // symbol: ?_shouldRemove@ArmorStandItem@@QEBA_NAEAVBlockSource@@VBlockPos@@@Z
     MCAPI bool _shouldRemove(class BlockSource &, class BlockPos) const;

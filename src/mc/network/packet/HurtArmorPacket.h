@@ -29,13 +29,13 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@HurtArmorPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1HurtArmorPacket@@UEAA@XZ
     MCVAPI ~HurtArmorPacket();
 
     // symbol: ??0HurtArmorPacket@@QEAA@W4ActorDamageCause@@HV?$bitset@$03@std@@@Z
-    MCAPI HurtArmorPacket(::ActorDamageCause, int, std::bitset<4>);
+    MCAPI HurtArmorPacket(::ActorDamageCause, int32_t, std::bitset<4>);
 
     // symbol: ??0HurtArmorPacket@@QEAA@XZ
     MCAPI HurtArmorPacket();

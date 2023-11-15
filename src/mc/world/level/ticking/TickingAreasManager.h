@@ -23,7 +23,7 @@ public:
     MCAPI TickingAreasManager();
 
     // symbol: ?addArea@TickingAreasManager@@QEAA?AW4AddTickingAreaStatus@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@HW4AreaLimitCheck@1@_NW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
-    MCAPI ::AddTickingAreaStatus addArea(DimensionType, std::string const &, class BlockPos const &, int, ::TickingAreasManager::AreaLimitCheck, bool, ::TickingAreaLoadMode, class LevelStorage &);
+    MCAPI ::AddTickingAreaStatus addArea(DimensionType, std::string const &, class BlockPos const &, int32_t, ::TickingAreasManager::AreaLimitCheck, bool, ::TickingAreaLoadMode, class LevelStorage &);
 
     // symbol: ?addArea@TickingAreasManager@@QEAA?AW4AddTickingAreaStatus@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@2W4AreaLimitCheck@1@_NW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
     MCAPI ::AddTickingAreaStatus addArea(DimensionType, std::string const &, class BlockPos const &, class BlockPos const &, ::TickingAreasManager::AreaLimitCheck, bool, ::TickingAreaLoadMode, class LevelStorage &);
@@ -38,10 +38,10 @@ public:
     MCAPI void addTickingAreaListForDimension(DimensionType, std::shared_ptr<class TickingAreaList> const &);
 
     // symbol: ?countActiveStandaloneTickingAreas@TickingAreasManager@@QEBAIXZ
-    MCAPI uint countActiveStandaloneTickingAreas() const;
+    MCAPI uint32_t countActiveStandaloneTickingAreas() const;
 
     // symbol: ?countStandaloneTickingAreas@TickingAreasManager@@QEBAIXZ
-    MCAPI uint countStandaloneTickingAreas() const;
+    MCAPI uint32_t countStandaloneTickingAreas() const;
 
     // symbol: ?getPendingStandaloneAreaDescriptions@TickingAreasManager@@QEBA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI std::vector<struct TickingAreaDescription> getPendingStandaloneAreaDescriptions(DimensionType) const;

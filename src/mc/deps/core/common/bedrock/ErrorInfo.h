@@ -4,16 +4,16 @@
 
 namespace Bedrock {
 
-    template <typename E>
-    struct ErrorInfo {
-    public:
-        ErrorInfo() = default;
+template <typename E = std::error_code>
+struct ErrorInfo {
+public:
+    ErrorInfo() = default;
 
-        E& getError() { return error; }
+    E& getError() { return error; }
 
-    private:
-        E     error;
-        uchar filler[0x30]{};
-    };
+private:
+    E     error;
+    uchar filler[0x30]{};
+};
 
 }; // namespace Bedrock

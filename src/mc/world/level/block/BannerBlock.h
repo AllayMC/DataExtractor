@@ -139,7 +139,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@BannerBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -175,10 +175,10 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 192, symbol: ?getEntityResourceItem@BannerBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int32_t) const;
 
     // symbol: ??0BannerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI BannerBlock(std::string const &, int, bool);
+    MCAPI BannerBlock(std::string const &, int32_t, bool);
 
     // symbol: ?EAST_AABB@BannerBlock@@2VAABB@@A
     MCAPI static class AABB EAST_AABB;
@@ -200,7 +200,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_itemInstanceFromBlockEntity@BannerBlock@@AEBA?AVItemInstance@@V?$not_null@PEBVBannerBlockActor@@@gsl@@@Z
-    MCAPI class ItemInstance _itemInstanceFromBlockEntity(gsl::not_null<class BannerBlockActor const *>) const;
+    MCAPI class ItemInstance _itemInstanceFromBlockEntity(class gsl::not_null<class BannerBlockActor const *>) const;
 
     // NOLINTEND
 

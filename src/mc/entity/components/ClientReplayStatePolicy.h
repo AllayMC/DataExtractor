@@ -22,16 +22,16 @@ public:
     virtual bool isReplayNeeded(::AdvanceFrameResult) const;
 
     // vIndex: 2, symbol: ?canRewindToFrame@ClientReplayStatePolicy@@UEAA_NAEAVEntityContext@@_K1@Z
-    virtual bool canRewindToFrame(class EntityContext &, uint64, uint64);
+    virtual bool canRewindToFrame(class EntityContext &, uint64_t, uint64_t);
 
     // vIndex: 3, symbol: ?shouldCorrectMovement@ClientReplayStatePolicy@@UEAA?AUMovementCorrection@@AEAVEntityContext@@AEBVIConstBlockSource@@AEBVPlayerAuthInputPacket@@_K@Z
-    virtual struct MovementCorrection shouldCorrectMovement(class EntityContext &, class IConstBlockSource const &, class PlayerAuthInputPacket const &, uint64);
+    virtual struct MovementCorrection shouldCorrectMovement(class EntityContext &, class IConstBlockSource const &, class PlayerAuthInputPacket const &, uint64_t);
 
     // vIndex: 4, symbol: ?flagUnsupportedMovement@ClientReplayStatePolicy@@UEAAX_K@Z
-    virtual void flagUnsupportedMovement(uint64);
+    virtual void flagUnsupportedMovement(uint64_t);
 
     // vIndex: 5, symbol: ?storeCurrentFrameSupported@ClientReplayStatePolicy@@UEAAX_KAEAVEntityContext@@AEBVIConstBlockSource@@@Z
-    virtual void storeCurrentFrameSupported(uint64, class EntityContext &, class IConstBlockSource const &);
+    virtual void storeCurrentFrameSupported(uint64_t, class EntityContext &, class IConstBlockSource const &);
 
     // symbol: ?_checkSupportedFrame@ClientReplayStatePolicy@@QEBA_NAEAVEntityContext@@AEBVIConstBlockSource@@@Z
     MCAPI bool _checkSupportedFrame(class EntityContext &, class IConstBlockSource const &) const;

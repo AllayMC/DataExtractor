@@ -74,10 +74,10 @@ public:
         virtual class Bedrock::JSONObject::Node * setValueForKey(std::string_view, class Bedrock::JSONObject::ValueWrapper const &);
     
         // symbol: ?getOwningDataStore@EditorImpl@DataStore@Bedrock@@UEAA?AV?$not_null@PEAVDataStore@Bedrock@@@gsl@@XZ
-        MCVAPI gsl::not_null<class Bedrock::DataStore *> getOwningDataStore();
+        MCVAPI class gsl::not_null<class Bedrock::DataStore *> getOwningDataStore();
     
         // symbol: ?getOwningDataStore@EditorImpl@DataStore@Bedrock@@UEBA?AV?$not_null@PEBVDataStore@Bedrock@@@gsl@@XZ
-        MCVAPI gsl::not_null<class Bedrock::DataStore const *> getOwningDataStore() const;
+        MCVAPI class gsl::not_null<class Bedrock::DataStore const *> getOwningDataStore() const;
     
         // NOLINTEND
     
@@ -149,10 +149,10 @@ public:
         virtual class Bedrock::JSONObject::Node const * getValueForKey(std::string_view) const;
     
         // symbol: ?getOwningDataStore@ViewerImpl@DataStore@Bedrock@@UEAA?AV?$not_null@PEAVDataStore@Bedrock@@@gsl@@XZ
-        MCVAPI gsl::not_null<class Bedrock::DataStore *> getOwningDataStore();
+        MCVAPI class gsl::not_null<class Bedrock::DataStore *> getOwningDataStore();
     
         // symbol: ?getOwningDataStore@ViewerImpl@DataStore@Bedrock@@UEBA?AV?$not_null@PEBVDataStore@Bedrock@@@gsl@@XZ
-        MCVAPI gsl::not_null<class Bedrock::DataStore const *> getOwningDataStore() const;
+        MCVAPI class gsl::not_null<class Bedrock::DataStore const *> getOwningDataStore() const;
     
         // NOLINTEND
     

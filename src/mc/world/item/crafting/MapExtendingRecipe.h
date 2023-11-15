@@ -26,10 +26,10 @@ public:
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, class CraftingContext &) const;
 
     // vIndex: 2, symbol: ?getCraftingSize@MapExtendingRecipe@@UEBAHXZ
-    virtual int getCraftingSize() const;
+    virtual int32_t getCraftingSize() const;
 
     // vIndex: 3, symbol: ?getIngredient@MapExtendingRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-    virtual class RecipeIngredient const & getIngredient(int, int) const;
+    virtual class RecipeIngredient const & getIngredient(int32_t, int32_t) const;
 
     // vIndex: 4, symbol: ?getResultItem@MapExtendingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const & getResultItem() const;
@@ -41,7 +41,7 @@ public:
     virtual bool matches(class CraftingContainer const &, class CraftingContext const &) const;
 
     // vIndex: 7, symbol: ?size@MapExtendingRecipe@@UEBAHXZ
-    virtual int size() const;
+    virtual int32_t size() const;
 
     // symbol: ??0MapExtendingRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
     MCAPI MapExtendingRecipe(std::string_view, class mce::UUID const &);

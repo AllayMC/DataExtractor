@@ -30,10 +30,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_placeLayerOfLeaves@CherryTreeCanopy@@AEBAXAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@HAEBVBlock@@HAEBUTreeParams@TreeHelper@@@Z
-    MCAPI void _placeLayerOfLeaves(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, int, class Block const &, int, struct TreeHelper::TreeParams const &) const;
+    MCAPI void _placeLayerOfLeaves(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, int32_t, class Block const &, int32_t, struct TreeHelper::TreeParams const &) const;
 
     // symbol: ?_placeLayerOfLeavesWithHangingLeavesBelow@CherryTreeCanopy@@AEBAXAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@HAEBVBlock@@HAEBUTreeParams@TreeHelper@@@Z
-    MCAPI void _placeLayerOfLeavesWithHangingLeavesBelow(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, int, class Block const &, int, struct TreeHelper::TreeParams const &) const;
+    MCAPI void _placeLayerOfLeavesWithHangingLeavesBelow(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, int32_t, class Block const &, int32_t, struct TreeHelper::TreeParams const &) const;
 
     // symbol: ?_tryPlaceBlock@CherryTreeCanopy@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@AEBUTreeParams@TreeHelper@@@Z
     MCAPI bool _tryPlaceBlock(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, struct TreeHelper::TreeParams const &) const;

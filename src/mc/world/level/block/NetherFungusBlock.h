@@ -118,7 +118,7 @@ public:
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 92, symbol: ?mayPlace@NetherFungusBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 94, symbol: ?mayPlaceOn@NetherFungusBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
@@ -178,7 +178,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0NetherFungusBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI NetherFungusBlock(std::string const &, int);
+    MCAPI NetherFungusBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

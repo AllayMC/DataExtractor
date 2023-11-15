@@ -55,10 +55,10 @@ public:
     virtual bool requiresInteract() const;
 
     // vIndex: 62, symbol: ?getEnchantSlot@FishingRodItem@@UEBAHXZ
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
 
     // vIndex: 63, symbol: ?getEnchantValue@FishingRodItem@@UEBAHXZ
-    virtual int getEnchantValue() const;
+    virtual int32_t getEnchantValue() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
@@ -88,7 +88,7 @@ public:
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
 
     // vIndex: 93, symbol: ?mineBlock@FishingRodItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    virtual bool mineBlock(class ItemStack &, class Block const &, int32_t, int32_t, int32_t, class Actor *) const;
 
     // vIndex: 115, symbol: __unk_vfn_115
     virtual void __unk_vfn_115();
@@ -97,19 +97,19 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 120, symbol: ?getIconInfo@FishingRodItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int32_t, bool) const;
 
     // vIndex: 121, symbol: ?getInteractText@FishingRodItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
     virtual std::string getInteractText(class Player const &) const;
 
     // vIndex: 122, symbol: ?getAnimationFrameFor@FishingRodItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-    virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    virtual int32_t getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
 
     // symbol: ?shouldSendInteractionGameEvents@FishingRodItem@@UEBA_NXZ
     MCVAPI bool shouldSendInteractionGameEvents() const;
 
     // symbol: ??0FishingRodItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FishingRodItem(std::string const &, int);
+    MCAPI FishingRodItem(std::string const &, int32_t);
 
     // NOLINTEND
 

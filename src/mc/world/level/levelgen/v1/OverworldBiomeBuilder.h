@@ -54,10 +54,10 @@ public:
     MCAPI void _addValleys(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &, class BiomeRegistry const &) const;
 
     // symbol: ?_pickBadlandsBiome@OverworldBiomeBuilder@@AEBAPEAVBiome@@HAEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
-    MCAPI class Biome * _pickBadlandsBiome(int, struct ClimateUtils::Parameter const &, class BiomeRegistry const &) const;
+    MCAPI class Biome * _pickBadlandsBiome(int32_t, struct ClimateUtils::Parameter const &, class BiomeRegistry const &) const;
 
     // symbol: ?_pickShatteredCoastBiome@OverworldBiomeBuilder@@AEBAPEAVBiome@@HHAEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
-    MCAPI class Biome * _pickShatteredCoastBiome(int, int, struct ClimateUtils::Parameter const &, class BiomeRegistry const &) const;
+    MCAPI class Biome * _pickShatteredCoastBiome(int32_t, int32_t, struct ClimateUtils::Parameter const &, class BiomeRegistry const &) const;
 
     // symbol: ?_populateBiomeArrays@OverworldBiomeBuilder@@AEBAXAEBVBiomeRegistry@@@Z
     MCAPI void _populateBiomeArrays(class BiomeRegistry const &) const;

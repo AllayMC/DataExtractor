@@ -36,7 +36,7 @@ public:
         virtual void __unk_vfn_0();
     
         // vIndex: 1, symbol: ?fread@MemoryMappedFileReadAccess@MemoryMappedFileAccess@@UEBA_KPEAX_K10@Z
-        virtual uint64 fread(void *, uint64, uint64, void *) const;
+        virtual uint64_t fread(void *, uint64_t, uint64_t, void *) const;
     
         // symbol: ??1MemoryMappedFileReadAccess@MemoryMappedFileAccess@@UEAA@XZ
         MCVAPI ~MemoryMappedFileReadAccess();
@@ -58,7 +58,7 @@ public:
         virtual void __unk_vfn_0();
     
         // vIndex: 1, symbol: ?fwrite@MemoryMappedFileWriteAccess@MemoryMappedFileAccess@@UEAA_KPEBX_K1PEAX@Z
-        virtual uint64 fwrite(void const *, uint64, uint64, void *);
+        virtual uint64_t fwrite(void const *, uint64_t, uint64_t, void *);
     
         // symbol: ??1MemoryMappedFileWriteAccess@MemoryMappedFileAccess@@UEAA@XZ
         MCVAPI ~MemoryMappedFileWriteAccess();
@@ -98,13 +98,13 @@ public:
     virtual void * fopen(class Core::Path const &, std::string const &);
 
     // vIndex: 2, symbol: ?fclose@MemoryMappedFileAccess@@UEAAHPEAX@Z
-    virtual int fclose(void *);
+    virtual int32_t fclose(void *);
 
     // vIndex: 3, symbol: ?fseek@MemoryMappedFileAccess@@UEAAHPEAX_JH@Z
-    virtual int fseek(void *, int64, int);
+    virtual int32_t fseek(void *, int64_t, int32_t);
 
     // vIndex: 4, symbol: ?ftell@MemoryMappedFileAccess@@UEAA_JPEAX@Z
-    virtual int64 ftell(void *);
+    virtual int64_t ftell(void *);
 
     // vIndex: 5, symbol: ?getReadInterface@MemoryMappedFileAccess@@UEBAPEBVIFileReadAccess@@XZ
     virtual class IFileReadAccess const * getReadInterface() const;
@@ -116,7 +116,7 @@ public:
     virtual void unload();
 
     // symbol: ??0MemoryMappedFileAccess@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@V?$unique_ptr@VFileAccessTransforms@@U?$default_delete@VFileAccessTransforms@@@std@@@std@@@Z
-    MCAPI MemoryMappedFileAccess(Bedrock::NotNullNonOwnerPtr<class IFileAccess> const &, std::unique_ptr<class FileAccessTransforms>);
+    MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
 
     // symbol: ?EMPTY_TRANSFORMS@MemoryMappedFileAccess@@2VFileAccessTransforms@@B
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;

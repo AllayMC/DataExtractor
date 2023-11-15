@@ -20,7 +20,7 @@ namespace RotationUtil {
     MCAPI class BlockPos rotate(class BlockPos const &, ::Rotation);
 
     // symbol: ?rotate@RotationUtil@@YAEW4Rotation@@E@Z
-    MCAPI uchar rotate(::Rotation, uchar);
+    MCAPI uint8_t rotate(::Rotation, uint8_t);
     // NOLINTEND
 
 };

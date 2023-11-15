@@ -37,7 +37,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@GrindstoneBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -118,7 +118,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@GrindstoneBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -157,7 +157,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@GrindstoneBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -175,7 +175,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0GrindstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI GrindstoneBlock(std::string const &, int);
+    MCAPI GrindstoneBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

@@ -44,10 +44,10 @@ public:
     virtual void appendBlock(class Block const &);
 
     // vIndex: 3, symbol: ?getBlock@BlockPalette@@UEBAAEBVBlock@@AEBI@Z
-    virtual class Block const & getBlock(uint const &) const;
+    virtual class Block const & getBlock(uint32_t const &) const;
 
     // vIndex: 4, symbol: ?assignBlockNetworkId@BlockPalette@@MEBAXAEBVBlock@@_K@Z
-    virtual void assignBlockNetworkId(class Block const &, uint64) const;
+    virtual void assignBlockNetworkId(class Block const &, uint64_t) const;
 
     // symbol: ??1BlockPalette@@UEAA@XZ
     MCVAPI ~BlockPalette();
@@ -62,7 +62,7 @@ public:
     MCAPI void cacheBlockComponentData();
 
     // symbol: ?getBlockFromLegacyData@BlockPalette@@QEBAAEBVBlock@@UNewBlockID@@I@Z
-    MCAPI class Block const & getBlockFromLegacyData(struct NewBlockID, uint) const;
+    MCAPI class Block const & getBlockFromLegacyData(struct NewBlockID, uint32_t) const;
 
     // symbol: ?getUnknownBlockTypeRegistry@BlockPalette@@QEBA?BV?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@XZ
     MCAPI class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> const getUnknownBlockTypeRegistry() const;
@@ -74,17 +74,17 @@ public:
     MCAPI class Block const & switchBlock(class Block const &, class BlockLegacy const &) const;
 
     // symbol: ?convertLegacyBlock@BlockPalette@@SAAEBVBlock@@UBlockID@@G@Z
-    MCAPI static class Block const & convertLegacyBlock(struct BlockID, ushort);
+    MCAPI static class Block const & convertLegacyBlock(struct BlockID, uint16_t);
 
     // symbol: ?convertLegacyBlocks@BlockPalette@@SA_NV?$buffer_span_mut@PEBVBlock@@@@V?$buffer_span@UBlockID@@@@V?$buffer_span@UNibblePair@@@@_K@Z
-    MCAPI static bool convertLegacyBlocks(class buffer_span_mut<class Block const *>, class buffer_span<struct BlockID>, class buffer_span<struct NibblePair>, uint64);
+    MCAPI static bool convertLegacyBlocks(class buffer_span_mut<class Block const *>, class buffer_span<struct BlockID>, class buffer_span<struct NibblePair>, uint64_t);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?shouldWarnFor@BlockPalette@@IEBA_NUNewBlockID@@G@Z
-    MCAPI bool shouldWarnFor(struct NewBlockID, ushort) const;
+    MCAPI bool shouldWarnFor(struct NewBlockID, uint16_t) const;
 
     // NOLINTEND
 

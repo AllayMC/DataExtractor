@@ -184,13 +184,13 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 186, symbol: ?getResourceCount@CoralPlantBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ?waterSpreadCausesSpawn@CoralPlantBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0CoralPlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CoralPlantBlock(std::string const &, int);
+    MCAPI CoralPlantBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

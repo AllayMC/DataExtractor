@@ -49,7 +49,7 @@ public:
     virtual void _updateState() = 0;
 
     // vIndex: 9, symbol: ?_genMaskingKey@RakWebSocketClient@@MEBAIXZ
-    virtual uint _genMaskingKey() const = 0;
+    virtual uint32_t _genMaskingKey() const = 0;
 
     // symbol: ??1RakWebSocket@@UEAA@XZ
     MCVAPI ~RakWebSocket();
@@ -61,7 +61,7 @@ public:
     MCAPI bool send(std::string const &);
 
     // symbol: ?sendBinary@RakWebSocket@@QEAA_NPEBE_K@Z
-    MCAPI bool sendBinary(uchar const *, uint64);
+    MCAPI bool sendBinary(uint8_t const *, uint64_t);
 
     // NOLINTEND
 
@@ -95,13 +95,13 @@ public:
     MCAPI void _reset();
 
     // symbol: ?_sendControlFrame@RakWebSocket@@IEAA_NPEBE_KW4OpCode@@@Z
-    MCAPI bool _sendControlFrame(uchar const *, uint64, ::OpCode);
+    MCAPI bool _sendControlFrame(uint8_t const *, uint64_t, ::OpCode);
 
     // symbol: ?_sendDataFrame@RakWebSocket@@IEAA_NPEBEIW4OpCode@@_N@Z
-    MCAPI bool _sendDataFrame(uchar const *, uint, ::OpCode, bool);
+    MCAPI bool _sendDataFrame(uint8_t const *, uint32_t, ::OpCode, bool);
 
     // symbol: ?_sendNonControlFrame@RakWebSocket@@IEAA_NPEBE_KW4OpCode@@@Z
-    MCAPI bool _sendNonControlFrame(uchar const *, uint64, ::OpCode);
+    MCAPI bool _sendNonControlFrame(uint8_t const *, uint64_t, ::OpCode);
 
     // symbol: ?_splitWebSocketURI@RakWebSocket@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@11@Z
     MCAPI void _splitWebSocketURI(std::string const &, std::string &, std::string &, std::string &);

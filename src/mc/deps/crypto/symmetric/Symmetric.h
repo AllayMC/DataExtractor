@@ -30,16 +30,16 @@ public:
     virtual void decrypt(std::string const &, std::string &);
 
     // vIndex: 4, symbol: ?getKeySize@Symmetric@1Crypto@@UEBA_KXZ
-    virtual uint64 getKeySize() const;
+    virtual uint64_t getKeySize() const;
 
     // vIndex: 5, symbol: ?getBlockSize@Symmetric@1Crypto@@UEBA_KXZ
-    virtual uint64 getBlockSize() const;
+    virtual uint64_t getBlockSize() const;
 
     // vIndex: 6, symbol: ?getEncryptionBufferSize@Symmetric@1Crypto@@UEBA_K_K@Z
-    virtual uint64 getEncryptionBufferSize(uint64) const;
+    virtual uint64_t getEncryptionBufferSize(uint64_t) const;
 
     // vIndex: 7, symbol: ?encryptToBuffer@Symmetric@1Crypto@@UEAA_NV?$span@$$CBD$0?0@gsl@@V?$span@D$0?0@4@AEA_K@Z
-    virtual bool encryptToBuffer(gsl::span<char const>, gsl::span<char>, uint64 &);
+    virtual bool encryptToBuffer(class gsl::span<char const>, class gsl::span<char>, uint64_t &);
 
     // symbol: ??1Symmetric@0Crypto@@UEAA@XZ
     MCVAPI ~Symmetric();

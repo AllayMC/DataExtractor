@@ -87,10 +87,10 @@ public:
     virtual void handleVersionBasedInitialization(class SemVersion const &);
 
     // vIndex: 7, symbol: ?_canUseOn@ItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
-    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, uchar) const;
+    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 8, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, uchar, class Vec3 const &) const;
+    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, uint8_t, class Vec3 const &) const;
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEBAXXZ
     virtual void _initializeComponent() const;
@@ -105,7 +105,7 @@ public:
     MCAPI class ShooterItemComponent & operator=(class ShooterItemComponent &&);
 
     // symbol: ?releaseUsing@ShooterItemComponent@@QEBA_NAEAVItemStack@@PEAVPlayer@@H@Z
-    MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
+    MCAPI bool releaseUsing(class ItemStack &, class Player *, int32_t) const;
 
     // symbol: ?bindType@ShooterItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx &, std::vector<::AllExperiments> const &, std::optional<class SemVersion>);
@@ -118,16 +118,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_consumeAmmunition@ShooterItemComponent@@AEBAXPEAVPlayer@@AEBVItemStack@@H_N2@Z
-    MCAPI void _consumeAmmunition(class Player *, class ItemStack const &, int, bool, bool) const;
+    MCAPI void _consumeAmmunition(class Player *, class ItemStack const &, int32_t, bool, bool) const;
 
     // symbol: ?_getAmmunition@ShooterItemComponent@@AEBAHPEBVPlayer@@_NAEAVItemStack@@AEA_N@Z
-    MCAPI int _getAmmunition(class Player const *, bool, class ItemStack &, bool &) const;
+    MCAPI int32_t _getAmmunition(class Player const *, bool, class ItemStack &, bool &) const;
 
     // symbol: ?_getMaxUseDuration@ShooterItemComponent@@AEBAHAEBVItemStack@@@Z
-    MCAPI int _getMaxUseDuration(class ItemStack const &) const;
+    MCAPI int32_t _getMaxUseDuration(class ItemStack const &) const;
 
     // symbol: ?_shootProjectiles@ShooterItemComponent@@AEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    MCAPI void _shootProjectiles(class ItemStack &, class Player *, int) const;
+    MCAPI void _shootProjectiles(class ItemStack &, class Player *, int32_t) const;
 
     // NOLINTEND
 

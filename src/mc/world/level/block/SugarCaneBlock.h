@@ -145,13 +145,13 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 134, symbol: ?getColor@SugarCaneBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const &) const;
+    virtual int32_t getColor(class Block const &) const;
 
     // vIndex: 135, symbol: ?getColor@SugarCaneBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
+    virtual int32_t getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 136, symbol: ?getColorAtPos@SugarCaneBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
+    virtual int32_t getColorAtPos(class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 139, symbol: ?onGraphicsModeChanged@SugarCaneBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
@@ -193,7 +193,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SugarCaneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SugarCaneBlock(std::string const &, int);
+    MCAPI SugarCaneBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

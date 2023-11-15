@@ -46,7 +46,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@BrewingStandBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -136,7 +136,7 @@ public:
     virtual void __unk_vfn_124();
 
     // vIndex: 125, symbol: ?getComparatorSignal@BrewingStandBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uchar) const;
+    virtual int32_t getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uint8_t) const;
 
     // vIndex: 127, symbol: __unk_vfn_127
     virtual void __unk_vfn_127();
@@ -172,7 +172,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@BrewingStandBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -181,7 +181,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@BrewingStandBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ?hasComparatorSignal@BrewingStandBlock@@UEBA_NXZ
     MCVAPI bool hasComparatorSignal() const;
@@ -196,7 +196,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0BrewingStandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BrewingStandBlock(std::string const &, int);
+    MCAPI BrewingStandBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

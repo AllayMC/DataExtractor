@@ -40,7 +40,7 @@ public:
     MCAPI SplashPotionEffectSubcomponent();
 
     // symbol: ?applyMobEffects@SplashPotionEffectSubcomponent@@QEAAXAEBVMobEffectInstance@@AEBV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@AEAVActor@@AEBV?$shared_ptr@$$CBVPotion@@@4@MPEAVMobEffect@@AEAVHitResult@@H@Z
-    MCAPI void applyMobEffects(class MobEffectInstance const &, std::vector<class Actor *> const &, class Actor &, std::shared_ptr<class Potion const> const &, float, class MobEffect *, class HitResult &, int);
+    MCAPI void applyMobEffects(class MobEffectInstance const &, std::vector<class Actor *> const &, class Actor &, std::shared_ptr<class Potion const> const &, float, class MobEffect *, class HitResult &, int32_t);
 
     // NOLINTEND
 

@@ -145,7 +145,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@DropperBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@DropperBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -154,10 +154,10 @@ public:
     virtual void dispenseFrom(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ??0DropperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DropperBlock(std::string const &, int);
+    MCAPI DropperBlock(std::string const &, int32_t);
 
     // symbol: ?getAttachedFace@DropperBlock@@SAHH@Z
-    MCAPI static int getAttachedFace(int);
+    MCAPI static int32_t getAttachedFace(int32_t);
 
     // NOLINTEND
 

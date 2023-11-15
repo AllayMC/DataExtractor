@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0DimensionConversionData@@QEAA@AEBVVec3@@H@Z
-    MCAPI DimensionConversionData(class Vec3 const &, int);
+    MCAPI DimensionConversionData(class Vec3 const &, int32_t);
 
     // symbol: ?getNetherScale@DimensionConversionData@@QEBAHXZ
-    MCAPI int getNetherScale() const;
+    MCAPI int32_t getNetherScale() const;
 
     // symbol: ?getOverworldSpawnPoint@DimensionConversionData@@QEBAAEBVVec3@@XZ
     MCAPI class Vec3 const & getOverworldSpawnPoint() const;

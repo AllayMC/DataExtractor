@@ -37,7 +37,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 28, symbol: ?canConnect@StainedGlassBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const &, uchar, class Block const &) const;
+    virtual bool canConnect(class Block const &, uint8_t, class Block const &) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -166,13 +166,13 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 186, symbol: ?getResourceCount@StainedGlassBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@StainedGlassBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 
     // symbol: ??0StainedGlassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N11@Z
-    MCAPI StainedGlassBlock(std::string const &, int, bool, bool, bool);
+    MCAPI StainedGlassBlock(std::string const &, int32_t, bool, bool, bool);
 
     // NOLINTEND
 

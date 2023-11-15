@@ -25,7 +25,7 @@ public:
     MCAPI bool hasLockType(::ClientInputLockType) const;
 
     // symbol: ?serialize@ClientInputLockComponent@@QEBAIXZ
-    MCAPI uint serialize() const;
+    MCAPI uint32_t serialize() const;
 
     // symbol: ?setLockCategory@ClientInputLockComponent@@QEAAXW4ClientInputLockCategory@@_N@Z
     MCAPI void setLockCategory(::ClientInputLockCategory, bool);

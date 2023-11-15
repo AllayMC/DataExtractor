@@ -41,10 +41,10 @@ public:
     MCVAPI ~WebRTCNetworkPeer();
 
     // symbol: ??0WebRTCNetworkPeer@@QEAA@$$QEAV?$NonOwnerPointer@UNetherNetConnector@@@Bedrock@@_K@Z
-    MCAPI WebRTCNetworkPeer(class Bedrock::NonOwnerPointer<struct NetherNetConnector> &&, uint64);
+    MCAPI WebRTCNetworkPeer(class Bedrock::NonOwnerPointer<struct NetherNetConnector> &&, uint64_t);
 
     // symbol: ?getPeerId@WebRTCNetworkPeer@@QEBA_KXZ
-    MCAPI uint64 getPeerId() const;
+    MCAPI uint64_t getPeerId() const;
 
     // NOLINTEND
 

@@ -23,13 +23,13 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@LoomContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const &, bool);
+    virtual void setSlot(int32_t, class ItemStack const &, bool);
 
     // vIndex: 8, symbol: ?getSlot@LoomContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const & getSlot(int) const;
+    virtual class ItemStack const & getSlot(int32_t) const;
 
     // vIndex: 9, symbol: ?setData@LoomContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int, int);
+    virtual void setData(int32_t, int32_t);
 
     // vIndex: 10, symbol: ?broadcastChanges@LoomContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();
@@ -44,16 +44,16 @@ public:
     MCAPI LoomContainerManagerModel(::ContainerID, class Player &, class BlockPos const &);
 
     // symbol: ?BANNER_SLOT@LoomContainerManagerModel@@2HB
-    MCAPI static int const BANNER_SLOT;
+    MCAPI static int32_t const BANNER_SLOT;
 
     // symbol: ?DYE_SLOT@LoomContainerManagerModel@@2HB
-    MCAPI static int const DYE_SLOT;
+    MCAPI static int32_t const DYE_SLOT;
 
     // symbol: ?MATERIAL_SLOT@LoomContainerManagerModel@@2HB
-    MCAPI static int const MATERIAL_SLOT;
+    MCAPI static int32_t const MATERIAL_SLOT;
 
     // symbol: ?RESULT_SLOT@LoomContainerManagerModel@@2HB
-    MCAPI static int const RESULT_SLOT;
+    MCAPI static int32_t const RESULT_SLOT;
 
     // NOLINTEND
 

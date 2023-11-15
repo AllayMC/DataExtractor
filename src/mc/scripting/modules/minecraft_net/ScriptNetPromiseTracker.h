@@ -42,10 +42,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?handleFailure@ScriptNetPromiseTracker@ScriptModuleMinecraftNet@@QEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void handleFailure(uint, std::string const &);
+    MCAPI void handleFailure(uint32_t, std::string const &);
 
     // symbol: ?handleResponse@ScriptNetPromiseTracker@ScriptModuleMinecraftNet@@QEAAXIAEBV?$vector@UScriptNetHeader@ScriptModuleMinecraftNet@@V?$allocator@UScriptNetHeader@ScriptModuleMinecraftNet@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@I@Z
-    MCAPI void handleResponse(uint, std::vector<struct ScriptModuleMinecraftNet::ScriptNetHeader> const &, std::string const &, uint);
+    MCAPI void handleResponse(uint32_t, std::vector<struct ScriptModuleMinecraftNet::ScriptNetHeader> const &, std::string const &, uint32_t);
 
     // symbol: ?rejectAll@ScriptNetPromiseTracker@ScriptModuleMinecraftNet@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void rejectAll(std::string const &);

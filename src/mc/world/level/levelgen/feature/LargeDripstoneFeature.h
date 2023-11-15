@@ -28,7 +28,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?getHeightAtRadius@LargeDripstone@LargeDripstoneFeature@@QEBAHM@Z
-        MCAPI int getHeightAtRadius(float) const;
+        MCAPI int32_t getHeightAtRadius(float) const;
     
         // symbol: ?moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary@LargeDripstone@LargeDripstoneFeature@@QEAA_NAEAVIBlockWorldGenAPI@@AEBVWindOffsetter@DripstoneUtils@@@Z
         MCAPI bool moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(class IBlockWorldGenAPI &, class DripstoneUtils::WindOffsetter const &);

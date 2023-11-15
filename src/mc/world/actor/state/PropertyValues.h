@@ -14,7 +14,7 @@ public:
     MCAPI PropertyValues(struct PropertyValues const &);
 
     // symbol: ?resize@PropertyValues@@QEAAX_K000@Z
-    MCAPI void resize(uint64, uint64, uint64, uint64);
+    MCAPI void resize(uint64_t, uint64_t, uint64_t, uint64_t);
 
     // symbol: ??1PropertyValues@@QEAA@XZ
     MCAPI ~PropertyValues();

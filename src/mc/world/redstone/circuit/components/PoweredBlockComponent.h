@@ -19,13 +19,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getStrength@PoweredBlockComponent@@UEBAHXZ
-    virtual int getStrength() const;
+    virtual int32_t getStrength() const;
 
     // vIndex: 7, symbol: ?canConsumerPower@PoweredBlockComponent@@UEBA_NXZ
     virtual bool canConsumerPower() const;
 
     // vIndex: 11, symbol: ?addSource@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-    virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
+    virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int32_t &, bool &);
 
     // vIndex: 12, symbol: ?allowConnection@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
@@ -46,7 +46,7 @@ public:
     MCVAPI bool hasChildrenSource() const;
 
     // symbol: ??0PoweredBlockComponent@@QEAA@E@Z
-    MCAPI PoweredBlockComponent(uchar);
+    MCAPI PoweredBlockComponent(uint8_t);
 
     // NOLINTEND
 

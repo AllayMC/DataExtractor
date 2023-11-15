@@ -34,10 +34,10 @@ public:
     MCAPI void addListener(std::unique_ptr<class Social::Events::IEventListener>);
 
     // symbol: ?buildCommonProperties@EventManager@Events@Social@@QEBA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@std@@IAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
-    MCAPI std::unordered_map<std::string,class Social::Events::Property> buildCommonProperties(uint, std::vector<std::string> const &) const;
+    MCAPI std::unordered_map<std::string,class Social::Events::Property> buildCommonProperties(uint32_t, std::vector<std::string> const &) const;
 
     // symbol: ?buildCommonProperties@EventManager@Events@Social@@QEBAXAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@std@@IAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
-    MCAPI void buildCommonProperties(std::unordered_map<std::string,class Social::Events::Property> &, uint, std::vector<std::string> const &) const;
+    MCAPI void buildCommonProperties(std::unordered_map<std::string,class Social::Events::Property> &, uint32_t, std::vector<std::string> const &) const;
 
     // symbol: ?disableEventRecording@EventManager@Events@Social@@QEAAXXZ
     MCAPI void disableEventRecording();
@@ -52,7 +52,7 @@ public:
     MCAPI class Social::Events::Property getGlobalProperty(std::string const &) const;
 
     // symbol: ?getPlayerGlobalProperty@EventManager@Events@Social@@QEBA?AVProperty@23@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Social::Events::Property getPlayerGlobalProperty(uint, std::string const &) const;
+    MCAPI class Social::Events::Property getPlayerGlobalProperty(uint32_t, std::string const &) const;
 
     // symbol: ?isEventRecordingEnabled@EventManager@Events@Social@@QEAA_NXZ
     MCAPI bool isEventRecordingEnabled();
@@ -70,7 +70,7 @@ public:
     MCAPI void removeGlobalProperty(std::string const &);
 
     // symbol: ?removePlayerCommonProperty@EventManager@Events@Social@@QEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void removePlayerCommonProperty(uint, std::string const &);
+    MCAPI void removePlayerCommonProperty(uint32_t, std::string const &);
 
     // symbol: ?removePlayerCommonPropertyForAllPlayers@EventManager@Events@Social@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void removePlayerCommonPropertyForAllPlayers(std::string const &);

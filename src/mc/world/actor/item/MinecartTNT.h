@@ -66,7 +66,7 @@ public:
     virtual void __unk_vfn_63();
 
     // vIndex: 84, symbol: ?handleEntityEvent@MinecartTNT@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -115,7 +115,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?DEFAULT_FUSE_LENGTH@MinecartTNT@@0HB
-    MCAPI static int const DEFAULT_FUSE_LENGTH;
+    MCAPI static int32_t const DEFAULT_FUSE_LENGTH;
 
     // NOLINTEND
 

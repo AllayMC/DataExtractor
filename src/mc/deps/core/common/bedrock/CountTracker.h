@@ -22,7 +22,7 @@ public:
     MCAPI void clear();
 
     // symbol: ?get@CountTracker@Threading@Bedrock@@QEBAIXZ
-    MCAPI uint get() const;
+    MCAPI uint32_t get() const;
 
     // symbol: ??1CountTracker@Threading@Bedrock@@QEAA@XZ
     MCAPI ~CountTracker();

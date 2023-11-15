@@ -100,7 +100,7 @@ public:
     virtual bool checkSpawnRules(bool);
 
     // vIndex: 207, symbol: ?getAttackTime@PigZombie@@UEAAHXZ
-    virtual int getAttackTime();
+    virtual int32_t getAttackTime();
 
     // symbol: ??0PigZombie@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI PigZombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

@@ -39,7 +39,7 @@ public:
     virtual bool tick();
 
     // vIndex: 12, symbol: ?debitPlayerLevels@ContainerManagerModel@@UEAAXH@Z
-    virtual void debitPlayerLevels(int);
+    virtual void debitPlayerLevels(int32_t);
 
     // vIndex: 13, symbol: ?isCreativeMode@ContainerManagerModel@@UEBA_NXZ
     virtual bool isCreativeMode() const;

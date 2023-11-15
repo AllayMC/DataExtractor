@@ -20,28 +20,28 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> batch(std::string);
 
     // symbol: ?maxAttempts@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> maxAttempts(int);
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> maxAttempts(int32_t);
 
     // symbol: ?maxTicks@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> maxTicks(int);
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> maxTicks(int32_t);
 
     // symbol: ??4ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder & operator=(class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder &&);
 
     // symbol: ?padding@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> padding(int);
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> padding(int32_t);
 
     // symbol: ?required@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@_N@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> required(bool);
 
     // symbol: ?requiredSuccessfulAttempts@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> requiredSuccessfulAttempts(int);
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> requiredSuccessfulAttempts(int32_t);
 
     // symbol: ?rotate@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@_N@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> rotate(bool);
 
     // symbol: ?setupTicks@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> setupTicks(int);
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> setupTicks(int32_t);
 
     // symbol: ?structureName@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> structureName(std::string);

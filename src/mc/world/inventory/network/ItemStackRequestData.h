@@ -21,7 +21,7 @@ public:
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestAction>> const & getActions() const;
 
     // symbol: ?getRequestId@ItemStackRequestData@@QEBAAEBV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
-    MCAPI ItemStackRequestId const & getRequestId() const;
+    MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int32_t, 0> const & getRequestId() const;
 
     // symbol: ?getStringsToFilter@ItemStackRequestData@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCAPI std::vector<std::string> const & getStringsToFilter() const;
@@ -42,7 +42,7 @@ public:
     MCAPI ~ItemStackRequestData();
 
     // symbol: ?read@ItemStackRequestData@@SA?AV?$Result@V?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestData>> read(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestData>, std::error_code> read(class ReadOnlyBinaryStream &);
 
     // NOLINTEND
 

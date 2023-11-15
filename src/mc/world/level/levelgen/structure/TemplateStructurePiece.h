@@ -19,7 +19,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?moveBoundingBox@TemplateStructurePiece@@UEAAXHHH@Z
-    virtual void moveBoundingBox(int, int, int);
+    virtual void moveBoundingBox(int32_t, int32_t, int32_t);
 
     // vIndex: 4, symbol: ?postProcess@TemplateStructurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
@@ -31,7 +31,7 @@ public:
     MCVAPI ~TemplateStructurePiece();
 
     // symbol: ??0TemplateStructurePiece@@QEAA@H@Z
-    MCAPI TemplateStructurePiece(int);
+    MCAPI TemplateStructurePiece(int32_t);
 
     // NOLINTEND
 

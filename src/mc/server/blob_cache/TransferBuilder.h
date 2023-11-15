@@ -23,7 +23,7 @@ public:
     MCAPI TransferBuilder(class ClientBlobCache::Server::ActiveTransfersManager &, class NetworkIdentifier const &);
 
     // symbol: ?add@TransferBuilder@Server@ClientBlobCache@@QEAAX_KAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI void add(uint64, std::string &, bool);
+    MCAPI void add(uint64_t, std::string &, bool);
 
     // symbol: ??1TransferBuilder@Server@ClientBlobCache@@QEAA@XZ
     MCAPI ~TransferBuilder();

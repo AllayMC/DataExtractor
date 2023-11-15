@@ -91,7 +91,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 56, symbol: ?isValidAuxValue@FaceDirectionalBlock@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -109,7 +109,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@FaceDirectionalBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -130,10 +130,10 @@ public:
     virtual class Block const & getRenderBlock() const;
 
     // vIndex: 145, symbol: ?getMappedFace@FaceDirectionalBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const &) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const &) const;
 
     // vIndex: 146, symbol: ?getFaceFlip@FaceDirectionalBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-    virtual ::Flip getFaceFlip(uchar, class Block const &) const;
+    virtual ::Flip getFaceFlip(uint8_t, class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -163,16 +163,16 @@ public:
     MCVAPI ~FaceDirectionalBlock();
 
     // symbol: ??0FaceDirectionalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_NM@Z
-    MCAPI FaceDirectionalBlock(std::string const &, int, class Material const &, bool, float);
+    MCAPI FaceDirectionalBlock(std::string const &, int32_t, class Material const &, bool, float);
 
     // symbol: ?getFaceFlipStatic@FaceDirectionalBlock@@SA?AW4Flip@@EAEBVBlock@@_N@Z
-    MCAPI static ::Flip getFaceFlipStatic(uchar, class Block const &, bool);
+    MCAPI static ::Flip getFaceFlipStatic(uint8_t, class Block const &, bool);
 
     // symbol: ?getFacingDirection@FaceDirectionalBlock@@SAEAEBVBlock@@_N@Z
-    MCAPI static uchar getFacingDirection(class Block const &, bool);
+    MCAPI static uint8_t getFacingDirection(class Block const &, bool);
 
     // symbol: ?getMappedFaceStatic@FaceDirectionalBlock@@SAEEAEBVBlock@@_N@Z
-    MCAPI static uchar getMappedFaceStatic(uchar, class Block const &, bool);
+    MCAPI static uint8_t getMappedFaceStatic(uint8_t, class Block const &, bool);
 
     // NOLINTEND
 

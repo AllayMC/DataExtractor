@@ -40,7 +40,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@HangingSignBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -115,7 +115,7 @@ public:
     virtual void __unk_vfn_83();
 
     // vIndex: 92, symbol: ?mayPlace@HangingSignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 106, symbol: __unk_vfn_106
     virtual void __unk_vfn_106();
@@ -169,7 +169,7 @@ public:
     virtual class ItemInstance _getItemInstance() const;
 
     // symbol: ??0HangingSignBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NW4SignType@SignBlock@@@Z
-    MCAPI HangingSignBlock(std::string const &, int, bool, ::SignBlock::SignType);
+    MCAPI HangingSignBlock(std::string const &, int32_t, bool, ::SignBlock::SignType);
 
     // symbol: ?isDoubleChainHangingSign@HangingSignBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isDoubleChainHangingSign(class Block const &);
@@ -185,7 +185,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_canAttachTo@HangingSignBlock@@IEBA_NAEAVBlockSource@@VBlockPos@@EE@Z
-    MCAPI bool _canAttachTo(class BlockSource &, class BlockPos, uchar, uchar) const;
+    MCAPI bool _canAttachTo(class BlockSource &, class BlockPos, uint8_t, uint8_t) const;
 
     // NOLINTEND
 

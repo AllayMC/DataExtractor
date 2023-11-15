@@ -75,7 +75,7 @@ public:
     MCVAPI ::EventResult onInventoryItemOpened(bool);
 
     // symbol: ?onInventoryLayoutSelected@ItemEventListener@@UEAA?AW4EventResult@@HH@Z
-    MCVAPI ::EventResult onInventoryLayoutSelected(int, int);
+    MCVAPI ::EventResult onInventoryLayoutSelected(int32_t, int32_t);
 
     // symbol: ?onItemDefinitionEventTriggered@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI ::EventResult onItemDefinitionEventTriggered(class ItemStackBase const &, std::string const &);
@@ -87,7 +87,7 @@ public:
     MCVAPI ::EventResult onItemSelected(class ItemStackBase const &);
 
     // symbol: ?onItemSelectedSlot@ItemEventListener@@UEAA?AW4EventResult@@H@Z
-    MCVAPI ::EventResult onItemSelectedSlot(int);
+    MCVAPI ::EventResult onItemSelectedSlot(int32_t);
 
     // symbol: ?onItemSmelted@ItemEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@1@Z
     MCVAPI ::EventResult onItemSmelted(class Player &, class ItemDescriptor const &, class ItemDescriptor const &);

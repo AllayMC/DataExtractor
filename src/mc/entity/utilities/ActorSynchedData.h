@@ -25,7 +25,7 @@ namespace ActorSynchedData {
     MCAPI void updateBuoyancyData(class EntityContext &, class SynchedActorDataEntityWrapper const &);
 
     // symbol: ?updateCommandBlock@ActorSynchedData@@YAXAEAVActor@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void updateCommandBlock(class Actor &, int, std::string &);
+    MCAPI void updateCommandBlock(class Actor &, int32_t, std::string &);
 
     // symbol: ?updateContainer@ActorSynchedData@@YAXAEAVActor@@@Z
     MCAPI void updateContainer(class Actor &);

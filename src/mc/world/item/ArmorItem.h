@@ -78,22 +78,22 @@ public:
     virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
 
     // vIndex: 62, symbol: ?getEnchantSlot@ArmorItem@@UEBAHXZ
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
 
     // vIndex: 63, symbol: ?getEnchantValue@ArmorItem@@UEBAHXZ
-    virtual int getEnchantValue() const;
+    virtual int32_t getEnchantValue() const;
 
     // vIndex: 64, symbol: ?getArmorValue@ArmorItem@@UEBAHXZ
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
 
     // vIndex: 65, symbol: ?getToughnessValue@ArmorItem@@UEBAHXZ
-    virtual int getToughnessValue() const;
+    virtual int32_t getToughnessValue() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
 
     // vIndex: 68, symbol: ?getDamageChance@ArmorItem@@UEBAHH@Z
-    virtual int getDamageChance(int) const;
+    virtual int32_t getDamageChance(int32_t) const;
 
     // vIndex: 70, symbol: __unk_vfn_70
     virtual void __unk_vfn_70();
@@ -126,19 +126,19 @@ public:
     virtual void __unk_vfn_80();
 
     // vIndex: 82, symbol: ?buildIdAux@ArmorItem@@UEBAHFPEBVCompoundTag@@@Z
-    virtual int buildIdAux(short, class CompoundTag const *) const;
+    virtual int32_t buildIdAux(int16_t, class CompoundTag const *) const;
 
     // vIndex: 84, symbol: ?use@ArmorItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
 
     // vIndex: 85, symbol: ?dispense@ArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 89, symbol: ?hurtActor@ArmorItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
 
     // vIndex: 93, symbol: ?mineBlock@ArmorItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    virtual bool mineBlock(class ItemStack &, class Block const &, int32_t, int32_t, int32_t, class Actor *) const;
 
     // vIndex: 113, symbol: ?getEquipLocation@ArmorItem@@UEBA?AW4ActorLocation@@XZ
     virtual ::ActorLocation getEquipLocation() const;
@@ -153,19 +153,19 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 120, symbol: ?getIconInfo@ArmorItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int32_t, bool) const;
 
     // vIndex: 136, symbol: ?getArmorKnockbackResistance@ArmorItem@@UEBAMXZ
     virtual float getArmorKnockbackResistance() const;
 
     // symbol: ??0ArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVArmorMaterial@0@HW4ArmorSlot@@_N@Z
-    MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, ::ArmorSlot, bool);
+    MCAPI ArmorItem(std::string const &, int32_t, class ArmorItem::ArmorMaterial const &, int32_t, ::ArmorSlot, bool);
 
     // symbol: ?isTrimAllowed@ArmorItem@@QEBA_NXZ
     MCAPI bool isTrimAllowed() const;
 
     // symbol: ?dispenseArmor@ArmorItem@@SA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@EW4ArmorSlot@@@Z
-    MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int, class Vec3 const &, uchar, ::ArmorSlot);
+    MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t, ::ArmorSlot);
 
     // symbol: ?getSlotForItem@ArmorItem@@SA?AW4ArmorSlot@@AEBVItemStackBase@@@Z
     MCAPI static ::ArmorSlot getSlotForItem(class ItemStackBase const &);
@@ -198,7 +198,7 @@ public:
     MCAPI static class ArmorItem::ArmorMaterial const TURTLE;
 
     // symbol: ?mHealthPerSlot@ArmorItem@@2QBHB
-    MCAPI static int const mHealthPerSlot[];
+    MCAPI static int32_t const mHealthPerSlot[];
 
     // NOLINTEND
 

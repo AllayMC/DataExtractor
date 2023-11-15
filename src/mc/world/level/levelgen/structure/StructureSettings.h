@@ -18,7 +18,7 @@ public:
     MCAPI StructureSettings(class StructureSettings &&);
 
     // symbol: ?getAnimationTicks@StructureSettings@@QEBAIXZ
-    MCAPI uint getAnimationTicks() const;
+    MCAPI uint32_t getAnimationTicks() const;
 
     // symbol: ?isAnimated@StructureSettings@@QEBA_NXZ
     MCAPI bool isAnimated() const;
@@ -42,7 +42,7 @@ public:
     MCAPI void setIgnoreJigsawBlocks(bool);
 
     // symbol: ?setIntegritySeed@StructureSettings@@QEAAXI@Z
-    MCAPI void setIntegritySeed(uint);
+    MCAPI void setIntegritySeed(uint32_t);
 
     // symbol: ?setPivot@StructureSettings@@QEAAXAEBVVec3@@@Z
     MCAPI void setPivot(class Vec3 const &);

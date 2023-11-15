@@ -49,7 +49,7 @@ public:
     virtual void __unk_vfn_53();
 
     // vIndex: 62, symbol: ?getEnchantSlot@BowItem@@UEBAHXZ
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
@@ -82,13 +82,13 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 119, symbol: ?setIconInfo@BowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item & setIconInfo(std::string const &, int);
+    virtual class Item & setIconInfo(std::string const &, int32_t);
 
     // vIndex: 120, symbol: ?getIconInfo@BowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int32_t, bool) const;
 
     // symbol: ??0BowItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BowItem(std::string const &, int);
+    MCAPI BowItem(std::string const &, int32_t);
 
     // NOLINTEND
 

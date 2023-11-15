@@ -9,62 +9,65 @@ class SharedPtr;
 template <typename T>
 class WeakPtr {
 public:
-    WeakPtr() : counter(nullptr) {}
+    WeakPtr() noexcept : counter(nullptr) {}               // NOLINT
+    WeakPtr(std::nullptr_t) noexcept : counter(nullptr) {} // NOLINT
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    explicit WeakPtr(const SharedPtr<Y>& other) {
-        counter = other.counter;
-        if (counter) {
-            counter->addWeakCount();
-        }
+    template <class Y>
+    explicit WeakPtr(SharedPtr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
+        counter = (SharedCounter<T>*)other.counter;
+        if (counter) { counter->addWeakCount(); }
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    explicit WeakPtr(const WeakPtr<Y>& other) {
-        counter = other.counter;
-        if (counter) {
-            counter->addWeakCount();
-        }
+    template <class Y>
+    explicit WeakPtr(WeakPtr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
+        counter = (SharedCounter<T>*)other.counter;
+        if (counter) { counter->addWeakCount(); }
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    explicit WeakPtr(WeakPtr<Y>&& other) {
-        counter       = other.counter;
+    template <class Y>
+    explicit WeakPtr(WeakPtr<Y>&& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
+        counter       = (SharedCounter<T>*)other.counter;
         other.counter = nullptr;
     }
 
     ~WeakPtr() {
-        if (counter) {
-            counter->releaseWeak();
-        }
+        if (counter) { counter->releaseWeak(); }
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    WeakPtr<T>& operator=(const SharedPtr<Y>& other) {
-        if (counter != other.counter) {
-            counter = other.counter;
-            if (counter) {
-                counter->addWeakCount();
-            }
+    template <class Y>
+    WeakPtr<T>& operator=(SharedPtr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
+        if (counter != (SharedCounter<T>*)other.counter) {
+            counter = (SharedCounter<T>*)other.counter;
+            if (counter) { counter->addWeakCount(); }
         }
         return *this;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    WeakPtr<T>& operator=(const WeakPtr<Y>& other) {
-        if (counter != other.counter) {
-            counter = other.counter;
-            if (counter) {
-                counter->addWeakCount();
-            }
+    template <class Y>
+    WeakPtr<T>& operator=(WeakPtr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
+        if (counter != (SharedCounter<T>*)other.counter) {
+            counter = (SharedCounter<T>*)other.counter;
+            if (counter) { counter->addWeakCount(); }
         }
         return *this;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    WeakPtr<T>& operator=(WeakPtr<Y>&& other) {
-        if (counter != other.counter) {
-            counter       = other.counter;
+    template <class Y>
+    WeakPtr<T>& operator=(WeakPtr<Y>&& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
+        if (counter != (SharedCounter<T>*)other.counter) {
+            counter       = (SharedCounter<T>*)other.counter;
             other.counter = nullptr;
         }
         return *this;
@@ -76,14 +79,13 @@ public:
 
     SharedPtr<T> lock() const { return expired() ? SharedPtr<T>() : SharedPtr<T>(*this); }
 
-    T* operator->() const { return counter->get(); }
+    T* get() const { return counter ? counter->get() : nullptr; }
 
-    T* get() const { return counter->get(); }
+    T* operator->() const { return get(); }
 
-    T& operator*() const { return *(counter->get()); }
+    T& operator*() const { return *get(); }
 
-    explicit operator bool() const { return expired(); }
+    explicit operator bool() const { return get() != nullptr; }
 
-private:
     SharedCounter<T>* counter;
 };

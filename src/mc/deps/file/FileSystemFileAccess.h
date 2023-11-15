@@ -35,7 +35,7 @@ public:
         virtual void __unk_vfn_0();
     
         // vIndex: 1, symbol: ?fread@FileSystemFileReadAccess@FileSystemFileAccess@@UEBA_KPEAX_K10@Z
-        virtual uint64 fread(void *, uint64, uint64, void *) const;
+        virtual uint64_t fread(void *, uint64_t, uint64_t, void *) const;
     
         // NOLINTEND
     
@@ -54,7 +54,7 @@ public:
         virtual void __unk_vfn_0();
     
         // vIndex: 1, symbol: ?fwrite@FileSystemFileWriteAccess@FileSystemFileAccess@@UEAA_KPEBX_K1PEAX@Z
-        virtual uint64 fwrite(void const *, uint64, uint64, void *);
+        virtual uint64_t fwrite(void const *, uint64_t, uint64_t, void *);
     
         // NOLINTEND
     
@@ -75,13 +75,13 @@ public:
     virtual void * fopen(class Core::Path const &, std::string const &);
 
     // vIndex: 2, symbol: ?fclose@FileSystemFileAccess@@UEAAHPEAX@Z
-    virtual int fclose(void *);
+    virtual int32_t fclose(void *);
 
     // vIndex: 3, symbol: ?fseek@FileSystemFileAccess@@UEAAHPEAX_JH@Z
-    virtual int fseek(void *, int64, int);
+    virtual int32_t fseek(void *, int64_t, int32_t);
 
     // vIndex: 4, symbol: ?ftell@FileSystemFileAccess@@UEAA_JPEAX@Z
-    virtual int64 ftell(void *);
+    virtual int64_t ftell(void *);
 
     // vIndex: 5, symbol: ?getReadInterface@FileSystemFileAccess@@UEBAPEBVIFileReadAccess@@XZ
     virtual class IFileReadAccess const * getReadInterface() const;

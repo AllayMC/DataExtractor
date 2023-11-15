@@ -38,10 +38,10 @@ public:
     virtual void appendDebugInfo(std::string &) const;
 
     // vIndex: 16, symbol: ?_getRepathTime@SleepGoal@@EEBA_KXZ
-    virtual uint64 _getRepathTime() const;
+    virtual uint64_t _getRepathTime() const;
 
     // symbol: ??0SleepGoal@@QEAA@AEAVMob@@MMM_NMHM@Z
-    MCAPI SleepGoal(class Mob &, float, float, float, bool, float, int, float);
+    MCAPI SleepGoal(class Mob &, float, float, float, bool, float, int32_t, float);
 
     // NOLINTEND
 

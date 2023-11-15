@@ -19,16 +19,16 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?startDestroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z
-    virtual bool startDestroyBlock(class BlockPos const &, uchar, bool &);
+    virtual bool startDestroyBlock(class BlockPos const &, uint8_t, bool &);
 
     // vIndex: 2, symbol: ?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z
-    virtual bool destroyBlock(class BlockPos const &, uchar);
+    virtual bool destroyBlock(class BlockPos const &, uint8_t);
 
     // vIndex: 5, symbol: ?startBuildBlock@SurvivalMode@@UEAAXAEBVBlockPos@@E@Z
-    virtual void startBuildBlock(class BlockPos const &, uchar);
+    virtual void startBuildBlock(class BlockPos const &, uint8_t);
 
     // vIndex: 6, symbol: ?buildBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E_N@Z
-    virtual bool buildBlock(class BlockPos const &, uchar, bool);
+    virtual bool buildBlock(class BlockPos const &, uint8_t, bool);
 
     // vIndex: 9, symbol: ?tick@SurvivalMode@@UEAAXXZ
     virtual void tick();
@@ -37,7 +37,7 @@ public:
     virtual bool useItem(class ItemStack &);
 
     // vIndex: 12, symbol: ?useItemOn@SurvivalMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z
-    virtual class InteractionResult useItemOn(class ItemStack &, class BlockPos const &, uchar, class Vec3 const &, class Block const *);
+    virtual class InteractionResult useItemOn(class ItemStack &, class BlockPos const &, uint8_t, class Vec3 const &, class Block const *);
 
     // vIndex: 13, symbol: ?interact@SurvivalMode@@UEAA_NAEAVActor@@AEBVVec3@@@Z
     virtual bool interact(class Actor &, class Vec3 const &);

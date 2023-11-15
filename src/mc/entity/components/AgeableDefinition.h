@@ -32,7 +32,7 @@ public:
     MCAPI bool canGrowUp() const;
 
     // symbol: ?getTicksAsBaby@AgeableDefinition@@QEBAHXZ
-    MCAPI int getTicksAsBaby() const;
+    MCAPI int32_t getTicksAsBaby() const;
 
     // symbol: ?initialize@AgeableDefinition@@QEBAXAEAVEntityContext@@AEAVAgeableComponent@@@Z
     MCAPI void initialize(class EntityContext &, class AgeableComponent &) const;

@@ -26,16 +26,16 @@ namespace FoodConstants {
     MCAPI extern float const FOOD_SPRINT_LEVEL;
 
     // symbol: ?HEALTH_TICK_COUNT@FoodConstants@@3HB
-    MCAPI extern int const HEALTH_TICK_COUNT;
+    MCAPI extern int32_t const HEALTH_TICK_COUNT;
 
     // symbol: ?HEAL_LEVEL@FoodConstants@@3HB
-    MCAPI extern int const HEAL_LEVEL;
+    MCAPI extern int32_t const HEAL_LEVEL;
 
     // symbol: ?MAX_EXHAUSTION@FoodConstants@@3MB
     MCAPI extern float const MAX_EXHAUSTION;
 
     // symbol: ?MAX_FOOD@FoodConstants@@3HB
-    MCAPI extern int const MAX_FOOD;
+    MCAPI extern int32_t const MAX_FOOD;
 
     // symbol: ?MAX_SATURATION@FoodConstants@@3MB
     MCAPI extern float const MAX_SATURATION;
@@ -44,7 +44,7 @@ namespace FoodConstants {
     MCAPI extern float const START_SATURATION;
 
     // symbol: ?STARVE_LEVEL@FoodConstants@@3HB
-    MCAPI extern int const STARVE_LEVEL;
+    MCAPI extern int32_t const STARVE_LEVEL;
     // NOLINTEND
 
 };

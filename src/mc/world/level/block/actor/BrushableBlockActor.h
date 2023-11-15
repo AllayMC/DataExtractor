@@ -27,13 +27,13 @@ public:
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 
     // symbol: ?getContainerSize@BrushableBlockActor@@UEBAHXZ
-    MCVAPI int getContainerSize() const;
+    MCVAPI int32_t getContainerSize() const;
 
     // symbol: ?getItem@BrushableBlockActor@@UEBAAEBVItemStack@@H@Z
-    MCVAPI class ItemStack const & getItem(int) const;
+    MCVAPI class ItemStack const & getItem(int32_t) const;
 
     // symbol: ?getMaxStackSize@BrushableBlockActor@@UEBAHXZ
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
 
     // symbol: ?load@BrushableBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -48,10 +48,10 @@ public:
     MCVAPI bool save(class CompoundTag &) const;
 
     // symbol: ?serverInitItemStackIds@BrushableBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void (int, class ItemStack const &)>);
+    MCVAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void (int32_t, class ItemStack const &)>);
 
     // symbol: ?setItem@BrushableBlockActor@@UEAAXHAEBVItemStack@@@Z
-    MCVAPI void setItem(int, class ItemStack const &);
+    MCVAPI void setItem(int32_t, class ItemStack const &);
 
     // symbol: ?stopOpen@BrushableBlockActor@@UEAAXAEAVPlayer@@@Z
     MCVAPI void stopOpen(class Player &);
@@ -60,7 +60,7 @@ public:
     MCAPI BrushableBlockActor(class HashedString const &, class BlockPos const &, ::BrushableBlockActor::Placement);
 
     // symbol: ?brush@BrushableBlockActor@@QEAA?AW4BrushingState@1@AEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI ::BrushableBlockActor::BrushingState brush(class BlockSource &, class BlockPos const &, uchar);
+    MCAPI ::BrushableBlockActor::BrushingState brush(class BlockSource &, class BlockPos const &, uint8_t);
 
     // symbol: ?update@BrushableBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void update(class BlockSource &, class BlockPos const &);

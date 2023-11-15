@@ -52,7 +52,7 @@ public:
     virtual void __unk_vfn_53();
 
     // vIndex: 62, symbol: ?getEnchantSlot@ShearsItem@@UEBAHXZ
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
@@ -76,7 +76,7 @@ public:
     virtual void __unk_vfn_80();
 
     // vIndex: 85, symbol: ?dispense@ShearsItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 88, symbol: ?getDestroySpeed@ShearsItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
     virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
@@ -85,7 +85,7 @@ public:
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
 
     // vIndex: 93, symbol: ?mineBlock@ShearsItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    virtual bool mineBlock(class ItemStack &, class Block const &, int32_t, int32_t, int32_t, class Actor *) const;
 
     // vIndex: 115, symbol: __unk_vfn_115
     virtual void __unk_vfn_115();
@@ -94,10 +94,10 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 135, symbol: ?_useOn@ShearsItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // symbol: ??0ShearsItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ShearsItem(std::string const &, int);
+    MCAPI ShearsItem(std::string const &, int32_t);
 
     // NOLINTEND
 

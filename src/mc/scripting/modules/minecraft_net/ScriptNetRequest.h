@@ -45,7 +45,7 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> setMethod(class Bedrock::Http::Method);
 
     // symbol: ?setTimeout@ScriptNetRequest@ScriptModuleMinecraftNet@@QEAA?AV?$StrongTypedObjectHandle@UScriptNetRequest@ScriptModuleMinecraftNet@@@Scripting@@I@Z
-    MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> setTimeout(uint);
+    MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> setTimeout(uint32_t);
 
     // symbol: ??1ScriptNetRequest@ScriptModuleMinecraftNet@@QEAA@XZ
     MCAPI ~ScriptNetRequest();

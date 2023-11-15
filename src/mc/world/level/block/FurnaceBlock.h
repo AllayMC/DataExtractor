@@ -119,7 +119,7 @@ public:
     virtual void __unk_vfn_124();
 
     // vIndex: 125, symbol: ?getComparatorSignal@FurnaceBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uchar) const;
+    virtual int32_t getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uint8_t) const;
 
     // vIndex: 127, symbol: __unk_vfn_127
     virtual void __unk_vfn_127();
@@ -128,7 +128,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 145, symbol: ?getMappedFace@FurnaceBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const &) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const &) const;
 
     // vIndex: 147, symbol: ?animateTickBedrockLegacy@FurnaceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource &, class BlockPos const &, class Random &) const;
@@ -155,7 +155,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@FurnaceBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -164,7 +164,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@FurnaceBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@FurnaceBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -182,7 +182,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0FurnaceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI FurnaceBlock(std::string const &, int, bool);
+    MCAPI FurnaceBlock(std::string const &, int32_t, bool);
 
     // symbol: ?setLit@FurnaceBlock@@SAX_NAEAVBlockSource@@AEBVBlockPos@@W4BlockActorType@@AEBVBlock@@4@Z
     MCAPI static void setLit(bool, class BlockSource &, class BlockPos const &, ::BlockActorType, class Block const &, class Block const &);

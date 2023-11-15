@@ -32,22 +32,22 @@ public:
     MCAPI ScriptItemDurabilityComponent(class ScriptModuleMinecraft::ScriptItemDurabilityComponent const &);
 
     // symbol: ?getCurrentDamage@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getCurrentDamage();
+    MCAPI class Scripting::Result<int32_t> getCurrentDamage();
 
     // symbol: ?getDamageChance@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<int> getDamageChance(int);
+    MCAPI class Scripting::Result<int32_t> getDamageChance(int32_t);
 
     // symbol: ?getDamageRange@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@UFloatRange@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<struct FloatRange> getDamageRange();
 
     // symbol: ?getMaxDurability@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getMaxDurability();
+    MCAPI class Scripting::Result<int32_t> getMaxDurability();
 
     // symbol: ??4ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptItemDurabilityComponent & operator=(class ScriptModuleMinecraft::ScriptItemDurabilityComponent const &);
 
     // symbol: ?setCurrentDamage@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<void> setCurrentDamage(int);
+    MCAPI class Scripting::Result<void> setCurrentDamage(int32_t);
 
     // symbol: ?bind@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemDurabilityComponent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemDurabilityComponent> bind();

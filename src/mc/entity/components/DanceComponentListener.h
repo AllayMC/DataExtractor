@@ -25,7 +25,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_onLevelSoundEvent@DanceComponentListener@@AEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
-    MCAPI void _onLevelSoundEvent(::LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCAPI void _onLevelSoundEvent(::LevelSoundEvent, class Vec3 const &, int32_t, struct ActorDefinitionIdentifier const &, bool, bool);
 
     // NOLINTEND
 

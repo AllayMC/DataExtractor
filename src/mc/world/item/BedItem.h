@@ -52,7 +52,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 67, symbol: ?isValidAuxValue@BedItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 70, symbol: __unk_vfn_70
     virtual void __unk_vfn_70();
@@ -82,20 +82,20 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 120, symbol: ?getIconInfo@BedItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int32_t, bool) const;
 
     // vIndex: 132, symbol: ?_checkUseOnPermissions@BedItem@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
-    virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, uchar const &, class BlockPos const &) const;
+    virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, uint8_t const &, class BlockPos const &) const;
 
     // vIndex: 135, symbol: ?_useOn@BedItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_tryUseOn@BedItem@@AEBA?AVInteractionResult@@AEAVItemStackBase@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    MCAPI class InteractionResult _tryUseOn(class ItemStackBase &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    MCAPI class InteractionResult _tryUseOn(class ItemStackBase &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // NOLINTEND
 

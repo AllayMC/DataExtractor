@@ -44,7 +44,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 26, symbol: ?teleportTo@Agent@@UEAAXAEBVVec3@@_NHH1@Z
-    virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const &, bool, int32_t, int32_t, bool);
 
     // vIndex: 29, symbol: ?normalTick@Agent@@UEAAXXZ
     virtual void normalTick();
@@ -89,7 +89,7 @@ public:
     virtual void setOwner(struct ActorUniqueID);
 
     // vIndex: 84, symbol: ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 93, symbol: ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
     virtual void setCarriedItem(class ItemStack const &);
@@ -101,7 +101,7 @@ public:
     virtual bool canBePulledIntoVehicle() const;
 
     // vIndex: 126, symbol: ?canBeAffected@Agent@@UEBA_NI@Z
-    virtual bool canBeAffected(uint) const;
+    virtual bool canBeAffected(uint32_t) const;
 
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
@@ -128,7 +128,7 @@ public:
     virtual void __unk_vfn_172();
 
     // vIndex: 173, symbol: ?knockback@Agent@@UEAAXPEAVActor@@HMMMMM@Z
-    virtual void knockback(class Actor *, int, float, float, float, float, float);
+    virtual void knockback(class Actor *, int32_t, float, float, float, float, float);
 
     // vIndex: 203, symbol: ?createAIGoals@Agent@@UEAA_NXZ
     virtual bool createAIGoals();
@@ -167,10 +167,10 @@ public:
     MCAPI float getMoveSpeedScalar() const;
 
     // symbol: ?getSelectedSlot@Agent@@QEBAHXZ
-    MCAPI int getSelectedSlot() const;
+    MCAPI int32_t getSelectedSlot() const;
 
     // symbol: ?getSwingAnimationDuration@Agent@@QEBAHXZ
-    MCAPI int getSwingAnimationDuration() const;
+    MCAPI int32_t getSwingAnimationDuration() const;
 
     // symbol: ?handleAnimationEvent@Agent@@QEAAXW4AgentAnimation@@@Z
     MCAPI void handleAnimationEvent(::AgentAnimation);
@@ -179,7 +179,7 @@ public:
     MCAPI bool isEmoting() const;
 
     // symbol: ?isValidSlotNum@Agent@@QEAA_NH@Z
-    MCAPI bool isValidSlotNum(int);
+    MCAPI bool isValidSlotNum(int32_t);
 
     // symbol: ?setGameType@Agent@@QEAAXW4GameType@@@Z
     MCAPI void setGameType(::GameType);

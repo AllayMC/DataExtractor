@@ -29,7 +29,7 @@ public:
     MCAPI std::unique_ptr<class Path> findPath(class Actor &, class Actor &, float);
 
     // symbol: ?findPath@PathFinder@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVActor@@HHHM@Z
-    MCAPI std::unique_ptr<class Path> findPath(class Actor &, int, int, int, float);
+    MCAPI std::unique_ptr<class Path> findPath(class Actor &, int32_t, int32_t, int32_t, float);
 
     // symbol: ?isFree@PathFinder@@QEAA?AW4NodeType@@AEAVActor@@AEBVBlockPos@@11W4CanJumpIntoNode@@W4CanClimbIntoNode@@@Z
     MCAPI ::NodeType isFree(class Actor &, class BlockPos const &, class BlockPos const &, class BlockPos const &, ::CanJumpIntoNode, ::CanClimbIntoNode);
@@ -54,10 +54,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_checkBlockAndNeighborsProperty@PathFinder@@AEAA_NAEBUActorPathingData@@AEBVBlockPos@@AEBVBlock@@W4BlockProperty@@HPEBVBreakBlocksComponent@@V?$function@$$A6A_NAEBVBlock@@AEBVBlockPos@@@Z@std@@@Z
-    MCAPI bool _checkBlockAndNeighborsProperty(struct ActorPathingData const &, class BlockPos const &, class Block const &, ::BlockProperty, int, class BreakBlocksComponent const *, std::function<bool (class Block const &, class BlockPos const &)>);
+    MCAPI bool _checkBlockAndNeighborsProperty(struct ActorPathingData const &, class BlockPos const &, class Block const &, ::BlockProperty, int32_t, class BreakBlocksComponent const *, std::function<bool (class Block const &, class BlockPos const &)>);
 
     // symbol: ?_checkForDamagingBlock@PathFinder@@AEAA_NAEBUActorPathingData@@AEBVBlockPos@@AEBVBlock@@HPEBVBreakBlocksComponent@@@Z
-    MCAPI bool _checkForDamagingBlock(struct ActorPathingData const &, class BlockPos const &, class Block const &, int, class BreakBlocksComponent const *);
+    MCAPI bool _checkForDamagingBlock(struct ActorPathingData const &, class BlockPos const &, class Block const &, int32_t, class BreakBlocksComponent const *);
 
     // symbol: ?_classifyDoorNode@PathFinder@@AEAA?AW4NodeType@@AEBUActorPathingData@@AEBVBlock@@AEBVBlockPos@@2@Z
     MCAPI ::NodeType _classifyDoorNode(struct ActorPathingData const &, class Block const &, class BlockPos const &, class BlockPos const &);
@@ -84,7 +84,7 @@ public:
     MCAPI std::pair<float, float> _getMinAndMaxHeightAroundBlock(class BlockPos const &, float) const;
 
     // symbol: ?_getNeighbors@PathFinder@@AEAAHAEBUActorPathingData@@AEAVPathfinderNode@@AEBV3@2I@Z
-    MCAPI int _getNeighbors(struct ActorPathingData const &, class PathfinderNode &, class PathfinderNode const &, class PathfinderNode const &, uint);
+    MCAPI int32_t _getNeighbors(struct ActorPathingData const &, class PathfinderNode &, class PathfinderNode const &, class PathfinderNode const &, uint32_t);
 
     // symbol: ?_getNode@PathFinder@@AEAAPEAVPathfinderNode@@AEBUActorPathingData@@AEBVBlockPos@@1AEBV2@MW4CanClimbIntoNode@@@Z
     MCAPI class PathfinderNode * _getNode(struct ActorPathingData const &, class BlockPos const &, class BlockPos const &, class PathfinderNode const &, float, ::CanClimbIntoNode);

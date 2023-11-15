@@ -58,7 +58,7 @@ namespace VanillaSystemsRegistration {
     MCAPI void registerTickFilterSystems(class EntitySystems &);
 
     // symbol: ?registerVanillaServerTickingSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@AEBURegistrationOptions@1@@Z
-    MCAPI void registerVanillaServerTickingSystems(class EntitySystems &, Bedrock::NotNullNonOwnerPtr<class ILevel const>, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    MCAPI void registerVanillaServerTickingSystems(class EntitySystems &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>, struct VanillaSystemsRegistration::RegistrationOptions const &);
 
     // symbol: ?registerVehicleManagementSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEBURegistrationOptions@1@@Z
     MCAPI void registerVehicleManagementSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);

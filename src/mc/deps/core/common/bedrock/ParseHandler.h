@@ -25,13 +25,13 @@ public:
     MCAPI bool Double(double);
 
     // symbol: ?Int@ParseHandler@JSONObject@Bedrock@@QEAA_NH@Z
-    MCAPI bool Int(int);
+    MCAPI bool Int(int32_t);
 
     // symbol: ?Int64@ParseHandler@JSONObject@Bedrock@@QEAA_N_J@Z
-    MCAPI bool Int64(int64);
+    MCAPI bool Int64(int64_t);
 
     // symbol: ?Key@ParseHandler@JSONObject@Bedrock@@QEAA_NPEBDI_N@Z
-    MCAPI bool Key(char const *, uint, bool);
+    MCAPI bool Key(char const *, uint32_t, bool);
 
     // symbol: ?Null@ParseHandler@JSONObject@Bedrock@@QEAA_NXZ
     MCAPI bool Null();
@@ -43,13 +43,13 @@ public:
     MCAPI bool StartObject();
 
     // symbol: ?String@ParseHandler@JSONObject@Bedrock@@QEAA_NPEBDI_N@Z
-    MCAPI bool String(char const *, uint, bool);
+    MCAPI bool String(char const *, uint32_t, bool);
 
     // symbol: ?Uint@ParseHandler@JSONObject@Bedrock@@QEAA_NI@Z
-    MCAPI bool Uint(uint);
+    MCAPI bool Uint(uint32_t);
 
     // symbol: ?Uint64@ParseHandler@JSONObject@Bedrock@@QEAA_N_K@Z
-    MCAPI bool Uint64(uint64);
+    MCAPI bool Uint64(uint64_t);
 
     // NOLINTEND
 

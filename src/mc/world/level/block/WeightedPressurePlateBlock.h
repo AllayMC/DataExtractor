@@ -148,25 +148,25 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 192, symbol: ?getTickDelay@WeightedPressurePlateBlock@@UEBAHXZ
-    virtual int getTickDelay() const;
+    virtual int32_t getTickDelay() const;
 
     // vIndex: 193, symbol: ?getSignalStrength@WeightedPressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const;
+    virtual int32_t getSignalStrength(class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 194, symbol: ?getSignalForData@WeightedPressurePlateBlock@@MEBAHH@Z
-    virtual int getSignalForData(int) const;
+    virtual int32_t getSignalForData(int32_t) const;
 
     // vIndex: 195, symbol: ?getRedstoneSignal@WeightedPressurePlateBlock@@MEBAHH@Z
-    virtual int getRedstoneSignal(int) const;
+    virtual int32_t getRedstoneSignal(int32_t) const;
 
     // symbol: ??0WeightedPressurePlateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@H@Z
-    MCAPI WeightedPressurePlateBlock(std::string const &, int, class Material const &, int);
+    MCAPI WeightedPressurePlateBlock(std::string const &, int32_t, class Material const &, int32_t);
 
     // symbol: ?MAX_WEIGHT_HEAVY@WeightedPressurePlateBlock@@2HB
-    MCAPI static int const MAX_WEIGHT_HEAVY;
+    MCAPI static int32_t const MAX_WEIGHT_HEAVY;
 
     // symbol: ?MAX_WEIGHT_LIGHT@WeightedPressurePlateBlock@@2HB
-    MCAPI static int const MAX_WEIGHT_LIGHT;
+    MCAPI static int32_t const MAX_WEIGHT_LIGHT;
 
     // NOLINTEND
 

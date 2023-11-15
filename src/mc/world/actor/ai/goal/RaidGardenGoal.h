@@ -37,7 +37,7 @@ public:
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
 
     // symbol: ??0RaidGardenGoal@@QEAA@AEAVMob@@MHHHMHHHHAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
-    MCAPI RaidGardenGoal(class Mob &, float, int, int, int, float, int, int, int, int, std::vector<class BlockDescriptor> const &);
+    MCAPI RaidGardenGoal(class Mob &, float, int32_t, int32_t, int32_t, float, int32_t, int32_t, int32_t, int32_t, std::vector<class BlockDescriptor> const &);
 
     // NOLINTEND
 

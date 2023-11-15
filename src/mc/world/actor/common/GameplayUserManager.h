@@ -45,19 +45,19 @@ public:
     MCAPI void forEachActivePlayerIncludeRemoved(std::function<bool (class Player &)>) const;
 
     // symbol: ?getActiveGameplayUserCount@GameplayUserManager@@QEBA_KXZ
-    MCAPI uint64 getActiveGameplayUserCount() const;
+    MCAPI uint64_t getActiveGameplayUserCount() const;
 
     // symbol: ?getActiveGameplayUsers@GameplayUserManager@@QEBAAEBV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@XZ
     MCAPI std::vector<class WeakEntityRef> const & getActiveGameplayUsers() const;
 
     // symbol: ?getActivePlayerCount@GameplayUserManager@@QEBA_KXZ
-    MCAPI uint64 getActivePlayerCount() const;
+    MCAPI uint64_t getActivePlayerCount() const;
 
     // symbol: ?getGameplayUserEntities@GameplayUserManager@@QEBAAEBV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@XZ
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getGameplayUserEntities() const;
 
     // symbol: ?getGameplayUserEntityCount@GameplayUserManager@@QEBA_KXZ
-    MCAPI uint64 getGameplayUserEntityCount() const;
+    MCAPI uint64_t getGameplayUserEntityCount() const;
 
     // symbol: ?initializeWithGameplayUserManagerProxy@GameplayUserManager@@QEAAXV?$unique_ptr@VGameplayUserManagerProxy@@U?$default_delete@VGameplayUserManagerProxy@@@std@@@std@@@Z
     MCAPI void initializeWithGameplayUserManagerProxy(std::unique_ptr<class GameplayUserManagerProxy>);
@@ -118,7 +118,7 @@ public:
     MCAPI class GameplayUserManagerProxy & _getGameplayUserManagerProxy();
 
     // symbol: ?_getNewPlayerId@GameplayUserManager@@AEBAHXZ
-    MCAPI int _getNewPlayerId() const;
+    MCAPI int32_t _getNewPlayerId() const;
 
     // symbol: ?_saveAllPlayers@GameplayUserManager@@AEAAXAEAVLevelStorage@@@Z
     MCAPI void _saveAllPlayers(class LevelStorage &);

@@ -28,7 +28,7 @@ public:
     virtual void previousSchema(class cereal::SchemaFactory &) const;
 
     // vIndex: 2, symbol: ?upgradeToNext@BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@UEBA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@@Z
-    virtual bool upgradeToNext(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> &) const;
+    virtual bool upgradeToNext(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &) const;
 
     // symbol: ??0BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@QEAA@XZ
     MCAPI BlockQueuedTicking11910Upgrade();

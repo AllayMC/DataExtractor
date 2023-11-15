@@ -34,7 +34,7 @@ public:
     MCVAPI ~ScriptInventoryComponent();
 
     // symbol: ?getAdditionalSlotsPerStrength@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;
+    MCAPI class Scripting::Result<int32_t> getAdditionalSlotsPerStrength() const;
 
     // symbol: ?getCanBeSiphonedFrom@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getCanBeSiphonedFrom() const;
@@ -43,7 +43,7 @@ public:
     MCAPI class Scripting::Result<std::string> getContainerType() const;
 
     // symbol: ?getInventorySize@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getInventorySize() const;
+    MCAPI class Scripting::Result<int32_t> getInventorySize() const;
 
     // symbol: ?getOrCreateContainer@ScriptInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerWrapper>> getOrCreateContainer();

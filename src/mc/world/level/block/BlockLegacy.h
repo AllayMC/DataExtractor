@@ -90,13 +90,13 @@ public:
     public:
         // NOLINTBEGIN
         // vIndex: 0, symbol: ?getState@RearrangedStateCollection@BlockLegacy@@UEBA?AV?$optional@H@std@@AEBV2@H@Z
-        virtual std::optional<int> getState(class BlockLegacy const &, int) const;
+        virtual std::optional<int32_t> getState(class BlockLegacy const &, int32_t) const;
     
         // vIndex: 1, symbol: ?setState@RearrangedStateCollection@BlockLegacy@@UEBAPEBVBlock@@AEBV2@HH@Z
-        virtual class Block const * setState(class BlockLegacy const &, int, int) const;
+        virtual class Block const * setState(class BlockLegacy const &, int32_t, int32_t) const;
     
         // symbol: ?add@RearrangedStateCollection@BlockLegacy@@SAXAEAV2@AEBVBlockState@@V?$function@$$A6A?AV?$optional@H@std@@AEBVBlockLegacy@@H@Z@std@@V?$function@$$A6APEBVBlock@@AEBVBlockLegacy@@HH@Z@5@AEBVSemVersion@@@Z
-        MCAPI static void add(class BlockLegacy &, class BlockState const &, std::function<std::optional<int> (class BlockLegacy const &, int)>, std::function<class Block const * (class BlockLegacy const &, int, int)>, class SemVersion const &);
+        MCAPI static void add(class BlockLegacy &, class BlockState const &, std::function<std::optional<int32_t> (class BlockLegacy const &, int32_t)>, std::function<class Block const * (class BlockLegacy const &, int32_t, int32_t)>, class SemVersion const &);
     
         // NOLINTEND
     
@@ -120,7 +120,7 @@ public:
         public:
             // NOLINTBEGIN
             // symbol: ??0SplitBlock@RemovedStateCollection@BlockLegacy@@QEAA@HAEAV2@@Z
-            MCAPI SplitBlock(int, class BlockLegacy &);
+            MCAPI SplitBlock(int32_t, class BlockLegacy &);
         
             // NOLINTEND
         
@@ -135,10 +135,10 @@ public:
     public:
         // NOLINTBEGIN
         // vIndex: 0, symbol: ?getState@RemovedStateCollection@BlockLegacy@@UEBA?AV?$optional@H@std@@AEBV2@H@Z
-        virtual std::optional<int> getState(class BlockLegacy const &, int) const;
+        virtual std::optional<int32_t> getState(class BlockLegacy const &, int32_t) const;
     
         // vIndex: 1, symbol: ?setState@RemovedStateCollection@BlockLegacy@@UEBAPEBVBlock@@AEBV2@HH@Z
-        virtual class Block const * setState(class BlockLegacy const &, int, int) const;
+        virtual class Block const * setState(class BlockLegacy const &, int32_t, int32_t) const;
     
         // symbol: ?add@RemovedStateCollection@BlockLegacy@@SAXAEBVBlockState@@$$QEAV?$vector@USplitBlock@RemovedStateCollection@BlockLegacy@@V?$allocator@USplitBlock@RemovedStateCollection@BlockLegacy@@@std@@@std@@AEBVSemVersion@@@Z
         MCAPI static void add(class BlockState const &, std::vector<struct BlockLegacy::RemovedStateCollection::SplitBlock> &&, class SemVersion const &);
@@ -159,7 +159,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getStateFromLegacyData@BlockLegacy@@UEBAAEBVBlock@@G@Z
-    virtual class Block const & getStateFromLegacyData(ushort) const;
+    virtual class Block const & getStateFromLegacyData(uint16_t) const;
 
     // vIndex: 2, symbol: ?newBlockEntity@BlockLegacy@@UEBA?AV?$shared_ptr@VBlockActor@@@std@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual std::shared_ptr<class BlockActor> newBlockEntity(class BlockPos const &, class Block const &) const;
@@ -204,7 +204,7 @@ public:
     virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 16, symbol: ?randomlyModifyPosition@BlockLegacy@@UEBA?AVVec3@@AEBVBlockPos@@AEAH@Z
-    virtual class Vec3 randomlyModifyPosition(class BlockPos const &, int &) const;
+    virtual class Vec3 randomlyModifyPosition(class BlockPos const &, int32_t &) const;
 
     // vIndex: 17, symbol: ?randomlyModifyPosition@BlockLegacy@@UEBA?AVVec3@@AEBVBlockPos@@@Z
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -216,7 +216,7 @@ public:
     virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 20, symbol: ?liquidCanFlowIntoFromDirection@BlockLegacy@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z
-    virtual bool liquidCanFlowIntoFromDirection(uchar, std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
+    virtual bool liquidCanFlowIntoFromDirection(uint8_t, std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
 
     // vIndex: 21, symbol: ?isSolid@BlockLegacy@@UEBA_NXZ
     virtual bool isSolid() const;
@@ -231,16 +231,16 @@ public:
     virtual class Block const & getStrippedBlock(class Block const &) const;
 
     // vIndex: 25, symbol: ?canProvideSupport@BlockLegacy@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 26, symbol: ?canProvideFullSupport@BlockLegacy@@UEBA_NAEBVBlock@@E@Z
-    virtual bool canProvideFullSupport(class Block const &, uchar) const;
+    virtual bool canProvideFullSupport(class Block const &, uint8_t) const;
 
     // vIndex: 27, symbol: ?canProvideMultifaceSupport@BlockLegacy@@UEBA_NAEBVBlock@@E@Z
-    virtual bool canProvideMultifaceSupport(class Block const &, uchar) const;
+    virtual bool canProvideMultifaceSupport(class Block const &, uint8_t) const;
 
     // vIndex: 28, symbol: ?canConnect@BlockLegacy@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const &, uchar, class Block const &) const;
+    virtual bool canConnect(class Block const &, uint8_t, class Block const &) const;
 
     // vIndex: 29, symbol: ?isAir@BlockLegacy@@UEBA_NXZ
     virtual bool isAir() const;
@@ -324,7 +324,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 56, symbol: ?isValidAuxValue@BlockLegacy@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 57, symbol: ?canFillAtPos@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool canFillAtPos(class BlockSource &, class BlockPos const &, class Block const &) const;
@@ -336,7 +336,7 @@ public:
     virtual void onFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 60, symbol: ?getDirectSignal@BlockLegacy@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
-    virtual int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
+    virtual int32_t getDirectSignal(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -372,13 +372,13 @@ public:
     virtual bool shouldDispense(class BlockSource &, class Container &) const;
 
     // vIndex: 72, symbol: ?dispense@BlockLegacy@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 73, symbol: ?transformOnFall@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z
     virtual void transformOnFall(class BlockSource &, class BlockPos const &, class Actor *, float) const;
 
     // vIndex: 74, symbol: ?onRedstoneUpdate@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int32_t, bool) const;
 
     // vIndex: 75, symbol: ?onMove@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void onMove(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
@@ -432,7 +432,7 @@ public:
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
 
     // vIndex: 92, symbol: ?mayPlace@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 93, symbol: ?mayPlace@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
@@ -477,10 +477,10 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@BlockLegacy@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 108, symbol: ?calcVariant@BlockLegacy@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVColor@mce@@@Z
-    virtual int calcVariant(class BlockSource &, class BlockPos const &, class mce::Color const &) const;
+    virtual int32_t calcVariant(class BlockSource &, class BlockPos const &, class mce::Color const &) const;
 
     // vIndex: 109, symbol: ?isAttachedTo@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
     virtual bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
@@ -501,7 +501,7 @@ public:
     virtual bool canBeBuiltOver(class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 115, symbol: ?triggerEvent@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
-    virtual void triggerEvent(class BlockSource &, class BlockPos const &, int, int) const;
+    virtual void triggerEvent(class BlockSource &, class BlockPos const &, int32_t, int32_t) const;
 
     // vIndex: 116, symbol: ?executeEvent@BlockLegacy@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
     virtual void executeEvent(std::string const &, class RenderParams &) const;
@@ -531,7 +531,7 @@ public:
     virtual void __unk_vfn_124();
 
     // vIndex: 125, symbol: ?getComparatorSignal@BlockLegacy@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uchar) const;
+    virtual int32_t getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uint8_t) const;
 
     // vIndex: 126, symbol: ?canSlide@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSlide(class BlockSource &, class BlockPos const &) const;
@@ -549,7 +549,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 131, symbol: ?getIconYOffset@BlockLegacy@@UEBAHXZ
-    virtual int getIconYOffset() const;
+    virtual int32_t getIconYOffset() const;
 
     // vIndex: 132, symbol: ?buildDescriptionId@BlockLegacy@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const &) const;
@@ -558,16 +558,16 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 134, symbol: ?getColor@BlockLegacy@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const &) const;
+    virtual int32_t getColor(class Block const &) const;
 
     // vIndex: 135, symbol: ?getColor@BlockLegacy@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
+    virtual int32_t getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 136, symbol: ?getColorAtPos@BlockLegacy@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
+    virtual int32_t getColorAtPos(class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 137, symbol: ?getColorForParticle@BlockLegacy@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColorForParticle(class BlockSource &, class BlockPos const &, class Block const &) const;
+    virtual int32_t getColorForParticle(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 138, symbol: ?isSeasonTinted@BlockLegacy@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isSeasonTinted(class Block const &, class BlockSource &, class BlockPos const &) const;
@@ -579,10 +579,10 @@ public:
     virtual float getShadeBrightness(class Block const &) const;
 
     // vIndex: 141, symbol: ?telemetryVariant@BlockLegacy@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int telemetryVariant(class BlockSource &, class BlockPos const &) const;
+    virtual int32_t telemetryVariant(class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 142, symbol: ?getVariant@BlockLegacy@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 143, symbol: ?canSpawnOn@BlockLegacy@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor *) const;
@@ -591,10 +591,10 @@ public:
     virtual class Block const & getRenderBlock() const;
 
     // vIndex: 145, symbol: ?getMappedFace@BlockLegacy@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const &) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const &) const;
 
     // vIndex: 146, symbol: ?getFaceFlip@BlockLegacy@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-    virtual ::Flip getFaceFlip(uchar, class Block const &) const;
+    virtual ::Flip getFaceFlip(uint8_t, class Block const &) const;
 
     // vIndex: 147, symbol: ?animateTickBedrockLegacy@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource &, class BlockPos const &, class Random &) const;
@@ -612,13 +612,13 @@ public:
     virtual class BlockLegacy & addState(class BlockState const &);
 
     // vIndex: 152, symbol: ?addState@BlockLegacy@@UEAAAEAV1@AEBVBlockState@@_K@Z
-    virtual class BlockLegacy & addState(class BlockState const &, uint64);
+    virtual class BlockLegacy & addState(class BlockState const &, uint64_t);
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
 
     // vIndex: 154, symbol: ?tryLegacyUpgrade@BlockLegacy@@UEBAPEBVBlock@@G@Z
-    virtual class Block const * tryLegacyUpgrade(ushort) const;
+    virtual class Block const * tryLegacyUpgrade(uint16_t) const;
 
     // vIndex: 155, symbol: ?dealsContactDamage@BlockLegacy@@UEBA_NAEBVActor@@AEBVBlock@@_N@Z
     virtual bool dealsContactDamage(class Actor const &, class Block const &, bool) const;
@@ -672,10 +672,10 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 172, symbol: ?use@BlockLegacy@@MEBA_NAEAVPlayer@@AEBVBlockPos@@EV?$optional@VVec3@@@std@@@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar, std::optional<class Vec3>) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t, std::optional<class Vec3>) const;
 
     // vIndex: 173, symbol: ?use@BlockLegacy@@MEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -690,7 +690,7 @@ public:
     virtual ::BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 178, symbol: ?getExtraRenderLayers@BlockLegacy@@MEBAHXZ
-    virtual int getExtraRenderLayers() const;
+    virtual int32_t getExtraRenderLayers() const;
 
     // vIndex: 179, symbol: ?getExplosionResistance@BlockLegacy@@MEBAMXZ
     virtual float getExplosionResistance() const;
@@ -711,10 +711,10 @@ public:
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 185, symbol: ?getResourceItem@BlockLegacy@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 186, symbol: ?getResourceCount@BlockLegacy@@MEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@BlockLegacy@@MEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -825,7 +825,7 @@ public:
     MCVAPI bool isWallBlock() const;
 
     // symbol: ?onPlayerPlacing@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@E@Z
-    MCVAPI void onPlayerPlacing(class BlockSource &, class BlockPos const &, class Actor &, uchar) const;
+    MCVAPI void onPlayerPlacing(class BlockSource &, class BlockPos const &, class Actor &, uint8_t) const;
 
     // symbol: ?onStepOff@BlockLegacy@@MEBAXAEAVActor@@AEBVBlockPos@@@Z
     MCVAPI void onStepOff(class Actor &, class BlockPos const &) const;
@@ -849,7 +849,7 @@ public:
     MCVAPI ~BlockLegacy();
 
     // symbol: ??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI BlockLegacy(std::string const &, int, class Material const &);
+    MCAPI BlockLegacy(std::string const &, int32_t, class Material const &);
 
     // symbol: ?_isDataDrivingVanillaBlocksAndItems@BlockLegacy@@QEBA_NXZ
     MCAPI bool _isDataDrivingVanillaBlocksAndItems() const;
@@ -885,7 +885,7 @@ public:
     MCAPI bool canReactToNeighborsDuringInstatick() const;
 
     // symbol: ?createBlockPermutations@BlockLegacy@@QEAAXI@Z
-    MCAPI void createBlockPermutations(uint);
+    MCAPI void createBlockPermutations(uint32_t);
 
     // symbol: ?createWeakPtr@BlockLegacy@@QEBA?AV?$WeakPtr@VBlockLegacy@@@@XZ
     MCAPI class WeakPtr<class BlockLegacy> createWeakPtr() const;
@@ -906,7 +906,7 @@ public:
     MCAPI ::BlockActorType getBlockEntityType() const;
 
     // symbol: ?getBlockItemId@BlockLegacy@@QEBAFXZ
-    MCAPI short getBlockItemId() const;
+    MCAPI int16_t getBlockItemId() const;
 
     // symbol: ?getBlockState@BlockLegacy@@QEBAPEBVBlockState@@AEBVHashedString@@@Z
     MCAPI class BlockState const * getBlockState(class HashedString const &) const;
@@ -939,7 +939,7 @@ public:
     MCAPI class EntityContext const & getEntityNoCheck() const;
 
     // symbol: ?getExperienceDrop@BlockLegacy@@QEBAHAEAVRandom@@@Z
-    MCAPI int getExperienceDrop(class Random &) const;
+    MCAPI int32_t getExperienceDrop(class Random &) const;
 
     // symbol: ?getMaterial@BlockLegacy@@QEBAAEBVMaterial@@XZ
     MCAPI class Material const & getMaterial() const;
@@ -960,7 +960,7 @@ public:
     MCAPI std::vector<class ItemStack> getResourceDrops(class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
 
     // symbol: ?getUniquePermutations@BlockLegacy@@QEBA_KXZ
-    MCAPI uint64 getUniquePermutations() const;
+    MCAPI uint64_t getUniquePermutations() const;
 
     // symbol: ?hasBlockEntity@BlockLegacy@@QEBA_NXZ
     MCAPI bool hasBlockEntity() const;
@@ -978,7 +978,7 @@ public:
     MCAPI bool hasTag(class HashedString const &) const;
 
     // symbol: ?hasTag@BlockLegacy@@QEBA_NAEB_K@Z
-    MCAPI bool hasTag(uint64 const &) const;
+    MCAPI bool hasTag(uint64_t const &) const;
 
     // symbol: ?initEntity@BlockLegacy@@QEAAXAEAVEntityRegistry@@@Z
     MCAPI void initEntity(class EntityRegistry &);
@@ -1107,7 +1107,7 @@ public:
     MCAPI void setVisualShape(class AABB const &);
 
     // symbol: ?tryGetStateFromLegacyData@BlockLegacy@@QEBAPEBVBlock@@G@Z
-    MCAPI class Block const * tryGetStateFromLegacyData(ushort) const;
+    MCAPI class Block const * tryGetStateFromLegacyData(uint16_t) const;
 
     // symbol: ?updateTallestCollisionShape@BlockLegacy@@QEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVAABB@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@AEAV5@AEBVVec3@@AEAM@Z
     MCAPI bool updateTallestCollisionShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
@@ -1122,10 +1122,10 @@ public:
     MCAPI static struct BlockLegacy::HorizontalDirectionBits getConnectedDirections(class Block const &, class BlockPos const &, class IConstBlockSource const &);
 
     // symbol: ?getPlacementFacingAll@BlockLegacy@@SAEAEBVActor@@AEBVBlockPos@@M@Z
-    MCAPI static uchar getPlacementFacingAll(class Actor const &, class BlockPos const &, float);
+    MCAPI static uint8_t getPlacementFacingAll(class Actor const &, class BlockPos const &, float);
 
     // symbol: ?getPlacementFacingAllExceptAxisY@BlockLegacy@@SAEAEBVActor@@AEBVBlockPos@@M@Z
-    MCAPI static uchar getPlacementFacingAllExceptAxisY(class Actor const &, class BlockPos const &, float);
+    MCAPI static uint8_t getPlacementFacingAllExceptAxisY(class Actor const &, class BlockPos const &, float);
 
     // symbol: ?popResource@BlockLegacy@@SAPEAVItemActor@@AEAVBlockSource@@AEBVBlockPos@@AEBVItemStack@@@Z
     MCAPI static class ItemActor * popResource(class BlockSource &, class BlockPos const &, class ItemStack const &);
@@ -1150,13 +1150,13 @@ public:
     MCAPI bool forEachBlockPermutationMutable(std::function<bool (class Block &)>);
 
     // symbol: ?getBurnOdds@BlockLegacy@@IEBAHXZ
-    MCAPI int getBurnOdds() const;
+    MCAPI int32_t getBurnOdds() const;
 
     // symbol: ?getDestroySpeed@BlockLegacy@@IEBAMXZ
     MCAPI float getDestroySpeed() const;
 
     // symbol: ?getFlameOdds@BlockLegacy@@IEBAHXZ
-    MCAPI int getFlameOdds() const;
+    MCAPI int32_t getFlameOdds() const;
 
     // symbol: ?getFriction@BlockLegacy@@IEBAMXZ
     MCAPI float getFriction() const;
@@ -1169,10 +1169,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_tryLookupAlteredStateCollection@BlockLegacy@@AEBA?AV?$optional@H@std@@_KG@Z
-    MCAPI std::optional<int> _tryLookupAlteredStateCollection(uint64, ushort) const;
+    MCAPI std::optional<int32_t> _tryLookupAlteredStateCollection(uint64_t, uint16_t) const;
 
     // symbol: ?_trySetStateFromAlteredStateCollection@BlockLegacy@@AEBAPEBVBlock@@_KHG@Z
-    MCAPI class Block const * _trySetStateFromAlteredStateCollection(uint64, int, ushort) const;
+    MCAPI class Block const * _trySetStateFromAlteredStateCollection(uint64_t, int32_t, uint16_t) const;
 
     // symbol: ?initParams@BlockLegacy@@AEBAXAEAVRenderParams@@AEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     MCAPI void initParams(class RenderParams &, class BlockSource &, class BlockPos const &, class Actor *) const;

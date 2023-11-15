@@ -30,13 +30,13 @@ public:
     virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
 
     // vIndex: 5, symbol: ?isFeatureChunk@PillagerOutpostFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
-    virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, uint, class IPreliminarySurfaceProvider const &, class Dimension const &);
+    virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, uint32_t, class IPreliminarySurfaceProvider const &, class Dimension const &);
 
     // vIndex: 6, symbol: ?createStructureStart@PillagerOutpostFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
 
     // symbol: ??0PillagerOutpostFeature@@QEAA@I@Z
-    MCAPI PillagerOutpostFeature(uint);
+    MCAPI PillagerOutpostFeature(uint32_t);
 
     // NOLINTEND
 

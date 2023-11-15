@@ -68,19 +68,19 @@ public:
     MCAPI ScriptPlayer(class Player const &, class Scripting::WeakLifetimeScope const &);
 
     // symbol: ?addExperience@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@I$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<uint> addExperience(int) const;
+    MCAPI class Scripting::Result<uint32_t> addExperience(int32_t) const;
 
     // symbol: ?addLevels@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<int> addLevels(int) const;
+    MCAPI class Scripting::Result<int32_t> addLevels(int32_t) const;
 
     // symbol: ?calculateTotalXp@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@I$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<uint> calculateTotalXp() const;
+    MCAPI class Scripting::Result<uint32_t> calculateTotalXp() const;
 
     // symbol: ?getCamera@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@UScriptCamera@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCamera>> getCamera();
 
     // symbol: ?getItemCooldownLeft@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Scripting::Result<int> getItemCooldownLeft(std::string const &) const;
+    MCAPI class Scripting::Result<int32_t> getItemCooldownLeft(std::string const &) const;
 
     // symbol: ?getName@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getName() const;
@@ -89,19 +89,19 @@ public:
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptScreenDisplay>> getOrCreateScreenDisplay();
 
     // symbol: ?getPlayerLevel@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getPlayerLevel() const;
+    MCAPI class Scripting::Result<int32_t> getPlayerLevel() const;
 
     // symbol: ?getSelectedSlot@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getSelectedSlot() const;
+    MCAPI class Scripting::Result<int32_t> getSelectedSlot() const;
 
     // symbol: ?getSpawnPoint@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@UScriptDimensionLocation@ScriptModuleMinecraft@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::optional<struct ScriptModuleMinecraft::ScriptDimensionLocation>> getSpawnPoint() const;
 
     // symbol: ?getTotalXpNeededForNextLevel@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getTotalXpNeededForNextLevel() const;
+    MCAPI class Scripting::Result<int32_t> getTotalXpNeededForNextLevel() const;
 
     // symbol: ?getXpEarnedAtCurrentLevel@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getXpEarnedAtCurrentLevel() const;
+    MCAPI class Scripting::Result<int32_t> getXpEarnedAtCurrentLevel() const;
 
     // symbol: ?isEmoting@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> isEmoting() const;
@@ -146,13 +146,13 @@ public:
     MCAPI class Scripting::Result<void> setOp(bool) const;
 
     // symbol: ?setSelectedSlot@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<void> setSelectedSlot(int) const;
+    MCAPI class Scripting::Result<void> setSelectedSlot(int32_t) const;
 
     // symbol: ?setSpawnPoint@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@XUScriptLocationOutOfWorldBoundsError@ScriptModuleMinecraft@@UError@Scripting@@@Scripting@@AEBV?$optional@UScriptDimensionLocation@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::Result<void, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, struct Scripting::Error> setSpawnPoint(std::optional<struct ScriptModuleMinecraft::ScriptDimensionLocation> const &) const;
 
     // symbol: ?startItemCooldown@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI class Scripting::Result<void> startItemCooldown(std::string const &, int);
+    MCAPI class Scripting::Result<void> startItemCooldown(std::string const &, int32_t);
 
     // symbol: ?stopMusic@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> stopMusic();

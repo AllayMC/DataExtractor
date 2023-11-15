@@ -66,7 +66,7 @@ public:
     virtual void loadChunk(class LevelChunk &, bool);
 
     // vIndex: 12, symbol: ?postProcessMobsAt@ChunkSource@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
-    virtual void postProcessMobsAt(class BlockSource &, int, int, class Random &);
+    virtual void postProcessMobsAt(class BlockSource &, int32_t, int32_t, class Random &);
 
     // vIndex: 13, symbol: ?saveLiveChunk@ChunkSource@@UEAA_NAEAVLevelChunk@@@Z
     virtual bool saveLiveChunk(class LevelChunk &);
@@ -132,7 +132,7 @@ public:
     MCVAPI ~ChunkSource();
 
     // symbol: ??0ChunkSource@@QEAA@PEAVDimension@@H@Z
-    MCAPI ChunkSource(class Dimension *, int);
+    MCAPI ChunkSource(class Dimension *, int32_t);
 
     // symbol: ??0ChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z
     MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
@@ -141,7 +141,7 @@ public:
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);
 
     // symbol: ?createEmptyView@ChunkSource@@QEAA?AV?$GridArea@V?$shared_ptr@VLevelChunk@@@std@@@@W4LoadMode@1@_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@W4ChunkSourceViewGenerateMode@@PEBM@Z
-    MCAPI class GridArea<std::shared_ptr<class LevelChunk>> createEmptyView(::ChunkSource::LoadMode, bool, std::function<void (class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)>, ::ChunkSourceViewGenerateMode, float const *);
+    MCAPI class GridArea<std::shared_ptr<class LevelChunk>> createEmptyView(::ChunkSource::LoadMode, bool, std::function<void (class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint32_t>)>, ::ChunkSourceViewGenerateMode, float const *);
 
     // symbol: ?getAvailableChunk@ChunkSource@@QEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
     MCAPI std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const &);
@@ -150,7 +150,7 @@ public:
     MCAPI std::shared_ptr<class LevelChunk> getAvailableChunkAt(class BlockPos const &);
 
     // symbol: ?getChunkSide@ChunkSource@@QEBAHXZ
-    MCAPI int getChunkSide() const;
+    MCAPI int32_t getChunkSide() const;
 
     // symbol: ?getDimension@ChunkSource@@QEBAAEAVDimension@@XZ
     MCAPI class Dimension & getDimension() const;
@@ -168,7 +168,7 @@ public:
     MCAPI void setShuttingDown(bool);
 
     // symbol: ?shouldServerGeneratePos@ChunkSource@@QEAA_NAEBVChunkPos@@MH@Z
-    MCAPI bool shouldServerGeneratePos(class ChunkPos const &, float, int);
+    MCAPI bool shouldServerGeneratePos(class ChunkPos const &, float, int32_t);
 
     // symbol: ?gPerfIsClientSide@ChunkSource@@2_NA
     MCAPI static bool gPerfIsClientSide;
@@ -223,7 +223,7 @@ public:
     MCAPI void _postProcessingTask(class LevelChunk &, class ChunkViewSource &);
 
     // symbol: ?_spawnChunkGenerationTasks@ChunkSource@@IEAAXH_N@Z
-    MCAPI void _spawnChunkGenerationTasks(int, bool);
+    MCAPI void _spawnChunkGenerationTasks(int32_t, bool);
 
     // NOLINTEND
 

@@ -21,13 +21,13 @@ public:
     virtual void fillBiomes(class LevelChunk &, class ChunkLocalNoiseCache const &) const;
 
     // vIndex: 2, symbol: ?getBiomeArea@FixedBiomeSource@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-    virtual class BiomeArea getBiomeArea(class BoundingBox const &, uint) const;
+    virtual class BiomeArea getBiomeArea(class BoundingBox const &, uint32_t) const;
 
     // vIndex: 3, symbol: ?getBiomeArea@FixedBiomeSource@@UEBA?AVBiomeArea@@AEBVBoundingBox@@IAEBUGetBiomeOptions@@@Z
-    virtual class BiomeArea getBiomeArea(class BoundingBox const &, uint, struct GetBiomeOptions const &) const;
+    virtual class BiomeArea getBiomeArea(class BoundingBox const &, uint32_t, struct GetBiomeOptions const &) const;
 
     // vIndex: 4, symbol: ?containsOnly@FixedBiomeSource@@UEBA_NHHHHV?$span@$$CB_K$0?0@gsl@@@Z
-    virtual bool containsOnly(int, int, int, int, gsl::span<uint64 const>) const;
+    virtual bool containsOnly(int32_t, int32_t, int32_t, int32_t, class gsl::span<uint64_t const>) const;
 
     // symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
     MCVAPI class Biome const * getBiome(class BlockPos const &) const;
@@ -36,7 +36,7 @@ public:
     MCVAPI class Biome const * getBiome(struct GetBiomeOptions const &) const;
 
     // symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z
-    MCVAPI class Biome const * getBiome(int, int, int) const;
+    MCVAPI class Biome const * getBiome(int32_t, int32_t, int32_t) const;
 
     // symbol: ??0FixedBiomeSource@@QEAA@AEBVBiome@@@Z
     MCAPI FixedBiomeSource(class Biome const &);

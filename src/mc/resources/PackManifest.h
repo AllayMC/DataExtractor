@@ -100,7 +100,7 @@ public:
     MCAPI ::PackScope getPackScope() const;
 
     // symbol: ?getPackSize@PackManifest@@QEBA_KXZ
-    MCAPI uint64 getPackSize() const;
+    MCAPI uint64_t getPackSize() const;
 
     // symbol: ?getPackType@PackManifest@@QEBA?AW4PackType@@XZ
     MCAPI ::PackType getPackType() const;
@@ -148,7 +148,7 @@ public:
     MCAPI void setIdentity(struct PackIdVersion const &);
 
     // symbol: ?setLastModifiedDate@PackManifest@@QEAAX_J@Z
-    MCAPI void setLastModifiedDate(int64);
+    MCAPI void setLastModifiedDate(int64_t);
 
     // symbol: ?setLocalizedNameKeywords@PackManifest@@QEAAXAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
     MCAPI void setLocalizedNameKeywords(std::unordered_map<std::string,std::string> const &);

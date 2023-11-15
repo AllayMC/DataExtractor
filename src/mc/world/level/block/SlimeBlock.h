@@ -151,7 +151,7 @@ public:
     virtual void __unk_vfn_174();
 
     // vIndex: 178, symbol: ?getExtraRenderLayers@SlimeBlock@@UEBAHXZ
-    virtual int getExtraRenderLayers() const;
+    virtual int32_t getExtraRenderLayers() const;
 
     // vIndex: 183, symbol: __unk_vfn_183
     virtual void __unk_vfn_183();
@@ -160,7 +160,7 @@ public:
     MCVAPI bool isBounceBlock() const;
 
     // symbol: ??0SlimeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SlimeBlock(std::string const &, int, class Material const &);
+    MCAPI SlimeBlock(std::string const &, int32_t, class Material const &);
 
     // NOLINTEND
 

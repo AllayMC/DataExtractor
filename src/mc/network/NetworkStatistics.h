@@ -25,10 +25,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?packetSentTo@NetworkStatistics@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-    virtual void packetSentTo(class NetworkIdentifier const &, class Packet const &, uint);
+    virtual void packetSentTo(class NetworkIdentifier const &, class Packet const &, uint32_t);
 
     // vIndex: 2, symbol: ?packetReceivedFrom@NetworkStatistics@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-    virtual void packetReceivedFrom(class NetworkIdentifier const &, class Packet const &, uint);
+    virtual void packetReceivedFrom(class NetworkIdentifier const &, class Packet const &, uint32_t);
 
     // vIndex: 3, symbol: ?dataSentTo@NetworkStatistics@@UEAAXAEBVNetworkIdentifier@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     virtual void dataSentTo(class NetworkIdentifier const &, std::string_view);
@@ -50,7 +50,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ??0NetworkStatistics@@AEAA@$$QEAVClientOrServerNetworkSystemRef@@W4TrackerType@@$$QEAV?$function@$$A6A_NAEAURakNetStatistics@RakNet@@@Z@std@@V?$not_null@V?$NonOwnerPointer@VNetworkDebugManager@@@Bedrock@@@gsl@@@Z
-    MCAPI NetworkStatistics(class ClientOrServerNetworkSystemRef &&, ::TrackerType, std::function<bool (struct RakNet::RakNetStatistics &)> &&, Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>);
+    MCAPI NetworkStatistics(class ClientOrServerNetworkSystemRef &&, ::TrackerType, std::function<bool (struct RakNet::RakNetStatistics &)> &&, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkDebugManager>>);
 
     // symbol: ?_clearCSVStats@NetworkStatistics@@AEAAXXZ
     MCAPI void _clearCSVStats();

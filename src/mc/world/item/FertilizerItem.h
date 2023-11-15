@@ -74,7 +74,7 @@ public:
     virtual void __unk_vfn_80();
 
     // vIndex: 85, symbol: ?dispense@FertilizerItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 115, symbol: __unk_vfn_115
     virtual void __unk_vfn_115();
@@ -83,7 +83,7 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 135, symbol: ?_useOn@FertilizerItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // symbol: ?isFertilizer@FertilizerItem@@UEBA_NXZ
     MCVAPI bool isFertilizer() const;
@@ -92,7 +92,7 @@ public:
     MCVAPI ~FertilizerItem();
 
     // symbol: ??0FertilizerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4FertilizerType@@@Z
-    MCAPI FertilizerItem(std::string const &, int, ::FertilizerType);
+    MCAPI FertilizerItem(std::string const &, int32_t, ::FertilizerType);
 
     // symbol: ?getFertilizerType@FertilizerItem@@QEBA?AW4FertilizerType@@XZ
     MCAPI ::FertilizerType getFertilizerType() const;

@@ -18,19 +18,19 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getChunkRebuildPriority@ChunkBuildOrderPolicy@@UEBAHAEBVChunkPos@@@Z
-    virtual int getChunkRebuildPriority(class ChunkPos const &) const;
+    virtual int32_t getChunkRebuildPriority(class ChunkPos const &) const;
 
     // vIndex: 2, symbol: ?registerForUpdates@ChunkBuildOrderPolicy@@UEAAIXZ
-    virtual uint registerForUpdates();
+    virtual uint32_t registerForUpdates();
 
     // vIndex: 3, symbol: ?unregisterForUpdates@ChunkBuildOrderPolicy@@UEAAXI@Z
-    virtual void unregisterForUpdates(uint);
+    virtual void unregisterForUpdates(uint32_t);
 
     // vIndex: 4, symbol: ?setPlayerInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@AEBVVec3@@@Z
-    virtual void setPlayerInfluence(uint, class ChunkPos const &, class Vec3 const &);
+    virtual void setPlayerInfluence(uint32_t, class ChunkPos const &, class Vec3 const &);
 
     // vIndex: 5, symbol: ?setTickingAreaInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@HH_N1@Z
-    virtual void setTickingAreaInfluence(uint, class ChunkPos const &, int, int, bool, bool);
+    virtual void setTickingAreaInfluence(uint32_t, class ChunkPos const &, int32_t, int32_t, bool, bool);
 
     // vIndex: 6, symbol: ?updateInfluences@ChunkBuildOrderPolicy@@UEAAXXZ
     virtual void updateInfluences();

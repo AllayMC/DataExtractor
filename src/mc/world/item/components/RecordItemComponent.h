@@ -42,22 +42,22 @@ public:
     virtual void handleVersionBasedInitialization(class SemVersion const &);
 
     // vIndex: 7, symbol: ?_canUseOn@ItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
-    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, uchar) const;
+    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 8, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, uchar, class Vec3 const &) const;
+    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, uint8_t, class Vec3 const &) const;
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEBAXXZ
     virtual void _initializeComponent() const;
 
     // symbol: ??0RecordItemComponent@@QEAA@W4LevelSoundEvent@@MH@Z
-    MCAPI RecordItemComponent(::LevelSoundEvent, float, int);
+    MCAPI RecordItemComponent(::LevelSoundEvent, float, int32_t);
 
     // symbol: ?appendFormattedHovertext@RecordItemComponent@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void appendFormattedHovertext(std::string &) const;
 
     // symbol: ?getComparatorSignal@RecordItemComponent@@QEBAHXZ
-    MCAPI int getComparatorSignal() const;
+    MCAPI int32_t getComparatorSignal() const;
 
     // symbol: ?getDuration@RecordItemComponent@@QEBAMXZ
     MCAPI float getDuration() const;

@@ -76,10 +76,10 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 135, symbol: ?_useOn@CompassItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // symbol: ??0CompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CompassItem(std::string const &, int);
+    MCAPI CompassItem(std::string const &, int32_t);
 
     // NOLINTEND
 

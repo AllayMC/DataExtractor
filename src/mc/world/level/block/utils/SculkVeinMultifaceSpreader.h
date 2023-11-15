@@ -18,10 +18,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?_canSpreadFrom@SculkVeinMultifaceSpreader@@UEBA_NAEBVBlock@@E@Z
-    virtual bool _canSpreadFrom(class Block const &, uchar) const;
+    virtual bool _canSpreadFrom(class Block const &, uint8_t) const;
 
     // vIndex: 2, symbol: ?_canSpreadInto@SculkVeinMultifaceSpreader@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlock@@AEBVBlockPos@@E@Z
-    virtual bool _canSpreadInto(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, uchar) const;
+    virtual bool _canSpreadInto(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 3, symbol: ?_isOtherBlockValidAsSource@SculkVeinMultifaceSpreader@@UEBA_NAEBVBlock@@@Z
     virtual bool _isOtherBlockValidAsSource(class Block const &) const;

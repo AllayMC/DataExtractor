@@ -166,10 +166,10 @@ public:
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
 
     // vIndex: 192, symbol: ?_getNumCandles@AbstractCandleBlock@@MEBAHAEBVBlock@@@Z
-    virtual int _getNumCandles(class Block const &) const;
+    virtual int32_t _getNumCandles(class Block const &) const;
 
     // vIndex: 193, symbol: ?_iterateCandles@AbstractCandleBlock@@MEBAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-    virtual void _iterateCandles(class Block const &, class BlockPos const &, std::function<void (class Vec3 const &, int)>) const;
+    virtual void _iterateCandles(class Block const &, class BlockPos const &, std::function<void (class Vec3 const &, int32_t)>) const;
 
     // vIndex: 194, symbol: ?_tryLightOnFire@AbstractCandleBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &, class Actor *) const;
@@ -187,7 +187,7 @@ public:
     MCVAPI ~AbstractCandleBlock();
 
     // symbol: ??0AbstractCandleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI AbstractCandleBlock(std::string const &, int, class Material const &);
+    MCAPI AbstractCandleBlock(std::string const &, int32_t, class Material const &);
 
     // NOLINTEND
 

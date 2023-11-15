@@ -97,25 +97,25 @@ public:
     MCAPI static bool canBeCopied(class CompoundTag const *);
 
     // symbol: ?getGeneration@WrittenBookItem@@SAHPEBVCompoundTag@@@Z
-    MCAPI static int getGeneration(class CompoundTag const *);
+    MCAPI static int32_t getGeneration(class CompoundTag const *);
 
     // symbol: ?getPageCount@WrittenBookItem@@SAHAEBVItemStack@@@Z
-    MCAPI static int getPageCount(class ItemStack const &);
+    MCAPI static int32_t getPageCount(class ItemStack const &);
 
     // symbol: ?getPages@WrittenBookItem@@SA?AV?$vector@UPageContent@@V?$allocator@UPageContent@@@std@@@std@@AEBVItemStack@@@Z
     MCAPI static std::vector<struct PageContent> getPages(class ItemStack const &);
 
     // symbol: ?MAX_GENERATION@WrittenBookItem@@2HB
-    MCAPI static int const MAX_GENERATION;
+    MCAPI static int32_t const MAX_GENERATION;
 
     // symbol: ?MAX_PAGES@WrittenBookItem@@2HB
-    MCAPI static int const MAX_PAGES;
+    MCAPI static int32_t const MAX_PAGES;
 
     // symbol: ?MAX_PAGE_LENGTH@WrittenBookItem@@2HB
-    MCAPI static int const MAX_PAGE_LENGTH;
+    MCAPI static int32_t const MAX_PAGE_LENGTH;
 
     // symbol: ?MAX_TITLE_LENGTH@WrittenBookItem@@2HB
-    MCAPI static int const MAX_TITLE_LENGTH;
+    MCAPI static int32_t const MAX_TITLE_LENGTH;
 
     // symbol: ?TAG_AUTHOR@WrittenBookItem@@2V?$basic_string_view@DU?$char_traits@D@std@@@std@@B
     MCAPI static std::string_view const TAG_AUTHOR;

@@ -184,7 +184,7 @@ private:
     MCAPI static std::vector<struct ImguiProfiler::Record> sPendingRecords;
 
     // symbol: ?sProduceRecords@ImguiProfiler@@0HA
-    MCAPI static int sProduceRecords;
+    MCAPI static int32_t sProduceRecords;
 
     // symbol: ?sRecordMutex@ImguiProfiler@@0VMutex@Threading@Bedrock@@A
     MCAPI static class Bedrock::Threading::Mutex sRecordMutex;

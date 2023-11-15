@@ -21,13 +21,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?start@RakTcpProxy@@UEAA_NGGG@Z
-    virtual bool start(ushort, ushort, ushort) = 0;
+    virtual bool start(uint16_t, uint16_t, uint16_t) = 0;
 
     // vIndex: 2, symbol: ?connect@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    virtual struct RakNet::SystemAddress connect(std::string const &, ushort) = 0;
+    virtual struct RakNet::SystemAddress connect(std::string const &, uint16_t) = 0;
 
     // vIndex: 3, symbol: ?send@RakTcpProxy@@UEAAXPEBDIUSystemAddress@RakNet@@@Z
-    virtual void send(char const *, uint, struct RakNet::SystemAddress) = 0;
+    virtual void send(char const *, uint32_t, struct RakNet::SystemAddress) = 0;
 
     // vIndex: 4, symbol: ?close@RakTcpProxy@@UEAAXUSystemAddress@RakNet@@@Z
     virtual void close(struct RakNet::SystemAddress) = 0;

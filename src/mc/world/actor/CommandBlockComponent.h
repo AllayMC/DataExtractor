@@ -20,13 +20,13 @@ public:
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
 
     // symbol: ?decrementTickCount@CommandBlockComponent@@QEAAHXZ
-    MCAPI int decrementTickCount();
+    MCAPI int32_t decrementTickCount();
 
     // symbol: ?getBaseCommandBlock@CommandBlockComponent@@QEAAAEAVBaseCommandBlock@@XZ
     MCAPI class BaseCommandBlock & getBaseCommandBlock();
 
     // symbol: ?getCurrentTickCount@CommandBlockComponent@@QEBAHXZ
-    MCAPI int getCurrentTickCount() const;
+    MCAPI int32_t getCurrentTickCount() const;
 
     // symbol: ?getTicking@CommandBlockComponent@@QEBA_NXZ
     MCAPI bool getTicking() const;
@@ -35,7 +35,7 @@ public:
     MCAPI void initFromDefinition(class Actor &);
 
     // symbol: ?onCommandBlockUpdate@CommandBlockComponent@@QEAAXAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NV34@H2@Z
-    MCAPI void onCommandBlockUpdate(class Actor &, std::string const &, bool, std::string, int, bool);
+    MCAPI void onCommandBlockUpdate(class Actor &, std::string const &, bool, std::string, int32_t, bool);
 
     // symbol: ??4CommandBlockComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class CommandBlockComponent & operator=(class CommandBlockComponent &&);

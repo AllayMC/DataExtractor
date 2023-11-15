@@ -44,7 +44,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 26, symbol: ?teleportTo@LeashFenceKnotActor@@UEAAXAEBVVec3@@_NHH1@Z
-    virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const &, bool, int32_t, int32_t, bool);
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
@@ -107,13 +107,13 @@ public:
     virtual void __unk_vfn_172();
 
     // vIndex: 173, symbol: ?setDir@LeashFenceKnotActor@@UEAAXH@Z
-    virtual void setDir(int);
+    virtual void setDir(int32_t);
 
     // vIndex: 174, symbol: ?getWidth@LeashFenceKnotActor@@UEBAHXZ
-    virtual int getWidth() const;
+    virtual int32_t getWidth() const;
 
     // vIndex: 175, symbol: ?getHeight@LeashFenceKnotActor@@UEBAHXZ
-    virtual int getHeight() const;
+    virtual int32_t getHeight() const;
 
     // vIndex: 176, symbol: ?dropItem@LeashFenceKnotActor@@UEAAXXZ
     virtual void dropItem();
@@ -125,7 +125,7 @@ public:
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
     // symbol: ?numberofAnimalsAttached@LeashFenceKnotActor@@QEAAHXZ
-    MCAPI int numberofAnimalsAttached();
+    MCAPI int32_t numberofAnimalsAttached();
 
     // NOLINTEND
 

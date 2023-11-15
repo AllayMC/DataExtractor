@@ -12,16 +12,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getMirrorEditCount@StructureTelemetryClientData@@QEBAIXZ
-    MCAPI uint getMirrorEditCount() const;
+    MCAPI uint32_t getMirrorEditCount() const;
 
     // symbol: ?getOffsetEditCount@StructureTelemetryClientData@@QEBAIXZ
-    MCAPI uint getOffsetEditCount() const;
+    MCAPI uint32_t getOffsetEditCount() const;
 
     // symbol: ?getRotationEditCount@StructureTelemetryClientData@@QEBAIXZ
-    MCAPI uint getRotationEditCount() const;
+    MCAPI uint32_t getRotationEditCount() const;
 
     // symbol: ?getSizeEditCount@StructureTelemetryClientData@@QEBAIXZ
-    MCAPI uint getSizeEditCount() const;
+    MCAPI uint32_t getSizeEditCount() const;
 
     // NOLINTEND
 

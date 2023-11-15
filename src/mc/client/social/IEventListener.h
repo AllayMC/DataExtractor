@@ -32,7 +32,7 @@ public:
     virtual void sendEvents(bool) = 0;
 
     // vIndex: 3, symbol: ?getEventTagsFilter@OneDSEventListener@Events@Social@@UEBAHXZ
-    virtual int getEventTagsFilter() const = 0;
+    virtual int32_t getEventTagsFilter() const = 0;
 
     // vIndex: 4, symbol: ?stopDebugEventLogging@AggregationEventListener@Events@Social@@UEAAXXZ
     virtual void stopDebugEventLogging() = 0;

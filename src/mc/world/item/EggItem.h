@@ -76,7 +76,7 @@ public:
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
 
     // vIndex: 85, symbol: ?dispense@EggItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 115, symbol: __unk_vfn_115
     virtual void __unk_vfn_115();

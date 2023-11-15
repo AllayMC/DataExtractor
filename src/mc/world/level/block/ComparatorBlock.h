@@ -94,7 +94,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 60, symbol: ?getDirectSignal@ComparatorBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
-    virtual int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
+    virtual int32_t getDirectSignal(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -106,7 +106,7 @@ public:
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, ::Direction::Type) const;
 
     // vIndex: 74, symbol: ?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int32_t, bool) const;
 
     // vIndex: 76, symbol: __unk_vfn_76
     virtual void __unk_vfn_76();
@@ -133,7 +133,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 115, symbol: ?triggerEvent@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
-    virtual void triggerEvent(class BlockSource &, class BlockPos const &, int, int) const;
+    virtual void triggerEvent(class BlockSource &, class BlockPos const &, int32_t, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -151,7 +151,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@ComparatorBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 143, symbol: ?canSpawnOn@ComparatorBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor *) const;
@@ -181,7 +181,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@ComparatorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -193,13 +193,13 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@ComparatorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ?isInteractiveBlock@ComparatorBlock@@UEBA_NXZ
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0ComparatorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI ComparatorBlock(std::string const &, int, bool);
+    MCAPI ComparatorBlock(std::string const &, int32_t, bool);
 
     // NOLINTEND
 
@@ -209,7 +209,7 @@ public:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool) const;
 
     // symbol: ?_refreshOutputState@ComparatorBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void _refreshOutputState(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI void _refreshOutputState(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // NOLINTEND
 

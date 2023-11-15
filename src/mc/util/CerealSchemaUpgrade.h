@@ -24,7 +24,7 @@ public:
     virtual void previousSchema(class cereal::SchemaFactory &) const = 0;
 
     // vIndex: 2, symbol: ?upgradeToNext@CerealSchemaUpgrade@@UEBA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@@Z
-    virtual bool upgradeToNext(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> &) const;
+    virtual bool upgradeToNext(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &) const;
 
     // symbol: ??1CerealSchemaUpgrade@@UEAA@XZ
     MCVAPI ~CerealSchemaUpgrade();

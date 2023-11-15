@@ -19,7 +19,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?moveBoundingBox@TemplateStructurePiece@@UEAAXHHH@Z
-    virtual void moveBoundingBox(int, int, int);
+    virtual void moveBoundingBox(int32_t, int32_t, int32_t);
 
     // vIndex: 2, symbol: ?getType@SHChestCorridor@@UEBA?AW4StructurePieceType@@XZ
     virtual ::StructurePieceType getType() const;
@@ -37,19 +37,19 @@ public:
     virtual bool isInInvalidLocation(class BlockSource &, class BoundingBox const &);
 
     // vIndex: 7, symbol: ?getWorldX@StructurePiece@@UEAAHHH@Z
-    virtual int getWorldX(int, int);
+    virtual int32_t getWorldX(int32_t, int32_t);
 
     // vIndex: 8, symbol: ?getWorldZ@StructurePiece@@UEAAHHH@Z
-    virtual int getWorldZ(int, int);
+    virtual int32_t getWorldZ(int32_t, int32_t);
 
     // vIndex: 9, symbol: ?placeBlock@StructurePiece@@UEAAXAEAVBlockSource@@AEBVBlock@@HHHAEBVBoundingBox@@@Z
-    virtual void placeBlock(class BlockSource &, class Block const &, int, int, int, class BoundingBox const &);
+    virtual void placeBlock(class BlockSource &, class Block const &, int32_t, int32_t, int32_t, class BoundingBox const &);
 
     // vIndex: 10, symbol: ?canBeReplaced@StructurePiece@@UEAA_NAEAVBlockSource@@HHHAEBVBoundingBox@@@Z
-    virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
+    virtual bool canBeReplaced(class BlockSource &, int32_t, int32_t, int32_t, class BoundingBox const &);
 
     // vIndex: 11, symbol: ?generateBox@StructurePiece@@UEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHHAEBVBlock@@2_N@Z
-    virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
+    virtual void generateBox(class BlockSource &, class BoundingBox const &, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, class Block const &, class Block const &, bool);
 
     // vIndex: 12, symbol: ?addHardcodedSpawnAreas@StructurePiece@@UEBAXAEAVLevelChunk@@@Z
     virtual void addHardcodedSpawnAreas(class LevelChunk &) const;

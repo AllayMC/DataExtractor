@@ -102,10 +102,10 @@ public:
     MCAPI bool getLanBroadcastIntent() const;
 
     // symbol: ?getLimitedWorldDepth@LevelSettings@@QEBAHXZ
-    MCAPI int getLimitedWorldDepth() const;
+    MCAPI int32_t getLimitedWorldDepth() const;
 
     // symbol: ?getLimitedWorldWidth@LevelSettings@@QEBAHXZ
-    MCAPI int getLimitedWorldWidth() const;
+    MCAPI int32_t getLimitedWorldWidth() const;
 
     // symbol: ?getMultiplayerGameIntent@LevelSettings@@QEBA_NXZ
     MCAPI bool getMultiplayerGameIntent() const;
@@ -126,13 +126,13 @@ public:
     MCAPI class LevelSeed64 getSeed() const;
 
     // symbol: ?getServerChunkTickRange@LevelSettings@@QEBAIXZ
-    MCAPI uint getServerChunkTickRange() const;
+    MCAPI uint32_t getServerChunkTickRange() const;
 
     // symbol: ?getSpawnSettings@LevelSettings@@QEBA?AUSpawnSettings@@XZ
     MCAPI struct SpawnSettings getSpawnSettings() const;
 
     // symbol: ?getTime@LevelSettings@@QEBAHXZ
-    MCAPI int getTime() const;
+    MCAPI int32_t getTime() const;
 
     // symbol: ?getWorldVersion@LevelSettings@@QEBA?AW4WorldVersion@@XZ
     MCAPI ::WorldVersion getWorldVersion() const;
@@ -258,7 +258,7 @@ public:
     MCAPI class LevelSettings & setRandomSeed(class LevelSeed64);
 
     // symbol: ?setServerChunkTickRange@LevelSettings@@QEAAAEAV1@I@Z
-    MCAPI class LevelSettings & setServerChunkTickRange(uint);
+    MCAPI class LevelSettings & setServerChunkTickRange(uint32_t);
 
     // symbol: ?setSpawnSettings@LevelSettings@@QEAAAEAV1@USpawnSettings@@@Z
     MCAPI class LevelSettings & setSpawnSettings(struct SpawnSettings);

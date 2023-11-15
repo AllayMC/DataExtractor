@@ -27,7 +27,7 @@ public:
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
     // vIndex: 25, symbol: ?getPoweroutDirection@CapacitorComponent@@UEBAEXZ
-    virtual uchar getPoweroutDirection() const;
+    virtual uint8_t getPoweroutDirection() const;
 
     // symbol: ??0CapacitorComponent@@QEAA@XZ
     MCAPI CapacitorComponent();

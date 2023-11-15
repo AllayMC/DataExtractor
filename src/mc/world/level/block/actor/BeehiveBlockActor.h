@@ -23,7 +23,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0Occupant@BeehiveBlockActor@@QEAA@UActorDefinitionIdentifier@@VCompoundTag@@I@Z
-        MCAPI Occupant(struct ActorDefinitionIdentifier, class CompoundTag, uint);
+        MCAPI Occupant(struct ActorDefinitionIdentifier, class CompoundTag, uint32_t);
     
         // NOLINTEND
     
@@ -92,14 +92,14 @@ public:
     MCAPI bool tryAdmit(class Actor &);
 
     // symbol: ?MAX_OCCUPANCY@BeehiveBlockActor@@2IB
-    MCAPI static uint const MAX_OCCUPANCY;
+    MCAPI static uint32_t const MAX_OCCUPANCY;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_revive@BeehiveBlockActor@@AEAAPEAVActor@@AEAVBlockSource@@AEBUOccupant@1@E@Z
-    MCAPI class Actor * _revive(class BlockSource &, struct BeehiveBlockActor::Occupant const &, uchar);
+    MCAPI class Actor * _revive(class BlockSource &, struct BeehiveBlockActor::Occupant const &, uint8_t);
 
     // symbol: ?_tickOccupant@BeehiveBlockActor@@AEAA_NAEAVBlockSource@@AEAUOccupant@1@@Z
     MCAPI bool _tickOccupant(class BlockSource &, struct BeehiveBlockActor::Occupant &);

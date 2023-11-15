@@ -54,7 +54,7 @@ public:
     MCAPI static class Block const * _mapToProperty(std::string const &, std::string const &, class Block const &);
 
     // symbol: ?getZeroPositionWithTransform@LegacyStructureTemplate@@SA?AVBlockPos@@AEBV2@W4Mirror@@W4Rotation@@HH@Z
-    MCAPI static class BlockPos getZeroPositionWithTransform(class BlockPos const &, ::Mirror, ::Rotation, int, int);
+    MCAPI static class BlockPos getZeroPositionWithTransform(class BlockPos const &, ::Mirror, ::Rotation, int32_t, int32_t);
 
     // symbol: ?transform@LegacyStructureTemplate@@SA?AVBlockPos@@V2@W4Mirror@@W4Rotation@@@Z
     MCAPI static class BlockPos transform(class BlockPos, ::Mirror, ::Rotation);
@@ -75,7 +75,7 @@ public:
     MCAPI static std::string const BLOCK_TAG_STATE;
 
     // symbol: ?CHUNK_SIZE@LegacyStructureTemplate@@2HB
-    MCAPI static int const CHUNK_SIZE;
+    MCAPI static int32_t const CHUNK_SIZE;
 
     // symbol: ?ENTITIES_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const ENTITIES_TAG;
@@ -99,7 +99,7 @@ public:
     MCAPI static std::string const SIZE_TAG;
 
     // symbol: ?STRUCTURE_VERSION@LegacyStructureTemplate@@2HB
-    MCAPI static int const STRUCTURE_VERSION;
+    MCAPI static int32_t const STRUCTURE_VERSION;
 
     // symbol: ?VERSION_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const VERSION_TAG;

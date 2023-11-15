@@ -71,13 +71,13 @@ public:
     MCAPI static class Core::Result getDirectoryFilesRecursively(std::vector<class Core::PathBuffer<std::string>> &, class Core::Path const &);
 
     // symbol: ?getFileOrDirectorySize@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@PEA_K@Z
-    MCAPI static class Core::Result getFileOrDirectorySize(class Core::Path const &, uint64 *);
+    MCAPI static class Core::Result getFileOrDirectorySize(class Core::Path const &, uint64_t *);
 
     // symbol: ?getFileSize@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@PEA_K@Z
-    MCAPI static class Core::Result getFileSize(class Core::Path const &, uint64 *);
+    MCAPI static class Core::Result getFileSize(class Core::Path const &, uint64_t *);
 
     // symbol: ?getLastModificationTime@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@PEA_J@Z
-    MCAPI static class Core::Result getLastModificationTime(class Core::Path const &, int64 *);
+    MCAPI static class Core::Result getLastModificationTime(class Core::Path const &, int64_t *);
 
     // symbol: ?getUniqueFilePathForDirectory@FileSystem@Core@@SA?AV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@AEBVPath@2@@Z
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> getUniqueFilePathForDirectory(class Core::Path const &);
@@ -89,10 +89,10 @@ public:
     MCAPI static class Core::Result openFile(class Core::Path const &, class Core::File &, class Core::FileOpenMode, ::Core::FileBufferingMode);
 
     // symbol: ?readFileData@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@_K1AEAV?$vector@EV?$allocator@E@std@@@std@@AEA_K@Z
-    MCAPI static class Core::Result readFileData(class Core::Path const &, uint64, uint64, std::vector<uchar> &, uint64 &);
+    MCAPI static class Core::Result readFileData(class Core::Path const &, uint64_t, uint64_t, std::vector<uint8_t> &, uint64_t &);
 
     // symbol: ?readFileData@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-    MCAPI static class Core::Result readFileData(class Core::Path const &, std::vector<uchar> &);
+    MCAPI static class Core::Result readFileData(class Core::Path const &, std::vector<uint8_t> &);
 
     // symbol: ?removeIgnoredThrottlePath@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@@Z
     MCAPI static class Core::Result removeIgnoredThrottlePath(class Core::Path const &);

@@ -26,13 +26,13 @@ public:
     virtual void * fopen(class Core::Path const &, std::string const &) = 0;
 
     // vIndex: 2, symbol: ?fclose@MemoryMappedFileAccess@@UEAAHPEAX@Z
-    virtual int fclose(void *) = 0;
+    virtual int32_t fclose(void *) = 0;
 
     // vIndex: 3, symbol: ?fseek@MemoryMappedFileAccess@@UEAAHPEAX_JH@Z
-    virtual int fseek(void *, int64, int) = 0;
+    virtual int32_t fseek(void *, int64_t, int32_t) = 0;
 
     // vIndex: 4, symbol: ?ftell@MemoryMappedFileAccess@@UEAA_JPEAX@Z
-    virtual int64 ftell(void *) = 0;
+    virtual int64_t ftell(void *) = 0;
 
     // vIndex: 5, symbol: ?getReadInterface@MemoryMappedFileAccess@@UEBAPEBVIFileReadAccess@@XZ
     virtual class IFileReadAccess const * getReadInterface() const = 0;

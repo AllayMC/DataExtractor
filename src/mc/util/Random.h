@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?consumeCount@Random@@UEAAXI@Z
-    MCVAPI void consumeCount(uint);
+    MCVAPI void consumeCount(uint32_t);
 
     // symbol: ?fork@Random@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
     MCVAPI std::unique_ptr<class IRandom> fork();
@@ -32,13 +32,13 @@ public:
     MCVAPI double nextGaussianDouble();
 
     // symbol: ?nextInt@Random@@UEAAHH@Z
-    MCVAPI int nextInt(int);
+    MCVAPI int32_t nextInt(int32_t);
 
     // symbol: ?nextInt@Random@@UEAAHXZ
-    MCVAPI int nextInt();
+    MCVAPI int32_t nextInt();
 
     // symbol: ?nextLong@Random@@UEAA_JXZ
-    MCVAPI int64 nextLong();
+    MCVAPI int64_t nextLong();
 
     // symbol: ??1Random@@UEAA@XZ
     MCVAPI ~Random();
@@ -47,7 +47,7 @@ public:
     MCAPI Random();
 
     // symbol: ??0Random@@QEAA@I_N@Z
-    MCAPI Random(uint, bool);
+    MCAPI Random(uint32_t, bool);
 
     // symbol: ?nextFloat@Random@@QEAAMMM@Z
     MCAPI float nextFloat(float, float);
@@ -56,13 +56,13 @@ public:
     MCAPI float nextGaussianFloat();
 
     // symbol: ?nextGaussianInt@Random@@QEAAHH@Z
-    MCAPI int nextGaussianInt(int);
+    MCAPI int32_t nextGaussianInt(int32_t);
 
     // symbol: ?nextInt@Random@@QEAAHHH@Z
-    MCAPI int nextInt(int, int);
+    MCAPI int32_t nextInt(int32_t, int32_t);
 
     // symbol: ?nextIntInclusive@Random@@QEAAHHH@Z
-    MCAPI int nextIntInclusive(int, int);
+    MCAPI int32_t nextIntInclusive(int32_t, int32_t);
 
     // symbol: ?getThreadLocal@Random@@SAAEAV1@XZ
     MCAPI static class Random & getThreadLocal();
@@ -72,7 +72,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?mThreadLocalRandom@Random@@0V?$ThreadLocalObject@VRandom@@V?$allocator@VRandom@@@std@@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random> mThreadLocalRandom;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, std::allocator<class Random>> mThreadLocalRandom;
 
     // NOLINTEND
 

@@ -29,7 +29,7 @@ public:
     MCAPI static class mce::UUID EMPTY;
 
     // symbol: ?STRING_LENGTH@UUID@mce@@2_KA
-    MCAPI static uint64 STRING_LENGTH;
+    MCAPI static uint64_t STRING_LENGTH;
 
     // NOLINTEND
 

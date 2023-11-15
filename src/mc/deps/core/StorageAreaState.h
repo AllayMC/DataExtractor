@@ -30,7 +30,7 @@ public:
     MCAPI void addListener(class Core::StorageAreaStateListener *);
 
     // symbol: ?checkUserStorage@StorageAreaState@Core@@QEAAXAEAV?$weak_ptr@VFileStorageArea@Core@@@std@@_K11@Z
-    MCAPI void checkUserStorage(std::weak_ptr<class Core::FileStorageArea> &, uint64, uint64, uint64);
+    MCAPI void checkUserStorage(std::weak_ptr<class Core::FileStorageArea> &, uint64_t, uint64_t, uint64_t);
 
     // symbol: ?isCriticalDiskError@StorageAreaState@Core@@QEBA_NXZ
     MCAPI bool isCriticalDiskError() const;

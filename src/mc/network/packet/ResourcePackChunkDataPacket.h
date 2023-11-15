@@ -28,13 +28,13 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@ResourcePackChunkDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1ResourcePackChunkDataPacket@@UEAA@XZ
     MCVAPI ~ResourcePackChunkDataPacket();
 
     // symbol: ??0ResourcePackChunkDataPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_KAEBV?$vector@EV?$allocator@E@std@@@2@@Z
-    MCAPI ResourcePackChunkDataPacket(std::string const &, int, uint64, std::vector<uchar> const &);
+    MCAPI ResourcePackChunkDataPacket(std::string const &, int32_t, uint64_t, std::vector<uint8_t> const &);
 
     // symbol: ??0ResourcePackChunkDataPacket@@QEAA@XZ
     MCAPI ResourcePackChunkDataPacket();

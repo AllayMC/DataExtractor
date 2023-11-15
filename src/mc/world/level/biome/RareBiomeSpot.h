@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0RareBiomeSpot@OperationNodeFilters@@QEAA@IAEAVBiome@@0@Z
-    MCAPI RareBiomeSpot(uint, class Biome &, class Biome &);
+    MCAPI RareBiomeSpot(uint32_t, class Biome &, class Biome &);
 
     // NOLINTEND
 

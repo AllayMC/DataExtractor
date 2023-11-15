@@ -24,19 +24,19 @@ public:
     MCAPI std::unique_ptr<class CompoundTag> createTag(class Actor &) const;
 
     // symbol: ?getSlotCount@EquippableComponent@@QEBAHXZ
-    MCAPI int getSlotCount() const;
+    MCAPI int32_t getSlotCount() const;
 
     // symbol: ?hasSlotAllowedItems@EquippableComponent@@QEBA_NH@Z
-    MCAPI bool hasSlotAllowedItems(int) const;
+    MCAPI bool hasSlotAllowedItems(int32_t) const;
 
     // symbol: ?onItemChanged@EquippableComponent@@QEBA_NAEAVActor@@_KAEBVItemStack@@@Z
-    MCAPI bool onItemChanged(class Actor &, uint64, class ItemStack const &) const;
+    MCAPI bool onItemChanged(class Actor &, uint64_t, class ItemStack const &) const;
 
     // symbol: ??4EquippableComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class EquippableComponent & operator=(class EquippableComponent &&);
 
     // symbol: ?tryGetSlotAllowedItems@EquippableComponent@@QEBAPEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@H@Z
-    MCAPI std::vector<class ItemDescriptor> const * tryGetSlotAllowedItems(int) const;
+    MCAPI std::vector<class ItemDescriptor> const * tryGetSlotAllowedItems(int32_t) const;
 
     // symbol: ??1EquippableComponent@@QEAA@XZ
     MCAPI ~EquippableComponent();

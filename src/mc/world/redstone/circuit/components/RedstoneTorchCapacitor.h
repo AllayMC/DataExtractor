@@ -18,13 +18,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getStrength@RedstoneTorchCapacitor@@UEBAHXZ
-    virtual int getStrength() const;
+    virtual int32_t getStrength() const;
 
     // vIndex: 10, symbol: ?removeSource@RedstoneTorchCapacitor@@UEAAXAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
     virtual void removeSource(class BlockPos const &, class BaseCircuitComponent const *);
 
     // vIndex: 11, symbol: ?addSource@RedstoneTorchCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-    virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
+    virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int32_t &, bool &);
 
     // vIndex: 12, symbol: ?allowConnection@RedstoneTorchCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
@@ -51,7 +51,7 @@ public:
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
     // vIndex: 25, symbol: ?getPoweroutDirection@RedstoneTorchCapacitor@@UEBAEXZ
-    virtual uchar getPoweroutDirection() const;
+    virtual uint8_t getPoweroutDirection() const;
 
     // symbol: ??0RedstoneTorchCapacitor@@QEAA@XZ
     MCAPI RedstoneTorchCapacitor();
@@ -67,7 +67,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_findStrongestStrength@RedstoneTorchCapacitor@@AEAAHAEBVBlockPos@@AEAVCircuitSystem@@AEA_N@Z
-    MCAPI int _findStrongestStrength(class BlockPos const &, class CircuitSystem &, bool &);
+    MCAPI int32_t _findStrongestStrength(class BlockPos const &, class CircuitSystem &, bool &);
 
     // NOLINTEND
 

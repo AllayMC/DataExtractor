@@ -27,7 +27,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?getRandomArrayIndex@MeadowFlowerFeature@@AEBAHAEBVBlockPos@@_KM@Z
-    MCAPI int getRandomArrayIndex(class BlockPos const &, uint64, float) const;
+    MCAPI int32_t getRandomArrayIndex(class BlockPos const &, uint64_t, float) const;
 
     // NOLINTEND
 

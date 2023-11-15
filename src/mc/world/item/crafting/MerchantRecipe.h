@@ -19,7 +19,7 @@ public:
     MCAPI MerchantRecipe(class MerchantRecipe const &);
 
     // symbol: ?calculateDemandPrices@MerchantRecipe@@QEAAXHHHH_NVBaseGameVersion@@@Z
-    MCAPI void calculateDemandPrices(int, int, int, int, bool, class BaseGameVersion);
+    MCAPI void calculateDemandPrices(int32_t, int32_t, int32_t, int32_t, bool, class BaseGameVersion);
 
     // symbol: ?calculateDemandPricesDefaults@MerchantRecipe@@QEAAXXZ
     MCAPI void calculateDemandPricesDefaults();
@@ -28,10 +28,10 @@ public:
     MCAPI std::unique_ptr<class CompoundTag> createTag(bool) const;
 
     // symbol: ?getBaseCountA@MerchantRecipe@@QEBAHXZ
-    MCAPI int getBaseCountA() const;
+    MCAPI int32_t getBaseCountA() const;
 
     // symbol: ?getBaseCountB@MerchantRecipe@@QEBAHXZ
-    MCAPI int getBaseCountB() const;
+    MCAPI int32_t getBaseCountB() const;
 
     // symbol: ?getBuyAItem@MerchantRecipe@@QEBAAEBVItemInstance@@XZ
     MCAPI class ItemInstance const & getBuyAItem() const;
@@ -40,28 +40,28 @@ public:
     MCAPI class ItemInstance const & getBuyBItem() const;
 
     // symbol: ?getDemand@MerchantRecipe@@QEBAHXZ
-    MCAPI int getDemand() const;
+    MCAPI int32_t getDemand() const;
 
     // symbol: ?getMaxUses@MerchantRecipe@@QEBAHXZ
-    MCAPI int getMaxUses() const;
+    MCAPI int32_t getMaxUses() const;
 
     // symbol: ?getSellItem@MerchantRecipe@@QEBAAEBVItemInstance@@XZ
     MCAPI class ItemInstance const & getSellItem() const;
 
     // symbol: ?getTier@MerchantRecipe@@QEBAHXZ
-    MCAPI int getTier() const;
+    MCAPI int32_t getTier() const;
 
     // symbol: ?getTraderExp@MerchantRecipe@@QEBAIXZ
-    MCAPI uint getTraderExp() const;
+    MCAPI uint32_t getTraderExp() const;
 
     // symbol: ?getUses@MerchantRecipe@@QEBAHXZ
-    MCAPI int getUses() const;
+    MCAPI int32_t getUses() const;
 
     // symbol: ?hasSecondaryBuyItem@MerchantRecipe@@QEBA_NXZ
     MCAPI bool hasSecondaryBuyItem() const;
 
     // symbol: ?increaseMaxUses@MerchantRecipe@@QEAAXH@Z
-    MCAPI void increaseMaxUses(int);
+    MCAPI void increaseMaxUses(int32_t);
 
     // symbol: ?increaseUses@MerchantRecipe@@QEAAXXZ
     MCAPI void increaseUses();
@@ -76,7 +76,7 @@ public:
     MCAPI bool isSame(class MerchantRecipe const &) const;
 
     // symbol: ?legacyCalculateDemandPrices@MerchantRecipe@@QEAAXHH@Z
-    MCAPI void legacyCalculateDemandPrices(int, int);
+    MCAPI void legacyCalculateDemandPrices(int32_t, int32_t);
 
     // symbol: ?load@MerchantRecipe@@QEAAXPEBVCompoundTag@@@Z
     MCAPI void load(class CompoundTag const *);
@@ -85,10 +85,10 @@ public:
     MCAPI class MerchantRecipe & operator=(class MerchantRecipe const &);
 
     // symbol: ?setDemand@MerchantRecipe@@QEAAXH@Z
-    MCAPI void setDemand(int);
+    MCAPI void setDemand(int32_t);
 
     // symbol: ?setMaxUses@MerchantRecipe@@QEAAXH@Z
-    MCAPI void setMaxUses(int);
+    MCAPI void setMaxUses(int32_t);
 
     // symbol: ?setPriceMultiplierA@MerchantRecipe@@QEAAXM@Z
     MCAPI void setPriceMultiplierA(float);
@@ -100,13 +100,13 @@ public:
     MCAPI void setRewardExp(bool);
 
     // symbol: ?setTier@MerchantRecipe@@QEAAXH@Z
-    MCAPI void setTier(int);
+    MCAPI void setTier(int32_t);
 
     // symbol: ?setTraderExp@MerchantRecipe@@QEAAXI@Z
-    MCAPI void setTraderExp(uint);
+    MCAPI void setTraderExp(uint32_t);
 
     // symbol: ?setUses@MerchantRecipe@@QEAAXH@Z
-    MCAPI void setUses(int);
+    MCAPI void setUses(int32_t);
 
     // symbol: ?shouldRewardExp@MerchantRecipe@@QEBA_NXZ
     MCAPI bool shouldRewardExp() const;

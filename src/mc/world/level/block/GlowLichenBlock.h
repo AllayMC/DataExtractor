@@ -166,7 +166,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0GlowLichenBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI GlowLichenBlock(std::string const &, int, class Material const &);
+    MCAPI GlowLichenBlock(std::string const &, int32_t, class Material const &);
 
     // NOLINTEND
 

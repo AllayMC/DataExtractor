@@ -194,7 +194,7 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0FlowerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@AEBVMaterial@@@Z
-    MCAPI FlowerBlock(std::string const &, int, ::FlowerBlock::Type, class Material const &);
+    MCAPI FlowerBlock(std::string const &, int32_t, ::FlowerBlock::Type, class Material const &);
 
     // NOLINTEND
 

@@ -28,7 +28,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@UpdateBlockSyncedPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1UpdateBlockSyncedPacket@@UEAA@XZ
     MCVAPI ~UpdateBlockSyncedPacket();
@@ -37,7 +37,7 @@ public:
     MCAPI UpdateBlockSyncedPacket();
 
     // symbol: ??0UpdateBlockSyncedPacket@@QEAA@AEBVBlockPos@@IIEAEBUActorBlockSyncMessage@@@Z
-    MCAPI UpdateBlockSyncedPacket(class BlockPos const &, uint, uint, uchar, struct ActorBlockSyncMessage const &);
+    MCAPI UpdateBlockSyncedPacket(class BlockPos const &, uint32_t, uint32_t, uint8_t, struct ActorBlockSyncMessage const &);
 
     // NOLINTEND
 

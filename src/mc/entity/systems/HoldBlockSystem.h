@@ -18,7 +18,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?registerEvents@HoldBlockSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
-    virtual void registerEvents(entt::dispatcher &);
+    virtual void registerEvents(class entt::basic_dispatcher<std::allocator<void>> &);
 
     // symbol: ?tick@HoldBlockSystem@@UEAAXAEAVEntityRegistry@@@Z
     MCVAPI void tick(class EntityRegistry &);

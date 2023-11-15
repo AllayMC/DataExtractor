@@ -29,7 +29,7 @@ public:
     virtual class Json::Value getJson() const;
 
     // symbol: ??0SliderControl@ScriptModuleMinecraftServerUI@@QEAA@VValue@Json@@MMMV?$optional@H@std@@@Z
-    MCAPI SliderControl(class Json::Value, float, float, float, std::optional<int>);
+    MCAPI SliderControl(class Json::Value, float, float, float, std::optional<int32_t>);
 
     // NOLINTEND
 

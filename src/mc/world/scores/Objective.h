@@ -33,7 +33,7 @@ public:
     MCAPI std::vector<struct ScoreboardId> getPlayers() const;
 
     // symbol: ?getScores@Objective@@QEBAAEBV?$unordered_map@UScoreboardId@@HU?$hash@UScoreboardId@@@std@@U?$equal_to@UScoreboardId@@@3@V?$allocator@U?$pair@$$CBUScoreboardId@@H@std@@@3@@std@@XZ
-    MCAPI std::unordered_map<struct ScoreboardId,int> const & getScores() const;
+    MCAPI std::unordered_map<struct ScoreboardId,int32_t> const & getScores() const;
 
     // symbol: ?hasScore@Objective@@QEBA_NAEBUScoreboardId@@@Z
     MCAPI bool hasScore(struct ScoreboardId const &) const;

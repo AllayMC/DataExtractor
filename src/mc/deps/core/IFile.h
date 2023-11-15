@@ -22,13 +22,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?readExactly@FileInterfaceImpl@Core@@UEAA?AVResult@2@PEAX_K@Z
-    virtual class Core::Result readExactly(void *, uint64) = 0;
+    virtual class Core::Result readExactly(void *, uint64_t) = 0;
 
     // vIndex: 2, symbol: ?readAtPosition@FileInterfaceImpl@Core@@UEAA?AVResult@2@_KPEAX0PEA_K@Z
-    virtual class Core::Result readAtPosition(uint64, void *, uint64, uint64 *) = 0;
+    virtual class Core::Result readAtPosition(uint64_t, void *, uint64_t, uint64_t *) = 0;
 
     // vIndex: 3, symbol: ?getSize@FileInterfaceImpl@Core@@UEAA?AVResult@2@PEA_K@Z
-    virtual class Core::Result getSize(uint64 *) = 0;
+    virtual class Core::Result getSize(uint64_t *) = 0;
 
     // NOLINTEND
 

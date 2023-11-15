@@ -18,19 +18,19 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol: ?serverInitItemStackIds@CraftingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    virtual void serverInitItemStackIds(int, int, std::function<void (int, class ItemStack const &)>);
+    virtual void serverInitItemStackIds(int32_t, int32_t, std::function<void (int32_t, class ItemStack const &)>);
 
     // vIndex: 5, symbol: ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const & getItem(int) const;
+    virtual class ItemStack const & getItem(int32_t) const;
 
     // vIndex: 10, symbol: ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
-    virtual void setItem(int, class ItemStack const &);
+    virtual void setItem(int32_t, class ItemStack const &);
 
     // vIndex: 16, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
-    virtual int getContainerSize() const;
+    virtual int32_t getContainerSize() const;
 
     // vIndex: 17, symbol: ?getMaxStackSize@CraftingContainer@@UEBAHXZ
-    virtual int getMaxStackSize() const;
+    virtual int32_t getMaxStackSize() const;
 
     // vIndex: 18, symbol: ?startOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player &);
@@ -45,16 +45,16 @@ public:
     virtual void __unk_vfn_26();
 
     // vIndex: 27, symbol: ?setContainerChanged@CraftingContainer@@UEAAXH@Z
-    virtual void setContainerChanged(int);
+    virtual void setContainerChanged(int32_t);
 
     // symbol: ??1CraftingContainer@@UEAA@XZ
     MCVAPI ~CraftingContainer();
 
     // symbol: ??0CraftingContainer@@QEAA@HH@Z
-    MCAPI CraftingContainer(int, int);
+    MCAPI CraftingContainer(int32_t, int32_t);
 
     // symbol: ?getItem@CraftingContainer@@QEBAAEBVItemStack@@HH@Z
-    MCAPI class ItemStack const & getItem(int, int) const;
+    MCAPI class ItemStack const & getItem(int32_t, int32_t) const;
 
     // NOLINTEND
 

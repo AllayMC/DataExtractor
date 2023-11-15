@@ -15,7 +15,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?fwrite@FileSystemFileWriteAccess@FileSystemFileAccess@@UEAA_KPEBX_K1PEAX@Z
-    virtual uint64 fwrite(void const *, uint64, uint64, void *) = 0;
+    virtual uint64_t fwrite(void const *, uint64_t, uint64_t, void *) = 0;
 
     // NOLINTEND
 

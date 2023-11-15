@@ -44,7 +44,7 @@ public:
     virtual void processCoroutines();
 
     // vIndex: 7, symbol: ?taskComplete@TaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z
-    virtual void taskComplete(gsl::not_null<class BackgroundTaskBase *>);
+    virtual void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
 
     // symbol: ??1TaskGroup@@UEAA@XZ
     MCVAPI ~TaskGroup();

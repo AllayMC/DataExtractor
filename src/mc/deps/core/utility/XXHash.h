@@ -14,7 +14,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_hash64Impl@XXHash@Util@@CA_KPEBX_K1@Z
-    MCAPI static uint64 _hash64Impl(void const *, uint64, uint64);
+    MCAPI static uint64_t _hash64Impl(void const *, uint64_t, uint64_t);
 
     // NOLINTEND
 

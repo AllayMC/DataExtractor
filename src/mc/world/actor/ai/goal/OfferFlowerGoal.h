@@ -79,7 +79,7 @@ public:
     MCAPI OfferFlowerGoal(class Mob &);
 
     // symbol: ?getMaxOfferFlowerDurationTicks@OfferFlowerGoal@@QEBAHXZ
-    MCAPI int getMaxOfferFlowerDurationTicks() const;
+    MCAPI int32_t getMaxOfferFlowerDurationTicks() const;
 
     // NOLINTEND
 

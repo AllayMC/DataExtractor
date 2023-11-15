@@ -40,10 +40,10 @@ public:
     MCAPI ScriptBlock(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
     // symbol: ?above@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@H@Z
-    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> above(int) const;
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> above(int32_t) const;
 
     // symbol: ?below@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@H@Z
-    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> below(int) const;
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> below(int32_t) const;
 
     // symbol: ?bottomCenter@ScriptBlock@ScriptModuleMinecraft@@QEBA?AVVec3@@XZ
     MCAPI class Vec3 bottomCenter() const;
@@ -55,7 +55,7 @@ public:
     MCAPI class Vec3 center() const;
 
     // symbol: ?east@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@H@Z
-    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> east(int) const;
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> east(int32_t) const;
 
     // symbol: ?getBlock@ScriptBlock@ScriptModuleMinecraft@@QEBAAEBVBlock@@XZ
     MCAPI class Block const & getBlock() const;
@@ -73,7 +73,7 @@ public:
     MCAPI std::string getId_010() const;
 
     // symbol: ?getItemStack@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@H_N@Z
-    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> getItemStack(int, bool) const;
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> getItemStack(int32_t, bool) const;
 
     // symbol: ?getLocation@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@VVec3@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<class Vec3> getLocation() const;
@@ -88,7 +88,7 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation> getPermutation_010() const;
 
     // symbol: ?getRedstonePower@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@H@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@XZ
-    MCAPI class Scripting::Result<std::optional<int>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> getRedstonePower() const;
+    MCAPI class Scripting::Result<std::optional<int32_t>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> getRedstonePower() const;
 
     // symbol: ?getTags@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@XZ
     MCAPI class Scripting::Result<std::vector<std::string>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> getTags() const;
@@ -124,7 +124,7 @@ public:
     MCAPI class Scripting::Result<bool, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> isSolid() const;
 
     // symbol: ?north@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@H@Z
-    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> north(int) const;
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> north(int32_t) const;
 
     // symbol: ?offset@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> offset(class Vec3 const &) const;
@@ -148,13 +148,13 @@ public:
     MCAPI class Scripting::Result<void> setWaterlogged_010(bool);
 
     // symbol: ?south@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@H@Z
-    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> south(int) const;
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> south(int32_t) const;
 
     // symbol: ?trySetPermutation@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@_NUScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@2@@Scripting@@AEBVScriptBlockPermutation@2@@Z
     MCAPI class Scripting::Result<bool, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> trySetPermutation(class ScriptModuleMinecraft::ScriptBlockPermutation const &) const;
 
     // symbol: ?west@ScriptBlock@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@H@Z
-    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> west(int) const;
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> west(int32_t) const;
 
     // symbol: ?bind@ScriptBlock@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlock> bind();

@@ -77,7 +77,7 @@ public:
     MCAPI bool _testValuesWithOperator(bool, bool) const;
 
     // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_NHH@Z
-    MCAPI bool _testValuesWithOperator(int, int) const;
+    MCAPI bool _testValuesWithOperator(int32_t, int32_t) const;
 
     // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_NAEBVHashedString@@0@Z
     MCAPI bool _testValuesWithOperator(class HashedString const &, class HashedString const &) const;

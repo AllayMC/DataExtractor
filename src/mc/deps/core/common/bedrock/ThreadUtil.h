@@ -19,10 +19,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?setCoreAffinity@ThreadUtil@Threading@Bedrock@@SAXAEBQEAXH_K@Z
-    MCAPI static void setCoreAffinity(void *const &, int, uint64);
+    MCAPI static void setCoreAffinity(void *const &, int32_t, uint64_t);
 
     // symbol: ?setCurrentThreadCoreAffinity@ThreadUtil@Threading@Bedrock@@SAXH_K@Z
-    MCAPI static void setCurrentThreadCoreAffinity(int, uint64);
+    MCAPI static void setCurrentThreadCoreAffinity(int32_t, uint64_t);
 
     // symbol: ?setCurrentThreadPriority@ThreadUtil@Threading@Bedrock@@SAXAEBVOSThreadPriority@23@@Z
     MCAPI static void setCurrentThreadPriority(class Bedrock::Threading::OSThreadPriority const &);

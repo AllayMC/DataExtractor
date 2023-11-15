@@ -22,7 +22,7 @@ public:
     MCVAPI void initializeContainerContents(class BlockSource &);
 
     // symbol: ?setContainerChanged@RandomizableBlockActorFillingContainer@@UEAAXH@Z
-    MCVAPI void setContainerChanged(int);
+    MCVAPI void setContainerChanged(int32_t);
 
     // symbol: ?startOpen@RandomizableBlockActorFillingContainer@@UEAAXAEAVPlayer@@@Z
     MCVAPI void startOpen(class Player &);
@@ -31,7 +31,7 @@ public:
     MCVAPI ~RandomizableBlockActorFillingContainer();
 
     // symbol: ??0RandomizableBlockActorFillingContainer@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@HW4ContainerType@@@Z
-    MCAPI RandomizableBlockActorFillingContainer(::BlockActorType, std::string const &, class BlockPos const &, int, ::ContainerType);
+    MCAPI RandomizableBlockActorFillingContainer(::BlockActorType, std::string const &, class BlockPos const &, int32_t, ::ContainerType);
 
     // NOLINTEND
 

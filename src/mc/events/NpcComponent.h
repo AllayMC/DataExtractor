@@ -40,7 +40,7 @@ public:
     MCAPI void executeClosingCommands(class Actor &, class Player &, std::string const &);
 
     // symbol: ?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void executeCommandAction(class Actor &, class Player &, int, std::string const &);
+    MCAPI void executeCommandAction(class Actor &, class Player &, int32_t, std::string const &);
 
     // symbol: ?executeOpeningCommands@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void executeOpeningCommands(class Actor &, class Player &, std::string const &);
@@ -49,7 +49,7 @@ public:
     MCAPI struct npc::ActionContainer & getActionsContainer();
 
     // symbol: ?getCommandCounts@NpcComponent@@QEBA?AV?$vector@HV?$allocator@H@std@@@std@@XZ
-    MCAPI std::vector<int> getCommandCounts() const;
+    MCAPI std::vector<int32_t> getCommandCounts() const;
 
     // symbol: ?getInteraction@NpcComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
@@ -64,10 +64,10 @@ public:
     MCAPI std::string const & getNameRawText(class Actor const &) const;
 
     // symbol: ?getSkinIndex@NpcComponent@@QEBAHXZ
-    MCAPI int getSkinIndex() const;
+    MCAPI int32_t getSkinIndex() const;
 
     // symbol: ?getUrlCount@NpcComponent@@QEBAHXZ
-    MCAPI int getUrlCount() const;
+    MCAPI int32_t getUrlCount() const;
 
     // symbol: ?initClientOnlyData@NpcComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initClientOnlyData(class Actor &);
@@ -109,7 +109,7 @@ public:
     MCAPI void setSceneStateForPlayer(class Actor &, struct ActorUniqueID const &, std::string const &);
 
     // symbol: ?setSkinIndex@NpcComponent@@QEAAXAEAVActor@@H_N@Z
-    MCAPI void setSkinIndex(class Actor &, int, bool);
+    MCAPI void setSkinIndex(class Actor &, int32_t, bool);
 
     // NOLINTEND
 

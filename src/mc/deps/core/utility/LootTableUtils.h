@@ -35,10 +35,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?dropItems@LootTableUtils@Util@@SAHAEAVBlockSource@@AEAVSpawner@@PEAVActor@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVBlockPos@@@Z
-    MCAPI static int dropItems(class BlockSource &, class Spawner &, class Actor *, std::vector<class ItemStack> const &, class BlockPos const &);
+    MCAPI static int32_t dropItems(class BlockSource &, class Spawner &, class Actor *, std::vector<class ItemStack> const &, class BlockPos const &);
 
     // symbol: ?fillContainer@LootTableUtils@Util@@SAHAEAVContainer@@AEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-    MCAPI static int fillContainer(class Container &, std::vector<class ItemStack> &);
+    MCAPI static int32_t fillContainer(class Container &, std::vector<class ItemStack> &);
 
     // symbol: ?fillContainer@LootTableUtils@Util@@SAXAEAVLevel@@AEAVContainer@@AEAVRandom@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$AutomaticID@VDimension@@H@@PEAVActor@@@Z
     MCAPI static void fillContainer(class Level &, class Container &, class Random &, std::string const &, DimensionType, class Actor *);
@@ -53,7 +53,7 @@ public:
     MCAPI static std::vector<class ItemStack> getRandomItems(class LootTable const &, class Random &, class LootTableContext &);
 
     // symbol: ?givePlayer@LootTableUtils@Util@@SAHAEAVPlayer@@AEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@_N@Z
-    MCAPI static int givePlayer(class Player &, std::vector<class ItemStack> &, bool);
+    MCAPI static int32_t givePlayer(class Player &, std::vector<class ItemStack> &, bool);
 
     // symbol: ?lookupLootTable@LootTableUtils@Util@@SAPEAVLootTable@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVILevel@@@Z
     MCAPI static class LootTable * lookupLootTable(std::string const &, class ILevel &);

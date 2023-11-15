@@ -30,10 +30,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?runDeferredEvents@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_K_K@Z
-    virtual uint64 runDeferredEvents(uint64) = 0;
+    virtual uint64_t runDeferredEvents(uint64_t) = 0;
 
     // vIndex: 2, symbol: ?runDeferredEventsForDuration@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_KV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@@Z
-    virtual uint64 runDeferredEventsForDuration(std::chrono::milliseconds) = 0;
+    virtual uint64_t runDeferredEventsForDuration(std::chrono::milliseconds) = 0;
 
     // vIndex: 3, symbol: ?flushPendingEvents@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@UEAAXXZ
     virtual void flushPendingEvents() = 0;
@@ -42,10 +42,10 @@ public:
     virtual void clear() = 0;
 
     // vIndex: 5, symbol: ?erase@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_KAEAVRawSubscription@23@@Z
-    virtual uint64 erase(class Bedrock::PubSub::RawSubscription &) = 0;
+    virtual uint64_t erase(class Bedrock::PubSub::RawSubscription &) = 0;
 
     // vIndex: 6, symbol: ?size@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEBA_KXZ
-    virtual uint64 size() const = 0;
+    virtual uint64_t size() const = 0;
 
     // vIndex: 7, symbol: ?empty@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEBA_NXZ
     virtual bool empty() const = 0;
@@ -57,7 +57,7 @@ public:
     virtual void _join(class Bedrock::PubSub::DeferredSubscription &&) = 0;
 
     // vIndex: 10, symbol: ?_enqueue@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@EEAAXV?$function@$$A6AXXZ@std@@W4ConnectPosition@23@V?$optional@H@5@@Z
-    virtual void _enqueue(std::function<void (void)>, ::Bedrock::PubSub::ConnectPosition, std::optional<int>) = 0;
+    virtual void _enqueue(std::function<void (void)>, ::Bedrock::PubSub::ConnectPosition, std::optional<int32_t>) = 0;
 
     // symbol: ?makePriorityHub@DeferredSubscriptionHub@PubSub@Bedrock@@SA?AV?$unique_ptr@VDeferredSubscriptionHub@PubSub@Bedrock@@U?$default_delete@VDeferredSubscriptionHub@PubSub@Bedrock@@@std@@@std@@XZ
     MCAPI static std::unique_ptr<class Bedrock::PubSub::DeferredSubscriptionHub> makePriorityHub();

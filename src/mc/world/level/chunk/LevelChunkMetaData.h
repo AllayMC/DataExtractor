@@ -15,7 +15,7 @@ public:
     MCAPI ~LevelChunkMetaData();
 
     // symbol: ?INVALID_META_DATA@LevelChunkMetaData@@2_KB
-    MCAPI static uint64 const INVALID_META_DATA;
+    MCAPI static uint64_t const INVALID_META_DATA;
 
     // NOLINTEND
 

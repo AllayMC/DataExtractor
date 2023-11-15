@@ -57,10 +57,10 @@ public:
     virtual void __unk_vfn_39();
 
     // vIndex: 43, symbol: ?getOutputSignal@ComparatorBlockActor@@UEAAHXZ
-    virtual int getOutputSignal();
+    virtual int32_t getOutputSignal();
 
     // vIndex: 44, symbol: ?setOutputSignal@ComparatorBlockActor@@UEAAXH@Z
-    virtual void setOutputSignal(int);
+    virtual void setOutputSignal(int32_t);
 
     // symbol: ??0ComparatorBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI ComparatorBlockActor(class BlockPos const &);

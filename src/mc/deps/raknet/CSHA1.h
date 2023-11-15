@@ -17,13 +17,13 @@ public:
     MCAPI void Final();
 
     // symbol: ?GetHash@CSHA1@@QEBAPEAEXZ
-    MCAPI uchar * GetHash() const;
+    MCAPI uint8_t * GetHash() const;
 
     // symbol: ?Reset@CSHA1@@QEAAXXZ
     MCAPI void Reset();
 
     // symbol: ?Update@CSHA1@@QEAAXPEBEI@Z
-    MCAPI void Update(uchar const *, uint);
+    MCAPI void Update(uint8_t const *, uint32_t);
 
     // symbol: ??1CSHA1@@QEAA@XZ
     MCAPI ~CSHA1();
@@ -33,7 +33,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?Transform@CSHA1@@AEAAXPEAIPEBE@Z
-    MCAPI void Transform(uint *, uchar const *);
+    MCAPI void Transform(uint32_t *, uint8_t const *);
 
     // NOLINTEND
 

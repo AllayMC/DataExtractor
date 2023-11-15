@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getBehaviorPackSize@PacksInfoData@@QEBA_KXZ
-    MCAPI uint64 getBehaviorPackSize() const;
+    MCAPI uint64_t getBehaviorPackSize() const;
 
     // symbol: ?getResourcePackSize@PacksInfoData@@QEBA_KXZ
-    MCAPI uint64 getResourcePackSize() const;
+    MCAPI uint64_t getResourcePackSize() const;
 
     // NOLINTEND
 

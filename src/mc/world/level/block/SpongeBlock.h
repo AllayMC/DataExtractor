@@ -91,7 +91,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 56, symbol: ?isValidAuxValue@SpongeBlock@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -169,7 +169,7 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0SpongeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SpongeBlock(std::string const &, int, class Material const &);
+    MCAPI SpongeBlock(std::string const &, int32_t, class Material const &);
 
     // NOLINTEND
 

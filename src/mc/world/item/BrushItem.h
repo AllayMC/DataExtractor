@@ -49,7 +49,7 @@ public:
     virtual void __unk_vfn_53();
 
     // vIndex: 62, symbol: ?getEnchantSlot@BrushItem@@UEBAHXZ
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
@@ -76,10 +76,10 @@ public:
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
 
     // vIndex: 92, symbol: ?mineBlock@BrushItem@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemInstance &, class Block const &, int, int, int, class Actor *) const;
+    virtual bool mineBlock(class ItemInstance &, class Block const &, int32_t, int32_t, int32_t, class Actor *) const;
 
     // vIndex: 93, symbol: ?mineBlock@BrushItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    virtual bool mineBlock(class ItemStack &, class Block const &, int32_t, int32_t, int32_t, class Actor *) const;
 
     // vIndex: 115, symbol: __unk_vfn_115
     virtual void __unk_vfn_115();
@@ -88,7 +88,7 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 135, symbol: ?_useOn@BrushItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // symbol: ?useInterruptedByAttacking@BrushItem@@UEBA_NXZ
     MCVAPI bool useInterruptedByAttacking() const;
@@ -98,7 +98,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_spawnDustParticles@BrushItem@@KAXAEAVLevel@@VVec3@@AEBVBlock@@AEBVBlockPos@@E@Z
-    MCAPI static void _spawnDustParticles(class Level &, class Vec3, class Block const &, class BlockPos const &, uchar);
+    MCAPI static void _spawnDustParticles(class Level &, class Vec3, class Block const &, class BlockPos const &, uint8_t);
 
     // NOLINTEND
 

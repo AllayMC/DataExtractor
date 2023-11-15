@@ -70,7 +70,7 @@ public:
     virtual void __unk_vfn_80();
 
     // vIndex: 85, symbol: ?dispense@SaddleItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 115, symbol: __unk_vfn_115
     virtual void __unk_vfn_115();
@@ -79,7 +79,7 @@ public:
     virtual void __unk_vfn_116();
 
     // symbol: ??0SaddleItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI SaddleItem(std::string const &, short);
+    MCAPI SaddleItem(std::string const &, int16_t);
 
     // NOLINTEND
 

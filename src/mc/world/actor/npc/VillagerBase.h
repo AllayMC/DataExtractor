@@ -69,7 +69,7 @@ public:
     virtual void onLightningHit();
 
     // vIndex: 84, symbol: ?handleEntityEvent@VillagerBase@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -114,7 +114,7 @@ public:
     MCAPI void consumeLoveFood();
 
     // symbol: ?getBreedingStackIndex@VillagerBase@@QEBAHXZ
-    MCAPI int getBreedingStackIndex() const;
+    MCAPI int32_t getBreedingStackIndex() const;
 
     // symbol: ?isChasing@VillagerBase@@QEBA_NXZ
     MCAPI bool isChasing() const;

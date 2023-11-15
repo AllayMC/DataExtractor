@@ -65,7 +65,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?fetchClosestVillage@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z
-    virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const &, int, uint) const;
+    virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const &, int32_t, uint32_t) const;
 
     // vIndex: 2, symbol: ?getVillageByID@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVUUID@mce@@@Z
     virtual std::weak_ptr<class Village> getVillageByID(class mce::UUID const &) const;
@@ -74,7 +74,7 @@ public:
     MCAPI VillageManager(class Dimension &);
 
     // symbol: ?fetchClosestVillageMostSuitableForDweller@VillageManager@@QEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z
-    MCAPI std::weak_ptr<class Village> fetchClosestVillageMostSuitableForDweller(class BlockPos const &, int, uint) const;
+    MCAPI std::weak_ptr<class Village> fetchClosestVillageMostSuitableForDweller(class BlockPos const &, int32_t, uint32_t) const;
 
     // symbol: ?getClosestVillageWithRaid@VillageManager@@QEAA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@@Z
     MCAPI std::weak_ptr<class Village> getClosestVillageWithRaid(class BlockPos const &);
@@ -116,7 +116,7 @@ public:
     MCAPI std::shared_ptr<class POIInstance> tryCreatePOI(class BlockPos const &, class Block const &);
 
     // symbol: ?MAX_POI_TOLERANCE_DIST@VillageManager@@2HB
-    MCAPI static int const MAX_POI_TOLERANCE_DIST;
+    MCAPI static int32_t const MAX_POI_TOLERANCE_DIST;
 
     // NOLINTEND
 
@@ -157,13 +157,13 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?MAX_POI_QUERIES@VillageManager@@0_KB
-    MCAPI static uint64 const MAX_POI_QUERIES;
+    MCAPI static uint64_t const MAX_POI_QUERIES;
 
     // symbol: ?MAX_QUERY_SCAN_ITERATIONS@VillageManager@@0HB
-    MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
+    MCAPI static int32_t const MAX_QUERY_SCAN_ITERATIONS;
 
     // symbol: ?VILLAGE_HERO_EFFECT_DURATION@VillageManager@@0HB
-    MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
+    MCAPI static int32_t const VILLAGE_HERO_EFFECT_DURATION;
 
     // NOLINTEND
 

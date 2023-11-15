@@ -17,13 +17,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0HMAC@Hash@Crypto@@QEAA@W4HashType@12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI HMAC(::Crypto::Hash::HashType, std::string const &, int);
+    MCAPI HMAC(::Crypto::Hash::HashType, std::string const &, int32_t);
 
     // symbol: ?resultSize@HMAC@Hash@Crypto@@QEBA_KXZ
-    MCAPI uint64 resultSize() const;
+    MCAPI uint64_t resultSize() const;
 
     // symbol: ?signAndAppend@HMAC@Hash@Crypto@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV45@_K@Z
-    MCAPI void signAndAppend(std::string const &, std::string &, uint64);
+    MCAPI void signAndAppend(std::string const &, std::string &, uint64_t);
 
     // NOLINTEND
 

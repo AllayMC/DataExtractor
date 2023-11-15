@@ -178,20 +178,20 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@TwistingVinesBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ??0TwistingVinesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TwistingVinesBlock(std::string const &, int);
+    MCAPI TwistingVinesBlock(std::string const &, int32_t);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_shouldGrow@TwistingVinesBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI bool _shouldGrow(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI bool _shouldGrow(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // symbol: ?_tryGrow@TwistingVinesBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // NOLINTEND
 

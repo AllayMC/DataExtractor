@@ -27,7 +27,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?read@ServerData@NetherNetServerLocator@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-        MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream &);
+        MCAPI class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream &);
     
         // symbol: ??1ServerData@NetherNetServerLocator@@QEAA@XZ
         MCAPI ~ServerData();
@@ -48,7 +48,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 3, symbol: ?startAnnouncingServer@NetherNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$NonOwnerPointer@VAppPlatform@@@Bedrock@@W4GameType@@HH_N3@Z
-    virtual void startAnnouncingServer(std::string const &, std::string const &, class Bedrock::NonOwnerPointer<class AppPlatform>, ::GameType, int, int, bool, bool);
+    virtual void startAnnouncingServer(std::string const &, std::string const &, class Bedrock::NonOwnerPointer<class AppPlatform>, ::GameType, int32_t, int32_t, bool, bool);
 
     // vIndex: 4, symbol: ?stopAnnouncingServer@NetherNetServerLocator@@UEAAXV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
     virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform>);
@@ -79,7 +79,7 @@ public:
     MCAPI void _cacheDiscoveryResponseData(struct NetherNetServerLocator::ServerData const &);
 
     // symbol: ?_onDiscoveryResponse@NetherNetServerLocator@@AEAAX_KV?$span@$$CBD$0?0@gsl@@@Z
-    MCAPI void _onDiscoveryResponse(uint64, gsl::span<char const>);
+    MCAPI void _onDiscoveryResponse(uint64_t, class gsl::span<char const>);
 
     // symbol: ?_pruneStaleServers@NetherNetServerLocator@@AEAAXV?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@@Z
     MCAPI void _pruneStaleServers(std::chrono::seconds);
@@ -91,7 +91,7 @@ public:
     MCAPI void _setIsDiscovering(bool);
 
     // symbol: ?_transformFrom@NetherNetServerLocator@@CA?AUPingedCompatibleServer@@_K$$QEAUServerData@1@@Z
-    MCAPI static struct PingedCompatibleServer _transformFrom(uint64, struct NetherNetServerLocator::ServerData &&);
+    MCAPI static struct PingedCompatibleServer _transformFrom(uint64_t, struct NetherNetServerLocator::ServerData &&);
 
     // NOLINTEND
 

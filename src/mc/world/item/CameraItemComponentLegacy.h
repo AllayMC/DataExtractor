@@ -45,7 +45,7 @@ public:
     virtual float slideAwayDuration() const;
 
     // vIndex: 7, symbol: ?canPlace@CameraItemComponentLegacy@@UEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
-    virtual bool canPlace(class ItemStack const &, class Actor &, class BlockPos const &, uchar) const;
+    virtual bool canPlace(class ItemStack const &, class Actor &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 8, symbol: ?takePictureNow@CameraItemComponentLegacy@@UEAAXAEAVPlayer@@PEAVActor@@1@Z
     virtual void takePictureNow(class Player &, class Actor *, class Actor *);
@@ -57,10 +57,10 @@ public:
     virtual void use(class ItemStack &, class Player &);
 
     // vIndex: 11, symbol: ?releaseUsing@CameraItemComponentLegacy@@UEAAXAEAVItemStack@@AEAVPlayer@@H@Z
-    virtual void releaseUsing(class ItemStack &, class Player &, int);
+    virtual void releaseUsing(class ItemStack &, class Player &, int32_t);
 
     // vIndex: 12, symbol: ?useOn@CameraItemComponentLegacy@@UEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-    virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, uchar, class Vec3 const &);
+    virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, uint8_t, class Vec3 const &);
 
     // symbol: ??0CameraItemComponentLegacy@@QEAA@AEAVItem@@@Z
     MCAPI CameraItemComponentLegacy(class Item &);
@@ -73,7 +73,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_tryPlace@CameraItemComponentLegacy@@AEBA?AW4UseAction@1@AEBVItemStack@@AEAVActor@@AEBVBlockPos@@EAEAVVec3@@@Z
-    MCAPI ::CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const &, class Actor &, class BlockPos const &, uchar, class Vec3 &) const;
+    MCAPI ::CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const &, class Actor &, class BlockPos const &, uint8_t, class Vec3 &) const;
 
     // NOLINTEND
 

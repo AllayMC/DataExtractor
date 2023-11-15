@@ -15,10 +15,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?readTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-    virtual bool readTransform(std::vector<uchar> &) const;
+    virtual bool readTransform(std::vector<uint8_t> &) const;
 
     // vIndex: 2, symbol: ?writeTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-    virtual bool writeTransform(std::vector<uchar> &) const;
+    virtual bool writeTransform(std::vector<uint8_t> &) const;
 
     // NOLINTEND
 

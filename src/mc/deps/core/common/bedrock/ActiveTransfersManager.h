@@ -34,7 +34,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?onAckReceived@TransferTracker@ActiveTransfersManager@Server@ClientBlobCache@@QEAAX_K@Z
-        MCAPI void onAckReceived(uint64);
+        MCAPI void onAckReceived(uint64_t);
     
         // symbol: ??1TransferTracker@ActiveTransfersManager@Server@ClientBlobCache@@QEAA@XZ
         MCAPI ~TransferTracker();
@@ -60,7 +60,7 @@ public:
     MCAPI void collectTrackingData() const;
 
     // symbol: ?dropBlobFor@ActiveTransfersManager@Server@ClientBlobCache@@QEAA?AV?$shared_ptr@VBlob@Server@ClientBlobCache@@@std@@AEBVNetworkIdentifier@@_K@Z
-    MCAPI std::shared_ptr<class ClientBlobCache::Server::Blob> dropBlobFor(class NetworkIdentifier const &, uint64);
+    MCAPI std::shared_ptr<class ClientBlobCache::Server::Blob> dropBlobFor(class NetworkIdentifier const &, uint64_t);
 
     // symbol: ?enableCacheFor@ActiveTransfersManager@Server@ClientBlobCache@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void enableCacheFor(class NetworkIdentifier const &);
@@ -82,7 +82,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?rememberBlob@ActiveTransfersManager@Server@ClientBlobCache@@AEAA?AV?$shared_ptr@VBlob@Server@ClientBlobCache@@@std@@_KAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@_N@Z
-    MCAPI std::shared_ptr<class ClientBlobCache::Server::Blob> rememberBlob(uint64, std::string &, bool);
+    MCAPI std::shared_ptr<class ClientBlobCache::Server::Blob> rememberBlob(uint64_t, std::string &, bool);
 
     // NOLINTEND
 

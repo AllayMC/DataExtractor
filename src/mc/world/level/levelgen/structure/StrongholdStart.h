@@ -21,7 +21,7 @@ public:
     virtual bool isValid() const;
 
     // symbol: ??0StrongholdStart@@QEAA@AEAVDimension@@AEAVRandom@@HH@Z
-    MCAPI StrongholdStart(class Dimension &, class Random &, int, int);
+    MCAPI StrongholdStart(class Dimension &, class Random &, int32_t, int32_t);
 
     // NOLINTEND
 

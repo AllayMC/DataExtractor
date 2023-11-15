@@ -125,7 +125,7 @@ public:
     MCAPI Boat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
     // symbol: ?getWoodID@Boat@@QEBAEXZ
-    MCAPI uchar getWoodID() const;
+    MCAPI uint8_t getWoodID() const;
 
     // symbol: ?postNormalTick@Boat@@QEAAXXZ
     MCAPI void postNormalTick();

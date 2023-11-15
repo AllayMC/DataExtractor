@@ -26,7 +26,7 @@ public:
     MCAPI class BlockPos getHomePos() const;
 
     // symbol: ?getRestrictionRadius@HomeComponent@@QEBAHXZ
-    MCAPI int getRestrictionRadius() const;
+    MCAPI int32_t getRestrictionRadius() const;
 
     // symbol: ?hasRestriction@HomeComponent@@QEBA_NXZ
     MCAPI bool hasRestriction() const;

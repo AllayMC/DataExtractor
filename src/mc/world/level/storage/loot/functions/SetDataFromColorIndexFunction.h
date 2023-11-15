@@ -28,7 +28,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_applyImpl@SetDataFromColorIndexFunction@@AEAA_NAEAPEBVItem@@PEBVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAH@Z
-    MCAPI bool _applyImpl(class Item const *&, class Actor const *, std::string const &, int &);
+    MCAPI bool _applyImpl(class Item const *&, class Actor const *, std::string const &, int32_t &);
 
     // NOLINTEND
 

@@ -52,10 +52,10 @@ public:
     virtual void __unk_vfn_53();
 
     // vIndex: 62, symbol: ?getEnchantSlot@EnchantedBookItem@@UEBAHXZ
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
 
     // vIndex: 63, symbol: ?getEnchantValue@EnchantedBookItem@@UEBAHXZ
-    virtual int getEnchantValue() const;
+    virtual int32_t getEnchantValue() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
@@ -85,7 +85,7 @@ public:
     virtual void __unk_vfn_116();
 
     // symbol: ??0EnchantedBookItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI EnchantedBookItem(std::string const &, int, bool);
+    MCAPI EnchantedBookItem(std::string const &, int32_t, bool);
 
     // NOLINTEND
 

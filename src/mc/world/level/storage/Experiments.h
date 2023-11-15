@@ -47,7 +47,7 @@ public:
     MCAPI bool isExperimentEnabled(::AllExperiments) const;
 
     // symbol: ?setExperimentByToggleIndex@Experiments@@QEAAX_K_N@Z
-    MCAPI void setExperimentByToggleIndex(uint64, bool);
+    MCAPI void setExperimentByToggleIndex(uint64_t, bool);
 
     // symbol: ?setExperimentEnabled@Experiments@@QEAAXW4AllExperiments@@_N@Z
     MCAPI void setExperimentEnabled(::AllExperiments, bool);

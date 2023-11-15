@@ -51,7 +51,7 @@ public:
     MCAPI ScriptFormPromiseTracker();
 
     // symbol: ?handleFormResponse@ScriptFormPromiseTracker@@QEAAXIAEBVValue@Json@@@Z
-    MCAPI void handleFormResponse(uint, class Json::Value const &);
+    MCAPI void handleFormResponse(uint32_t, class Json::Value const &);
 
     // symbol: ?handlePlayerQuit@ScriptFormPromiseTracker@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void handlePlayerQuit(class NetworkIdentifier const &);

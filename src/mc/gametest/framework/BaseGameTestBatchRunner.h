@@ -54,7 +54,7 @@ public:
     MCAPI void _resetBatchTracker();
 
     // symbol: ?_runBatch@BaseGameTestBatchRunner@gametest@@AEAAXH@Z
-    MCAPI void _runBatch(int);
+    MCAPI void _runBatch(int32_t);
 
     // NOLINTEND
 

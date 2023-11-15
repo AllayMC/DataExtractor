@@ -84,7 +84,7 @@ public:
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
 
     // vIndex: 84, symbol: ?handleEntityEvent@EnderDragon@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 108, symbol: ?canChangeDimensionsUsingPortal@EnderDragon@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
@@ -96,7 +96,7 @@ public:
     virtual bool canBePulledIntoVehicle() const;
 
     // vIndex: 126, symbol: ?canBeAffected@EnderDragon@@UEBA_NI@Z
-    virtual bool canBeAffected(uint) const;
+    virtual bool canBeAffected(uint32_t) const;
 
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
@@ -141,16 +141,16 @@ public:
     MCAPI void dieNaturally();
 
     // symbol: ?findClosestNode@EnderDragon@@QEAAHAEBVVec3@@@Z
-    MCAPI int findClosestNode(class Vec3 const &);
+    MCAPI int32_t findClosestNode(class Vec3 const &);
 
     // symbol: ?findClosestNode@EnderDragon@@QEAAHXZ
-    MCAPI int findClosestNode();
+    MCAPI int32_t findClosestNode();
 
     // symbol: ?findPath@EnderDragon@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@HHPEAVPathfinderNode@@@Z
-    MCAPI std::unique_ptr<class Path> findPath(int, int, class PathfinderNode *);
+    MCAPI std::unique_ptr<class Path> findPath(int32_t, int32_t, class PathfinderNode *);
 
     // symbol: ?getFlameCount@EnderDragon@@QEBAHXZ
-    MCAPI int getFlameCount() const;
+    MCAPI int32_t getFlameCount() const;
 
     // symbol: ?getFlapTime@EnderDragon@@QEBAMXZ
     MCAPI float getFlapTime() const;
@@ -159,10 +159,10 @@ public:
     MCAPI class BlockPos getHeadPos() const;
 
     // symbol: ?getLatencyPos@EnderDragon@@QEBA?BV?$vector@MV?$allocator@M@std@@@std@@HM@Z
-    MCAPI std::vector<float> const getLatencyPos(int, float) const;
+    MCAPI std::vector<float> const getLatencyPos(int32_t, float) const;
 
     // symbol: ?getNumCrystalsAlive@EnderDragon@@QEAAHXZ
-    MCAPI int getNumCrystalsAlive();
+    MCAPI int32_t getNumCrystalsAlive();
 
     // symbol: ?getTargetPos@EnderDragon@@QEBA?AVVec3@@XZ
     MCAPI class Vec3 getTargetPos() const;
@@ -186,7 +186,7 @@ public:
     MCAPI void setHasDragonPreviouslyBeenKilled(bool);
 
     // symbol: ?setNumCrystalsAlive@EnderDragon@@QEAAXH@Z
-    MCAPI void setNumCrystalsAlive(int);
+    MCAPI void setNumCrystalsAlive(int32_t);
 
     // symbol: ?setTargetPos@EnderDragon@@QEAAXVVec3@@@Z
     MCAPI void setTargetPos(class Vec3);
@@ -212,10 +212,10 @@ public:
     MCAPI bool _checkWalls(class AABB);
 
     // symbol: ?_hurtEntities@EnderDragon@@AEBAXV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@@Z
-    MCAPI void _hurtEntities(gsl::span<gsl::not_null<class Actor *>>) const;
+    MCAPI void _hurtEntities(class gsl::span<class gsl::not_null<class Actor *>>) const;
 
     // symbol: ?_knockBack@EnderDragon@@AEBAXV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@@Z
-    MCAPI void _knockBack(gsl::span<gsl::not_null<class Actor *>>) const;
+    MCAPI void _knockBack(class gsl::span<class gsl::not_null<class Actor *>>) const;
 
     // symbol: ?_reconstructPath@EnderDragon@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVPathfinderNode@@0W4PathCompletionType@@@Z
     MCAPI std::unique_ptr<class Path> _reconstructPath(class PathfinderNode &, class PathfinderNode &, ::PathCompletionType);
@@ -228,13 +228,13 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?GROWL_INTERVAL_MAX@EnderDragon@@0HA
-    MCAPI static int GROWL_INTERVAL_MAX;
+    MCAPI static int32_t GROWL_INTERVAL_MAX;
 
     // symbol: ?GROWL_INTERVAL_MIN@EnderDragon@@0HA
-    MCAPI static int GROWL_INTERVAL_MIN;
+    MCAPI static int32_t GROWL_INTERVAL_MIN;
 
     // symbol: ?MAX_PATH_RADIUS@EnderDragon@@0HA
-    MCAPI static int MAX_PATH_RADIUS;
+    MCAPI static int32_t MAX_PATH_RADIUS;
 
     // symbol: ?SITTING_ALLOWED_DAMAGE_PERCENTAGE@EnderDragon@@0MA
     MCAPI static float SITTING_ALLOWED_DAMAGE_PERCENTAGE;

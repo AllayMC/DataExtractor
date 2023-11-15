@@ -29,7 +29,7 @@ public:
     MCAPI std::string getCommandName() const;
 
     // symbol: ?getVersion@Command@@QEBAHXZ
-    MCAPI int getVersion() const;
+    MCAPI int32_t getVersion() const;
 
     // symbol: ?hasFlag@Command@@QEBA_NUCommandFlag@@@Z
     MCAPI bool hasFlag(struct CommandFlag) const;
@@ -38,13 +38,13 @@ public:
     MCAPI void run(class CommandOrigin const &, class CommandOutput &) const;
 
     // symbol: ?shouldUseCommandOriginRotation@Command@@SA_NAEBVCommandOrigin@@H@Z
-    MCAPI static bool shouldUseCommandOriginRotation(class CommandOrigin const &, int);
+    MCAPI static bool shouldUseCommandOriginRotation(class CommandOrigin const &, int32_t);
 
     // symbol: ?validRange@Command@@SA_NMMMAEAVCommandOutput@@@Z
     MCAPI static bool validRange(float, float, float, class CommandOutput &);
 
     // symbol: ?validRange@Command@@SA_NHHHAEAVCommandOutput@@@Z
-    MCAPI static bool validRange(int, int, int, class CommandOutput &);
+    MCAPI static bool validRange(int32_t, int32_t, int32_t, class CommandOutput &);
 
     // symbol: ?WILDCARD_TOKEN@Command@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const WILDCARD_TOKEN;
@@ -72,7 +72,7 @@ public:
     MCAPI static bool isWildcard(class CommandSelectorBase const &);
 
     // symbol: ?validData@Command@@KA_NHAEAGAEAVCommandOutput@@@Z
-    MCAPI static bool validData(int, ushort &, class CommandOutput &);
+    MCAPI static bool validData(int32_t, uint16_t &, class CommandOutput &);
 
     // NOLINTEND
 

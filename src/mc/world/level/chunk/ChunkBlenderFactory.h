@@ -49,7 +49,7 @@ public:
     MCAPI std::vector<std::array<struct ChunkBlenderUtil::AttenuationData, 4>> _finalizeChunkAttenuationData(std::vector<std::array<struct ChunkBlenderFactory::IntermediateAttenuationData, 4>> const &) const;
 
     // symbol: ?_processDensityColumn@ChunkBlenderFactory@@AEBAXAEAV?$vector@V?$array@UIntermediateAttenuationData@ChunkBlenderFactory@@$03@std@@V?$allocator@V?$array@UIntermediateAttenuationData@ChunkBlenderFactory@@$03@std@@@2@@std@@AEBVBlendingData@@MU?$pair@HH@3@2_N@Z
-    MCAPI void _processDensityColumn(std::vector<std::array<struct ChunkBlenderFactory::IntermediateAttenuationData, 4>> &, class BlendingData const &, float, std::pair<int, int>, std::pair<int, int>, bool) const;
+    MCAPI void _processDensityColumn(std::vector<std::array<struct ChunkBlenderFactory::IntermediateAttenuationData, 4>> &, class BlendingData const &, float, std::pair<int32_t, int32_t>, std::pair<int32_t, int32_t>, bool) const;
 
     // symbol: ?_updateIntermediateAttenuationData@ChunkBlenderFactory@@AEBAXAEAV?$vector@V?$array@UIntermediateAttenuationData@ChunkBlenderFactory@@$03@std@@V?$allocator@V?$array@UIntermediateAttenuationData@ChunkBlenderFactory@@$03@std@@@2@@std@@AEBVChunkPos@@1AEBVBlendingData@@_N@Z
     MCAPI void _updateIntermediateAttenuationData(std::vector<std::array<struct ChunkBlenderFactory::IntermediateAttenuationData, 4>> &, class ChunkPos const &, class ChunkPos const &, class BlendingData const &, bool) const;

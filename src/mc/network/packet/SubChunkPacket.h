@@ -32,10 +32,10 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?HEIGHT_COLUMN_ABOVE_SUBCHUNK@HeightmapData@SubChunkPacket@@2CB
-        MCAPI static schar const HEIGHT_COLUMN_ABOVE_SUBCHUNK;
+        MCAPI static int8_t const HEIGHT_COLUMN_ABOVE_SUBCHUNK;
     
         // symbol: ?HEIGHT_COLUMN_BELOW_SUBCHUNK@HeightmapData@SubChunkPacket@@2CB
-        MCAPI static schar const HEIGHT_COLUMN_BELOW_SUBCHUNK;
+        MCAPI static int8_t const HEIGHT_COLUMN_BELOW_SUBCHUNK;
     
         // NOLINTEND
     
@@ -92,7 +92,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@SubChunkPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1SubChunkPacket@@UEAA@XZ
     MCVAPI ~SubChunkPacket();

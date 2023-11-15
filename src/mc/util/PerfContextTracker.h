@@ -86,10 +86,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?incrementPacketReceivedInfo@PerfContextTracker@@QEAAXI@Z
-    MCAPI void incrementPacketReceivedInfo(uint);
+    MCAPI void incrementPacketReceivedInfo(uint32_t);
 
     // symbol: ?incrementPacketSentInfo@PerfContextTracker@@QEAAXI@Z
-    MCAPI void incrementPacketSentInfo(uint);
+    MCAPI void incrementPacketSentInfo(uint32_t);
 
     // symbol: ?getInstance@PerfContextTracker@@SAAEAV1@XZ
     MCAPI static class PerfContextTracker & getInstance();

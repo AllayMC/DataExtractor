@@ -131,7 +131,7 @@ public:
     virtual void __unk_vfn_83();
 
     // vIndex: 92, symbol: ?mayPlace@SignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 100, symbol: ?neighborChanged@SignBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
@@ -179,7 +179,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@SignBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -191,16 +191,16 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@SignBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 192, symbol: ?getEntityResourceItem@SignBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int32_t) const;
 
     // vIndex: 193, symbol: ?getYRotationInDegrees@SignBlock@@UEBAMAEBVBlock@@@Z
     virtual float getYRotationInDegrees(class Block const &) const;
 
     // vIndex: 194, symbol: ?_canSurvive@SignBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool _canSurvive(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool _canSurvive(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 195, symbol: ?_getItemInstance@SignBlock@@MEBA?AVItemInstance@@XZ
     virtual class ItemInstance _getItemInstance() const;
@@ -209,7 +209,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0SignBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NW4SignType@0@@Z
-    MCAPI SignBlock(std::string const &, int, bool, ::SignBlock::SignType);
+    MCAPI SignBlock(std::string const &, int32_t, bool, ::SignBlock::SignType);
 
     // symbol: ?getSignTextColorFromDyeItem@SignBlock@@SA?AVColor@mce@@AEBVItem@@@Z
     MCAPI static class mce::Color getSignTextColorFromDyeItem(class Item const &);
@@ -222,7 +222,7 @@ public:
     MCAPI static bool _canChangeSign(class SignBlockActor &, class Player &);
 
     // symbol: ?_getInteractResult@SignBlock@@CA?AUSignInteractionResult@1@AEAVSignBlockActor@@W4SignTextSide@@AEAVItemStack@@AEAVPlayer@@AEBVBlockPos@@E@Z
-    MCAPI static struct SignBlock::SignInteractionResult _getInteractResult(class SignBlockActor &, ::SignTextSide, class ItemStack &, class Player &, class BlockPos const &, uchar);
+    MCAPI static struct SignBlock::SignInteractionResult _getInteractResult(class SignBlockActor &, ::SignTextSide, class ItemStack &, class Player &, class BlockPos const &, uint8_t);
 
     // NOLINTEND
 

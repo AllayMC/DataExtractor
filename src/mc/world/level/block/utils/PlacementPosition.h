@@ -60,7 +60,7 @@ public:
         virtual void __unk_vfn_0();
     
         // vIndex: 1, symbol: ?getPlacementBlock@UpdateBlockFaceGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-        virtual gsl::not_null<class Block const *> getPlacementBlock(gsl::not_null<class Block const *>, class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+        virtual class gsl::not_null<class Block const *> getPlacementBlock(class gsl::not_null<class Block const *>, class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
     
         // NOLINTEND
     
@@ -79,7 +79,7 @@ public:
         virtual void __unk_vfn_0();
     
         // vIndex: 1, symbol: ?getPlacementBlock@UpdateVerticalHalfGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-        virtual gsl::not_null<class Block const *> getPlacementBlock(gsl::not_null<class Block const *>, class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+        virtual class gsl::not_null<class Block const *> getPlacementBlock(class gsl::not_null<class Block const *>, class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
     
         // NOLINTEND
     

@@ -24,7 +24,7 @@ public:
     MCAPI LegacyStructureSettings(class LegacyStructureSettings const &);
 
     // symbol: ?addSwapAuxValue@LegacyStructureSettings@@QEAAXHH@Z
-    MCAPI void addSwapAuxValue(int, int);
+    MCAPI void addSwapAuxValue(int32_t, int32_t);
 
     // symbol: ?getBoundingBox@LegacyStructureSettings@@QEAAAEBVBoundingBox@@XZ
     MCAPI class BoundingBox const & getBoundingBox();
@@ -72,7 +72,7 @@ public:
     MCAPI void setRotation(::Rotation);
 
     // symbol: ?setSeed@LegacyStructureSettings@@QEAAXI@Z
-    MCAPI void setSeed(uint);
+    MCAPI void setSeed(uint32_t);
 
     // symbol: ?updateBoundingBoxFromChunkPos@LegacyStructureSettings@@QEAAXXZ
     MCAPI void updateBoundingBoxFromChunkPos();
@@ -87,7 +87,7 @@ public:
     MCAPI static float const INTEGRITY_MIN;
 
     // symbol: ?MAX_STRUCTURE_SIZE@LegacyStructureSettings@@2HB
-    MCAPI static int const MAX_STRUCTURE_SIZE;
+    MCAPI static int32_t const MAX_STRUCTURE_SIZE;
 
     // NOLINTEND
 

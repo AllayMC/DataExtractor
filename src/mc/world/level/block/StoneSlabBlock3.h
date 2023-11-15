@@ -92,7 +92,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 56, symbol: ?isValidAuxValue@StoneSlabBlock3@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -134,7 +134,7 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 142, symbol: ?getVariant@StoneSlabBlock3@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -164,13 +164,13 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@StoneSlabBlock3@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@StoneSlabBlock3@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 
     // symbol: ??0StoneSlabBlock3@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI StoneSlabBlock3(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
+    MCAPI StoneSlabBlock3(std::string const &, int32_t, bool, class WeakPtr<class BlockLegacy>);
 
     // symbol: ?SLAB_NAMES@StoneSlabBlock3@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$07@std@@B
     MCAPI static std::array<std::string, 8> const SLAB_NAMES;

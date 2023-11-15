@@ -61,7 +61,7 @@ public:
     virtual DimensionType getStructureDimension() const = 0;
 
     // vIndex: 10, symbol: ?_getLevelTick@MinecraftGameTestInstance@@MEBAHXZ
-    virtual int _getLevelTick() const = 0;
+    virtual int32_t _getLevelTick() const = 0;
 
     // vIndex: 11, symbol: ?_isTestReady@MinecraftGameTestInstance@@MEAA_NXZ
     virtual bool _isTestReady() = 0;

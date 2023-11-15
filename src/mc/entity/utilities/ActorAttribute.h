@@ -5,10 +5,10 @@
 namespace ActorAttribute {
     // NOLINTBEGIN
     // symbol: ?getHealth@ActorAttribute@@YAHAEBVEntityContext@@@Z
-    MCAPI int getHealth(class EntityContext const &);
+    MCAPI int32_t getHealth(class EntityContext const &);
 
     // symbol: ?getMaxHealth@ActorAttribute@@YAHAEBVEntityContext@@@Z
-    MCAPI int getMaxHealth(class EntityContext const &);
+    MCAPI int32_t getMaxHealth(class EntityContext const &);
     // NOLINTEND
 
 };

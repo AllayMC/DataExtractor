@@ -34,7 +34,7 @@ public:
     virtual void appendDebugInfo(std::string &) const;
 
     // symbol: ??0RandomHoverGoal@@QEAA@AEAVMob@@MHMMMUIntRange@@@Z
-    MCAPI RandomHoverGoal(class Mob &, float, int, float, float, float, struct IntRange);
+    MCAPI RandomHoverGoal(class Mob &, float, int32_t, float, float, float, struct IntRange);
 
     // NOLINTEND
 

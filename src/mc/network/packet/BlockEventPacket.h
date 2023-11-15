@@ -28,7 +28,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@BlockEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1BlockEventPacket@@UEAA@XZ
     MCVAPI ~BlockEventPacket();
@@ -37,7 +37,7 @@ public:
     MCAPI BlockEventPacket();
 
     // symbol: ??0BlockEventPacket@@QEAA@VBlockPos@@HH@Z
-    MCAPI BlockEventPacket(class BlockPos, int, int);
+    MCAPI BlockEventPacket(class BlockPos, int32_t, int32_t);
 
     // NOLINTEND
 

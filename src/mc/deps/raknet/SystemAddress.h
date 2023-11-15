@@ -21,25 +21,25 @@ public:
     MCAPI void FixForIPVersion(struct RakNet::SystemAddress const &);
 
     // symbol: ?FromString@SystemAddress@RakNet@@QEAA_NPEBDDH@Z
-    MCAPI bool FromString(char const *, char, int);
+    MCAPI bool FromString(char const *, char, int32_t);
 
     // symbol: ?FromStringExplicitPort@SystemAddress@RakNet@@QEAA_NPEBDGH@Z
-    MCAPI bool FromStringExplicitPort(char const *, ushort, int);
+    MCAPI bool FromStringExplicitPort(char const *, uint16_t, int32_t);
 
     // symbol: ?GetIPPROTO@SystemAddress@RakNet@@QEBAIXZ
-    MCAPI uint GetIPPROTO() const;
+    MCAPI uint32_t GetIPPROTO() const;
 
     // symbol: ?GetIPString@SystemAddress@RakNet@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string GetIPString() const;
 
     // symbol: ?GetIPVersion@SystemAddress@RakNet@@QEBAEXZ
-    MCAPI uchar GetIPVersion() const;
+    MCAPI uint8_t GetIPVersion() const;
 
     // symbol: ?GetPort@SystemAddress@RakNet@@QEBAGXZ
-    MCAPI ushort GetPort() const;
+    MCAPI uint16_t GetPort() const;
 
     // symbol: ?GetPortNetworkOrder@SystemAddress@RakNet@@QEBAGXZ
-    MCAPI ushort GetPortNetworkOrder() const;
+    MCAPI uint16_t GetPortNetworkOrder() const;
 
     // symbol: ?IsLinkLocalAddress@SystemAddress@RakNet@@QEBA_NXZ
     MCAPI bool IsLinkLocalAddress() const;
@@ -51,16 +51,16 @@ public:
     MCAPI bool IsMulticastAddress() const;
 
     // symbol: ?SetPortHostOrder@SystemAddress@RakNet@@QEAAXG@Z
-    MCAPI void SetPortHostOrder(ushort);
+    MCAPI void SetPortHostOrder(uint16_t);
 
     // symbol: ?SetToLoopback@SystemAddress@RakNet@@QEAAXE@Z
-    MCAPI void SetToLoopback(uchar);
+    MCAPI void SetToLoopback(uint8_t);
 
     // symbol: ??0SystemAddress@RakNet@@QEAA@XZ
     MCAPI SystemAddress();
 
     // symbol: ??0SystemAddress@RakNet@@QEAA@PEBDG@Z
-    MCAPI SystemAddress(char const *, ushort);
+    MCAPI SystemAddress(char const *, uint16_t);
 
     // symbol: ?ToString@SystemAddress@RakNet@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@D@Z
     MCAPI std::string ToString(char) const;
@@ -81,7 +81,7 @@ public:
     MCAPI bool operator==(struct RakNet::SystemAddress const &) const;
 
     // symbol: ?ToInteger@SystemAddress@RakNet@@SAKAEBU12@@Z
-    MCAPI static ulong ToInteger(struct RakNet::SystemAddress const &);
+    MCAPI static unsigned long ToInteger(struct RakNet::SystemAddress const &);
 
     // NOLINTEND
 

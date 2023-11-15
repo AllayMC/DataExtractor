@@ -43,7 +43,7 @@ public:
     MCAPI class BoundingBox getBoundingBox() const;
 
     // symbol: ?getCapacity@SimpleBlockVolume@@QEBAHXZ
-    MCAPI int getCapacity() const;
+    MCAPI int32_t getCapacity() const;
 
     // symbol: ?getFrom@SimpleBlockVolume@@QEBA?AVBlockPos@@XZ
     MCAPI class BlockPos getFrom() const;
@@ -55,7 +55,7 @@ public:
     MCAPI class BlockPos getMin() const;
 
     // symbol: ?getSpan@SimpleBlockVolume@@QEBA?AU?$vec@$02H$0A@@glm@@XZ
-    MCAPI struct glm::vec<3, int, 0> getSpan() const;
+    MCAPI struct glm::vec<3, int32_t, 0> getSpan() const;
 
     // symbol: ?getTo@SimpleBlockVolume@@QEBA?AVBlockPos@@XZ
     MCAPI class BlockPos getTo() const;
@@ -79,7 +79,7 @@ public:
     MCAPI class SimpleBlockVolume & translate(class BlockPos const &);
 
     // symbol: ?translated@SimpleBlockVolume@@QEBA?AV1@AEBU?$vec@$02H$0A@@glm@@@Z
-    MCAPI class SimpleBlockVolume translated(struct glm::vec<3, int, 0> const &) const;
+    MCAPI class SimpleBlockVolume translated(struct glm::vec<3, int32_t, 0> const &) const;
 
     // symbol: ?cerealBindTypes@SimpleBlockVolume@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void cerealBindTypes(struct cereal::ReflectionCtx &);

@@ -43,7 +43,7 @@ public:
     virtual void __unk_vfn_21();
 
     // vIndex: 45, symbol: ?getLevelDataForAuxValue@CandleBlockItem@@UEBAHH@Z
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int32_t getLevelDataForAuxValue(int32_t) const;
 
     // vIndex: 51, symbol: __unk_vfn_51
     virtual void __unk_vfn_51();
@@ -79,13 +79,13 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 135, symbol: ?_useOn@CandleBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // symbol: ?isCandle@CandleBlockItem@@UEBA_NXZ
     MCVAPI bool isCandle() const;
 
     // symbol: ??0CandleBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CandleBlockItem(std::string const &, int);
+    MCAPI CandleBlockItem(std::string const &, int32_t);
 
     // NOLINTEND
 

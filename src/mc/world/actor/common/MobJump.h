@@ -5,7 +5,7 @@
 namespace MobJump {
     // NOLINTBEGIN
     // symbol: ?getNoJumpDelay@MobJump@@YAHAEBVEntityContext@@@Z
-    MCAPI int getNoJumpDelay(class EntityContext const &);
+    MCAPI int32_t getNoJumpDelay(class EntityContext const &);
 
     // symbol: ?initializeMob@MobJump@@YAXAEAVEntityContext@@@Z
     MCAPI void initializeMob(class EntityContext &);
@@ -26,7 +26,7 @@ namespace MobJump {
     MCAPI void setJumping(class EntityContext &, bool);
 
     // symbol: ?setNoJumpDelay@MobJump@@YAXAEAVEntityContext@@H@Z
-    MCAPI void setNoJumpDelay(class EntityContext &, int);
+    MCAPI void setNoJumpDelay(class EntityContext &, int32_t);
     // NOLINTEND
 
 };

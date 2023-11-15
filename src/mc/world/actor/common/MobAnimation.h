@@ -5,7 +5,7 @@
 namespace MobAnimation {
     // NOLINTBEGIN
     // symbol: ?decrementHurtTime@MobAnimation@@YAXV?$not_null@PEAUMobHurtTimeComponent@@@gsl@@@Z
-    MCAPI void decrementHurtTime(gsl::not_null<struct MobHurtTimeComponent *>);
+    MCAPI void decrementHurtTime(class gsl::not_null<struct MobHurtTimeComponent *>);
 
     // symbol: ?getStandAnim@MobAnimation@@YAMAEBVEntityContext@@@Z
     MCAPI float getStandAnim(class EntityContext const &);
@@ -14,7 +14,7 @@ namespace MobAnimation {
     MCAPI struct InterpolationPair getStandAnimNewOld(class EntityContext const &);
 
     // symbol: ?getWalkAnimSpeedNewOld@MobAnimation@@YA?AUInterpolationPair@@V?$not_null@PEBUActorWalkAnimationComponent@@@gsl@@@Z
-    MCAPI struct InterpolationPair getWalkAnimSpeedNewOld(gsl::not_null<struct ActorWalkAnimationComponent const *>);
+    MCAPI struct InterpolationPair getWalkAnimSpeedNewOld(class gsl::not_null<struct ActorWalkAnimationComponent const *>);
 
     // symbol: ?initializeHorse@MobAnimation@@YAXAEAVEntityContext@@@Z
     MCAPI void initializeHorse(class EntityContext &);

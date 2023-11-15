@@ -15,7 +15,7 @@ public:
     MCAPI BaseGameVersion(class SemVersion const &);
 
     // symbol: ??0BaseGameVersion@@QEAA@GII@Z
-    MCAPI BaseGameVersion(ushort, uint, uint);
+    MCAPI BaseGameVersion(uint16_t, uint32_t, uint32_t);
 
     // symbol: ??0BaseGameVersion@@QEAA@XZ
     MCAPI BaseGameVersion();
@@ -27,13 +27,13 @@ public:
     MCAPI std::string const & asString() const;
 
     // symbol: ?getMajor@BaseGameVersion@@QEBAGXZ
-    MCAPI ushort getMajor() const;
+    MCAPI uint16_t getMajor() const;
 
     // symbol: ?getMinor@BaseGameVersion@@QEBAGXZ
-    MCAPI ushort getMinor() const;
+    MCAPI uint16_t getMinor() const;
 
     // symbol: ?getPatch@BaseGameVersion@@QEBAGXZ
-    MCAPI ushort getPatch() const;
+    MCAPI uint16_t getPatch() const;
 
     // symbol: ?isAnyVersion@BaseGameVersion@@QEBA_NXZ
     MCAPI bool isAnyVersion() const;

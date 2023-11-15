@@ -53,7 +53,7 @@ public:
     MCAPI class mce::UUID getDwellingUniqueID() const;
 
     // symbol: ?getDwellingUpdateInterval@DwellerComponent@@QEBA_KXZ
-    MCAPI uint64 getDwellingUpdateInterval() const;
+    MCAPI uint64_t getDwellingUpdateInterval() const;
 
     // symbol: ?getFixUpRole@DwellerComponent@@QEBA_NXZ
     MCAPI bool getFixUpRole() const;
@@ -62,10 +62,10 @@ public:
     MCAPI class HashedString const & getPreferredProfession() const;
 
     // symbol: ?getUpdateIntervalBase@DwellerComponent@@QEBA_KXZ
-    MCAPI uint64 getUpdateIntervalBase() const;
+    MCAPI uint64_t getUpdateIntervalBase() const;
 
     // symbol: ?getUpdateIntervalVariant@DwellerComponent@@QEBAHXZ
-    MCAPI int getUpdateIntervalVariant() const;
+    MCAPI int32_t getUpdateIntervalVariant() const;
 
     // symbol: ?getVillage@DwellerComponent@@QEBA?BV?$weak_ptr@VVillage@@@std@@AEBVActor@@@Z
     MCAPI std::weak_ptr<class Village> const getVillage(class Actor const &) const;
@@ -110,7 +110,7 @@ public:
     MCAPI void setDwellingUniqueID(class Actor &, class mce::UUID);
 
     // symbol: ?setDwellingUpdateInterval@DwellerComponent@@QEAAX_K@Z
-    MCAPI void setDwellingUpdateInterval(uint64);
+    MCAPI void setDwellingUpdateInterval(uint64_t);
 
     // symbol: ?setFixUpRole@DwellerComponent@@QEAAX_N@Z
     MCAPI void setFixUpRole(bool);

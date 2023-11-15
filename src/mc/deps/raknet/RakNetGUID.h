@@ -28,7 +28,7 @@ public:
     MCAPI bool operator==(struct RakNet::RakNetGUID const &) const;
 
     // symbol: ?ToUint32@RakNetGUID@RakNet@@SAKAEBU12@@Z
-    MCAPI static ulong ToUint32(struct RakNet::RakNetGUID const &);
+    MCAPI static unsigned long ToUint32(struct RakNet::RakNetGUID const &);
 
     // NOLINTEND
 

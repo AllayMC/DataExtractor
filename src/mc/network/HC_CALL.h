@@ -26,17 +26,17 @@ public:
     MCAPI static class Result<std::unique_ptr<struct HC_CALL, struct http_alloc_deleter<struct HC_CALL>>> Initialize();
 
     // symbol: ?ReadRequestBody@HC_CALL@@SAJPEAU1@_K1PEAXPEAEPEA_K@Z
-    MCAPI static long ReadRequestBody(struct HC_CALL *, uint64, uint64, void *, uchar *, uint64 *);
+    MCAPI static long ReadRequestBody(struct HC_CALL *, uint64_t, uint64_t, void *, uint8_t *, uint64_t *);
 
     // symbol: ?ResponseBodyWrite@HC_CALL@@SAJPEAU1@PEBE_KPEAX@Z
-    MCAPI static long ResponseBodyWrite(struct HC_CALL *, uchar const *, uint64, void *);
+    MCAPI static long ResponseBodyWrite(struct HC_CALL *, uint8_t const *, uint64_t, void *);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ??0HC_CALL@@IEAA@_K@Z
-    MCAPI HC_CALL(uint64);
+    MCAPI HC_CALL(uint64_t);
 
     // NOLINTEND
 
@@ -46,10 +46,10 @@ public:
     MCAPI class Result<std::chrono::seconds> GetRetryAfterHeaderTime();
 
     // symbol: ?ShouldFailFast@HC_CALL@@AEAA?AV?$Result@_N@@AEAI@Z
-    MCAPI class Result<bool> ShouldFailFast(uint &);
+    MCAPI class Result<bool> ShouldFailFast(uint32_t &);
 
     // symbol: ?ShouldRetry@HC_CALL@@AEAA_NAEAI@Z
-    MCAPI bool ShouldRetry(uint &);
+    MCAPI bool ShouldRetry(uint32_t &);
 
     // symbol: ?PerfomAsyncProvider@HC_CALL@@CAJW4XAsyncOp@@PEBUXAsyncProviderData@@@Z
     MCAPI static long PerfomAsyncProvider(::XAsyncOp, struct XAsyncProviderData const *);

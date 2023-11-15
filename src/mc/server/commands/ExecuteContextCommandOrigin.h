@@ -66,7 +66,7 @@ public:
     virtual void updateValues();
 
     // vIndex: 28, symbol: ?getExecutePosition@ExecuteContextCommandOrigin@@UEBA?BVVec3@@HAEBVCommandPositionFloat@@@Z
-    virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
+    virtual class Vec3 const getExecutePosition(int32_t, class CommandPositionFloat const &) const;
 
     // vIndex: 29, symbol: ?serialize@ExecuteContextCommandOrigin@@UEBA?AVCompoundTag@@XZ
     virtual class CompoundTag serialize() const;
@@ -75,7 +75,7 @@ public:
     virtual bool isValid() const;
 
     // symbol: ??0ExecuteContextCommandOrigin@@QEAA@UActorUniqueID@@AEBVVec3@@AEBV?$optional@VVec2@@@std@@00W4ActorLocation@@V?$AutomaticID@VDimension@@H@@AEAVLevel@@H@Z
-    MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, ::ActorLocation, DimensionType, class Level &, int);
+    MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, ::ActorLocation, DimensionType, class Level &, int32_t);
 
     // symbol: ?getPositionEntity@ExecuteContextCommandOrigin@@QEAAPEBVActor@@XZ
     MCAPI class Actor const * getPositionEntity();

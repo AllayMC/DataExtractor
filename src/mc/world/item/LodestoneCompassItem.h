@@ -78,13 +78,13 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 122, symbol: ?getAnimationFrameFor@LodestoneCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-    virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    virtual int32_t getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
 
     // vIndex: 135, symbol: ?_useOn@LodestoneCompassItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // symbol: ??0LodestoneCompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LodestoneCompassItem(std::string const &, int);
+    MCAPI LodestoneCompassItem(std::string const &, int32_t);
 
     // symbol: ?linkCompassToLodestone@LodestoneCompassItem@@SA_NAEAVItemStack@@AEAVBlockSource@@VBlockPos@@@Z
     MCAPI static bool linkCompassToLodestone(class ItemStack &, class BlockSource &, class BlockPos);

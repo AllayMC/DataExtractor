@@ -21,10 +21,10 @@ public:
     virtual bool isInstantaneous() const;
 
     // vIndex: 7, symbol: ?isDurationEffectTick@InstantaneousMobEffect@@UEBA_NHH@Z
-    virtual bool isDurationEffectTick(int, int) const;
+    virtual bool isDurationEffectTick(int32_t, int32_t) const;
 
     // symbol: ??0InstantaneousMobEffect@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
-    MCAPI InstantaneousMobEffect(uint, std::string const &, std::string const &, bool, int, int);
+    MCAPI InstantaneousMobEffect(uint32_t, std::string const &, std::string const &, bool, int32_t, int32_t);
 
     // NOLINTEND
 

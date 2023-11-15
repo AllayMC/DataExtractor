@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PathElement@internal@Puv@@QEAA@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ContextType@SerializerContext@cereal@@@Z
-    MCAPI PathElement(uint, std::string, ::cereal::SerializerContext::ContextType);
+    MCAPI PathElement(uint32_t, std::string, ::cereal::SerializerContext::ContextType);
 
     // symbol: ??1PathElement@internal@Puv@@QEAA@XZ
     MCAPI ~PathElement();

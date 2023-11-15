@@ -38,7 +38,7 @@ public:
     MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const &, float) const;
 
     // symbol: ?getCloudHeight@OverworldDimension@@UEBAFXZ
-    MCVAPI short getCloudHeight() const;
+    MCVAPI int16_t getCloudHeight() const;
 
     // symbol: ?hasPrecipitationFog@OverworldDimension@@UEBA_NXZ
     MCVAPI bool hasPrecipitationFog() const;
@@ -57,7 +57,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?makeStructureFeatures@OverworldDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@I_NAEBVBaseGameVersion@@AEBVExperiments@@@Z
-    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(uint, bool, class BaseGameVersion const &, class Experiments const &);
+    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(uint32_t, bool, class BaseGameVersion const &, class Experiments const &);
 
     // NOLINTEND
 

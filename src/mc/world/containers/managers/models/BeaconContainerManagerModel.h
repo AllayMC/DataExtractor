@@ -23,10 +23,10 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@BeaconContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const &, bool);
+    virtual void setSlot(int32_t, class ItemStack const &, bool);
 
     // vIndex: 8, symbol: ?getSlot@BeaconContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const & getSlot(int) const;
+    virtual class ItemStack const & getSlot(int32_t) const;
 
     // vIndex: 17, symbol: ?_postInit@BeaconContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit();
@@ -35,7 +35,7 @@ public:
     MCAPI BeaconContainerManagerModel(::ContainerID, class Player &, class BlockPos const &);
 
     // symbol: ?PAYMENT_SLOT@BeaconContainerManagerModel@@2HB
-    MCAPI static int const PAYMENT_SLOT;
+    MCAPI static int32_t const PAYMENT_SLOT;
 
     // NOLINTEND
 

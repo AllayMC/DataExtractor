@@ -15,7 +15,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?Read@InMemoryRandomAccessFile@@UEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEAD@Z
-    virtual leveldb::Status Read(uint64, uint64, leveldb::Slice *, char *) const;
+    virtual class leveldb::Status Read(uint64_t, uint64_t, class leveldb::Slice *, char *) const;
 
     // symbol: ??0InMemoryRandomAccessFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
     MCAPI InMemoryRandomAccessFile(std::shared_ptr<class InMemoryFile>);

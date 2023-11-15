@@ -27,13 +27,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?Send@RNS2_Windows@RakNet@@UEAAHPEAURNS2_SendParameters@2@PEBDI@Z
-    virtual int Send(struct RakNet::RNS2_SendParameters *, char const *, uint);
+    virtual int32_t Send(struct RakNet::RNS2_SendParameters *, char const *, uint32_t);
 
     // vIndex: 2, symbol: ?SetMulticastInterface@RNS2_Berkley@RakNet@@UEAAXH@Z
-    virtual void SetMulticastInterface(int);
+    virtual void SetMulticastInterface(int32_t);
 
     // vIndex: 3, symbol: ?Bind@RNS2_Windows@RakNet@@UEAA?AW4RNS2BindResult@2@PEAURNS2_BerkleyBindParameters@2@PEBDI@Z
-    virtual ::RakNet::RNS2BindResult Bind(struct RakNet::RNS2_BerkleyBindParameters *, char const *, uint);
+    virtual ::RakNet::RNS2BindResult Bind(struct RakNet::RNS2_BerkleyBindParameters *, char const *, uint32_t);
 
     // symbol: ?GetSocketLayerOverride@RNS2_Windows@RakNet@@QEAAPEAVSocketLayerOverride@2@XZ
     MCAPI class RakNet::SocketLayerOverride * GetSocketLayerOverride();

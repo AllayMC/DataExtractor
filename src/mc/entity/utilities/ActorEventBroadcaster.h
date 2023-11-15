@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?broadcastActorEvent@ActorEventBroadcaster@@QEBAXAEAVActor@@W4ActorEvent@@HAEAVDimension@@@Z
-    MCAPI void broadcastActorEvent(class Actor &, ::ActorEvent, int, class Dimension &) const;
+    MCAPI void broadcastActorEvent(class Actor &, ::ActorEvent, int32_t, class Dimension &) const;
 
     // NOLINTEND
 

@@ -106,7 +106,7 @@ public:
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, ::Direction::Type) const;
 
     // vIndex: 74, symbol: ?onRedstoneUpdate@RedStoneWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int32_t, bool) const;
 
     // vIndex: 76, symbol: __unk_vfn_76
     virtual void __unk_vfn_76();
@@ -145,10 +145,10 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 134, symbol: ?getColor@RedStoneWireBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const &) const;
+    virtual int32_t getColor(class Block const &) const;
 
     // vIndex: 135, symbol: ?getColor@RedStoneWireBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
+    virtual int32_t getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 143, symbol: ?canSpawnOn@RedStoneWireBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor *) const;
@@ -193,7 +193,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0RedStoneWireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI RedStoneWireBlock(std::string const &, int);
+    MCAPI RedStoneWireBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

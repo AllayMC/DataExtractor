@@ -95,7 +95,7 @@ public:
     virtual void remove();
 
     // vIndex: 20, symbol: ?getInterpolatedRidingOffset@Player@@UEBA?AVVec3@@MH@Z
-    virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
+    virtual class Vec3 getInterpolatedRidingOffset(float, int32_t) const;
 
     // vIndex: 22, symbol: ?isFireImmune@Player@@UEBA_NXZ
     virtual bool isFireImmune() const;
@@ -104,7 +104,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 26, symbol: ?teleportTo@Player@@UEAAXAEBVVec3@@_NHH1@Z
-    virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const &, bool, int32_t, int32_t, bool);
 
     // vIndex: 28, symbol: ?tryCreateAddActorPacket@Player@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
@@ -173,10 +173,10 @@ public:
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
 
     // vIndex: 83, symbol: ?feed@Player@@UEAAXH@Z
-    virtual void feed(int);
+    virtual void feed(int32_t);
 
     // vIndex: 84, symbol: ?handleEntityEvent@Player@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 86, symbol: ?getActorRendererId@Player@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const & getActorRendererId() const;
@@ -206,10 +206,10 @@ public:
     virtual bool canFreeze() const;
 
     // vIndex: 106, symbol: ?getPortalCooldown@Player@@UEBAHXZ
-    virtual int getPortalCooldown() const;
+    virtual int32_t getPortalCooldown() const;
 
     // vIndex: 107, symbol: ?getPortalWaitTime@Player@@UEBAHXZ
-    virtual int getPortalWaitTime() const;
+    virtual int32_t getPortalWaitTime() const;
 
     // vIndex: 108, symbol: ?canChangeDimensionsUsingPortal@Player@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
@@ -221,7 +221,7 @@ public:
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
     // vIndex: 114, symbol: ?onSynchedDataUpdate@Player@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
 
     // vIndex: 115, symbol: ?canAddPassenger@Player@@UEBA_NAEAVActor@@@Z
     virtual bool canAddPassenger(class Actor &) const;
@@ -329,7 +329,7 @@ public:
     virtual void aiStep();
 
     // vIndex: 185, symbol: ?getItemUseDuration@Player@@UEBAHXZ
-    virtual int getItemUseDuration() const;
+    virtual int32_t getItemUseDuration() const;
 
     // vIndex: 186, symbol: ?getItemUseStartupProgress@Player@@UEBAMXZ
     virtual float getItemUseStartupProgress() const;
@@ -344,7 +344,7 @@ public:
     virtual std::vector<class ItemStack const *> getAllEquipment() const;
 
     // vIndex: 198, symbol: ?dropEquipmentOnDeath@Player@@UEAAXAEBVActorDamageSource@@H@Z
-    virtual void dropEquipmentOnDeath(class ActorDamageSource const &, int);
+    virtual void dropEquipmentOnDeath(class ActorDamageSource const &, int32_t);
 
     // vIndex: 199, symbol: ?dropEquipmentOnDeath@Player@@UEAAXXZ
     virtual void dropEquipmentOnDeath();
@@ -488,19 +488,19 @@ public:
     virtual class IMinecraftEventing * getEventing() const;
 
     // vIndex: 257, symbol: ?getUserId@Player@@UEBAIXZ
-    virtual uint getUserId() const;
+    virtual uint32_t getUserId() const;
 
     // vIndex: 258, symbol: ?addExperience@Player@@UEAAXH@Z
-    virtual void addExperience(int);
+    virtual void addExperience(int32_t);
 
     // vIndex: 259, symbol: ?addLevels@Player@@UEAAXH@Z
-    virtual void addLevels(int);
+    virtual void addLevels(int32_t);
 
     // vIndex: 260, symbol: ?setContainerData@ServerPlayer@@UEAAXAEAVIContainerManager@@HH@Z
-    virtual void setContainerData(class IContainerManager &, int, int) = 0;
+    virtual void setContainerData(class IContainerManager &, int32_t, int32_t) = 0;
 
     // vIndex: 261, symbol: ?slotChanged@ServerPlayer@@UEAAXAEAVIContainerManager@@AEAVContainer@@HAEBVItemStack@@2_N@Z
-    virtual void slotChanged(class IContainerManager &, class Container &, int, class ItemStack const &, class ItemStack const &, bool) = 0;
+    virtual void slotChanged(class IContainerManager &, class Container &, int32_t, class ItemStack const &, class ItemStack const &, bool) = 0;
 
     // vIndex: 262, symbol: ?refreshContainer@ServerPlayer@@UEAAXAEAVIContainerManager@@@Z
     virtual void refreshContainer(class IContainerManager &) = 0;
@@ -545,7 +545,7 @@ public:
     virtual struct PlayerMovementSettings const & getMovementSettings() const;
 
     // vIndex: 276, symbol: ?getMaxChunkBuildRadius@Player@@UEBAEXZ
-    virtual uchar getMaxChunkBuildRadius() const;
+    virtual uint8_t getMaxChunkBuildRadius() const;
 
     // vIndex: 277, symbol: ?onMovePlayerPacketNormal@Player@@MEAAXAEBVVec3@@AEBVVec2@@M@Z
     virtual void onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
@@ -587,7 +587,7 @@ public:
     MCVAPI bool isSimulated() const;
 
     // symbol: ?openBook@Player@@UEAAXH_NHPEAVBlockActor@@@Z
-    MCVAPI void openBook(int, bool, int, class BlockActor *);
+    MCVAPI void openBook(int32_t, bool, int32_t, class BlockActor *);
 
     // symbol: ?openChalkboard@Player@@UEAAXAEAVChalkboardBlockActor@@_N@Z
     MCVAPI void openChalkboard(class ChalkboardBlockActor &, bool);
@@ -659,7 +659,7 @@ public:
     MCAPI void eat(class ItemStack const &);
 
     // symbol: ?eat@Player@@QEAAXHM@Z
-    MCAPI void eat(int, float);
+    MCAPI void eat(int32_t, float);
 
     // symbol: ?equippedArmorItemCanBeMoved@Player@@QEBA_NAEBVItemStack@@@Z
     MCAPI bool equippedArmorItemCanBeMoved(class ItemStack const &) const;
@@ -689,19 +689,19 @@ public:
     MCAPI class BlockPos const & getBedPosition() const;
 
     // symbol: ?getBlockedUsingDamagedShieldTimeStamp@Player@@QEBA_JXZ
-    MCAPI int64 getBlockedUsingDamagedShieldTimeStamp() const;
+    MCAPI int64_t getBlockedUsingDamagedShieldTimeStamp() const;
 
     // symbol: ?getBlockedUsingShieldTimeStamp@Player@@QEBA_JXZ
-    MCAPI int64 getBlockedUsingShieldTimeStamp() const;
+    MCAPI int64_t getBlockedUsingShieldTimeStamp() const;
 
     // symbol: ?getBlockingStartTimeStamp@Player@@QEBA_JXZ
-    MCAPI int64 getBlockingStartTimeStamp() const;
+    MCAPI int64_t getBlockingStartTimeStamp() const;
 
     // symbol: ?getCapePos@Player@@QEAA?AVVec3@@M@Z
     MCAPI class Vec3 getCapePos(float);
 
     // symbol: ?getChunkRadius@Player@@QEBAIXZ
-    MCAPI uint getChunkRadius() const;
+    MCAPI uint32_t getChunkRadius() const;
 
     // symbol: ?getContainerManager@Player@@QEAA?AV?$weak_ptr@VIContainerManager@@@std@@XZ
     MCAPI std::weak_ptr<class IContainerManager> getContainerManager();
@@ -716,10 +716,10 @@ public:
     MCAPI float getDestroySpeed(class Block const &) const;
 
     // symbol: ?getDirection@Player@@QEBAHXZ
-    MCAPI int getDirection() const;
+    MCAPI int32_t getDirection() const;
 
     // symbol: ?getEnchantmentSeed@Player@@QEBAHXZ
-    MCAPI int getEnchantmentSeed() const;
+    MCAPI int32_t getEnchantmentSeed() const;
 
     // symbol: ?getExpectedSpawnDimensionId@Player@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
     MCAPI DimensionType getExpectedSpawnDimensionId() const;
@@ -737,10 +737,10 @@ public:
     MCAPI class Container & getInventory();
 
     // symbol: ?getItemCooldownLeft@Player@@QEBAHAEBVHashedString@@@Z
-    MCAPI int getItemCooldownLeft(class HashedString const &) const;
+    MCAPI int32_t getItemCooldownLeft(class HashedString const &) const;
 
     // symbol: ?getItemCooldownLeft@Player@@QEBAH_K@Z
-    MCAPI int getItemCooldownLeft(uint64) const;
+    MCAPI int32_t getItemCooldownLeft(uint64_t) const;
 
     // symbol: ?getItemInUse@Player@@QEBAAEBVItemStack@@XZ
     MCAPI class ItemStack const & getItemInUse() const;
@@ -758,10 +758,10 @@ public:
     MCAPI float getLuck();
 
     // symbol: ?getMapIndex@Player@@QEAAHXZ
-    MCAPI int getMapIndex();
+    MCAPI int32_t getMapIndex();
 
     // symbol: ?getMaxItemCooldownLeft@Player@@QEBAHXZ
-    MCAPI int getMaxItemCooldownLeft() const;
+    MCAPI int32_t getMaxItemCooldownLeft() const;
 
     // symbol: ?getName@Player@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getName() const;
@@ -782,10 +782,10 @@ public:
     MCAPI ::GameType getPlayerGameType() const;
 
     // symbol: ?getPlayerIndex@Player@@QEBAHXZ
-    MCAPI int getPlayerIndex() const;
+    MCAPI int32_t getPlayerIndex() const;
 
     // symbol: ?getPlayerLevel@Player@@QEBAHXZ
-    MCAPI int getPlayerLevel() const;
+    MCAPI int32_t getPlayerLevel() const;
 
     // symbol: ?getPlayerPermissionLevel@Player@@QEBA?AW4PlayerPermissionLevel@@XZ
     MCAPI ::PlayerPermissionLevel getPlayerPermissionLevel() const;
@@ -803,7 +803,7 @@ public:
     MCAPI class ItemStack const & getSelectedItem() const;
 
     // symbol: ?getSelectedItemSlot@Player@@QEBAHXZ
-    MCAPI int getSelectedItemSlot() const;
+    MCAPI int32_t getSelectedItemSlot() const;
 
     // symbol: ?getServerId@Player@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getServerId() const;
@@ -836,13 +836,13 @@ public:
     MCAPI bool getUsedPotion();
 
     // symbol: ?getXpEarnedAtCurrentLevel@Player@@QEBAHXZ
-    MCAPI int getXpEarnedAtCurrentLevel() const;
+    MCAPI int32_t getXpEarnedAtCurrentLevel() const;
 
     // symbol: ?getXpNeededForLevelRange@Player@@QEBAIHH@Z
-    MCAPI uint getXpNeededForLevelRange(int, int) const;
+    MCAPI uint32_t getXpNeededForLevelRange(int32_t, int32_t) const;
 
     // symbol: ?getXpNeededForNextLevel@Player@@QEBAHXZ
-    MCAPI int getXpNeededForNextLevel() const;
+    MCAPI int32_t getXpNeededForNextLevel() const;
 
     // symbol: ?handleJumpEffects@Player@@QEAAXXZ
     MCAPI void handleJumpEffects();
@@ -872,7 +872,7 @@ public:
     MCAPI bool interact(class Actor &, class Vec3 const &);
 
     // symbol: ?inventoryChanged@Player@@QEAAXAEAVContainer@@HAEBVItemStack@@1_N@Z
-    MCAPI void inventoryChanged(class Container &, int, class ItemStack const &, class ItemStack const &, bool);
+    MCAPI void inventoryChanged(class Container &, int32_t, class ItemStack const &, class ItemStack const &, bool);
 
     // symbol: ?is2DPositionRelevant@Player@@QEAA_NV?$AutomaticID@VDimension@@H@@AEBVBlockPos@@@Z
     MCAPI bool is2DPositionRelevant(DimensionType, class BlockPos const &);
@@ -926,7 +926,7 @@ public:
     MCAPI void playPredictiveSynchronizedSound(::LevelSoundEvent, class Vec3 const &, class Block const &, struct ActorDefinitionIdentifier const &, bool);
 
     // symbol: ?playPredictiveSynchronizedSound@Player@@QEAAXW4LevelSoundEvent@@AEBVVec3@@AEBUActorDefinitionIdentifier@@H_N@Z
-    MCAPI void playPredictiveSynchronizedSound(::LevelSoundEvent, class Vec3 const &, struct ActorDefinitionIdentifier const &, int, bool);
+    MCAPI void playPredictiveSynchronizedSound(::LevelSoundEvent, class Vec3 const &, struct ActorDefinitionIdentifier const &, int32_t, bool);
 
     // symbol: ?recheckSpawnPosition@Player@@QEAAXXZ
     MCAPI void recheckSpawnPosition();
@@ -959,7 +959,7 @@ public:
     MCAPI void sendPlayerTeleported();
 
     // symbol: ?sendSpawnExperienceOrbPacketToServer@Player@@QEAAXAEBVVec3@@H@Z
-    MCAPI void sendSpawnExperienceOrbPacketToServer(class Vec3 const &, int);
+    MCAPI void sendSpawnExperienceOrbPacketToServer(class Vec3 const &, int32_t);
 
     // symbol: ?setAgent@Player@@QEAAXPEAVAgent@@@Z
     MCAPI void setAgent(class Agent *);
@@ -971,7 +971,7 @@ public:
     MCAPI void setBlockRespawnUntilClientMessage(bool);
 
     // symbol: ?setChunkRadius@Player@@QEAAXI@Z
-    MCAPI void setChunkRadius(uint);
+    MCAPI void setChunkRadius(uint32_t);
 
     // symbol: ?setContainerManager@Player@@QEAAXV?$shared_ptr@VIContainerManager@@@std@@@Z
     MCAPI void setContainerManager(std::shared_ptr<class IContainerManager>);
@@ -983,7 +983,7 @@ public:
     MCAPI void setCursorSelectedItemGroup(class ItemGroup const &);
 
     // symbol: ?setEnchantmentSeed@Player@@QEAAXH@Z
-    MCAPI void setEnchantmentSeed(int);
+    MCAPI void setEnchantmentSeed(int32_t);
 
     // symbol: ?setHasDied@Player@@QEAAX_N@Z
     MCAPI void setHasDied(bool);
@@ -1001,7 +1001,7 @@ public:
     MCAPI void setLastHurtBy(::ActorType);
 
     // symbol: ?setMapIndex@Player@@QEAAXH@Z
-    MCAPI void setMapIndex(int);
+    MCAPI void setMapIndex(int32_t);
 
     // symbol: ?setName@Player@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setName(std::string const &);
@@ -1013,7 +1013,7 @@ public:
     MCAPI void setPlatformOnlineId(std::string const &);
 
     // symbol: ?setPlayerIndex@Player@@QEAAXH@Z
-    MCAPI void setPlayerIndex(int);
+    MCAPI void setPlayerIndex(int32_t);
 
     // symbol: ?setPlayerUIItem@Player@@QEAAXW4PlayerUISlot@@AEBVItemStack@@@Z
     MCAPI void setPlayerUIItem(::PlayerUISlot, class ItemStack const &);
@@ -1031,7 +1031,7 @@ public:
     MCAPI void setSelectedItem(class ItemStack const &);
 
     // symbol: ?setSelectedSlot@Player@@QEAAAEBVItemStack@@H@Z
-    MCAPI class ItemStack const & setSelectedSlot(int);
+    MCAPI class ItemStack const & setSelectedSlot(int32_t);
 
     // symbol: ?setSpawnBlockRespawnPosition@Player@@QEAAXAEBVBlockPos@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI void setSpawnBlockRespawnPosition(class BlockPos const &, DimensionType);
@@ -1043,16 +1043,16 @@ public:
     MCAPI bool shouldShowCredits() const;
 
     // symbol: ?startCooldown@Player@@QEAAXAEBVHashedString@@H_N@Z
-    MCAPI void startCooldown(class HashedString const &, int, bool);
+    MCAPI void startCooldown(class HashedString const &, int32_t, bool);
 
     // symbol: ?startCooldown@Player@@QEAAXPEBVItem@@_N@Z
     MCAPI void startCooldown(class Item const *, bool);
 
     // symbol: ?startItemUseOn@Player@@QEAAXEAEBVBlockPos@@0AEBVItemStack@@@Z
-    MCAPI void startItemUseOn(uchar, class BlockPos const &, class BlockPos const &, class ItemStack const &);
+    MCAPI void startItemUseOn(uint8_t, class BlockPos const &, class BlockPos const &, class ItemStack const &);
 
     // symbol: ?startUsingItem@Player@@QEAAXAEBVItemStack@@H@Z
-    MCAPI void startUsingItem(class ItemStack const &, int);
+    MCAPI void startUsingItem(class ItemStack const &, int32_t);
 
     // symbol: ?stopGliding@Player@@QEAAXXZ
     MCAPI void stopGliding();
@@ -1064,7 +1064,7 @@ public:
     MCAPI void stopUsingItem();
 
     // symbol: ?take@Player@@QEAA_NAEAVActor@@HH@Z
-    MCAPI bool take(class Actor &, int, int);
+    MCAPI bool take(class Actor &, int32_t, int32_t);
 
     // symbol: ?tryStartGliding@Player@@QEAA_NXZ
     MCAPI bool tryStartGliding();
@@ -1079,7 +1079,7 @@ public:
     MCAPI void updateInventoryTransactions();
 
     // symbol: ?updateSkin@Player@@QEAAXAEBVSerializedSkin@@H@Z
-    MCAPI void updateSkin(class SerializedSkin const &, int);
+    MCAPI void updateSkin(class SerializedSkin const &, int32_t);
 
     // symbol: ?updateSpawnChunkView@Player@@QEAAXXZ
     MCAPI void updateSpawnChunkView();
@@ -1094,7 +1094,7 @@ public:
     MCAPI static void _causeFoodExhaustion(class AttributeInstance *, bool, float);
 
     // symbol: ?checkAndFixSpawnPosition@Player@@SA_NAEAVVec3@@V?$vector@V?$not_null@PEAVBlockSource@@@gsl@@V?$allocator@V?$not_null@PEAVBlockSource@@@gsl@@@std@@@std@@VAABB@@_N33333F@Z
-    MCAPI static bool checkAndFixSpawnPosition(class Vec3 &, std::vector<gsl::not_null<class BlockSource *>>, class AABB, bool, bool, bool, bool, bool, bool, short);
+    MCAPI static bool checkAndFixSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, class AABB, bool, bool, bool, bool, bool, bool, int16_t);
 
     // symbol: ?checkNeedAutoJump@Player@@SA_NAEBVIConstBlockSource@@AEBUAABBShapeComponent@@AEBUActorRotationComponent@@AEBUAttributesComponent@@AEBUStateVectorComponent@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@MM@Z
     MCAPI static bool checkNeedAutoJump(class IConstBlockSource const &, struct AABBShapeComponent const &, struct ActorRotationComponent const &, struct AttributesComponent const &, struct StateVectorComponent const &, class optional_ref<class GetCollisionShapeInterface const>, float, float);
@@ -1139,7 +1139,7 @@ public:
     MCAPI static class Attribute const EXPERIENCE;
 
     // symbol: ?GLIDE_STOP_DELAY@Player@@2HB
-    MCAPI static int const GLIDE_STOP_DELAY;
+    MCAPI static int32_t const GLIDE_STOP_DELAY;
 
     // symbol: ?HUNGER@Player@@2VAttribute@@B
     MCAPI static class Attribute const HUNGER;
@@ -1160,7 +1160,7 @@ public:
     MCAPI static float const PLAYER_DEAD_WIDTH;
 
     // symbol: ?PLAYER_DIMENSION_CHANGE_OWNED_MOB_SEARCH_RADIUS@Player@@2HB
-    MCAPI static int const PLAYER_DIMENSION_CHANGE_OWNED_MOB_SEARCH_RADIUS;
+    MCAPI static int32_t const PLAYER_DIMENSION_CHANGE_OWNED_MOB_SEARCH_RADIUS;
 
     // symbol: ?PLAYER_DOWN_SWIM_SPEED@Player@@2MB
     MCAPI static float const PLAYER_DOWN_SWIM_SPEED;
@@ -1187,10 +1187,10 @@ public:
     MCAPI static class Attribute const SATURATION;
 
     // symbol: ?SPAWN_CHUNK_LARGE_JUMP@Player@@2IB
-    MCAPI static uint const SPAWN_CHUNK_LARGE_JUMP;
+    MCAPI static uint32_t const SPAWN_CHUNK_LARGE_JUMP;
 
     // symbol: ?SPAWN_CHUNK_RADIUS@Player@@2IB
-    MCAPI static uint const SPAWN_CHUNK_RADIUS;
+    MCAPI static uint32_t const SPAWN_CHUNK_RADIUS;
 
     // NOLINTEND
 
@@ -1200,7 +1200,7 @@ public:
     MCAPI bool _canChangeGameType(::GameType) const;
 
     // symbol: ?_checkAndFixSpawnPosition@Player@@IEBA_NAEAVVec3@@V?$vector@V?$not_null@PEAVBlockSource@@@gsl@@V?$allocator@V?$not_null@PEAVBlockSource@@@gsl@@@std@@@std@@_N2222@Z
-    MCAPI bool _checkAndFixSpawnPosition(class Vec3 &, std::vector<gsl::not_null<class BlockSource *>>, bool, bool, bool, bool, bool) const;
+    MCAPI bool _checkAndFixSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, bool, bool, bool, bool, bool) const;
 
     // symbol: ?_chooseSpawnArea@Player@@IEAAXXZ
     MCAPI void _chooseSpawnArea();
@@ -1234,7 +1234,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addLevels@Player@@AEAAXH@Z
-    MCAPI void _addLevels(int);
+    MCAPI void _addLevels(int32_t);
 
     // symbol: ?_blockUsingShield@Player@@AEAA_NAEBVActorDamageSource@@M@Z
     MCAPI bool _blockUsingShield(class ActorDamageSource const &, float);
@@ -1243,7 +1243,7 @@ public:
     MCAPI void _ensureSafeSpawnPosition(class Vec3 &);
 
     // symbol: ?_findFallbackSpawnPosition@Player@@AEAA_NAEAVVec3@@V?$vector@V?$not_null@PEAVBlockSource@@@gsl@@V?$allocator@V?$not_null@PEAVBlockSource@@@gsl@@@std@@@std@@I@Z
-    MCAPI bool _findFallbackSpawnPosition(class Vec3 &, std::vector<gsl::not_null<class BlockSource *>>, uint);
+    MCAPI bool _findFallbackSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, uint32_t);
 
     // symbol: ?_handleCarriedItemInteractText@Player@@AEAAXXZ
     MCAPI void _handleCarriedItemInteractText();
@@ -1255,7 +1255,7 @@ public:
     MCAPI void _registerElytraLoopSound();
 
     // symbol: ?_sendShieldUpdatePacket@Player@@AEAAXAEBVShieldItem@@AEBVItemStack@@1W4ContainerID@@H@Z
-    MCAPI void _sendShieldUpdatePacket(class ShieldItem const &, class ItemStack const &, class ItemStack const &, ::ContainerID, int);
+    MCAPI void _sendShieldUpdatePacket(class ShieldItem const &, class ItemStack const &, class ItemStack const &, ::ContainerID, int32_t);
 
     // symbol: ?_shouldCrit@Player@@AEBA_NAEBVActor@@@Z
     MCAPI bool _shouldCrit(class Actor const &) const;

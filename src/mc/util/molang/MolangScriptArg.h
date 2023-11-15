@@ -13,7 +13,7 @@ public:
     MCAPI MolangScriptArg(struct MolangScriptArg const &);
 
     // symbol: ??0MolangScriptArg@@QEAA@H@Z
-    MCAPI MolangScriptArg(int);
+    MCAPI MolangScriptArg(int32_t);
 
     // symbol: ??0MolangScriptArg@@QEAA@M@Z
     MCAPI MolangScriptArg(float);

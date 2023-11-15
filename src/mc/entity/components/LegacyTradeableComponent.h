@@ -47,13 +47,13 @@ public:
     MCAPI bool getResetLockedOnFirstTrade() const;
 
     // symbol: ?getRiches@LegacyTradeableComponent@@QEBAHXZ
-    MCAPI int getRiches() const;
+    MCAPI int32_t getRiches() const;
 
     // symbol: ?getTradeTier@LegacyTradeableComponent@@QEBAHXZ
-    MCAPI int getTradeTier() const;
+    MCAPI int32_t getTradeTier() const;
 
     // symbol: ?getUpdateMerchantTimer@LegacyTradeableComponent@@QEBAHXZ
-    MCAPI int getUpdateMerchantTimer() const;
+    MCAPI int32_t getUpdateMerchantTimer() const;
 
     // symbol: ?loadDisplayName@LegacyTradeableComponent@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
     MCAPI std::string const & loadDisplayName(class Actor &);
@@ -62,7 +62,7 @@ public:
     MCAPI void loadOffersFromTag(class CompoundTag const *);
 
     // symbol: ?notifyTrade@LegacyTradeableComponent@@QEAAXAEAVActor@@H@Z
-    MCAPI void notifyTrade(class Actor &, int);
+    MCAPI void notifyTrade(class Actor &, int32_t);
 
     // symbol: ??4LegacyTradeableComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class LegacyTradeableComponent & operator=(class LegacyTradeableComponent &&);
@@ -86,10 +86,10 @@ public:
     MCAPI void setResetLockedOnFirstTrade(bool);
 
     // symbol: ?setRiches@LegacyTradeableComponent@@QEAAXH@Z
-    MCAPI void setRiches(int);
+    MCAPI void setRiches(int32_t);
 
     // symbol: ?setTradeTier@LegacyTradeableComponent@@QEAAXH@Z
-    MCAPI void setTradeTier(int);
+    MCAPI void setTradeTier(int32_t);
 
     // symbol: ?shouldConvertTrades@LegacyTradeableComponent@@QEBA_NAEAVActor@@@Z
     MCAPI bool shouldConvertTrades(class Actor &) const;
@@ -114,7 +114,7 @@ public:
     MCAPI struct TradeTable * _getTradeTable(class Actor &);
 
     // symbol: ?_rearrangeTradeList@LegacyTradeableComponent@@AEAAXAEAVActor@@AEAV?$vector@UTrade@@V?$allocator@UTrade@@@std@@@std@@_K@Z
-    MCAPI void _rearrangeTradeList(class Actor &, std::vector<struct Trade> &, uint64);
+    MCAPI void _rearrangeTradeList(class Actor &, std::vector<struct Trade> &, uint64_t);
 
     // symbol: ?_refreshTrades@LegacyTradeableComponent@@AEAA_NAEAVActor@@@Z
     MCAPI bool _refreshTrades(class Actor &);

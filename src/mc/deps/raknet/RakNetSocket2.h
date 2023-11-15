@@ -29,7 +29,7 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?SetMulticastInterface@RakNetSocket2@RakNet@@UEAAXH@Z
-    virtual void SetMulticastInterface(int);
+    virtual void SetMulticastInterface(int32_t);
 
     // symbol: ?GetBoundAddress@RakNetSocket2@RakNet@@QEBA?AUSystemAddress@2@XZ
     MCAPI struct RakNet::SystemAddress GetBoundAddress() const;
@@ -38,13 +38,13 @@ public:
     MCAPI ::RakNet::RNS2Type GetSocketType() const;
 
     // symbol: ?GetUserConnectionSocketIndex@RakNetSocket2@RakNet@@QEBAIXZ
-    MCAPI uint GetUserConnectionSocketIndex() const;
+    MCAPI uint32_t GetUserConnectionSocketIndex() const;
 
     // symbol: ?IsBerkleySocket@RakNetSocket2@RakNet@@QEBA_NXZ
     MCAPI bool IsBerkleySocket() const;
 
     // symbol: ?SetUserConnectionSocketIndex@RakNetSocket2@RakNet@@QEAAXI@Z
-    MCAPI void SetUserConnectionSocketIndex(uint);
+    MCAPI void SetUserConnectionSocketIndex(uint32_t);
 
     // symbol: ?GetMyAdapters@RakNetSocket2@RakNet@@SAXQEAUNetworkAdapter@2@@Z
     MCAPI static void GetMyAdapters(struct RakNet::NetworkAdapter *const);

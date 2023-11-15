@@ -38,7 +38,7 @@ public:
     virtual ::PackType getPackType() const;
 
     // vIndex: 5, symbol: ?load@DirectoryPackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-    virtual class PackSourceReport load(class IPackManifestFactory &, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const &);
+    virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 
     // symbol: ??1DirectoryPackSource@@UEAA@XZ
     MCVAPI ~DirectoryPackSource();

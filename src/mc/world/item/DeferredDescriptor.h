@@ -43,7 +43,7 @@ public:
     virtual ::ItemDescriptor::InternalType getType() const;
 
     // vIndex: 12, symbol: ?getHash@DeferredDescriptor@@UEBA_KXZ
-    virtual uint64 getHash() const;
+    virtual uint64_t getHash() const;
 
     // vIndex: 13, symbol: ?shouldResolve@DeferredDescriptor@@UEBA_NXZ
     virtual bool shouldResolve() const;
@@ -52,7 +52,7 @@ public:
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
 
     // symbol: ?deserialize@DeferredDescriptor@@SA?AV?$Result@V?$unique_ptr@UDeferredDescriptor@@U?$default_delete@UDeferredDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<struct DeferredDescriptor>> deserialize(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct DeferredDescriptor>, std::error_code> deserialize(class ReadOnlyBinaryStream &);
 
     // NOLINTEND
 
@@ -62,7 +62,7 @@ public:
     MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> _initFromBlockLegacy(class BlockLegacy const &, class WeakPtr<class Item> &&) const;
 
     // symbol: ?_initFromItem@DeferredDescriptor@@AEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@$$QEAV?$WeakPtr@VItem@@@@F@Z
-    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> _initFromItem(class WeakPtr<class Item> &&, short) const;
+    MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> _initFromItem(class WeakPtr<class Item> &&, int16_t) const;
 
     // NOLINTEND
 

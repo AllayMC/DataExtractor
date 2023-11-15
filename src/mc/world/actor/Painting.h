@@ -98,16 +98,16 @@ public:
     virtual void __unk_vfn_172();
 
     // vIndex: 174, symbol: ?getWidth@Painting@@UEBAHXZ
-    virtual int getWidth() const;
+    virtual int32_t getWidth() const;
 
     // vIndex: 175, symbol: ?getHeight@Painting@@UEBAHXZ
-    virtual int getHeight() const;
+    virtual int32_t getHeight() const;
 
     // vIndex: 176, symbol: ?dropItem@Painting@@UEAAXXZ
     virtual void dropItem();
 
     // vIndex: 177, symbol: ?placeHangingEntity@Painting@@UEAA_NAEAVBlockSource@@H@Z
-    virtual bool placeHangingEntity(class BlockSource &, int);
+    virtual bool placeHangingEntity(class BlockSource &, int32_t);
 
     // symbol: ??0Painting@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Painting(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

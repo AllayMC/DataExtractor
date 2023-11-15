@@ -302,7 +302,7 @@ namespace ScriptModuleMinecraft {
     MCAPI void SetUpScriptAssertHandler();
 
     // symbol: ?_buildSignalId@ScriptModuleMinecraft@@YA_KPEBD000@Z
-    MCAPI uint64 _buildSignalId(char const *, char const *, char const *, char const *);
+    MCAPI uint64_t _buildSignalId(char const *, char const *, char const *, char const *);
 
     // symbol: ?_handleDefinePropertyError@ScriptModuleMinecraft@@YA?AUError@Scripting@@W4DynamicPropertyDefinePropertyError@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI struct Scripting::Error _handleDefinePropertyError(::DynamicPropertyDefinePropertyError, std::string const &);

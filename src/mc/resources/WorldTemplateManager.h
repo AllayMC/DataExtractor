@@ -32,7 +32,7 @@ public:
     MCVAPI ~WorldTemplateManager();
 
     // symbol: ??0WorldTemplateManager@@QEAA@AEAVPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEAVPackSourceFactory@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@3@_N@Z
-    MCAPI WorldTemplateManager(class PackManifestFactory &, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const &, class PackSourceFactory &, Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const &, bool);
+    MCAPI WorldTemplateManager(class PackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, class PackSourceFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, bool);
 
     // symbol: ?findInstalledWorldTemplate@WorldTemplateManager@@QEBAPEBUWorldTemplateInfo@@AEBUPackIdVersion@@@Z
     MCAPI struct WorldTemplateInfo const * findInstalledWorldTemplate(struct PackIdVersion const &) const;

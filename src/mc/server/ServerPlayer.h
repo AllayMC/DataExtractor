@@ -88,7 +88,7 @@ public:
     virtual bool isValidTarget(class Actor *) const;
 
     // vIndex: 84, symbol: ?handleEntityEvent@ServerPlayer@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 88, symbol: ?setArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
     virtual void setArmor(::ArmorSlot, class ItemStack const &);
@@ -142,13 +142,13 @@ public:
     virtual void __unk_vfn_172();
 
     // vIndex: 173, symbol: ?knockback@ServerPlayer@@UEAAXPEAVActor@@HMMMMM@Z
-    virtual void knockback(class Actor *, int, float, float, float, float, float);
+    virtual void knockback(class Actor *, int32_t, float, float, float, float, float);
 
     // vIndex: 181, symbol: ?aiStep@ServerPlayer@@UEAAXXZ
     virtual void aiStep();
 
     // vIndex: 192, symbol: ?hurtArmorSlots@ServerPlayer@@UEAAXAEBVActorDamageSource@@HV?$bitset@$03@std@@@Z
-    virtual void hurtArmorSlots(class ActorDamageSource const &, int, std::bitset<4>);
+    virtual void hurtArmorSlots(class ActorDamageSource const &, int32_t, std::bitset<4>);
 
     // vIndex: 193, symbol: ?setDamagedArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
     virtual void setDamagedArmor(::ArmorSlot, class ItemStack const &);
@@ -265,10 +265,10 @@ public:
     virtual void setPlayerGameType(::GameType);
 
     // vIndex: 260, symbol: ?setContainerData@ServerPlayer@@UEAAXAEAVIContainerManager@@HH@Z
-    virtual void setContainerData(class IContainerManager &, int, int);
+    virtual void setContainerData(class IContainerManager &, int32_t, int32_t);
 
     // vIndex: 261, symbol: ?slotChanged@ServerPlayer@@UEAAXAEAVIContainerManager@@AEAVContainer@@HAEBVItemStack@@2_N@Z
-    virtual void slotChanged(class IContainerManager &, class Container &, int, class ItemStack const &, class ItemStack const &, bool);
+    virtual void slotChanged(class IContainerManager &, class Container &, int32_t, class ItemStack const &, class ItemStack const &, bool);
 
     // vIndex: 262, symbol: ?refreshContainer@ServerPlayer@@UEAAXAEAVIContainerManager@@@Z
     virtual void refreshContainer(class IContainerManager &);
@@ -304,7 +304,7 @@ public:
     virtual void __unk_vfn_273();
 
     // vIndex: 276, symbol: ?getMaxChunkBuildRadius@ServerPlayer@@UEBAEXZ
-    virtual uchar getMaxChunkBuildRadius() const;
+    virtual uint8_t getMaxChunkBuildRadius() const;
 
     // vIndex: 280, symbol: ?getEditorPlayer@ServerPlayer@@UEBA?AV?$NonOwnerPointer@VIEditorPlayer@Editor@@@Bedrock@@XZ
     virtual class Bedrock::NonOwnerPointer<class Editor::IEditorPlayer> getEditorPlayer() const;
@@ -313,7 +313,7 @@ public:
     virtual void destroyEditorPlayer();
 
     // vIndex: 282, symbol: ?_getSpawnChunkLimit@ServerPlayer@@MEBAHXZ
-    virtual int _getSpawnChunkLimit() const;
+    virtual int32_t _getSpawnChunkLimit() const;
 
     // vIndex: 283, symbol: ?_updateChunkPublisherView@ServerPlayer@@MEAAXAEBVVec3@@M@Z
     virtual void _updateChunkPublisherView(class Vec3 const &, float);
@@ -328,13 +328,13 @@ public:
     MCVAPI ~ServerPlayer();
 
     // symbol: ??0ServerPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVServerNetworkSystem@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@V?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@9V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H_NAEAVEntityContext@@@Z
-    MCAPI ServerPlayer(class Level &, class PacketSender &, class ServerNetworkSystem &, class ClientBlobCache::Server::ActiveTransfersManager &, ::GameType, class NetworkIdentifier const &, ::SubClientId, std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
+    MCAPI ServerPlayer(class Level &, class PacketSender &, class ServerNetworkSystem &, class ClientBlobCache::Server::ActiveTransfersManager &, ::GameType, class NetworkIdentifier const &, ::SubClientId, std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::string const &, std::unique_ptr<class Certificate>, int32_t, bool, class EntityContext &);
 
     // symbol: ?acceptClientPosition@ServerPlayer@@QEAAXAEBVVec3@@@Z
     MCAPI void acceptClientPosition(class Vec3 const &);
 
     // symbol: ?addActorToReplicationList@ServerPlayer@@QEAAXV?$not_null@PEAVActor@@@gsl@@_N@Z
-    MCAPI void addActorToReplicationList(gsl::not_null<class Actor *>, bool);
+    MCAPI void addActorToReplicationList(class gsl::not_null<class Actor *>, bool);
 
     // symbol: ?checkCheating@ServerPlayer@@QEAAXAEBVVec3@@@Z
     MCAPI void checkCheating(class Vec3 const &);
@@ -385,7 +385,7 @@ public:
     MCAPI void sendPlayerOnGround();
 
     // symbol: ?setClientChunkRadius@ServerPlayer@@QEAAXIE@Z
-    MCAPI void setClientChunkRadius(uint, uchar);
+    MCAPI void setClientChunkRadius(uint32_t, uint8_t);
 
     // symbol: ?setIsCompatibleWithClientSideChunkGen@ServerPlayer@@QEAAX_N@Z
     MCAPI void setIsCompatibleWithClientSideChunkGen(bool);

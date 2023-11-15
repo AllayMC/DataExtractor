@@ -33,7 +33,7 @@ public:
     virtual void __unk_vfn_6() = 0;
 
     // vIndex: 7, symbol: ?getRuntimeTypeId@IDefinitionInstance@@UEBAGXZ
-    virtual ushort getRuntimeTypeId() const;
+    virtual uint16_t getRuntimeTypeId() const;
 
     // symbol: ??1IDefinitionInstance@@UEAA@XZ
     MCVAPI ~IDefinitionInstance();

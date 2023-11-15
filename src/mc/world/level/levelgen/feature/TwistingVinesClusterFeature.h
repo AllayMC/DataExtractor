@@ -25,7 +25,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_placeVineString@TwistingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@HHH@Z
-    MCAPI void _placeVineString(class BlockSource &, class Random &, class BlockPos const &, int, int, int) const;
+    MCAPI void _placeVineString(class BlockSource &, class Random &, class BlockPos const &, int32_t, int32_t, int32_t) const;
 
     // NOLINTEND
 

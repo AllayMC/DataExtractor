@@ -29,7 +29,7 @@ public:
     MCAPI void setPlanting(bool);
 
     // symbol: ?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-    MCAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, uchar, class Vec3 const &);
+    MCAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, uint8_t, class Vec3 const &);
 
     // NOLINTEND
 

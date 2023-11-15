@@ -57,7 +57,7 @@ public:
     MCVAPI ~Minecraft();
 
     // symbol: ??0Minecraft@@QEAA@AEAVIMinecraftApp@@AEAVGameCallbacks@@AEAVAllowList@@PEAVPermissionsFile@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@AEAVIMinecraftEventing@@VClientOrServerNetworkSystemRef@@AEAVPacketSender@@W4SubClientId@@AEAVTimer@@AEAVTimer@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@6@PEAVServerMetrics@@@Z
-    MCAPI Minecraft(class IMinecraftApp &, class GameCallbacks &, class AllowList &, class PermissionsFile *, Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const &, std::chrono::seconds, class IMinecraftEventing &, class ClientOrServerNetworkSystemRef, class PacketSender &, ::SubClientId, class Timer &, class Timer &, Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const &, class ServerMetrics *);
+    MCAPI Minecraft(class IMinecraftApp &, class GameCallbacks &, class AllowList &, class PermissionsFile *, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, std::chrono::seconds, class IMinecraftEventing &, class ClientOrServerNetworkSystemRef, class PacketSender &, ::SubClientId, class Timer &, class Timer &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, class ServerMetrics *);
 
     // symbol: ?activateAllowList@Minecraft@@QEAAXXZ
     MCAPI void activateAllowList();
@@ -102,13 +102,13 @@ public:
     MCAPI class ServerNetworkSystem & getServerNetworkSystem();
 
     // symbol: ?getStructureManager@Minecraft@@QEAA?AV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ
-    MCAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> getStructureManager();
+    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager();
 
     // symbol: ?hasCommands@Minecraft@@QEAA_NXZ
     MCAPI bool hasCommands();
 
     // symbol: ?hostMultiplayer@Minecraft@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$pair@V?$unique_ptr@VLevel@@U?$default_delete@VLevel@@@std@@@std@@V?$OwnerPtrT@UEntityRefTraits@@@@@3@PEAVPlayer@@AEBVUUID@mce@@V?$unique_ptr@VNetEventCallback@@U?$default_delete@VNetEventCallback@@@std@@@3@H_N5AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@V23@AEBUConnectionDefinition@@AEBV?$unordered_map@UPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@UPackIdVersion@@@3@U?$equal_to@UPackIdVersion@@@3@V?$allocator@U?$pair@$$CBUPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@3@AEAVScheduler@@PEAVTextFilteringProcessor@@AEBUNetworkPermissions@@@Z
-    MCAPI bool hostMultiplayer(std::string const &, std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>, class Player *, class mce::UUID const &, std::unique_ptr<class NetEventCallback>, int, bool, bool, std::vector<std::string> const &, std::string, struct ConnectionDefinition const &, std::unordered_map<struct PackIdVersion,std::string> const &, class Scheduler &, class TextFilteringProcessor *, struct NetworkPermissions const &);
+    MCAPI bool hostMultiplayer(std::string const &, std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>, class Player *, class mce::UUID const &, std::unique_ptr<class NetEventCallback>, int32_t, bool, bool, std::vector<std::string> const &, std::string, struct ConnectionDefinition const &, std::unordered_map<struct PackIdVersion,std::string> const &, class Scheduler &, class TextFilteringProcessor *, struct NetworkPermissions const &);
 
     // symbol: ?init@Minecraft@@QEAAXXZ
     MCAPI void init();

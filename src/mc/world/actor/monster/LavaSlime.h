@@ -93,7 +93,7 @@ public:
     virtual bool checkSpawnRules(bool);
 
     // vIndex: 191, symbol: ?getArmorValue@LavaSlime@@UEBAHXZ
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
 
     // vIndex: 216, symbol: ?isDarkEnoughToSpawn@LavaSlime@@UEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
@@ -105,7 +105,7 @@ public:
     virtual void decreaseSquish();
 
     // vIndex: 224, symbol: ?createChild@LavaSlime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z
-    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
+    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int32_t);
 
     // symbol: ??0LavaSlime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI LavaSlime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

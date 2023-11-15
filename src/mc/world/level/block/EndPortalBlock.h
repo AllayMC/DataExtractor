@@ -166,19 +166,19 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 186, symbol: ?getResourceCount@EndPortalBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 188, symbol: ?entityInside@EndPortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
 
     // vIndex: 192, symbol: ?getEntityResourceItem@EndPortalBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int32_t) const;
 
     // symbol: ?waterSpreadCausesSpawn@EndPortalBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0EndPortalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EndPortalBlock(std::string const &, int);
+    MCAPI EndPortalBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

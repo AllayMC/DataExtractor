@@ -15,7 +15,7 @@ public:
     MCAPI StructureAnimationData(class StructureAnimationData &&);
 
     // symbol: ??0StructureAnimationData@@QEAA@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBVStructureSettings@@EAEBVBlockPos@@@Z
-    MCAPI StructureAnimationData(std::unique_ptr<class CommandArea>, uint64, std::string const &, class StructureSettings const &, uchar, class BlockPos const &);
+    MCAPI StructureAnimationData(std::unique_ptr<class CommandArea>, uint64_t, std::string const &, class StructureSettings const &, uint8_t, class BlockPos const &);
 
     // symbol: ?getPosition@StructureAnimationData@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const & getPosition() const;

@@ -24,7 +24,7 @@ public:
     MCAPI std::string_view asSpan() const;
 
     // symbol: ?hashCode@ChunkKey@@QEBA_KXZ
-    MCAPI uint64 hashCode() const;
+    MCAPI uint64_t hashCode() const;
 
     // NOLINTEND
 

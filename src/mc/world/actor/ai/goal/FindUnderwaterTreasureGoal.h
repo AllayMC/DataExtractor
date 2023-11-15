@@ -40,7 +40,7 @@ public:
     virtual void appendDebugInfo(std::string &) const;
 
     // symbol: ??0FindUnderwaterTreasureGoal@@QEAA@AEAVMob@@MHH@Z
-    MCAPI FindUnderwaterTreasureGoal(class Mob &, float, int, int);
+    MCAPI FindUnderwaterTreasureGoal(class Mob &, float, int32_t, int32_t);
 
     // NOLINTEND
 

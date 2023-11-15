@@ -32,7 +32,7 @@ public:
     MCAPI void sendServerLevelInitialized(class ServerInstance &, class Level &);
 
     // symbol: ?sendServerMinecraftInitialized@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z
-    MCAPI void sendServerMinecraftInitialized(class ServerInstance &, Bedrock::NotNullNonOwnerPtr<class Minecraft> const &);
+    MCAPI void sendServerMinecraftInitialized(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
 
     // symbol: ?sendServerThreadStarted@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
     MCAPI void sendServerThreadStarted(class ServerInstance &);

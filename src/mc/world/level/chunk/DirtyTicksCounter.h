@@ -14,10 +14,10 @@ public:
     MCAPI DirtyTicksCounter();
 
     // symbol: ?getTicksSinceLastChange@DirtyTicksCounter@@QEBAHXZ
-    MCAPI int getTicksSinceLastChange() const;
+    MCAPI int32_t getTicksSinceLastChange() const;
 
     // symbol: ?getTotalDirtyTicks@DirtyTicksCounter@@QEBAHXZ
-    MCAPI int getTotalDirtyTicks() const;
+    MCAPI int32_t getTotalDirtyTicks() const;
 
     // symbol: ??EDirtyTicksCounter@@QEAAAEAU0@XZ
     MCAPI struct DirtyTicksCounter & operator++();

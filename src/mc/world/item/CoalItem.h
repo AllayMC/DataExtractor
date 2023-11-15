@@ -83,16 +83,16 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 119, symbol: ?setIconInfo@CoalItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item & setIconInfo(std::string const &, int);
+    virtual class Item & setIconInfo(std::string const &, int32_t);
 
     // vIndex: 120, symbol: ?getIconInfo@CoalItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int32_t, bool) const;
 
     // vIndex: 130, symbol: ?getFurnaceXPmultiplier@CoalItem@@UEBAMAEBVItemStackBase@@@Z
     virtual float getFurnaceXPmultiplier(class ItemStackBase const &) const;
 
     // symbol: ??0CoalItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
-    MCAPI CoalItem(std::string const &, int, ::CoalItem::Type);
+    MCAPI CoalItem(std::string const &, int32_t, ::CoalItem::Type);
 
     // NOLINTEND
 

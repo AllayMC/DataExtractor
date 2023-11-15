@@ -55,7 +55,7 @@ public:
     MCAPI std::vector<std::string> buildCameraPresetList() const;
 
     // symbol: ?getCameraPresetIndex@CameraPresets@@QEBA?AV?$optional@I@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI std::optional<uint> getCameraPresetIndex(std::string const &) const;
+    MCAPI std::optional<uint32_t> getCameraPresetIndex(std::string const &) const;
 
     // symbol: ?getPresets@CameraPresets@@QEBAAEBV?$vector@UCameraPreset@@V?$allocator@UCameraPreset@@@std@@@std@@XZ
     MCAPI std::vector<struct CameraPreset> const & getPresets() const;
@@ -79,7 +79,7 @@ public:
     MCAPI static bool isAllowedEaseTarget(std::string const &);
 
     // symbol: ?read@CameraPresets@@SA?AV?$Result@VCameraPresets@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<class CameraPresets> read(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<class CameraPresets, std::error_code> read(class ReadOnlyBinaryStream &);
 
     // NOLINTEND
 

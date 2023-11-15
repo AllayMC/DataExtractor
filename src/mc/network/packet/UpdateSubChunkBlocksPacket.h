@@ -28,7 +28,7 @@ public:
         MCAPI BlocksChangedInfo();
     
         // symbol: ?add@BlocksChangedInfo@UpdateSubChunkBlocksPacket@@QEAAXAEBVBlockPos@@IAEBVBlock@@HPEBUActorBlockSyncMessage@@@Z
-        MCAPI void add(class BlockPos const &, uint, class Block const &, int, struct ActorBlockSyncMessage const *);
+        MCAPI void add(class BlockPos const &, uint32_t, class Block const &, int32_t, struct ActorBlockSyncMessage const *);
     
         // symbol: ??1BlocksChangedInfo@UpdateSubChunkBlocksPacket@@QEAA@XZ
         MCAPI ~BlocksChangedInfo();
@@ -73,7 +73,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@UpdateSubChunkBlocksPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1UpdateSubChunkBlocksPacket@@UEAA@XZ
     MCVAPI ~UpdateSubChunkBlocksPacket();

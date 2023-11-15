@@ -31,7 +31,7 @@ public:
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &) const;
 
     // symbol: ?getSeatCount@RideableComponent@@QEBAHXZ
-    MCAPI int getSeatCount() const;
+    MCAPI int32_t getSeatCount() const;
 
     // symbol: ?getSeats@RideableComponent@@QEBAAEBV?$vector@USeatDescription@@V?$allocator@USeatDescription@@@std@@@std@@XZ
     MCAPI std::vector<struct SeatDescription> const & getSeats() const;

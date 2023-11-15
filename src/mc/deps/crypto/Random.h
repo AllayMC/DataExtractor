@@ -16,7 +16,7 @@ namespace Crypto::Random {
     MCAPI class mce::UUID generateUUID();
 
     // symbol: ?generateUUID64Bit@Random@Crypto@@YA_KXZ
-    MCAPI uint64 generateUUID64Bit();
+    MCAPI uint64_t generateUUID64Bit();
     // NOLINTEND
 
 };

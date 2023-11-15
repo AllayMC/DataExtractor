@@ -121,7 +121,7 @@ public:
     virtual void __unk_vfn_83();
 
     // vIndex: 92, symbol: ?mayPlace@MultifaceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 100, symbol: ?neighborChanged@MultifaceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
@@ -130,7 +130,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@MultifaceBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -187,59 +187,59 @@ public:
     MCVAPI bool isMultifaceBlock() const;
 
     // symbol: ??0MultifaceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI MultifaceBlock(std::string const &, int, class Material const &);
+    MCAPI MultifaceBlock(std::string const &, int32_t, class Material const &);
 
     // symbol: ?removeFace@MultifaceBlock@@QEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@E_N@Z
-    MCAPI void removeFace(class IBlockWorldGenAPI &, class BlockSource *, class Block const &, class BlockPos const &, uchar, bool) const;
+    MCAPI void removeFace(class IBlockWorldGenAPI &, class BlockSource *, class Block const &, class BlockPos const &, uint8_t, bool) const;
 
     // symbol: ?convertOldMultifaceToNewMultifaceValue@MultifaceBlock@@SAHH@Z
-    MCAPI static int convertOldMultifaceToNewMultifaceValue(int);
+    MCAPI static int32_t convertOldMultifaceToNewMultifaceValue(int32_t);
 
     // symbol: ?getBlockForPlacement@MultifaceBlock@@SAAEBVBlock@@AEBV2@0AEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI static class Block const & getBlockForPlacement(class Block const &, class Block const &, class BlockSource &, class BlockPos const &, uchar);
+    MCAPI static class Block const & getBlockForPlacement(class Block const &, class Block const &, class BlockSource &, class BlockPos const &, uint8_t);
 
     // symbol: ?getBlockForPlacementWorldGen@MultifaceBlock@@SAAEBVBlock@@AEBV2@0AEAVIBlockWorldGenAPI@@AEBVBlockPos@@E@Z
-    MCAPI static class Block const & getBlockForPlacementWorldGen(class Block const &, class Block const &, class IBlockWorldGenAPI &, class BlockPos const &, uchar);
+    MCAPI static class Block const & getBlockForPlacementWorldGen(class Block const &, class Block const &, class IBlockWorldGenAPI &, class BlockPos const &, uint8_t);
 
     // symbol: ?getMultifaceValueFromFace@MultifaceBlock@@SAHE@Z
-    MCAPI static int getMultifaceValueFromFace(uchar);
+    MCAPI static int32_t getMultifaceValueFromFace(uint8_t);
 
     // symbol: ?hasFace@MultifaceBlock@@SA_NAEBVBlock@@E@Z
-    MCAPI static bool hasFace(class Block const &, uchar);
+    MCAPI static bool hasFace(class Block const &, uint8_t);
 
     // symbol: ?MULTIFACE_ALL@MultifaceBlock@@2HB
-    MCAPI static int const MULTIFACE_ALL;
+    MCAPI static int32_t const MULTIFACE_ALL;
 
     // symbol: ?MULTIFACE_DOWN@MultifaceBlock@@2HB
-    MCAPI static int const MULTIFACE_DOWN;
+    MCAPI static int32_t const MULTIFACE_DOWN;
 
     // symbol: ?MULTIFACE_EAST@MultifaceBlock@@2HB
-    MCAPI static int const MULTIFACE_EAST;
+    MCAPI static int32_t const MULTIFACE_EAST;
 
     // symbol: ?MULTIFACE_NORTH@MultifaceBlock@@2HB
-    MCAPI static int const MULTIFACE_NORTH;
+    MCAPI static int32_t const MULTIFACE_NORTH;
 
     // symbol: ?MULTIFACE_SIDES@MultifaceBlock@@2HB
-    MCAPI static int const MULTIFACE_SIDES;
+    MCAPI static int32_t const MULTIFACE_SIDES;
 
     // symbol: ?MULTIFACE_SOUTH@MultifaceBlock@@2HB
-    MCAPI static int const MULTIFACE_SOUTH;
+    MCAPI static int32_t const MULTIFACE_SOUTH;
 
     // symbol: ?MULTIFACE_UP@MultifaceBlock@@2HB
-    MCAPI static int const MULTIFACE_UP;
+    MCAPI static int32_t const MULTIFACE_UP;
 
     // symbol: ?MULTIFACE_WEST@MultifaceBlock@@2HB
-    MCAPI static int const MULTIFACE_WEST;
+    MCAPI static int32_t const MULTIFACE_WEST;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_canSpread@MultifaceBlock@@IEBA_NAEAVIBlockWorldGenAPI@@AEBVBlock@@AEBVBlockPos@@E@Z
-    MCAPI bool _canSpread(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, uchar) const;
+    MCAPI bool _canSpread(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, uint8_t) const;
 
     // symbol: ?_getNumSides@MultifaceBlock@@IEBAHAEBVBlock@@@Z
-    MCAPI int _getNumSides(class Block const &) const;
+    MCAPI int32_t _getNumSides(class Block const &) const;
 
     // NOLINTEND
 

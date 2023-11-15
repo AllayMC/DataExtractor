@@ -93,7 +93,7 @@ public:
     virtual void __unk_vfn_176();
 
     // vIndex: 177, symbol: ?getDefaultDisplayOffset@MinecartHopper@@UEBAHXZ
-    virtual int getDefaultDisplayOffset() const;
+    virtual int32_t getDefaultDisplayOffset() const;
 
     // vIndex: 178, symbol: ?applyNaturalSlowdown@MinecartHopper@@UEAAXAEAVBlockSource@@@Z
     virtual void applyNaturalSlowdown(class BlockSource &);

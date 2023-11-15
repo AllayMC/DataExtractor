@@ -19,10 +19,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol: ?getLocErrorMessageMap@PackDiscoveryError@@EEBAAEBV?$unordered_map@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ
-    virtual std::unordered_map<int,std::string> const & getLocErrorMessageMap() const;
+    virtual std::unordered_map<int32_t,std::string> const & getLocErrorMessageMap() const;
 
     // vIndex: 3, symbol: ?getEventErrorMessageMap@PackDiscoveryError@@EEBAAEBV?$unordered_map@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ
-    virtual std::unordered_map<int,std::string> const & getEventErrorMessageMap() const;
+    virtual std::unordered_map<int32_t,std::string> const & getEventErrorMessageMap() const;
 
     // symbol: ??1PackDiscoveryError@@UEAA@XZ
     MCVAPI ~PackDiscoveryError();

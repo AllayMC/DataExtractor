@@ -23,7 +23,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?doValidate@NumericConstraint@cereal@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@2@@Z
-    virtual void doValidate(entt::meta_any const &, class cereal::SerializerContext &) const;
+    virtual void doValidate(class entt::meta_any const &, class cereal::SerializerContext &) const;
 
     // symbol: ?max@NumericConstraint@cereal@@QEAAAEAV12@N@Z
     MCAPI class cereal::NumericConstraint & max(double);

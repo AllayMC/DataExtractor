@@ -133,7 +133,7 @@ public:
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
 
     // vIndex: 92, symbol: ?mayPlace@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 93, symbol: ?mayPlace@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
@@ -202,7 +202,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0AirBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI AirBlock(std::string const &, int, class Material const &);
+    MCAPI AirBlock(std::string const &, int32_t, class Material const &);
 
     // NOLINTEND
 

@@ -32,20 +32,20 @@ public:
     MCAPI class DamageSensorComponent & operator=(class DamageSensorComponent &&);
 
     // symbol: ?recordDamage@DamageSensorComponent@@QEAA_NAEAVActor@@PEAV2@W4ActorDamageCause@@H_NVVariantParameterList@@@Z
-    MCAPI bool recordDamage(class Actor &, class Actor *, ::ActorDamageCause, int, bool, class VariantParameterList);
+    MCAPI bool recordDamage(class Actor &, class Actor *, ::ActorDamageCause, int32_t, bool, class VariantParameterList);
 
     // symbol: ?recordDamage@DamageSensorComponent@@QEAA_NAEAVActor@@AEBVActorDamageSource@@H_NVVariantParameterList@@2@Z
-    MCAPI bool recordDamage(class Actor &, class ActorDamageSource const &, int, bool, class VariantParameterList, bool);
+    MCAPI bool recordDamage(class Actor &, class ActorDamageSource const &, int32_t, bool, class VariantParameterList, bool);
 
     // symbol: ?recordDamage@DamageSensorComponent@@QEAA_NAEAVActor@@PEAV2@W4ActorDamageCause@@H_NVBlockPos@@@Z
-    MCAPI bool recordDamage(class Actor &, class Actor *, ::ActorDamageCause, int, bool, class BlockPos);
+    MCAPI bool recordDamage(class Actor &, class Actor *, ::ActorDamageCause, int32_t, bool, class BlockPos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_recordDamage@DamageSensorComponent@@AEAA_NAEAVActor@@PEAV2@AEBW4ActorDamageCause@@1H_NVVariantParameterList@@3@Z
-    MCAPI bool _recordDamage(class Actor &, class Actor *, ::ActorDamageCause const &, class Actor *, int, bool, class VariantParameterList, bool);
+    MCAPI bool _recordDamage(class Actor &, class Actor *, ::ActorDamageCause const &, class Actor *, int32_t, bool, class VariantParameterList, bool);
 
     // NOLINTEND
 

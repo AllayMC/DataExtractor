@@ -25,7 +25,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_registerBlock@UnknownBlockTypeRegistry@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
-    MCAPI void _registerBlock(std::string const &, uint64);
+    MCAPI void _registerBlock(std::string const &, uint64_t);
 
     // NOLINTEND
 

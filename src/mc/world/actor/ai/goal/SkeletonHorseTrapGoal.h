@@ -32,7 +32,7 @@ public:
     virtual void appendDebugInfo(std::string &) const;
 
     // symbol: ??0SkeletonHorseTrapGoal@@QEAA@AEAVHorse@@HM@Z
-    MCAPI SkeletonHorseTrapGoal(class Horse &, int, float);
+    MCAPI SkeletonHorseTrapGoal(class Horse &, int32_t, float);
 
     // NOLINTEND
 

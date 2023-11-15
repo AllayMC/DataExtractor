@@ -67,7 +67,7 @@ public:
     virtual ::CommandOriginType getOriginType() const;
 
     // vIndex: 26, symbol: ?handleCommandOutputCallback@ScriptCommandOrigin@@UEBAXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z
-    virtual void handleCommandOutputCallback(int, std::string &&, class Json::Value &&) const;
+    virtual void handleCommandOutputCallback(int32_t, std::string &&, class Json::Value &&) const;
 
     // vIndex: 30, symbol: ?isValid@ScriptCommandOrigin@@UEBA_NXZ
     virtual bool isValid() const;
@@ -76,7 +76,7 @@ public:
     MCVAPI ~ScriptCommandOrigin();
 
     // symbol: ??0ScriptCommandOrigin@@QEAA@AEAVServerLevel@@PEAVDimension@@V?$function@$$A6AXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z@std@@V?$optional@W4CommandPermissionLevel@@@4@@Z
-    MCAPI ScriptCommandOrigin(class ServerLevel &, class Dimension *, std::function<void (int, std::string &&, class Json::Value &&)>, std::optional<::CommandPermissionLevel>);
+    MCAPI ScriptCommandOrigin(class ServerLevel &, class Dimension *, std::function<void (int32_t, std::string &&, class Json::Value &&)>, std::optional<::CommandPermissionLevel>);
 
     // NOLINTEND
 

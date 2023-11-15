@@ -157,7 +157,7 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0PrismarineBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PrismarineBlock(std::string const &, int);
+    MCAPI PrismarineBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

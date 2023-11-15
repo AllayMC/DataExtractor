@@ -19,7 +19,7 @@ public:
     MCVAPI void broadcastChanges();
 
     // symbol: ?containerContentChanged@BaseContainerMenu@@UEAAXH@Z
-    MCVAPI void containerContentChanged(int);
+    MCVAPI void containerContentChanged(int32_t);
 
     // symbol: ?getContainerId@BaseContainerMenu@@UEBA?AW4ContainerID@@XZ
     MCVAPI ::ContainerID getContainerId() const;
@@ -28,10 +28,10 @@ public:
     MCVAPI ::ContainerType getContainerType() const;
 
     // symbol: ?isResultSlot@BaseContainerMenu@@UEAA_NH@Z
-    MCVAPI bool isResultSlot(int);
+    MCVAPI bool isResultSlot(int32_t);
 
     // symbol: ?isSlotDirty@BaseContainerMenu@@UEAA_NH@Z
-    MCVAPI bool isSlotDirty(int);
+    MCVAPI bool isSlotDirty(int32_t);
 
     // symbol: ?setContainerId@BaseContainerMenu@@UEAAXW4ContainerID@@@Z
     MCVAPI void setContainerId(::ContainerID);
@@ -40,7 +40,7 @@ public:
     MCVAPI void setContainerType(::ContainerType);
 
     // symbol: ?setData@BaseContainerMenu@@UEAAXHH@Z
-    MCVAPI void setData(int, int);
+    MCVAPI void setData(int32_t, int32_t);
 
     // symbol: ??1BaseContainerMenu@@UEAA@XZ
     MCVAPI ~BaseContainerMenu();

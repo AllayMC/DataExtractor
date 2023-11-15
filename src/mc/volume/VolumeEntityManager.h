@@ -27,7 +27,7 @@ public:
     MCVAPI ~VolumeEntityManager();
 
     // symbol: ?getVolumeInstanceCount@VolumeEntityManager@@QEBA_KXZ
-    MCAPI uint64 getVolumeInstanceCount() const;
+    MCAPI uint64_t getVolumeInstanceCount() const;
 
     // symbol: ?getVolumeInstances@VolumeEntityManager@@QEBAAEBV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getVolumeInstances(DimensionType) const;

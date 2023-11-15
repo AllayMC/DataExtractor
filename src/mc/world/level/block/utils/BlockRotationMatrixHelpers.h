@@ -5,7 +5,7 @@
 namespace BlockRotationMatrixHelpers {
     // NOLINTBEGIN
     // symbol: ?bakeRotationMatrix@BlockRotationMatrixHelpers@@YA?BVMatrix@@HHH@Z
-    MCAPI class Matrix const bakeRotationMatrix(int, int, int);
+    MCAPI class Matrix const bakeRotationMatrix(int32_t, int32_t, int32_t);
     // NOLINTEND
 
 };

@@ -45,7 +45,7 @@ namespace VanillaLevelChunkUpgrade {
     MCAPI void fillNegativeSubChunksWithGenerationOrAir(class LevelChunk &, class LevelChunk &, class BlockSource &);
 
     // symbol: ?fixBlockStatesOnChunkBorderAxis@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@AEBVLevelChunk@@EVBlockPos@@W4Axis@1@@Z
-    MCAPI void fixBlockStatesOnChunkBorderAxis(class BlockSource &, class LevelChunk const &, uchar, class BlockPos, ::VanillaLevelChunkUpgrade::Axis);
+    MCAPI void fixBlockStatesOnChunkBorderAxis(class BlockSource &, class LevelChunk const &, uint8_t, class BlockPos, ::VanillaLevelChunkUpgrade::Axis);
 
     // symbol: ?fixStemBlockStates@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@VBlockPos@@AEBVBlock@@@Z
     MCAPI void fixStemBlockStates(class BlockSource &, class BlockPos, class Block const &);

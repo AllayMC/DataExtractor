@@ -33,7 +33,7 @@ public:
     virtual void __unk_vfn_12();
 
     // vIndex: 16, symbol: ?triggerEvent@EndGatewayBlockActor@@UEAAXHH@Z
-    virtual void triggerEvent(int, int);
+    virtual void triggerEvent(int32_t, int32_t);
 
     // vIndex: 18, symbol: __unk_vfn_18
     virtual void __unk_vfn_18();
@@ -81,23 +81,23 @@ public:
     MCAPI static class BlockPos findExitPortal(class WorldGenerator &, class BlockPos const &);
 
     // symbol: ?findValidSpawnAround@EndGatewayBlockActor@@SA?AVBlockPos@@AEAVBlockSource@@AEBV2@_NH@Z
-    MCAPI static class BlockPos findValidSpawnAround(class BlockSource &, class BlockPos const &, bool, int);
+    MCAPI static class BlockPos findValidSpawnAround(class BlockSource &, class BlockPos const &, bool, int32_t);
 
     // symbol: ?COOLDOWN_TIME@EndGatewayBlockActor@@2HB
-    MCAPI static int const COOLDOWN_TIME;
+    MCAPI static int32_t const COOLDOWN_TIME;
 
     // symbol: ?EVENT_COOLDOWN@EndGatewayBlockActor@@2HB
-    MCAPI static int const EVENT_COOLDOWN;
+    MCAPI static int32_t const EVENT_COOLDOWN;
 
     // symbol: ?SPAWN_TIME@EndGatewayBlockActor@@2HB
-    MCAPI static int const SPAWN_TIME;
+    MCAPI static int32_t const SPAWN_TIME;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getHighestSection@EndGatewayBlockActor@@CAHAEAVWorldGenerator@@AEAVBlockVolume@@AEBVBlockPos@@@Z
-    MCAPI static int _getHighestSection(class WorldGenerator &, class BlockVolume &, class BlockPos const &);
+    MCAPI static int32_t _getHighestSection(class WorldGenerator &, class BlockVolume &, class BlockPos const &);
 
     // NOLINTEND
 

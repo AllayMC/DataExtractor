@@ -20,7 +20,7 @@ namespace ItemColorUtil {
     MCAPI ::ItemColor fromColor(class mce::Color const &);
 
     // symbol: ?fromInt@ItemColorUtil@@YA?AW4ItemColor@@H@Z
-    MCAPI ::ItemColor fromInt(int);
+    MCAPI ::ItemColor fromInt(int32_t);
 
     // symbol: ?getColor@ItemColorUtil@@YA?AVColor@mce@@W4ItemColor@@@Z
     MCAPI class mce::Color getColor(::ItemColor);
@@ -32,7 +32,7 @@ namespace ItemColorUtil {
     MCAPI std::string const & getNameMixedCase(::ItemColor);
 
     // symbol: ?getRGBColor@ItemColorUtil@@YAHW4ItemColor@@@Z
-    MCAPI int getRGBColor(::ItemColor);
+    MCAPI int32_t getRGBColor(::ItemColor);
     // NOLINTEND
 
 };

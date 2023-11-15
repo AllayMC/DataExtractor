@@ -6,7 +6,7 @@ struct ScoreboardId {
 public:
     // NOLINTBEGIN
     // symbol: ??0ScoreboardId@@QEAA@_J@Z
-    MCAPI ScoreboardId(int64);
+    MCAPI ScoreboardId(int64_t);
 
     // symbol: ??0ScoreboardId@@QEAA@XZ
     MCAPI ScoreboardId();
@@ -15,7 +15,7 @@ public:
     MCAPI ScoreboardId(struct ScoreboardId const &);
 
     // symbol: ?getHash@ScoreboardId@@QEBA_KXZ
-    MCAPI uint64 getHash() const;
+    MCAPI uint64_t getHash() const;
 
     // symbol: ?getIdentityDef@ScoreboardId@@QEBAAEBVIdentityDefinition@@XZ
     MCAPI class IdentityDefinition const & getIdentityDef() const;

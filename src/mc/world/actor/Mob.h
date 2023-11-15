@@ -80,7 +80,7 @@ public:
     virtual void blockedByShield(class ActorDamageSource const &, class Actor &);
 
     // vIndex: 26, symbol: ?teleportTo@Mob@@UEAAXAEBVVec3@@_NHH1@Z
-    virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const &, bool, int32_t, int32_t, bool);
 
     // vIndex: 29, symbol: ?normalTick@Mob@@UEAAXXZ
     virtual void normalTick();
@@ -152,10 +152,10 @@ public:
     virtual ::ActorDamageCause getBlockDamageCause(class Block const &) const;
 
     // vIndex: 81, symbol: ?doFireHurt@Mob@@UEAA_NH@Z
-    virtual bool doFireHurt(int);
+    virtual bool doFireHurt(int32_t);
 
     // vIndex: 84, symbol: ?handleEntityEvent@Mob@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 89, symbol: ?getArmorMaterialTypeInSlot@Mob@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
     virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::ArmorSlot) const;
@@ -164,7 +164,7 @@ public:
     virtual ::ArmorTextureType getArmorMaterialTextureTypeInSlot(::ArmorSlot) const;
 
     // vIndex: 91, symbol: ?getArmorColorInSlot@Mob@@UEBAMW4ArmorSlot@@H@Z
-    virtual float getArmorColorInSlot(::ArmorSlot, int) const;
+    virtual float getArmorColorInSlot(::ArmorSlot, int32_t) const;
 
     // vIndex: 92, symbol: ?setEquippedSlot@Mob@@UEAAXW4EquipmentSlot@@AEBVItemStack@@@Z
     virtual void setEquippedSlot(::EquipmentSlot, class ItemStack const &);
@@ -191,7 +191,7 @@ public:
     virtual void buildDebugInfo(std::string &) const;
 
     // vIndex: 125, symbol: ?getDeathTime@Mob@@UEBAHXZ
-    virtual int getDeathTime() const;
+    virtual int32_t getDeathTime() const;
 
     // vIndex: 134, symbol: ?swing@Mob@@UEAAXXZ
     virtual void swing();
@@ -239,7 +239,7 @@ public:
     virtual void __unk_vfn_172();
 
     // vIndex: 173, symbol: ?knockback@Mob@@UEAAXPEAVActor@@HMMMMM@Z
-    virtual void knockback(class Actor *, int, float, float, float, float, float);
+    virtual void knockback(class Actor *, int32_t, float, float, float, float, float);
 
     // vIndex: 174, symbol: ?spawnAnim@Mob@@UEAAXXZ
     virtual void spawnAnim();
@@ -275,7 +275,7 @@ public:
     virtual bool checkSpawnObstruction() const;
 
     // vIndex: 185, symbol: ?getItemUseDuration@Mob@@UEBAHXZ
-    virtual int getItemUseDuration() const;
+    virtual int32_t getItemUseDuration() const;
 
     // vIndex: 186, symbol: ?getItemUseStartupProgress@Mob@@UEBAMXZ
     virtual float getItemUseStartupProgress() const;
@@ -293,10 +293,10 @@ public:
     virtual bool doHurtTarget(class Actor *, ::ActorDamageCause const &);
 
     // vIndex: 191, symbol: ?getArmorValue@Mob@@UEBAHXZ
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
 
     // vIndex: 192, symbol: ?hurtArmorSlots@Mob@@UEAAXAEBVActorDamageSource@@HV?$bitset@$03@std@@@Z
-    virtual void hurtArmorSlots(class ActorDamageSource const &, int, std::bitset<4>);
+    virtual void hurtArmorSlots(class ActorDamageSource const &, int32_t, std::bitset<4>);
 
     // vIndex: 193, symbol: ?setDamagedArmor@Mob@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
     virtual void setDamagedArmor(::ArmorSlot, class ItemStack const &);
@@ -314,7 +314,7 @@ public:
     virtual std::vector<class ItemStack const *> getAllEquipment() const;
 
     // vIndex: 198, symbol: ?dropEquipmentOnDeath@Mob@@UEAAXAEBVActorDamageSource@@H@Z
-    virtual void dropEquipmentOnDeath(class ActorDamageSource const &, int);
+    virtual void dropEquipmentOnDeath(class ActorDamageSource const &, int32_t);
 
     // vIndex: 199, symbol: ?dropEquipmentOnDeath@Mob@@UEAAXXZ
     virtual void dropEquipmentOnDeath();
@@ -341,7 +341,7 @@ public:
     virtual void setTransitioningSitting(bool);
 
     // vIndex: 207, symbol: ?getAttackTime@Mob@@UEAAHXZ
-    virtual int getAttackTime();
+    virtual int32_t getAttackTime();
 
     // vIndex: 208, symbol: ?_getWalkTargetValue@Mob@@UEAAMAEBVBlockPos@@@Z
     virtual float _getWalkTargetValue(class BlockPos const &);
@@ -398,7 +398,7 @@ public:
     MCAPI bool checkTotemDeathProtection(class ActorDamageSource const &);
 
     // symbol: ?containerChanged@Mob@@QEAAXH@Z
-    MCAPI void containerChanged(int);
+    MCAPI void containerChanged(int32_t);
 
     // symbol: ?createAI@Mob@@QEAAXV?$vector@UGoalDefinition@@V?$allocator@UGoalDefinition@@@std@@@std@@@Z
     MCAPI void createAI(std::vector<struct GoalDefinition>);
@@ -416,7 +416,7 @@ public:
     MCAPI float getArmorCoverPercentage() const;
 
     // symbol: ?getArmorTypeHash@Mob@@QEAAHXZ
-    MCAPI int getArmorTypeHash();
+    MCAPI int32_t getArmorTypeHash();
 
     // symbol: ?getBoundOrigin@Mob@@QEBA?AVBlockPos@@XZ
     MCAPI class BlockPos getBoundOrigin() const;
@@ -425,7 +425,7 @@ public:
     MCAPI struct ActorUniqueID getCaravanHead() const;
 
     // symbol: ?getCaravanSize@Mob@@QEBAHXZ
-    MCAPI int getCaravanSize() const;
+    MCAPI int32_t getCaravanSize() const;
 
     // symbol: ?getDamageAfterArmorReduction@Mob@@QEBAMAEBVActorDamageSource@@M@Z
     MCAPI float getDamageAfterArmorReduction(class ActorDamageSource const &, float) const;
@@ -434,7 +434,7 @@ public:
     MCAPI float getDamageAfterResistanceEffect(class ActorDamageSource const &, float) const;
 
     // symbol: ?getEatCounter@Mob@@QEBAHXZ
-    MCAPI int getEatCounter() const;
+    MCAPI int32_t getEatCounter() const;
 
     // symbol: ?getExpectedFallDamage@Mob@@QEBAMMM@Z
     MCAPI float getExpectedFallDamage(float, float) const;
@@ -443,7 +443,7 @@ public:
     MCAPI class Mob * getFirstCaravanHead();
 
     // symbol: ?getGlidingTicks@Mob@@QEBAHXZ
-    MCAPI int getGlidingTicks() const;
+    MCAPI int32_t getGlidingTicks() const;
 
     // symbol: ?getItemSlot@Mob@@QEBAAEBVItemStack@@W4EquipmentSlot@@@Z
     MCAPI class ItemStack const & getItemSlot(::EquipmentSlot) const;
@@ -458,19 +458,19 @@ public:
     MCAPI struct JumpPreventionResult getJumpPrevention();
 
     // symbol: ?getJumpTicks@Mob@@QEBAHXZ
-    MCAPI int getJumpTicks() const;
+    MCAPI int32_t getJumpTicks() const;
 
     // symbol: ?getMeleeKnockbackBonus@Mob@@QEAAHXZ
-    MCAPI int getMeleeKnockbackBonus();
+    MCAPI int32_t getMeleeKnockbackBonus();
 
     // symbol: ?getMovementComponentCurrentSpeed@Mob@@QEBAMXZ
     MCAPI float getMovementComponentCurrentSpeed() const;
 
     // symbol: ?getNoActionTime@Mob@@QEBAHXZ
-    MCAPI int getNoActionTime() const;
+    MCAPI int32_t getNoActionTime() const;
 
     // symbol: ?getRollCounter@Mob@@QEBAHXZ
-    MCAPI int getRollCounter() const;
+    MCAPI int32_t getRollCounter() const;
 
     // symbol: ?getTargetCaptain@Mob@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getTargetCaptain() const;
@@ -488,7 +488,7 @@ public:
     MCAPI bool hasCaravanTail() const;
 
     // symbol: ?hurtArmor@Mob@@QEAAXAEBVActorDamageSource@@H@Z
-    MCAPI void hurtArmor(class ActorDamageSource const &, int);
+    MCAPI void hurtArmor(class ActorDamageSource const &, int32_t);
 
     // symbol: ?isAbleToMove@Mob@@QEBA_NXZ
     MCAPI bool isAbleToMove() const;
@@ -527,7 +527,7 @@ public:
     MCAPI void onPlayerDimensionChanged(class Player *, DimensionType, DimensionType);
 
     // symbol: ?onPlayerJump@Mob@@QEAAXH@Z
-    MCAPI void onPlayerJump(int);
+    MCAPI void onPlayerJump(int32_t);
 
     // symbol: ?removeSpeedModifier@Mob@@QEAAXAEBVUUID@mce@@@Z
     MCAPI void removeSpeedModifier(class mce::UUID const &);
@@ -545,7 +545,7 @@ public:
     MCAPI void sendArmorSlot(::ArmorSlot);
 
     // symbol: ?setEatCounter@Mob@@QEAAXH@Z
-    MCAPI void setEatCounter(int);
+    MCAPI void setEatCounter(int32_t);
 
     // symbol: ?setEating@Mob@@QEAAX_N@Z
     MCAPI void setEating(bool);
@@ -557,7 +557,7 @@ public:
     MCAPI void setIsPregnant(bool);
 
     // symbol: ?setJumpTicks@Mob@@QEAAXH@Z
-    MCAPI void setJumpTicks(int);
+    MCAPI void setJumpTicks(int32_t);
 
     // symbol: ?setMovementComponentCurrentSpeed@Mob@@QEAAXM@Z
     MCAPI void setMovementComponentCurrentSpeed(float);
@@ -614,7 +614,7 @@ public:
     MCAPI static class Mob * tryGetFromEntity(class EntityContext &, bool);
 
     // symbol: ?ARMOR_DAMAGE_DIVISOR@Mob@@2HB
-    MCAPI static int const ARMOR_DAMAGE_DIVISOR;
+    MCAPI static int32_t const ARMOR_DAMAGE_DIVISOR;
 
     // symbol: ?ARMOR_PROTECTION_DIVIDER@Mob@@2MB
     MCAPI static float const ARMOR_PROTECTION_DIVIDER;
@@ -656,16 +656,16 @@ public:
     MCAPI static float const PLAYER_SWIMMING_SURFACE_OFFSET;
 
     // symbol: ?REMOVE_PASSENGERS_DELAY@Mob@@2HB
-    MCAPI static int const REMOVE_PASSENGERS_DELAY;
+    MCAPI static int32_t const REMOVE_PASSENGERS_DELAY;
 
     // symbol: ?SLOW_FALL_GRAVITY@Mob@@2MB
     MCAPI static float const SLOW_FALL_GRAVITY;
 
     // symbol: ?SPAWN_XP_DELAY@Mob@@2HB
-    MCAPI static int const SPAWN_XP_DELAY;
+    MCAPI static int32_t const SPAWN_XP_DELAY;
 
     // symbol: ?TOTAL_ROLL_STEPS@Mob@@2HB
-    MCAPI static int const TOTAL_ROLL_STEPS;
+    MCAPI static int32_t const TOTAL_ROLL_STEPS;
 
     // NOLINTEND
 
@@ -687,7 +687,7 @@ public:
     MCAPI void dropBags();
 
     // symbol: ?getCurrentSwingDuration@Mob@@IEAAHXZ
-    MCAPI int getCurrentSwingDuration();
+    MCAPI int32_t getCurrentSwingDuration();
 
     // symbol: ?jumpFromGround@Mob@@IEAAXAEBVIConstBlockSource@@@Z
     MCAPI void jumpFromGround(class IConstBlockSource const &);
@@ -728,7 +728,7 @@ public:
 protected:
     // NOLINTBEGIN
     // symbol: ?MAX_INACTIVITY_TIMER@Mob@@1HB
-    MCAPI static int const MAX_INACTIVITY_TIMER;
+    MCAPI static int32_t const MAX_INACTIVITY_TIMER;
 
     // NOLINTEND
 

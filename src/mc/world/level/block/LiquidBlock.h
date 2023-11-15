@@ -136,10 +136,10 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 134, symbol: ?getColor@LiquidBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const &) const;
+    virtual int32_t getColor(class Block const &) const;
 
     // vIndex: 136, symbol: ?getColorAtPos@LiquidBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
+    virtual int32_t getColorAtPos(class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 139, symbol: ?onGraphicsModeChanged@LiquidBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
@@ -178,7 +178,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 186, symbol: ?getResourceCount@LiquidBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ?canBeSilkTouched@LiquidBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -187,13 +187,13 @@ public:
     MCVAPI ~LiquidBlock();
 
     // symbol: ??0LiquidBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LiquidBlock(std::string const &, int, class Material const &);
+    MCAPI LiquidBlock(std::string const &, int32_t, class Material const &);
 
     // symbol: ?getTickDelay@LiquidBlock@@QEBAHAEAVBlockSource@@@Z
-    MCAPI int getTickDelay(class BlockSource &) const;
+    MCAPI int32_t getTickDelay(class BlockSource &) const;
 
     // symbol: ?getHeightFromDepth@LiquidBlock@@SAMH@Z
-    MCAPI static float getHeightFromDepth(int);
+    MCAPI static float getHeightFromDepth(int32_t);
 
     // symbol: ?handleEntityInside@LiquidBlock@@SAXAEBVIConstBlockSource@@AEBVBlockPos@@AEAVVec3@@AEBVMaterial@@@Z
     MCAPI static void handleEntityInside(class IConstBlockSource const &, class BlockPos const &, class Vec3 &, class Material const &);
@@ -212,10 +212,10 @@ public:
     MCAPI void trySpreadFire(class BlockSource &, class BlockPos const &, class Random &) const;
 
     // symbol: ?getDepth@LiquidBlock@@KAHAEBVIConstBlockSource@@AEBVBlockPos@@AEBVMaterial@@@Z
-    MCAPI static int getDepth(class IConstBlockSource const &, class BlockPos const &, class Material const &);
+    MCAPI static int32_t getDepth(class IConstBlockSource const &, class BlockPos const &, class Material const &);
 
     // symbol: ?getRenderedDepth@LiquidBlock@@KAHAEBVIConstBlockSource@@AEBVBlockPos@@AEBVMaterial@@@Z
-    MCAPI static int getRenderedDepth(class IConstBlockSource const &, class BlockPos const &, class Material const &);
+    MCAPI static int32_t getRenderedDepth(class IConstBlockSource const &, class BlockPos const &, class Material const &);
 
     // NOLINTEND
 

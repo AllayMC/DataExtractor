@@ -28,7 +28,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@EmoteListPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1EmoteListPacket@@UEAA@XZ
     MCVAPI ~EmoteListPacket();
@@ -40,7 +40,7 @@ public:
     MCAPI EmoteListPacket();
 
     // symbol: ?MAX_EMOTE_PIECE_IDS@EmoteListPacket@@2HB
-    MCAPI static int const MAX_EMOTE_PIECE_IDS;
+    MCAPI static int32_t const MAX_EMOTE_PIECE_IDS;
 
     // NOLINTEND
 

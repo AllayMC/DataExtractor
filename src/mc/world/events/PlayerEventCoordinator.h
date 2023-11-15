@@ -33,13 +33,13 @@ public:
     MCAPI void sendPlayerAwardAchievement(class Player &, ::MinecraftEventing::AchievementIds);
 
     // symbol: ?sendPlayerCaravanChanged@PlayerEventCoordinator@@QEAAXAEBVActor@@H@Z
-    MCAPI void sendPlayerCaravanChanged(class Actor const &, int);
+    MCAPI void sendPlayerCaravanChanged(class Actor const &, int32_t);
 
     // symbol: ?sendPlayerDestroyedBlock@PlayerEventCoordinator@@QEAAXAEAVPlayer@@HHH@Z
-    MCAPI void sendPlayerDestroyedBlock(class Player &, int, int, int);
+    MCAPI void sendPlayerDestroyedBlock(class Player &, int32_t, int32_t, int32_t);
 
     // symbol: ?sendPlayerItemEquipped@PlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVItemInstance@@H@Z
-    MCAPI void sendPlayerItemEquipped(class Player &, class ItemInstance const &, int);
+    MCAPI void sendPlayerItemEquipped(class Player &, class ItemInstance const &, int32_t);
 
     // symbol: ?sendPlayerItemPlaceInteraction@PlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVItemInstance@@@Z
     MCAPI void sendPlayerItemPlaceInteraction(class Player &, class ItemInstance const &);

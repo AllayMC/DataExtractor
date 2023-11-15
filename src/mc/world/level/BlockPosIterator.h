@@ -52,7 +52,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0ManhattanDistance@BlockPosIterator@@QEAA@AEBVBlockPos@@H@Z
-        MCAPI ManhattanDistance(class BlockPos const &, int);
+        MCAPI ManhattanDistance(class BlockPos const &, int32_t);
     
         // symbol: ?begin@ManhattanDistance@BlockPosIterator@@QEBA?AV12@XZ
         MCAPI class BlockPosIterator::ManhattanDistance begin() const;

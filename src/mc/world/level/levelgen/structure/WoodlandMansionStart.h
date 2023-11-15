@@ -25,10 +25,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_create@WoodlandMansionStart@@AEAAXAEAVDimension@@AEAVRandom@@HH@Z
-    MCAPI void _create(class Dimension &, class Random &, int, int);
+    MCAPI void _create(class Dimension &, class Random &, int32_t, int32_t);
 
     // symbol: ?_makeStairs@WoodlandMansionStart@@AEAAXAEBVBlockPos@@AEBVBlock@@EEAEAVBlockSource@@AEBVBoundingBox@@@Z
-    MCAPI void _makeStairs(class BlockPos const &, class Block const &, uchar, uchar, class BlockSource &, class BoundingBox const &);
+    MCAPI void _makeStairs(class BlockPos const &, class Block const &, uint8_t, uint8_t, class BlockSource &, class BoundingBox const &);
 
     // symbol: ?_fillCobblestone@WoodlandMansionStart@@CAXAEBVBlockPos@@AEAVBlockSource@@@Z
     MCAPI static void _fillCobblestone(class BlockPos const &, class BlockSource &);

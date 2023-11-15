@@ -25,19 +25,19 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getCropOffsetFromRot@CoralCrustFeature@@AEBA?AVBlockPos@@HH@Z
-    MCAPI class BlockPos _getCropOffsetFromRot(int, int) const;
+    MCAPI class BlockPos _getCropOffsetFromRot(int32_t, int32_t) const;
 
     // symbol: ?_getOffsetFromRot@CoralCrustFeature@@AEBA?AVBlockPos@@HH@Z
-    MCAPI class BlockPos _getOffsetFromRot(int, int) const;
+    MCAPI class BlockPos _getOffsetFromRot(int32_t, int32_t) const;
 
     // symbol: ?_placeCoral@CoralCrustFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAV?$vector@U?$pair@VBlockPos@@E@std@@V?$allocator@U?$pair@VBlockPos@@E@std@@@2@@6@H@Z
-    MCAPI void _placeCoral(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<std::pair<class BlockPos, uchar>> &, int) const;
+    MCAPI void _placeCoral(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<std::pair<class BlockPos, uint8_t>> &, int32_t) const;
 
     // symbol: ?_placeCoralBase@CoralCrustFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAVLegacyStructureTemplate@@AEAVLegacyStructureSettings@@@Z
     MCAPI void _placeCoralBase(class BlockSource &, class BlockPos const &, class Random &, class LegacyStructureTemplate &, class LegacyStructureSettings &) const;
 
     // symbol: ?_placeSideDecorations@CoralCrustFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@E@Z
-    MCAPI void _placeSideDecorations(class BlockSource &, class BlockPos const &, class Random &, uchar) const;
+    MCAPI void _placeSideDecorations(class BlockSource &, class BlockPos const &, class Random &, uint8_t) const;
 
     // NOLINTEND
 

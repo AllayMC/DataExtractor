@@ -33,7 +33,7 @@ public:
     virtual class Core::PathBuffer<std::string> _getPath() const;
 
     // vIndex: 2, symbol: ?_getBlockSize@File_c_windows@Core@@UEBA_KXZ
-    virtual uint64 _getBlockSize() const;
+    virtual uint64_t _getBlockSize() const;
 
     // vIndex: 3, symbol: ?_isOpen@File_c_windows@Core@@UEAA_NXZ
     virtual bool _isOpen();
@@ -42,34 +42,34 @@ public:
     virtual class Core::Result _close();
 
     // vIndex: 5, symbol: ?_read@File_c_windows@Core@@UEAA?AVResult@2@PEAX_KPEA_K@Z
-    virtual class Core::Result _read(void *, uint64, uint64 *);
+    virtual class Core::Result _read(void *, uint64_t, uint64_t *);
 
     // vIndex: 6, symbol: ?_readExactly@File_c_windows@Core@@UEAA?AVResult@2@PEAX_K@Z
-    virtual class Core::Result _readExactly(void *, uint64);
+    virtual class Core::Result _readExactly(void *, uint64_t);
 
     // vIndex: 7, symbol: ?_skip@File_c_windows@Core@@UEAA?AVResult@2@_K@Z
-    virtual class Core::Result _skip(uint64);
+    virtual class Core::Result _skip(uint64_t);
 
     // vIndex: 8, symbol: ?_readAtPosition@File_c_windows@Core@@UEAA?AVResult@2@_KPEAX0PEA_K@Z
-    virtual class Core::Result _readAtPosition(uint64, void *, uint64, uint64 *);
+    virtual class Core::Result _readAtPosition(uint64_t, void *, uint64_t, uint64_t *);
 
     // vIndex: 9, symbol: ?_getPosition@File_c_windows@Core@@UEAA?AVResult@2@PEA_K@Z
-    virtual class Core::Result _getPosition(uint64 *);
+    virtual class Core::Result _getPosition(uint64_t *);
 
     // vIndex: 10, symbol: ?_setPosition@File_c_windows@Core@@UEAA?AVResult@2@_K@Z
-    virtual class Core::Result _setPosition(uint64);
+    virtual class Core::Result _setPosition(uint64_t);
 
     // vIndex: 11, symbol: ?_write@File_c_windows@Core@@UEAA?AVResult@2@PEBX_K@Z
-    virtual class Core::Result _write(void const *, uint64);
+    virtual class Core::Result _write(void const *, uint64_t);
 
     // vIndex: 12, symbol: ?_flush@File_c_windows@Core@@UEAA?AVResult@2@XZ
     virtual class Core::Result _flush();
 
     // vIndex: 13, symbol: ?_getSize@File_c_windows@Core@@UEAA?AVResult@2@PEA_K@Z
-    virtual class Core::Result _getSize(uint64 *);
+    virtual class Core::Result _getSize(uint64_t *);
 
     // vIndex: 14, symbol: ?_getRemainingSize@File_c_windows@Core@@UEAA?AVResult@2@PEA_K@Z
-    virtual class Core::Result _getRemainingSize(uint64 *);
+    virtual class Core::Result _getRemainingSize(uint64_t *);
 
     // symbol: ?initialize@File_c_windows@Core@@SAXXZ
     MCAPI static void initialize();

@@ -27,7 +27,7 @@ public:
     virtual void commit(class ContainerScreenContext const &);
 
     // symbol: ??0ExperienceRewardCommitObject@@QEAA@H@Z
-    MCAPI ExperienceRewardCommitObject(int);
+    MCAPI ExperienceRewardCommitObject(int32_t);
 
     // NOLINTEND
 

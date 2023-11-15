@@ -16,16 +16,16 @@ public:
     MCAPI Blob();
 
     // symbol: ??0Blob@mce@@QEAA@_K@Z
-    MCAPI Blob(uint64);
+    MCAPI Blob(uint64_t);
 
     // symbol: ??0Blob@mce@@QEAA@$$QEAV01@@Z
     MCAPI Blob(class mce::Blob &&);
 
     // symbol: ?cbegin@Blob@mce@@QEBAPEBEXZ
-    MCAPI uchar const * cbegin() const;
+    MCAPI uint8_t const * cbegin() const;
 
     // symbol: ?cend@Blob@mce@@QEBAPEBEXZ
-    MCAPI uchar const * cend() const;
+    MCAPI uint8_t const * cend() const;
 
     // symbol: ?empty@Blob@mce@@QEBA_NXZ
     MCAPI bool empty() const;
@@ -41,7 +41,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?defaultDeleter@Blob@mce@@CAXPEAE@Z
-    MCAPI static void defaultDeleter(uchar *);
+    MCAPI static void defaultDeleter(uint8_t *);
 
     // NOLINTEND
 

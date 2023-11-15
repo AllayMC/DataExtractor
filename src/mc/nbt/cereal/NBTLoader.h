@@ -24,7 +24,7 @@ public:
     MCVAPI ~NBTLoader();
 
     // symbol: ??0NBTLoader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@AEBUReflectionCtx@cereal@@@Z
-    MCAPI NBTLoader(gsl::not_null<class CompoundTag const *>, struct cereal::ReflectionCtx const &);
+    MCAPI NBTLoader(class gsl::not_null<class CompoundTag const *>, struct cereal::ReflectionCtx const &);
 
     // NOLINTEND
 

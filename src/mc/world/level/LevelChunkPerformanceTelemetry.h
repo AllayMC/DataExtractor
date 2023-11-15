@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0LevelChunkPerformanceTelemetry@@QEAA@IAEAVIMinecraftEventing@@_N@Z
-    MCAPI LevelChunkPerformanceTelemetry(uint, class IMinecraftEventing &, bool);
+    MCAPI LevelChunkPerformanceTelemetry(uint32_t, class IMinecraftEventing &, bool);
 
     // symbol: ?reset@LevelChunkPerformanceTelemetry@@QEAAXW4SubClientId@@V?$NonOwnerPointer@UChunkPerformanceData@@@Bedrock@@@Z
     MCAPI void reset(::SubClientId, class Bedrock::NonOwnerPointer<struct ChunkPerformanceData>);

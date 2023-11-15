@@ -79,7 +79,7 @@ public:
     virtual class HashedString const & getCooldownType() const;
 
     // vIndex: 104, symbol: ?getCooldownTime@GoatHornItem@@UEBAHXZ
-    virtual int getCooldownTime() const;
+    virtual int32_t getCooldownTime() const;
 
     // vIndex: 115, symbol: __unk_vfn_115
     virtual void __unk_vfn_115();
@@ -91,7 +91,7 @@ public:
     virtual bool canBeCharged() const;
 
     // symbol: ??0GoatHornItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI GoatHornItem(std::string const &, int);
+    MCAPI GoatHornItem(std::string const &, int32_t);
 
     // symbol: ?addGoatHornVarationSaveData@GoatHornItem@@SAXAEAVGoat@@AEAVItemStack@@@Z
     MCAPI static void addGoatHornVarationSaveData(class Goat &, class ItemStack &);

@@ -17,7 +17,7 @@ public:
     MCAPI Parameter(float, float);
 
     // symbol: ??0Parameter@ClimateUtils@@QEAA@AEB_J0@Z
-    MCAPI Parameter(int64 const &, int64 const &);
+    MCAPI Parameter(int64_t const &, int64_t const &);
 
     // symbol: ?fromParameters@Parameter@ClimateUtils@@SA?AU12@AEBU12@0@Z
     MCAPI static struct ClimateUtils::Parameter fromParameters(struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &);

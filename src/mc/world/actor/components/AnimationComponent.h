@@ -22,7 +22,7 @@ public:
     MCAPI void applyAnimations(bool);
 
     // symbol: ?createAnimationPlayer@AnimationComponent@@QEAA?AV?$shared_ptr@VActorAnimationPlayer@@@std@@AEBVHashedString@@AEBVExpressionNode@@AEAV?$set@VHashedString@@U?$hash@VHashedString@@@std@@V?$allocator@VHashedString@@@3@@3@@Z
-    MCAPI std::shared_ptr<class ActorAnimationPlayer> createAnimationPlayer(class HashedString const &, class ExpressionNode const &, std::set<class HashedString, std::hash<class HashedString>> &);
+    MCAPI std::shared_ptr<class ActorAnimationPlayer> createAnimationPlayer(class HashedString const &, class ExpressionNode const &, std::set<class HashedString, std::hash<class HashedString>, std::allocator<class HashedString>> &);
 
     // symbol: ?getAllBoneOrientations@AnimationComponent@@QEAAAEAV?$unordered_map@W4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@U?$hash@W4SkeletalHierarchyIndex@@@3@U?$equal_to@W4SkeletalHierarchyIndex@@@3@V?$allocator@U?$pair@$$CBW4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@@std@@@3@@std@@XZ
     MCAPI std::unordered_map<::SkeletalHierarchyIndex,std::vector<class BoneOrientation>> & getAllBoneOrientations();
@@ -37,7 +37,7 @@ public:
     MCAPI std::shared_ptr<class ActorAnimationControllerStatePlayer> const getCurrentAnimationControllerStatePlayer() const;
 
     // symbol: ?getLocator@AnimationComponent@@QEAAPEAVModelPartLocator@@AEB_K@Z
-    MCAPI class ModelPartLocator * getLocator(uint64 const &);
+    MCAPI class ModelPartLocator * getLocator(uint64_t const &);
 
     // symbol: ?getRenderParams@AnimationComponent@@QEAAAEAVRenderParams@@XZ
     MCAPI class RenderParams & getRenderParams();
@@ -61,7 +61,7 @@ public:
     MCAPI void setDirty();
 
     // symbol: ?setLastReloadInitTimeStampClient@AnimationComponent@@QEAAX_K@Z
-    MCAPI void setLastReloadInitTimeStampClient(uint64);
+    MCAPI void setLastReloadInitTimeStampClient(uint64_t);
 
     // symbol: ?shouldReloadBasedOnLastReloadInitTimeStamp@AnimationComponent@@QEBA_NXZ
     MCAPI bool shouldReloadBasedOnLastReloadInitTimeStamp() const;
@@ -73,7 +73,7 @@ public:
     MCAPI ~AnimationComponent();
 
     // symbol: ?getReloadTimeStampClient@AnimationComponent@@SA_KXZ
-    MCAPI static uint64 getReloadTimeStampClient();
+    MCAPI static uint64_t getReloadTimeStampClient();
 
     // symbol: ?incrementCurrentServerFrameIndex@AnimationComponent@@SAXXZ
     MCAPI static void incrementCurrentServerFrameIndex();
@@ -83,13 +83,13 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?mClientFrameIndex@AnimationComponent@@0U?$atomic@_J@std@@A
-    MCAPI static std::atomic<int64> mClientFrameIndex;
+    MCAPI static std::atomic<int64_t> mClientFrameIndex;
 
     // symbol: ?mReloadTimeStampClient@AnimationComponent@@0U?$atomic@_J@std@@A
-    MCAPI static std::atomic<int64> mReloadTimeStampClient;
+    MCAPI static std::atomic<int64_t> mReloadTimeStampClient;
 
     // symbol: ?mServerFrameIndex@AnimationComponent@@0U?$atomic@_J@std@@A
-    MCAPI static std::atomic<int64> mServerFrameIndex;
+    MCAPI static std::atomic<int64_t> mServerFrameIndex;
 
     // NOLINTEND
 

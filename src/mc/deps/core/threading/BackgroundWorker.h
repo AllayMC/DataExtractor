@@ -36,7 +36,7 @@ public:
     MCVAPI ~BackgroundWorker();
 
     // symbol: ??0BackgroundWorker@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NAEBVOSThreadPriority@Threading@Bedrock@@V?$optional@_K@2@V?$optional@H@2@AEAVWorkerPool@@1@Z
-    MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const &, std::optional<uint64>, std::optional<int>, class WorkerPool &, bool);
+    MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const &, std::optional<uint64_t>, std::optional<int32_t>, class WorkerPool &, bool);
 
     // symbol: ?queue@BackgroundWorker@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
     MCAPI void queue(std::shared_ptr<class BackgroundTaskBase>);

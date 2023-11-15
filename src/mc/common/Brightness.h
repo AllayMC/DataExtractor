@@ -4,23 +4,21 @@
 
 struct Brightness {
 public:
-    // prevent constructor by default
-    Brightness() = delete;
     uchar value;
 
 public:
     // NOLINTBEGIN
     // symbol: ??0Brightness@@QEAA@AEBU0@@Z
-    MCAPI Brightness(struct Brightness const &);
+    MCAPI Brightness(struct Brightness const&);
 
     // symbol: ??0Brightness@@QEAA@AEBE@Z
-    MCAPI Brightness(uchar const &);
-
-    // symbol: ??4Brightness@@QEAAAEAU0@AEBU0@@Z
-    MCAPI struct Brightness & operator=(struct Brightness const &);
+    MCAPI explicit Brightness(uchar const&);
 
     // symbol: ??4Brightness@@QEAAAEAU0@$$QEAU0@@Z
-    MCAPI struct Brightness & operator=(struct Brightness &&);
+    MCAPI struct Brightness& operator=(struct Brightness&&);
+
+    // symbol: ??4Brightness@@QEAAAEAU0@AEBU0@@Z
+    MCAPI struct Brightness& operator=(struct Brightness const&);
 
     // symbol: ?INVALID@Brightness@@2U1@B
     MCAPI static struct Brightness const INVALID;
@@ -32,6 +30,4 @@ public:
     MCAPI static struct Brightness const MIN;
 
     // NOLINTEND
-
 };
-

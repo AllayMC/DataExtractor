@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getDuration@PeekComponent@@QEAAAEAHXZ
-    MCAPI int & getDuration();
+    MCAPI int32_t & getDuration();
 
     // symbol: ?getHadTarget@PeekComponent@@QEBA_NXZ
     MCAPI bool getHadTarget() const;

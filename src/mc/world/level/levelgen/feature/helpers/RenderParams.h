@@ -31,7 +31,7 @@ public:
     MCAPI class RenderParams & operator=(class RenderParams &&);
 
     // symbol: ??ARenderParams@@QEAAAEAM_K@Z
-    MCAPI float & operator[](uint64);
+    MCAPI float & operator[](uint64_t);
 
     // symbol: ??1RenderParams@@QEAA@XZ
     MCAPI ~RenderParams();

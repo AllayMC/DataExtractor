@@ -41,7 +41,7 @@ public:
     MCVAPI class BlockPos findSpawnPosition() const;
 
     // symbol: ?getBiomeArea@NetherGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, uint) const;
+    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, uint32_t) const;
 
     // symbol: ?getBiomeSource@NetherGenerator@@UEBAAEBVBiomeSource@@XZ
     MCVAPI class BiomeSource const & getBiomeSource() const;
@@ -56,13 +56,13 @@ public:
     MCVAPI bool postProcess(class ChunkViewSource &);
 
     // symbol: ?prepareAndComputeHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
-    MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
+    MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<int16_t> &, bool, int32_t);
 
     // symbol: ?prepareHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
     MCVAPI void prepareHeights(class BlockVolume &, class ChunkPos const &, bool);
 
     // symbol: ??0NetherGenerator@@QEAA@AEAVDimension@@IPEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
-    MCAPI NetherGenerator(class Dimension &, uint, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
+    MCAPI NetherGenerator(class Dimension &, uint32_t, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
 
     // symbol: ?buildSurfaces@NetherGenerator@@QEAAXAEAVBlockVolume@@AEAVLevelChunk@@AEBVChunkPos@@@Z
     MCAPI void buildSurfaces(class BlockVolume &, class LevelChunk &, class ChunkPos const &);
@@ -75,7 +75,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_prepareHeights@NetherGenerator@@AEAAXAEAVBlockVolume@@AEBVChunkPos@@_NPEAV?$vector@FV?$allocator@F@std@@@std@@H@Z
-    MCAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, bool, std::vector<short> *, int);
+    MCAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, bool, std::vector<int16_t> *, int32_t);
 
     // symbol: ?_makeBiomeSource@NetherGenerator@@CA?AV?$unique_ptr@VBiomeSource@@U?$default_delete@VBiomeSource@@@std@@@std@@AEAVDimension@@@Z
     MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(class Dimension &);

@@ -86,7 +86,7 @@ public:
     virtual void __unk_vfn_116();
 
     // symbol: ??0SmithingTemplateItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4UpgradeType@0@0@Z
-    MCAPI SmithingTemplateItem(std::string const &, int, ::SmithingTemplateItem::UpgradeType, std::string const &);
+    MCAPI SmithingTemplateItem(std::string const &, int32_t, ::SmithingTemplateItem::UpgradeType, std::string const &);
 
     // NOLINTEND
 

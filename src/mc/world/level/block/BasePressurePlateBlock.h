@@ -151,7 +151,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@BasePressurePlateBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 143, symbol: ?canSpawnOn@BasePressurePlateBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor *) const;
@@ -196,16 +196,16 @@ public:
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
 
     // vIndex: 192, symbol: ?getTickDelay@BasePressurePlateBlock@@UEBAHXZ
-    virtual int getTickDelay() const;
+    virtual int32_t getTickDelay() const;
 
     // vIndex: 193, symbol: ?getSignalStrength@PressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const = 0;
+    virtual int32_t getSignalStrength(class BlockSource &, class BlockPos const &) const = 0;
 
     // vIndex: 194, symbol: ?getSignalForData@PressurePlateBlock@@MEBAHH@Z
-    virtual int getSignalForData(int) const = 0;
+    virtual int32_t getSignalForData(int32_t) const = 0;
 
     // vIndex: 195, symbol: ?getRedstoneSignal@PressurePlateBlock@@MEBAHH@Z
-    virtual int getRedstoneSignal(int) const = 0;
+    virtual int32_t getRedstoneSignal(int32_t) const = 0;
 
     // vIndex: 196, symbol: ?getSensitiveAABB@BasePressurePlateBlock@@MEBA?BVAABB@@AEBVBlockPos@@@Z
     virtual class AABB const getSensitiveAABB(class BlockPos const &) const;
@@ -218,10 +218,10 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0BasePressurePlateBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI BasePressurePlateBlock(std::string const &, int, class Material const &);
+    MCAPI BasePressurePlateBlock(std::string const &, int32_t, class Material const &);
 
     // symbol: ?checkPressed@BasePressurePlateBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@HH@Z
-    MCAPI void checkPressed(class BlockSource &, class BlockPos const &, class Actor *, int, int) const;
+    MCAPI void checkPressed(class BlockSource &, class BlockPos const &, class Actor *, int32_t, int32_t) const;
 
     // NOLINTEND
 

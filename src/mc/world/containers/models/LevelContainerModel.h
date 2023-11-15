@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?containerContentChanged@LevelContainerModel@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -55,16 +55,16 @@ public:
     virtual class Container * _getContainer() const;
 
     // vIndex: 21, symbol: ?_getContainerOffset@LevelContainerModel@@MEBAHXZ
-    virtual int _getContainerOffset() const;
+    virtual int32_t _getContainerOffset() const;
 
     // vIndex: 22, symbol: ?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
+    virtual void _onItemChanged(int32_t, class ItemStack const &, class ItemStack const &);
 
     // symbol: ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@W4BlockActorType@@AEBVBlockPos@@W4ContainerCategory@@@Z
-    MCAPI LevelContainerModel(::ContainerEnumName, int, class Player &, ::BlockActorType, class BlockPos const &, ::ContainerCategory);
+    MCAPI LevelContainerModel(::ContainerEnumName, int32_t, class Player &, ::BlockActorType, class BlockPos const &, ::ContainerCategory);
 
     // symbol: ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@UActorUniqueID@@W4ContainerCategory@@@Z
-    MCAPI LevelContainerModel(::ContainerEnumName, int, class Player &, struct ActorUniqueID, ::ContainerCategory);
+    MCAPI LevelContainerModel(::ContainerEnumName, int32_t, class Player &, struct ActorUniqueID, ::ContainerCategory);
 
     // symbol: ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@AEBUActorUniqueID@@@Z
     MCAPI static class Container * getContainerHelper(class Player &, struct ActorUniqueID const &);
@@ -80,7 +80,7 @@ public:
     MCAPI class Actor * _getEntity() const;
 
     // symbol: ?_refreshSlot@LevelContainerModel@@AEAAXH@Z
-    MCAPI void _refreshSlot(int);
+    MCAPI void _refreshSlot(int32_t);
 
     // NOLINTEND
 

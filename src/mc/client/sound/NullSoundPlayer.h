@@ -72,7 +72,7 @@ public:
     virtual void __unk_vfn_16();
 
     // vIndex: 17, symbol: ?registerLoop@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEAULoopingSoundState@@@Z@3@MM@Z
-    virtual uint64 registerLoop(std::string const &, std::function<void (struct LoopingSoundState &)>, float, float);
+    virtual uint64_t registerLoop(std::string const &, std::function<void (struct LoopingSoundState &)>, float, float);
 
     // vIndex: 18, symbol: __unk_vfn_18
     virtual void __unk_vfn_18();
@@ -87,13 +87,13 @@ public:
     virtual void __unk_vfn_21();
 
     // vIndex: 22, symbol: ?tryGetPlayingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@UPlayingSoundAttributes@@@std@@_K@Z
-    virtual std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const;
+    virtual std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64_t) const;
 
     // vIndex: 23, symbol: ?tryGetLoopingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@ULoopingSoundAttributes@@@std@@_K@Z
-    virtual std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const;
+    virtual std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64_t) const;
 
     // symbol: ?fadeOut@NullSoundPlayer@@UEAAX_KM@Z
-    MCVAPI void fadeOut(uint64, float);
+    MCVAPI void fadeOut(uint64_t, float);
 
     // symbol: ?fadeToStopMusic@NullSoundPlayer@@UEAAXM@Z
     MCVAPI void fadeToStopMusic(float);
@@ -111,22 +111,22 @@ public:
     MCVAPI bool isPlayingMusicEvent(std::string const &) const;
 
     // symbol: ?isPlayingSound@NullSoundPlayer@@UEBA_N_K@Z
-    MCVAPI bool isPlayingSound(uint64) const;
+    MCVAPI bool isPlayingSound(uint64_t) const;
 
     // symbol: ?play@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
-    MCVAPI uint64 play(std::string const &, class Vec3 const &, float, float);
+    MCVAPI uint64_t play(std::string const &, class Vec3 const &, float, float);
 
     // symbol: ?playAttached@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$function@$$A6AXAEAUSoundInstanceProperties@@@Z@3@@Z
-    MCVAPI uint64 playAttached(std::string const &, std::function<void (struct SoundInstanceProperties &)> &&);
+    MCVAPI uint64_t playAttached(std::string const &, std::function<void (struct SoundInstanceProperties &)> &&);
 
     // symbol: ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MAEAI@Z
-    MCVAPI void playMusic(std::string const &, float, uint &);
+    MCVAPI void playMusic(std::string const &, float, uint32_t &);
 
     // symbol: ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z
     MCVAPI void playMusic(std::string const &, float);
 
     // symbol: ?playUI@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z
-    MCVAPI uint64 playUI(std::string const &, float, float);
+    MCVAPI uint64_t playUI(std::string const &, float, float);
 
     // symbol: ?setMusicVolumeMultiplier@NullSoundPlayer@@UEAAXM@Z
     MCVAPI void setMusicVolumeMultiplier(float);
@@ -135,7 +135,7 @@ public:
     MCVAPI void stop(std::string const &);
 
     // symbol: ?stop@NullSoundPlayer@@UEAAX_K@Z
-    MCVAPI void stop(uint64);
+    MCVAPI void stop(uint64_t);
 
     // symbol: ?stopAllDelayedSoundActions@NullSoundPlayer@@UEAAXXZ
     MCVAPI void stopAllDelayedSoundActions();
@@ -147,7 +147,7 @@ public:
     MCVAPI void stopMusic();
 
     // symbol: ?unregisterLoop@NullSoundPlayer@@UEAAX_K_N@Z
-    MCVAPI void unregisterLoop(uint64, bool);
+    MCVAPI void unregisterLoop(uint64_t, bool);
 
     // NOLINTEND
 

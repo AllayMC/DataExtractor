@@ -131,7 +131,7 @@ public:
     virtual void __unk_vfn_153();
 
     // vIndex: 154, symbol: ?tryLegacyUpgrade@ElementBlock@@UEBAPEBVBlock@@G@Z
-    virtual class Block const * tryLegacyUpgrade(ushort) const;
+    virtual class Block const * tryLegacyUpgrade(uint16_t) const;
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
@@ -158,16 +158,16 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0ElementBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ElementType@@@Z
-    MCAPI ElementBlock(std::string const &, int, ::ElementType);
+    MCAPI ElementBlock(std::string const &, int32_t, ::ElementType);
 
     // symbol: ?getElementInfo@ElementBlock@@SA?AUElementInfo@@W4ElementType@@@Z
     MCAPI static struct ElementInfo getElementInfo(::ElementType);
 
     // symbol: ?getIngredientForElement@ElementBlock@@SA?AVRecipeIngredient@@W4ElementType@@H@Z
-    MCAPI static class RecipeIngredient getIngredientForElement(::ElementType, int);
+    MCAPI static class RecipeIngredient getIngredientForElement(::ElementType, int32_t);
 
     // symbol: ?getItemForElement@ElementBlock@@SA?AVItemInstance@@W4ElementType@@H@Z
-    MCAPI static class ItemInstance getItemForElement(::ElementType, int);
+    MCAPI static class ItemInstance getItemForElement(::ElementType, int32_t);
 
     // symbol: ?initElements@ElementBlock@@SAXXZ
     MCAPI static void initElements();

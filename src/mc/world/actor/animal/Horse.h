@@ -39,7 +39,7 @@ public:
     virtual void __unk_vfn_10();
 
     // vIndex: 20, symbol: ?getInterpolatedRidingOffset@Horse@@UEBA?AVVec3@@MH@Z
-    virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
+    virtual class Vec3 getInterpolatedRidingOffset(float, int32_t) const;
 
     // vIndex: 23, symbol: __unk_vfn_23
     virtual void __unk_vfn_23();
@@ -81,7 +81,7 @@ public:
     virtual void setStanding(bool);
 
     // vIndex: 83, symbol: ?feed@Horse@@UEAAXH@Z
-    virtual void feed(int);
+    virtual void feed(int32_t);
 
     // vIndex: 103, symbol: ?canFreeze@Horse@@UEBA_NXZ
     virtual bool canFreeze() const;
@@ -96,7 +96,7 @@ public:
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
     // vIndex: 114, symbol: ?onSynchedDataUpdate@Horse@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
 
     // vIndex: 133, symbol: ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
     virtual void openContainerComponent(class Player &);
@@ -129,13 +129,13 @@ public:
     virtual void __unk_vfn_172();
 
     // vIndex: 191, symbol: ?getArmorValue@Horse@@UEBAHXZ
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
 
     // vIndex: 216, symbol: ?setType@Horse@@UEAAXH@Z
-    virtual void setType(int);
+    virtual void setType(int32_t);
 
     // vIndex: 217, symbol: ?getType@Horse@@UEBAHXZ
-    virtual int getType() const;
+    virtual int32_t getType() const;
 
     // vIndex: 218, symbol: ?setHorseEating@Horse@@UEAAX_N@Z
     virtual void setHorseEating(bool);

@@ -27,13 +27,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?nextInt@Random@Core@@UEAAHXZ
-    virtual int nextInt();
+    virtual int32_t nextInt();
 
     // vIndex: 2, symbol: ?nextInt@Random@Core@@UEAAHH@Z
-    virtual int nextInt(int);
+    virtual int32_t nextInt(int32_t);
 
     // vIndex: 3, symbol: ?nextLong@Random@Core@@UEAA_JXZ
-    virtual int64 nextLong();
+    virtual int64_t nextLong();
 
     // vIndex: 4, symbol: ?nextBoolean@Random@Core@@UEAA_NXZ
     virtual bool nextBoolean();
@@ -48,7 +48,7 @@ public:
     virtual double nextGaussianDouble();
 
     // vIndex: 8, symbol: ?consumeCount@Random@Core@@UEAAXI@Z
-    virtual void consumeCount(uint);
+    virtual void consumeCount(uint32_t);
 
     // vIndex: 9, symbol: ?fork@Random@Core@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
     virtual std::unique_ptr<class IRandom> fork();
@@ -57,7 +57,7 @@ public:
     MCVAPI ~Random();
 
     // symbol: ??0Random@Core@@QEAA@I_N@Z
-    MCAPI Random(uint, bool);
+    MCAPI Random(uint32_t, bool);
 
     // symbol: ?nextGaussian@Random@Core@@QEAAMXZ
     MCAPI float nextGaussian();
@@ -67,35 +67,35 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_genRandInt32@Random@Core@@AEAAIXZ
-    MCAPI uint _genRandInt32();
+    MCAPI uint32_t _genRandInt32();
 
     // symbol: ?_genUniformRandomInt@Random@Core@@AEAAIXZ
-    MCAPI uint _genUniformRandomInt();
+    MCAPI uint32_t _genUniformRandomInt();
 
     // symbol: ?_setSeed@Random@Core@@AEAAXI@Z
-    MCAPI void _setSeed(uint);
+    MCAPI void _setSeed(uint32_t);
 
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
     // symbol: ?mFixed@Random@Core@@0U?$atomic@I@std@@A
-    MCAPI static std::atomic<uint> mFixed;
+    MCAPI static std::atomic<uint32_t> mFixed;
 
     // symbol: ?mFixedGaussian@Random@Core@@0U?$atomic@M@std@@A
     MCAPI static std::atomic<float> mFixedGaussian;
 
     // symbol: ?mFixedUInt32@Random@Core@@0U?$atomic@I@std@@A
-    MCAPI static std::atomic<uint> mFixedUInt32;
+    MCAPI static std::atomic<uint32_t> mFixedUInt32;
 
     // symbol: ?mRandomDevice@Random@Core@@0Vrandom_device@std@@A
     MCAPI static std::random_device mRandomDevice;
 
     // symbol: ?mThreadLocalRandom@Random@Core@@0V?$ThreadLocalObject@VRandom@Core@@V?$allocator@VRandom@Core@@@std@@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Core::Random> mThreadLocalRandom;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Core::Random, std::allocator<class Core::Random>> mThreadLocalRandom;
 
     // symbol: ?mUnfixed@Random@Core@@0U?$atomic@I@std@@A
-    MCAPI static std::atomic<uint> mUnfixed;
+    MCAPI static std::atomic<uint32_t> mUnfixed;
 
     // NOLINTEND
 

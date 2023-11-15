@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?npos@BitSet@SFAT@@2_KB
-    MCAPI static uint64 const npos;
+    MCAPI static uint64_t const npos;
 
     // NOLINTEND
 

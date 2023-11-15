@@ -49,7 +49,7 @@ public:
         MCAPI class BaseGameVersion const & getRequiredBaseGameVersion() const;
     
         // symbol: ??RBlockComplexAliasContent@BlockTypeRegistry@@QEBAPEBVBlock@@H@Z
-        MCAPI class Block const * operator()(int) const;
+        MCAPI class Block const * operator()(int32_t) const;
     
         // symbol: ??1BlockComplexAliasContent@BlockTypeRegistry@@QEAA@XZ
         MCAPI ~BlockComplexAliasContent();
@@ -74,7 +74,7 @@ public:
         MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy>, class Block const *);
     
         // symbol: ??0LookupByNameImplReturnType@BlockTypeRegistry@@QEAA@V?$WeakPtr@VBlockLegacy@@@@H_N@Z
-        MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy>, int, bool);
+        MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy>, int32_t, bool);
     
         // NOLINTEND
     
@@ -89,7 +89,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?computeBlockTypeRegistryChecksum@BlockTypeRegistry@@SA_KAEBVBaseGameVersion@@@Z
-    MCAPI static uint64 computeBlockTypeRegistryChecksum(class BaseGameVersion const &);
+    MCAPI static uint64_t computeBlockTypeRegistryChecksum(class BaseGameVersion const &);
 
     // symbol: ?finalizeBlockComponentStorage@BlockTypeRegistry@@SAXXZ
     MCAPI static void finalizeBlockComponentStorage();
@@ -98,7 +98,7 @@ public:
     MCAPI static void forEachBlock(std::function<bool (class BlockLegacy const &)>);
 
     // symbol: ?getBlockNameFromNameHash@BlockTypeRegistry@@SAAEBVHashedString@@_K@Z
-    MCAPI static class HashedString const & getBlockNameFromNameHash(uint64);
+    MCAPI static class HashedString const & getBlockNameFromNameHash(uint64_t);
 
     // symbol: ?getComplexAliasPostSplitBlockNames@BlockTypeRegistry@@SAAEBV?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@AEBVHashedString@@@Z
     MCAPI static std::vector<std::reference_wrapper<class HashedString const>> const & getComplexAliasPostSplitBlockNames(class HashedString const &);
@@ -128,19 +128,19 @@ public:
     MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const &, bool);
 
     // symbol: ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@H_N@Z
-    MCAPI static class Block const * lookupByName(class HashedString const &, int, bool);
+    MCAPI static class Block const * lookupByName(class HashedString const &, int32_t, bool);
 
     // symbol: ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@AEBV?$vector@UBlockComplexAliasBlockState@BlockTypeRegistry@@V?$allocator@UBlockComplexAliasBlockState@BlockTypeRegistry@@@std@@@std@@_N@Z
     MCAPI static class Block const * lookupByName(class HashedString const &, std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const &, bool);
 
     // symbol: ?prepareBlocks@BlockTypeRegistry@@SAXI@Z
-    MCAPI static void prepareBlocks(uint);
+    MCAPI static void prepareBlocks(uint32_t);
 
     // symbol: ?registerAlias@BlockTypeRegistry@@SAXAEBVHashedString@@0@Z
     MCAPI static void registerAlias(class HashedString const &, class HashedString const &);
 
     // symbol: ?registerComplexAlias@BlockTypeRegistry@@SAXAEBVHashedString@@V?$function@$$A6APEBVBlock@@H@Z@std@@AEBV?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@4@AEBVBaseGameVersion@@@Z
-    MCAPI static void registerComplexAlias(class HashedString const &, std::function<class Block const * (int)>, std::vector<std::reference_wrapper<class HashedString const>> const &, class BaseGameVersion const &);
+    MCAPI static void registerComplexAlias(class HashedString const &, std::function<class Block const * (int32_t)>, std::vector<std::reference_wrapper<class HashedString const>> const &, class BaseGameVersion const &);
 
     // symbol: ?unregisterBlock@BlockTypeRegistry@@SAXAEBVHashedString@@@Z
     MCAPI static void unregisterBlock(class HashedString const &);
@@ -153,7 +153,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_lookupByNameImpl@BlockTypeRegistry@@CA?AULookupByNameImplReturnType@1@AEBVHashedString@@HW4LookupByNameImplResolve@1@_N@Z
-    MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(class HashedString const &, int, ::BlockTypeRegistry::LookupByNameImplResolve, bool);
+    MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(class HashedString const &, int32_t, ::BlockTypeRegistry::LookupByNameImplResolve, bool);
 
     // NOLINTEND
 
@@ -172,7 +172,7 @@ private:
     MCAPI static std::map<class HashedString,class SharedPtr<class BlockLegacy>> mBlockLookupMap;
 
     // symbol: ?mBlockNameHashToStringMap@BlockTypeRegistry@@0V?$unordered_map@_KVHashedString@@U?$hash@_K@std@@U?$equal_to@_K@3@V?$allocator@U?$pair@$$CB_KVHashedString@@@std@@@3@@std@@A
-    MCAPI static std::unordered_map<uint64,class HashedString> mBlockNameHashToStringMap;
+    MCAPI static std::unordered_map<uint64_t,class HashedString> mBlockNameHashToStringMap;
 
     // symbol: ?mEntities@BlockTypeRegistry@@0V?$OwnerPtrT@UEntityRegistryRefTraits@@@@A
     MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits> mEntities;

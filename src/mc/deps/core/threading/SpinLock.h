@@ -30,7 +30,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getThreadId@SpinLock@@AEAA_KXZ
-    MCAPI uint64 _getThreadId();
+    MCAPI uint64_t _getThreadId();
 
     // NOLINTEND
 

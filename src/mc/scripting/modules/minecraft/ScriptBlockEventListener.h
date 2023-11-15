@@ -57,7 +57,7 @@ public:
     virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol: ?onBlockDestructionStarted@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual ::EventResult onBlockDestructionStarted(class Player &, class BlockPos const &, uchar);
+    virtual ::EventResult onBlockDestructionStarted(class Player &, class BlockPos const &, uint8_t);
 
     // vIndex: 7, symbol: __unk_vfn_7
     virtual void __unk_vfn_7();

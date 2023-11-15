@@ -24,7 +24,7 @@ public:
     MCAPI struct DynamicPropertyDefinition const * tryGetPropertyDefinition(std::string const &) const;
 
     // symbol: ?tryMergeDefinitions@DynamicPropertiesDefinition@@QEAA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@_K@Z
-    MCAPI std::optional<std::string> tryMergeDefinitions(class DynamicPropertiesDefinition const &, std::string const &, uint64);
+    MCAPI std::optional<std::string> tryMergeDefinitions(class DynamicPropertiesDefinition const &, std::string const &, uint64_t);
 
     // symbol: ??1DynamicPropertiesDefinition@@QEAA@XZ
     MCAPI ~DynamicPropertiesDefinition();
@@ -33,20 +33,20 @@ public:
     MCAPI static void clearAll(std::unordered_map<std::string,std::unique_ptr<class ActorDefinition>> const &);
 
     // symbol: ?ACTOR_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT@DynamicPropertiesDefinition@@2_KB
-    MCAPI static uint64 const ACTOR_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT;
+    MCAPI static uint64_t const ACTOR_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT;
 
     // symbol: ?IDENTIFIER_SIZE_LIMIT@DynamicPropertiesDefinition@@2_KB
-    MCAPI static uint64 const IDENTIFIER_SIZE_LIMIT;
+    MCAPI static uint64_t const IDENTIFIER_SIZE_LIMIT;
 
     // symbol: ?WORLD_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT@DynamicPropertiesDefinition@@2_KB
-    MCAPI static uint64 const WORLD_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT;
+    MCAPI static uint64_t const WORLD_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_canMergeDefinitions@DynamicPropertiesDefinition@@AEBA_NAEBV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KAEAV23@@Z
-    MCAPI bool _canMergeDefinitions(class DynamicPropertiesDefinition const &, std::string const &, uint64, std::string &) const;
+    MCAPI bool _canMergeDefinitions(class DynamicPropertiesDefinition const &, std::string const &, uint64_t, std::string &) const;
 
     // NOLINTEND
 

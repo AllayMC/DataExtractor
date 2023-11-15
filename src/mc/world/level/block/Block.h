@@ -33,10 +33,10 @@ public:
     virtual ::BlockRenderLayer getRenderLayer() const;
 
     // symbol: ??0Block@@QEAA@GV?$not_null@PEAVBlockLegacy@@@gsl@@@Z
-    MCAPI Block(ushort, gsl::not_null<class BlockLegacy *>);
+    MCAPI Block(uint16_t, class gsl::not_null<class BlockLegacy *>);
 
     // symbol: ??0Block@@QEAA@GV?$not_null@PEAVBlockLegacy@@@gsl@@VCompoundTag@@AEBI@Z
-    MCAPI Block(ushort, gsl::not_null<class BlockLegacy *>, class CompoundTag, uint const &);
+    MCAPI Block(uint16_t, class gsl::not_null<class BlockLegacy *>, class CompoundTag, uint32_t const &);
 
     // symbol: ?addAABBs@Block@@QEBAXAEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
     MCAPI void addAABBs(class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
@@ -90,7 +90,7 @@ public:
     MCAPI bool canBeOriginalSurface() const;
 
     // symbol: ?canConnect@Block@@QEBA_NAEBV1@E0@Z
-    MCAPI bool canConnect(class Block const &, uchar, class Block const &) const;
+    MCAPI bool canConnect(class Block const &, uint8_t, class Block const &) const;
 
     // symbol: ?canContainLiquid@Block@@QEBA_NXZ
     MCAPI bool canContainLiquid() const;
@@ -111,13 +111,13 @@ public:
     MCAPI bool canOccludeVibrations() const;
 
     // symbol: ?canProvideFullSupport@Block@@QEBA_NE@Z
-    MCAPI bool canProvideFullSupport(uchar) const;
+    MCAPI bool canProvideFullSupport(uint8_t) const;
 
     // symbol: ?canProvideMultifaceSupport@Block@@QEBA_NE@Z
-    MCAPI bool canProvideMultifaceSupport(uchar) const;
+    MCAPI bool canProvideMultifaceSupport(uint8_t) const;
 
     // symbol: ?canProvideSupport@Block@@QEBA_NEW4BlockSupportType@@@Z
-    MCAPI bool canProvideSupport(uchar, ::BlockSupportType) const;
+    MCAPI bool canProvideSupport(uint8_t, ::BlockSupportType) const;
 
     // symbol: ?canReactToNeighborsDuringInstatick@Block@@QEBA_NXZ
     MCAPI bool canReactToNeighborsDuringInstatick() const;
@@ -141,7 +141,7 @@ public:
     MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>) const;
 
     // symbol: ?computeRawSerializationIdHashForNetwork@Block@@QEBAIXZ
-    MCAPI uint computeRawSerializationIdHashForNetwork() const;
+    MCAPI uint32_t computeRawSerializationIdHashForNetwork() const;
 
     // symbol: ?copyState@Block@@QEBAAEBV1@AEBV1@AEBVBlockState@@@Z
     MCAPI class Block const & copyState(class Block const &, class BlockState const &) const;
@@ -165,7 +165,7 @@ public:
     MCAPI void finalizeBlockComponentStorage();
 
     // symbol: ?forEachState@Block@@QEBAXV?$function@$$A6A_NAEBVBlockState@@H@Z@std@@@Z
-    MCAPI void forEachState(std::function<bool (class BlockState const &, int)>) const;
+    MCAPI void forEachState(std::function<bool (class BlockState const &, int32_t)>) const;
 
     // symbol: ?getAllowsRunes@Block@@QEBA_NXZ
     MCAPI bool getAllowsRunes() const;
@@ -174,7 +174,7 @@ public:
     MCAPI ::BlockActorType getBlockEntityType() const;
 
     // symbol: ?getBurnOdds@Block@@QEBAHXZ
-    MCAPI int getBurnOdds() const;
+    MCAPI int32_t getBurnOdds() const;
 
     // symbol: ?getCollisionShape@Block@@QEBA_NAEAVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     MCAPI bool getCollisionShape(class AABB &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -183,13 +183,13 @@ public:
     MCAPI bool getCollisionShapeForCamera(class AABB &, class IConstBlockSource const &, class BlockPos const &) const;
 
     // symbol: ?getColor@Block@@QEBAHXZ
-    MCAPI int getColor() const;
+    MCAPI int32_t getColor() const;
 
     // symbol: ?getColor@Block@@QEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI int getColor(class BlockSource &, class BlockPos const &) const;
+    MCAPI int32_t getColor(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ?getComparatorSignal@Block@@QEBAHAEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI int getComparatorSignal(class BlockSource &, class BlockPos const &, uchar) const;
+    MCAPI int32_t getComparatorSignal(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // symbol: ?getConnectedDirections@Block@@QEBA?AUHorizontalDirectionBits@BlockLegacy@@AEBVBlockPos@@AEAVBlockSource@@@Z
     MCAPI struct BlockLegacy::HorizontalDirectionBits getConnectedDirections(class BlockPos const &, class BlockSource &) const;
@@ -207,7 +207,7 @@ public:
     MCAPI float getDestroySpeed() const;
 
     // symbol: ?getDirectSignal@Block@@QEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI int32_t getDirectSignal(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // symbol: ?getEntityForModification@Block@@QEBAAEAVEntityContext@@XZ
     MCAPI class EntityContext & getEntityForModification() const;
@@ -216,7 +216,7 @@ public:
     MCAPI float getExplosionResistance() const;
 
     // symbol: ?getFlameOdds@Block@@QEBAHXZ
-    MCAPI int getFlameOdds() const;
+    MCAPI int32_t getFlameOdds() const;
 
     // symbol: ?getFriction@Block@@QEBAMXZ
     MCAPI float getFriction() const;
@@ -249,10 +249,10 @@ public:
     MCAPI class AABB const & getOutline(class IConstBlockSource const &, class BlockPos const &, class AABB &) const;
 
     // symbol: ?getPlacementBlock@Block@@QEBAAEBV1@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    MCAPI class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    MCAPI class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // symbol: ?getRuntimeId@Block@@QEBAAEBIXZ
-    MCAPI uint const & getRuntimeId() const;
+    MCAPI uint32_t const & getRuntimeId() const;
 
     // symbol: ?getSecondPart@Block@@QEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
     MCAPI bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
@@ -267,7 +267,7 @@ public:
     MCAPI float getTranslucency() const;
 
     // symbol: ?getVariant@Block@@QEBAHXZ
-    MCAPI int getVariant() const;
+    MCAPI int32_t getVariant() const;
 
     // symbol: ?getVisualShape@Block@@QEBAAEBVAABB@@AEAV2@@Z
     MCAPI class AABB const & getVisualShape(class AABB &) const;
@@ -288,7 +288,7 @@ public:
     MCAPI bool hasState(class BlockState const &) const;
 
     // symbol: ?hasTag@Block@@QEBA_NAEB_K@Z
-    MCAPI bool hasTag(uint64 const &) const;
+    MCAPI bool hasTag(uint64_t const &) const;
 
     // symbol: ?hasTag@Block@@QEBA_NAEBVHashedString@@@Z
     MCAPI bool hasTag(class HashedString const &) const;
@@ -417,7 +417,7 @@ public:
     MCAPI bool mayPick() const;
 
     // symbol: ?mayPlace@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // symbol: ?mayPlace@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
@@ -447,7 +447,7 @@ public:
     MCAPI void onPlace(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // symbol: ?onPlayerPlacing@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@E@Z
-    MCAPI void onPlayerPlacing(class BlockSource &, class BlockPos const &, class Actor &, uchar) const;
+    MCAPI void onPlayerPlacing(class BlockSource &, class BlockPos const &, class Actor &, uint8_t) const;
 
     // symbol: ?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
     MCAPI void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
@@ -510,7 +510,7 @@ public:
     MCAPI void spawnResources(class BlockSource &, class BlockPos const &, class Randomize &, float, class ItemStack const &) const;
 
     // symbol: ?telemetryVariant@Block@@QEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI int telemetryVariant(class BlockSource &, class BlockPos const &) const;
+    MCAPI int32_t telemetryVariant(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ?toDebugString@Block@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toDebugString() const;
@@ -519,7 +519,7 @@ public:
     MCAPI void transformOnFall(class BlockSource &, class BlockPos const &, class Actor *, float) const;
 
     // symbol: ?triggerEvent@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
-    MCAPI void triggerEvent(class BlockSource &, class BlockPos const &, int, int) const;
+    MCAPI void triggerEvent(class BlockSource &, class BlockPos const &, int32_t, int32_t) const;
 
     // symbol: ?tryGetCopperBehavior@Block@@QEBAPEBVCopperBehavior@@XZ
     MCAPI class CopperBehavior const * tryGetCopperBehavior() const;
@@ -546,7 +546,7 @@ public:
     MCAPI bool updateTallestCollisionShape(class BlockSource const &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
 
     // symbol: ?use@Block@@QEBA_NAEAVPlayer@@AEBVBlockPos@@EV?$optional@VVec3@@@std@@@Z
-    MCAPI bool use(class Player &, class BlockPos const &, uchar, std::optional<class Vec3>) const;
+    MCAPI bool use(class Player &, class BlockPos const &, uint8_t, std::optional<class Vec3>) const;
 
     // symbol: ?waterSpreadCausesSpawn@Block@@QEBA_NXZ
     MCAPI bool waterSpreadCausesSpawn() const;
@@ -562,10 +562,10 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?buildSerializationId@Block@@IEAAXI@Z
-    MCAPI void buildSerializationId(uint);
+    MCAPI void buildSerializationId(uint32_t);
 
     // symbol: ?setRuntimeId@Block@@IEBAXAEBI@Z
-    MCAPI void setRuntimeId(uint const &) const;
+    MCAPI void setRuntimeId(uint32_t const &) const;
 
     // NOLINTEND
 

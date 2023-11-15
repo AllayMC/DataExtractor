@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?nextLong@Xoroshiro128PlusPlus@@QEAA_JXZ
-    MCAPI int64 nextLong();
+    MCAPI int64_t nextLong();
 
     // NOLINTEND
 

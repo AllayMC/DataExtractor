@@ -23,7 +23,7 @@ public:
     MCAPI float getFloat(class Random &) const;
 
     // symbol: ?getInt@RandomValueBounds@@QEBAHAEAVRandom@@@Z
-    MCAPI int getInt(class Random &) const;
+    MCAPI int32_t getInt(class Random &) const;
 
     // symbol: ?getMax@RandomValueBounds@@QEBAMXZ
     MCAPI float getMax() const;

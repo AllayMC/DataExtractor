@@ -68,7 +68,7 @@ public:
     MCAPI class Scripting::Result<void> createExplosion_V010(class Vec3 const &, float, struct Scripting::TypedObjectHandle<struct ScriptModuleMinecraft::ScriptExplosionOptions>) const;
 
     // symbol: ?fillBlocks@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@I$$V@Scripting@@AEBVVec3@@0AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@4@@std@@AEBV?$optional@UScriptBlockFillOptions@ScriptModuleMinecraft@@@7@@Z
-    MCAPI class Scripting::Result<uint> fillBlocks(class Vec3 const &, class Vec3 const &, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>> const &, std::optional<struct ScriptModuleMinecraft::ScriptBlockFillOptions> const &);
+    MCAPI class Scripting::Result<uint32_t> fillBlocks(class Vec3 const &, class Vec3 const &, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>> const &, std::optional<struct ScriptModuleMinecraft::ScriptBlockFillOptions> const &);
 
     // symbol: ?getBlock@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@VWeakLifetimeScope@4@AEBVVec3@@@Z
     MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> getBlock(class Scripting::WeakLifetimeScope, class Vec3 const &) const;
@@ -131,7 +131,7 @@ public:
     MCAPI class Scripting::Result<struct Scripting::JSON> runCommand_V010(struct Scripting::ContextConfig const &, std::string const &);
 
     // symbol: ?setWeather@ScriptDimension@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@W4ScriptWeatherType@12@V?$optional@H@std@@@Z
-    MCAPI class Scripting::Result<void> setWeather(::ScriptModuleMinecraft::ScriptDimension::ScriptWeatherType, std::optional<int>);
+    MCAPI class Scripting::Result<void> setWeather(::ScriptModuleMinecraft::ScriptDimension::ScriptWeatherType, std::optional<int32_t>);
 
     // symbol: ?spawnEntity@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@UScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@4@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>, struct ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, struct ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> spawnEntity(std::string const &, class Vec3 const &) const;

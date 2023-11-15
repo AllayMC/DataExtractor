@@ -38,19 +38,19 @@ public:
     virtual bool supportsSizeQuery() const;
 
     // vIndex: 4, symbol: ?getTotalSize@StorageArea_windows@Core@@UEBA_KXZ
-    virtual uint64 getTotalSize() const;
+    virtual uint64_t getTotalSize() const;
 
     // vIndex: 5, symbol: ?getUsedSize@StorageArea_windows@Core@@UEAA?AVResult@2@AEA_K@Z
-    virtual class Core::Result getUsedSize(uint64 &);
+    virtual class Core::Result getUsedSize(uint64_t &);
 
     // vIndex: 6, symbol: ?setUsedSizeOverride@StorageArea_windows@Core@@UEAAX_K@Z
-    virtual void setUsedSizeOverride(uint64);
+    virtual void setUsedSizeOverride(uint64_t);
 
     // vIndex: 7, symbol: ?clearUsedSizeOverride@StorageArea_windows@Core@@UEAAXXZ
     virtual void clearUsedSizeOverride();
 
     // vIndex: 8, symbol: ?notifyChangeInFileSize@FileStorageArea@Core@@UEAAX_J0@Z
-    virtual void notifyChangeInFileSize(int64, int64);
+    virtual void notifyChangeInFileSize(int64_t, int64_t);
 
     // vIndex: 9, symbol: __unk_vfn_9
     virtual void __unk_vfn_9();
@@ -71,16 +71,16 @@ public:
     virtual void resetCanAttemptExtendSize();
 
     // vIndex: 15, symbol: ?getExtendSizeThreshold@StorageArea_windows@Core@@UEBA?AVResult@2@AEA_K@Z
-    virtual class Core::Result getExtendSizeThreshold(uint64 &) const;
+    virtual class Core::Result getExtendSizeThreshold(uint64_t &) const;
 
     // vIndex: 16, symbol: ?attemptExtendSize@StorageArea_windows@Core@@UEAAXAEB_JV?$function@$$A6AXXZ@std@@@Z
-    virtual void attemptExtendSize(int64 const &, std::function<void (void)>);
+    virtual void attemptExtendSize(int64_t const &, std::function<void (void)>);
 
     // vIndex: 17, symbol: ?preemptiveExtendSize@StorageArea_windows@Core@@UEAAX_KV?$function@$$A6AXXZ@std@@1@Z
-    virtual void preemptiveExtendSize(uint64, std::function<void (void)>, std::function<void (void)>);
+    virtual void preemptiveExtendSize(uint64_t, std::function<void (void)>, std::function<void (void)>);
 
     // vIndex: 18, symbol: ?getAvailableUserStorageSize@StorageArea_windows@Core@@UEAA_KXZ
-    virtual uint64 getAvailableUserStorageSize();
+    virtual uint64_t getAvailableUserStorageSize();
 
     // vIndex: 19, symbol: ?unloadFlatFileManifests@FileStorageArea@Core@@UEAAX_N@Z
     virtual void unloadFlatFileManifests(bool);
@@ -110,7 +110,7 @@ public:
     virtual bool shouldAllowCommit() const;
 
     // vIndex: 28, symbol: ?trackBytesWritten@FileStorageArea@Core@@UEAAXAEBVPath@2@_KW4WriteOperation@2@@Z
-    virtual void trackBytesWritten(class Core::Path const &, uint64, ::Core::WriteOperation);
+    virtual void trackBytesWritten(class Core::Path const &, uint64_t, ::Core::WriteOperation);
 
     // vIndex: 29, symbol: ?trackWriteOperation@FileStorageArea@Core@@UEAAXAEBVPath@2@W4WriteOperation@2@@Z
     virtual void trackWriteOperation(class Core::Path const &, ::Core::WriteOperation);

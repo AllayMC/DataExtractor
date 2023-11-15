@@ -83,10 +83,10 @@ public:
     MCAPI void _addResponseSlotInfo(struct ItemStackRequestHandlerSlotInfo const &, class ItemStack const &);
 
     // symbol: ?_cacheLegacySlotIdAssignment@ItemStackRequestActionHandler@@QEAAXW4ContainerEnumName@@EAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@AEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
-    MCAPI void _cacheLegacySlotIdAssignment(::ContainerEnumName, uchar, ItemStackLegacyRequestId const &, ItemStackNetId const &);
+    MCAPI void _cacheLegacySlotIdAssignment(::ContainerEnumName, uint8_t, class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int32_t, 0> const &, class TypedServerNetId<struct ItemStackNetIdTag, int32_t, 0> const &);
 
     // symbol: ?_cacheSlotIdAssigment@ItemStackRequestActionHandler@@QEAAXAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@EEAEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
-    MCAPI void _cacheSlotIdAssigment(ContainerRuntimeId const &, uchar, uchar, ItemStackNetId const &);
+    MCAPI void _cacheSlotIdAssigment(class TypedRuntimeId<struct ContainerRuntimeIdTag, uint32_t, 0> const &, uint8_t, uint8_t, class TypedServerNetId<struct ItemStackNetIdTag, int32_t, 0> const &);
 
     // symbol: ?_getOrInitSparseContainer@ItemStackRequestActionHandler@@QEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
     MCAPI std::shared_ptr<class SimpleSparseContainer> _getOrInitSparseContainer(::ContainerEnumName);
@@ -101,16 +101,16 @@ public:
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo const &, bool, bool);
 
     // symbol: ?addFilteredStrings@ItemStackRequestActionHandler@@QEAAXV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI void addFilteredStrings(ItemStackRequestId, std::vector<std::string>);
+    MCAPI void addFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int32_t, 0>, std::vector<std::string>);
 
     // symbol: ?endRequest@ItemStackRequestActionHandler@@QEAA?AV?$tuple@W4ItemStackNetResult@@V?$vector@UItemStackResponseContainerInfo@@V?$allocator@UItemStackResponseContainerInfo@@@std@@@std@@@std@@W4ItemStackNetResult@@@Z
     MCAPI std::tuple<::ItemStackNetResult, std::vector<struct ItemStackResponseContainerInfo>> endRequest(::ItemStackNetResult);
 
     // symbol: ?getFilteredStrings@ItemStackRequestActionHandler@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@@Z
-    MCAPI std::vector<std::string> const & getFilteredStrings(ItemStackRequestId) const;
+    MCAPI std::vector<std::string> const & getFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int32_t, 0>) const;
 
     // symbol: ?getRequestId@ItemStackRequestActionHandler@@QEBAAEBV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
-    MCAPI ItemStackRequestId const & getRequestId() const;
+    MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int32_t, 0> const & getRequestId() const;
 
     // symbol: ?getScreenContext@ItemStackRequestActionHandler@@QEBAAEBVContainerScreenContext@@XZ
     MCAPI class ContainerScreenContext const & getScreenContext() const;
@@ -141,7 +141,7 @@ public:
     MCAPI ::ItemStackNetResult _handleTransfer(class ItemStackRequestActionTransferBase const &, bool, bool, bool);
 
     // symbol: ?_resolveSlotIdAssignment@ItemStackRequestActionHandler@@AEAA?AV?$optional@URequestSlotIdAssignment@ItemStackRequestActionHandler@@@std@@AEBUItemStackRequestSlotInfo@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
-    MCAPI std::optional<struct ItemStackRequestActionHandler::RequestSlotIdAssignment> _resolveSlotIdAssignment(struct ItemStackRequestSlotInfo const &, ContainerRuntimeId const &);
+    MCAPI std::optional<struct ItemStackRequestActionHandler::RequestSlotIdAssignment> _resolveSlotIdAssignment(struct ItemStackRequestSlotInfo const &, class TypedRuntimeId<struct ContainerRuntimeIdTag, uint32_t, 0> const &);
 
     // symbol: ?_tryGetCurrentScreenData@ItemStackRequestActionHandler@@AEBAPEAUScreenData@1@XZ
     MCAPI struct ItemStackRequestActionHandler::ScreenData * _tryGetCurrentScreenData() const;

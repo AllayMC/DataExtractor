@@ -58,7 +58,7 @@ public:
     MCVAPI ~RandomizableBlockActorContainerBase();
 
     // symbol: ?setLootTable@RandomizableBlockActorContainerBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI void setLootTable(std::string const &, int);
+    MCAPI void setLootTable(std::string const &, int32_t);
 
     // symbol: ?unPackLootTable@RandomizableBlockActorContainerBase@@QEAAXAEAVLevel@@AEAVContainer@@V?$AutomaticID@VDimension@@H@@PEAVActor@@@Z
     MCAPI void unPackLootTable(class Level &, class Container &, DimensionType, class Actor *);

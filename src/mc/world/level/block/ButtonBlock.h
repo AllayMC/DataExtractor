@@ -130,7 +130,7 @@ public:
     virtual void __unk_vfn_83();
 
     // vIndex: 92, symbol: ?mayPlace@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 93, symbol: ?mayPlace@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
@@ -142,7 +142,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@ButtonBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 109, symbol: ?isAttachedTo@ButtonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
     virtual bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
@@ -163,7 +163,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@ButtonBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 143, symbol: ?canSpawnOn@ButtonBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor *) const;
@@ -193,7 +193,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@ButtonBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -217,14 +217,14 @@ public:
     MCAPI void buttonPressed(class BlockSource &, class Block const &, class Vec3 const &, class Actor *) const;
 
     // symbol: ?canAttachTo@ButtonBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI static bool canAttachTo(class BlockSource &, class BlockPos const &, uchar);
+    MCAPI static bool canAttachTo(class BlockSource &, class BlockPos const &, uint8_t);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ??0ButtonBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N@Z
-    MCAPI ButtonBlock(std::string const &, int, class Material const &, bool);
+    MCAPI ButtonBlock(std::string const &, int32_t, class Material const &, bool);
 
     // NOLINTEND
 
@@ -237,7 +237,7 @@ public:
     MCAPI void _checkPressed(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ?_getShape@ButtonBlock@@AEBA?AVAABB@@_NE0@Z
-    MCAPI class AABB _getShape(bool, uchar, bool) const;
+    MCAPI class AABB _getShape(bool, uint8_t, bool) const;
 
     // NOLINTEND
 

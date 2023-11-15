@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?containerContentChanged@HudContainerModel@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

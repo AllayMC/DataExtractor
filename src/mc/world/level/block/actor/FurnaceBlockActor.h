@@ -23,10 +23,10 @@ public:
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 
     // symbol: ?canPullOutItem@FurnaceBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const &) const;
+    MCVAPI bool canPullOutItem(int32_t, int32_t, class ItemStack const &) const;
 
     // symbol: ?canPushInItem@FurnaceBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPushInItem(int, int, class ItemStack const &) const;
+    MCVAPI bool canPushInItem(int32_t, int32_t, class ItemStack const &) const;
 
     // symbol: ?fixupOnLoad@FurnaceBlockActor@@UEAAXAEAVLevelChunk@@@Z
     MCVAPI void fixupOnLoad(class LevelChunk &);
@@ -38,13 +38,13 @@ public:
     MCVAPI class Container const * getContainer() const;
 
     // symbol: ?getContainerSize@FurnaceBlockActor@@UEBAHXZ
-    MCVAPI int getContainerSize() const;
+    MCVAPI int32_t getContainerSize() const;
 
     // symbol: ?getItem@FurnaceBlockActor@@UEBAAEBVItemStack@@H@Z
-    MCVAPI class ItemStack const & getItem(int) const;
+    MCVAPI class ItemStack const & getItem(int32_t) const;
 
     // symbol: ?getMaxStackSize@FurnaceBlockActor@@UEBAHXZ
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
 
     // symbol: ?getName@FurnaceBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getName() const;
@@ -65,10 +65,10 @@ public:
     MCVAPI bool save(class CompoundTag &) const;
 
     // symbol: ?serverInitItemStackIds@FurnaceBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void (int, class ItemStack const &)>);
+    MCVAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void (int32_t, class ItemStack const &)>);
 
     // symbol: ?setItem@FurnaceBlockActor@@UEAAXHAEBVItemStack@@@Z
-    MCVAPI void setItem(int, class ItemStack const &);
+    MCVAPI void setItem(int32_t, class ItemStack const &);
 
     // symbol: ?startOpen@FurnaceBlockActor@@UEAAXAEAVPlayer@@@Z
     MCVAPI void startOpen(class Player &);
@@ -92,16 +92,16 @@ public:
     MCAPI void checkForSmeltEverythingAchievement(class BlockSource &);
 
     // symbol: ?getLitDuration@FurnaceBlockActor@@QEBAHXZ
-    MCAPI int getLitDuration() const;
+    MCAPI int32_t getLitDuration() const;
 
     // symbol: ?getLitTime@FurnaceBlockActor@@QEBAHXZ
-    MCAPI int getLitTime() const;
+    MCAPI int32_t getLitTime() const;
 
     // symbol: ?getStoredXP@FurnaceBlockActor@@QEBAHXZ
-    MCAPI int getStoredXP() const;
+    MCAPI int32_t getStoredXP() const;
 
     // symbol: ?getTickCount@FurnaceBlockActor@@QEBAHXZ
-    MCAPI int getTickCount() const;
+    MCAPI int32_t getTickCount() const;
 
     // symbol: ?isEmptiedByHopper@FurnaceBlockActor@@QEAA_NAEAVBlockSource@@@Z
     MCAPI bool isEmptiedByHopper(class BlockSource &);
@@ -110,25 +110,25 @@ public:
     MCAPI void onFurnaceBlockRemoved(class BlockSource &);
 
     // symbol: ?setLitDuration@FurnaceBlockActor@@QEAAXH@Z
-    MCAPI void setLitDuration(int);
+    MCAPI void setLitDuration(int32_t);
 
     // symbol: ?setLitTime@FurnaceBlockActor@@QEAAXH@Z
-    MCAPI void setLitTime(int);
+    MCAPI void setLitTime(int32_t);
 
     // symbol: ?setStoredXP@FurnaceBlockActor@@QEAAXH@Z
-    MCAPI void setStoredXP(int);
+    MCAPI void setStoredXP(int32_t);
 
     // symbol: ?setTickCount@FurnaceBlockActor@@QEAAXH@Z
-    MCAPI void setTickCount(int);
+    MCAPI void setTickCount(int32_t);
 
     // symbol: ?storeXPRewardForRemovingWithHopper@FurnaceBlockActor@@QEAAXAEBVItemStackBase@@H@Z
-    MCAPI void storeXPRewardForRemovingWithHopper(class ItemStackBase const &, int);
+    MCAPI void storeXPRewardForRemovingWithHopper(class ItemStackBase const &, int32_t);
 
     // symbol: ?withdrawStoredXPReward@FurnaceBlockActor@@QEAAHXZ
-    MCAPI int withdrawStoredXPReward();
+    MCAPI int32_t withdrawStoredXPReward();
 
     // symbol: ?getAvailableFuelSetCount@FurnaceBlockActor@@SAHHAEBVItemStackBase@@@Z
-    MCAPI static int getAvailableFuelSetCount(int, class ItemStackBase const &);
+    MCAPI static int32_t getAvailableFuelSetCount(int32_t, class ItemStackBase const &);
 
     // symbol: ?getBurnDuration@FurnaceBlockActor@@SAMAEBVItemStackBase@@M@Z
     MCAPI static float getBurnDuration(class ItemStackBase const &, float);
@@ -137,13 +137,13 @@ public:
     MCAPI static float getItemBurnDuration(class Item const &, float);
 
     // symbol: ?getXPRewardFromSmeltingItems@FurnaceBlockActor@@SAHAEBVItemStackBase@@H@Z
-    MCAPI static int getXPRewardFromSmeltingItems(class ItemStackBase const &, int);
+    MCAPI static int32_t getXPRewardFromSmeltingItems(class ItemStackBase const &, int32_t);
 
     // symbol: ?isItemAllowedInFuelSlot@FurnaceBlockActor@@SA_NHAEBVItemStackBase@@H@Z
-    MCAPI static bool isItemAllowedInFuelSlot(int, class ItemStackBase const &, int);
+    MCAPI static bool isItemAllowedInFuelSlot(int32_t, class ItemStackBase const &, int32_t);
 
     // symbol: ?BURN_INTERVAL@FurnaceBlockActor@@2HB
-    MCAPI static int const BURN_INTERVAL;
+    MCAPI static int32_t const BURN_INTERVAL;
 
     // symbol: ?DEFAULT_SMELTING_TIME@FurnaceBlockActor@@2MB
     MCAPI static float const DEFAULT_SMELTING_TIME;
@@ -153,7 +153,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0FurnaceBlockActor@@IEAA@W4BlockActorType@@AEBVBlockPos@@AEBVHashedString@@W4LevelSoundEvent@@W4ContainerType@@HAEBVBlock@@5@Z
-    MCAPI FurnaceBlockActor(::BlockActorType, class BlockPos const &, class HashedString const &, ::LevelSoundEvent, ::ContainerType, int, class Block const &, class Block const &);
+    MCAPI FurnaceBlockActor(::BlockActorType, class BlockPos const &, class HashedString const &, ::LevelSoundEvent, ::ContainerType, int32_t, class Block const &, class Block const &);
 
     // NOLINTEND
 
@@ -172,7 +172,7 @@ public:
     MCAPI static float _getXPRewardMultiplier(class ItemStackBase const &);
 
     // symbol: ?_roundXPReward@FurnaceBlockActor@@CAHM@Z
-    MCAPI static int _roundXPReward(float);
+    MCAPI static int32_t _roundXPReward(float);
 
     // NOLINTEND
 

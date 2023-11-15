@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?doValidate@ExpressionNodeCerealConstraint@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
-    virtual void doValidate(entt::meta_any const &, class cereal::SerializerContext &) const;
+    virtual void doValidate(class entt::meta_any const &, class cereal::SerializerContext &) const;
 
     // symbol: ??1ExpressionNodeCerealConstraint@@UEAA@XZ
     MCVAPI ~ExpressionNodeCerealConstraint();

@@ -40,7 +40,7 @@ public:
     MCAPI void _apply(class ItemStackBase &, class Random &, class LootTableContext &) const;
 
     // symbol: ?_parseBannerPattern@SetBannerDetailsFunction@@CAXAEAV?$vector@U?$pair@EW4ItemColor@@@std@@V?$allocator@U?$pair@EW4ItemColor@@@std@@@2@@std@@AEBVValue@Json@@@Z
-    MCAPI static void _parseBannerPattern(std::vector<std::pair<uchar, ::ItemColor>> &, class Json::Value const &);
+    MCAPI static void _parseBannerPattern(std::vector<std::pair<uint8_t, ::ItemColor>> &, class Json::Value const &);
 
     // NOLINTEND
 

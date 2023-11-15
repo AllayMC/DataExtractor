@@ -109,7 +109,7 @@ public:
     virtual void __unk_vfn_83();
 
     // vIndex: 92, symbol: ?mayPlace@CakeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 100, symbol: ?neighborChanged@CakeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
@@ -130,7 +130,7 @@ public:
     virtual void __unk_vfn_124();
 
     // vIndex: 125, symbol: ?getComparatorSignal@CakeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uchar) const;
+    virtual int32_t getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uint8_t) const;
 
     // vIndex: 127, symbol: __unk_vfn_127
     virtual void __unk_vfn_127();
@@ -139,7 +139,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@CakeBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -163,7 +163,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@CakeBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -181,7 +181,7 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 
     // symbol: ??0CakeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CakeBlock(std::string const &, int);
+    MCAPI CakeBlock(std::string const &, int32_t);
 
     // symbol: ?removeCakeSlice@CakeBlock@@SAXAEAVPlayer@@AEAVBlockSource@@AEBVBlockPos@@PEBVBlock@@@Z
     MCAPI static void removeCakeSlice(class Player &, class BlockSource &, class BlockPos const &, class Block const *);

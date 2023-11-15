@@ -59,7 +59,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 67, symbol: ?isValidAuxValue@BoatItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 70, symbol: __unk_vfn_70
     virtual void __unk_vfn_70();
@@ -80,7 +80,7 @@ public:
     virtual void __unk_vfn_80();
 
     // vIndex: 85, symbol: ?dispense@BoatItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 95, symbol: ?buildDescriptionId@BoatItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
@@ -92,16 +92,16 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 120, symbol: ?getIconInfo@BoatItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int32_t, bool) const;
 
     // vIndex: 135, symbol: ?_useOn@BoatItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // vIndex: 136, symbol: ?_getActorType@BoatItem@@EEBA?AW4ActorType@@XZ
     virtual ::ActorType _getActorType() const;
 
     // symbol: ??0BoatItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
-    MCAPI BoatItem(std::string const &, int, int);
+    MCAPI BoatItem(std::string const &, int32_t, int32_t);
 
     // NOLINTEND
 

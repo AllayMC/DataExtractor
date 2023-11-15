@@ -32,13 +32,13 @@ public:
     virtual bool isValid() const;
 
     // vIndex: 7, symbol: ?_read@MovePlayerPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1MovePlayerPacket@@UEAA@XZ
     MCVAPI ~MovePlayerPacket();
 
     // symbol: ??0MovePlayerPacket@@QEAA@AEBVPlayer@@W4PositionMode@PlayerPositionModeComponent@@HH@Z
-    MCAPI MovePlayerPacket(class Player const &, ::PlayerPositionModeComponent::PositionMode, int, int);
+    MCAPI MovePlayerPacket(class Player const &, ::PlayerPositionModeComponent::PositionMode, int32_t, int32_t);
 
     // symbol: ??0MovePlayerPacket@@QEAA@XZ
     MCAPI MovePlayerPacket();

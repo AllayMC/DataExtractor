@@ -18,7 +18,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 3, symbol: ?setStrength@ProducerComponent@@UEAAXH@Z
-    virtual void setStrength(int);
+    virtual void setStrength(int32_t);
 
     // vIndex: 8, symbol: ?canStopPower@ProducerComponent@@UEBA_NXZ
     virtual bool canStopPower() const;

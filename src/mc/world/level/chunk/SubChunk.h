@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0SubChunk@@QEAA@PEBVBlock@@_N1AEAVSpinLock@@C@Z
-    MCAPI SubChunk(class Block const *, bool, bool, class SpinLock &, schar);
+    MCAPI SubChunk(class Block const *, bool, bool, class SpinLock &, int8_t);
 
     // symbol: ??0SubChunk@@QEAA@$$QEAU0@@Z
     MCAPI SubChunk(struct SubChunk &&);
@@ -34,22 +34,22 @@ public:
     MCAPI void deserialize(class IDataInput &, class BlockPalette const &, class SubChunkPos const &, std::optional<struct DeserializationChanges *>);
 
     // symbol: ?fetchBlocks@SubChunk@@QEBAXAEBVBlockPos@@0FAEAVBlockVolume@@@Z
-    MCAPI void fetchBlocks(class BlockPos const &, class BlockPos const &, short, class BlockVolume &) const;
+    MCAPI void fetchBlocks(class BlockPos const &, class BlockPos const &, int16_t, class BlockVolume &) const;
 
     // symbol: ?fetchBlocksInBox@SubChunk@@QEBAXAEBVBlockPos@@AEBVBoundingBox@@AEBV?$function@$$A6A_NAEBVBlock@@@Z@std@@AEAV?$vector@V?$BlockDataFetchResult@VBlock@@@@V?$allocator@V?$BlockDataFetchResult@VBlock@@@@@std@@@5@@Z
     MCAPI void fetchBlocksInBox(class BlockPos const &, class BoundingBox const &, std::function<bool (class Block const &)> const &, std::vector<class BlockDataFetchResult<class Block>> &) const;
 
     // symbol: ?fetchBlocksInCylinder@SubChunk@@QEBAXAEBVBlockPos@@0IIAEBV?$function@$$A6A_NAEBVBlock@@@Z@std@@AEAV?$vector@V?$BlockDataFetchResult@VBlock@@@@V?$allocator@V?$BlockDataFetchResult@VBlock@@@@@std@@@4@@Z
-    MCAPI void fetchBlocksInCylinder(class BlockPos const &, class BlockPos const &, uint, uint, std::function<bool (class Block const &)> const &, std::vector<class BlockDataFetchResult<class Block>> &) const;
+    MCAPI void fetchBlocksInCylinder(class BlockPos const &, class BlockPos const &, uint32_t, uint32_t, std::function<bool (class Block const &)> const &, std::vector<class BlockDataFetchResult<class Block>> &) const;
 
     // symbol: ?getLight@SubChunk@@QEBA?AULightPair@SubChunkBrightnessStorage@@G@Z
-    MCAPI struct SubChunkBrightnessStorage::LightPair getLight(ushort) const;
+    MCAPI struct SubChunkBrightnessStorage::LightPair getLight(uint16_t) const;
 
     // symbol: ?getSubChunkState@SubChunk@@QEBA?AW4SubChunkState@1@XZ
     MCAPI ::SubChunk::SubChunkState getSubChunkState() const;
 
     // symbol: ?initialize@SubChunk@@QEAAXPEBVBlock@@_N1AEAVSpinLock@@C@Z
-    MCAPI void initialize(class Block const *, bool, bool, class SpinLock &, schar);
+    MCAPI void initialize(class Block const *, bool, bool, class SpinLock &, int8_t);
 
     // symbol: ?isPaletteUniform@SubChunk@@QEBA_NAEBVBlock@@@Z
     MCAPI bool isPaletteUniform(class Block const &) const;
@@ -91,10 +91,10 @@ public:
     MCAPI void setAllIsNoSkyLight();
 
     // symbol: ?setBlockLight@SubChunk@@QEAAXGE@Z
-    MCAPI void setBlockLight(ushort, uchar);
+    MCAPI void setBlockLight(uint16_t, uint8_t);
 
     // symbol: ?setFromBlockVolume@SubChunk@@QEAAXAEBVBlockVolume@@F@Z
-    MCAPI void setFromBlockVolume(class BlockVolume const &, short);
+    MCAPI void setFromBlockVolume(class BlockVolume const &, int16_t);
 
     // symbol: ?setNeedsClientLighting@SubChunk@@QEAAX_N@Z
     MCAPI void setNeedsClientLighting(bool);
@@ -103,7 +103,7 @@ public:
     MCAPI void setNeedsInitLighting(bool);
 
     // symbol: ?setSkyLight@SubChunk@@QEAAXGE@Z
-    MCAPI void setSkyLight(ushort, uchar);
+    MCAPI void setSkyLight(uint16_t, uint8_t);
 
     // symbol: ??1SubChunk@@QEAA@XZ
     MCAPI ~SubChunk();
@@ -116,13 +116,13 @@ public:
     MCAPI void _createBlockLightStorage();
 
     // symbol: ?_replaceBlocks@SubChunk@@IEAAXEV?$unique_ptr@V?$SubChunkStorage@VBlock@@@@U?$default_delete@V?$SubChunkStorage@VBlock@@@@@std@@@std@@AEAV?$LockGuard@VSpinLock@@@Threading@Bedrock@@@Z
-    MCAPI void _replaceBlocks(uchar, std::unique_ptr<class SubChunkStorage<class Block>>, class Bedrock::Threading::LockGuard<class SpinLock> &);
+    MCAPI void _replaceBlocks(uint8_t, std::unique_ptr<class SubChunkStorage<class Block>>, class Bedrock::Threading::LockGuard<class SpinLock> &);
 
     // symbol: ?_resetLight@SubChunk@@IEAAX_N0@Z
     MCAPI void _resetLight(bool, bool);
 
     // symbol: ?_setBlock@SubChunk@@IEAAXEGAEBVBlock@@@Z
-    MCAPI void _setBlock(uchar, ushort, class Block const &);
+    MCAPI void _setBlock(uint8_t, uint16_t, class Block const &);
 
     // NOLINTEND
 

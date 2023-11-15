@@ -184,7 +184,7 @@ public:
     MCVAPI ~DBStorage();
 
     // symbol: ??0DBStorage@@QEAA@UDBStorageConfig@@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@gsl@@@Z
-    MCAPI DBStorage(struct DBStorageConfig, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>);
+    MCAPI DBStorage(struct DBStorageConfig, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
 
     // symbol: ?tryRepair@DBStorage@@QEBA_NAEBVPath@Core@@@Z
     MCAPI bool tryRepair(class Core::Path const &) const;
@@ -200,7 +200,7 @@ public:
     MCAPI std::map<std::string,struct DBStorage::PendingWriteResult> _getAllPendingWrites() const;
 
     // symbol: ?_handleErrorStatus@DBStorage@@IEAAXAEBVStatus@leveldb@@@Z
-    MCAPI void _handleErrorStatus(leveldb::Status const &);
+    MCAPI void _handleErrorStatus(class leveldb::Status const &);
 
     // symbol: ?_mergeIntoWriteCache@DBStorage@@IEAAXAEBVLevelStorageWriteBatch@@@Z
     MCAPI void _mergeIntoWriteCache(class LevelStorageWriteBatch const &);
@@ -222,7 +222,7 @@ public:
     MCAPI class TaskResult _flushWriteCacheToLevelDB();
 
     // symbol: ?_getTelemetryMessage@DBStorage@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVStatus@leveldb@@@Z
-    MCAPI std::string _getTelemetryMessage(leveldb::Status const &) const;
+    MCAPI std::string _getTelemetryMessage(class leveldb::Status const &) const;
 
     // symbol: ?_markAsCorrupted@DBStorage@@AEBAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI void _markAsCorrupted(std::string_view) const;

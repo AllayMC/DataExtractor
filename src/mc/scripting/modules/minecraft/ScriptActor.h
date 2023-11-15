@@ -106,10 +106,10 @@ public:
     MCAPI ScriptActor(class ScriptModuleMinecraft::ScriptActor &&);
 
     // symbol: ?addEffect@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$StrongTypedObjectHandle@VScriptEffectType@ScriptModuleMinecraft@@@Scripting@@@std@@HAEBV?$optional@UScriptEntityEffectOptions@ScriptModuleMinecraft@@@7@@Z
-    MCAPI class Scripting::Result<void> addEffect(class Actor &, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const &, int, std::optional<struct ScriptModuleMinecraft::ScriptEntityEffectOptions> const &);
+    MCAPI class Scripting::Result<void> addEffect(class Actor &, std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const &, int32_t, std::optional<struct ScriptModuleMinecraft::ScriptEntityEffectOptions> const &);
 
     // symbol: ?addEffect_V010@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBVScriptEffectType@2@HH_N@Z
-    MCAPI class Scripting::Result<void> addEffect_V010(class Actor &, class ScriptModuleMinecraft::ScriptEffectType const &, int, int, bool);
+    MCAPI class Scripting::Result<void> addEffect_V010(class Actor &, class ScriptModuleMinecraft::ScriptEffectType const &, int32_t, int32_t, bool);
 
     // symbol: ?addTag@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<bool> addTag(class Actor &, std::string const &);
@@ -148,7 +148,7 @@ public:
     MCAPI class Scripting::Result<std::vector<std::string>> getDynamicPropertyIds(class Actor &, struct Scripting::ContextConfig const &);
 
     // symbol: ?getDynamicPropertyTotalByteCount@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@@Z
-    MCAPI class Scripting::Result<int> getDynamicPropertyTotalByteCount(class Actor &, struct Scripting::ContextConfig const &);
+    MCAPI class Scripting::Result<int32_t> getDynamicPropertyTotalByteCount(class Actor &, struct Scripting::ContextConfig const &);
 
     // symbol: ?getDynamicProperty_V010@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@std@@$$V@Scripting@@AEAVActor@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<std::optional<std::variant<double, float, bool, std::string, class Vec3>>> getDynamicProperty_V010(class Actor &, struct Scripting::ContextConfig const &, std::string const &);
@@ -298,7 +298,7 @@ public:
     MCAPI void setLoading(class Actor const &);
 
     // symbol: ?setOnFire@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEAVActor@@HV?$optional@_N@std@@@Z
-    MCAPI class Scripting::Result<bool> setOnFire(class Actor &, int, std::optional<bool>);
+    MCAPI class Scripting::Result<bool> setOnFire(class Actor &, int32_t, std::optional<bool>);
 
     // symbol: ?setProperty@ScriptActor@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@7@@Z
     MCAPI class Scripting::Result<void> setProperty(class Actor &, std::string const &, std::variant<float, bool, std::string> const &);

@@ -47,7 +47,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@CauldronBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -146,7 +146,7 @@ public:
     virtual void __unk_vfn_124();
 
     // vIndex: 125, symbol: ?getComparatorSignal@CauldronBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uchar) const;
+    virtual int32_t getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uint8_t) const;
 
     // vIndex: 127, symbol: __unk_vfn_127
     virtual void __unk_vfn_127();
@@ -185,13 +185,13 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@CauldronBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
 
     // vIndex: 178, symbol: ?getExtraRenderLayers@CauldronBlock@@UEBAHXZ
-    virtual int getExtraRenderLayers() const;
+    virtual int32_t getExtraRenderLayers() const;
 
     // vIndex: 180, symbol: ?getLight@CauldronBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
     virtual struct Brightness getLight(class Block const &) const;
@@ -200,7 +200,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@CauldronBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@CauldronBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -212,22 +212,22 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0CauldronBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CauldronBlock(std::string const &, int);
+    MCAPI CauldronBlock(std::string const &, int32_t);
 
     // symbol: ?setLiquidLevel@CauldronBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HW4CauldronLiquidType@@@Z
-    MCAPI void setLiquidLevel(class BlockSource &, class BlockPos const &, int, ::CauldronLiquidType) const;
+    MCAPI void setLiquidLevel(class BlockSource &, class BlockPos const &, int32_t, ::CauldronLiquidType) const;
 
     // symbol: ?canReceiveStalactiteDrip@CauldronBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@W4MaterialType@@@Z
     MCAPI static bool canReceiveStalactiteDrip(class BlockSource &, class BlockPos const &, ::MaterialType);
 
     // symbol: ?clampLiquidLevel@CauldronBlock@@SAHH@Z
-    MCAPI static int clampLiquidLevel(int);
+    MCAPI static int32_t clampLiquidLevel(int32_t);
 
     // symbol: ?spawnPotionParticles@CauldronBlock@@SAXAEAVLevel@@AEBVVec3@@AEAVRandom@@HH@Z
-    MCAPI static void spawnPotionParticles(class Level &, class Vec3 const &, class Random &, int, int);
+    MCAPI static void spawnPotionParticles(class Level &, class Vec3 const &, class Random &, int32_t, int32_t);
 
     // symbol: ?FILL_LEVEL_PER_DRIP@CauldronBlock@@2HB
-    MCAPI static int const FILL_LEVEL_PER_DRIP;
+    MCAPI static int32_t const FILL_LEVEL_PER_DRIP;
 
     // NOLINTEND
 
@@ -237,35 +237,35 @@ public:
     MCAPI void _checkForStalactiteDrip(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ?_explodeCauldronContents@CauldronBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@G@Z
-    MCAPI void _explodeCauldronContents(class BlockSource &, class BlockPos const &, ushort) const;
+    MCAPI void _explodeCauldronContents(class BlockSource &, class BlockPos const &, uint16_t) const;
 
     // symbol: ?_mayUpdateLiquidLevel@CauldronBlock@@AEBA?B_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool const _mayUpdateLiquidLevel(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ?_sendCauldronUsedEventToClient@CauldronBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
-    MCAPI void _sendCauldronUsedEventToClient(class Player const &, short, ::MinecraftEventing::POIBlockInteractionType) const;
+    MCAPI void _sendCauldronUsedEventToClient(class Player const &, int16_t, ::MinecraftEventing::POIBlockInteractionType) const;
 
     // symbol: ?_spawnCauldronEvent@CauldronBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@W4LevelEvent@@@Z
     MCAPI void _spawnCauldronEvent(class BlockSource &, class BlockPos const &, ::LevelEvent) const;
 
     // symbol: ?_useDyeableComponent@CauldronBlock@@AEBA_NAEAVItemStack@@AEAVPlayer@@AEBVBlockPos@@AEAVCauldronBlockActor@@AEAVBlockSource@@H_N55@Z
-    MCAPI bool _useDyeableComponent(class ItemStack &, class Player &, class BlockPos const &, class CauldronBlockActor &, class BlockSource &, int, bool, bool, bool) const;
+    MCAPI bool _useDyeableComponent(class ItemStack &, class Player &, class BlockPos const &, class CauldronBlockActor &, class BlockSource &, int32_t, bool, bool, bool) const;
 
     // symbol: ?_useInventory@CauldronBlock@@AEBAXAEAVPlayer@@AEAVItemStack@@1H@Z
-    MCAPI void _useInventory(class Player &, class ItemStack &, class ItemStack &, int) const;
+    MCAPI void _useInventory(class Player &, class ItemStack &, class ItemStack &, int32_t) const;
 
     // NOLINTEND
 
 private:
     // NOLINTBEGIN
     // symbol: ?BASE_WATER_PIXEL@CauldronBlock@@0HB
-    MCAPI static int const BASE_WATER_PIXEL;
+    MCAPI static int32_t const BASE_WATER_PIXEL;
 
     // symbol: ?CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION@CauldronBlock@@0VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
     // symbol: ?PIXEL_PER_LEVEL@CauldronBlock@@0HB
-    MCAPI static int const PIXEL_PER_LEVEL;
+    MCAPI static int32_t const PIXEL_PER_LEVEL;
 
     // NOLINTEND
 

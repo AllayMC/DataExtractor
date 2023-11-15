@@ -15,16 +15,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getInt@SynchedActorDataReader@@QEBAHG@Z
-    MCAPI int getInt(ushort) const;
+    MCAPI int32_t getInt(uint16_t) const;
 
     // symbol: ?getPosition@SynchedActorDataReader@@QEBA?AVBlockPos@@G@Z
-    MCAPI class BlockPos getPosition(ushort) const;
+    MCAPI class BlockPos getPosition(uint16_t) const;
 
     // symbol: ?getStatusFlag@SynchedActorDataReader@@QEBA_NW4ActorFlags@@@Z
     MCAPI bool getStatusFlag(::ActorFlags) const;
 
     // symbol: ?getVec3@SynchedActorDataReader@@QEBA?AVVec3@@G@Z
-    MCAPI class Vec3 getVec3(ushort) const;
+    MCAPI class Vec3 getVec3(uint16_t) const;
 
     // NOLINTEND
 

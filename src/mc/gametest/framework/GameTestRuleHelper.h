@@ -17,7 +17,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?addRuleToClear@GameTestRuleHelper@gametest@@UEAAXH@Z
-    virtual void addRuleToClear(int);
+    virtual void addRuleToClear(int32_t);
 
     // vIndex: 2, symbol: ?clearRules@GameTestRuleHelper@gametest@@UEAAXXZ
     virtual void clearRules();

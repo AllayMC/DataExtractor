@@ -18,7 +18,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?onSignalReceive@AllayVibrationConfig@@UEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVGameEvent@@PEAVActor@@MI3@Z
-    virtual void onSignalReceive(class BlockSource &, class BlockPos const &, class GameEvent const &, class Actor *, float, uint, class Actor *);
+    virtual void onSignalReceive(class BlockSource &, class BlockPos const &, class GameEvent const &, class Actor *, float, uint32_t, class Actor *);
 
     // vIndex: 2, symbol: ?isValidVibration@AllayVibrationConfig@@UEAA_NAEBVGameEvent@@@Z
     virtual bool isValidVibration(class GameEvent const &);
@@ -33,7 +33,7 @@ public:
     virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
 
     // symbol: ??0AllayVibrationConfig@@QEAA@AEAVActor@@G@Z
-    MCAPI AllayVibrationConfig(class Actor &, ushort);
+    MCAPI AllayVibrationConfig(class Actor &, uint16_t);
 
     // NOLINTEND
 

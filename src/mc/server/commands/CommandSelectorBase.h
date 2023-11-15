@@ -28,19 +28,19 @@ public:
     MCAPI void addGameModeFilter(struct InvertableFilter<::GameType> const &);
 
     // symbol: ?addHasItemFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@H@3@AEBVCommandIntegerRange@@W4EquipmentSlot@@2@Z
-    MCAPI void addHasItemFilter(std::string const &, std::optional<int>, class CommandIntegerRange const &, ::EquipmentSlot, class CommandIntegerRange const &);
+    MCAPI void addHasItemFilter(std::string const &, std::optional<int32_t>, class CommandIntegerRange const &, ::EquipmentSlot, class CommandIntegerRange const &);
 
     // symbol: ?addHasPermissionFilters@CommandSelectorBase@@QEAAXAEBV?$vector@UHasPermissionFilter@@V?$allocator@UHasPermissionFilter@@@std@@@std@@@Z
     MCAPI void addHasPermissionFilters(std::vector<struct HasPermissionFilter> const &);
 
     // symbol: ?addLevelFilter@CommandSelectorBase@@QEAAXAEBU?$pair@HH@std@@@Z
-    MCAPI void addLevelFilter(std::pair<int, int> const &);
+    MCAPI void addLevelFilter(std::pair<int32_t, int32_t> const &);
 
     // symbol: ?addNameFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
     MCAPI void addNameFilter(struct InvertableFilter<std::string> const &);
 
     // symbol: ?addScoreFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandIntegerRange@@V?$function@$$A6AHAEA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z@3@@Z
-    MCAPI void addScoreFilter(std::string const &, class CommandIntegerRange const &, std::function<int (bool &, std::string const &, class Actor const &)>);
+    MCAPI void addScoreFilter(std::string const &, class CommandIntegerRange const &, std::function<int32_t (bool &, std::string const &, class Actor const &)>);
 
     // symbol: ?addTagFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
     MCAPI void addTagFilter(struct InvertableFilter<std::string> const &);
@@ -64,7 +64,7 @@ public:
     MCAPI ::CommandSelectionOrder getOrder() const;
 
     // symbol: ?getResultCount@CommandSelectorBase@@QEBA_KXZ
-    MCAPI uint64 getResultCount() const;
+    MCAPI uint64_t getResultCount() const;
 
     // symbol: ?hasName@CommandSelectorBase@@QEBA_NXZ
     MCAPI bool hasName() const;
@@ -97,13 +97,13 @@ public:
     MCAPI void setRadiusMin(float);
 
     // symbol: ?setResultCount@CommandSelectorBase@@QEAAX_K_N@Z
-    MCAPI void setResultCount(uint64, bool);
+    MCAPI void setResultCount(uint64_t, bool);
 
     // symbol: ?setType@CommandSelectorBase@@QEAAXW4CommandSelectionType@@@Z
     MCAPI void setType(::CommandSelectionType);
 
     // symbol: ?setVersion@CommandSelectorBase@@QEAAXH@Z
-    MCAPI void setVersion(int);
+    MCAPI void setVersion(int32_t);
 
     // symbol: ??1CommandSelectorBase@@QEAA@XZ
     MCAPI ~CommandSelectorBase();

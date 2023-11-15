@@ -29,10 +29,10 @@ public:
     virtual void onError(struct Scripting::ContextId, std::string_view const &) const;
 
     // vIndex: 4, symbol: ?onException@ScriptPrintLogger@@UEBAXUContextId@Scripting@@AEBVmeta_any@entt@@@Z
-    virtual void onException(struct Scripting::ContextId, entt::meta_any const &) const;
+    virtual void onException(struct Scripting::ContextId, class entt::meta_any const &) const;
 
     // vIndex: 5, symbol: ?shouldPrintException@ScriptPrintLogger@@UEBA_NUContextId@Scripting@@AEBVmeta_any@entt@@@Z
-    virtual bool shouldPrintException(struct Scripting::ContextId, entt::meta_any const &) const;
+    virtual bool shouldPrintException(struct Scripting::ContextId, class entt::meta_any const &) const;
 
     // vIndex: 6, symbol: ?onPromiseRejection@ScriptPrintLogger@@UEBAXUContextId@Scripting@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@_N@Z
     virtual void onPromiseRejection(struct Scripting::ContextId, std::string_view const &, bool) const;

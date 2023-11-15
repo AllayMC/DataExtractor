@@ -63,7 +63,7 @@ public:
     virtual bool shouldPreserve(class BlockSource &);
 
     // vIndex: 16, symbol: ?triggerEvent@BlockActor@@UEAAXHH@Z
-    virtual void triggerEvent(int, int);
+    virtual void triggerEvent(int32_t, int32_t);
 
     // vIndex: 17, symbol: ?clearCache@BlockActor@@UEAAXXZ
     virtual void clearCache();
@@ -102,7 +102,7 @@ public:
     virtual std::string getImmersiveReaderText(class BlockSource &);
 
     // vIndex: 29, symbol: ?getRepairCost@BlockActor@@UEBAHXZ
-    virtual int getRepairCost() const;
+    virtual int32_t getRepairCost() const;
 
     // vIndex: 30, symbol: __unk_vfn_30
     virtual void __unk_vfn_30();

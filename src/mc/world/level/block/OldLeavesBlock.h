@@ -131,10 +131,10 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 135, symbol: ?getColor@OldLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
+    virtual int32_t getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 142, symbol: ?getVariant@OldLeavesBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -167,7 +167,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@OldLeavesBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@OldLeavesBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -176,7 +176,7 @@ public:
     virtual class ItemInstance getExtraResourceItem(class Block const &) const;
 
     // symbol: ??0OldLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI OldLeavesBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
+    MCAPI OldLeavesBlock(std::string const &, int32_t, class WeakPtr<class BlockLegacy>);
 
     // NOLINTEND
 

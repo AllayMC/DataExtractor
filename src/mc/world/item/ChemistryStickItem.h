@@ -43,7 +43,7 @@ public:
     virtual void __unk_vfn_21();
 
     // vIndex: 30, symbol: ?setMaxDamage@ChemistryStickItem@@UEAAAEAVItem@@H@Z
-    virtual class Item & setMaxDamage(int);
+    virtual class Item & setMaxDamage(int32_t);
 
     // vIndex: 51, symbol: __unk_vfn_51
     virtual void __unk_vfn_51();
@@ -85,10 +85,10 @@ public:
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
 
     // vIndex: 93, symbol: ?mineBlock@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    virtual bool mineBlock(class ItemStack &, class Block const &, int32_t, int32_t, int32_t, class Actor *) const;
 
     // vIndex: 101, symbol: ?inventoryTick@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
-    virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
+    virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int32_t, bool) const;
 
     // vIndex: 105, symbol: ?fixupCommon@ChemistryStickItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase &) const;
@@ -109,13 +109,13 @@ public:
     MCVAPI ~ChemistryStickItem();
 
     // symbol: ??0ChemistryStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ChemistryStickItem(std::string const &, int);
+    MCAPI ChemistryStickItem(std::string const &, int32_t);
 
     // symbol: ?getColorType@ChemistryStickItem@@SA?AW4ItemColor@@H@Z
-    MCAPI static ::ItemColor getColorType(int);
+    MCAPI static ::ItemColor getColorType(int32_t);
 
     // symbol: ?isActive@ChemistryStickItem@@SA_NH@Z
-    MCAPI static bool isActive(int);
+    MCAPI static bool isActive(int32_t);
 
     // symbol: ?isChemistryStick@ChemistryStickItem@@SA_NAEBVItemStackBase@@@Z
     MCAPI static bool isChemistryStick(class ItemStackBase const &);
@@ -125,14 +125,14 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_getColorName@ChemistryStickItem@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI std::string _getColorName(int) const;
+    MCAPI std::string _getColorName(int32_t) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_storeActivationTimestamp@ChemistryStickItem@@AEBAXAEAVItemStack@@_KH@Z
-    MCAPI void _storeActivationTimestamp(class ItemStack &, uint64, int) const;
+    MCAPI void _storeActivationTimestamp(class ItemStack &, uint64_t, int32_t) const;
 
     // NOLINTEND
 
@@ -142,22 +142,22 @@ private:
     MCAPI static std::string const ACTIVATION_TIMESTAMP_TAG;
 
     // symbol: ?ACTIVE_BIT@ChemistryStickItem@@0HB
-    MCAPI static int const ACTIVE_BIT;
+    MCAPI static int32_t const ACTIVE_BIT;
 
     // symbol: ?COLOR_BITS@ChemistryStickItem@@0HB
-    MCAPI static int const COLOR_BITS;
+    MCAPI static int32_t const COLOR_BITS;
 
     // symbol: ?COLOR_MASK@ChemistryStickItem@@0HB
-    MCAPI static int const COLOR_MASK;
+    MCAPI static int32_t const COLOR_MASK;
 
     // symbol: ?DAMAGE_BITS@ChemistryStickItem@@0HB
-    MCAPI static int const DAMAGE_BITS;
+    MCAPI static int32_t const DAMAGE_BITS;
 
     // symbol: ?DAMAGE_MASK@ChemistryStickItem@@0HB
-    MCAPI static int const DAMAGE_MASK;
+    MCAPI static int32_t const DAMAGE_MASK;
 
     // symbol: ?DAMAGE_START_BIT@ChemistryStickItem@@0HB
-    MCAPI static int const DAMAGE_START_BIT;
+    MCAPI static int32_t const DAMAGE_START_BIT;
 
     // NOLINTEND
 

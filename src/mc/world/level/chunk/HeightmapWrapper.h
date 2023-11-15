@@ -15,10 +15,10 @@ public:
     MCAPI bool empty() const;
 
     // symbol: ?getHeightAt@HeightmapWrapper@@QEBAFAEBVPos@@@Z
-    MCAPI short getHeightAt(class Pos const &) const;
+    MCAPI int16_t getHeightAt(class Pos const &) const;
 
     // symbol: ?create@HeightmapWrapper@@SA?AV1@PEBV?$vector@FV?$allocator@F@std@@@std@@F@Z
-    MCAPI static class HeightmapWrapper create(std::vector<short> const *, short);
+    MCAPI static class HeightmapWrapper create(std::vector<int16_t> const *, int16_t);
 
     // NOLINTEND
 

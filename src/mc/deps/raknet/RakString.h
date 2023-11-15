@@ -35,7 +35,7 @@ public:
     MCAPI bool Deserialize(class RakNet::BitStream *);
 
     // symbol: ?GetLength@RakString@RakNet@@QEBA_KXZ
-    MCAPI uint64 GetLength() const;
+    MCAPI uint64_t GetLength() const;
 
     // symbol: ?IPAddressMatch@RakString@RakNet@@QEAA_NPEBD@Z
     MCAPI bool IPAddressMatch(char const *);
@@ -81,7 +81,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?Allocate@RakString@RakNet@@IEAAX_K@Z
-    MCAPI void Allocate(uint64);
+    MCAPI void Allocate(uint64_t);
 
     // symbol: ?Assign@RakString@RakNet@@IEAAXPEBDPEAD@Z
     MCAPI void Assign(char const *, char *);

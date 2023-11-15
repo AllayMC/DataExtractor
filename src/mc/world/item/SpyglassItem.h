@@ -79,7 +79,7 @@ public:
     virtual ::ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
 
     // vIndex: 87, symbol: ?releaseUsing@SpyglassItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    virtual void releaseUsing(class ItemStack &, class Player *, int) const;
+    virtual void releaseUsing(class ItemStack &, class Player *, int32_t) const;
 
     // vIndex: 115, symbol: __unk_vfn_115
     virtual void __unk_vfn_115();
@@ -88,7 +88,7 @@ public:
     virtual void __unk_vfn_116();
 
     // symbol: ??0SpyglassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI SpyglassItem(std::string const &, short);
+    MCAPI SpyglassItem(std::string const &, int16_t);
 
     // NOLINTEND
 

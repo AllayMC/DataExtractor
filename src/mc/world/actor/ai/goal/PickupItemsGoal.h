@@ -37,7 +37,7 @@ public:
     virtual void appendDebugInfo(std::string &) const;
 
     // symbol: ??0PickupItemsGoal@@QEAA@AEAVMob@@M_NHHM11H11AEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@@Z
-    MCAPI PickupItemsGoal(class Mob &, float, bool, int, int, float, bool, bool, int, bool, bool, std::vector<class ItemDescriptor> const &);
+    MCAPI PickupItemsGoal(class Mob &, float, bool, int32_t, int32_t, float, bool, bool, int32_t, bool, bool, std::vector<class ItemDescriptor> const &);
 
     // NOLINTEND
 

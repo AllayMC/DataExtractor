@@ -23,13 +23,13 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@LabTableContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const &, bool);
+    virtual void setSlot(int32_t, class ItemStack const &, bool);
 
     // vIndex: 8, symbol: ?getSlot@LabTableContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const & getSlot(int) const;
+    virtual class ItemStack const & getSlot(int32_t) const;
 
     // vIndex: 9, symbol: ?setData@LabTableContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int, int);
+    virtual void setData(int32_t, int32_t);
 
     // vIndex: 10, symbol: ?broadcastChanges@LabTableContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();
@@ -44,7 +44,7 @@ public:
     MCAPI LabTableContainerManagerModel(::ContainerID, class Player &, class BlockPos const &);
 
     // symbol: ?INPUT_SLOTS@LabTableContainerManagerModel@@2HB
-    MCAPI static int const INPUT_SLOTS;
+    MCAPI static int32_t const INPUT_SLOTS;
 
     // NOLINTEND
 

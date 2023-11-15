@@ -35,28 +35,28 @@ public:
     MCAPI class Scripting::Result<void> clearAll() const;
 
     // symbol: ?getEmptySlotsCount@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getEmptySlotsCount() const;
+    MCAPI class Scripting::Result<int32_t> getEmptySlotsCount() const;
 
     // symbol: ?getItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>> getItem(int) const;
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>> getItem(int32_t) const;
 
     // symbol: ?getSize@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getSize() const;
+    MCAPI class Scripting::Result<int32_t> getSize() const;
 
     // symbol: ?getSlot@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptContainerSlot@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerSlot>> getSlot(int) const;
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerSlot>> getSlot(int32_t) const;
 
     // symbol: ?moveItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@HHAEAV12@@Z
-    MCAPI class Scripting::Result<void> moveItem(int, int, class ScriptModuleMinecraft::ScriptContainerWrapper &) const;
+    MCAPI class Scripting::Result<void> moveItem(int32_t, int32_t, class ScriptModuleMinecraft::ScriptContainerWrapper &) const;
 
     // symbol: ?setItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@HAEBV?$optional@VScriptItemStack@ScriptModuleMinecraft@@@std@@@Z
-    MCAPI class Scripting::Result<void> setItem(int, std::optional<class ScriptModuleMinecraft::ScriptItemStack> const &) const;
+    MCAPI class Scripting::Result<void> setItem(int32_t, std::optional<class ScriptModuleMinecraft::ScriptItemStack> const &) const;
 
     // symbol: ?swapItems@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@HHAEAV12@@Z
-    MCAPI class Scripting::Result<void> swapItems(int, int, class ScriptModuleMinecraft::ScriptContainerWrapper &) const;
+    MCAPI class Scripting::Result<void> swapItems(int32_t, int32_t, class ScriptModuleMinecraft::ScriptContainerWrapper &) const;
 
     // symbol: ?transferItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@HAEAV12@@Z
-    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>> transferItem(int, class ScriptModuleMinecraft::ScriptContainerWrapper &) const;
+    MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>> transferItem(int32_t, class ScriptModuleMinecraft::ScriptContainerWrapper &) const;
 
     // symbol: ?bind@ScriptContainerWrapper@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptContainerWrapper> bind();

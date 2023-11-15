@@ -24,7 +24,7 @@ public:
     MCAPI void add(std::unique_ptr<class ITickingArea>);
 
     // symbol: ?countEntityTickingAreas@TickingAreaListBase@@QEBAIXZ
-    MCAPI uint countEntityTickingAreas() const;
+    MCAPI uint32_t countEntityTickingAreas() const;
 
     // symbol: ?destroyAreas@TickingAreaListBase@@QEAAXXZ
     MCAPI void destroyAreas();

@@ -18,43 +18,43 @@ public:
     MCAPI SynchedActorDataEntityWrapper(class EntityContext &);
 
     // symbol: ?getCompoundTag@SynchedActorDataEntityWrapper@@QEBAAEBVCompoundTag@@G@Z
-    MCAPI class CompoundTag const & getCompoundTag(ushort) const;
+    MCAPI class CompoundTag const & getCompoundTag(uint16_t) const;
 
     // symbol: ?getFloat@SynchedActorDataEntityWrapper@@QEBAMG@Z
-    MCAPI float getFloat(ushort) const;
+    MCAPI float getFloat(uint16_t) const;
 
     // symbol: ?getInt@SynchedActorDataEntityWrapper@@QEBAHG@Z
-    MCAPI int getInt(ushort) const;
+    MCAPI int32_t getInt(uint16_t) const;
 
     // symbol: ?getInt64@SynchedActorDataEntityWrapper@@QEBA_JG@Z
-    MCAPI int64 getInt64(ushort) const;
+    MCAPI int64_t getInt64(uint16_t) const;
 
     // symbol: ?getInt8@SynchedActorDataEntityWrapper@@QEBACG@Z
-    MCAPI schar getInt8(ushort) const;
+    MCAPI int8_t getInt8(uint16_t) const;
 
     // symbol: ?getPosition@SynchedActorDataEntityWrapper@@QEBA?AVBlockPos@@G@Z
-    MCAPI class BlockPos getPosition(ushort) const;
+    MCAPI class BlockPos getPosition(uint16_t) const;
 
     // symbol: ?getShort@SynchedActorDataEntityWrapper@@QEBAFG@Z
-    MCAPI short getShort(ushort) const;
+    MCAPI int16_t getShort(uint16_t) const;
 
     // symbol: ?getStatusFlag@SynchedActorDataEntityWrapper@@QEBA_NW4ActorFlags@@@Z
     MCAPI bool getStatusFlag(::ActorFlags) const;
 
     // symbol: ?getString@SynchedActorDataEntityWrapper@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    MCAPI std::string const & getString(ushort) const;
+    MCAPI std::string const & getString(uint16_t) const;
 
     // symbol: ?getVec3@SynchedActorDataEntityWrapper@@QEBA?AVVec3@@G@Z
-    MCAPI class Vec3 getVec3(ushort) const;
+    MCAPI class Vec3 getVec3(uint16_t) const;
 
     // symbol: ?hasData@SynchedActorDataEntityWrapper@@QEBA_NG@Z
-    MCAPI bool hasData(ushort) const;
+    MCAPI bool hasData(uint16_t) const;
 
     // symbol: ?isDirty@SynchedActorDataEntityWrapper@@QEBA_NXZ
     MCAPI bool isDirty() const;
 
     // symbol: ?markDirty@SynchedActorDataEntityWrapper@@QEAAXG@Z
-    MCAPI void markDirty(ushort);
+    MCAPI void markDirty(uint16_t);
 
     // symbol: ?packAll@SynchedActorDataEntityWrapper@@QEBA?AV?$vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$allocator@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@XZ
     MCAPI std::vector<std::unique_ptr<class DataItem>> packAll() const;
@@ -79,10 +79,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_get@SynchedActorDataEntityWrapper@@AEAA?AV?$not_null@PEAVSynchedActorData@@@gsl@@XZ
-    MCAPI gsl::not_null<class SynchedActorData *> _get();
+    MCAPI class gsl::not_null<class SynchedActorData *> _get();
 
     // symbol: ?_get@SynchedActorDataEntityWrapper@@AEBA?AV?$not_null@PEBVSynchedActorData@@@gsl@@XZ
-    MCAPI gsl::not_null<class SynchedActorData const *> _get() const;
+    MCAPI class gsl::not_null<class SynchedActorData const *> _get() const;
 
     // NOLINTEND
 

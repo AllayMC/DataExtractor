@@ -18,7 +18,7 @@ public:
     MCAPI std::optional<class BlockPos> getSuspiciousPos() const;
 
     // symbol: ?getTicksSinceLastSuspect@SuspectTrackingComponent@@QEBA?AV?$optional@_K@std@@AEBVILevel@@@Z
-    MCAPI std::optional<uint64> getTicksSinceLastSuspect(class ILevel const &) const;
+    MCAPI std::optional<uint64_t> getTicksSinceLastSuspect(class ILevel const &) const;
 
     // symbol: ?setSuspiciousPos@SuspectTrackingComponent@@QEAAXV?$optional@VBlockPos@@@std@@UTick@@@Z
     MCAPI void setSuspiciousPos(std::optional<class BlockPos>, struct Tick);

@@ -15,16 +15,16 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?Append@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
-    virtual leveldb::Status Append(leveldb::Slice const &);
+    virtual class leveldb::Status Append(class leveldb::Slice const &);
 
     // vIndex: 2, symbol: ?Close@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ
-    virtual leveldb::Status Close();
+    virtual class leveldb::Status Close();
 
     // vIndex: 3, symbol: ?Flush@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ
-    virtual leveldb::Status Flush();
+    virtual class leveldb::Status Flush();
 
     // vIndex: 4, symbol: ?Sync@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ
-    virtual leveldb::Status Sync();
+    virtual class leveldb::Status Sync();
 
     // symbol: ??0InMemoryWritableFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
     MCAPI InMemoryWritableFile(std::shared_ptr<class InMemoryFile>);

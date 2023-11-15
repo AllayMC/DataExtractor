@@ -85,13 +85,13 @@ public:
     MCAPI void hurt(class Actor &, class ActorDamageSource const &);
 
     // symbol: ?incrementFlightTime@ProjectileComponent@@QEAAHXZ
-    MCAPI int incrementFlightTime();
+    MCAPI int32_t incrementFlightTime();
 
     // symbol: ?incrementLife@ProjectileComponent@@QEAAHXZ
-    MCAPI int incrementLife();
+    MCAPI int32_t incrementLife();
 
     // symbol: ?incrementOnGroundTime@ProjectileComponent@@QEAAHXZ
-    MCAPI int incrementOnGroundTime();
+    MCAPI int32_t incrementOnGroundTime();
 
     // symbol: ?initFromDefinition@ProjectileComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor &);
@@ -115,7 +115,7 @@ public:
     MCAPI void setChanneling();
 
     // symbol: ?setEnchantImpaler@ProjectileComponent@@QEAAXAEBH@Z
-    MCAPI void setEnchantImpaler(int const &);
+    MCAPI void setEnchantImpaler(int32_t const &);
 
     // symbol: ?setKnockbackForce@ProjectileComponent@@QEAAXM@Z
     MCAPI void setKnockbackForce(float);
@@ -127,7 +127,7 @@ public:
     MCAPI void setOwnerId(struct ActorUniqueID);
 
     // symbol: ?setPotionEffect@ProjectileComponent@@QEAAXH@Z
-    MCAPI void setPotionEffect(int);
+    MCAPI void setPotionEffect(int32_t);
 
     // symbol: ?setSplashRange@ProjectileComponent@@QEAAXM@Z
     MCAPI void setSplashRange(float);
@@ -145,7 +145,7 @@ public:
     MCAPI static class Vec2 dampenShooterAngle(class Vec2 const &, float, class BaseGameVersion const &);
 
     // symbol: ?DELAY_ON_HIT@ProjectileComponent@@2IB
-    MCAPI static uint const DELAY_ON_HIT;
+    MCAPI static uint32_t const DELAY_ON_HIT;
 
     // NOLINTEND
 

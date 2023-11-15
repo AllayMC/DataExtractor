@@ -15,10 +15,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?listen@ScriptDebuggerTransport@@UEAA_NG@Z
-    virtual bool listen(ushort);
+    virtual bool listen(uint16_t);
 
     // vIndex: 2, symbol: ?connect@ScriptDebuggerTransport@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    virtual bool connect(std::string const &, ushort);
+    virtual bool connect(std::string const &, uint16_t);
 
     // vIndex: 3, symbol: ?selectClient@ScriptDebuggerTransport@@UEAA_NXZ
     virtual bool selectClient();
@@ -39,10 +39,10 @@ public:
     virtual bool peek() const;
 
     // vIndex: 9, symbol: ?receive@ScriptDebuggerTransport@@UEAA_NPEAD_K@Z
-    virtual bool receive(char *, uint64);
+    virtual bool receive(char *, uint64_t);
 
     // vIndex: 10, symbol: ?send@ScriptDebuggerTransport@@UEAAXPEBD_K@Z
-    virtual void send(char const *, uint64);
+    virtual void send(char const *, uint64_t);
 
     // NOLINTEND
 

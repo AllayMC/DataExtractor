@@ -50,7 +50,7 @@ public:
     virtual void __unk_vfn_53();
 
     // vIndex: 56, symbol: ?isDestructive@PotionItem@@UEBA_NH@Z
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int32_t) const;
 
     // vIndex: 60, symbol: ?appendFormattedHovertext@PotionItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
@@ -59,7 +59,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 67, symbol: ?isValidAuxValue@PotionItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 70, symbol: __unk_vfn_70
     virtual void __unk_vfn_70();
@@ -83,7 +83,7 @@ public:
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
 
     // vIndex: 85, symbol: ?dispense@PotionItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 86, symbol: ?useTimeDepleted@PotionItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
     virtual ::ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
@@ -101,13 +101,13 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 119, symbol: ?setIconInfo@PotionItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item & setIconInfo(std::string const &, int);
+    virtual class Item & setIconInfo(std::string const &, int32_t);
 
     // vIndex: 120, symbol: ?getIconInfo@PotionItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int32_t, bool) const;
 
     // vIndex: 135, symbol: ?_useOn@PotionItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // vIndex: 136, symbol: ?getPotionType@PotionItem@@UEBA?AW4PotionType@Potion@@XZ
     virtual ::Potion::PotionType getPotionType() const;
@@ -119,7 +119,7 @@ public:
     MCVAPI ~PotionItem();
 
     // symbol: ??0PotionItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PotionItem(std::string const &, int);
+    MCAPI PotionItem(std::string const &, int32_t);
 
     // symbol: ?applyEffect@PotionItem@@SAXPEAVThrownPotion@@AEBVItemStack@@@Z
     MCAPI static void applyEffect(class ThrownPotion *, class ItemStack const &);

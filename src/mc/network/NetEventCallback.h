@@ -50,7 +50,7 @@ public:
     virtual void onWebsocketRequest(std::string const &, std::string const &, std::function<void (void)>);
 
     // vIndex: 9, symbol: ?sendPacketViolationDetectedTelemetryData@NetEventCallback@@UEAAX_KV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z
-    virtual void sendPacketViolationDetectedTelemetryData(uint64, std::string, ::PacketViolationResponse, ::MinecraftPacketIds, class NetworkIdentifier const &);
+    virtual void sendPacketViolationDetectedTelemetryData(uint64_t, std::string, ::PacketViolationResponse, ::MinecraftPacketIds, class NetworkIdentifier const &);
 
     // vIndex: 10, symbol: __unk_vfn_10
     virtual void __unk_vfn_10();
@@ -683,7 +683,7 @@ public:
     MCVAPI void onTick();
 
     // symbol: ?onTransferRequest@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCVAPI void onTransferRequest(class NetworkIdentifier const &, std::string const &, int);
+    MCVAPI void onTransferRequest(class NetworkIdentifier const &, std::string const &, int32_t);
 
     // symbol: ?onUnableToConnect@NetEventCallback@@UEAAXW4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void onUnableToConnect(::Connection::DisconnectFailReason, std::string const &);

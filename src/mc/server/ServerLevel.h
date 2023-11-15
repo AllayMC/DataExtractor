@@ -96,7 +96,7 @@ public:
     MCVAPI void setCommandsEnabled(bool);
 
     // symbol: ?setServerTickOffset@ServerLevel@@UEAAX_J@Z
-    MCVAPI void setServerTickOffset(int64);
+    MCVAPI void setServerTickOffset(int64_t);
 
     // symbol: ?setWorldTemplateOptionsUnlocked@ServerLevel@@UEAAXXZ
     MCVAPI void setWorldTemplateOptionsUnlocked();
@@ -105,7 +105,7 @@ public:
     MCVAPI ~ServerLevel();
 
     // symbol: ??0ServerLevel@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VSoundPlayerInterface@@@Bedrock@@@gsl@@V?$OwnerPtrT@U?$SharePtrRefTraits@VLevelStorage@@@@@@AEAVIMinecraftEventing@@AEAVResourcePackManager@@3V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@2@AEAVMinecraftCommands@@AEAVScheduler@@AEBV?$not_null@V?$NonOwnerPointer@VIEntityRegistryOwner@@@Bedrock@@@2@V?$WeakRefT@UEntityRefTraits@@@@V?$unique_ptr@VBlockComponentFactory@@U?$default_delete@VBlockComponentFactory@@@std@@@std@@V?$unique_ptr@VBlockDefinitionGroup@@U?$default_delete@VBlockDefinitionGroup@@@std@@@std@@VItemRegistryRef@@_N_NAEBUNetworkPermissions@@V?$weak_ptr@VBlockTypeRegistry@@@std@@@Z
-    MCAPI ServerLevel(Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const &, class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, class IMinecraftEventing &, class ResourcePackManager &, class ResourcePackManager &, Bedrock::NotNullNonOwnerPtr<class StructureManager>, class MinecraftCommands &, class Scheduler &, Bedrock::NotNullNonOwnerPtr<class IEntityRegistryOwner> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, bool, bool, struct NetworkPermissions const &, std::weak_ptr<class BlockTypeRegistry>);
+    MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, class IMinecraftEventing &, class ResourcePackManager &, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class MinecraftCommands &, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, bool, bool, struct NetworkPermissions const &, std::weak_ptr<class BlockTypeRegistry>);
 
     // symbol: ?clearAllGenerationRequests@ServerLevel@@QEAAXAEBVNetworkIdentifier@@W4SubClientId@@@Z
     MCAPI void clearAllGenerationRequests(class NetworkIdentifier const &, ::SubClientId);

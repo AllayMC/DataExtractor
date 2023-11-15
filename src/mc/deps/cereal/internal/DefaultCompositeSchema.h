@@ -30,19 +30,19 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?doValidate@DefaultCompositeSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
-    virtual void doValidate(struct cereal::SchemaReader &, entt::meta_any &, struct cereal::SerializerTraits const &, class cereal::SerializerContext &) const;
+    virtual void doValidate(struct cereal::SchemaReader &, class entt::meta_any &, struct cereal::SerializerTraits const &, class cereal::SerializerContext &) const;
 
     // vIndex: 1, symbol: ?doLoad@DefaultCompositeSchema@internal@cereal@@EEBAXAEAUSchemaReader@3@AEAVmeta_any@entt@@AEBUSerializerTraits@3@AEBV56@AEAVSerializerContext@3@@Z
-    virtual void doLoad(struct cereal::SchemaReader &, entt::meta_any &, struct cereal::SerializerTraits const &, entt::meta_any const &, class cereal::SerializerContext &) const;
+    virtual void doLoad(struct cereal::SchemaReader &, class entt::meta_any &, struct cereal::SerializerTraits const &, class entt::meta_any const &, class cereal::SerializerContext &) const;
 
     // vIndex: 2, symbol: ?doSave@DefaultCompositeSchema@internal@cereal@@EEBAXAEAUSchemaWriter@3@AEBVmeta_any@entt@@AEBUSerializerTraits@3@AEAVSerializerContext@3@@Z
-    virtual void doSave(struct cereal::SchemaWriter &, entt::meta_any const &, struct cereal::SerializerTraits const &, class cereal::SerializerContext &) const;
+    virtual void doSave(struct cereal::SchemaWriter &, class entt::meta_any const &, struct cereal::SerializerTraits const &, class cereal::SerializerContext &) const;
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol: ?unpack@DefaultCompositeSchema@internal@cereal@@UEBAXAEAV?$vector@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@V?$allocator@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@@2@@std@@AEAV?$dense_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@@std@@@2@@entt@@@Z
-    virtual void unpack(std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>> &, entt::dense_map<std::string,std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>> &) const;
+    virtual void unpack(std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>> &, class entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>, std::hash<std::string>, std::equal_to<std::string>, std::allocator<std::pair<std::string const, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>>> &) const;
 
     // vIndex: 6, symbol: ?description@DefaultCompositeSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
     virtual struct cereal::SchemaDescription description() const;

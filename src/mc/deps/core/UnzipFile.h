@@ -24,10 +24,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0UnzipFile@Core@@QEAA@V?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@AEBVPath@1@@Z
-    MCAPI UnzipFile(Bedrock::NotNullNonOwnerPtr<class IFileAccess>, class Core::Path const &);
+    MCAPI UnzipFile(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>, class Core::Path const &);
 
     // symbol: ?appendCurrentFileContents@UnzipFile@Core@@QEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KV?$function@$$A6AXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@4@@Z
-    MCAPI void appendCurrentFileContents(std::string &, uint64, std::function<void (int, std::string const &)>);
+    MCAPI void appendCurrentFileContents(std::string &, uint64_t, std::function<void (int32_t, std::string const &)>);
 
     // symbol: ?getCurrentFileName@UnzipFile@Core@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getCurrentFileName() const;
@@ -42,7 +42,7 @@ public:
     MCAPI bool isGood() const;
 
     // symbol: ?locateFile@UnzipFile@Core@@QEAA?AW4UnzipResult@ZipUtils@2@PEBDH@Z
-    MCAPI ::Core::ZipUtils::UnzipResult locateFile(char const *, int);
+    MCAPI ::Core::ZipUtils::UnzipResult locateFile(char const *, int32_t);
 
     // symbol: ?openCurrentFileForReading@UnzipFile@Core@@QEAA?AW4UnzipResult@ZipUtils@2@XZ
     MCAPI ::Core::ZipUtils::UnzipResult openCurrentFileForReading();

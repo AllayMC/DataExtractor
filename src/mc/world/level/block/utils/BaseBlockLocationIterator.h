@@ -16,7 +16,7 @@ public:
     virtual class BaseBlockLocationIterator & operator++();
 
     // vIndex: 2, symbol: ??EBaseBlockLocationIterator@@UEAA?AV0@H@Z
-    virtual class BaseBlockLocationIterator operator++(int);
+    virtual class BaseBlockLocationIterator operator++(int32_t);
 
     // vIndex: 3, symbol: ?_begin@BaseBlockLocationIterator@@MEAAXXZ
     virtual void _begin();

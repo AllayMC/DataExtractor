@@ -21,7 +21,7 @@ public:
     MCAPI void addResultItem(class ItemStack const &);
 
     // symbol: ?getReactionId@LabTableReaction@@QEAAHXZ
-    MCAPI int getReactionId();
+    MCAPI int32_t getReactionId();
 
     // symbol: ?getType@LabTableReaction@@QEAA?AW4LabTableReactionType@@XZ
     MCAPI ::LabTableReactionType getType();

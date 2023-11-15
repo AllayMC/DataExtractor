@@ -66,13 +66,13 @@ public:
     MCAPI std::string getFormattedErrorMessages() const;
 
     // symbol: ?parse@Reader@Json@@QEAA_NPEBD_KAEAVValue@2@_N@Z
-    MCAPI bool parse(char const *, uint64, class Json::Value &, bool);
+    MCAPI bool parse(char const *, uint64_t, class Json::Value &, bool);
 
     // symbol: ?parse@Reader@Json@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@2@_N@Z
     MCAPI bool parse(std::string const &, class Json::Value &, bool);
 
     // symbol: ?parse@Reader@Json@@QEAA_NAEAV?$basic_istream@DU?$char_traits@D@std@@@std@@AEAVValue@2@_N@Z
-    MCAPI bool parse(std::istream &, class Json::Value &, bool);
+    MCAPI bool parse(std::basic_istream<char, std::char_traits<char>> &, class Json::Value &, bool);
 
     // symbol: ??1Reader@Json@@QEAA@XZ
     MCAPI ~Reader();
@@ -97,10 +97,10 @@ public:
     MCAPI class Json::Value::CZString decodeString(class Json::Reader::Token &, bool &);
 
     // symbol: ?decodeUnicodeCodePoint@Reader@Json@@AEAA_NAEAVToken@12@AEAPEBDPEBDAEAI@Z
-    MCAPI bool decodeUnicodeCodePoint(class Json::Reader::Token &, char const *&, char const *, uint &);
+    MCAPI bool decodeUnicodeCodePoint(class Json::Reader::Token &, char const *&, char const *, uint32_t &);
 
     // symbol: ?decodeUnicodeEscapeSequence@Reader@Json@@AEAA_NAEAVToken@12@AEAPEBDPEBDAEAI@Z
-    MCAPI bool decodeUnicodeEscapeSequence(class Json::Reader::Token &, char const *&, char const *, uint &);
+    MCAPI bool decodeUnicodeEscapeSequence(class Json::Reader::Token &, char const *&, char const *, uint32_t &);
 
     // symbol: ?getLocationLineAndColumn@Reader@Json@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD@Z
     MCAPI std::string getLocationLineAndColumn(char const *) const;

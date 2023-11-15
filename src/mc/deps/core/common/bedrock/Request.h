@@ -28,7 +28,7 @@ public:
     MCAPI Request(class Bedrock::Http::Request const &);
 
     // symbol: ?getBody@Request@Http@Bedrock@@QEBA?AV?$not_null@V?$shared_ptr@VIRequestBody@Internal@Http@Bedrock@@@std@@@gsl@@XZ
-    MCAPI gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IRequestBody>> getBody() const;
+    MCAPI class gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IRequestBody>> getBody() const;
 
     // symbol: ?getHeaders@Request@Http@Bedrock@@QEBAAEBVHeaderCollection@23@XZ
     MCAPI class Bedrock::Http::HeaderCollection const & getHeaders() const;
@@ -40,7 +40,7 @@ public:
     MCAPI ::Bedrock::Http::RequestPriority const & getPriority() const;
 
     // symbol: ?getResponseBodyHandler@Request@Http@Bedrock@@QEBA?AV?$not_null@V?$shared_ptr@VIResponseBody@Internal@Http@Bedrock@@@std@@@gsl@@XZ
-    MCAPI gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>> getResponseBodyHandler() const;
+    MCAPI class gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>> getResponseBodyHandler() const;
 
     // symbol: ?getRetryPolicy@Request@Http@Bedrock@@QEBAAEBVRetryPolicy@23@XZ
     MCAPI class Bedrock::Http::RetryPolicy const & getRetryPolicy() const;
@@ -58,7 +58,7 @@ public:
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>> send();
 
     // symbol: ?setBody@Request@Http@Bedrock@@QEAAXV?$not_null@V?$shared_ptr@VIRequestBody@Internal@Http@Bedrock@@@std@@@gsl@@@Z
-    MCAPI void setBody(gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IRequestBody>>);
+    MCAPI void setBody(class gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IRequestBody>>);
 
     // symbol: ?setHeaders@Request@Http@Bedrock@@QEAAXAEBVHeaderCollection@23@@Z
     MCAPI void setHeaders(class Bedrock::Http::HeaderCollection const &);

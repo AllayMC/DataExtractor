@@ -39,7 +39,7 @@ public:
     MCAPI static class Core::Result transferFlatFileDirectory(class Core::FileSystemImpl *, class Core::Path const &, class Core::FileSystemImpl *, class Core::Path const &);
 
     // symbol: ?FLAT_FILE_CURRENT_VERSION@FlatFileOperations@Core@@2_KB
-    MCAPI static uint64 const FLAT_FILE_CURRENT_VERSION;
+    MCAPI static uint64_t const FLAT_FILE_CURRENT_VERSION;
 
     // symbol: ?FLAT_FILE_EMPTY_MANIFEST_FILE@FlatFileOperations@Core@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const FLAT_FILE_EMPTY_MANIFEST_FILE;
@@ -48,13 +48,13 @@ public:
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const FLAT_FILE_EXTENSION;
 
     // symbol: ?FLAT_FILE_INVALID_VERSION@FlatFileOperations@Core@@2_KB
-    MCAPI static uint64 const FLAT_FILE_INVALID_VERSION;
+    MCAPI static uint64_t const FLAT_FILE_INVALID_VERSION;
 
     // symbol: ?FLAT_FILE_MANIFEST_EXTENSION@FlatFileOperations@Core@@2V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@2@B
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const FLAT_FILE_MANIFEST_EXTENSION;
 
     // symbol: ?FLAT_FILE_WRITE_CHUNK_SIZE@FlatFileOperations@Core@@2_KB
-    MCAPI static uint64 const FLAT_FILE_WRITE_CHUNK_SIZE;
+    MCAPI static uint64_t const FLAT_FILE_WRITE_CHUNK_SIZE;
 
     // NOLINTEND
 

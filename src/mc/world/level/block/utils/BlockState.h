@@ -44,10 +44,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?toNBT@?$BlockStateVariant@E@@UEBAXAEAVCompoundTag@@H@Z
-    virtual void toNBT(class CompoundTag &, int) const = 0;
+    virtual void toNBT(class CompoundTag &, int32_t) const = 0;
 
     // vIndex: 2, symbol: ?fromNBT@?$BlockStateVariant@E@@UEBA_NAEBVCompoundTag@@AEAH@Z
-    virtual bool fromNBT(class CompoundTag const &, int &) const = 0;
+    virtual bool fromNBT(class CompoundTag const &, int32_t &) const = 0;
 
     // symbol: ??1BlockState@@UEAA@XZ
     MCVAPI ~BlockState();

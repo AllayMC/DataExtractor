@@ -20,7 +20,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 3, symbol: ?startAnnouncingServer@StubServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$NonOwnerPointer@VAppPlatform@@@Bedrock@@W4GameType@@HH_N3@Z
-    virtual void startAnnouncingServer(std::string const &, std::string const &, class Bedrock::NonOwnerPointer<class AppPlatform>, ::GameType, int, int, bool, bool);
+    virtual void startAnnouncingServer(std::string const &, std::string const &, class Bedrock::NonOwnerPointer<class AppPlatform>, ::GameType, int32_t, int32_t, bool, bool);
 
     // vIndex: 4, symbol: ?stopAnnouncingServer@StubServerLocator@@UEAAXV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
     virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform>);
@@ -32,10 +32,10 @@ public:
     virtual void stopServerDiscovery();
 
     // vIndex: 7, symbol: ?addCustomServer@StubServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
-    virtual void addCustomServer(class AsynchronousIPResolver const &, int);
+    virtual void addCustomServer(class AsynchronousIPResolver const &, int32_t);
 
     // vIndex: 8, symbol: ?addCustomServer@StubServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual void addCustomServer(std::string const &, int);
+    virtual void addCustomServer(std::string const &, int32_t);
 
     // vIndex: 9, symbol: ?getServerList@StubServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
     virtual std::vector<struct PingedCompatibleServer> getServerList() const;
@@ -50,7 +50,7 @@ public:
     virtual float getPingTimeForGUID(std::string const &);
 
     // vIndex: 13, symbol: ?checkCanConnectToCustomServerAsync@StubServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z
-    virtual void checkCanConnectToCustomServerAsync(std::string, int, std::function<void (::ServerConnectivityTestResult)>);
+    virtual void checkCanConnectToCustomServerAsync(std::string, int32_t, std::function<void (::ServerConnectivityTestResult)>);
 
     // symbol: ??1StubServerLocator@@UEAA@XZ
     MCVAPI ~StubServerLocator();

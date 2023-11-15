@@ -30,16 +30,16 @@ public:
     virtual void writeByte(char) = 0;
 
     // vIndex: 6, symbol: ?writeShort@BytesDataOutput@@UEAAXF@Z
-    virtual void writeShort(short) = 0;
+    virtual void writeShort(int16_t) = 0;
 
     // vIndex: 7, symbol: ?writeInt@BytesDataOutput@@UEAAXH@Z
-    virtual void writeInt(int) = 0;
+    virtual void writeInt(int32_t) = 0;
 
     // vIndex: 8, symbol: ?writeLongLong@BytesDataOutput@@UEAAX_J@Z
-    virtual void writeLongLong(int64) = 0;
+    virtual void writeLongLong(int64_t) = 0;
 
     // vIndex: 9, symbol: ?writeBytes@RakDataOutput@@UEAAXPEBX_K@Z
-    virtual void writeBytes(void const *, uint64) = 0;
+    virtual void writeBytes(void const *, uint64_t) = 0;
 
     // NOLINTEND
 

@@ -50,16 +50,16 @@ public:
     MCAPI Goal();
 
     // symbol: ?getRequiredControlFlags@Goal@@QEBAHXZ
-    MCAPI int getRequiredControlFlags() const;
+    MCAPI int32_t getRequiredControlFlags() const;
 
     // symbol: ?getTypeId@Goal@@QEBAGXZ
-    MCAPI ushort getTypeId() const;
+    MCAPI uint16_t getTypeId() const;
 
     // symbol: ?setRequiredControlFlags@Goal@@QEAAXH@Z
-    MCAPI void setRequiredControlFlags(int);
+    MCAPI void setRequiredControlFlags(int32_t);
 
     // symbol: ?setTypeId@Goal@@QEAAXG@Z
-    MCAPI void setTypeId(ushort);
+    MCAPI void setTypeId(uint16_t);
 
     // NOLINTEND
 

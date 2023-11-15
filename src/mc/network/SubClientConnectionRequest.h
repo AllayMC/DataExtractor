@@ -28,19 +28,19 @@ public:
     MCAPI std::string getArmSize() const;
 
     // symbol: ?getCapeData@SubClientConnectionRequest@@QEBA?AV?$vector@EV?$allocator@E@std@@@std@@XZ
-    MCAPI std::vector<uchar> getCapeData() const;
+    MCAPI std::vector<uint8_t> getCapeData() const;
 
     // symbol: ?getCapeId@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getCapeId() const;
 
     // symbol: ?getCapeImageHeight@SubClientConnectionRequest@@QEBAGXZ
-    MCAPI ushort getCapeImageHeight() const;
+    MCAPI uint16_t getCapeImageHeight() const;
 
     // symbol: ?getCapeImageWidth@SubClientConnectionRequest@@QEBAGXZ
-    MCAPI ushort getCapeImageWidth() const;
+    MCAPI uint16_t getCapeImageWidth() const;
 
     // symbol: ?getClientRandomId@SubClientConnectionRequest@@QEBA_KXZ
-    MCAPI uint64 getClientRandomId() const;
+    MCAPI uint64_t getClientRandomId() const;
 
     // symbol: ?getDeviceId@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getDeviceId() const;
@@ -73,7 +73,7 @@ public:
     MCAPI class mce::Color getSkinColor() const;
 
     // symbol: ?getSkinData@SubClientConnectionRequest@@QEBA?AV?$vector@EV?$allocator@E@std@@@std@@XZ
-    MCAPI std::vector<uchar> getSkinData() const;
+    MCAPI std::vector<uint8_t> getSkinData() const;
 
     // symbol: ?getSkinGeometry@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getSkinGeometry() const;
@@ -85,10 +85,10 @@ public:
     MCAPI std::string getSkinId() const;
 
     // symbol: ?getSkinImageHeight@SubClientConnectionRequest@@QEBAGXZ
-    MCAPI ushort getSkinImageHeight() const;
+    MCAPI uint16_t getSkinImageHeight() const;
 
     // symbol: ?getSkinImageWidth@SubClientConnectionRequest@@QEBAGXZ
-    MCAPI ushort getSkinImageWidth() const;
+    MCAPI uint16_t getSkinImageWidth() const;
 
     // symbol: ?getSkinResourcePatch@SubClientConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getSkinResourcePatch() const;
@@ -118,7 +118,7 @@ public:
     MCAPI std::string toString();
 
     // symbol: ?verify@SubClientConnectionRequest@@QEAA_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_J@Z
-    MCAPI bool verify(std::vector<std::string> const &, int64);
+    MCAPI bool verify(std::vector<std::string> const &, int64_t);
 
     // symbol: ?verifySelfSigned@SubClientConnectionRequest@@QEAA_NXZ
     MCAPI bool verifySelfSigned();
@@ -137,7 +137,7 @@ public:
     MCAPI SubClientConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
 
     // symbol: ?validate@SubClientConnectionRequest@@AEBA?AV?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@V23@_J_N@Z
-    MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, int64, bool) const;
+    MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, int64_t, bool) const;
 
     // NOLINTEND
 

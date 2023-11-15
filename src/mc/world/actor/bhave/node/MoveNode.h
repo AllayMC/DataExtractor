@@ -29,7 +29,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?convertDirectionStringToKeyPress@MoveNode@@AEAAEV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI uchar convertDirectionStringToKeyPress(std::string);
+    MCAPI uint8_t convertDirectionStringToKeyPress(std::string);
 
     // NOLINTEND
 

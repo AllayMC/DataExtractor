@@ -42,7 +42,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptWorld@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVServerLevel@@@gsl@@@Z
-    MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const &, gsl::not_null<class ServerLevel *>);
+    MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const &, class gsl::not_null<class ServerLevel *>);
 
     // symbol: ?broadcastClientMessage@ScriptWorld@ScriptModuleMinecraft@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI void broadcastClientMessage(std::string const &, std::string const &);
@@ -51,7 +51,7 @@ public:
     MCAPI void clearDynamicProperties(struct Scripting::ContextConfig const &);
 
     // symbol: ?getAbsoluteTime@ScriptWorld@ScriptModuleMinecraft@@QEBAHXZ
-    MCAPI int getAbsoluteTime() const;
+    MCAPI int32_t getAbsoluteTime() const;
 
     // symbol: ?getAfterEvents@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptWorldAfterEvents@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldAfterEvents> getAfterEvents();
@@ -63,7 +63,7 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldBeforeEvents> getBeforeEvents();
 
     // symbol: ?getDay@ScriptWorld@ScriptModuleMinecraft@@QEBAHXZ
-    MCAPI int getDay() const;
+    MCAPI int32_t getDay() const;
 
     // symbol: ?getDimension@ScriptWorld@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptDimension@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>> getDimension(std::string const &) const;
@@ -75,7 +75,7 @@ public:
     MCAPI std::vector<std::string> getDynamicPropertyIds(struct Scripting::ContextConfig const &) const;
 
     // symbol: ?getDynamicPropertyTotalByteCount@ScriptWorld@ScriptModuleMinecraft@@QEBAHAEBUContextConfig@Scripting@@@Z
-    MCAPI int getDynamicPropertyTotalByteCount(struct Scripting::ContextConfig const &) const;
+    MCAPI int32_t getDynamicPropertyTotalByteCount(struct Scripting::ContextConfig const &) const;
 
     // symbol: ?getDynamicProperty_V010@ScriptWorld@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@std@@$$V@Scripting@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<std::optional<std::variant<double, float, bool, std::string, class Vec3>>> getDynamicProperty_V010(struct Scripting::ContextConfig const &, std::string const &) const;
@@ -93,7 +93,7 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard> getScoreboard();
 
     // symbol: ?getTimeOfDay@ScriptWorld@ScriptModuleMinecraft@@QEBAHXZ
-    MCAPI int getTimeOfDay() const;
+    MCAPI int32_t getTimeOfDay() const;
 
     // symbol: ?playMusic@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@UScriptMusicOptions@ScriptModuleMinecraft@@@6@@Z
     MCAPI class Scripting::Result<void> playMusic(std::string const &, std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions>);
@@ -123,7 +123,7 @@ public:
     MCAPI class Scripting::Result<void> setDynamicProperty_V010(struct Scripting::ContextConfig const &, std::string const &, std::variant<double, float, bool, std::string, class Vec3> &);
 
     // symbol: ?setTimeOfDay@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@V?$variant@HW4ScriptTimeOfDay@ScriptModuleMinecraft@@@std@@@Z
-    MCAPI class Scripting::Result<void> setTimeOfDay(std::variant<int, ::ScriptModuleMinecraft::ScriptTimeOfDay>);
+    MCAPI class Scripting::Result<void> setTimeOfDay(std::variant<int32_t, ::ScriptModuleMinecraft::ScriptTimeOfDay>);
 
     // symbol: ?stopMusic@ScriptWorld@ScriptModuleMinecraft@@QEAAXXZ
     MCAPI void stopMusic();

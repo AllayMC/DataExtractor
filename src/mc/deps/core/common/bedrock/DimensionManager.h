@@ -29,7 +29,7 @@ public:
     MCVAPI ~DimensionManager();
 
     // symbol: ??0DimensionManager@@QEAA@V?$not_null@V?$NonOwnerPointer@VIDimensionFactory@@@Bedrock@@@gsl@@V?$optional@VDimensionDefinitionGroup@@@std@@@Z
-    MCAPI DimensionManager(Bedrock::NotNullNonOwnerPtr<class IDimensionFactory>, std::optional<class DimensionDefinitionGroup>);
+    MCAPI DimensionManager(class gsl::not_null<class Bedrock::NonOwnerPointer<class IDimensionFactory>>, std::optional<class DimensionDefinitionGroup>);
 
     // symbol: ?forEachDimension@DimensionManager@@QEAAXV?$function@$$A6A_NAEAVDimension@@@Z@std@@@Z
     MCAPI void forEachDimension(std::function<bool (class Dimension &)>);

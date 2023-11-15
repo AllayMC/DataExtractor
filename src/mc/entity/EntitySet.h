@@ -22,7 +22,7 @@ public:
     MCAPI bool add(class EntityContext const &);
 
     // symbol: ?erase@EntitySet@@QEAA?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CB_KVWeakEntityRef@@@std@@@std@@@std@@@std@@V23@@Z
-    MCAPI std::_List_const_iterator<std::_List_val<std::_List_simple_types<std::pair<uint64 const, class WeakEntityRef>>>> erase(std::_List_const_iterator<std::_List_val<std::_List_simple_types<std::pair<uint64 const, class WeakEntityRef>>>>);
+    MCAPI std::_List_const_iterator<std::_List_val<std::_List_simple_types<std::pair<uint64_t const, class WeakEntityRef>>>> erase(std::_List_const_iterator<std::_List_val<std::_List_simple_types<std::pair<uint64_t const, class WeakEntityRef>>>>);
 
     // symbol: ?find@EntitySet@@QEBA?AVWeakEntityRef@@AEBVEntityContext@@@Z
     MCAPI class WeakEntityRef find(class EntityContext const &) const;

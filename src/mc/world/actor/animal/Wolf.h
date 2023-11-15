@@ -71,7 +71,7 @@ public:
     virtual ::LevelSoundEvent getAmbientSound() const;
 
     // vIndex: 84, symbol: ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 99, symbol: ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual bool load(class CompoundTag const &, class DataLoadHelper &);
@@ -80,7 +80,7 @@ public:
     virtual void __unk_vfn_109();
 
     // vIndex: 114, symbol: ?onSynchedDataUpdate@Wolf@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
 
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();

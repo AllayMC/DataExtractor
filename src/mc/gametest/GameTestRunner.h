@@ -27,7 +27,7 @@ public:
     MCAPI static void clearMarkers(class Level &);
 
     // symbol: ?groupTestsIntoBatches@GameTestRunner@@SA?AV?$vector@VGameTestBatch@gametest@@V?$allocator@VGameTestBatch@gametest@@@std@@@std@@AEAVGameTestRegistry@gametest@@AEBV?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@3@H@Z
-    MCAPI static std::vector<class gametest::GameTestBatch> groupTestsIntoBatches(class gametest::GameTestRegistry &, std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>> const &, int);
+    MCAPI static std::vector<class gametest::GameTestBatch> groupTestsIntoBatches(class gametest::GameTestRegistry &, std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>> const &, int32_t);
 
     // symbol: ?runTest@GameTestRunner@@SAXV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVGameTestTicker@gametest@@@Z
     MCAPI static void runTest(std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker &);
@@ -40,7 +40,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_subdivideBatch@GameTestRunner@@CA?AV?$vector@V?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@std@@V?$allocator@V?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@std@@@2@@std@@AEAV?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@3@H@Z
-    MCAPI static std::vector<std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>> _subdivideBatch(std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>> &, int);
+    MCAPI static std::vector<std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>, std::allocator<std::shared_ptr<class gametest::BaseGameTestFunction>>>> _subdivideBatch(std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>> &, int32_t);
 
     // NOLINTEND
 

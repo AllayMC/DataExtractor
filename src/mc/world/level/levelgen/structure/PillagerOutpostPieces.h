@@ -41,7 +41,7 @@ public:
         virtual void _handleDataMarker(std::string const &, class BlockPos const &, class BlockSource &, class Random &, class BoundingBox const &);
     
         // symbol: ??0PillagerOutpostPiece@PillagerOutpostPieces@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@M_NAEAVDimension@@@Z
-        MCAPI PillagerOutpostPiece(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::string, class BlockPos const &, ::Rotation, float, bool, class Dimension &);
+        MCAPI PillagerOutpostPiece(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string, class BlockPos const &, ::Rotation, float, bool, class Dimension &);
     
         // NOLINTEND
     
@@ -63,10 +63,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addPiece@PillagerOutpostPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@AEBW4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEAVDimension@@@Z
-    MCAPI static void _addPiece(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class BlockPos const &, ::Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, class Dimension &);
+    MCAPI static void _addPiece(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, ::Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, class Dimension &);
 
     // symbol: ?_addScatteredPieces@PillagerOutpostPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVRandom@@AEBW4Rotation@@AEBVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVDimension@@@Z
-    MCAPI static void _addScatteredPieces(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class Random &, ::Rotation const &, class BlockPos const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Dimension &);
+    MCAPI static void _addScatteredPieces(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class Random &, ::Rotation const &, class BlockPos const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Dimension &);
 
     // NOLINTEND
 

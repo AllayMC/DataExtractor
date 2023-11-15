@@ -142,7 +142,7 @@ public:
     virtual std::string buildDescriptionId(class Block const &) const;
 
     // vIndex: 142, symbol: ?getVariant@CoralFanHang@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -175,10 +175,10 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@CoralFanHang@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 186, symbol: ?getResourceCount@CoralFanHang@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@CoralFanHang@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -187,10 +187,10 @@ public:
     virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ??0CoralFanHang@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CoralFanHang(std::string const &, int);
+    MCAPI CoralFanHang(std::string const &, int32_t);
 
     // symbol: ?hasSupport@CoralFanHang@@SA_NAEBVBlock@@E@Z
-    MCAPI static bool hasSupport(class Block const &, uchar);
+    MCAPI static bool hasSupport(class Block const &, uint8_t);
 
     // NOLINTEND
 

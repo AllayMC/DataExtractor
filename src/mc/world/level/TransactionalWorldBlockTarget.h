@@ -37,13 +37,13 @@ public:
     virtual class Block const & getExtraBlock(class BlockPos const &) const;
 
     // vIndex: 7, symbol: ?fetchBlocksInBox@TransactionalWorldBlockTarget@@UEAA?AV?$span@$$CBV?$BlockDataFetchResult@VBlock@@@@$0?0@gsl@@AEBVBoundingBox@@V?$function@$$A6A_NAEBVBlock@@@Z@std@@@Z
-    virtual gsl::span<class BlockDataFetchResult<class Block> const> fetchBlocksInBox(class BoundingBox const &, std::function<bool (class Block const &)>);
+    virtual class gsl::span<class BlockDataFetchResult<class Block> const> fetchBlocksInBox(class BoundingBox const &, std::function<bool (class Block const &)>);
 
     // vIndex: 8, symbol: ?hasBiomeTag@TransactionalWorldBlockTarget@@UEBA_N_KAEBVBlockPos@@@Z
-    virtual bool hasBiomeTag(uint64, class BlockPos const &) const;
+    virtual bool hasBiomeTag(uint64_t, class BlockPos const &) const;
 
     // vIndex: 9, symbol: ?setBlock@TransactionalWorldBlockTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@H@Z
-    virtual bool setBlock(class BlockPos const &, class Block const &, int);
+    virtual bool setBlock(class BlockPos const &, class Block const &, int32_t);
 
     // vIndex: 10, symbol: ?setBlockSimple@TransactionalWorldBlockTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z
     virtual bool setBlockSimple(class BlockPos const &, class Block const &);
@@ -64,16 +64,16 @@ public:
     virtual bool canBeBuiltOver(class BlockPos const &, class Block const &) const;
 
     // vIndex: 16, symbol: ?getMaxHeight@TransactionalWorldBlockTarget@@UEBAFXZ
-    virtual short getMaxHeight() const;
+    virtual int16_t getMaxHeight() const;
 
     // vIndex: 17, symbol: ?getMinHeight@TransactionalWorldBlockTarget@@UEBAFXZ
-    virtual short getMinHeight() const;
+    virtual int16_t getMinHeight() const;
 
     // vIndex: 18, symbol: __unk_vfn_18
     virtual void __unk_vfn_18();
 
     // vIndex: 19, symbol: ?getHeightmap@TransactionalWorldBlockTarget@@UEAAFHH@Z
-    virtual short getHeightmap(int, int);
+    virtual int16_t getHeightmap(int32_t, int32_t);
 
     // vIndex: 20, symbol: ?isLegacyLevel@TransactionalWorldBlockTarget@@UEAA_NXZ
     virtual bool isLegacyLevel();
@@ -85,7 +85,7 @@ public:
     virtual bool isInBounds(class Pos const &) const;
 
     // vIndex: 23, symbol: ?getLocalWaterLevel@TransactionalWorldBlockTarget@@UEBAFAEBVBlockPos@@@Z
-    virtual short getLocalWaterLevel(class BlockPos const &) const;
+    virtual int16_t getLocalWaterLevel(class BlockPos const &) const;
 
     // vIndex: 24, symbol: ?getLevelData@TransactionalWorldBlockTarget@@UEBAAEBVLevelData@@XZ
     virtual class LevelData const & getLevelData() const;

@@ -33,16 +33,16 @@ public:
     virtual void writeByte(char);
 
     // vIndex: 6, symbol: ?writeShort@BytesDataOutput@@UEAAXF@Z
-    virtual void writeShort(short);
+    virtual void writeShort(int16_t);
 
     // vIndex: 7, symbol: ?writeInt@BytesDataOutput@@UEAAXH@Z
-    virtual void writeInt(int);
+    virtual void writeInt(int32_t);
 
     // vIndex: 8, symbol: ?writeLongLong@BytesDataOutput@@UEAAX_J@Z
-    virtual void writeLongLong(int64);
+    virtual void writeLongLong(int64_t);
 
     // vIndex: 9, symbol: ?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z
-    virtual void writeBytes(void const *, uint64);
+    virtual void writeBytes(void const *, uint64_t);
 
     // symbol: ??1StringByteOutput@@UEAA@XZ
     MCVAPI ~StringByteOutput();

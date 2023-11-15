@@ -37,7 +37,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@SkullBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@SkullBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -172,19 +172,19 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 192, symbol: ?getEntityResourceItem@SkullBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int32_t) const;
 
     // symbol: ?waterSpreadCausesSpawn@SkullBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SkullBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SkullBlock(std::string const &, int);
+    MCAPI SkullBlock(std::string const &, int32_t);
 
     // symbol: ?checkMobSpawn@SkullBlock@@QEBA_NAEAVLevel@@AEAVBlockSource@@AEBVBlockPos@@AEAVSkullBlockActor@@@Z
     MCAPI bool checkMobSpawn(class Level &, class BlockSource &, class BlockPos const &, class SkullBlockActor &) const;
 
     // symbol: ?getTypeDescriptionId@SkullBlock@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI static std::string getTypeDescriptionId(int);
+    MCAPI static std::string getTypeDescriptionId(int32_t);
 
     // NOLINTEND
 

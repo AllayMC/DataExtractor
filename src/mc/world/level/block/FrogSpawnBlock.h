@@ -37,7 +37,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@FrogSpawnBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -181,7 +181,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0FrogSpawnBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FrogSpawnBlock(std::string const &, int);
+    MCAPI FrogSpawnBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

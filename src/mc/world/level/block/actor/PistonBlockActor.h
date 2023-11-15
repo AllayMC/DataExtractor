@@ -112,7 +112,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@EE@Z
-    MCAPI bool _attachedBlockWalker(class BlockSource &, class BlockPos const &, uchar, uchar);
+    MCAPI bool _attachedBlockWalker(class BlockSource &, class BlockPos const &, uint8_t, uint8_t);
 
     // symbol: ?_checkAttachedBlocks@PistonBlockActor@@AEAA_NAEAVBlockSource@@@Z
     MCAPI bool _checkAttachedBlocks(class BlockSource &);
@@ -121,7 +121,7 @@ public:
     MCAPI void _checkInceptionAchievement(class BlockActor &, class BlockSource &, class BlockPos const &);
 
     // symbol: ?_handleSlimeConnections@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@EE@Z
-    MCAPI bool _handleSlimeConnections(class BlockSource &, class BlockPos const &, uchar, uchar);
+    MCAPI bool _handleSlimeConnections(class BlockSource &, class BlockPos const &, uint8_t, uint8_t);
 
     // symbol: ?_hasBlockAttached@PistonBlockActor@@AEAA_NAEBVBlockPos@@@Z
     MCAPI bool _hasBlockAttached(class BlockPos const &);
@@ -130,7 +130,7 @@ public:
     MCAPI void _moveCollidedEntities(class BlockSource &);
 
     // symbol: ?_moveCollidedEntitiesHelper@PistonBlockActor@@AEAAXAEAVBlockSource@@AEBVAABB@@AEBVBlockPos@@PEAVActor@@I@Z
-    MCAPI void _moveCollidedEntitiesHelper(class BlockSource &, class AABB const &, class BlockPos const &, class Actor *, uint);
+    MCAPI void _moveCollidedEntitiesHelper(class BlockSource &, class AABB const &, class BlockPos const &, class Actor *, uint32_t);
 
     // symbol: ?_sortAttachedBlocks@PistonBlockActor@@AEAAXAEAVBlockSource@@@Z
     MCAPI void _sortAttachedBlocks(class BlockSource &);

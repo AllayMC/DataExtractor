@@ -23,7 +23,7 @@ public:
     virtual void _updateState();
 
     // vIndex: 9, symbol: ?_genMaskingKey@RakWebSocketClient@@MEBAIXZ
-    virtual uint _genMaskingKey() const;
+    virtual uint32_t _genMaskingKey() const;
 
     // symbol: ??1RakWebSocketClient@@UEAA@XZ
     MCVAPI ~RakWebSocketClient();

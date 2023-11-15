@@ -18,10 +18,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?toNBT@CustomBlockStateVariant@@UEBAXAEAVCompoundTag@@H@Z
-    virtual void toNBT(class CompoundTag &, int) const;
+    virtual void toNBT(class CompoundTag &, int32_t) const;
 
     // vIndex: 2, symbol: ?fromNBT@CustomBlockStateVariant@@UEBA_NAEBVCompoundTag@@AEAH@Z
-    virtual bool fromNBT(class CompoundTag const &, int &) const;
+    virtual bool fromNBT(class CompoundTag const &, int32_t &) const;
 
     // NOLINTEND
 

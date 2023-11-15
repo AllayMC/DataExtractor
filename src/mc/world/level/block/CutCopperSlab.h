@@ -149,7 +149,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@CutCopperSlab@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -158,10 +158,10 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0CutCopperSlab@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVHashedString@@W4CopperType@@2@Z
-    MCAPI CutCopperSlab(std::string const &, int, bool, class HashedString const &, ::CopperType, class HashedString const &);
+    MCAPI CutCopperSlab(std::string const &, int32_t, bool, class HashedString const &, ::CopperType, class HashedString const &);
 
     // symbol: ??0CutCopperSlab@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVHashedString@@W4CopperType@@222@Z
-    MCAPI CutCopperSlab(std::string const &, int, bool, class HashedString const &, ::CopperType, class HashedString const &, class HashedString const &, class HashedString const &);
+    MCAPI CutCopperSlab(std::string const &, int32_t, bool, class HashedString const &, ::CopperType, class HashedString const &, class HashedString const &, class HashedString const &);
 
     // NOLINTEND
 

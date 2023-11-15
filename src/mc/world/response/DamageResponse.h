@@ -41,7 +41,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?repairOrHurtItem@DamageResponse@@AEBAXAEBHAEAVRenderParams@@@Z
-    MCAPI void repairOrHurtItem(int const &, class RenderParams &) const;
+    MCAPI void repairOrHurtItem(int32_t const &, class RenderParams &) const;
 
     // NOLINTEND
 

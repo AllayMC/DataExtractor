@@ -23,13 +23,13 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@EnchantingContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const &, bool);
+    virtual void setSlot(int32_t, class ItemStack const &, bool);
 
     // vIndex: 8, symbol: ?getSlot@EnchantingContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const & getSlot(int) const;
+    virtual class ItemStack const & getSlot(int32_t) const;
 
     // vIndex: 9, symbol: ?setData@EnchantingContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int, int);
+    virtual void setData(int32_t, int32_t);
 
     // vIndex: 10, symbol: ?broadcastChanges@EnchantingContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();
@@ -50,7 +50,7 @@ public:
     MCAPI void recalculateOptions();
 
     // symbol: ?NUM_OPTIONS@EnchantingContainerManagerModel@@2HB
-    MCAPI static int const NUM_OPTIONS;
+    MCAPI static int32_t const NUM_OPTIONS;
 
     // NOLINTEND
 

@@ -49,7 +49,7 @@ public:
     MCAPI static void parse(class Json::Value const &, class SemVersion const &, class Json::Value &, char const *);
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAEE@Z
-    MCAPI static void parse(class Json::Value const &, class SemVersion const &, uchar &, uchar);
+    MCAPI static void parse(class Json::Value const &, class SemVersion const &, uint8_t &, uint8_t);
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAVFilterGroup@@PEBD3@Z
     MCAPI static void parse(class Json::Value const &, class SemVersion const &, class FilterGroup &, char const *, char const *);
@@ -58,13 +58,13 @@ public:
     MCAPI static void parse(class Json::Value const &, class SemVersion const &, class HashedString &, char const *, char const *);
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAIPEBDI@Z
-    MCAPI static void parse(class Json::Value const &, class SemVersion const &, uint &, char const *, uint);
+    MCAPI static void parse(class Json::Value const &, class SemVersion const &, uint32_t &, char const *, uint32_t);
 
     // symbol: ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAVDefinitionTrigger@@_N@Z
     MCAPI static bool parse(class Json::Value const &, class SemVersion const &, class DefinitionTrigger &, bool);
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAHPEBDH@Z
-    MCAPI static void parse(class Json::Value const &, class SemVersion const &, int &, char const *, int);
+    MCAPI static void parse(class Json::Value const &, class SemVersion const &, int32_t &, char const *, int32_t);
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@PEBD@Z
     MCAPI static void parse(class Json::Value const &, class SemVersion const &, std::vector<std::string> &, char const *);

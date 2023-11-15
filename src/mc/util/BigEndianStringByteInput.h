@@ -24,19 +24,19 @@ public:
     virtual double readDouble();
 
     // vIndex: 6, symbol: ?readShort@BigEndianStringByteInput@@UEAAFXZ
-    virtual short readShort();
+    virtual int16_t readShort();
 
     // vIndex: 7, symbol: ?readInt@BigEndianStringByteInput@@UEAAHXZ
-    virtual int readInt();
+    virtual int32_t readInt();
 
     // vIndex: 8, symbol: ?readLongLong@BigEndianStringByteInput@@UEAA_JXZ
-    virtual int64 readLongLong();
+    virtual int64_t readLongLong();
 
     // vIndex: 9, symbol: ?readBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
-    virtual bool readBytes(void *, uint64);
+    virtual bool readBytes(void *, uint64_t);
 
     // vIndex: 11, symbol: ?readBigEndianBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
-    virtual bool readBigEndianBytes(void *, uint64);
+    virtual bool readBigEndianBytes(void *, uint64_t);
 
     // symbol: ??1BigEndianStringByteInput@@UEAA@XZ
     MCVAPI ~BigEndianStringByteInput();

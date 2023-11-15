@@ -121,7 +121,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 135, symbol: ?getColor@CherryLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
+    virtual int32_t getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 138, symbol: ?isSeasonTinted@CherryLeavesBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isSeasonTinted(class Block const &, class BlockSource &, class BlockPos const &) const;
@@ -130,7 +130,7 @@ public:
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
 
     // vIndex: 142, symbol: ?getVariant@CherryLeavesBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 148, symbol: ?animateTick@CherryLeavesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
@@ -166,13 +166,13 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@CherryLeavesBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@CherryLeavesBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 
     // symbol: ??0CherryLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CherryLeavesBlock(std::string const &, int);
+    MCAPI CherryLeavesBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

@@ -8,7 +8,7 @@
 namespace Scripting {
     // NOLINTBEGIN
     // symbol: ?LogMessage@Scripting@@YAXW4LogLevel@1@PEBDI1ZZ
-    MCAPI void LogMessage(::Scripting::LogLevel, char const *, uint, char const *, ...);
+    MCAPI void LogMessage(::Scripting::LogLevel, char const *, uint32_t, char const *, ...);
 
     // symbol: ?RED_COLOR_FORMAT@Scripting@@3PEBDEB
     MCAPI extern char const * RED_COLOR_FORMAT;
@@ -17,7 +17,7 @@ namespace Scripting {
     MCAPI std::vector<std::string> _versionSplit(std::string const &, char);
 
     // symbol: ?defaultLogFunction@Scripting@@YAXPEAXW4LogLevel@1@PEBDI2@Z
-    MCAPI void defaultLogFunction(void *, ::Scripting::LogLevel, char const *, uint, char const *);
+    MCAPI void defaultLogFunction(void *, ::Scripting::LogLevel, char const *, uint32_t, char const *);
 
     // symbol: ?logUserData@Scripting@@3PEAXEA
     MCAPI extern void * logUserData;

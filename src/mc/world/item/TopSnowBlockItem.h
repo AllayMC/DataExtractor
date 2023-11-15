@@ -43,7 +43,7 @@ public:
     virtual void __unk_vfn_21();
 
     // vIndex: 45, symbol: ?getLevelDataForAuxValue@TopSnowBlockItem@@UEBAHH@Z
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int32_t getLevelDataForAuxValue(int32_t) const;
 
     // vIndex: 51, symbol: __unk_vfn_51
     virtual void __unk_vfn_51();
@@ -79,7 +79,7 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 135, symbol: ?_useOn@TopSnowBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // NOLINTEND
 

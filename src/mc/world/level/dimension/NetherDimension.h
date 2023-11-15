@@ -36,19 +36,19 @@ public:
     MCVAPI class HashedString getDefaultBiome() const;
 
     // symbol: ?getTimeOfDay@NetherDimension@@UEBAMHM@Z
-    MCVAPI float getTimeOfDay(int, float) const;
+    MCVAPI float getTimeOfDay(int32_t, float) const;
 
     // symbol: ?init@NetherDimension@@UEAAXXZ
     MCVAPI void init();
 
     // symbol: ?isFoggyAt@NetherDimension@@UEBA_NHH@Z
-    MCVAPI bool isFoggyAt(int, int) const;
+    MCVAPI bool isFoggyAt(int32_t, int32_t) const;
 
     // symbol: ?isNaturalDimension@NetherDimension@@UEBA_NXZ
     MCVAPI bool isNaturalDimension() const;
 
     // symbol: ?isValidSpawn@NetherDimension@@UEBA_NHH@Z
-    MCVAPI bool isValidSpawn(int, int) const;
+    MCVAPI bool isValidSpawn(int32_t, int32_t) const;
 
     // symbol: ?levelChunkNeedsUpgrade@NetherDimension@@UEBA_NAEBVLevelChunk@@@Z
     MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const &) const;
@@ -73,7 +73,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?makeStructureFeatures@NetherDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@IAEBVBaseGameVersion@@@Z
-    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(uint, class BaseGameVersion const &);
+    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(uint32_t, class BaseGameVersion const &);
 
     // NOLINTEND
 

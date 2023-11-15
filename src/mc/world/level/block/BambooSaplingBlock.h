@@ -94,7 +94,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 56, symbol: ?isValidAuxValue@BambooSaplingBlock@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -148,7 +148,7 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 142, symbol: ?getVariant@BambooSaplingBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -181,7 +181,7 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0BambooSaplingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BambooSaplingBlock(std::string const &, int);
+    MCAPI BambooSaplingBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

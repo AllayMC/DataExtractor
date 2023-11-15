@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?fromInt@Compound@BlockDescriptor@v1_20_50@Puv@@QEAAXH@Z
-    MCAPI void fromInt(int);
+    MCAPI void fromInt(int32_t);
 
     // symbol: ?fromString@Compound@BlockDescriptor@v1_20_50@Puv@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void fromString(std::string);

@@ -50,10 +50,10 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@WallBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 28, symbol: ?canConnect@WallBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const &, uchar, class Block const &) const;
+    virtual bool canConnect(class Block const &, uint8_t, class Block const &) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -146,7 +146,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@WallBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -170,7 +170,7 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 142, symbol: ?getVariant@WallBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -215,13 +215,13 @@ public:
     MCVAPI ~WallBlock();
 
     // symbol: ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI WallBlock(std::string const &, int, class Material const &);
+    MCAPI WallBlock(std::string const &, int32_t, class Material const &);
 
     // symbol: ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@@Z
-    MCAPI WallBlock(std::string const &, int, class BlockLegacy const &);
+    MCAPI WallBlock(std::string const &, int32_t, class BlockLegacy const &);
 
     // symbol: ?tryFixWallStates@WallBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void tryFixWallStates(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI void tryFixWallStates(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // symbol: ?POST_HEIGHT@WallBlock@@2MB
     MCAPI static float const POST_HEIGHT;
@@ -243,7 +243,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_desiredConnectionState@WallBlock@@AEBA?AW4WallConnectionType@@AEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI ::WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, uchar) const;
+    MCAPI ::WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // symbol: ?_isCovered@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVAABB@@@Z
     MCAPI bool _isCovered(class BlockSource &, class BlockPos const &, class AABB const &) const;

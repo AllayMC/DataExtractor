@@ -21,7 +21,7 @@ public:
     MCAPI void addInputToFrontOfCurrentFrame(std::shared_ptr<struct IReplayableActorInput>) const;
 
     // symbol: ?getCurrentTick@ReplayStateComponent@@QEBA_KXZ
-    MCAPI uint64 getCurrentTick() const;
+    MCAPI uint64_t getCurrentTick() const;
 
     // symbol: ??4ReplayStateComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ReplayStateComponent & operator=(class ReplayStateComponent &&);
@@ -30,7 +30,7 @@ public:
     MCAPI struct MovementCorrection shouldSendCorrectionToClient(class EntityContext &, class IConstBlockSource const &, class PlayerAuthInputPacket const &) const;
 
     // symbol: ?tick@ReplayStateComponent@@QEAAXPEAVActor@@_KPEAVEntityRegistry@@@Z
-    MCAPI void tick(class Actor *, uint64, class EntityRegistry *);
+    MCAPI void tick(class Actor *, uint64_t, class EntityRegistry *);
 
     // symbol: ??1ReplayStateComponent@@QEAA@XZ
     MCAPI ~ReplayStateComponent();

@@ -79,7 +79,7 @@ public:
     virtual void __unk_vfn_109();
 
     // vIndex: 126, symbol: ?canBeAffected@Skeleton@@UEBA_NI@Z
-    virtual bool canBeAffected(uint) const;
+    virtual bool canBeAffected(uint32_t) const;
 
     // vIndex: 136, symbol: ?getDebugText@Skeleton@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     virtual void getDebugText(std::vector<std::string> &);

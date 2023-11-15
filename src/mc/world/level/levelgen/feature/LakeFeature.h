@@ -31,7 +31,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_check@LakeFeature@@AEBA_NAEBVBlockPos@@V?$span@_N$0IAA@@gsl@@@Z
-    MCAPI bool _check(class BlockPos const &, gsl::span<bool, 2048>) const;
+    MCAPI bool _check(class BlockPos const &, class gsl::span<bool, 2048>) const;
 
     // NOLINTEND
 

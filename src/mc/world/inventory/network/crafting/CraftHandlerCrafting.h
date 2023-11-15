@@ -23,7 +23,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?handleConsumedItem@CraftHandlerCrafting@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
-    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uchar, class ItemStack const &);
+    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uint8_t, class ItemStack const &);
 
     // vIndex: 2, symbol: ?preHandleAction@CraftHandlerCrafting@@UEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z
     virtual ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType);
@@ -45,7 +45,7 @@ public:
     MCAPI void _handleCarefulRestoration(class ItemInstance const &) const;
 
     // symbol: ?_handleCraftOutput@CraftHandlerCrafting@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionCraft@V?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@$0M@@@@Z
-    MCAPI ::ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<RecipeNetId, 12> const &);
+    MCAPI ::ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0>, 12> const &);
 
     // NOLINTEND
 

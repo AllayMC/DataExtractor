@@ -28,13 +28,13 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@SpawnExperienceOrbPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1SpawnExperienceOrbPacket@@UEAA@XZ
     MCVAPI ~SpawnExperienceOrbPacket();
 
     // symbol: ??0SpawnExperienceOrbPacket@@QEAA@AEBVVec3@@H@Z
-    MCAPI SpawnExperienceOrbPacket(class Vec3 const &, int);
+    MCAPI SpawnExperienceOrbPacket(class Vec3 const &, int32_t);
 
     // symbol: ??0SpawnExperienceOrbPacket@@QEAA@XZ
     MCAPI SpawnExperienceOrbPacket();

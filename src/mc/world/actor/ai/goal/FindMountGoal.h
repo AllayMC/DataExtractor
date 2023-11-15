@@ -37,7 +37,7 @@ public:
     virtual void appendDebugInfo(std::string &) const;
 
     // symbol: ??0FindMountGoal@@QEAA@AEAVMob@@MH_N1MH@Z
-    MCAPI FindMountGoal(class Mob &, float, int, bool, bool, float, int);
+    MCAPI FindMountGoal(class Mob &, float, int32_t, bool, bool, float, int32_t);
 
     // symbol: ?isInMountRange@FindMountGoal@@QEAA_NXZ
     MCAPI bool isInMountRange();

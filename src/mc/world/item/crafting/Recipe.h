@@ -26,10 +26,10 @@ public:
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, class CraftingContext &) const = 0;
 
     // vIndex: 2, symbol: ?getCraftingSize@BannerAddPatternRecipe@@UEBAHXZ
-    virtual int getCraftingSize() const = 0;
+    virtual int32_t getCraftingSize() const = 0;
 
     // vIndex: 3, symbol: ?getIngredient@ShapelessRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-    virtual class RecipeIngredient const & getIngredient(int, int) const = 0;
+    virtual class RecipeIngredient const & getIngredient(int32_t, int32_t) const = 0;
 
     // vIndex: 4, symbol: ?getResultItem@ShapelessRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const & getResultItem() const = 0;
@@ -41,7 +41,7 @@ public:
     virtual bool matches(class CraftingContainer const &, class CraftingContext const &) const = 0;
 
     // vIndex: 7, symbol: ?size@BannerAddPatternRecipe@@UEBAHXZ
-    virtual int size() const = 0;
+    virtual int32_t size() const = 0;
 
     // vIndex: 8, symbol: ?getId@Recipe@@UEBAAEBVUUID@mce@@XZ
     virtual class mce::UUID const & getId() const;
@@ -62,7 +62,7 @@ public:
     virtual bool itemsMatch(class ItemDescriptor const &, class ItemDescriptor const &, class CompoundTag const *) const;
 
     // vIndex: 14, symbol: ?getIngredientsHash@Recipe@@UEBA_KXZ
-    virtual uint64 getIngredientsHash() const;
+    virtual uint64_t getIngredientsHash() const;
 
     // vIndex: 15, symbol: ?loadResultList@Recipe@@UEBAXAEBVBlockPalette@@@Z
     virtual void loadResultList(class BlockPalette const &) const;
@@ -71,19 +71,19 @@ public:
     MCVAPI ~Recipe();
 
     // symbol: ?countQuantityOfIngredient@Recipe@@QEBAHAEBVItemInstance@@@Z
-    MCAPI int countQuantityOfIngredient(class ItemInstance const &) const;
+    MCAPI int32_t countQuantityOfIngredient(class ItemInstance const &) const;
 
     // symbol: ?getHeight@Recipe@@QEBAHXZ
-    MCAPI int getHeight() const;
+    MCAPI int32_t getHeight() const;
 
     // symbol: ?getIngredients@Recipe@@QEBAAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@XZ
     MCAPI std::vector<class RecipeIngredient> const & getIngredients() const;
 
     // symbol: ?getNetId@Recipe@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
-    MCAPI RecipeNetId const & getNetId() const;
+    MCAPI class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0> const & getNetId() const;
 
     // symbol: ?getPriority@Recipe@@QEBAHXZ
-    MCAPI int getPriority() const;
+    MCAPI int32_t getPriority() const;
 
     // symbol: ?getRecipeId@Recipe@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getRecipeId() const;
@@ -95,10 +95,10 @@ public:
     MCAPI class RecipeUnlockingRequirement const & getUnlockingRequirement() const;
 
     // symbol: ?getWidth@Recipe@@QEBAHXZ
-    MCAPI int getWidth() const;
+    MCAPI int32_t getWidth() const;
 
     // symbol: ?setNetId@Recipe@@QEAAXAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-    MCAPI void setNetId(RecipeNetId const &);
+    MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, uint32_t, 0> const &);
 
     // symbol: ?isAnyAuxValue@Recipe@@SA_NAEBVItemDescriptor@@@Z
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const &);

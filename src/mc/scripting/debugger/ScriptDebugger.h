@@ -20,10 +20,10 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?listen@ScriptDebugger@@UEAA_NG@Z
-    virtual bool listen(ushort);
+    virtual bool listen(uint16_t);
 
     // vIndex: 1, symbol: ?connect@ScriptDebugger@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    virtual bool connect(std::string const &, ushort);
+    virtual bool connect(std::string const &, uint16_t);
 
     // vIndex: 2, symbol: ?close@ScriptDebugger@@UEAAXXZ
     virtual void close();

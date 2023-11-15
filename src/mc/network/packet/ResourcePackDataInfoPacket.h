@@ -29,7 +29,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@ResourcePackDataInfoPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1ResourcePackDataInfoPacket@@UEAA@XZ
     MCVAPI ~ResourcePackDataInfoPacket();
@@ -38,7 +38,7 @@ public:
     MCAPI ResourcePackDataInfoPacket();
 
     // symbol: ??0ResourcePackDataInfoPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IH_K0_NW4PackType@@@Z
-    MCAPI ResourcePackDataInfoPacket(std::string const &, uint, int, uint64, std::string const &, bool, ::PackType);
+    MCAPI ResourcePackDataInfoPacket(std::string const &, uint32_t, int32_t, uint64_t, std::string const &, bool, ::PackType);
 
     // NOLINTEND
 

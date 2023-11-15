@@ -44,19 +44,19 @@ namespace JsonUtil {
     MCAPI bool parseBannerBlockType(::BannerBlockType &, class Json::Value const &);
 
     // symbol: ?parseItem@JsonUtil@@YA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAHV?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
-    MCAPI bool parseItem(std::string &, std::string &, int &, std::string_view);
+    MCAPI bool parseItem(std::string &, std::string &, int32_t &, std::string_view);
 
     // symbol: ?parseItemColor@JsonUtil@@YA_NAEAW4ItemColor@@AEBVValue@Json@@@Z
     MCAPI bool parseItemColor(::ItemColor &, class Json::Value const &);
 
     // symbol: ?parseRange@JsonUtil@@YA_NAEBVValue@Json@@AEAH1@Z
-    MCAPI bool parseRange(class Json::Value const &, int &, int &);
+    MCAPI bool parseRange(class Json::Value const &, int32_t &, int32_t &);
 
     // symbol: ?parseVec3@JsonUtil@@YA_NAEAVVec3@@AEBVValue@Json@@@Z
     MCAPI bool parseVec3(class Vec3 &, class Json::Value const &);
 
     // symbol: ?printJsonSchema_childNode@JsonUtil@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBVHashedString@@1_N_K411@Z
-    MCAPI void printJsonSchema_childNode(std::string &, std::string const &, class HashedString const &, std::string const &, bool, uint64, uint64, std::string const &, std::string const &);
+    MCAPI void printJsonSchema_childNode(std::string &, std::string const &, class HashedString const &, std::string const &, bool, uint64_t, uint64_t, std::string const &, std::string const &);
 
     // symbol: ?setDefaultPrettyName@JsonUtil@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVHashedString@@@Z
     MCAPI void setDefaultPrettyName(std::string &, class HashedString const &);

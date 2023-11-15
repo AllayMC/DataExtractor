@@ -40,10 +40,10 @@ public:
     virtual void handleVersionBasedInitialization(class SemVersion const &);
 
     // vIndex: 7, symbol: ?_canUseOn@PlanterItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
-    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, uchar) const;
+    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 8, symbol: ?_useOn@PlanterItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, uchar, class Vec3 const &) const;
+    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, uint8_t, class Vec3 const &) const;
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEBAXXZ
     virtual void _initializeComponent() const;
@@ -52,7 +52,7 @@ public:
     MCAPI PlanterItemComponent(class Block const &);
 
     // symbol: ?calculatePlacePos@PlanterItemComponent@@QEBA_NAEBVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-    MCAPI bool calculatePlacePos(class ItemStackBase const &, class Actor &, uchar &, class BlockPos &) const;
+    MCAPI bool calculatePlacePos(class ItemStackBase const &, class Actor &, uint8_t &, class BlockPos &) const;
 
     // symbol: ??4PlanterItemComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class PlanterItemComponent & operator=(class PlanterItemComponent &&);

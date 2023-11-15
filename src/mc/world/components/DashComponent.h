@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getCooldownTime@DashComponent@@QEBA?BIXZ
-    MCAPI uint const getCooldownTime() const;
+    MCAPI uint32_t const getCooldownTime() const;
 
     // symbol: ?getHorizontalMomentum@DashComponent@@QEBA?BMXZ
     MCAPI float const getHorizontalMomentum() const;

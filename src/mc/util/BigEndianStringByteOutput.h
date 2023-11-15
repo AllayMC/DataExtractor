@@ -24,13 +24,13 @@ public:
     virtual void writeDouble(double);
 
     // vIndex: 6, symbol: ?writeShort@BigEndianStringByteOutput@@UEAAXF@Z
-    virtual void writeShort(short);
+    virtual void writeShort(int16_t);
 
     // vIndex: 7, symbol: ?writeInt@BigEndianStringByteOutput@@UEAAXH@Z
-    virtual void writeInt(int);
+    virtual void writeInt(int32_t);
 
     // vIndex: 8, symbol: ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
-    virtual void writeLongLong(int64);
+    virtual void writeLongLong(int64_t);
 
     // symbol: ??1BigEndianStringByteOutput@@UEAA@XZ
     MCVAPI ~BigEndianStringByteOutput();

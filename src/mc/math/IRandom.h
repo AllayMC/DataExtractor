@@ -15,13 +15,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?nextInt@DelegatingRandom@NoiseUtils@@UEAAHXZ
-    virtual int nextInt() = 0;
+    virtual int32_t nextInt() = 0;
 
     // vIndex: 2, symbol: ?nextInt@DelegatingRandom@NoiseUtils@@UEAAHH@Z
-    virtual int nextInt(int) = 0;
+    virtual int32_t nextInt(int32_t) = 0;
 
     // vIndex: 3, symbol: ?nextLong@DelegatingRandom@NoiseUtils@@UEAA_JXZ
-    virtual int64 nextLong() = 0;
+    virtual int64_t nextLong() = 0;
 
     // vIndex: 4, symbol: ?nextBoolean@DelegatingRandom@NoiseUtils@@UEAA_NXZ
     virtual bool nextBoolean() = 0;
@@ -36,7 +36,7 @@ public:
     virtual double nextGaussianDouble() = 0;
 
     // vIndex: 8, symbol: ?consumeCount@DelegatingRandom@NoiseUtils@@UEAAXI@Z
-    virtual void consumeCount(uint) = 0;
+    virtual void consumeCount(uint32_t) = 0;
 
     // vIndex: 9, symbol: ?fork@DelegatingRandom@NoiseUtils@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
     virtual std::unique_ptr<class IRandom> fork() = 0;

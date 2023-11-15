@@ -60,7 +60,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?init@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
-    virtual void init(class EntityContext &, uint);
+    virtual void init(class EntityContext &, uint32_t);
 
     // vIndex: 2, symbol: ?buildSurfaceAt@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
     virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const &) const;
@@ -73,7 +73,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?addSurfaceMaterial@CappedSurfaceBuilder@VanillaSurfaceBuilders@@AEBAXAEAVBlockVolume@@VPos@@HAEBV?$function@$$A6APEBVBlock@@H@Z@std@@@Z
-    MCAPI void addSurfaceMaterial(class BlockVolume &, class Pos, int, std::function<class Block const * (int)> const &) const;
+    MCAPI void addSurfaceMaterial(class BlockVolume &, class Pos, int32_t, std::function<class Block const * (int32_t)> const &) const;
 
     // NOLINTEND
 

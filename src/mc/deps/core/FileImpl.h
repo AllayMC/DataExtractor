@@ -31,7 +31,7 @@ public:
     virtual class Core::PathBuffer<std::string> _getPath() const = 0;
 
     // vIndex: 2, symbol: ?_getBlockSize@FlatFile@Core@@UEBA_KXZ
-    virtual uint64 _getBlockSize() const = 0;
+    virtual uint64_t _getBlockSize() const = 0;
 
     // vIndex: 3, symbol: ?_isOpen@FlatFile@Core@@UEAA_NXZ
     virtual bool _isOpen() = 0;
@@ -40,22 +40,22 @@ public:
     virtual class Core::Result _close() = 0;
 
     // vIndex: 5, symbol: ?_read@FlatFile@Core@@UEAA?AVResult@2@PEAX_KPEA_K@Z
-    virtual class Core::Result _read(void *, uint64, uint64 *) = 0;
+    virtual class Core::Result _read(void *, uint64_t, uint64_t *) = 0;
 
     // vIndex: 6, symbol: ?_readExactly@FlatFile@Core@@UEAA?AVResult@2@PEAX_K@Z
-    virtual class Core::Result _readExactly(void *, uint64) = 0;
+    virtual class Core::Result _readExactly(void *, uint64_t) = 0;
 
     // vIndex: 7, symbol: ?_skip@FlatFile@Core@@UEAA?AVResult@2@_K@Z
-    virtual class Core::Result _skip(uint64) = 0;
+    virtual class Core::Result _skip(uint64_t) = 0;
 
     // vIndex: 8, symbol: ?_readAtPosition@FlatFile@Core@@UEAA?AVResult@2@_KPEAX0PEA_K@Z
-    virtual class Core::Result _readAtPosition(uint64, void *, uint64, uint64 *) = 0;
+    virtual class Core::Result _readAtPosition(uint64_t, void *, uint64_t, uint64_t *) = 0;
 
     // vIndex: 9, symbol: ?_getPosition@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
-    virtual class Core::Result _getPosition(uint64 *) = 0;
+    virtual class Core::Result _getPosition(uint64_t *) = 0;
 
     // vIndex: 10, symbol: ?_setPosition@FlatFile@Core@@UEAA?AVResult@2@_K@Z
-    virtual class Core::Result _setPosition(uint64) = 0;
+    virtual class Core::Result _setPosition(uint64_t) = 0;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11() = 0;
@@ -64,13 +64,13 @@ public:
     virtual void __unk_vfn_12() = 0;
 
     // vIndex: 13, symbol: ?_getSize@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
-    virtual class Core::Result _getSize(uint64 *) = 0;
+    virtual class Core::Result _getSize(uint64_t *) = 0;
 
     // vIndex: 14, symbol: ?_getRemainingSize@FlatFile@Core@@UEAA?AVResult@2@PEA_K@Z
-    virtual class Core::Result _getRemainingSize(uint64 *) = 0;
+    virtual class Core::Result _getRemainingSize(uint64_t *) = 0;
 
     // vIndex: 15, symbol: ?_setInitialFileSize@FileImpl@Core@@MEAA?AVResult@2@_K@Z
-    virtual class Core::Result _setInitialFileSize(uint64);
+    virtual class Core::Result _setInitialFileSize(uint64_t);
 
     // symbol: ??1FileImpl@Core@@UEAA@XZ
     MCVAPI ~FileImpl();
@@ -85,7 +85,7 @@ public:
     MCAPI class Core::Result flush();
 
     // symbol: ?getBlockSize@FileImpl@Core@@QEBA_KXZ
-    MCAPI uint64 getBlockSize() const;
+    MCAPI uint64_t getBlockSize() const;
 
     // symbol: ?getOpenMode@FileImpl@Core@@QEBAAEBVFileOpenMode@2@XZ
     MCAPI class Core::FileOpenMode const & getOpenMode() const;
@@ -94,13 +94,13 @@ public:
     MCAPI class Core::PathBuffer<std::string> getPath() const;
 
     // symbol: ?getPosition@FileImpl@Core@@QEAA?AVResult@2@PEA_K@Z
-    MCAPI class Core::Result getPosition(uint64 *);
+    MCAPI class Core::Result getPosition(uint64_t *);
 
     // symbol: ?getRemainingSize@FileImpl@Core@@QEAA?AVResult@2@PEA_K@Z
-    MCAPI class Core::Result getRemainingSize(uint64 *);
+    MCAPI class Core::Result getRemainingSize(uint64_t *);
 
     // symbol: ?getSize@FileImpl@Core@@QEAA?AVResult@2@PEA_K@Z
-    MCAPI class Core::Result getSize(uint64 *);
+    MCAPI class Core::Result getSize(uint64_t *);
 
     // symbol: ?getTransaction@FileImpl@Core@@QEAAPEAVFileSystemImpl@2@XZ
     MCAPI class Core::FileSystemImpl * getTransaction();
@@ -109,32 +109,32 @@ public:
     MCAPI bool isOpen();
 
     // symbol: ?read@FileImpl@Core@@QEAA?AVResult@2@PEAX_KPEA_K@Z
-    MCAPI class Core::Result read(void *, uint64, uint64 *);
+    MCAPI class Core::Result read(void *, uint64_t, uint64_t *);
 
     // symbol: ?readAtPosition@FileImpl@Core@@QEAA?AVResult@2@_KPEAX0PEA_K@Z
-    MCAPI class Core::Result readAtPosition(uint64, void *, uint64, uint64 *);
+    MCAPI class Core::Result readAtPosition(uint64_t, void *, uint64_t, uint64_t *);
 
     // symbol: ?readExactly@FileImpl@Core@@QEAA?AVResult@2@PEAX_K@Z
-    MCAPI class Core::Result readExactly(void *, uint64);
+    MCAPI class Core::Result readExactly(void *, uint64_t);
 
     // symbol: ?setLoggingEnabled@FileImpl@Core@@QEAAX_N@Z
     MCAPI void setLoggingEnabled(bool);
 
     // symbol: ?setPosition@FileImpl@Core@@QEAA?AVResult@2@_K@Z
-    MCAPI class Core::Result setPosition(uint64);
+    MCAPI class Core::Result setPosition(uint64_t);
 
     // symbol: ?skip@FileImpl@Core@@QEAA?AVResult@2@_K@Z
-    MCAPI class Core::Result skip(uint64);
+    MCAPI class Core::Result skip(uint64_t);
 
     // symbol: ?write@FileImpl@Core@@QEAA?AVResult@2@PEBX_K@Z
-    MCAPI class Core::Result write(void const *, uint64);
+    MCAPI class Core::Result write(void const *, uint64_t);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_writeOperation@FileImpl@Core@@AEAA?AVResult@2@$$QEAV32@_K@Z
-    MCAPI class Core::Result _writeOperation(class Core::Result &&, uint64);
+    MCAPI class Core::Result _writeOperation(class Core::Result &&, uint64_t);
 
     // NOLINTEND
 

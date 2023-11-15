@@ -54,7 +54,7 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<bool> const Active;
 
     // symbol: ?Age@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const Age;
+    MCAPI extern class BlockStateVariant<int32_t> const Age;
 
     // symbol: ?AgeBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const AgeBit;
@@ -75,7 +75,7 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<::StalkThickness> const BambooThickness;
 
     // symbol: ?BeehiveHoneyLevel@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const BeehiveHoneyLevel;
+    MCAPI extern class BlockStateVariant<int32_t> const BeehiveHoneyLevel;
 
     // symbol: ?BigDripleafHead@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const BigDripleafHead;
@@ -84,16 +84,16 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<::BigDripleafTilt> const BigDripleafTilt;
 
     // symbol: ?BiteCounter@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const BiteCounter;
+    MCAPI extern class BlockStateVariant<int32_t> const BiteCounter;
 
     // symbol: ?BlockLightLevel@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const BlockLightLevel;
+    MCAPI extern class BlockStateVariant<int32_t> const BlockLightLevel;
 
     // symbol: ?Bloom@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const Bloom;
 
     // symbol: ?BookshelfOccupiedSlots@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const BookshelfOccupiedSlots;
+    MCAPI extern class BlockStateVariant<int32_t> const BookshelfOccupiedSlots;
 
     // symbol: ?BrewingStandSlotABit@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const BrewingStandSlotABit;
@@ -105,7 +105,7 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<bool> const BrewingStandSlotCBit;
 
     // symbol: ?BrushedProgress@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const BrushedProgress;
+    MCAPI extern class BlockStateVariant<int32_t> const BrushedProgress;
 
     // symbol: ?ButtonPressedBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const ButtonPressedBit;
@@ -114,7 +114,7 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<bool> const CanSummon;
 
     // symbol: ?Candles@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const Candles;
+    MCAPI extern class BlockStateVariant<int32_t> const Candles;
 
     // symbol: ?CauldronLiquid@VanillaStates@@3V?$BlockStateVariant@W4CauldronLiquidType@@@@B
     MCAPI extern class BlockStateVariant<::CauldronLiquidType> const CauldronLiquid;
@@ -126,7 +126,7 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<::ChiselType> const ChiselType;
 
     // symbol: ?ClusterCount@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const ClusterCount;
+    MCAPI extern class BlockStateVariant<int32_t> const ClusterCount;
 
     // symbol: ?Color@VanillaStates@@3V?$BlockStateVariant@W4BlockColor@@@@B
     MCAPI extern class BlockStateVariant<::BlockColor> const Color;
@@ -135,7 +135,7 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<bool> const ColorBit;
 
     // symbol: ?ComposterFillLevel@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const ComposterFillLevel;
+    MCAPI extern class BlockStateVariant<int32_t> const ComposterFillLevel;
 
     // symbol: ?ConditionalBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const ConditionalBit;
@@ -144,10 +144,10 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<::CoralColor> const CoralColor;
 
     // symbol: ?CoralDirection@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const CoralDirection;
+    MCAPI extern class BlockStateVariant<int32_t> const CoralDirection;
 
     // symbol: ?CoralFanDirection@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const CoralFanDirection;
+    MCAPI extern class BlockStateVariant<int32_t> const CoralFanDirection;
 
     // symbol: ?CoralHangTypeBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const CoralHangTypeBit;
@@ -159,7 +159,7 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<::HatchLevel> const CrackedState;
 
     // symbol: ?DEPRECATED@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const DEPRECATED;
+    MCAPI extern class BlockStateVariant<int32_t> const DEPRECATED;
 
     // symbol: ?Damage@VanillaStates@@3V?$BlockStateVariant@W4AnvilDamage@@@@B
     MCAPI extern class BlockStateVariant<::AnvilDamage> const Damage;
@@ -168,7 +168,7 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<bool> const DeadBit;
 
     // symbol: ?Direction@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const Direction;
+    MCAPI extern class BlockStateVariant<int32_t> const Direction;
 
     // symbol: ?DirtType@VanillaStates@@3V?$BlockStateVariant@W4DirtType@@@@B
     MCAPI extern class BlockStateVariant<::DirtType> const DirtType;
@@ -198,19 +198,19 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<bool> const Extinguished;
 
     // symbol: ?FacingDirection@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const FacingDirection;
+    MCAPI extern class BlockStateVariant<int32_t> const FacingDirection;
 
     // symbol: ?FillLevel@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const FillLevel;
+    MCAPI extern class BlockStateVariant<int32_t> const FillLevel;
 
     // symbol: ?FlowerType@VanillaStates@@3V?$BlockStateVariant@W4FlowerType@@@@B
     MCAPI extern class BlockStateVariant<::FlowerType> const FlowerType;
 
     // symbol: ?GrowingPlantAge@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const GrowingPlantAge;
+    MCAPI extern class BlockStateVariant<int32_t> const GrowingPlantAge;
 
     // symbol: ?Growth@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const Growth;
+    MCAPI extern class BlockStateVariant<int32_t> const Growth;
 
     // symbol: ?HangingBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const HangingBit;
@@ -219,10 +219,10 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<bool> const HeadPieceBit;
 
     // symbol: ?Height@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const Height;
+    MCAPI extern class BlockStateVariant<int32_t> const Height;
 
     // symbol: ?HugeMushroomBits@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const HugeMushroomBits;
+    MCAPI extern class BlockStateVariant<int32_t> const HugeMushroomBits;
 
     // symbol: ?InWallBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const InWallBit;
@@ -237,25 +237,25 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<bool> const ItemFramePhotoBit;
 
     // symbol: ?KelpAge@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const KelpAge;
+    MCAPI extern class BlockStateVariant<int32_t> const KelpAge;
 
     // symbol: ?LeverDirection@VanillaStates@@3V?$BlockStateVariant@W4LeverDirection@@@@B
     MCAPI extern class BlockStateVariant<::LeverDirection> const LeverDirection;
 
     // symbol: ?LiquidDepth@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const LiquidDepth;
+    MCAPI extern class BlockStateVariant<int32_t> const LiquidDepth;
 
     // symbol: ?Lit@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const Lit;
 
     // symbol: ?MoisturizedAmount@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const MoisturizedAmount;
+    MCAPI extern class BlockStateVariant<int32_t> const MoisturizedAmount;
 
     // symbol: ?MonsterEggStoneType@VanillaStates@@3V?$BlockStateVariant@W4MonsterEggStoneType@@@@B
     MCAPI extern class BlockStateVariant<::MonsterEggStoneType> const MonsterEggStoneType;
 
     // symbol: ?MultiFaceDirectionBits@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const MultiFaceDirectionBits;
+    MCAPI extern class BlockStateVariant<int32_t> const MultiFaceDirectionBits;
 
     // symbol: ?NewLeavesType@VanillaStates@@3V?$BlockStateVariant@W4NewLeavesType@@@@B
     MCAPI extern class BlockStateVariant<::NewLeavesType> const NewLeavesType;
@@ -300,25 +300,25 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<::PrismarineBlockType> const PrismarineBlockType;
 
     // symbol: ?PropaguleStage@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const PropaguleStage;
+    MCAPI extern class BlockStateVariant<int32_t> const PropaguleStage;
 
     // symbol: ?RailDataBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const RailDataBit;
 
     // symbol: ?RailDirection@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const RailDirection;
+    MCAPI extern class BlockStateVariant<int32_t> const RailDirection;
 
     // symbol: ?RedstoneSignal@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const RedstoneSignal;
+    MCAPI extern class BlockStateVariant<int32_t> const RedstoneSignal;
 
     // symbol: ?RepeaterDelay@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const RepeaterDelay;
+    MCAPI extern class BlockStateVariant<int32_t> const RepeaterDelay;
 
     // symbol: ?RespawnAnchorCharge@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const RespawnAnchorCharge;
+    MCAPI extern class BlockStateVariant<int32_t> const RespawnAnchorCharge;
 
     // symbol: ?Rotation@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const Rotation;
+    MCAPI extern class BlockStateVariant<int32_t> const Rotation;
 
     // symbol: ?SandType@VanillaStates@@3V?$BlockStateVariant@W4SandType@@@@B
     MCAPI extern class BlockStateVariant<::SandType> const SandType;
@@ -330,7 +330,7 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<::SaplingType> const SaplingType;
 
     // symbol: ?SculkSensorPhase@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const SculkSensorPhase;
+    MCAPI extern class BlockStateVariant<int32_t> const SculkSensorPhase;
 
     // symbol: ?SeagrassType@VanillaStates@@3V?$BlockStateVariant@W4SeagrassType@@@@B
     MCAPI extern class BlockStateVariant<::SeagrassType> const SeagrassType;
@@ -339,13 +339,13 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<::SpongeType> const SpongeType;
 
     // symbol: ?Stability@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const Stability;
+    MCAPI extern class BlockStateVariant<int32_t> const Stability;
 
     // symbol: ?StabilityCheckBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const StabilityCheckBit;
 
     // symbol: ?StandingRotation@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const StandingRotation;
+    MCAPI extern class BlockStateVariant<int32_t> const StandingRotation;
 
     // symbol: ?StoneBrickType@VanillaStates@@3V?$BlockStateVariant@W4StoneBrickType@@@@B
     MCAPI extern class BlockStateVariant<::StoneBrickType> const StoneBrickType;
@@ -396,7 +396,7 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<::EggCount> const TurtleEggCount;
 
     // symbol: ?TwistingVinesAge@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const TwistingVinesAge;
+    MCAPI extern class BlockStateVariant<int32_t> const TwistingVinesAge;
 
     // symbol: ?UpdateBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
     MCAPI extern class BlockStateVariant<bool> const UpdateBit;
@@ -408,7 +408,7 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<bool> const UpsideDownBit;
 
     // symbol: ?VineDirectionBits@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const VineDirectionBits;
+    MCAPI extern class BlockStateVariant<int32_t> const VineDirectionBits;
 
     // symbol: ?WallBlockType@VanillaStates@@3V?$BlockStateVariant@W4WallBlockType@@@@B
     MCAPI extern class BlockStateVariant<::WallBlockType> const WallBlockType;
@@ -429,10 +429,10 @@ namespace VanillaStates {
     MCAPI extern class BlockStateVariant<bool> const WallPostBit;
 
     // symbol: ?WeepingVinesAge@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const WeepingVinesAge;
+    MCAPI extern class BlockStateVariant<int32_t> const WeepingVinesAge;
 
     // symbol: ?WeirdoDirection@VanillaStates@@3V?$BlockStateVariant@H@@B
-    MCAPI extern class BlockStateVariant<int> const WeirdoDirection;
+    MCAPI extern class BlockStateVariant<int32_t> const WeirdoDirection;
 
     // symbol: ?WoodType@VanillaStates@@3V?$BlockStateVariant@W4WoodType@@@@B
     MCAPI extern class BlockStateVariant<::WoodType> const WoodType;

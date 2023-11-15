@@ -14,7 +14,7 @@ public:
     MCAPI LookAtComponent();
 
     // symbol: ?getCoolingTime@LookAtComponent@@QEAAAEAHXZ
-    MCAPI int & getCoolingTime();
+    MCAPI int32_t & getCoolingTime();
 
     // symbol: ?getSearchRadius@LookAtComponent@@QEBAMXZ
     MCAPI float getSearchRadius() const;

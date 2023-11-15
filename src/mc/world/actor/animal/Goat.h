@@ -68,7 +68,7 @@ public:
     virtual ::LevelSoundEvent getAmbientSound() const;
 
     // vIndex: 84, symbol: ?handleEntityEvent@Goat@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -107,7 +107,7 @@ public:
     MCAPI Goat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
     // symbol: ?getHornCount@Goat@@QEBAHXZ
-    MCAPI int getHornCount() const;
+    MCAPI int32_t getHornCount() const;
 
     // symbol: ?isScreaming@Goat@@QEAA_NXZ
     MCAPI bool isScreaming();
@@ -120,10 +120,10 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?DEFAULT_HORN_COUNT@Goat@@0HA
-    MCAPI static int DEFAULT_HORN_COUNT;
+    MCAPI static int32_t DEFAULT_HORN_COUNT;
 
     // symbol: ?SCREAMING_GOAT_VARIANT@Goat@@0HA
-    MCAPI static int SCREAMING_GOAT_VARIANT;
+    MCAPI static int32_t SCREAMING_GOAT_VARIANT;
 
     // NOLINTEND
 

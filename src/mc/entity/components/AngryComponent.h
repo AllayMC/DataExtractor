@@ -38,7 +38,7 @@ public:
     MCAPI class ActorFilterGroup const & getBroadcastFilter() const;
 
     // symbol: ?getBroadcastRange@AngryComponent@@QEBAHXZ
-    MCAPI int getBroadcastRange() const;
+    MCAPI int32_t getBroadcastRange() const;
 
     // symbol: ?getHasTicked@AngryComponent@@QEBA_NXZ
     MCAPI bool getHasTicked() const;

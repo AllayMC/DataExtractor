@@ -48,16 +48,16 @@ public:
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
 
     // symbol: ?getIPv4Port@LocalConnector@@UEBAGXZ
-    MCVAPI ushort getIPv4Port() const;
+    MCVAPI uint16_t getIPv4Port() const;
 
     // symbol: ?getIPv6Port@LocalConnector@@UEBAGXZ
-    MCVAPI ushort getIPv6Port() const;
+    MCVAPI uint16_t getIPv6Port() const;
 
     // symbol: ?getLocalIps@LocalConnector@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCVAPI std::vector<std::string> getLocalIps() const;
 
     // symbol: ?getPort@LocalConnector@@UEBAGXZ
-    MCVAPI ushort getPort() const;
+    MCVAPI uint16_t getPort() const;
 
     // symbol: ?getRefinedLocalIps@LocalConnector@@UEBA?AV?$vector@USystemAddress@RakNet@@V?$allocator@USystemAddress@RakNet@@@std@@@std@@XZ
     MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
@@ -75,7 +75,7 @@ public:
     MCVAPI void setupNatPunch(bool);
 
     // symbol: ?startNatPunchingClient@LocalConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    MCVAPI void startNatPunchingClient(std::string const &, ushort);
+    MCVAPI void startNatPunchingClient(std::string const &, uint16_t);
 
     // symbol: ?disconnect@LocalConnector@@QEAAXXZ
     MCAPI void disconnect();

@@ -72,7 +72,7 @@ namespace Core {
     MCAPI extern char const * RESULT_SUCCEEDED_MESSAGE;
 
     // symbol: ??ICore@@YA_KW4DirectoryIterationFlags@0@0@Z
-    MCAPI uint64 operator&(::Core::DirectoryIterationFlags, ::Core::DirectoryIterationFlags);
+    MCAPI uint64_t operator&(::Core::DirectoryIterationFlags, ::Core::DirectoryIterationFlags);
 
     // symbol: ??UCore@@YA?AW4DirectoryIterationFlags@0@W410@0@Z
     MCAPI ::Core::DirectoryIterationFlags operator|(::Core::DirectoryIterationFlags, ::Core::DirectoryIterationFlags);

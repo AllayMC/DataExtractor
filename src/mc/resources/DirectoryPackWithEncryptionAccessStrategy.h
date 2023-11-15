@@ -27,7 +27,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getPackSize@DirectoryPackWithEncryptionAccessStrategy@@UEBA_KXZ
-    virtual uint64 getPackSize() const;
+    virtual uint64_t getPackSize() const;
 
     // vIndex: 2, symbol: ?getPackLocation@DirectoryPackWithEncryptionAccessStrategy@@UEBAAEBVResourceLocation@@XZ
     virtual class ResourceLocation const & getPackLocation() const;
@@ -81,7 +81,7 @@ public:
     virtual class ContentIdentity readContentIdentity() const;
 
     // symbol: ??0DirectoryPackWithEncryptionAccessStrategy@@QEAA@AEBVResourceLocation@@0AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-    MCAPI DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const &, class ResourceLocation const &, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const &);
+    MCAPI DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const &, class ResourceLocation const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 
     // NOLINTEND
 

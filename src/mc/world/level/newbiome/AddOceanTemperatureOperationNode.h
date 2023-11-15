@@ -19,7 +19,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?init@OperationNodeBase@OperationNodeDetails@@UEAAX_J@Z
-    virtual void init(int64);
+    virtual void init(int64_t);
 
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();

@@ -19,7 +19,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?Release@?$Api@$01UITaskQueue@@@@UEAAIXZ
-    virtual uint Release();
+    virtual uint32_t Release();
 
     // vIndex: 2, symbol: ?QueryApi@?$Api@$01UITaskQueue@@@@UEAAJW4ApiId@@PEAPEAX@Z
     virtual long QueryApi(::ApiId, void **);
@@ -31,13 +31,13 @@ public:
     virtual long GetPortContext(::XTaskQueuePort, struct ITaskQueuePortContext **);
 
     // vIndex: 5, symbol: ?RegisterWaitHandle@TaskQueueImpl@@UEAAJW4XTaskQueuePort@@PEAX1P6AX1_N@ZPEAUXTaskQueueRegistrationToken@@@Z
-    virtual long RegisterWaitHandle(::XTaskQueuePort, void *, void *, void ( *)(void *, bool), struct XTaskQueueRegistrationToken *);
+    virtual long RegisterWaitHandle(::XTaskQueuePort, void *, void *, void (__cdecl *)(void *, bool), struct XTaskQueueRegistrationToken *);
 
     // vIndex: 6, symbol: ?UnregisterWaitHandle@TaskQueueImpl@@UEAAXUXTaskQueueRegistrationToken@@@Z
     virtual void UnregisterWaitHandle(struct XTaskQueueRegistrationToken);
 
     // vIndex: 7, symbol: ?RegisterSubmitCallback@TaskQueueImpl@@UEAAJPEAXP6AX0PEAUXTaskQueueObject@@W4XTaskQueuePort@@@ZPEAUXTaskQueueRegistrationToken@@@Z
-    virtual long RegisterSubmitCallback(void *, void ( *)(void *, struct XTaskQueueObject *, ::XTaskQueuePort), struct XTaskQueueRegistrationToken *);
+    virtual long RegisterSubmitCallback(void *, void (__cdecl *)(void *, struct XTaskQueueObject *, ::XTaskQueuePort), struct XTaskQueueRegistrationToken *);
 
     // vIndex: 8, symbol: ?UnregisterSubmitCallback@TaskQueueImpl@@UEAAXUXTaskQueueRegistrationToken@@@Z
     virtual void UnregisterSubmitCallback(struct XTaskQueueRegistrationToken);
@@ -49,7 +49,7 @@ public:
     virtual bool CanClose();
 
     // vIndex: 11, symbol: ?Terminate@TaskQueueImpl@@UEAAJ_NPEAXP6AX1@Z@Z
-    virtual long Terminate(bool, void *, void ( *)(void *));
+    virtual long Terminate(bool, void *, void (__cdecl *)(void *));
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();

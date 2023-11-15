@@ -118,7 +118,7 @@ public:
     MCVAPI bool canSwapVRMode(bool) const;
 
     // symbol: ?checkLicense@AppPlatform@@UEAAHXZ
-    MCVAPI int checkLicense();
+    MCVAPI int32_t checkLicense();
 
     // symbol: ?collectGraphicsHardwareDetails@AppPlatform@@UEAAXXZ
     MCVAPI void collectGraphicsHardwareDetails();
@@ -136,7 +136,7 @@ public:
     MCVAPI std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(::Core::FileAccessType, class Core::Path const &);
 
     // symbol: ?createUserInput@AppPlatform@@UEAAXH@Z
-    MCVAPI void createUserInput(int);
+    MCVAPI void createUserInput(int32_t);
 
     // symbol: ?createUserInput@AppPlatform@@UEAAXXZ
     MCVAPI void createUserInput();
@@ -187,7 +187,7 @@ public:
     MCVAPI ::InputMode getDefaultInputMode() const;
 
     // symbol: ?getDefaultNetworkMaxPlayers@AppPlatform@@UEBAHXZ
-    MCVAPI int getDefaultNetworkMaxPlayers() const;
+    MCVAPI int32_t getDefaultNetworkMaxPlayers() const;
 
     // symbol: ?getDefaultSafeZoneScaleAll@AppPlatform@@UEBAMXZ
     MCVAPI float getDefaultSafeZoneScaleAll() const;
@@ -208,13 +208,13 @@ public:
     MCVAPI ::DeviceSunsetTier getDeviceSunsetTier() const;
 
     // symbol: ?getDisplayHeight@AppPlatform@@UEAAHXZ
-    MCVAPI int getDisplayHeight();
+    MCVAPI int32_t getDisplayHeight();
 
     // symbol: ?getDisplayWidth@AppPlatform@@UEAAHXZ
-    MCVAPI int getDisplayWidth();
+    MCVAPI int32_t getDisplayWidth();
 
     // symbol: ?getDpi@AppPlatform@@UEBAHXZ
-    MCVAPI int getDpi() const;
+    MCVAPI int32_t getDpi() const;
 
     // symbol: ?getEdition@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getEdition() const;
@@ -229,13 +229,13 @@ public:
     MCVAPI std::string getFeedbackHelpLink() const;
 
     // symbol: ?getFileAccess@AppPlatform@@UEAA?AV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@W4ResourceFileSystem@@@Z
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class IFileAccess> getFileAccess(::ResourceFileSystem);
+    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> getFileAccess(::ResourceFileSystem);
 
     // symbol: ?getFocusState@AppPlatform@@UEAA?AW4AppFocusState@@XZ
     MCVAPI ::AppFocusState getFocusState();
 
     // symbol: ?getHighPerformanceThreadsCount@AppPlatform@@UEBA_KXZ
-    MCVAPI uint64 getHighPerformanceThreadsCount() const;
+    MCVAPI uint64_t getHighPerformanceThreadsCount() const;
 
     // symbol: ?getIPAddresses@AppPlatform@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCVAPI std::vector<std::string> getIPAddresses();
@@ -256,28 +256,28 @@ public:
     MCVAPI class Core::PathBuffer<std::string> getLoggingPath() const;
 
     // symbol: ?getLowPhysicalMemoryThreshold@AppPlatform@@UEBA_KXZ
-    MCVAPI uint64 getLowPhysicalMemoryThreshold() const;
+    MCVAPI uint64_t getLowPhysicalMemoryThreshold() const;
 
     // symbol: ?getMaxClubsRequests@AppPlatform@@UEBAIXZ
-    MCVAPI uint getMaxClubsRequests() const;
+    MCVAPI uint32_t getMaxClubsRequests() const;
 
     // symbol: ?getMaxLDBFilesOpen@AppPlatform@@UEBAHXZ
-    MCVAPI int getMaxLDBFilesOpen() const;
+    MCVAPI int32_t getMaxLDBFilesOpen() const;
 
     // symbol: ?getMaxSimRadiusInChunks@AppPlatform@@UEBAHXZ
-    MCVAPI int getMaxSimRadiusInChunks() const;
+    MCVAPI int32_t getMaxSimRadiusInChunks() const;
 
     // symbol: ?getMaxSimultaneousDownloads@AppPlatform@@UEBAHXZ
-    MCVAPI int getMaxSimultaneousDownloads() const;
+    MCVAPI int32_t getMaxSimultaneousDownloads() const;
 
     // symbol: ?getMaxSimultaneousServiceRequests@AppPlatform@@UEBAIXZ
-    MCVAPI uint getMaxSimultaneousServiceRequests() const;
+    MCVAPI uint32_t getMaxSimultaneousServiceRequests() const;
 
     // symbol: ?getMaximumUsedMemory@AppPlatform@@UEAA_KXZ
-    MCVAPI uint64 getMaximumUsedMemory();
+    MCVAPI uint64_t getMaximumUsedMemory();
 
     // symbol: ?getModalErrorMessageProc@AppPlatform@@UEAAP6A?AW4AssertDialogResponse@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@ZXZ
-    MCVAPI auto getModalErrorMessageProc() -> ::AssertDialogResponse ( *)(std::string const &, std::string const &);
+    MCVAPI auto getModalErrorMessageProc() -> ::AssertDialogResponse (__cdecl *)(std::string const &, std::string const &);
 
     // symbol: ?getModelName@AppPlatform@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getModelName();
@@ -289,7 +289,7 @@ public:
     MCVAPI ::NetworkConnectionType getNetworkConnectionType();
 
     // symbol: ?getNumberOfParticleFramesToInterpolate@AppPlatform@@UEBAHXZ
-    MCVAPI int getNumberOfParticleFramesToInterpolate() const;
+    MCVAPI int32_t getNumberOfParticleFramesToInterpolate() const;
 
     // symbol: ?getOSVersion@AppPlatform@@UEBA?AW4OsVersion@@XZ
     MCVAPI ::OsVersion getOSVersion() const;
@@ -304,7 +304,7 @@ public:
     MCVAPI std::optional<::OperationMode> getOperationMode() const;
 
     // symbol: ?getOptimalLDBSize@AppPlatform@@UEAA_KXZ
-    MCVAPI uint64 getOptimalLDBSize();
+    MCVAPI uint64_t getOptimalLDBSize();
 
     // symbol: ?getOptionsSaveInterval@AppPlatform@@UEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@XZ
     MCVAPI std::chrono::nanoseconds getOptionsSaveInterval() const;
@@ -316,10 +316,10 @@ public:
     MCVAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath();
 
     // symbol: ?getPlatformDpi@AppPlatform@@EEBAHXZ
-    MCVAPI int getPlatformDpi() const;
+    MCVAPI int32_t getPlatformDpi() const;
 
     // symbol: ?getPlatformStringVar@AppPlatform@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCVAPI std::string getPlatformStringVar(int);
+    MCVAPI std::string getPlatformStringVar(int32_t);
 
     // symbol: ?getPlatformTTSEnabled@AppPlatform@@UEBA_NXZ
     MCVAPI bool getPlatformTTSEnabled() const;
@@ -337,10 +337,10 @@ public:
     MCVAPI std::variant<struct HWND__*, std::monostate> getRenderSurfaceParameters() const;
 
     // symbol: ?getScreenHeight@AppPlatform@@UEBAHXZ
-    MCVAPI int getScreenHeight() const;
+    MCVAPI int32_t getScreenHeight() const;
 
     // symbol: ?getScreenWidth@AppPlatform@@UEBAHXZ
-    MCVAPI int getScreenWidth() const;
+    MCVAPI int32_t getScreenWidth() const;
 
     // symbol: ?getSecureStorage@AppPlatform@@UEAA?AV?$unique_ptr@VSecureStorage@@U?$default_delete@VSecureStorage@@@std@@@std@@XZ
     MCVAPI std::unique_ptr<class SecureStorage> getSecureStorage();
@@ -361,7 +361,7 @@ public:
     MCVAPI class mce::UUID const & getThirdPartyPackUUID() const;
 
     // symbol: ?getTotalHardwareThreadsCount@AppPlatform@@UEBA_KXZ
-    MCVAPI uint64 getTotalHardwareThreadsCount() const;
+    MCVAPI uint64_t getTotalHardwareThreadsCount() const;
 
     // symbol: ?getUIScalingRules@AppPlatform@@UEBA?AW4UIScalingRules@@XZ
     MCVAPI ::UIScalingRules getUIScalingRules() const;
@@ -370,7 +370,7 @@ public:
     MCVAPI std::vector<std::string> getUserInput();
 
     // symbol: ?getUserInputStatus@AppPlatform@@UEAAHXZ
-    MCVAPI int getUserInputStatus();
+    MCVAPI int32_t getUserInputStatus();
 
     // symbol: ?getUserStorageRootPath@AppPlatform@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
     MCVAPI class Core::PathBuffer<std::string> getUserStorageRootPath() const;
@@ -385,7 +385,7 @@ public:
     MCVAPI void goToExternalConsumablesStoreListing() const;
 
     // symbol: ?handlePlatformSpecificCommerceError@AppPlatform@@UEAAXI@Z
-    MCVAPI void handlePlatformSpecificCommerceError(uint);
+    MCVAPI void handlePlatformSpecificCommerceError(uint32_t);
 
     // symbol: ?hasAssetFile@AppPlatform@@UEAA_NAEBVPath@Core@@@Z
     MCVAPI bool hasAssetFile(class Core::Path const &);
@@ -523,7 +523,7 @@ public:
     MCVAPI std::set<class Core::PathBuffer<std::string>> listAssetFilesIn(class Core::Path const &, std::string const &) const;
 
     // symbol: ?maxFileDataRequestConcurrency@AppPlatform@@UEBAIXZ
-    MCVAPI uint maxFileDataRequestConcurrency() const;
+    MCVAPI uint32_t maxFileDataRequestConcurrency() const;
 
     // symbol: ?minimizeBackgroundDownloads@AppPlatform@@UEBA_NXZ
     MCVAPI bool minimizeBackgroundDownloads() const;
@@ -595,7 +595,7 @@ public:
     MCVAPI void setARVRPlatform(::ARVRPlatform);
 
     // symbol: ?setDpi@AppPlatform@@UEAAXH@Z
-    MCVAPI void setDpi(int);
+    MCVAPI void setDpi(int32_t);
 
     // symbol: ?setFullscreenMode@AppPlatform@@UEAAXW4FullscreenMode@@@Z
     MCVAPI void setFullscreenMode(::FullscreenMode);
@@ -616,7 +616,7 @@ public:
     MCVAPI void setNetworkConnectionType(::NetworkConnectionType);
 
     // symbol: ?setScreenSize@AppPlatform@@UEAAXHH@Z
-    MCVAPI void setScreenSize(int, int);
+    MCVAPI void setScreenSize(int32_t, int32_t);
 
     // symbol: ?setSecureStorageKey@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSecureStorageKey@@@Z
     MCVAPI void setSecureStorageKey(std::string const &, class SecureStorageKey const &);
@@ -634,7 +634,7 @@ public:
     MCVAPI void setVRControllerType(::VRControllerType);
 
     // symbol: ?setWindowSize@AppPlatform@@UEAAXHH@Z
-    MCVAPI void setWindowSize(int, int);
+    MCVAPI void setWindowSize(int32_t, int32_t);
 
     // symbol: ?setWindowText@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void setWindowText(std::string const &);
@@ -649,7 +649,7 @@ public:
     MCVAPI bool shouldRemoveGraphicsDeviceOnAppTermination() const;
 
     // symbol: ?showDialog@AppPlatform@@UEAAXH@Z
-    MCVAPI void showDialog(int);
+    MCVAPI void showDialog(int32_t);
 
     // symbol: ?showPlatformEmptyStoreDialog@AppPlatform@@UEAAX$$QEAV?$function@$$A6AX_N@Z@std@@@Z
     MCVAPI void showPlatformEmptyStoreDialog(std::function<void (bool)> &&);
@@ -721,7 +721,7 @@ public:
     MCVAPI bool usesHDRBrightness() const;
 
     // symbol: ?vibrate@AppPlatform@@UEAAXH@Z
-    MCVAPI void vibrate(int);
+    MCVAPI void vibrate(int32_t);
 
     // symbol: ??1AppPlatform@@UEAA@XZ
     MCVAPI ~AppPlatform();

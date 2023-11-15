@@ -18,7 +18,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?applyEffects@AbsorptionMobEffect@@UEBAXPEAVActor@@HH@Z
-    virtual void applyEffects(class Actor *, int, int) const;
+    virtual void applyEffects(class Actor *, int32_t, int32_t) const;
 
     // vIndex: 2, symbol: ?removeEffects@AbsorptionMobEffect@@UEAAXPEAVActor@@@Z
     virtual void removeEffects(class Actor *);

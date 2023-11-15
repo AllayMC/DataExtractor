@@ -43,7 +43,7 @@ public:
     MCAPI static void bindType(struct cereal::ReflectionCtx &);
 
     // symbol: ?read@CameraPreset@@SA?AV?$Result@UCameraPreset@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<struct CameraPreset> read(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<struct CameraPreset, std::error_code> read(class ReadOnlyBinaryStream &);
 
     // NOLINTEND
 

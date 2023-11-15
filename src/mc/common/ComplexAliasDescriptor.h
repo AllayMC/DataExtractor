@@ -36,7 +36,7 @@ public:
     virtual struct ItemDescriptor::ItemEntry getItem() const;
 
     // vIndex: 5, symbol: ?forEachItemUntil@ComplexAliasDescriptor@@UEBA_NV?$function@$$A6A_NAEBVItem@@F@Z@std@@@Z
-    virtual bool forEachItemUntil(std::function<bool (class Item const &, short)>) const;
+    virtual bool forEachItemUntil(std::function<bool (class Item const &, int16_t)>) const;
 
     // vIndex: 6, symbol: ?toMap@ComplexAliasDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
     virtual std::map<std::string,std::string> toMap() const;
@@ -51,13 +51,13 @@ public:
     virtual ::ItemDescriptor::InternalType getType() const;
 
     // vIndex: 12, symbol: ?getHash@ComplexAliasDescriptor@@UEBA_KXZ
-    virtual uint64 getHash() const;
+    virtual uint64_t getHash() const;
 
     // symbol: ??0ComplexAliasDescriptor@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI ComplexAliasDescriptor(std::string const &);
 
     // symbol: ?deserialize@ComplexAliasDescriptor@@SA?AV?$Result@V?$unique_ptr@UComplexAliasDescriptor@@U?$default_delete@UComplexAliasDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<struct ComplexAliasDescriptor>> deserialize(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct ComplexAliasDescriptor>, std::error_code> deserialize(class ReadOnlyBinaryStream &);
 
     // NOLINTEND
 

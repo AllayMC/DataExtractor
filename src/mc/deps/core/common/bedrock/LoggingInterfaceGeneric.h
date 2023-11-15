@@ -26,7 +26,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?threadId@LoggingInterfaceGeneric@Http@Bedrock@@UEAA_KXZ
-    virtual uint64 threadId();
+    virtual uint64_t threadId();
 
     // vIndex: 2, symbol: ?writeToDebugger@LoggingInterfaceGeneric@Http@Bedrock@@UEAAXPEBDW4HCTraceLevel@@0@Z
     virtual void writeToDebugger(char const *, ::HCTraceLevel, char const *);

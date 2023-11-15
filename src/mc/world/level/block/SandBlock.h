@@ -142,7 +142,7 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 142, symbol: ?getVariant@SandBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -181,7 +181,7 @@ public:
     virtual void __unk_vfn_194();
 
     // symbol: ??0SandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SandBlock(std::string const &, int);
+    MCAPI SandBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

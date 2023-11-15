@@ -98,7 +98,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 72, symbol: ?dispense@WoolCarpetBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 76, symbol: __unk_vfn_76
     virtual void __unk_vfn_76();
@@ -152,7 +152,7 @@ public:
     MCVAPI bool canDamperVibrations() const;
 
     // symbol: ??0WoolCarpetBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BlockColor@@@Z
-    MCAPI WoolCarpetBlock(std::string const &, int, ::BlockColor);
+    MCAPI WoolCarpetBlock(std::string const &, int32_t, ::BlockColor);
 
     // NOLINTEND
 

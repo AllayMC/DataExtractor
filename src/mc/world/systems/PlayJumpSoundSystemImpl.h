@@ -50,7 +50,7 @@ public:
     MCAPI static void doPlayJumpSoundSystem(class StrictEntityContext const &, struct ActorDefinitionIdentifierComponent const &, struct SoundEventPlayerComponent const &, struct SynchedActorDataComponent const &, struct StateVectorComponent const &, struct AABBShapeComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct SoundEventRequestQueueComponent> const &, struct GetAttachPositionViews const &, ::PlayJumpSoundSystem::SoundType, class IConstBlockSource const &);
 
     // symbol: ?sendSoundRequest@PlayJumpSoundSystemImpl@@SAXAEBVIConstBlockSource@@AEBUSynchedActorDataComponent@@AEBUActorDefinitionIdentifierComponent@@AEBVVec3@@V?$OptionalComponentWrapper@VStrictEntityContext@@USoundEventRequestQueueComponent@@@@H@Z
-    MCAPI static void sendSoundRequest(class IConstBlockSource const &, struct SynchedActorDataComponent const &, struct ActorDefinitionIdentifierComponent const &, class Vec3 const &, class OptionalComponentWrapper<class StrictEntityContext, struct SoundEventRequestQueueComponent>, int);
+    MCAPI static void sendSoundRequest(class IConstBlockSource const &, struct SynchedActorDataComponent const &, struct ActorDefinitionIdentifierComponent const &, class Vec3 const &, class OptionalComponentWrapper<class StrictEntityContext, struct SoundEventRequestQueueComponent>, int32_t);
 
     // NOLINTEND
 

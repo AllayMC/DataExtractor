@@ -79,7 +79,7 @@ public:
     MCAPI void setRotation(float);
 
     // symbol: ?setSkullType@SkullBlockActor@@QEAAXH@Z
-    MCAPI void setSkullType(int);
+    MCAPI void setSkullType(int32_t);
 
     // NOLINTEND
 

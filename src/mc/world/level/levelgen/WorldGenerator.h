@@ -48,13 +48,13 @@ public:
     MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
 
     // symbol: ?getPreliminarySurfaceLevel@WorldGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
-    MCVAPI std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
+    MCVAPI std::optional<int16_t> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
 
     // symbol: ?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
     MCVAPI bool isStructureFeatureTypeAt(class BlockPos const &, ::StructureFeatureType) const;
 
     // symbol: ?postProcessMobsAt@WorldGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
-    MCVAPI void postProcessMobsAt(class BlockSource &, int, int, class Random &);
+    MCVAPI void postProcessMobsAt(class BlockSource &, int32_t, int32_t, class Random &);
 
     // symbol: ??1WorldGenerator@@UEAA@XZ
     MCVAPI ~WorldGenerator();
@@ -66,7 +66,7 @@ public:
     MCAPI WorldGenerator(class Dimension &, std::unique_ptr<class StructureFeatureRegistry>);
 
     // symbol: ?computeChunkHeightMap@WorldGenerator@@QEAA?AV?$vector@FV?$allocator@F@std@@@std@@AEBVChunkPos@@@Z
-    MCAPI std::vector<short> computeChunkHeightMap(class ChunkPos const &);
+    MCAPI std::vector<int16_t> computeChunkHeightMap(class ChunkPos const &);
 
     // symbol: ?getStructureFeatureRegistry@WorldGenerator@@QEBAAEAVStructureFeatureRegistry@@XZ
     MCAPI class StructureFeatureRegistry & getStructureFeatureRegistry() const;
@@ -76,7 +76,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?postProcessStructureFeatures@WorldGenerator@@IEAAXAEAVBlockSource@@AEAVRandom@@HH@Z
-    MCAPI void postProcessStructureFeatures(class BlockSource &, class Random &, int, int);
+    MCAPI void postProcessStructureFeatures(class BlockSource &, class Random &, int32_t, int32_t);
 
     // symbol: ?prepareStructureFeatureBlueprints@WorldGenerator@@IEAAXAEAVDimension@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
     MCAPI void prepareStructureFeatureBlueprints(class Dimension &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
@@ -86,7 +86,7 @@ public:
 protected:
     // NOLINTBEGIN
     // symbol: ?TICKING_QUEUE_PASS_LIMIT@WorldGenerator@@1_KB
-    MCAPI static uint64 const TICKING_QUEUE_PASS_LIMIT;
+    MCAPI static uint64_t const TICKING_QUEUE_PASS_LIMIT;
 
     // NOLINTEND
 

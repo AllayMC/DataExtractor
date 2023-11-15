@@ -18,13 +18,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol: ?getMinCost@MendingEnchant@@UEBAHH@Z
-    virtual int getMinCost(int) const;
+    virtual int32_t getMinCost(int32_t) const;
 
     // vIndex: 3, symbol: ?getMaxCost@MendingEnchant@@UEBAHH@Z
-    virtual int getMaxCost(int) const;
+    virtual int32_t getMaxCost(int32_t) const;
 
     // vIndex: 5, symbol: ?getMaxLevel@MendingEnchant@@UEBAHXZ
-    virtual int getMaxLevel() const;
+    virtual int32_t getMaxLevel() const;
 
     // vIndex: 10, symbol: __unk_vfn_10
     virtual void __unk_vfn_10();

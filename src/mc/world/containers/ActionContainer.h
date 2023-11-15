@@ -20,13 +20,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?at@ActionContainer@npc@@QEAAPEAV?$variant@UCommandAction@npc@@UUrlAction@2@@std@@_K@Z
-    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction> * at(uint64);
+    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction> * at(uint64_t);
 
     // symbol: ?at@ActionContainer@npc@@QEBAPEBV?$variant@UCommandAction@npc@@UUrlAction@2@@std@@_K@Z
-    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction> const * at(uint64) const;
+    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction> const * at(uint64_t) const;
 
     // symbol: ?countUrl@ActionContainer@npc@@QEBA_KXZ
-    MCAPI uint64 countUrl() const;
+    MCAPI uint64_t countUrl() const;
 
     // symbol: ?data@ActionContainer@npc@@QEBAAEBV?$vector@V?$variant@UCommandAction@npc@@UUrlAction@2@@std@@V?$allocator@V?$variant@UCommandAction@npc@@UUrlAction@2@@std@@@2@@std@@XZ
     MCAPI std::vector<std::variant<struct npc::CommandAction, struct npc::UrlAction>> const & data() const;
@@ -38,7 +38,7 @@ public:
     MCAPI void reset(std::vector<std::variant<struct npc::CommandAction, struct npc::UrlAction>> &&);
 
     // symbol: ?size@ActionContainer@npc@@QEBA_KXZ
-    MCAPI uint64 size() const;
+    MCAPI uint64_t size() const;
 
     // symbol: ??1ActionContainer@npc@@QEAA@XZ
     MCAPI ~ActionContainer();

@@ -43,7 +43,7 @@ public:
     virtual class AABB const & getVisualShape(class Block const &, class AABB &) const;
 
     // vIndex: 16, symbol: ?randomlyModifyPosition@DoublePlantBaseBlock@@UEBA?AVVec3@@AEBVBlockPos@@AEAH@Z
-    virtual class Vec3 randomlyModifyPosition(class BlockPos const &, int &) const;
+    virtual class Vec3 randomlyModifyPosition(class BlockPos const &, int32_t &) const;
 
     // vIndex: 17, symbol: ?randomlyModifyPosition@DoublePlantBaseBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -130,7 +130,7 @@ public:
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 92, symbol: ?mayPlace@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 93, symbol: ?mayPlace@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
@@ -196,7 +196,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 186, symbol: ?getResourceCount@DoublePlantBaseBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 192, symbol: ?checkAlive@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
@@ -208,7 +208,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0DoublePlantBaseBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DoublePlantBaseBlock(std::string const &, int);
+    MCAPI DoublePlantBaseBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

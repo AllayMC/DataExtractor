@@ -84,7 +84,7 @@ public:
     MCAPI void _placeEntitiesInWorld(class BlockSource &, class DataLoadHelper &, bool) const;
 
     // symbol: ?_placeNextBlockSegmentInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@_K1AEBVStructureSettings@@AEAVDataLoadHelper@@AEBVStructureBlockPalette@@AEBVBlockPalette@@VBlockPos@@AEBV7@AEBVVec3@@W4Rotation@@W4Mirror@@MIPEAVStructureTelemetryServerData@@_N_N@Z
-    MCAPI void _placeNextBlockSegmentInWorld(class BlockSource &, uint64, uint64, class StructureSettings const &, class DataLoadHelper &, class StructureBlockPalette const &, class BlockPalette const &, class BlockPos, class BlockPos const &, class Vec3 const &, ::Rotation, ::Mirror, float, uint, class StructureTelemetryServerData *, bool, bool) const;
+    MCAPI void _placeNextBlockSegmentInWorld(class BlockSource &, uint64_t, uint64_t, class StructureSettings const &, class DataLoadHelper &, class StructureBlockPalette const &, class BlockPalette const &, class BlockPos, class BlockPos const &, class Vec3 const &, ::Rotation, ::Mirror, float, uint32_t, class StructureTelemetryServerData *, bool, bool) const;
 
     // NOLINTEND
 

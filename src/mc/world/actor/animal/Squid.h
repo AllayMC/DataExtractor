@@ -70,7 +70,7 @@ public:
     virtual void __unk_vfn_63();
 
     // vIndex: 84, symbol: ?handleEntityEvent@Squid@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();

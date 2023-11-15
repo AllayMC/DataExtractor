@@ -40,7 +40,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getLastModificationTime@FileSystemImpl@Core@@UEAA?AVResult@2@AEBVPath@2@PEA_J@Z
-    virtual class Core::Result getLastModificationTime(class Core::Path const &, int64 *);
+    virtual class Core::Result getLastModificationTime(class Core::Path const &, int64_t *);
 
     // vIndex: 2, symbol: ?copyTimeAndAccessRights@FileSystemImpl@Core@@UEAA?AVResult@2@AEBVPath@2@0@Z
     virtual class Core::Result copyTimeAndAccessRights(class Core::Path const &, class Core::Path const &);
@@ -55,7 +55,7 @@ public:
     virtual ::Core::CrossStorageCopyMode getCrossStorageCopyMode();
 
     // vIndex: 6, symbol: ?getTransactionWriteSizeLimit@FileSystemImpl@Core@@UEBA_KXZ
-    virtual uint64 getTransactionWriteSizeLimit() const;
+    virtual uint64_t getTransactionWriteSizeLimit() const;
 
     // vIndex: 7, symbol: __unk_vfn_7
     virtual void __unk_vfn_7() = 0;
@@ -79,10 +79,10 @@ public:
     virtual class Core::Result _copyFile(class Core::Path const &, class Core::Path const &);
 
     // vIndex: 14, symbol: ?_copyFileWithLimit@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0_KAEA_K2@Z
-    virtual class Core::Result _copyFileWithLimit(class Core::Path const &, class Core::Path const &, uint64, uint64 &, uint64 &);
+    virtual class Core::Result _copyFileWithLimit(class Core::Path const &, class Core::Path const &, uint64_t, uint64_t &, uint64_t &);
 
     // vIndex: 15, symbol: ?_readFileData@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-    virtual class Core::Result _readFileData(class Core::Path const &, std::vector<uchar> &);
+    virtual class Core::Result _readFileData(class Core::Path const &, std::vector<uint8_t> &);
 
     // vIndex: 16, symbol: __unk_vfn_16
     virtual void __unk_vfn_16() = 0;
@@ -121,10 +121,10 @@ public:
     virtual class Core::Result _getDirectoryFilesRecursively(std::vector<class Core::PathBuffer<std::string>> &, class Core::Path const &);
 
     // vIndex: 28, symbol: ?_getDirectoryFilesSizeRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEA_KAEBVPath@2@@Z
-    virtual class Core::Result _getDirectoryFilesSizeRecursively(uint64 &, class Core::Path const &);
+    virtual class Core::Result _getDirectoryFilesSizeRecursively(uint64_t &, class Core::Path const &);
 
     // vIndex: 29, symbol: ?_getDirectoryFilesAllocatedSizeRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEA_K0AEBVPath@2@@Z
-    virtual class Core::Result _getDirectoryFilesAllocatedSizeRecursively(uint64 &, uint64 &, class Core::Path const &);
+    virtual class Core::Result _getDirectoryFilesAllocatedSizeRecursively(uint64_t &, uint64_t &, class Core::Path const &);
 
     // vIndex: 30, symbol: ?_copyDirectoryAndContentsRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0@Z
     virtual class Core::Result _copyDirectoryAndContentsRecursively(class Core::Path const &, class Core::Path const &);
@@ -133,7 +133,7 @@ public:
     virtual void __unk_vfn_31() = 0;
 
     // vIndex: 32, symbol: ?_getFileOrDirectorySize@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@PEA_K@Z
-    virtual class Core::Result _getFileOrDirectorySize(class Core::Path const &, uint64 *);
+    virtual class Core::Result _getFileOrDirectorySize(class Core::Path const &, uint64_t *);
 
     // vIndex: 33, symbol: __unk_vfn_33
     virtual void __unk_vfn_33();
@@ -166,7 +166,7 @@ public:
     virtual class Core::Result _flatFileDeleteFileOrDirectory(class Core::Path const &, class Core::Path const &, bool, bool);
 
     // vIndex: 43, symbol: ?_flatFileGetFileSize@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@0PEA_K@Z
-    virtual class Core::Result _flatFileGetFileSize(class Core::Path const &, class Core::Path const &, uint64 *);
+    virtual class Core::Result _flatFileGetFileSize(class Core::Path const &, class Core::Path const &, uint64_t *);
 
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44() = 0;
@@ -178,7 +178,7 @@ public:
     virtual class Core::Result _endTransaction();
 
     // vIndex: 47, symbol: ?_writeOperation@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@$$QEAV32@V?$function@$$A6AXPEAVFileStorageArea@Core@@@Z@std@@_K@Z
-    virtual class Core::Result _writeOperation(class Core::Path const &, class Core::Result &&, std::function<void (class Core::FileStorageArea *)>, uint64);
+    virtual class Core::Result _writeOperation(class Core::Path const &, class Core::Result &&, std::function<void (class Core::FileStorageArea *)>, uint64_t);
 
     // symbol: ?_addIgnoredThrottlePath@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@@Z
     MCVAPI class Core::Result _addIgnoredThrottlePath(class Core::Path const &);
@@ -247,10 +247,10 @@ public:
     MCAPI class Core::Result getDirectoryFilesRecursively(std::vector<class Core::PathBuffer<std::string>> &, class Core::Path const &);
 
     // symbol: ?getFileOrDirectorySize@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@PEA_K@Z
-    MCAPI class Core::Result getFileOrDirectorySize(class Core::Path const &, uint64 *);
+    MCAPI class Core::Result getFileOrDirectorySize(class Core::Path const &, uint64_t *);
 
     // symbol: ?getFileSize@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@PEA_K@Z
-    MCAPI class Core::Result getFileSize(class Core::Path const &, uint64 *);
+    MCAPI class Core::Result getFileSize(class Core::Path const &, uint64_t *);
 
     // symbol: ?getStorageArea@FileSystemImpl@Core@@QEAA?AV?$shared_ptr@VFileStorageArea@Core@@@std@@XZ
     MCAPI std::shared_ptr<class Core::FileStorageArea> getStorageArea();
@@ -265,7 +265,7 @@ public:
     MCAPI class Core::Result openFile(std::unique_ptr<class Core::FileImpl> &, class Core::Path const &, class Core::FileOpenMode, ::Core::FileBufferingMode);
 
     // symbol: ?readFileData@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-    MCAPI class Core::Result readFileData(class Core::Path const &, std::vector<uchar> &);
+    MCAPI class Core::Result readFileData(class Core::Path const &, std::vector<uint8_t> &);
 
     // symbol: ?removeIgnoredThrottlePath@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@@Z
     MCAPI class Core::Result removeIgnoredThrottlePath(class Core::Path const &);
@@ -294,10 +294,10 @@ public:
     MCAPI void _initialize();
 
     // symbol: ?_readOperation@FileSystemImpl@Core@@AEAA?AVResult@2@$$QEAV32@_K@Z
-    MCAPI class Core::Result _readOperation(class Core::Result &&, uint64);
+    MCAPI class Core::Result _readOperation(class Core::Result &&, uint64_t);
 
     // symbol: ?_readWriteOperation@FileSystemImpl@Core@@AEAA?AVResult@2@$$QEAV32@V?$function@$$A6AXPEAVFileStorageArea@Core@@@Z@std@@_K2@Z
-    MCAPI class Core::Result _readWriteOperation(class Core::Result &&, std::function<void (class Core::FileStorageArea *)>, uint64, uint64);
+    MCAPI class Core::Result _readWriteOperation(class Core::Result &&, std::function<void (class Core::FileStorageArea *)>, uint64_t, uint64_t);
 
     // NOLINTEND
 

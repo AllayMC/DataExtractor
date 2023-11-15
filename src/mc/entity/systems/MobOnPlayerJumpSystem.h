@@ -22,7 +22,7 @@ public:
     MCAPI static struct TickingSystemWithInfo createClientSystem();
 
     // symbol: ?getPlayerJumpPendingScale@MobOnPlayerJumpSystem@@SAMH@Z
-    MCAPI static float getPlayerJumpPendingScale(int);
+    MCAPI static float getPlayerJumpPendingScale(int32_t);
 
     // NOLINTEND
 

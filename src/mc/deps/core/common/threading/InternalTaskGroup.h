@@ -48,7 +48,7 @@ public:
     MCVAPI void requeueTask(std::shared_ptr<class BackgroundTaskBase>, bool);
 
     // symbol: ?taskComplete@InternalTaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z
-    MCVAPI void taskComplete(gsl::not_null<class BackgroundTaskBase *>);
+    MCVAPI void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
 
     // symbol: ?taskRegister@InternalTaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
     MCVAPI void taskRegister(std::shared_ptr<class BackgroundTaskBase>);

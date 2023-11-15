@@ -46,7 +46,7 @@ public:
     virtual bool canDestroySpecial(class Block const &) const;
 
     // vIndex: 48, symbol: ?getAttackDamage@WeaponItem@@UEBAHXZ
-    virtual int getAttackDamage() const;
+    virtual int32_t getAttackDamage() const;
 
     // vIndex: 49, symbol: ?isHandEquipped@WeaponItem@@UEBA_NXZ
     virtual bool isHandEquipped() const;
@@ -67,10 +67,10 @@ public:
     virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
 
     // vIndex: 62, symbol: ?getEnchantSlot@WeaponItem@@UEBAHXZ
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
 
     // vIndex: 63, symbol: ?getEnchantValue@WeaponItem@@UEBAHXZ
-    virtual int getEnchantValue() const;
+    virtual int32_t getEnchantValue() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();

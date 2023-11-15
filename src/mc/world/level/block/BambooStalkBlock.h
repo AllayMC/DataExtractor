@@ -108,7 +108,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 56, symbol: ?isValidAuxValue@BambooStalkBlock@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -144,7 +144,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@BambooStalkBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -201,10 +201,10 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0BambooStalkBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BambooStalkBlock(std::string const &, int);
+    MCAPI BambooStalkBlock(std::string const &, int32_t);
 
     // symbol: ?getMaxHeight@BambooStalkBlock@@SAHAEBVBlockPos@@@Z
-    MCAPI static int getMaxHeight(class BlockPos const &);
+    MCAPI static int32_t getMaxHeight(class BlockPos const &);
 
     // NOLINTEND
 

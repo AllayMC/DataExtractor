@@ -8,7 +8,7 @@
 namespace BlockDescriptorStateResolver {
     // NOLINTBEGIN
     // symbol: ?helpResolveBlockStateValue@BlockDescriptorStateResolver@@YA_NAEBVBlockState@@AEBUState@BlockDescriptor@@AEAH@Z
-    MCAPI bool helpResolveBlockStateValue(class BlockState const &, struct BlockDescriptor::State const &, int &);
+    MCAPI bool helpResolveBlockStateValue(class BlockState const &, struct BlockDescriptor::State const &, int32_t &);
     // NOLINTEND
 
 };

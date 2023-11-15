@@ -20,16 +20,16 @@ public:
     MCAPI static bool convertPointBetweenDimensions(class Vec3 const &, class Vec3 &, DimensionType, DimensionType, class DimensionConversionData const &);
 
     // symbol: ?fromSerializedInt@VanillaDimensions@@SA?AV?$AutomaticID@VDimension@@H@@H@Z
-    MCAPI static DimensionType fromSerializedInt(int);
+    MCAPI static DimensionType fromSerializedInt(int32_t);
 
     // symbol: ?fromSerializedInt@VanillaDimensions@@SA?AV?$Result@V?$AutomaticID@VDimension@@H@@Verror_code@std@@@Bedrock@@$$QEAV?$Result@HVerror_code@std@@@3@@Z
-    MCAPI static class Bedrock::Result<DimensionType> fromSerializedInt(class Bedrock::Result<int> &&);
+    MCAPI static class Bedrock::Result<DimensionType, std::error_code> fromSerializedInt(class Bedrock::Result<int32_t, std::error_code> &&);
 
     // symbol: ?fromString@VanillaDimensions@@SA?AV?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static DimensionType fromString(std::string const &);
 
     // symbol: ?toSerializedInt@VanillaDimensions@@SAHAEBV?$AutomaticID@VDimension@@H@@@Z
-    MCAPI static int toSerializedInt(DimensionType const &);
+    MCAPI static int32_t toSerializedInt(DimensionType const &);
 
     // symbol: ?toString@VanillaDimensions@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$AutomaticID@VDimension@@H@@@Z
     MCAPI static std::string const toString(DimensionType const &);

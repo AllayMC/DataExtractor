@@ -28,7 +28,7 @@ public:
     MCAPI bool getBool(struct GameRuleId, bool) const;
 
     // symbol: ?getInt@GameRules@@QEBAHUGameRuleId@@@Z
-    MCAPI int getInt(struct GameRuleId) const;
+    MCAPI int32_t getInt(struct GameRuleId) const;
 
     // symbol: ?getRule@GameRules@@QEBAPEBVGameRule@@UGameRuleId@@@Z
     MCAPI class GameRule const * getRule(struct GameRuleId) const;
@@ -55,7 +55,7 @@ public:
     MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, float, bool, bool *, bool *, class GameRule::ValidationError *);
 
     // symbol: ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@H_NPEA_N2PEAVValidationError@GameRule@@@Z
-    MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, int, bool, bool *, bool *, class GameRule::ValidationError *);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, int32_t, bool, bool *, bool *, class GameRule::ValidationError *);
 
     // symbol: ?setTagData@GameRules@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void setTagData(class CompoundTag &) const;
@@ -64,22 +64,22 @@ public:
     MCAPI ~GameRules();
 
     // symbol: ?DEFAULT_PLAYER_SPAWN_RADIUS@GameRules@@2IB
-    MCAPI static uint const DEFAULT_PLAYER_SPAWN_RADIUS;
+    MCAPI static uint32_t const DEFAULT_PLAYER_SPAWN_RADIUS;
 
     // symbol: ?DEFAULT_RANDOMTICKSPEED@GameRules@@2HB
-    MCAPI static int const DEFAULT_RANDOMTICKSPEED;
+    MCAPI static int32_t const DEFAULT_RANDOMTICKSPEED;
 
     // symbol: ?MAX_FUNCTIONCOMMANDLIMIT@GameRules@@2HB
-    MCAPI static int const MAX_FUNCTIONCOMMANDLIMIT;
+    MCAPI static int32_t const MAX_FUNCTIONCOMMANDLIMIT;
 
     // symbol: ?MAX_PLAYER_SPAWN_RADIUS@GameRules@@2IB
-    MCAPI static uint const MAX_PLAYER_SPAWN_RADIUS;
+    MCAPI static uint32_t const MAX_PLAYER_SPAWN_RADIUS;
 
     // symbol: ?MAX_RANDOMTICKSPEED@GameRules@@2HB
-    MCAPI static int const MAX_RANDOMTICKSPEED;
+    MCAPI static int32_t const MAX_RANDOMTICKSPEED;
 
     // symbol: ?MIN_PLAYER_SPAWN_RADIUS@GameRules@@2IB
-    MCAPI static uint const MIN_PLAYER_SPAWN_RADIUS;
+    MCAPI static uint32_t const MIN_PLAYER_SPAWN_RADIUS;
 
     // symbol: ?WORLD_POLICY_TAG_NAME@GameRules@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const WORLD_POLICY_TAG_NAME;

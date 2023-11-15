@@ -67,7 +67,7 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 
     // symbol: ?getBaseColorInt@BannerBlockActor@@QEBAEXZ
-    MCAPI uchar getBaseColorInt() const;
+    MCAPI uint8_t getBaseColorInt() const;
 
     // symbol: ?setItemValues@BannerBlockActor@@QEAAXAEBVItemStackBase@@@Z
     MCAPI void setItemValues(class ItemStackBase const &);
@@ -76,10 +76,10 @@ public:
     MCAPI static ::BannerBlockType getBannerType(class CompoundTag const *);
 
     // symbol: ?getBaseColor@BannerBlockActor@@SAHAEBVItemStack@@@Z
-    MCAPI static int getBaseColor(class ItemStack const &);
+    MCAPI static int32_t getBaseColor(class ItemStack const &);
 
     // symbol: ?getPatternCount@BannerBlockActor@@SAHPEBVCompoundTag@@@Z
-    MCAPI static int getPatternCount(class CompoundTag const *);
+    MCAPI static int32_t getPatternCount(class CompoundTag const *);
 
     // symbol: ?isDefaultBanner@BannerBlockActor@@SA_NAEBVItemStackBase@@@Z
     MCAPI static bool isDefaultBanner(class ItemStackBase const &);
@@ -88,7 +88,7 @@ public:
     MCAPI static bool removeLastPattern(class ItemStack &, class Player &);
 
     // symbol: ?MAX_PATTERNS@BannerBlockActor@@2HB
-    MCAPI static int const MAX_PATTERNS;
+    MCAPI static int32_t const MAX_PATTERNS;
 
     // symbol: ?TAG_BASE_COLOR@BannerBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const TAG_BASE_COLOR;

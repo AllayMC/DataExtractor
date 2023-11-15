@@ -130,7 +130,7 @@ public:
     virtual float getMaxHeadXRot();
 
     // vIndex: 191, symbol: ?getArmorValue@Shulker@@UEBAHXZ
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
 
     // vIndex: 210, symbol: ?initBodyControl@Shulker@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
     virtual std::unique_ptr<class BodyControl> initBodyControl();
@@ -161,10 +161,10 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_canOpenLidAt@Shulker@@IEBA_NVBlockPos@@E@Z
-    MCAPI bool _canOpenLidAt(class BlockPos, uchar) const;
+    MCAPI bool _canOpenLidAt(class BlockPos, uint8_t) const;
 
     // symbol: ?_setPeekAmount@Shulker@@KAXVSynchedActorDataWriter@@H@Z
-    MCAPI static void _setPeekAmount(class SynchedActorDataWriter, int);
+    MCAPI static void _setPeekAmount(class SynchedActorDataWriter, int32_t);
 
     // NOLINTEND
 
@@ -177,7 +177,7 @@ public:
     MCAPI bool _isPosOccupiedByOtherShulker(class BlockPos) const;
 
     // symbol: ?_isValidAttach@Shulker@@AEAA_NVBlockPos@@E@Z
-    MCAPI bool _isValidAttach(class BlockPos, uchar);
+    MCAPI bool _isValidAttach(class BlockPos, uint8_t);
 
     // symbol: ?_peekAmountTick@Shulker@@AEAAXXZ
     MCAPI void _peekAmountTick();

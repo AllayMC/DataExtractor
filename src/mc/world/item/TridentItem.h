@@ -46,10 +46,10 @@ public:
     virtual bool isThrowable() const;
 
     // vIndex: 47, symbol: ?getMaxDamage@TridentItem@@UEBAFXZ
-    virtual short getMaxDamage() const;
+    virtual int16_t getMaxDamage() const;
 
     // vIndex: 48, symbol: ?getAttackDamage@TridentItem@@UEBAHXZ
-    virtual int getAttackDamage() const;
+    virtual int32_t getAttackDamage() const;
 
     // vIndex: 51, symbol: __unk_vfn_51
     virtual void __unk_vfn_51();
@@ -64,10 +64,10 @@ public:
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
 
     // vIndex: 62, symbol: ?getEnchantSlot@TridentItem@@UEBAHXZ
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
 
     // vIndex: 63, symbol: ?getEnchantValue@TridentItem@@UEBAHXZ
-    virtual int getEnchantValue() const;
+    virtual int32_t getEnchantValue() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
@@ -94,10 +94,10 @@ public:
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
 
     // vIndex: 85, symbol: ?dispense@TridentItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 87, symbol: ?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    virtual void releaseUsing(class ItemStack &, class Player *, int) const;
+    virtual void releaseUsing(class ItemStack &, class Player *, int32_t) const;
 
     // vIndex: 89, symbol: ?hurtActor@TridentItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
@@ -109,10 +109,10 @@ public:
     virtual void __unk_vfn_116();
 
     // symbol: ?CHARGE_THRESHOLD_TIME@TridentItem@@2HB
-    MCAPI static int const CHARGE_THRESHOLD_TIME;
+    MCAPI static int32_t const CHARGE_THRESHOLD_TIME;
 
     // symbol: ?THROW_THRESHOLD_TIME@TridentItem@@2HB
-    MCAPI static int const THROW_THRESHOLD_TIME;
+    MCAPI static int32_t const THROW_THRESHOLD_TIME;
 
     // NOLINTEND
 

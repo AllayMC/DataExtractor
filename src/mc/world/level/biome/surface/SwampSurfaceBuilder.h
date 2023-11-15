@@ -26,7 +26,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?init@SwampSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
-    virtual void init(class EntityContext &, uint);
+    virtual void init(class EntityContext &, uint32_t);
 
     // vIndex: 2, symbol: ?buildSurfaceAt@SwampSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
     virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const &) const;

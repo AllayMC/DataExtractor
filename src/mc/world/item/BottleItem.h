@@ -73,7 +73,7 @@ public:
     virtual void __unk_vfn_80();
 
     // vIndex: 85, symbol: ?dispense@BottleItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 115, symbol: __unk_vfn_115
     virtual void __unk_vfn_115();
@@ -82,10 +82,10 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 135, symbol: ?_useOn@BottleItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // symbol: ??0BottleItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BottleItem(std::string const &, int);
+    MCAPI BottleItem(std::string const &, int32_t);
 
     // NOLINTEND
 
@@ -95,7 +95,7 @@ public:
     MCAPI void _createBottledItem(class Actor &, class ItemStack &, std::string_view) const;
 
     // symbol: ?_fillBottleViaDispenser@BottleItem@@AEBAXAEAVBlockSource@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEAVContainer@@HAEBVVec3@@E@Z
-    MCAPI void _fillBottleViaDispenser(class BlockSource &, std::string_view, class Container &, int, class Vec3 const &, uchar) const;
+    MCAPI void _fillBottleViaDispenser(class BlockSource &, std::string_view, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // NOLINTEND
 

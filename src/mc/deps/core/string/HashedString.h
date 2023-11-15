@@ -16,7 +16,7 @@ public:
     MCAPI HashedString(class HashedString const &);
 
     // symbol: ??0HashedString@@QEAA@_KPEBD@Z
-    MCAPI HashedString(uint64, char const *);
+    MCAPI HashedString(uint64_t, char const *);
 
     // symbol: ??0HashedString@@QEAA@$$QEAV0@@Z
     MCAPI HashedString(class HashedString &&);
@@ -37,7 +37,7 @@ public:
     MCAPI bool empty() const;
 
     // symbol: ?getHash@HashedString@@QEBA_KXZ
-    MCAPI uint64 getHash() const;
+    MCAPI uint64_t getHash() const;
 
     // symbol: ?getString@HashedString@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getString() const;
@@ -67,10 +67,10 @@ public:
     MCAPI ~HashedString();
 
     // symbol: ?computeHash@HashedString@@SA_KPEBD@Z
-    MCAPI static uint64 computeHash(char const *);
+    MCAPI static uint64_t computeHash(char const *);
 
     // symbol: ?computeHash@HashedString@@SA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static uint64 computeHash(std::string const &);
+    MCAPI static uint64_t computeHash(std::string const &);
 
     // symbol: ?getEmptyString@HashedString@@SAAEBV1@XZ
     MCAPI static class HashedString const & getEmptyString();

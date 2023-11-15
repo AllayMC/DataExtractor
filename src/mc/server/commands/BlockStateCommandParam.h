@@ -19,7 +19,7 @@ public:
     MCAPI BlockStateCommandParam(std::string, std::string, ::BlockStateCommandParam::Type);
 
     // symbol: ?getNameAndValue@BlockStateCommandParam@@QEBA?AV?$optional@U?$pair@VHashedString@@H@std@@@std@@AEAVCommandOutput@@AEBVBlock@@@Z
-    MCAPI std::optional<std::pair<class HashedString, int>> getNameAndValue(class CommandOutput &, class Block const &) const;
+    MCAPI std::optional<std::pair<class HashedString, int32_t>> getNameAndValue(class CommandOutput &, class Block const &) const;
 
     // symbol: ?setBlockState@BlockStateCommandParam@@QEBA_NPEAPEBVBlock@@AEAVCommandOutput@@@Z
     MCAPI bool setBlockState(class Block const **, class CommandOutput &) const;

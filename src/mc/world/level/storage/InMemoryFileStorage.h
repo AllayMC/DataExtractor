@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0InMemoryFileStorage@@QEAA@PEAVEnv@leveldb@@@Z
-    MCAPI InMemoryFileStorage(leveldb::Env *);
+    MCAPI InMemoryFileStorage(class leveldb::Env *);
 
     // symbol: ?createFile@InMemoryFileStorage@@QEAA?AV?$shared_ptr@VInMemoryFile@@@std@@AEBVPath@Core@@@Z
     MCAPI std::shared_ptr<class InMemoryFile> createFile(class Core::Path const &);

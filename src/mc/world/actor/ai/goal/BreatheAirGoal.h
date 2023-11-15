@@ -44,7 +44,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_determineApproximateDepth@BreatheAirGoal@@AEAAHXZ
-    MCAPI int _determineApproximateDepth();
+    MCAPI int32_t _determineApproximateDepth();
 
     // symbol: ?_findAirPosition@BreatheAirGoal@@AEAAXXZ
     MCAPI void _findAirPosition();

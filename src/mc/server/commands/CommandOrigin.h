@@ -102,13 +102,13 @@ public:
     virtual class mce::UUID const & getUUID() const;
 
     // vIndex: 26, symbol: ?handleCommandOutputCallback@CommandOrigin@@UEBAXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z
-    virtual void handleCommandOutputCallback(int, std::string &&, class Json::Value &&) const;
+    virtual void handleCommandOutputCallback(int32_t, std::string &&, class Json::Value &&) const;
 
     // vIndex: 27, symbol: ?updateValues@CommandOrigin@@UEAAXXZ
     virtual void updateValues();
 
     // vIndex: 28, symbol: ?getExecutePosition@CommandOrigin@@UEBA?BVVec3@@HAEBVCommandPositionFloat@@@Z
-    virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
+    virtual class Vec3 const getExecutePosition(int32_t, class CommandPositionFloat const &) const;
 
     // vIndex: 29, symbol: ?serialize@CommandOrigin@@UEBA?AVCompoundTag@@XZ
     virtual class CompoundTag serialize() const;
@@ -123,16 +123,16 @@ public:
     MCAPI CommandOrigin();
 
     // symbol: ?getAreaAt@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
-    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, class BlockPos const &, int, bool) const;
+    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, class BlockPos const &, int32_t, bool) const;
 
     // symbol: ?getAreaAt@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H@Z
-    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, int) const;
+    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, int32_t) const;
 
     // symbol: ?getAreaAtWithBuffer@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
-    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, class BlockPos const &, int, bool) const;
+    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, class BlockPos const &, int32_t, bool) const;
 
     // symbol: ?getAreaAtWithBuffer@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H@Z
-    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, int) const;
+    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, int32_t) const;
 
     // symbol: ?fromCommandOriginData@CommandOrigin@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBUCommandOriginData@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
     MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, ::SubClientId);

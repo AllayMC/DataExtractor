@@ -23,13 +23,13 @@ public:
     MCAPI std::string const & getName() const;
 
     // symbol: ?getTickDelay@BaseCommandBlock@@QEBAHXZ
-    MCAPI int getTickDelay() const;
+    MCAPI int32_t getTickDelay() const;
 
     // symbol: ?getTrackOutput@BaseCommandBlock@@QEBA_NXZ
     MCAPI bool getTrackOutput() const;
 
     // symbol: ?getVersion@BaseCommandBlock@@QEBAHXZ
-    MCAPI int getVersion() const;
+    MCAPI int32_t getVersion() const;
 
     // symbol: ?load@BaseCommandBlock@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
@@ -56,7 +56,7 @@ public:
     MCAPI void setShouldExecuteOnFirstTick(bool);
 
     // symbol: ?setTickDelay@BaseCommandBlock@@QEAAXH@Z
-    MCAPI void setTickDelay(int);
+    MCAPI void setTickDelay(int32_t);
 
     // symbol: ?setTrackOutput@BaseCommandBlock@@QEAAX_N@Z
     MCAPI void setTrackOutput(bool);

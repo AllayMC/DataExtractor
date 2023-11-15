@@ -89,7 +89,7 @@ public:
     virtual void __unk_vfn_172();
 
     // vIndex: 185, symbol: ?getItemUseDuration@HumanoidMonster@@UEBAHXZ
-    virtual int getItemUseDuration() const;
+    virtual int32_t getItemUseDuration() const;
 
     // vIndex: 190, symbol: ?doHurtTarget@HumanoidMonster@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
     virtual bool doHurtTarget(class Actor *, ::ActorDamageCause const &);

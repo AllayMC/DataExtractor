@@ -58,7 +58,7 @@ public:
     MCAPI float getFloat() const;
 
     // symbol: ?getInt@GameRule@@QEBAHXZ
-    MCAPI int getInt() const;
+    MCAPI int32_t getInt() const;
 
     // symbol: ?getName@GameRule@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getName() const;
@@ -88,7 +88,7 @@ public:
     MCAPI bool setFloat(float, bool *, class GameRule::ValidationError *);
 
     // symbol: ?setInt@GameRule@@QEAA_NHPEA_NPEAVValidationError@1@@Z
-    MCAPI bool setInt(int, bool *, class GameRule::ValidationError *);
+    MCAPI bool setInt(int32_t, bool *, class GameRule::ValidationError *);
 
     // symbol: ?setTagDataNotFoundCallback@GameRule@@QEAAAEAV1@V?$function@$$A6AXAEAVGameRule@@@Z@std@@@Z
     MCAPI class GameRule & setTagDataNotFoundCallback(std::function<void (class GameRule &)>);
@@ -104,7 +104,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_setDefaultValue@GameRule@@IEAAAEAV1@H@Z
-    MCAPI class GameRule & _setDefaultValue(int);
+    MCAPI class GameRule & _setDefaultValue(int32_t);
 
     // symbol: ?_setDefaultValue@GameRule@@IEAAAEAV1@_N@Z
     MCAPI class GameRule & _setDefaultValue(bool);

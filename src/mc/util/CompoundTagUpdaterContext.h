@@ -17,13 +17,13 @@ public:
     MCAPI CompoundTagUpdaterContext();
 
     // symbol: ?addUpdater@CompoundTagUpdaterContext@@QEAA?AVCompoundTagUpdaterBuilder@@EEE@Z
-    MCAPI class CompoundTagUpdaterBuilder addUpdater(uchar, uchar, uchar);
+    MCAPI class CompoundTagUpdaterBuilder addUpdater(uint8_t, uint8_t, uint8_t);
 
     // symbol: ?sortUpdaters@CompoundTagUpdaterContext@@QEAAXXZ
     MCAPI void sortUpdaters();
 
     // symbol: ?update@CompoundTagUpdaterContext@@QEAA?AW4CompoundTagUpdaterResult@@AEAVCompoundTag@@I@Z
-    MCAPI ::CompoundTagUpdaterResult update(class CompoundTag &, uint);
+    MCAPI ::CompoundTagUpdaterResult update(class CompoundTag &, uint32_t);
 
     // NOLINTEND
 

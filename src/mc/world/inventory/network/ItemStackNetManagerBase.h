@@ -23,7 +23,7 @@ public:
     virtual bool isEnabled() const;
 
     // vIndex: 2, symbol: ?getRequestId@ItemStackNetManagerServer@@UEBA?AV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
-    virtual ItemStackRequestId getRequestId() const = 0;
+    virtual class TypedClientNetId<struct ItemStackRequestIdTag, int32_t, 0> getRequestId() const = 0;
 
     // vIndex: 3, symbol: ?retainSetItemStackNetIdVariant@ItemStackNetManagerBase@@UEBA_NXZ
     virtual bool retainSetItemStackNetIdVariant() const;
@@ -32,7 +32,7 @@ public:
     virtual bool allowInventoryTransactionManager() const = 0;
 
     // vIndex: 5, symbol: ?_tryBeginClientLegacyTransactionRequest@ItemStackNetManagerBase@@MEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@XZ
-    virtual gsl::final_action<std::function<void (void)>> _tryBeginClientLegacyTransactionRequest();
+    virtual class gsl::final_action<std::function<void (void)>> _tryBeginClientLegacyTransactionRequest();
 
     // vIndex: 6, symbol: ?onContainerScreenOpen@ItemStackNetManagerBase@@UEAAXAEBVContainerScreenContext@@@Z
     virtual void onContainerScreenOpen(class ContainerScreenContext const &);
@@ -44,7 +44,7 @@ public:
     virtual class SparseContainer * initOpenContainer(class BlockSource &, ::ContainerEnumName, class ContainerWeakRef const &);
 
     // vIndex: 9, symbol: ?_addLegacyTransactionRequestSetItemSlot@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@W4ContainerType@@H@Z
-    virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen &, ::ContainerType, int);
+    virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen &, ::ContainerType, int32_t);
 
     // vIndex: 10, symbol: ?_initScreen@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@@Z
     virtual void _initScreen(class ItemStackNetManagerScreen &);
@@ -65,10 +65,10 @@ public:
     MCAPI bool isScreenOpen() const;
 
     // symbol: ?_tryBeginClientLegacyTransactionRequest@ItemStackNetManagerBase@@SA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@PEAVPlayer@@@Z
-    MCAPI static gsl::final_action<std::function<void (void)>> _tryBeginClientLegacyTransactionRequest(class Player *);
+    MCAPI static class gsl::final_action<std::function<void (void)>> _tryBeginClientLegacyTransactionRequest(class Player *);
 
     // symbol: ?setPlayerContainer@ItemStackNetManagerBase@@SA_NAEAVPlayer@@W4ContainerType@@HAEBVItemStack@@AEAV4@AEBV?$function@$$A6AXAEBVItemStack@@@Z@std@@@Z
-    MCAPI static bool setPlayerContainer(class Player &, ::ContainerType, int, class ItemStack const &, class ItemStack &, std::function<void (class ItemStack const &)> const &);
+    MCAPI static bool setPlayerContainer(class Player &, ::ContainerType, int32_t, class ItemStack const &, class ItemStack &, std::function<void (class ItemStack const &)> const &);
 
     // NOLINTEND
 

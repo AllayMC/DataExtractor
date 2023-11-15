@@ -14,7 +14,7 @@ public:
     MCAPI TransformationComponent();
 
     // symbol: ?getDelayTicks@TransformationComponent@@QEBAHXZ
-    MCAPI int getDelayTicks() const;
+    MCAPI int32_t getDelayTicks() const;
 
     // symbol: ?initFromDefinition@TransformationComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor &);
@@ -26,7 +26,7 @@ public:
     MCAPI void reloadComponent(class Actor &);
 
     // symbol: ?setDelayTicks@TransformationComponent@@QEAAXH@Z
-    MCAPI void setDelayTicks(int);
+    MCAPI void setDelayTicks(int32_t);
 
     // symbol: ?transformIfAble@TransformationComponent@@QEAAXAEAVActor@@_N@Z
     MCAPI void transformIfAble(class Actor &, bool);

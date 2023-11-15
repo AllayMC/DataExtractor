@@ -35,7 +35,7 @@ public:
     virtual void __unk_vfn_10();
 
     // vIndex: 20, symbol: ?getInterpolatedRidingOffset@Camel@@UEBA?AVVec3@@MH@Z
-    virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
+    virtual class Vec3 getInterpolatedRidingOffset(float, int32_t) const;
 
     // vIndex: 23, symbol: __unk_vfn_23
     virtual void __unk_vfn_23();

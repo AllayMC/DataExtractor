@@ -77,7 +77,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?getEnTTMetaType@CerealItemComponentFactory@@CA?AVmeta_type@entt@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI static entt::meta_type getEnTTMetaType(struct cereal::ReflectionCtx &);
+    MCAPI static class entt::meta_type getEnTTMetaType(struct cereal::ReflectionCtx &);
 
     // symbol: ?getPropDeprecatedComponents@CerealItemComponentFactory@@CAAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VSemVersion@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VSemVersion@@@std@@@2@@std@@AEAUReflectionCtx@cereal@@@Z
     MCAPI static std::unordered_map<std::string,class SemVersion> & getPropDeprecatedComponents(struct cereal::ReflectionCtx &);

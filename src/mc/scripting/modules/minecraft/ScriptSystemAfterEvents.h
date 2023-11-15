@@ -70,7 +70,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVServerLevel@@@gsl@@@Z
-    MCAPI ScriptSystemAfterEvents(class Scripting::WeakLifetimeScope const &, gsl::not_null<class ServerLevel *>);
+    MCAPI ScriptSystemAfterEvents(class Scripting::WeakLifetimeScope const &, class gsl::not_null<class ServerLevel *>);
 
     // symbol: ??0ScriptSystemAfterEvents@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptSystemAfterEvents(class ScriptModuleMinecraft::ScriptSystemAfterEvents &&);

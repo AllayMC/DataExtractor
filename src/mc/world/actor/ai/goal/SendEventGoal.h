@@ -44,7 +44,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_selectBestSpell@SendEventGoal@@AEAAHXZ
-    MCAPI int _selectBestSpell();
+    MCAPI int32_t _selectBestSpell();
 
     // NOLINTEND
 

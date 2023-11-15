@@ -43,7 +43,7 @@ public:
     virtual void __unk_vfn_21();
 
     // vIndex: 45, symbol: ?getLevelDataForAuxValue@SaplingBlockItem@@UEBAHH@Z
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int32_t getLevelDataForAuxValue(int32_t) const;
 
     // vIndex: 51, symbol: __unk_vfn_51
     virtual void __unk_vfn_51();

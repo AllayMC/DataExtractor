@@ -25,16 +25,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getAutomationClient@DedicatedServer@@EEBA?AV?$not_null@V?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@gsl@@XZ
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class Automation::AutomationClient> getAutomationClient() const;
+    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>> getAutomationClient() const;
 
     // symbol: ?getFileArchiver@DedicatedServer@@UEBA?AV?$not_null@V?$NonOwnerPointer@VFileArchiver@@@Bedrock@@@gsl@@XZ
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class FileArchiver> getFileArchiver() const;
+    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class FileArchiver>> getFileArchiver() const;
 
     // symbol: ?getGameModuleShared@DedicatedServer@@EEAAAEAVIGameModuleShared@@XZ
     MCVAPI class IGameModuleShared & getGameModuleShared();
 
     // symbol: ?getPrimaryMinecraft@DedicatedServer@@EEAA?AV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@XZ
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class Minecraft> getPrimaryMinecraft();
+    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft();
 
     // symbol: ?isDedicatedServer@DedicatedServer@@EEBA_NXZ
     MCVAPI bool isDedicatedServer() const;
@@ -43,7 +43,7 @@ public:
     MCVAPI bool isEduMode() const;
 
     // symbol: ?onNetworkMaxPlayersChanged@DedicatedServer@@EEAAXI@Z
-    MCVAPI void onNetworkMaxPlayersChanged(uint);
+    MCVAPI void onNetworkMaxPlayersChanged(uint32_t);
 
     // symbol: ?requestServerShutdown@DedicatedServer@@EEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void requestServerShutdown(std::string const &);

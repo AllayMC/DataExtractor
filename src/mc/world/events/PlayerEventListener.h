@@ -37,7 +37,7 @@ public:
     MCVAPI ::EventResult onPlayerAIStepEnd(class Player &);
 
     // symbol: ?onPlayerAction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4PlayerActionType@@AEBVBlockPos@@H@Z
-    MCVAPI ::EventResult onPlayerAction(class Player &, ::PlayerActionType, class BlockPos const &, int);
+    MCVAPI ::EventResult onPlayerAction(class Player &, ::PlayerActionType, class BlockPos const &, int32_t);
 
     // symbol: ?onPlayerAttackedActor@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVActor@@@Z
     MCVAPI ::EventResult onPlayerAttackedActor(class Player &, class Actor &);
@@ -52,16 +52,16 @@ public:
     MCVAPI ::EventResult onPlayerAwardAchievement(class Player &, ::MinecraftEventing::AchievementIds);
 
     // symbol: ?onPlayerCaravanChanged@PlayerEventListener@@UEAA?AW4EventResult@@AEBVActor@@H@Z
-    MCVAPI ::EventResult onPlayerCaravanChanged(class Actor const &, int);
+    MCVAPI ::EventResult onPlayerCaravanChanged(class Actor const &, int32_t);
 
     // symbol: ?onPlayerCraftedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@_N22HHH22AEBV?$vector@FV?$allocator@F@std@@@std@@@Z
-    MCVAPI ::EventResult onPlayerCraftedItem(class Player &, class ItemInstance const &, bool, bool, bool, int, int, int, bool, bool, std::vector<short> const &);
+    MCVAPI ::EventResult onPlayerCraftedItem(class Player &, class ItemInstance const &, bool, bool, bool, int32_t, int32_t, int32_t, bool, bool, std::vector<int16_t> const &);
 
     // symbol: ?onPlayerCreated@PlayerEventListener@@UEAA?AW4EventResult@@AEAVLocalPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N@Z
     MCVAPI ::EventResult onPlayerCreated(class LocalPlayer &, std::string const &, std::string const &, bool);
 
     // symbol: ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@HHH@Z
-    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player &, int, int, int);
+    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player &, int32_t, int32_t, int32_t);
 
     // symbol: ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@@Z
     MCVAPI ::EventResult onPlayerDestroyedBlock(class Player &, class Block const &);
@@ -76,7 +76,7 @@ public:
     MCVAPI ::EventResult onPlayerInput(class EntityContext &);
 
     // symbol: ?onPlayerItemEquipped@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@H@Z
-    MCVAPI ::EventResult onPlayerItemEquipped(class Player &, class ItemInstance const &, int);
+    MCVAPI ::EventResult onPlayerItemEquipped(class Player &, class ItemInstance const &, int32_t);
 
     // symbol: ?onPlayerItemPlaceInteraction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@@Z
     MCVAPI ::EventResult onPlayerItemPlaceInteraction(class Player &, class ItemInstance const &);
@@ -94,7 +94,7 @@ public:
     MCVAPI ::EventResult onPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
 
     // symbol: ?onPlayerMovementRewindCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@_KW4ReplayCorrectionResult@@@Z
-    MCVAPI ::EventResult onPlayerMovementRewindCorrected(class Player &, uint64, ::ReplayCorrectionResult);
+    MCVAPI ::EventResult onPlayerMovementRewindCorrected(class Player &, uint64_t, ::ReplayCorrectionResult);
 
     // symbol: ?onPlayerNamedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z
     MCVAPI ::EventResult onPlayerNamedItem(class Player &, class ItemDescriptor const &);
@@ -127,7 +127,7 @@ public:
     MCVAPI ::EventResult onPlayerStopRiding(class Player &, bool, bool, bool);
 
     // symbol: ?onPlayerTargetBlockHit@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z
-    MCVAPI ::EventResult onPlayerTargetBlockHit(class Player &, int);
+    MCVAPI ::EventResult onPlayerTargetBlockHit(class Player &, int32_t);
 
     // symbol: ?onPlayerTeleported@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onPlayerTeleported(class Player &);
@@ -142,10 +142,10 @@ public:
     MCVAPI ::EventResult onPlayerTurn(class Player &, class Vec2 &);
 
     // symbol: ?onPlayerWaxOnWaxOff@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z
-    MCVAPI ::EventResult onPlayerWaxOnWaxOff(class Player &, int);
+    MCVAPI ::EventResult onPlayerWaxOnWaxOff(class Player &, int32_t);
 
     // symbol: ?onStartDestroyBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@AEAE@Z
-    MCVAPI ::EventResult onStartDestroyBlock(class Player &, class BlockPos const &, uchar &);
+    MCVAPI ::EventResult onStartDestroyBlock(class Player &, class BlockPos const &, uint8_t &);
 
     // NOLINTEND
 

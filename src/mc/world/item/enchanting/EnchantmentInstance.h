@@ -17,16 +17,16 @@ public:
     MCAPI EnchantmentInstance();
 
     // symbol: ??0EnchantmentInstance@@QEAA@W4Type@Enchant@@H@Z
-    MCAPI EnchantmentInstance(::Enchant::Type, int);
+    MCAPI EnchantmentInstance(::Enchant::Type, int32_t);
 
     // symbol: ?getEnchantLevel@EnchantmentInstance@@QEBAHXZ
-    MCAPI int getEnchantLevel() const;
+    MCAPI int32_t getEnchantLevel() const;
 
     // symbol: ?getEnchantType@EnchantmentInstance@@QEBA?AW4Type@Enchant@@XZ
     MCAPI ::Enchant::Type getEnchantType() const;
 
     // symbol: ?setEnchantLevel@EnchantmentInstance@@QEAAXH@Z
-    MCAPI void setEnchantLevel(int);
+    MCAPI void setEnchantLevel(int32_t);
 
     // NOLINTEND
 

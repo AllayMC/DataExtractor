@@ -26,10 +26,10 @@ public:
     MCAPI HugeMushroomFeature();
 
     // symbol: ??0HugeMushroomFeature@@QEAA@H@Z
-    MCAPI HugeMushroomFeature(int);
+    MCAPI HugeMushroomFeature(int32_t);
 
     // symbol: ?placeFixed@HugeMushroomFeature@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@HH@Z
-    MCAPI bool placeFixed(class BlockSource &, class BlockPos const &, int, int) const;
+    MCAPI bool placeFixed(class BlockSource &, class BlockPos const &, int32_t, int32_t) const;
 
     // NOLINTEND
 

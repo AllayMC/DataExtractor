@@ -25,25 +25,25 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?allocate@InternalHeapAllocator@Memory@Bedrock@@UEAAPEAX_K@Z
-    virtual void * allocate(uint64);
+    virtual void * allocate(uint64_t);
 
     // vIndex: 2, symbol: ?release@InternalHeapAllocator@Memory@Bedrock@@UEAAXPEAX@Z
     virtual void release(void *);
 
     // vIndex: 3, symbol: ?alignedAllocate@InternalHeapAllocator@Memory@Bedrock@@UEAAPEAX_K0@Z
-    virtual void * alignedAllocate(uint64, uint64);
+    virtual void * alignedAllocate(uint64_t, uint64_t);
 
     // vIndex: 4, symbol: ?alignedRelease@InternalHeapAllocator@Memory@Bedrock@@UEAAXPEAX@Z
     virtual void alignedRelease(void *);
 
     // vIndex: 5, symbol: ?getUsableSize@InternalHeapAllocator@Memory@Bedrock@@UEAA_KPEAX@Z
-    virtual uint64 getUsableSize(void *);
+    virtual uint64_t getUsableSize(void *);
 
     // vIndex: 6, symbol: ?logCurrentState@InternalHeapAllocator@Memory@Bedrock@@UEAAXXZ
     virtual void logCurrentState();
 
     // vIndex: 7, symbol: ?_realloc@InternalHeapAllocator@Memory@Bedrock@@EEAAPEAXV?$not_null@PEAX@gsl@@_K@Z
-    virtual void * _realloc(gsl::not_null<void *>, uint64);
+    virtual void * _realloc(class gsl::not_null<void *>, uint64_t);
 
     // NOLINTEND
 

@@ -29,7 +29,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@PlayerHotbarPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1PlayerHotbarPacket@@UEAA@XZ
     MCVAPI ~PlayerHotbarPacket();
@@ -38,7 +38,7 @@ public:
     MCAPI PlayerHotbarPacket();
 
     // symbol: ??0PlayerHotbarPacket@@QEAA@IW4ContainerID@@_N@Z
-    MCAPI PlayerHotbarPacket(uint, ::ContainerID, bool);
+    MCAPI PlayerHotbarPacket(uint32_t, ::ContainerID, bool);
 
     // NOLINTEND
 

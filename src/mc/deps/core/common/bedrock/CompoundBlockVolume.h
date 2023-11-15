@@ -23,7 +23,7 @@ public:
     MCAPI CompoundBlockVolume();
 
     // symbol: ?capacity@CompoundBlockVolume@@QEBA_KXZ
-    MCAPI uint64 capacity() const;
+    MCAPI uint64_t capacity() const;
 
     // symbol: ?clear@CompoundBlockVolume@@QEAAX_N@Z
     MCAPI void clear(bool);
@@ -68,7 +68,7 @@ public:
     MCAPI void translateOrigin(class BlockPos const &, bool);
 
     // symbol: ?volumeCount@CompoundBlockVolume@@QEBA_KXZ
-    MCAPI uint64 volumeCount() const;
+    MCAPI uint64_t volumeCount() const;
 
     // symbol: ?bindType@CompoundBlockVolume@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx &);

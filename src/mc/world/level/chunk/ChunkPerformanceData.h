@@ -30,7 +30,7 @@ public:
         MCAPI AtomicMemoryAccumulator();
     
         // symbol: ?getMemoryAverage@AtomicMemoryAccumulator@ChunkPerformanceData@@QEBA_KXZ
-        MCAPI uint64 getMemoryAverage() const;
+        MCAPI uint64_t getMemoryAverage() const;
     
         // NOLINTEND
     

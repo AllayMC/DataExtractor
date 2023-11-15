@@ -28,7 +28,7 @@ public:
     MCAPI CreativeItemRegistry();
 
     // symbol: ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@@Z
-    MCAPI class CreativeItemEntry * findCreativeItemEntry(CreativeItemNetId const &);
+    MCAPI class CreativeItemEntry * findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, uint32_t, 0> const &);
 
     // symbol: ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBVItemInstance@@@Z
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class ItemInstance const &);
@@ -40,7 +40,7 @@ public:
     MCAPI std::vector<class CreativeItemEntry> const & getCreativeItemEntries();
 
     // symbol: ?getItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@I@Z
-    MCAPI class CreativeItemEntry * getItemEntry(uint);
+    MCAPI class CreativeItemEntry * getItemEntry(uint32_t);
 
     // symbol: ?newCreativeCategory@CreativeItemRegistry@@QEAAPEAVCreativeItemGroupCategory@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CreativeItemCategory@@@Z
     MCAPI class CreativeItemGroupCategory * newCreativeCategory(std::string const &, ::CreativeItemCategory);
@@ -49,13 +49,13 @@ public:
     MCAPI class CreativeGroupInfo * newCreativeGroup(::CreativeItemCategory, class HashedString const &, class ItemInstance const &);
 
     // symbol: ?newItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@AEBVItemInstance@@@Z
-    MCAPI class CreativeItemEntry * newItemEntry(CreativeItemNetId const &, class ItemInstance const &);
+    MCAPI class CreativeItemEntry * newItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, uint32_t, 0> const &, class ItemInstance const &);
 
     // symbol: ?resetGroups@CreativeItemRegistry@@QEAAXXZ
     MCAPI void resetGroups();
 
     // symbol: ?updateItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@IAEBVItemInstance@@@Z
-    MCAPI class CreativeItemEntry * updateItemEntry(uint, class ItemInstance const &);
+    MCAPI class CreativeItemEntry * updateItemEntry(uint32_t, class ItemInstance const &);
 
     // symbol: ?updateNetIdMap@CreativeItemRegistry@@QEAAXXZ
     MCAPI void updateNetIdMap();

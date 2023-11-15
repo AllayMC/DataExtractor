@@ -28,13 +28,13 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@ModalFormRequestPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1ModalFormRequestPacket@@UEAA@XZ
     MCVAPI ~ModalFormRequestPacket();
 
     // symbol: ??0ModalFormRequestPacket@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ModalFormRequestPacket(uint, std::string const &);
+    MCAPI ModalFormRequestPacket(uint32_t, std::string const &);
 
     // symbol: ??0ModalFormRequestPacket@@QEAA@XZ
     MCAPI ModalFormRequestPacket();

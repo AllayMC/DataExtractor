@@ -44,7 +44,7 @@ public:
     virtual float loadRotationRadiansY(float);
 
     // vIndex: 8, symbol: ?loadFacingID@StructureDataLoadHelper@@UEAAEE@Z
-    virtual uchar loadFacingID(uchar);
+    virtual uint8_t loadFacingID(uint8_t);
 
     // vIndex: 9, symbol: ?loadDirection@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
     virtual class Vec3 loadDirection(class Vec3 const &);

@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addScore@ScriptScoreboardObjective@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@AEAV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@H@Z
-    MCAPI class Scripting::Result<int> addScore(std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>, std::string> &, int);
+    MCAPI class Scripting::Result<int32_t> addScore(std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>, std::string> &, int32_t);
 
     // symbol: ?getDisplayName@ScriptScoreboardObjective@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::string> getDisplayName() const;
@@ -40,7 +40,7 @@ public:
     MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>>> getParticipants() const;
 
     // symbol: ?getScore@ScriptScoreboardObjective@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@H@std@@$$V@Scripting@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
-    MCAPI class Scripting::Result<std::optional<int>> getScore(std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>, std::string> const &) const;
+    MCAPI class Scripting::Result<std::optional<int32_t>> getScore(std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>, std::string> const &) const;
 
     // symbol: ?getScores@ScriptScoreboardObjective@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@VScriptScoreboardScoreInfo@ScriptModuleMinecraft@@V?$allocator@VScriptScoreboardScoreInfo@ScriptModuleMinecraft@@@std@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::vector<class ScriptModuleMinecraft::ScriptScoreboardScoreInfo>> getScores() const;
@@ -55,7 +55,7 @@ public:
     MCAPI class Scripting::Result<bool> removeParticipant(std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>, std::string> &);
 
     // symbol: ?setScore@ScriptScoreboardObjective@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEAV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@H@Z
-    MCAPI class Scripting::Result<void> setScore(std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>, std::string> &, int);
+    MCAPI class Scripting::Result<void> setScore(std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>, std::string> &, int32_t);
 
     // symbol: ?tryGetObjective@ScriptScoreboardObjective@ScriptModuleMinecraft@@QEBAPEAVObjective@@XZ
     MCAPI class Objective * tryGetObjective() const;
@@ -71,7 +71,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_modifyScore@ScriptScoreboardObjective@ScriptModuleMinecraft@@AEAA?AV?$Result@H$$V@Scripting@@AEAV?$variant@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@W4PlayerScoreSetFunction@@H@Z
-    MCAPI class Scripting::Result<int> _modifyScore(std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>, std::string> &, ::PlayerScoreSetFunction, int);
+    MCAPI class Scripting::Result<int32_t> _modifyScore(std::variant<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>, std::string> &, ::PlayerScoreSetFunction, int32_t);
 
     // NOLINTEND
 

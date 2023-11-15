@@ -115,7 +115,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 115, symbol: ?triggerEvent@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
-    virtual void triggerEvent(class BlockSource &, class BlockPos const &, int, int) const;
+    virtual void triggerEvent(class BlockSource &, class BlockPos const &, int32_t, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -157,7 +157,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 192, symbol: ?getEntityResourceItem@ActorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int32_t) const;
 
     // symbol: ?canBeSilkTouched@ActorBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -170,7 +170,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0ActorBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI ActorBlock(std::string const &, int, class Material const &);
+    MCAPI ActorBlock(std::string const &, int32_t, class Material const &);
 
     // NOLINTEND
 

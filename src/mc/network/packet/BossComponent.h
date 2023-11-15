@@ -27,7 +27,7 @@ public:
     MCAPI BossComponent(class BossComponent &&);
 
     // symbol: ?addPlayerToParty@BossComponent@@QEAAXVUUID@mce@@H@Z
-    MCAPI void addPlayerToParty(class mce::UUID, int);
+    MCAPI void addPlayerToParty(class mce::UUID, int32_t);
 
     // symbol: ?broadcastBossEvent@BossComponent@@QEAAXAEAVActor@@W4BossEventUpdateType@@@Z
     MCAPI void broadcastBossEvent(class Actor &, ::BossEventUpdateType);
@@ -42,7 +42,7 @@ public:
     MCAPI float getHealthPercent() const;
 
     // symbol: ?getLastHealth@BossComponent@@QEBAHXZ
-    MCAPI int getLastHealth() const;
+    MCAPI int32_t getLastHealth() const;
 
     // symbol: ?getLastPlayerUpdate@BossComponent@@QEBA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@XZ
     MCAPI std::chrono::steady_clock::time_point getLastPlayerUpdate() const;
@@ -54,7 +54,7 @@ public:
     MCAPI ::BossBarOverlay getOverlay() const;
 
     // symbol: ?getPlayerParty@BossComponent@@QEBAAEBV?$unordered_map@VUUID@mce@@HU?$hash@VUUID@mce@@@std@@U?$equal_to@VUUID@mce@@@4@V?$allocator@U?$pair@$$CBVUUID@mce@@H@std@@@4@@std@@XZ
-    MCAPI std::unordered_map<class mce::UUID,int> const & getPlayerParty() const;
+    MCAPI std::unordered_map<class mce::UUID,int32_t> const & getPlayerParty() const;
 
     // symbol: ?getShouldDarkenSky@BossComponent@@QEBA_NXZ
     MCAPI bool getShouldDarkenSky() const;
@@ -87,7 +87,7 @@ public:
     MCAPI void setHealthPercent(class Actor &, float);
 
     // symbol: ?setLastHealth@BossComponent@@QEAAXH@Z
-    MCAPI void setLastHealth(int);
+    MCAPI void setLastHealth(int32_t);
 
     // symbol: ?setLastPlayerUpdate@BossComponent@@QEAAXV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
     MCAPI void setLastPlayerUpdate(std::chrono::steady_clock::time_point);

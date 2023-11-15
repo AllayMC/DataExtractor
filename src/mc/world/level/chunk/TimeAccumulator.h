@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getCount@TimeAccumulator@@QEBA_KXZ
-    MCAPI uint64 getCount() const;
+    MCAPI uint64_t getCount() const;
 
     // symbol: ?getTimeSumAverageMS@TimeAccumulator@@QEBAMXZ
     MCAPI float getTimeSumAverageMS() const;

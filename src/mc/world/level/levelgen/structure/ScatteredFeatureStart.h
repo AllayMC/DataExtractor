@@ -30,7 +30,7 @@ public:
     virtual void __unk_vfn_0();
 
     // symbol: ??0ScatteredFeatureStart@RandomScatteredLargeFeatureDetails@@QEAA@AEBVBiomeSource@@FHHAEBVIPreliminarySurfaceProvider@@@Z
-    MCAPI ScatteredFeatureStart(class BiomeSource const &, short, int, int, class IPreliminarySurfaceProvider const &);
+    MCAPI ScatteredFeatureStart(class BiomeSource const &, int16_t, int32_t, int32_t, class IPreliminarySurfaceProvider const &);
 
     // NOLINTEND
 

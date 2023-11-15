@@ -128,7 +128,7 @@ public:
     virtual void __unk_vfn_176();
 
     // vIndex: 177, symbol: ?getDefaultDisplayOffset@Minecart@@UEBAHXZ
-    virtual int getDefaultDisplayOffset() const;
+    virtual int32_t getDefaultDisplayOffset() const;
 
     // vIndex: 178, symbol: ?applyNaturalSlowdown@Minecart@@MEAAXAEAVBlockSource@@@Z
     virtual void applyNaturalSlowdown(class BlockSource &);
@@ -140,7 +140,7 @@ public:
     MCVAPI bool canMakeStepSound() const;
 
     // symbol: ?getDefaultDisplayData@Minecart@@UEBAHXZ
-    MCVAPI int getDefaultDisplayData() const;
+    MCVAPI int32_t getDefaultDisplayData() const;
 
     // symbol: ??1Minecart@@UEAA@XZ
     MCVAPI ~Minecart();

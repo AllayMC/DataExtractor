@@ -68,13 +68,13 @@ public:
     virtual void __unk_vfn_63();
 
     // vIndex: 84, symbol: ?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
 
     // vIndex: 114, symbol: ?onSynchedDataUpdate@FireworksRocketActor@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
 
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();

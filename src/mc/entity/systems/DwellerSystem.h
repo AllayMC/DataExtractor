@@ -18,7 +18,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?registerEvents@DwellerSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
-    virtual void registerEvents(entt::dispatcher &);
+    virtual void registerEvents(class entt::basic_dispatcher<std::allocator<void>> &);
 
     // vIndex: 2, symbol: ?tick@DwellerSystem@@UEAAXAEAVEntityRegistry@@@Z
     virtual void tick(class EntityRegistry &);

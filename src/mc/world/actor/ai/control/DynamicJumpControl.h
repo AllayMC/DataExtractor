@@ -27,7 +27,7 @@ public:
     virtual void tick(class JumpControlComponent &, class Mob &);
 
     // vIndex: 4, symbol: ?getJumpDelay@DynamicJumpControl@@MEBAHAEBVJumpControlComponent@@@Z
-    virtual int getJumpDelay(class JumpControlComponent const &) const;
+    virtual int32_t getJumpDelay(class JumpControlComponent const &) const;
 
     // vIndex: 5, symbol: ?getJumpPower@DynamicJumpControl@@MEBAMAEBVJumpControlComponent@@@Z
     virtual float getJumpPower(class JumpControlComponent const &) const;

@@ -54,7 +54,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?_prepareHeights@OverworldGeneratorMultinoise@@EEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVAquifer@@$$QEAV?$function@$$A6AXAEBVBlockPos@@AEBVBlock@@H@Z@std@@_NPEAV?$vector@FV?$allocator@F@std@@@7@H@Z
-    MCVAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, std::function<void (class BlockPos const &, class Block const &, int)> &&, bool, std::vector<short> *, int);
+    MCVAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, std::function<void (class BlockPos const &, class Block const &, int32_t)> &&, bool, std::vector<int16_t> *, int32_t);
 
     // symbol: ?chunkPosNeedsBlending@OverworldGeneratorMultinoise@@UEAA_NAEBVChunkPos@@@Z
     MCVAPI bool chunkPosNeedsBlending(class ChunkPos const &);
@@ -75,13 +75,13 @@ public:
     MCVAPI class BiomeSource const & getBiomeSource() const;
 
     // symbol: ?getLevelGenHeight@OverworldGeneratorMultinoise@@UEBAHXZ
-    MCVAPI int getLevelGenHeight() const;
+    MCVAPI int32_t getLevelGenHeight() const;
 
     // symbol: ?getMaterialAdjNoise@OverworldGeneratorMultinoise@@MEBAAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@XZ
     MCVAPI std::unique_ptr<class PerlinSimplexNoise> const & getMaterialAdjNoise() const;
 
     // symbol: ?getPreliminarySurfaceLevel@OverworldGeneratorMultinoise@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
-    MCVAPI std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
+    MCVAPI std::optional<int16_t> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
 
     // symbol: ?getSurfaceNoise@OverworldGeneratorMultinoise@@MEAAAEBVPerlinSimplexNoise@@XZ
     MCVAPI class PerlinSimplexNoise const & getSurfaceNoise();
@@ -90,7 +90,7 @@ public:
     MCVAPI std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
 
     // symbol: ?tryMakeAquifer@OverworldGeneratorMultinoise@@EEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z
-    MCVAPI std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const &, class SurfaceLevelCache const &, short, short, short) const;
+    MCVAPI std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const &, class SurfaceLevelCache const &, int16_t, int16_t, int16_t) const;
 
     // symbol: ??1OverworldGeneratorMultinoise@@UEAA@XZ
     MCVAPI ~OverworldGeneratorMultinoise();
@@ -99,7 +99,7 @@ public:
     MCAPI OverworldGeneratorMultinoise(class Dimension &, class LevelSeed64, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
 
     // symbol: ?_applySlides@OverworldGeneratorMultinoise@@SAMAEBVDimensionHeightRange@@ME@Z
-    MCAPI static float _applySlides(class DimensionHeightRange const &, float, uchar);
+    MCAPI static float _applySlides(class DimensionHeightRange const &, float, uint8_t);
 
     // NOLINTEND
 
@@ -115,7 +115,7 @@ public:
     MCAPI std::unique_ptr<class BiomeSource> _makeBiomeSource(class XoroshiroPositionalRandomFactory const &, class BiomeRegistry const &, class Biome const *);
 
     // symbol: ?_updateNoiseAndGenerateBaseBlock@OverworldGeneratorMultinoise@@AEBA?BUBlockGenerationResult@1@MAEBUDescriptions@FeatureTerrainAdjustments@@AEBVBlockPos@@FPEAVAquifer@@_N3PEBVChunkBlender@@AEBVBlock@@PEAVNoodleCavifier@@PEAVOreVeinifier@@@Z
-    MCAPI struct OverworldGeneratorMultinoise::BlockGenerationResult const _updateNoiseAndGenerateBaseBlock(float, struct FeatureTerrainAdjustments::Descriptions const &, class BlockPos const &, short, class Aquifer *, bool, bool, class ChunkBlender const *, class Block const &, class NoodleCavifier *, class OreVeinifier *) const;
+    MCAPI struct OverworldGeneratorMultinoise::BlockGenerationResult const _updateNoiseAndGenerateBaseBlock(float, struct FeatureTerrainAdjustments::Descriptions const &, class BlockPos const &, int16_t, class Aquifer *, bool, bool, class ChunkBlender const *, class Block const &, class NoodleCavifier *, class OreVeinifier *) const;
 
     // NOLINTEND
 

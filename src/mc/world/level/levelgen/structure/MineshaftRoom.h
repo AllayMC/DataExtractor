@@ -19,7 +19,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?moveBoundingBox@MineshaftRoom@@UEAAXHHH@Z
-    virtual void moveBoundingBox(int, int, int);
+    virtual void moveBoundingBox(int32_t, int32_t, int32_t);
 
     // vIndex: 2, symbol: ?getType@MineshaftRoom@@UEBA?AW4StructurePieceType@@XZ
     virtual ::StructurePieceType getType() const;
@@ -31,7 +31,7 @@ public:
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 
     // symbol: ??0MineshaftRoom@@QEAA@AEAUMineshaftData@@HAEAVRandom@@HH@Z
-    MCAPI MineshaftRoom(struct MineshaftData &, int, class Random &, int, int);
+    MCAPI MineshaftRoom(struct MineshaftData &, int32_t, class Random &, int32_t, int32_t);
 
     // NOLINTEND
 

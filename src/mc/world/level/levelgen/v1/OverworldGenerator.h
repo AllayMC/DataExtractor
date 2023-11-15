@@ -40,7 +40,7 @@ public:
     MCVAPI void decorateWorldGenLoadChunk(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
 
     // symbol: ?getBiomeArea@OverworldGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, uint) const;
+    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, uint32_t) const;
 
     // symbol: ?getBlockVolumeDimensions@OverworldGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
     MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
@@ -52,13 +52,13 @@ public:
     MCVAPI bool postProcess(class ChunkViewSource &);
 
     // symbol: ?prepareAndComputeHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
-    MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
+    MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<int16_t> &, bool, int32_t);
 
     // symbol: ?prepareHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
     MCVAPI void prepareHeights(class BlockVolume &, class ChunkPos const &, bool);
 
     // symbol: ?tryMakeAquifer@OverworldGenerator@@MEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z
-    MCVAPI std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const &, class SurfaceLevelCache const &, short, short, short) const;
+    MCVAPI std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const &, class SurfaceLevelCache const &, int16_t, int16_t, int16_t) const;
 
     // symbol: ??1OverworldGenerator@@UEAA@XZ
     MCVAPI ~OverworldGenerator();

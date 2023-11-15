@@ -35,7 +35,7 @@ public:
     MCAPI bool areKnownFilesValid();
 
     // symbol: ?forEachIn@ResourcePack@@QEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@H_N@Z
-    MCAPI void forEachIn(class Core::Path const &, std::function<void (class Core::Path const &)>, int, bool) const;
+    MCAPI void forEachIn(class Core::Path const &, std::function<void (class Core::Path const &)>, int32_t, bool) const;
 
     // symbol: ?generateAssetSet@ResourcePack@@QEAAXXZ
     MCAPI void generateAssetSet();
@@ -53,7 +53,7 @@ public:
     MCAPI ::PackOrigin getPackOrigin() const;
 
     // symbol: ?getResource@ResourcePack@@QEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI bool getResource(class Core::Path const &, std::string &, int) const;
+    MCAPI bool getResource(class Core::Path const &, std::string &, int32_t) const;
 
     // symbol: ?getResourceLocation@ResourcePack@@QEBAAEBVResourceLocation@@XZ
     MCAPI class ResourceLocation const & getResourceLocation() const;
@@ -65,7 +65,7 @@ public:
     MCAPI class SemVersion const & getVersion() const;
 
     // symbol: ?hasResource@ResourcePack@@QEBA_NAEBVPath@Core@@H@Z
-    MCAPI bool hasResource(class Core::Path const &, int) const;
+    MCAPI bool hasResource(class Core::Path const &, int32_t) const;
 
     // symbol: ?isType@ResourcePack@@QEBA_NW4PackType@@@Z
     MCAPI bool isType(::PackType) const;

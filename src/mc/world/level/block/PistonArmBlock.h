@@ -44,7 +44,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@PistonArmBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -185,20 +185,20 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@PistonArmBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ?canBeSilkTouched@PistonArmBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0PistonArmBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@PistonBlock@@@Z
-    MCAPI PistonArmBlock(std::string const &, int, ::PistonBlock::Type);
+    MCAPI PistonArmBlock(std::string const &, int32_t, ::PistonBlock::Type);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getCollisions@PistonArmBlock@@AEBAXAEAVAABB@@00E@Z
-    MCAPI void _getCollisions(class AABB &, class AABB &, class AABB &, uchar) const;
+    MCAPI void _getCollisions(class AABB &, class AABB &, class AABB &, uint8_t) const;
 
     // symbol: ?_getResourceItem@PistonArmBlock@@AEBA?AVItemInstance@@XZ
     MCAPI class ItemInstance _getResourceItem() const;

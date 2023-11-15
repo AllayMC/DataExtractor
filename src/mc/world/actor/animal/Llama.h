@@ -92,7 +92,7 @@ public:
     virtual void __unk_vfn_172();
 
     // vIndex: 191, symbol: ?getArmorValue@Llama@@UEBAHXZ
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
 
     // symbol: ??0Llama@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Llama(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

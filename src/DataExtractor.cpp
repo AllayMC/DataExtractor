@@ -1,7 +1,6 @@
 #include "DataExtractor.h"
 
 using json = nlohmann::json;
-using ll::memory::dAccess;
 using namespace std;
 
 static Minecraft* mc = nullptr;
@@ -10,19 +9,19 @@ static MinecraftCommands* commands = nullptr;
 static std::unique_ptr<class CompoundTag> baseNBT = nullptr;
 static std::unique_ptr<class ListTag> baseListTag = nullptr;
 static unsigned int blockStateCounter = 0;
+static AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
 
-#pragma region HOOK
+#pragma region HOOK 
 LL_AUTO_TYPED_INSTANCE_HOOK(
 	PlayerChatEventHook,
-	ServerNetworkHandler,
 	ll::memory::HookPriority::Normal,
+	ServerNetworkHandler,
 	"?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z",
 	void,
 	NetworkIdentifier* id,
 	void* text
 ) {
-	using ll::memory::dAccess;
-	std::string     originMessage = dAccess<std::string>(text, 88);
+	std::string     originMessage = ll::memory::dAccess<std::string>(text, 88);
 	origin(id, text);
 	if (originMessage == "ext") {
 		extractData();
@@ -32,9 +31,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
 // Minecraft
 LL_AUTO_TYPED_INSTANCE_HOOK(
-	MinecraftService,
-	Minecraft,
+	MinecraftHook,
 	HookPriority::Normal,
+	Minecraft,
 	"?initAsDedicatedServer@Minecraft@@QEAAXXZ",
 	void
 ) {
@@ -45,9 +44,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
 // Dimension
 LL_AUTO_TYPED_INSTANCE_HOOK(
-	DimensionService,
-	Dimension,
+	DimensionHook,
 	HookPriority::Normal,
+	Dimension,
 	"?init@Dimension@@UEAAXXZ",
 	void*,
 	Dimension* a1
@@ -61,9 +60,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
 // MinecraftCommands
 LL_AUTO_TYPED_INSTANCE_HOOK(
-	MinecraftCommandsService,
-	MinecraftCommands,
+	MinecraftCommandsHook,
 	HookPriority::Normal,
+	MinecraftCommands,
 	"?initCoreEnums@MinecraftCommands@@QEAAXVItemRegistryRef@@AEBVIWorldRegistriesProvider@@AEBVActorFactory@"
 	"@AEBVExperiments@@AEBVBaseGameVersion@@@Z",
 	void,
@@ -479,7 +478,7 @@ void dumpBlockIdToItemIdMap() {
 	while (i <= 2000) {
 		auto item = ItemRegistryManager::getItemRegistry().getItem(static_cast<short>(i));
 		i++;
-		if (item.expired() || item.get()==nullptr) {
+		if (item.expired() || item.get() == nullptr) {
 			continue;
 		}
 		logger.info("Extracting block id to item id map:" + item.get()->getFullItemName());
@@ -515,8 +514,8 @@ void dumpBiomeData() {
 	auto biomeInfoMap = json::object();
 	auto biomes = createCompound();
 	registry.forEachBiome([&biomes, &registry, &logger, &biomeInfoMap](Biome& biome) {
-		string name = dAccess<HashedString, 8>(&biome).getString();
-		int id = dAccess<int, 136>(&biome);
+		string name = ll::memory::dAccess<HashedString>(&biome, 8).getString();
+		int id = ll::memory::dAccess<int>(&biome, 136);
 		logger.info("Extracting biome data - " + name);
 		auto tag = createCompound();
 		TagRegistry<IDType<BiomeTagIDType>, IDType<BiomeTagSetIDType>>& tagRegistry = const_cast<TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>&>(registry.getTagRegistry());

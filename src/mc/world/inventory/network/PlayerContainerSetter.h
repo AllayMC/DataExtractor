@@ -18,13 +18,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?setArmor@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
-    virtual void setArmor(int, class ItemStack const &);
+    virtual void setArmor(int32_t, class ItemStack const &);
 
     // vIndex: 2, symbol: ?setOffhandSlot@PlayerContainerSetter@@UEAAXAEBVItemStack@@@Z
     virtual void setOffhandSlot(class ItemStack const &);
 
     // vIndex: 3, symbol: ?setPlayerUIItem@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
-    virtual void setPlayerUIItem(int, class ItemStack const &);
+    virtual void setPlayerUIItem(int32_t, class ItemStack const &);
 
     // symbol: ??0PlayerContainerSetter@@QEAA@AEAVPlayer@@@Z
     MCAPI PlayerContainerSetter(class Player &);

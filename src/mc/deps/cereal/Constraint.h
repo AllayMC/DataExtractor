@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?validate@Constraint@cereal@@QEBAXAEBVmeta_any@entt@@AEAVSerializerContext@2@@Z
-    MCAPI void validate(entt::meta_any const &, class cereal::SerializerContext &) const;
+    MCAPI void validate(class entt::meta_any const &, class cereal::SerializerContext &) const;
 
     // NOLINTEND
 

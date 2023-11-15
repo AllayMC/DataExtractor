@@ -157,7 +157,7 @@ public:
     MCVAPI bool isSilentWhenJumpingOff() const;
 
     // symbol: ??0BuddingAmethystBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI BuddingAmethystBlock(std::string const &, int, class Material const &);
+    MCAPI BuddingAmethystBlock(std::string const &, int32_t, class Material const &);
 
     // symbol: ?canBudGrowAtPos@BuddingAmethystBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool canBudGrowAtPos(class BlockSource &, class BlockPos const &);

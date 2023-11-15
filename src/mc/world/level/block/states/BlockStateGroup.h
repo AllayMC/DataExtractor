@@ -19,7 +19,7 @@ public:
     MCAPI BlockStateGroup();
 
     // symbol: ?getBlockStateFromHash@BlockStateGroup@@QEBAPEBVBlockStateMeta@@AEB_K@Z
-    MCAPI class BlockStateMeta const * getBlockStateFromHash(uint64 const &) const;
+    MCAPI class BlockStateMeta const * getBlockStateFromHash(uint64_t const &) const;
 
     // symbol: ?getBlockStateFromName@BlockStateGroup@@QEBAPEBVBlockStateMeta@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class BlockStateMeta const * getBlockStateFromName(std::string const &) const;
@@ -34,7 +34,7 @@ public:
     MCAPI static bool loadBlockStateFromJson(struct BlockStateDefinition &, std::string const &, class Json::Value const &);
 
     // symbol: ?MAX_ENUM_SIZE@BlockStateGroup@@2HB
-    MCAPI static int const MAX_ENUM_SIZE;
+    MCAPI static int32_t const MAX_ENUM_SIZE;
 
     // NOLINTEND
 

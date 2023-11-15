@@ -38,7 +38,7 @@ public:
     MCAPI class MobEffectInstance const & getMobEffect() const;
 
     // symbol: ?getMobEffectId@Potion@@QEBAHXZ
-    MCAPI int getMobEffectId() const;
+    MCAPI int32_t getMobEffectId() const;
 
     // symbol: ?getMobEffects@Potion@@QEBAAEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@XZ
     MCAPI std::vector<class MobEffectInstance> const & getMobEffects() const;
@@ -50,7 +50,7 @@ public:
     MCAPI std::string getPotentencyDescription(::Potion::PotionType, float, std::string_view, class MobEffectInstance const &) const;
 
     // symbol: ?getPotionId@Potion@@QEBAHXZ
-    MCAPI int getPotionId() const;
+    MCAPI int32_t getPotionId() const;
 
     // symbol: ?getPotionVariant@Potion@@QEBA?AW4PotionVariant@1@XZ
     MCAPI ::Potion::PotionVariant getPotionVariant() const;
@@ -65,13 +65,13 @@ public:
     MCAPI static std::string getBasePotion(::Potion::PotionType);
 
     // symbol: ?getPotion@Potion@@SA?AV?$shared_ptr@$$CBVPotion@@@std@@H@Z
-    MCAPI static std::shared_ptr<class Potion const> getPotion(int);
+    MCAPI static std::shared_ptr<class Potion const> getPotion(int32_t);
 
     // symbol: ?getPotion@Potion@@SA?AV?$shared_ptr@$$CBVPotion@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
     MCAPI static std::shared_ptr<class Potion const> getPotion(std::string_view);
 
     // symbol: ?getPotionCount@Potion@@SAHXZ
-    MCAPI static int getPotionCount();
+    MCAPI static int32_t getPotionCount();
 
     // symbol: ?initPotions@Potion@@SAXXZ
     MCAPI static void initPotions();
@@ -232,13 +232,13 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?mLastId@Potion@@0HA
-    MCAPI static int mLastId;
+    MCAPI static int32_t mLastId;
 
     // symbol: ?mPotionsById@Potion@@0PAV?$shared_ptr@$$CBVPotion@@@std@@A
     MCAPI static std::shared_ptr<class Potion const> mPotionsById[];
 
     // symbol: ?mPotionsByName@Potion@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HU?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@std@@@2@@std@@A
-    MCAPI static std::unordered_map<std::string,int> mPotionsByName;
+    MCAPI static std::unordered_map<std::string,int32_t> mPotionsByName;
 
     // NOLINTEND
 

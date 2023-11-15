@@ -21,7 +21,7 @@ public:
     MCAPI void sendOnObjectiveRemoved(std::string const &);
 
     // symbol: ?sendOnScoreChanged@ScoreboardEventCoordinator@@QEAAXAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI void sendOnScoreChanged(struct ScoreboardId const &, std::string const &, int);
+    MCAPI void sendOnScoreChanged(struct ScoreboardId const &, std::string const &, int32_t);
 
     // symbol: ?sendOnScoreboardIdentityRemoved@ScoreboardEventCoordinator@@QEAAXAEBUScoreboardId@@@Z
     MCAPI void sendOnScoreboardIdentityRemoved(struct ScoreboardId const &);

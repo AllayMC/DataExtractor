@@ -90,7 +90,7 @@ public:
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
 
     // vIndex: 84, symbol: ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 103, symbol: ?canFreeze@WitherBoss@@UEBA_NXZ
     virtual bool canFreeze() const;
@@ -102,7 +102,7 @@ public:
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
     // vIndex: 126, symbol: ?canBeAffected@WitherBoss@@UEBA_NI@Z
-    virtual bool canBeAffected(uint) const;
+    virtual bool canBeAffected(uint32_t) const;
 
     // vIndex: 127, symbol: ?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
     virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
@@ -141,7 +141,7 @@ public:
     virtual void aiStep();
 
     // vIndex: 191, symbol: ?getArmorValue@WitherBoss@@UEBAHXZ
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
 
     // vIndex: 211, symbol: ?newServerAiStep@WitherBoss@@UEAAXXZ
     virtual void newServerAiStep();
@@ -153,13 +153,13 @@ public:
     MCAPI void awardSpawnWitherAchievement() const;
 
     // symbol: ?getHeadPos@WitherBoss@@QEBA?AVVec3@@H@Z
-    MCAPI class Vec3 getHeadPos(int) const;
+    MCAPI class Vec3 getHeadPos(int32_t) const;
 
     // symbol: ?getHeadRot@WitherBoss@@QEAA?AVVec2@@H@Z
-    MCAPI class Vec2 getHeadRot(int);
+    MCAPI class Vec2 getHeadRot(int32_t);
 
     // symbol: ?getInvulnerableTicks@WitherBoss@@QEBAHXZ
-    MCAPI int getInvulnerableTicks() const;
+    MCAPI int32_t getInvulnerableTicks() const;
 
     // symbol: ?getOverlayAlpha@WitherBoss@@QEAAMXZ
     MCAPI float getOverlayAlpha();
@@ -183,13 +183,13 @@ public:
     MCAPI void setAerialAttack(bool);
 
     // symbol: ?setAlternativeTarget@WitherBoss@@QEAAXHUActorUniqueID@@@Z
-    MCAPI void setAlternativeTarget(int, struct ActorUniqueID);
+    MCAPI void setAlternativeTarget(int32_t, struct ActorUniqueID);
 
     // symbol: ?setIsPathing@WitherBoss@@QEAAX_N@Z
     MCAPI void setIsPathing(bool);
 
     // symbol: ?setShotDelay@WitherBoss@@QEAAXH@Z
-    MCAPI void setShotDelay(int);
+    MCAPI void setShotDelay(int32_t);
 
     // symbol: ?setWantsToMove@WitherBoss@@QEAAX_N@Z
     MCAPI void setWantsToMove(bool);
@@ -208,13 +208,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@HW4WitherAttackType@1@@Z
-    MCAPI void _destroyBlocks(class Level &, class AABB const &, class BlockSource &, int, ::WitherBoss::WitherAttackType);
+    MCAPI void _destroyBlocks(class Level &, class AABB const &, class BlockSource &, int32_t, ::WitherBoss::WitherAttackType);
 
     // symbol: ?_performRangedAttack@WitherBoss@@AEAAXHAEAVActor@@@Z
-    MCAPI void _performRangedAttack(int, class Actor &);
+    MCAPI void _performRangedAttack(int32_t, class Actor &);
 
     // symbol: ?_performRangedAttack@WitherBoss@@AEAAXHAEBVVec3@@_N@Z
-    MCAPI void _performRangedAttack(int, class Vec3 const &, bool);
+    MCAPI void _performRangedAttack(int32_t, class Vec3 const &, bool);
 
     // symbol: ?canShoot@WitherBoss@@AEAA_NXZ
     MCAPI bool canShoot();
@@ -224,7 +224,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?TIME_BEFORE_MOVING@WitherBoss@@0HB
-    MCAPI static int const TIME_BEFORE_MOVING;
+    MCAPI static int32_t const TIME_BEFORE_MOVING;
 
     // NOLINTEND
 

@@ -44,7 +44,7 @@ public:
     MCAPI void rebind(struct cereal::ReflectionCtx const &, std::string const &, std::string const &);
 
     // symbol: ?save@Schema@cereal@@QEAA_NAEAUSchemaWriter@2@Umeta_handle@entt@@@Z
-    MCAPI bool save(struct cereal::SchemaWriter &, entt::meta_handle);
+    MCAPI bool save(struct cereal::SchemaWriter &, struct entt::meta_handle);
 
     // symbol: ?validate@Schema@cereal@@QEAA_NAEAUSchemaReader@2@@Z
     MCAPI bool validate(struct cereal::SchemaReader &);
@@ -60,7 +60,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?loadImpl@Schema@cereal@@AEAAXAEAUSchemaReader@2@Vmeta_any@entt@@AEBV45@@Z
-    MCAPI void loadImpl(struct cereal::SchemaReader &, entt::meta_any, entt::meta_any const &);
+    MCAPI void loadImpl(struct cereal::SchemaReader &, class entt::meta_any, class entt::meta_any const &);
 
     // NOLINTEND
 

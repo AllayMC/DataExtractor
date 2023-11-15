@@ -50,7 +50,7 @@ public:
     MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, class ItemStack const &, ::LabTableReactionType, ::CompoundContainerType);
 
     // symbol: ?_registerCompound@CraftableCompounds@@IEAAXAEBV?$vector@UChemistryIngredient@@V?$allocator@UChemistryIngredient@@@std@@@std@@W4CompoundType@@W4LabTableReactionType@@W4CompoundContainerType@@H@Z
-    MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, ::CompoundType, ::LabTableReactionType, ::CompoundContainerType, int);
+    MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, ::CompoundType, ::LabTableReactionType, ::CompoundContainerType, int32_t);
 
     // NOLINTEND
 

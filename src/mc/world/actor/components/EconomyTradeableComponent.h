@@ -30,10 +30,10 @@ public:
     MCAPI struct IntRange getCurrentCuredDiscount() const;
 
     // symbol: ?getCurrentNearbyCuredDiscount@EconomyTradeableComponent@@QEBAHXZ
-    MCAPI int getCurrentNearbyCuredDiscount() const;
+    MCAPI int32_t getCurrentNearbyCuredDiscount() const;
 
     // symbol: ?getCurrentTradeExp@EconomyTradeableComponent@@QEBAIXZ
-    MCAPI uint getCurrentTradeExp() const;
+    MCAPI uint32_t getCurrentTradeExp() const;
 
     // symbol: ?getDisplayName@EconomyTradeableComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getDisplayName() const;
@@ -45,10 +45,10 @@ public:
     MCAPI class MerchantRecipeList * getOffers();
 
     // symbol: ?getRiches@EconomyTradeableComponent@@QEBAHXZ
-    MCAPI int getRiches() const;
+    MCAPI int32_t getRiches() const;
 
     // symbol: ?getTradeTier@EconomyTradeableComponent@@QEBAIXZ
-    MCAPI uint getTradeTier() const;
+    MCAPI uint32_t getTradeTier() const;
 
     // symbol: ?hasSupplyRemaining@EconomyTradeableComponent@@QEBA_NXZ
     MCAPI bool hasSupplyRemaining() const;
@@ -69,7 +69,7 @@ public:
     MCAPI void newServerAiStep();
 
     // symbol: ?notifyTrade@EconomyTradeableComponent@@QEAAXH@Z
-    MCAPI void notifyTrade(int);
+    MCAPI void notifyTrade(int32_t);
 
     // symbol: ?readAdditionalSaveData@EconomyTradeableComponent@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCAPI void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
@@ -81,13 +81,13 @@ public:
     MCAPI void resupplyTrades();
 
     // symbol: ?setNearbyCuredDiscount@EconomyTradeableComponent@@QEAAXH@Z
-    MCAPI void setNearbyCuredDiscount(int);
+    MCAPI void setNearbyCuredDiscount(int32_t);
 
     // symbol: ?setOffers@EconomyTradeableComponent@@QEAAXAEAVMerchantRecipeList@@@Z
     MCAPI void setOffers(class MerchantRecipeList &);
 
     // symbol: ?setRiches@EconomyTradeableComponent@@QEAAXH@Z
-    MCAPI void setRiches(int);
+    MCAPI void setRiches(int32_t);
 
     // symbol: ?shouldConvertTrades@EconomyTradeableComponent@@QEBA_NXZ
     MCAPI bool shouldConvertTrades() const;
@@ -124,16 +124,16 @@ public:
     MCAPI struct TradeTable * _getTradeTable();
 
     // symbol: ?_getTradeTierFromCurrentExp@EconomyTradeableComponent@@AEBAIXZ
-    MCAPI uint _getTradeTierFromCurrentExp() const;
+    MCAPI uint32_t _getTradeTierFromCurrentExp() const;
 
     // symbol: ?_rearrangeTradeList@EconomyTradeableComponent@@AEAAXAEAV?$vector@UTrade@@V?$allocator@UTrade@@@std@@@std@@_K@Z
-    MCAPI void _rearrangeTradeList(std::vector<struct Trade> &, uint64);
+    MCAPI void _rearrangeTradeList(std::vector<struct Trade> &, uint64_t);
 
     // symbol: ?_setMaxTradeTier@EconomyTradeableComponent@@AEAAXH@Z
-    MCAPI void _setMaxTradeTier(int);
+    MCAPI void _setMaxTradeTier(int32_t);
 
     // symbol: ?_setTradeTier@EconomyTradeableComponent@@AEAAXH@Z
-    MCAPI void _setTradeTier(int);
+    MCAPI void _setTradeTier(int32_t);
 
     // NOLINTEND
 

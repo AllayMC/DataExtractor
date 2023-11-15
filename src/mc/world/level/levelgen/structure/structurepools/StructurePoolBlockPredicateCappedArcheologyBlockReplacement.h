@@ -22,7 +22,7 @@ public:
     virtual bool finalize(class BlockSource &, class IRandom &);
 
     // symbol: ??0StructurePoolBlockPredicateCappedArcheologyBlockReplacement@@QEAA@AEBV?$map@VHashedString@@V1@U?$less@VHashedString@@@std@@V?$allocator@U?$pair@$$CBVHashedString@@V1@@std@@@3@@std@@_KW4Placement@BrushableBlockActor@@@Z
-    MCAPI StructurePoolBlockPredicateCappedArcheologyBlockReplacement(std::map<class HashedString,class HashedString> const &, uint64, ::BrushableBlockActor::Placement);
+    MCAPI StructurePoolBlockPredicateCappedArcheologyBlockReplacement(std::map<class HashedString,class HashedString> const &, uint64_t, ::BrushableBlockActor::Placement);
 
     // NOLINTEND
 

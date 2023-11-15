@@ -27,7 +27,7 @@ protected:
     MCAPI static class RakNet::StringTable * instance;
 
     // symbol: ?referenceCount@StringTable@RakNet@@1HA
-    MCAPI static int referenceCount;
+    MCAPI static int32_t referenceCount;
 
     // NOLINTEND
 

@@ -188,7 +188,7 @@ public:
     virtual void requestReloadDynamicPackagePacks();
 
     // vIndex: 36, symbol: ?getKeyProvider@ResourcePackRepository@@UEBA?AV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@XZ
-    virtual Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> getKeyProvider() const;
+    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> getKeyProvider() const;
 
     // vIndex: 37, symbol: ?getPackManifestFactory@ResourcePackRepository@@UEAAAEAVPackManifestFactory@@XZ
     virtual class PackManifestFactory & getPackManifestFactory();
@@ -245,7 +245,7 @@ public:
     MCVAPI ~ResourcePackRepository();
 
     // symbol: ??0ResourcePackRepository@@QEAA@AEAVIMinecraftEventing@@AEAVPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@VIContentAccessibilityProvider@@@Bedrock@@@gsl@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@4@AEAVPackSourceFactory@@_N@Z
-    MCAPI ResourcePackRepository(class IMinecraftEventing &, class PackManifestFactory &, Bedrock::NotNullNonOwnerPtr<class IContentAccessibilityProvider> const &, Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const &, class PackSourceFactory &, bool);
+    MCAPI ResourcePackRepository(class IMinecraftEventing &, class PackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentAccessibilityProvider>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class PackSourceFactory &, bool);
 
     // symbol: ?CHEMISTRY_PACK_UUID@ResourcePackRepository@@2VUUID@mce@@B
     MCAPI static class mce::UUID const CHEMISTRY_PACK_UUID;

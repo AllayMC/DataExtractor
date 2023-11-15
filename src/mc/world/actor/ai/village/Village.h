@@ -40,22 +40,22 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?GOLEM_DEATH_PENALTY@StandingModifiers@Village@@2HB
-        MCAPI static int const GOLEM_DEATH_PENALTY;
+        MCAPI static int32_t const GOLEM_DEATH_PENALTY;
     
         // symbol: ?LARGE_PENALTY@StandingModifiers@Village@@2HB
-        MCAPI static int const LARGE_PENALTY;
+        MCAPI static int32_t const LARGE_PENALTY;
     
         // symbol: ?LARGE_REWARD@StandingModifiers@Village@@2HB
-        MCAPI static int const LARGE_REWARD;
+        MCAPI static int32_t const LARGE_REWARD;
     
         // symbol: ?MEDIUM_PENALTY@StandingModifiers@Village@@2HB
-        MCAPI static int const MEDIUM_PENALTY;
+        MCAPI static int32_t const MEDIUM_PENALTY;
     
         // symbol: ?SMALL_PENALTY@StandingModifiers@Village@@2HB
-        MCAPI static int const SMALL_PENALTY;
+        MCAPI static int32_t const SMALL_PENALTY;
     
         // symbol: ?SMALL_REWARD@StandingModifiers@Village@@2HB
-        MCAPI static int const SMALL_REWARD;
+        MCAPI static int32_t const SMALL_REWARD;
     
         // NOLINTEND
     
@@ -100,7 +100,7 @@ public:
     MCAPI float getApproximateRadius() const;
 
     // symbol: ?getBedPOICount@Village@@QEBA_KXZ
-    MCAPI uint64 getBedPOICount() const;
+    MCAPI uint64_t getBedPOICount() const;
 
     // symbol: ?getBounds@Village@@QEBAAEBVAABB@@XZ
     MCAPI class AABB const & getBounds() const;
@@ -127,7 +127,7 @@ public:
     MCAPI class Raid * getRaidMutable();
 
     // symbol: ?getStanding@Village@@QEAAHAEBUActorUniqueID@@@Z
-    MCAPI int getStanding(struct ActorUniqueID const &);
+    MCAPI int32_t getStanding(struct ActorUniqueID const &);
 
     // symbol: ?getUniqueID@Village@@QEBA?AVUUID@mce@@XZ
     MCAPI class mce::UUID getUniqueID() const;
@@ -145,7 +145,7 @@ public:
     MCAPI void loadDataByKey(std::string const &, class CompoundTag const &);
 
     // symbol: ?modifyStanding@Village@@QEAAHAEBUActorUniqueID@@H@Z
-    MCAPI int modifyStanding(struct ActorUniqueID const &, int);
+    MCAPI int32_t modifyStanding(struct ActorUniqueID const &, int32_t);
 
     // symbol: ?removeActorFromVillage@Village@@QEAA?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBUActorUniqueID@@UDwellerData@Village@@@std@@@std@@@std@@@std@@W4DwellerRole@@AEBUActorUniqueID@@@Z
     MCAPI std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<struct ActorUniqueID const, struct Village::DwellerData>>>> removeActorFromVillage(::DwellerRole, struct ActorUniqueID const &);
@@ -163,7 +163,7 @@ public:
     MCAPI void resetNoBreedTimer();
 
     // symbol: ?rewardAllPlayers@Village@@QEAAXH@Z
-    MCAPI void rewardAllPlayers(int);
+    MCAPI void rewardAllPlayers(int32_t);
 
     // symbol: ?setSavedDwellerPosition@Village@@QEAAXW4DwellerRole@@AEBUActorUniqueID@@VBlockPos@@@Z
     MCAPI void setSavedDwellerPosition(::DwellerRole, struct ActorUniqueID const &, class BlockPos);
@@ -205,10 +205,10 @@ public:
     MCAPI static float const DWELLER_REMOVAL_TOLERANCE;
 
     // symbol: ?MAX_VILLAGE_STANDING@Village@@2HB
-    MCAPI static int const MAX_VILLAGE_STANDING;
+    MCAPI static int32_t const MAX_VILLAGE_STANDING;
 
     // symbol: ?MIN_VILLAGE_STANDING@Village@@2HB
-    MCAPI static int const MIN_VILLAGE_STANDING;
+    MCAPI static int32_t const MIN_VILLAGE_STANDING;
 
     // symbol: ?STORAGE_KEY_PREFIX@Village@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const STORAGE_KEY_PREFIX;
@@ -217,7 +217,7 @@ public:
     MCAPI static char const STORAGE_KEY_SEPARATOR;
 
     // symbol: ?VILLAGE_START_XZ_BOUNDS@Village@@2HB
-    MCAPI static int const VILLAGE_START_XZ_BOUNDS;
+    MCAPI static int32_t const VILLAGE_START_XZ_BOUNDS;
 
     // NOLINTEND
 
@@ -236,7 +236,7 @@ public:
     MCAPI void _createRaid();
 
     // symbol: ?_findAvailablePOI@Village@@AEAA_N_KAEAVLevel@@AEAVRandom@@UActorUniqueID@@@Z
-    MCAPI bool _findAvailablePOI(uint64, class Level &, class Random &, struct ActorUniqueID);
+    MCAPI bool _findAvailablePOI(uint64_t, class Level &, class Random &, struct ActorUniqueID);
 
     // symbol: ?_findPlayerCentricSpawnPointForRaid@Village@@AEBA_NAEAVVec3@@_N@Z
     MCAPI bool _findPlayerCentricSpawnPointForRaid(class Vec3 &, bool) const;
@@ -248,7 +248,7 @@ public:
     MCAPI bool _findSpawnPointForRaid(class Vec3 &, float, float, bool, bool) const;
 
     // symbol: ?_findSpawnableRegion@Village@@AEBAPEAVBlockSource@@VVec3@@HAEA_N@Z
-    MCAPI class BlockSource * _findSpawnableRegion(class Vec3, int, bool &) const;
+    MCAPI class BlockSource * _findSpawnableRegion(class Vec3, int32_t, bool &) const;
 
     // symbol: ?_findWeightedPOI@Village@@AEAAXAEAV?$vector@V?$weak_ptr@VPOIInstance@@@std@@V?$allocator@V?$weak_ptr@VPOIInstance@@@std@@@2@@std@@AEAVRandom@@UActorUniqueID@@@Z
     MCAPI void _findWeightedPOI(std::vector<std::weak_ptr<class POIInstance>> &, class Random &, struct ActorUniqueID);
@@ -290,22 +290,22 @@ public:
     MCAPI void _saveVillageRaid(class LevelStorage &) const;
 
     // symbol: ?_spawnPassiveDwellers@Village@@AEAAXAEAVBlockSource@@H@Z
-    MCAPI void _spawnPassiveDwellers(class BlockSource &, int);
+    MCAPI void _spawnPassiveDwellers(class BlockSource &, int32_t);
 
     // symbol: ?_spawnRaidGroup@Village@@AEBA_NVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z
-    MCAPI bool _spawnRaidGroup(class Vec3, uchar, std::unordered_set<struct ActorUniqueID> &) const;
+    MCAPI bool _spawnRaidGroup(class Vec3, uint8_t, std::unordered_set<struct ActorUniqueID> &) const;
 
     // symbol: ?_tryAddPoiToVillage@Village@@AEAAXAEBUActorUniqueID@@V?$weak_ptr@VPOIInstance@@@std@@@Z
     MCAPI void _tryAddPoiToVillage(struct ActorUniqueID const &, std::weak_ptr<class POIInstance>);
 
     // symbol: ?_tryShiftStandingsTowardNeutral@Village@@AEAAXAEAUTick@@_K_N@Z
-    MCAPI void _tryShiftStandingsTowardNeutral(struct Tick &, uint64, bool);
+    MCAPI void _tryShiftStandingsTowardNeutral(struct Tick &, uint64_t, bool);
 
     // symbol: ?_trySpawnDefenderDwellers@Village@@AEAAXAEAVBlockSource@@_K@Z
-    MCAPI void _trySpawnDefenderDwellers(class BlockSource &, uint64);
+    MCAPI void _trySpawnDefenderDwellers(class BlockSource &, uint64_t);
 
     // symbol: ?_updateAndRemoveInactiveDwellers@Village@@AEAAX_KM@Z
-    MCAPI void _updateAndRemoveInactiveDwellers(uint64, float);
+    MCAPI void _updateAndRemoveInactiveDwellers(uint64_t, float);
 
     // symbol: ?_updateClaimedPOIs@Village@@AEAAXAEAVBlockSource@@@Z
     MCAPI void _updateClaimedPOIs(class BlockSource &);
@@ -330,28 +330,28 @@ private:
     MCAPI static std::string const RAID_EXPIRY_EVENT;
 
     // symbol: ?RAID_FINISHED_DELAY_IN_TICKS@Village@@0HB
-    MCAPI static int const RAID_FINISHED_DELAY_IN_TICKS;
+    MCAPI static int32_t const RAID_FINISHED_DELAY_IN_TICKS;
 
     // symbol: ?RAID_GROUP_COMPLETE_DELAY_IN_TICKS@Village@@0HB
-    MCAPI static int const RAID_GROUP_COMPLETE_DELAY_IN_TICKS;
+    MCAPI static int32_t const RAID_GROUP_COMPLETE_DELAY_IN_TICKS;
 
     // symbol: ?RAID_LOCATION_HELP_DELAY_IN_TICKS@Village@@0HB
-    MCAPI static int const RAID_LOCATION_HELP_DELAY_IN_TICKS;
+    MCAPI static int32_t const RAID_LOCATION_HELP_DELAY_IN_TICKS;
 
     // symbol: ?RAID_MAX_SPAWN_FAILURES@Village@@0EB
-    MCAPI static uchar const RAID_MAX_SPAWN_FAILURES;
+    MCAPI static uint8_t const RAID_MAX_SPAWN_FAILURES;
 
     // symbol: ?RAID_PREP_TIME_IN_TICKS@Village@@0HB
-    MCAPI static int const RAID_PREP_TIME_IN_TICKS;
+    MCAPI static int32_t const RAID_PREP_TIME_IN_TICKS;
 
     // symbol: ?RAID_TIMEOUT_IN_TICKS@Village@@0UTick@@B
     MCAPI static struct Tick const RAID_TIMEOUT_IN_TICKS;
 
     // symbol: ?STANDING_DECAY_INTERVAL_BAD@Village@@0_KB
-    MCAPI static uint64 const STANDING_DECAY_INTERVAL_BAD;
+    MCAPI static uint64_t const STANDING_DECAY_INTERVAL_BAD;
 
     // symbol: ?STANDING_DECAY_INTERVAL_GOOD@Village@@0_KB
-    MCAPI static uint64 const STANDING_DECAY_INTERVAL_GOOD;
+    MCAPI static uint64_t const STANDING_DECAY_INTERVAL_GOOD;
 
     // symbol: ?STORAGE_KEY_DWELLERS@Village@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const STORAGE_KEY_DWELLERS;
@@ -369,34 +369,34 @@ private:
     MCAPI static std::string const STORAGE_KEY_VILLAGE;
 
     // symbol: ?UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS@Village@@0HB
-    MCAPI static int const UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS;
+    MCAPI static int32_t const UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS;
 
     // symbol: ?VILLAGER_EXPECTED_WORK_INTERVAL@Village@@0_JB
-    MCAPI static int64 const VILLAGER_EXPECTED_WORK_INTERVAL;
+    MCAPI static int64_t const VILLAGER_EXPECTED_WORK_INTERVAL;
 
     // symbol: ?VILLAGE_HERO_BESTOW_TIME@Village@@0HB
-    MCAPI static int const VILLAGE_HERO_BESTOW_TIME;
+    MCAPI static int32_t const VILLAGE_HERO_BESTOW_TIME;
 
     // symbol: ?VILLAGE_POI_PURGE_TIME@Village@@0_KB
-    MCAPI static uint64 const VILLAGE_POI_PURGE_TIME;
+    MCAPI static uint64_t const VILLAGE_POI_PURGE_TIME;
 
     // symbol: ?VILLAGE_RADIUS_APPROX_SCALAR@Village@@0MB
     MCAPI static float const VILLAGE_RADIUS_APPROX_SCALAR;
 
     // symbol: ?VILLAGE_SAVE_TICK_DELAY@Village@@0_KB
-    MCAPI static uint64 const VILLAGE_SAVE_TICK_DELAY;
+    MCAPI static uint64_t const VILLAGE_SAVE_TICK_DELAY;
 
     // symbol: ?VILLAGE_START_HEIGHT@Village@@0HB
-    MCAPI static int const VILLAGE_START_HEIGHT;
+    MCAPI static int32_t const VILLAGE_START_HEIGHT;
 
     // symbol: ?VILLAGE_UNCLAIMED_POI_CAP@Village@@0HB
-    MCAPI static int const VILLAGE_UNCLAIMED_POI_CAP;
+    MCAPI static int32_t const VILLAGE_UNCLAIMED_POI_CAP;
 
     // symbol: ?VILLAGE_UPDATE_TICK_DELAY@Village@@0_KB
-    MCAPI static uint64 const VILLAGE_UPDATE_TICK_DELAY;
+    MCAPI static uint64_t const VILLAGE_UPDATE_TICK_DELAY;
 
     // symbol: ?VILLAGE_VERSION_CURRENT@Village@@0EB
-    MCAPI static uchar const VILLAGE_VERSION_CURRENT;
+    MCAPI static uint8_t const VILLAGE_VERSION_CURRENT;
 
     // NOLINTEND
 

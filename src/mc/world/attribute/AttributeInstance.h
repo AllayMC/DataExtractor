@@ -43,7 +43,7 @@ public:
     MCAPI float getCurrentValue() const;
 
     // symbol: ?getDefaultValue@AttributeInstance@@QEBAMH@Z
-    MCAPI float getDefaultValue(int) const;
+    MCAPI float getDefaultValue(int32_t) const;
 
     // symbol: ?getHandle@AttributeInstance@@QEBA?AVAttributeInstanceHandle@@XZ
     MCAPI class AttributeInstanceHandle getHandle() const;
@@ -61,7 +61,7 @@ public:
     MCAPI std::vector<class AttributeModifier> getModifiers() const;
 
     // symbol: ?getModifiers@AttributeInstance@@QEBA?AV?$vector@VAttributeModifier@@V?$allocator@VAttributeModifier@@@std@@@std@@H@Z
-    MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
+    MCAPI std::vector<class AttributeModifier> getModifiers(int32_t) const;
 
     // symbol: ?hasModifier@AttributeInstance@@QEBA_NV?$shared_ptr@VAttributeModifier@@@std@@@Z
     MCAPI bool hasModifier(std::shared_ptr<class AttributeModifier>) const;
@@ -124,13 +124,13 @@ public:
     MCAPI void serializationSetRange(float, float, float);
 
     // symbol: ?serializationSetValue@AttributeInstance@@QEAAXMHM@Z
-    MCAPI void serializationSetValue(float, int, float);
+    MCAPI void serializationSetValue(float, int32_t, float);
 
     // symbol: ?setCurrentValue@AttributeInstance@@QEAAXM@Z
     MCAPI void setCurrentValue(float);
 
     // symbol: ?setDefaultValue@AttributeInstance@@QEAAXMH@Z
-    MCAPI void setDefaultValue(float, int);
+    MCAPI void setDefaultValue(float, int32_t);
 
     // symbol: ?setDefaultValueOnly@AttributeInstance@@QEAAXM@Z
     MCAPI void setDefaultValueOnly(float);

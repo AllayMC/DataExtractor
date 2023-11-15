@@ -28,10 +28,10 @@ public:
     MCAPI void sendBlockDestroyedByPlayer(class Player &, class Block const &, class BlockPos const &, class ItemStackBase const &, class ItemStackBase const &);
 
     // symbol: ?sendBlockDestructionStarted@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@E@Z
-    MCAPI void sendBlockDestructionStarted(class Player &, class BlockPos const &, uchar);
+    MCAPI void sendBlockDestructionStarted(class Player &, class BlockPos const &, uint8_t);
 
     // symbol: ?sendBlockDestructionStopped@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@H@Z
-    MCAPI void sendBlockDestructionStopped(class Player &, class BlockPos const &, int);
+    MCAPI void sendBlockDestructionStopped(class Player &, class BlockPos const &, int32_t);
 
     // symbol: ?sendBlockExploded@BlockEventCoordinator@@QEAAXAEAVDimension@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
     MCAPI void sendBlockExploded(class Dimension &, class BlockPos const &, class Block const &, class Actor *);
@@ -58,7 +58,7 @@ public:
     MCAPI ::CoordinatorResult sendEvent(class EventRef<struct BlockGameplayEvent<::CoordinatorResult>> const &);
 
     // symbol: ?sendUnknownBlockReceived@BlockEventCoordinator@@QEAAXAEAVLevel@@AEBUNewBlockID@@G@Z
-    MCAPI void sendUnknownBlockReceived(class Level &, struct NewBlockID const &, ushort);
+    MCAPI void sendUnknownBlockReceived(class Level &, struct NewBlockID const &, uint16_t);
 
     // NOLINTEND
 

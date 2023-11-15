@@ -24,7 +24,7 @@ public:
     MCVAPI class Item const * eatItem(class ItemStack &, class Actor &, class Level &);
 
     // symbol: ?getNutrition@FoodItemComponent@@UEBAHXZ
-    MCVAPI int getNutrition() const;
+    MCVAPI int32_t getNutrition() const;
 
     // symbol: ?getSaturationModifier@FoodItemComponent@@UEBAMXZ
     MCVAPI float getSaturationModifier() const;

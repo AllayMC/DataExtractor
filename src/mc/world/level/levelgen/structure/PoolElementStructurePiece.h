@@ -21,7 +21,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?moveBoundingBox@PoolElementStructurePiece@@UEAAXHHH@Z
-    virtual void moveBoundingBox(int, int, int);
+    virtual void moveBoundingBox(int32_t, int32_t, int32_t);
 
     // vIndex: 4, symbol: ?postProcess@PoolElementStructurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
@@ -30,7 +30,7 @@ public:
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 
     // vIndex: 13, symbol: ?generateHeightAtPosition@VillagePiece@@UEBAHAEBVBlockPos@@AEAVDimension@@AEAVBlockVolume@@AEAV?$unordered_map@VChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@@std@@@3@@std@@@Z
-    virtual int generateHeightAtPosition(class BlockPos const &, class Dimension &, class BlockVolume &, std::unordered_map<class ChunkPos,std::unique_ptr<std::vector<short>>> &) const = 0;
+    virtual int32_t generateHeightAtPosition(class BlockPos const &, class Dimension &, class BlockVolume &, std::unordered_map<class ChunkPos,std::unique_ptr<std::vector<int16_t>>> &) const = 0;
 
     // vIndex: 14, symbol: ?getSupportBlock@VillagePiece@@UEBAPEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
     virtual class Block const * getSupportBlock(class BlockSource &, class BlockPos const &, class Block const &) const = 0;
@@ -48,7 +48,7 @@ public:
     MCVAPI ~PoolElementStructurePiece();
 
     // symbol: ??0PoolElementStructurePiece@@QEAA@AEBVStructurePoolElement@@VBlockPos@@W4Rotation@@HAEAUJigsawJunction@@AEBVBoundingBox@@1@Z
-    MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, ::Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
+    MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, ::Rotation, int32_t, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
 
     // symbol: ?getElement@PoolElementStructurePiece@@QEBAAEBVStructurePoolElement@@XZ
     MCAPI class StructurePoolElement const & getElement() const;

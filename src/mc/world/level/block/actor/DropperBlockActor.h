@@ -30,7 +30,7 @@ public:
     MCAPI bool pushOutItems(class BlockSource &);
 
     // symbol: ?addItemsToContainerAndDepleteStack@DropperBlockActor@@SA_NAEAVContainer@@AEAVItemStack@@HH@Z
-    MCAPI static bool addItemsToContainerAndDepleteStack(class Container &, class ItemStack &, int, int);
+    MCAPI static bool addItemsToContainerAndDepleteStack(class Container &, class ItemStack &, int32_t, int32_t);
 
     // symbol: ?getContainerAt@DropperBlockActor@@SAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z
     MCAPI static class Container * getContainerAt(class BlockSource &, class Vec3 const &);

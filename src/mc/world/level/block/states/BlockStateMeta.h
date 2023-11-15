@@ -18,19 +18,19 @@ public:
     MCAPI BlockStateMeta(class BlockState const &, struct BlockStateDefinition const &);
 
     // symbol: ?getBool@BlockStateMeta@@QEBA?B_NH@Z
-    MCAPI bool const getBool(int) const;
+    MCAPI bool const getBool(int32_t) const;
 
     // symbol: ?getID@BlockStateMeta@@QEBA_KXZ
-    MCAPI uint64 getID() const;
+    MCAPI uint64_t getID() const;
 
     // symbol: ?getInt@BlockStateMeta@@QEBA?BHH@Z
-    MCAPI int const getInt(int) const;
+    MCAPI int32_t const getInt(int32_t) const;
 
     // symbol: ?getState@BlockStateMeta@@QEBAAEBVBlockState@@XZ
     MCAPI class BlockState const & getState() const;
 
     // symbol: ?getString@BlockStateMeta@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI std::string const & getString(int) const;
+    MCAPI std::string const & getString(int32_t) const;
 
     // symbol: ?getType@BlockStateMeta@@QEBA?BW4Type@Tag@@XZ
     MCAPI ::Tag::Type const getType() const;

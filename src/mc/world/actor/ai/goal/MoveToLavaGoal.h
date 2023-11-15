@@ -19,7 +19,7 @@ public:
     virtual void __unk_vfn_0();
 
     // symbol: ??0MoveToLavaGoal@@QEAA@AEAVMob@@MHHHM@Z
-    MCAPI MoveToLavaGoal(class Mob &, float, int, int, int, float);
+    MCAPI MoveToLavaGoal(class Mob &, float, int32_t, int32_t, int32_t, float);
 
     // NOLINTEND
 

@@ -28,13 +28,13 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@CompletedUsingItemPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1CompletedUsingItemPacket@@UEAA@XZ
     MCVAPI ~CompletedUsingItemPacket();
 
     // symbol: ??0CompletedUsingItemPacket@@QEAA@FH@Z
-    MCAPI CompletedUsingItemPacket(short, int);
+    MCAPI CompletedUsingItemPacket(int16_t, int32_t);
 
     // symbol: ??0CompletedUsingItemPacket@@QEAA@XZ
     MCAPI CompletedUsingItemPacket();

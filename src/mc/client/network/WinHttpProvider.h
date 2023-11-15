@@ -51,7 +51,7 @@ public:
     MCAPI static long WebSocketSendAsyncHandler(struct HC_WEBSOCKET_OBSERVER *, char const *, struct XAsyncBlock *, void *);
 
     // symbol: ?WebSocketSendBinaryAsyncHandler@WinHttpProvider@httpclient@xbox@@SAJPEAUHC_WEBSOCKET_OBSERVER@@PEBEIPEAUXAsyncBlock@@PEAX@Z
-    MCAPI static long WebSocketSendBinaryAsyncHandler(struct HC_WEBSOCKET_OBSERVER *, uchar const *, uint, struct XAsyncBlock *, void *);
+    MCAPI static long WebSocketSendBinaryAsyncHandler(struct HC_WEBSOCKET_OBSERVER *, uint8_t const *, uint32_t, struct XAsyncBlock *, void *);
 
     // NOLINTEND
 
@@ -61,7 +61,7 @@ public:
     MCAPI long CloseAllConnections();
 
     // symbol: ?GetHSession@WinHttpProvider@httpclient@xbox@@AEAA?AV?$Result@PEAX@@I@Z
-    MCAPI class Result<void *> GetHSession(uint);
+    MCAPI class Result<void *> GetHSession(uint32_t);
 
     // symbol: ?HttpCallPerformAsync@WinHttpProvider@httpclient@xbox@@AEAAJPEAUHC_CALL@@PEAUXAsyncBlock@@@Z
     MCAPI long HttpCallPerformAsync(struct HC_CALL *, struct XAsyncBlock *);
@@ -70,7 +70,7 @@ public:
     MCAPI long WebSocketConnectAsync(char const *, char const *, struct HC_WEBSOCKET_OBSERVER *, struct XAsyncBlock *);
 
     // symbol: ?GetProxyName@WinHttpProvider@httpclient@xbox@@CAJW4proxy_type@23@VUri@23@AEAKAEAV?$basic_string@_WU?$char_traits@_W@std@@V?$http_stl_allocator@_W@@@std@@@Z
-    MCAPI static long GetProxyName(::xbox::httpclient::proxy_type, class xbox::httpclient::Uri, ulong &, http_wstring &);
+    MCAPI static long GetProxyName(::xbox::httpclient::proxy_type, class xbox::httpclient::Uri, unsigned long &, std::basic_string<wchar_t, std::char_traits<wchar_t>, class http_stl_allocator<wchar_t>> &);
 
     // symbol: ?SetGlobalProxyForHSession@WinHttpProvider@httpclient@xbox@@CAJPEAXPEBD@Z
     MCAPI static long SetGlobalProxyForHSession(void *, char const *);

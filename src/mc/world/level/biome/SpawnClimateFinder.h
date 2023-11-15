@@ -41,10 +41,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_calculateClimateFitness@SpawnClimateFinder@@AEBA_JVBlockPos@@@Z
-    MCAPI int64 _calculateClimateFitness(class BlockPos) const;
+    MCAPI int64_t _calculateClimateFitness(class BlockPos) const;
 
     // symbol: ?_radialSearch@SpawnClimateFinder@@AEBA?AUResultDetails@1@U21@HH@Z
-    MCAPI struct SpawnClimateFinder::ResultDetails _radialSearch(struct SpawnClimateFinder::ResultDetails, int, int) const;
+    MCAPI struct SpawnClimateFinder::ResultDetails _radialSearch(struct SpawnClimateFinder::ResultDetails, int32_t, int32_t) const;
 
     // NOLINTEND
 

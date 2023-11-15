@@ -32,7 +32,7 @@ public:
     MCAPI bool is2DPositionRelevant(class BlockPos const &) const;
 
     // symbol: ?moveRegion@NetworkChunkPublisher@@QEAAXAEBVBlockPos@@IAEBVVec3@@M@Z
-    MCAPI void moveRegion(class BlockPos const &, uint, class Vec3 const &, float);
+    MCAPI void moveRegion(class BlockPos const &, uint32_t, class Vec3 const &, float);
 
     // symbol: ?prepareRegion@NetworkChunkPublisher@@QEAAXAEAVChunkSource@@AEBVChunkPos@@@Z
     MCAPI void prepareRegion(class ChunkSource &, class ChunkPos const &);

@@ -8,9 +8,9 @@
 #include "zlib.h"
 #include "magic_enum.hpp"
 
-//liteloader header
-#include "liteloader/api/memory/Hook.h"
-#include "liteloader/api/memory/MemoryUtils.h"
+//ll header
+#include "ll/api/memory/Hook.h"
+#include "ll/api/memory/Memory.h"
 
 //mc header
 #include <mc/world/level/Level.h>
@@ -68,7 +68,6 @@
 #include <mc\common\wrapper\IDType.h>
 #include <mc\world\level\dimension\Dimension.h>
 
-AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
 

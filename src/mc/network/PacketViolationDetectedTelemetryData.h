@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PacketViolationDetectedTelemetryData@@QEAA@_KV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z
-    MCAPI PacketViolationDetectedTelemetryData(uint64, std::string, ::PacketViolationResponse, ::MinecraftPacketIds, class NetworkIdentifier const &);
+    MCAPI PacketViolationDetectedTelemetryData(uint64_t, std::string, ::PacketViolationResponse, ::MinecraftPacketIds, class NetworkIdentifier const &);
 
     // symbol: ?WriteEventData@PacketViolationDetectedTelemetryData@@QEBAXAEAVEvent@Events@Social@@@Z
     MCAPI void WriteEventData(class Social::Events::Event &) const;

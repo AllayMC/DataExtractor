@@ -18,10 +18,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol: ?shouldBuff@ShiftedDurationAmplifier@@UEBA_NHH@Z
-    virtual bool shouldBuff(int, int) const;
+    virtual bool shouldBuff(int32_t, int32_t) const;
 
     // vIndex: 3, symbol: ?getTickInterval@ShiftedDurationAmplifier@@UEBAHH@Z
-    virtual int getTickInterval(int) const;
+    virtual int32_t getTickInterval(int32_t) const;
 
     // NOLINTEND
 

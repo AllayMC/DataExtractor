@@ -41,7 +41,7 @@ public:
     MCAPI bool getIncludePlayers() const;
 
     // symbol: ?getIntegritySeed@StructureEditorData@@QEBAIXZ
-    MCAPI uint getIntegritySeed() const;
+    MCAPI uint32_t getIntegritySeed() const;
 
     // symbol: ?getIntegrityValue@StructureEditorData@@QEBAMXZ
     MCAPI float getIntegrityValue() const;
@@ -95,7 +95,7 @@ public:
     MCAPI void setAnimationSeconds(float);
 
     // symbol: ?setAnimationTicks@StructureEditorData@@QEAAXI@Z
-    MCAPI void setAnimationTicks(uint);
+    MCAPI void setAnimationTicks(uint32_t);
 
     // symbol: ?setIgnoreBlocks@StructureEditorData@@QEAAX_N@Z
     MCAPI void setIgnoreBlocks(bool);
@@ -104,7 +104,7 @@ public:
     MCAPI void setIgnoreEntities(bool);
 
     // symbol: ?setIntegritySeed@StructureEditorData@@QEAAXI@Z
-    MCAPI void setIntegritySeed(uint);
+    MCAPI void setIntegritySeed(uint32_t);
 
     // symbol: ?setIntegrityValue@StructureEditorData@@QEAAXM@Z
     MCAPI void setIntegrityValue(float);

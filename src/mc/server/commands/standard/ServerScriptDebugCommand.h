@@ -28,7 +28,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?sForcedPort@ServerScriptDebugCommand@@0V?$optional@G@std@@A
-    MCAPI static std::optional<ushort> sForcedPort;
+    MCAPI static std::optional<uint16_t> sForcedPort;
 
     // symbol: ?sServerScriptDebugger@ServerScriptDebugCommand@@0PEAVIScriptDebugger@@EA
     MCAPI static class IScriptDebugger * sServerScriptDebugger;

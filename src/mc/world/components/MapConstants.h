@@ -5,16 +5,16 @@
 namespace MapConstants {
     // NOLINTBEGIN
     // symbol: ?DEFAULT_SCALE@MapConstants@@3HB
-    MCAPI extern int const DEFAULT_SCALE;
+    MCAPI extern int32_t const DEFAULT_SCALE;
 
     // symbol: ?DEFAULT_SCALE_LEGACY_STARTING_MAP@MapConstants@@3HB
-    MCAPI extern int const DEFAULT_SCALE_LEGACY_STARTING_MAP;
+    MCAPI extern int32_t const DEFAULT_SCALE_LEGACY_STARTING_MAP;
 
     // symbol: ?DEFAULT_SCALE_STARTING_MAP@MapConstants@@3HB
-    MCAPI extern int const DEFAULT_SCALE_STARTING_MAP;
+    MCAPI extern int32_t const DEFAULT_SCALE_STARTING_MAP;
 
     // symbol: ?HALF_MAP_SIZE@MapConstants@@3HB
-    MCAPI extern int const HALF_MAP_SIZE;
+    MCAPI extern int32_t const HALF_MAP_SIZE;
 
     // symbol: ?MAP_BORDER@MapConstants@@3MB
     MCAPI extern float const MAP_BORDER;
@@ -53,7 +53,7 @@ namespace MapConstants {
     MCAPI extern float const MAP_PRE_ROT_SCALE;
 
     // symbol: ?MAP_SIZE@MapConstants@@3HB
-    MCAPI extern int const MAP_SIZE;
+    MCAPI extern int32_t const MAP_SIZE;
 
     // symbol: ?MAP_SWING_POS_SCALE@MapConstants@@3VVec3@@B
     MCAPI extern class Vec3 const MAP_SWING_POS_SCALE;
@@ -65,7 +65,7 @@ namespace MapConstants {
     MCAPI extern float const MAP_WIDTH;
 
     // symbol: ?MAX_SCALE@MapConstants@@3HB
-    MCAPI extern int const MAX_SCALE;
+    MCAPI extern int32_t const MAX_SCALE;
 
     // symbol: ?MINI_MAP_FINAL_SCALE@MapConstants@@3MB
     MCAPI extern float const MINI_MAP_FINAL_SCALE;

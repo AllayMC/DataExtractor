@@ -15,13 +15,13 @@ public:
     MCAPI JumpControlComponent(class JumpControlComponent const &);
 
     // symbol: ?getAnimationDuration@JumpControlComponent@@QEBAHXZ
-    MCAPI int getAnimationDuration() const;
+    MCAPI int32_t getAnimationDuration() const;
 
     // symbol: ?getDistanceScale@JumpControlComponent@@QEBAMXZ
     MCAPI float getDistanceScale() const;
 
     // symbol: ?getJumpDelay@JumpControlComponent@@QEBAHXZ
-    MCAPI int getJumpDelay() const;
+    MCAPI int32_t getJumpDelay() const;
 
     // symbol: ?getJumpPower@JumpControlComponent@@QEBAMXZ
     MCAPI float getJumpPower() const;

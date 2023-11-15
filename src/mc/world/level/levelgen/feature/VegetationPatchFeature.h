@@ -28,10 +28,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_isExposedDirection@VegetationPatchFeature@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@E@Z
-    MCAPI bool _isExposedDirection(class IBlockWorldGenAPI &, class BlockPos const &, uchar) const;
+    MCAPI bool _isExposedDirection(class IBlockWorldGenAPI &, class BlockPos const &, uint8_t) const;
 
     // symbol: ?_placeGroundPatch@VegetationPatchFeature@@AEBA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@HH@Z
-    MCAPI std::vector<class BlockPos> _placeGroundPatch(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, int, int) const;
+    MCAPI std::vector<class BlockPos> _placeGroundPatch(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, int32_t, int32_t) const;
 
     // NOLINTEND
 

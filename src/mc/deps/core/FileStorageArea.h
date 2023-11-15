@@ -71,7 +71,7 @@ public:
     virtual void __unk_vfn_7() = 0;
 
     // vIndex: 8, symbol: ?notifyChangeInFileSize@FileStorageArea@Core@@UEAAX_J0@Z
-    virtual void notifyChangeInFileSize(int64, int64);
+    virtual void notifyChangeInFileSize(int64_t, int64_t);
 
     // vIndex: 9, symbol: __unk_vfn_9
     virtual void __unk_vfn_9();
@@ -92,16 +92,16 @@ public:
     virtual void resetCanAttemptExtendSize();
 
     // vIndex: 15, symbol: ?getExtendSizeThreshold@FileStorageArea@Core@@UEBA?AVResult@2@AEA_K@Z
-    virtual class Core::Result getExtendSizeThreshold(uint64 &) const;
+    virtual class Core::Result getExtendSizeThreshold(uint64_t &) const;
 
     // vIndex: 16, symbol: ?attemptExtendSize@FileStorageArea@Core@@UEAAXAEB_JV?$function@$$A6AXXZ@std@@@Z
-    virtual void attemptExtendSize(int64 const &, std::function<void (void)>);
+    virtual void attemptExtendSize(int64_t const &, std::function<void (void)>);
 
     // vIndex: 17, symbol: ?preemptiveExtendSize@FileStorageArea@Core@@UEAAX_KV?$function@$$A6AXXZ@std@@1@Z
-    virtual void preemptiveExtendSize(uint64, std::function<void (void)>, std::function<void (void)>);
+    virtual void preemptiveExtendSize(uint64_t, std::function<void (void)>, std::function<void (void)>);
 
     // vIndex: 18, symbol: ?getAvailableUserStorageSize@FileStorageArea@Core@@UEAA_KXZ
-    virtual uint64 getAvailableUserStorageSize();
+    virtual uint64_t getAvailableUserStorageSize();
 
     // vIndex: 19, symbol: ?unloadFlatFileManifests@FileStorageArea@Core@@UEAAX_N@Z
     virtual void unloadFlatFileManifests(bool);
@@ -122,7 +122,7 @@ public:
     virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const;
 
     // vIndex: 25, symbol: ?getTransactionWriteSizeLimit@FileStorageArea@Core@@UEBA_KXZ
-    virtual uint64 getTransactionWriteSizeLimit() const;
+    virtual uint64_t getTransactionWriteSizeLimit() const;
 
     // vIndex: 26, symbol: ?setSaveDataIcon@FileStorageArea@Core@@UEAA?AVResult@2@AEBVPath@2@@Z
     virtual class Core::Result setSaveDataIcon(class Core::Path const &);
@@ -131,7 +131,7 @@ public:
     virtual bool shouldAllowCommit() const;
 
     // vIndex: 28, symbol: ?trackBytesWritten@FileStorageArea@Core@@UEAAXAEBVPath@2@_KW4WriteOperation@2@@Z
-    virtual void trackBytesWritten(class Core::Path const &, uint64, ::Core::WriteOperation);
+    virtual void trackBytesWritten(class Core::Path const &, uint64_t, ::Core::WriteOperation);
 
     // vIndex: 29, symbol: ?trackWriteOperation@FileStorageArea@Core@@UEAAXAEBVPath@2@W4WriteOperation@2@@Z
     virtual void trackWriteOperation(class Core::Path const &, ::Core::WriteOperation);
@@ -170,16 +170,16 @@ public:
     MCVAPI bool handlesPendingWrites() const;
 
     // symbol: ?informPendingWriteSize@FileStorageArea@Core@@UEAAX_K_N@Z
-    MCVAPI void informPendingWriteSize(uint64, bool);
+    MCVAPI void informPendingWriteSize(uint64_t, bool);
 
     // symbol: ?informStorageAreaCopy@FileStorageArea@Core@@UEAAX_K@Z
-    MCVAPI void informStorageAreaCopy(uint64);
+    MCVAPI void informStorageAreaCopy(uint64_t);
 
     // symbol: ?setInitialSize@FileStorageArea@Core@@UEAAXAEBVPath@2@_K@Z
-    MCVAPI void setInitialSize(class Core::Path const &, uint64);
+    MCVAPI void setInitialSize(class Core::Path const &, uint64_t);
 
     // symbol: ?setUsedSizeOverride@FileStorageArea@Core@@UEAAX_K@Z
-    MCVAPI void setUsedSizeOverride(uint64);
+    MCVAPI void setUsedSizeOverride(uint64_t);
 
     // symbol: ?supportsExtendSize@FileStorageArea@Core@@UEBA_NXZ
     MCVAPI bool supportsExtendSize() const;
@@ -214,13 +214,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addReadOperation@FileStorageArea@Core@@AEAAX_N_K@Z
-    MCAPI void _addReadOperation(bool, uint64);
+    MCAPI void _addReadOperation(bool, uint64_t);
 
     // symbol: ?_addReadWriteOperation@FileStorageArea@Core@@AEAAX_N_K1@Z
-    MCAPI void _addReadWriteOperation(bool, uint64, uint64);
+    MCAPI void _addReadWriteOperation(bool, uint64_t, uint64_t);
 
     // symbol: ?_addWriteOperation@FileStorageArea@Core@@AEAAX_N_K@Z
-    MCAPI void _addWriteOperation(bool, uint64);
+    MCAPI void _addWriteOperation(bool, uint64_t);
 
     // symbol: ?_beginTransaction@FileStorageArea@Core@@AEAAXPEAVFileSystemImpl@2@_N@Z
     MCAPI void _beginTransaction(class Core::FileSystemImpl *, bool);

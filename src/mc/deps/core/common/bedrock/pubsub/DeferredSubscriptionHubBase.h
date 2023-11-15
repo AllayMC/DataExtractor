@@ -28,19 +28,19 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?runDeferredEvents@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_K_K@Z
-    virtual uint64 runDeferredEvents(uint64);
+    virtual uint64_t runDeferredEvents(uint64_t);
 
     // vIndex: 2, symbol: ?runDeferredEventsForDuration@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_KV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@@Z
-    virtual uint64 runDeferredEventsForDuration(std::chrono::milliseconds);
+    virtual uint64_t runDeferredEventsForDuration(std::chrono::milliseconds);
 
     // vIndex: 4, symbol: ?clear@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAAXXZ
     virtual void clear();
 
     // vIndex: 5, symbol: ?erase@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_KAEAVRawSubscription@23@@Z
-    virtual uint64 erase(class Bedrock::PubSub::RawSubscription &);
+    virtual uint64_t erase(class Bedrock::PubSub::RawSubscription &);
 
     // vIndex: 6, symbol: ?size@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEBA_KXZ
-    virtual uint64 size() const;
+    virtual uint64_t size() const;
 
     // vIndex: 7, symbol: ?empty@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEBA_NXZ
     virtual bool empty() const;

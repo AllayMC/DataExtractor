@@ -44,7 +44,7 @@ public:
     MCVAPI ~BackgroundTaskBase();
 
     // symbol: ??0BackgroundTaskBase@@QEAA@V?$not_null@PEAVIBackgroundTaskOwner@@@gsl@@AEBUTaskStartInfoBase@@_N@Z
-    MCAPI BackgroundTaskBase(gsl::not_null<class IBackgroundTaskOwner *>, struct TaskStartInfoBase const &, bool);
+    MCAPI BackgroundTaskBase(class gsl::not_null<class IBackgroundTaskOwner *>, struct TaskStartInfoBase const &, bool);
 
     // symbol: ?getGroup@BackgroundTaskBase@@QEAAPEAVIBackgroundTaskOwner@@XZ
     MCAPI class IBackgroundTaskOwner * getGroup();

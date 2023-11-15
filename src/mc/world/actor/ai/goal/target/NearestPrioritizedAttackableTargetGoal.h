@@ -25,7 +25,7 @@ public:
     virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
 
     // symbol: ??0NearestPrioritizedAttackableTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NH22HM2H2@Z
-    MCAPI NearestPrioritizedAttackableTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, bool, bool, int, float, bool, int, bool);
+    MCAPI NearestPrioritizedAttackableTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int32_t, bool, int32_t, bool, bool, int32_t, float, bool, int32_t, bool);
 
     // NOLINTEND
 

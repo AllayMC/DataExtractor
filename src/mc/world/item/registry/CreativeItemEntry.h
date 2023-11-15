@@ -24,13 +24,13 @@ public:
     MCAPI CreativeItemEntry(class CreativeItemEntry &&);
 
     // symbol: ?getCreativeNetId@CreativeItemEntry@@QEBAAEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@XZ
-    MCAPI CreativeItemNetId const & getCreativeNetId() const;
+    MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, uint32_t, 0> const & getCreativeNetId() const;
 
     // symbol: ?getGroup@CreativeItemEntry@@QEBAPEAVCreativeGroupInfo@@XZ
     MCAPI class CreativeGroupInfo * getGroup() const;
 
     // symbol: ?getIndex@CreativeItemEntry@@QEBAIXZ
-    MCAPI uint getIndex() const;
+    MCAPI uint32_t getIndex() const;
 
     // symbol: ?getItemInstance@CreativeItemEntry@@QEBAAEBVItemInstance@@XZ
     MCAPI class ItemInstance const & getItemInstance() const;

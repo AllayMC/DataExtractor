@@ -157,13 +157,13 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 141, symbol: ?telemetryVariant@BedBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int telemetryVariant(class BlockSource &, class BlockPos const &) const;
+    virtual int32_t telemetryVariant(class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 142, symbol: ?getVariant@BedBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 145, symbol: ?getMappedFace@BedBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const &) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -190,7 +190,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@BedBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -211,7 +211,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0BedBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BedBlock(std::string const &, int);
+    MCAPI BedBlock(std::string const &, int32_t);
 
     // symbol: ?findWakeupPosition@BedBlock@@SA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@AEBV?$optional@VVec3@@@3@@Z
     MCAPI static std::optional<class BlockPos> findWakeupPosition(class BlockSource &, class BlockPos const &, std::optional<class Vec3> const &);
@@ -223,10 +223,10 @@ public:
     MCAPI static void setOccupied(class BlockSource &, class BlockPos const &, bool);
 
     // symbol: ?HEAD_PIECE_DATA@BedBlock@@2GB
-    MCAPI static ushort const HEAD_PIECE_DATA;
+    MCAPI static uint16_t const HEAD_PIECE_DATA;
 
     // symbol: ?OCCUPIED_DATA@BedBlock@@2GB
-    MCAPI static ushort const OCCUPIED_DATA;
+    MCAPI static uint16_t const OCCUPIED_DATA;
 
     // NOLINTEND
 

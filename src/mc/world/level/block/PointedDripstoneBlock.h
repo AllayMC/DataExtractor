@@ -130,7 +130,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@PointedDripstoneBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -148,7 +148,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@PointedDripstoneBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 147, symbol: ?animateTickBedrockLegacy@PointedDripstoneBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource &, class BlockPos const &, class Random &) const;
@@ -211,7 +211,7 @@ public:
     MCVAPI bool falling() const;
 
     // symbol: ??0PointedDripstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PointedDripstoneBlock(std::string const &, int);
+    MCAPI PointedDripstoneBlock(std::string const &, int32_t);
 
     // symbol: ?addDripParticle@PointedDripstoneBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@W4ParticleType@@@Z
     MCAPI static void addDripParticle(class BlockSource &, class BlockPos const &, ::ParticleType);
@@ -238,7 +238,7 @@ public:
     MCAPI static void growStalagmite(class BlockSource &, class BlockPos const &);
 
     // symbol: ?isPointedDripstoneWithDirection@PointedDripstoneBlock@@SA_NAEBVBlock@@E@Z
-    MCAPI static bool isPointedDripstoneWithDirection(class Block const &, uchar);
+    MCAPI static bool isPointedDripstoneWithDirection(class Block const &, uint8_t);
 
     // NOLINTEND
 
@@ -248,7 +248,7 @@ public:
     MCAPI void _updateBlockThickness(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ?_calculateDripstoneThickness@PointedDripstoneBlock@@CA?AW4DripstoneThickness@@AEAVBlockSource@@AEBVBlockPos@@E_N@Z
-    MCAPI static ::DripstoneThickness _calculateDripstoneThickness(class BlockSource &, class BlockPos const &, uchar, bool);
+    MCAPI static ::DripstoneThickness _calculateDripstoneThickness(class BlockSource &, class BlockPos const &, uint8_t, bool);
 
     // symbol: ?_canDrip@PointedDripstoneBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool _canDrip(class BlockSource &, class BlockPos const &);
@@ -260,19 +260,19 @@ public:
     MCAPI static bool _canTipGrow(class BlockSource &, class BlockPos const &);
 
     // symbol: ?_createDripstone@PointedDripstoneBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@EW4DripstoneThickness@@@Z
-    MCAPI static void _createDripstone(class BlockSource &, class BlockPos const &, uchar, ::DripstoneThickness);
+    MCAPI static void _createDripstone(class BlockSource &, class BlockPos const &, uint8_t, ::DripstoneThickness);
 
     // symbol: ?_createMergedTips@PointedDripstoneBlock@@CAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
     MCAPI static void _createMergedTips(class BlockSource &, class Block const &, class BlockPos const &);
 
     // symbol: ?_findBlockVertically@PointedDripstoneBlock@@CA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@EV?$function@$$A6A_NAEAVBlockSource@@AEBVBlockPos@@@Z@3@2H@Z
-    MCAPI static std::optional<class BlockPos> _findBlockVertically(class BlockSource &, class BlockPos const &, uchar, std::function<bool (class BlockSource &, class BlockPos const &)>, std::function<bool (class BlockSource &, class BlockPos const &)>, int);
+    MCAPI static std::optional<class BlockPos> _findBlockVertically(class BlockSource &, class BlockPos const &, uint8_t, std::function<bool (class BlockSource &, class BlockPos const &)>, std::function<bool (class BlockSource &, class BlockPos const &)>, int32_t);
 
     // symbol: ?_findRootBlock@PointedDripstoneBlock@@CA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI static std::optional<class BlockPos> _findRootBlock(class BlockSource &, class BlockPos const &, int);
+    MCAPI static std::optional<class BlockPos> _findRootBlock(class BlockSource &, class BlockPos const &, int32_t);
 
     // symbol: ?_findTip@PointedDripstoneBlock@@CA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@EH_N@Z
-    MCAPI static std::optional<class BlockPos> _findTip(class BlockSource &, class BlockPos const &, uchar, int, bool);
+    MCAPI static std::optional<class BlockPos> _findTip(class BlockSource &, class BlockPos const &, uint8_t, int32_t, bool);
 
     // symbol: ?_getBlockAboveStalactiteRoot@PointedDripstoneBlock@@CA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static std::optional<class BlockPos> _getBlockAboveStalactiteRoot(class BlockSource &, class BlockPos const &);
@@ -281,7 +281,7 @@ public:
     MCAPI static class Vec3 _getRandomBlockPositionOffset(class BlockPos const &);
 
     // symbol: ?_grow@PointedDripstoneBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI static void _grow(class BlockSource &, class BlockPos const &, uchar);
+    MCAPI static void _grow(class BlockSource &, class BlockPos const &, uint8_t);
 
     // symbol: ?_growStalagmiteBelow@PointedDripstoneBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void _growStalagmiteBelow(class BlockSource &, class BlockPos const &);
@@ -290,7 +290,7 @@ public:
     MCAPI static bool _isStalactiteBase(class BlockSource &, class BlockPos const &);
 
     // symbol: ?_isTip@PointedDripstoneBlock@@CA_NAEBVBlock@@E_N@Z
-    MCAPI static bool _isTip(class Block const &, uchar, bool);
+    MCAPI static bool _isTip(class Block const &, uint8_t, bool);
 
     // symbol: ?_isValidPointedDripstonePlacement@PointedDripstoneBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
     MCAPI static bool _isValidPointedDripstonePlacement(class BlockSource &, class BlockPos const &, bool);

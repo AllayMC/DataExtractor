@@ -37,13 +37,13 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const = 0;
 
     // vIndex: 7, symbol: ?setSlot@HorseContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const &, bool) = 0;
+    virtual void setSlot(int32_t, class ItemStack const &, bool) = 0;
 
     // vIndex: 8, symbol: ?getSlot@HorseContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const & getSlot(int) const = 0;
+    virtual class ItemStack const & getSlot(int32_t) const = 0;
 
     // vIndex: 9, symbol: ?setData@ElementConstructorContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int, int) = 0;
+    virtual void setData(int32_t, int32_t) = 0;
 
     // vIndex: 10, symbol: ?broadcastChanges@FurnaceContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges() = 0;

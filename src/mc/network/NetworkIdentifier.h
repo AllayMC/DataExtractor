@@ -26,7 +26,7 @@ public:
     MCAPI std::string getCorrelationId() const;
 
     // symbol: ?getHash@NetworkIdentifier@@QEBA_KXZ
-    MCAPI uint64 getHash() const;
+    MCAPI uint64_t getHash() const;
 
     // symbol: ?isUnassigned@NetworkIdentifier@@QEBA_NXZ
     MCAPI bool isUnassigned() const;
@@ -38,7 +38,7 @@ public:
     MCAPI std::string toString() const;
 
     // symbol: ?hyphenateId@NetworkIdentifier@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
-    MCAPI static std::string hyphenateId(uint64);
+    MCAPI static std::string hyphenateId(uint64_t);
 
     // symbol: ?INVALID_ID@NetworkIdentifier@@2V1@A
     MCAPI static class NetworkIdentifier INVALID_ID;

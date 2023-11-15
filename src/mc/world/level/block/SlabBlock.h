@@ -38,7 +38,7 @@ public:
     virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 20, symbol: ?liquidCanFlowIntoFromDirection@SlabBlock@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z
-    virtual bool liquidCanFlowIntoFromDirection(uchar, std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
+    virtual bool liquidCanFlowIntoFromDirection(uint8_t, std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -173,10 +173,10 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@SlabBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 186, symbol: ?getResourceCount@SlabBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ?canBeSilkTouched@SlabBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -188,7 +188,7 @@ public:
     MCVAPI ~SlabBlock();
 
     // symbol: ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@V?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI SlabBlock(std::string const &, int, bool, class Material const &, class WeakPtr<class BlockLegacy>);
+    MCAPI SlabBlock(std::string const &, int32_t, bool, class Material const &, class WeakPtr<class BlockLegacy>);
 
     // NOLINTEND
 

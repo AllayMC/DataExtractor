@@ -29,7 +29,7 @@ public:
     MCAPI bool hasOwnedInactiveAutonomousActorWithUniqueID(struct ActorUniqueID) const;
 
     // symbol: ?initializeWithActorManager@AutonomousActorManager@@QEAAXV?$not_null@V?$NonOwnerPointer@VActorManager@@@Bedrock@@@gsl@@@Z
-    MCAPI void initializeWithActorManager(Bedrock::NotNullNonOwnerPtr<class ActorManager>);
+    MCAPI void initializeWithActorManager(class gsl::not_null<class Bedrock::NonOwnerPointer<class ActorManager>>);
 
     // symbol: ?loadAutonomousActorsFromDisk@AutonomousActorManager@@QEAAXAEAVLevelStorage@@AEAVActorFactory@@@Z
     MCAPI void loadAutonomousActorsFromDisk(class LevelStorage &, class ActorFactory &);

@@ -97,7 +97,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 74, symbol: ?onRedstoneUpdate@DispenserBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int32_t, bool) const;
 
     // vIndex: 76, symbol: __unk_vfn_76
     virtual void __unk_vfn_76();
@@ -112,7 +112,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@DispenserBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_124();
 
     // vIndex: 125, symbol: ?getComparatorSignal@DispenserBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uchar) const;
+    virtual int32_t getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uint8_t) const;
 
     // vIndex: 127, symbol: __unk_vfn_127
     virtual void __unk_vfn_127();
@@ -133,10 +133,10 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@DispenserBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 145, symbol: ?getMappedFace@DispenserBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const &) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -166,7 +166,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@DispenserBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -175,13 +175,13 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@DispenserBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@DispenserBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
 
     // vIndex: 193, symbol: ?getTickDelay@DispenserBlock@@UEBAHXZ
-    virtual int getTickDelay() const;
+    virtual int32_t getTickDelay() const;
 
     // vIndex: 194, symbol: ?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void dispenseFrom(class BlockSource &, class BlockPos const &) const;
@@ -196,23 +196,23 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0DispenserBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DispenserBlock(std::string const &, int);
+    MCAPI DispenserBlock(std::string const &, int32_t);
 
     // symbol: ?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@H@Z
-    MCAPI static void ejectItem(class BlockSource &, class Vec3 const &, uchar, class ItemStack const &, int);
+    MCAPI static void ejectItem(class BlockSource &, class Vec3 const &, uint8_t, class ItemStack const &, int32_t);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@AEAVContainer@@HH@Z
-    MCAPI void ejectItem(class BlockSource &, class Vec3 const &, uchar, class ItemStack const &, class Container &, int, int) const;
+    MCAPI void ejectItem(class BlockSource &, class Vec3 const &, uint8_t, class ItemStack const &, class Container &, int32_t, int32_t) const;
 
     // symbol: ?getDispensePosition@DispenserBlock@@IEBA?AVVec3@@AEAVBlockSource@@AEBV2@@Z
     MCAPI class Vec3 getDispensePosition(class BlockSource &, class Vec3 const &) const;
 
     // symbol: ?getFacing@DispenserBlock@@IEBAEAEBVBlock@@@Z
-    MCAPI uchar getFacing(class Block const &) const;
+    MCAPI uint8_t getFacing(class Block const &) const;
 
     // NOLINTEND
 

@@ -24,7 +24,7 @@ public:
     MCAPI struct TargetPoint sample(class BlockPos) const;
 
     // symbol: ?sample@OverworldNoises3d@@QEBA?AUTargetPoint@@HAEBUCacheEntry@ChunkLocalNoiseCache@@@Z
-    MCAPI struct TargetPoint sample(int, struct ChunkLocalNoiseCache::CacheEntry const &) const;
+    MCAPI struct TargetPoint sample(int32_t, struct ChunkLocalNoiseCache::CacheEntry const &) const;
 
     // symbol: ??1OverworldNoises3d@@QEAA@XZ
     MCAPI ~OverworldNoises3d();

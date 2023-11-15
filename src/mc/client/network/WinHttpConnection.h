@@ -61,7 +61,7 @@ public:
     MCAPI long WebSocketDisconnect(::HCWebSocketCloseStatus);
 
     // symbol: ?WebSocketSendMessageAsync@WinHttpConnection@httpclient@xbox@@QEAAJPEAUXAsyncBlock@@PEBE_KW4_WINHTTP_WEB_SOCKET_BUFFER_TYPE@@@Z
-    MCAPI long WebSocketSendMessageAsync(struct XAsyncBlock *, uchar const *, uint64, enum class _WINHTTP_WEB_SOCKET_BUFFER_TYPE);
+    MCAPI long WebSocketSendMessageAsync(struct XAsyncBlock *, uint8_t const *, uint64_t, enum class _WINHTTP_WEB_SOCKET_BUFFER_TYPE);
 
     // symbol: ?WebSocketSendMessageAsync@WinHttpConnection@httpclient@xbox@@QEAAJPEAUXAsyncBlock@@PEBD@Z
     MCAPI long WebSocketSendMessageAsync(struct XAsyncBlock *, char const *);
@@ -95,10 +95,10 @@ public:
     MCAPI void WebSocketSendMessage(struct xbox::httpclient::WinHttpConnection::WebSocketSendContext const &);
 
     // symbol: ?complete_task@WinHttpConnection@httpclient@xbox@@AEAAXJI@Z
-    MCAPI void complete_task(long, uint);
+    MCAPI void complete_task(long, uint32_t);
 
     // symbol: ?on_websocket_disconnected@WinHttpConnection@httpclient@xbox@@AEAAXG@Z
-    MCAPI void on_websocket_disconnected(ushort);
+    MCAPI void on_websocket_disconnected(uint16_t);
 
     // symbol: ?WebSocketConnectProvider@WinHttpConnection@httpclient@xbox@@CAJW4XAsyncOp@@PEBUXAsyncProviderData@@@Z
     MCAPI static long WebSocketConnectProvider(::XAsyncOp, struct XAsyncProviderData const *);
@@ -119,7 +119,7 @@ public:
     MCAPI static void callback_websocket_status_headers_available(void *, struct xbox::httpclient::WinHttpCallbackContext *);
 
     // symbol: ?completion_callback@WinHttpConnection@httpclient@xbox@@CAXPEAX_KK0K@Z
-    MCAPI static void completion_callback(void *, uint64, ulong, void *, ulong);
+    MCAPI static void completion_callback(void *, uint64_t, unsigned long, void *, unsigned long);
 
     // symbol: ?flush_response_buffer@WinHttpConnection@httpclient@xbox@@CAJPEAV123@@Z
     MCAPI static long flush_response_buffer(class xbox::httpclient::WinHttpConnection *);
@@ -128,10 +128,10 @@ public:
     MCAPI static void parse_headers_string(struct HC_CALL *, wchar_t *);
 
     // symbol: ?parse_status_code@WinHttpConnection@httpclient@xbox@@CAIPEAUHC_CALL@@PEAXPEAV123@@Z
-    MCAPI static uint parse_status_code(struct HC_CALL *, void *, class xbox::httpclient::WinHttpConnection *);
+    MCAPI static uint32_t parse_status_code(struct HC_CALL *, void *, class xbox::httpclient::WinHttpConnection *);
 
     // symbol: ?read_next_response_chunk@WinHttpConnection@httpclient@xbox@@CAXPEAV123@K@Z
-    MCAPI static void read_next_response_chunk(class xbox::httpclient::WinHttpConnection *, ulong);
+    MCAPI static void read_next_response_chunk(class xbox::httpclient::WinHttpConnection *, unsigned long);
 
     // NOLINTEND
 

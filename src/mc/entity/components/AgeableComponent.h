@@ -15,7 +15,7 @@ public:
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
 
     // symbol: ?getAge@AgeableComponent@@QEBAHXZ
-    MCAPI int getAge() const;
+    MCAPI int32_t getAge() const;
 
     // symbol: ?getInteraction@AgeableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
@@ -24,7 +24,7 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 
     // symbol: ?setAge@AgeableComponent@@QEAAXH@Z
-    MCAPI void setAge(int);
+    MCAPI void setAge(int32_t);
 
     // NOLINTEND
 

@@ -17,10 +17,10 @@ public:
     MCAPI DelayActionList();
 
     // symbol: ?queueRequestOrExecuteAction@DelayActionList@@QEAA?AW4QueueRequestResult@@VDelayRequest@@AEAVServerLevel@@AEAVDimension@@_K_N@Z
-    MCAPI ::QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel &, class Dimension &, uint64, bool);
+    MCAPI ::QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel &, class Dimension &, uint64_t, bool);
 
     // symbol: ?tick@DelayActionList@@QEAAXAEAVServerLevel@@AEAVDimension@@_K@Z
-    MCAPI void tick(class ServerLevel &, class Dimension &, uint64);
+    MCAPI void tick(class ServerLevel &, class Dimension &, uint64_t);
 
     // NOLINTEND
 

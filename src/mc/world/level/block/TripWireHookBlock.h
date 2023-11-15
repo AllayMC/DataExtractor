@@ -115,7 +115,7 @@ public:
     virtual void __unk_vfn_83();
 
     // vIndex: 92, symbol: ?mayPlace@TripWireHookBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 93, symbol: ?mayPlace@TripWireHookBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
@@ -127,7 +127,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@TripWireHookBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -184,10 +184,10 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0TripWireHookBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TripWireHookBlock(std::string const &, int);
+    MCAPI TripWireHookBlock(std::string const &, int32_t);
 
     // symbol: ?calculateState@TripWireHookBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@_NH@Z
-    MCAPI void calculateState(class BlockSource &, class BlockPos const &, bool, int) const;
+    MCAPI void calculateState(class BlockSource &, class BlockPos const &, bool, int32_t) const;
 
     // NOLINTEND
 

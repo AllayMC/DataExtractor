@@ -53,7 +53,7 @@ namespace persona {
     MCAPI extern class HashedString const ANIMATED_FACE_TEXTURE_FRAMES_VARIABLE;
 
     // symbol: ?INVALID_INDEX@persona@@3HB
-    MCAPI extern int const INVALID_INDEX;
+    MCAPI extern int32_t const INVALID_INDEX;
 
     // symbol: ?NONE_PIECE_ID@persona@@3VUUID@mce@@B
     MCAPI extern class mce::UUID const NONE_PIECE_ID;

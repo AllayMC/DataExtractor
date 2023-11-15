@@ -77,13 +77,13 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 135, symbol: ?_useOn@DoorItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // symbol: ??0DoorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4DoorType@DoorBlock@@@Z
-    MCAPI DoorItem(std::string const &, int, ::DoorBlock::DoorType);
+    MCAPI DoorItem(std::string const &, int32_t, ::DoorBlock::DoorType);
 
     // symbol: ?place@DoorItem@@SA_NPEAVBlockSource@@HHHHPEBVBlock@@@Z
-    MCAPI static bool place(class BlockSource *, int, int, int, int, class Block const *);
+    MCAPI static bool place(class BlockSource *, int32_t, int32_t, int32_t, int32_t, class Block const *);
 
     // NOLINTEND
 

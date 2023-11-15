@@ -72,7 +72,7 @@ public:
     virtual void __unk_vfn_16() = 0;
 
     // vIndex: 17, symbol: ?registerLoop@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEAULoopingSoundState@@@Z@3@MM@Z
-    virtual uint64 registerLoop(std::string const &, std::function<void (struct LoopingSoundState &)>, float, float) = 0;
+    virtual uint64_t registerLoop(std::string const &, std::function<void (struct LoopingSoundState &)>, float, float) = 0;
 
     // vIndex: 18, symbol: __unk_vfn_18
     virtual void __unk_vfn_18() = 0;
@@ -87,10 +87,10 @@ public:
     virtual void __unk_vfn_21() = 0;
 
     // vIndex: 22, symbol: ?tryGetPlayingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@UPlayingSoundAttributes@@@std@@_K@Z
-    virtual std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const = 0;
+    virtual std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64_t) const = 0;
 
     // vIndex: 23, symbol: ?tryGetLoopingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@ULoopingSoundAttributes@@@std@@_K@Z
-    virtual std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const = 0;
+    virtual std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64_t) const = 0;
 
     // NOLINTEND
 

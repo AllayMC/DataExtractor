@@ -15,7 +15,7 @@ public:
     MCAPI bool getNextPosition(class Vec3 &, bool);
 
     // symbol: ?init@PlayerRespawnBlockRadiusRandomizer@@QEAAXIAEAVRandom@@@Z
-    MCAPI void init(uint, class Random &);
+    MCAPI void init(uint32_t, class Random &);
 
     // NOLINTEND
 

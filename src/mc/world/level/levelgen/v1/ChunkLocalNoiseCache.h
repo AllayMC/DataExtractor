@@ -30,7 +30,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ChunkLocalNoiseCache@@QEAA@V?$DividedPos2d@$03@@H@Z
-    MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int);
+    MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int32_t);
 
     // symbol: ??0ChunkLocalNoiseCache@@QEAA@XZ
     MCAPI ChunkLocalNoiseCache();

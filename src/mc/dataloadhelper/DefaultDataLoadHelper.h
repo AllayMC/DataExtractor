@@ -89,7 +89,7 @@ public:
     MCVAPI class Vec3 loadDirection(class Vec3 const &);
 
     // symbol: ?loadFacingID@DefaultDataLoadHelper@@UEAAEE@Z
-    MCVAPI uchar loadFacingID(uchar);
+    MCVAPI uint8_t loadFacingID(uint8_t);
 
     // symbol: ?loadMirror@DefaultDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
     MCVAPI ::Mirror loadMirror(::Mirror);

@@ -23,7 +23,7 @@ public:
     MCAPI bool getLooping() const;
 
     // symbol: ?getTimeStamp@TimerComponent@@QEAA_KAEBVLevel@@@Z
-    MCAPI uint64 getTimeStamp(class Level const &);
+    MCAPI uint64_t getTimeStamp(class Level const &);
 
     // symbol: ??4TimerComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class TimerComponent & operator=(class TimerComponent &&);
@@ -42,7 +42,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?getRandomTime@TimerComponent@@AEAAHAEAVActor@@@Z
-    MCAPI int getRandomTime(class Actor &);
+    MCAPI int32_t getRandomTime(class Actor &);
 
     // NOLINTEND
 

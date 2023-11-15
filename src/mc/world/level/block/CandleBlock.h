@@ -37,7 +37,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@CandleBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -148,7 +148,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@CandleBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -157,16 +157,16 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@CandleBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 186, symbol: ?getResourceCount@CandleBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 192, symbol: ?_getNumCandles@CandleBlock@@MEBAHAEBVBlock@@@Z
-    virtual int _getNumCandles(class Block const &) const;
+    virtual int32_t _getNumCandles(class Block const &) const;
 
     // vIndex: 193, symbol: ?_iterateCandles@CandleBlock@@MEBAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-    virtual void _iterateCandles(class Block const &, class BlockPos const &, std::function<void (class Vec3 const &, int)>) const;
+    virtual void _iterateCandles(class Block const &, class BlockPos const &, std::function<void (class Vec3 const &, int32_t)>) const;
 
     // vIndex: 194, symbol: ?_tryLightOnFire@CandleBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &, class Actor *) const;
@@ -178,7 +178,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0CandleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CandleBlock(std::string const &, int);
+    MCAPI CandleBlock(std::string const &, int32_t);
 
     // symbol: ?tryLightFire@CandleBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &, class Actor *);
@@ -188,7 +188,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_forEachCandle@CandleBlock@@CAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-    MCAPI static void _forEachCandle(class Block const &, class BlockPos const &, std::function<void (class Vec3 const &, int)>);
+    MCAPI static void _forEachCandle(class Block const &, class BlockPos const &, std::function<void (class Vec3 const &, int32_t)>);
 
     // NOLINTEND
 

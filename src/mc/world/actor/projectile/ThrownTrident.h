@@ -119,7 +119,7 @@ public:
     MCAPI class ItemStack getPickupItem() const;
 
     // symbol: ?returnWithLoyalty@ThrownTrident@@QEAAXH@Z
-    MCAPI void returnWithLoyalty(int);
+    MCAPI void returnWithLoyalty(int32_t);
 
     // symbol: ?setTridentItem@ThrownTrident@@QEAAXAEBVItemStack@@@Z
     MCAPI void setTridentItem(class ItemStack const &);

@@ -151,7 +151,7 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0TorchflowerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TorchflowerBlock(std::string const &, int);
+    MCAPI TorchflowerBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

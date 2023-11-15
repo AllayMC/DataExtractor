@@ -94,7 +94,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 60, symbol: ?getDirectSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
-    virtual int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
+    virtual int32_t getDirectSignal(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -103,7 +103,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 74, symbol: ?onRedstoneUpdate@DiodeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int32_t, bool) const;
 
     // vIndex: 76, symbol: __unk_vfn_76
     virtual void __unk_vfn_76();
@@ -133,7 +133,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@DiodeBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 143, symbol: ?canSpawnOn@DiodeBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor *) const;
@@ -166,7 +166,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 192, symbol: ?getSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
-    virtual int getSignal(class BlockSource &, class BlockPos const &, int) const;
+    virtual int32_t getSignal(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // vIndex: 193, symbol: ?isLocked@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isLocked(class BlockSource &, class BlockPos const &) const;
@@ -184,22 +184,22 @@ public:
     virtual bool shouldTurnOn(class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 198, symbol: ?getInputSignal@DiodeBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int getInputSignal(class BlockSource &, class BlockPos const &) const;
+    virtual int32_t getInputSignal(class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 199, symbol: ?isAlternateInput@DiodeBlock@@MEBA_NAEBVBlock@@@Z
     virtual bool isAlternateInput(class Block const &) const;
 
     // vIndex: 200, symbol: ?getAlternateSignal@DiodeBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int getAlternateSignal(class BlockSource &, class BlockPos const &) const;
+    virtual int32_t getAlternateSignal(class BlockSource &, class BlockPos const &) const;
 
     // vIndex: 201, symbol: ?getOutputSignal@DiodeBlock@@MEBAHAEBVBlock@@@Z
-    virtual int getOutputSignal(class Block const &) const;
+    virtual int32_t getOutputSignal(class Block const &) const;
 
     // vIndex: 202, symbol: ?getTurnOffDelay@DiodeBlock@@MEBAHAEBVBlock@@@Z
-    virtual int getTurnOffDelay(class Block const &) const;
+    virtual int32_t getTurnOffDelay(class Block const &) const;
 
     // vIndex: 203, symbol: ?getTurnOnDelay@RepeaterBlock@@MEBAHAEBVBlock@@@Z
-    virtual int getTurnOnDelay(class Block const &) const = 0;
+    virtual int32_t getTurnOnDelay(class Block const &) const = 0;
 
     // vIndex: 204, symbol: ?getOnBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
     virtual class Block const * getOnBlock(class Block const *) const = 0;
@@ -211,7 +211,7 @@ public:
     MCVAPI ~DiodeBlock();
 
     // symbol: ??0DiodeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI DiodeBlock(std::string const &, int, bool);
+    MCAPI DiodeBlock(std::string const &, int32_t, bool);
 
     // symbol: ?isDiode@DiodeBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isDiode(class Block const &);
@@ -221,7 +221,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?getAlternateSignalAt@DiodeBlock@@IEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI int getAlternateSignalAt(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI int32_t getAlternateSignalAt(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // NOLINTEND
 

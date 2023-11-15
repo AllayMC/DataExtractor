@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0VolumeDefinitionGroup@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVVolumeComponentFactory@@@Bedrock@@@gsl@@@Z
-    MCAPI VolumeDefinitionGroup(Bedrock::NotNullNonOwnerPtr<class VolumeComponentFactory const>);
+    MCAPI VolumeDefinitionGroup(class gsl::not_null<class Bedrock::NonOwnerPointer<class VolumeComponentFactory const>>);
 
     // symbol: ?loadDefinitions@VolumeDefinitionGroup@@QEAAXAEBVResourcePackManager@@_N@Z
     MCAPI void loadDefinitions(class ResourcePackManager const &, bool);
@@ -42,7 +42,7 @@ public:
     MCAPI bool _parseAndRegisterDefinition(std::string const &, class SemVersion const &, std::string const &);
 
     // symbol: ?_registerDefinition@VolumeDefinitionGroup@@AEAA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool _registerDefinition(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> &, class SemVersion const &, std::string const &);
+    MCAPI bool _registerDefinition(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &, class SemVersion const &, std::string const &);
 
     // NOLINTEND
 

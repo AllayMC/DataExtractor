@@ -31,7 +31,7 @@ public:
     MCAPI std::string const & getHostIpAddress() const;
 
     // symbol: ?getPort@GameConnectionInfo@Social@@QEBAHXZ
-    MCAPI int getPort() const;
+    MCAPI int32_t getPort() const;
 
     // symbol: ?getThirdPartyServerInfo@GameConnectionInfo@Social@@QEBAAEBVThirdPartyInfo@@XZ
     MCAPI class ThirdPartyInfo const & getThirdPartyServerInfo() const;
@@ -40,7 +40,7 @@ public:
     MCAPI ::Social::ConnectionType getType() const;
 
     // symbol: ?getWebRTCNetworkId@GameConnectionInfo@Social@@QEBA_KXZ
-    MCAPI uint64 getWebRTCNetworkId() const;
+    MCAPI uint64_t getWebRTCNetworkId() const;
 
     // symbol: ??4GameConnectionInfo@Social@@QEAAAEAV01@AEBV01@@Z
     MCAPI class Social::GameConnectionInfo & operator=(class Social::GameConnectionInfo const &);

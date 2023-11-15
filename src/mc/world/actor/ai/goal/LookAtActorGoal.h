@@ -40,7 +40,7 @@ public:
     MCVAPI ~LookAtActorGoal();
 
     // symbol: ??0LookAtActorGoal@@QEAA@AEAVMob@@MMHHHH@Z
-    MCAPI LookAtActorGoal(class Mob &, float, float, int, int, int, int);
+    MCAPI LookAtActorGoal(class Mob &, float, float, int32_t, int32_t, int32_t, int32_t);
 
     // NOLINTEND
 

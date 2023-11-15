@@ -48,7 +48,7 @@ public:
     MCAPI FunctionManager(std::unique_ptr<class ICommandDispatcher>, std::unique_ptr<class CommandOrigin>, class GameRule const *);
 
     // symbol: ?execute@FunctionManager@@QEAAHAEAVFunctionEntry@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
-    MCAPI int execute(class FunctionEntry &, class CommandOrigin const &, ::FunctionQueueOrder);
+    MCAPI int32_t execute(class FunctionEntry &, class CommandOrigin const &, ::FunctionQueueOrder);
 
     // symbol: ?getFunction@FunctionManager@@QEAAPEAVFunctionEntry@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class FunctionEntry * getFunction(std::string const &);
@@ -77,13 +77,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addOriginReference@FunctionManager@@AEAAAEBVCommandOrigin@@AEBV2@I@Z
-    MCAPI class CommandOrigin const & _addOriginReference(class CommandOrigin const &, uint);
+    MCAPI class CommandOrigin const & _addOriginReference(class CommandOrigin const &, uint32_t);
 
     // symbol: ?_queueCommandsAfterCaller@FunctionManager@@AEAAXAEBV?$vector@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@V?$allocator@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@@2@@std@@AEBVCommandOrigin@@@Z
     MCAPI void _queueCommandsAfterCaller(std::vector<std::unique_ptr<class IFunctionEntry>> const &, class CommandOrigin const &);
 
     // symbol: ?_removeOriginReference@FunctionManager@@AEAAXAEBVCommandOrigin@@I@Z
-    MCAPI void _removeOriginReference(class CommandOrigin const &, uint);
+    MCAPI void _removeOriginReference(class CommandOrigin const &, uint32_t);
 
     // NOLINTEND
 

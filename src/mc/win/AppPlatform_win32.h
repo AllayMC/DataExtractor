@@ -44,25 +44,25 @@ public:
     MCVAPI ::BuildPlatform getBuildPlatform() const;
 
     // symbol: ?getCaretPosition@AppPlatform_win32@@UEBAHXZ
-    MCVAPI int getCaretPosition() const;
+    MCVAPI int32_t getCaretPosition() const;
 
     // symbol: ?getDisplayHeight@AppPlatform_win32@@UEAAHXZ
-    MCVAPI int getDisplayHeight();
+    MCVAPI int32_t getDisplayHeight();
 
     // symbol: ?getDisplayWidth@AppPlatform_win32@@UEAAHXZ
-    MCVAPI int getDisplayWidth();
+    MCVAPI int32_t getDisplayWidth();
 
     // symbol: ?getEdition@AppPlatform_win32@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getEdition() const;
 
     // symbol: ?getFreeMemory@AppPlatform_win32@@UEBA_KXZ
-    MCVAPI uint64 getFreeMemory() const;
+    MCVAPI uint64_t getFreeMemory() const;
 
     // symbol: ?getLoggingPath@AppPlatform_win32@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
     MCVAPI class Core::PathBuffer<std::string> getLoggingPath() const;
 
     // symbol: ?getMemoryLimit@AppPlatform_win32@@UEBA_KXZ
-    MCVAPI uint64 getMemoryLimit() const;
+    MCVAPI uint64_t getMemoryLimit() const;
 
     // symbol: ?getModelName@AppPlatform_win32@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getModelName();
@@ -77,7 +77,7 @@ public:
     MCVAPI class Core::PathBuffer<std::string> getPackagePath() const;
 
     // symbol: ?getPlatformDpi@AppPlatform_win32@@EEBAHXZ
-    MCVAPI int getPlatformDpi() const;
+    MCVAPI int32_t getPlatformDpi() const;
 
     // symbol: ?getPlatformString@AppPlatform_win32@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getPlatformString() const;
@@ -95,10 +95,10 @@ public:
     MCVAPI std::variant<struct HWND__*, std::monostate> getRenderSurfaceParameters() const;
 
     // symbol: ?getScreenHeight@AppPlatform_win32@@UEBAHXZ
-    MCVAPI int getScreenHeight() const;
+    MCVAPI int32_t getScreenHeight() const;
 
     // symbol: ?getScreenWidth@AppPlatform_win32@@UEBAHXZ
-    MCVAPI int getScreenWidth() const;
+    MCVAPI int32_t getScreenWidth() const;
 
     // symbol: ?getSecureStorage@AppPlatform_win32@@UEAA?AV?$unique_ptr@VSecureStorage@@U?$default_delete@VSecureStorage@@@std@@@std@@XZ
     MCVAPI std::unique_ptr<class SecureStorage> getSecureStorage();
@@ -113,10 +113,10 @@ public:
     MCVAPI std::string getTextBoxBackend() const;
 
     // symbol: ?getTotalPhysicalMemory@AppPlatform_win32@@UEBA_KXZ
-    MCVAPI uint64 getTotalPhysicalMemory() const;
+    MCVAPI uint64_t getTotalPhysicalMemory() const;
 
     // symbol: ?getUsedMemory@AppPlatform_win32@@UEAA_KXZ
-    MCVAPI uint64 getUsedMemory();
+    MCVAPI uint64_t getUsedMemory();
 
     // symbol: ?hasBuyButtonWhenInvalidLicense@AppPlatform_win32@@UEAA_NXZ
     MCVAPI bool hasBuyButtonWhenInvalidLicense();
@@ -146,13 +146,13 @@ public:
     MCVAPI std::string readAssetFile(class Core::Path const &);
 
     // symbol: ?setCaretPosition@AppPlatform_win32@@UEAAXH@Z
-    MCVAPI void setCaretPosition(int);
+    MCVAPI void setCaretPosition(int32_t);
 
     // symbol: ?setFullscreenMode@AppPlatform_win32@@UEAAXW4FullscreenMode@@@Z
     MCVAPI void setFullscreenMode(::FullscreenMode);
 
     // symbol: ?setScreenSize@AppPlatform_win32@@UEAAXHH@Z
-    MCVAPI void setScreenSize(int, int);
+    MCVAPI void setScreenSize(int32_t, int32_t);
 
     // symbol: ?setSecureStorageKey@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSecureStorageKey@@@Z
     MCVAPI void setSecureStorageKey(std::string const &, class SecureStorageKey const &);
@@ -161,7 +161,7 @@ public:
     MCVAPI void setTextBoxBackend(std::string const &);
 
     // symbol: ?setWindowSize@AppPlatform_win32@@UEAAXHH@Z
-    MCVAPI void setWindowSize(int, int);
+    MCVAPI void setWindowSize(int32_t, int32_t);
 
     // symbol: ?setWindowText@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void setWindowText(std::string const &);
@@ -176,7 +176,7 @@ public:
     MCVAPI ~AppPlatform_win32();
 
     // symbol: ??0AppPlatform_win32@@QEAA@PEAUHWND__@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1V?$basic_string_view@DU?$char_traits@D@std@@@3@V?$shared_ptr@VHIDController@@@3@HH@Z
-    MCAPI AppPlatform_win32(struct HWND__*, std::string const &, std::string const &, std::string_view, std::shared_ptr<class HIDController>, int, int);
+    MCAPI AppPlatform_win32(struct HWND__*, std::string const &, std::string const &, std::string_view, std::shared_ptr<class HIDController>, int32_t, int32_t);
 
     // symbol: ?setupWorkingDirectory@AppPlatform_win32@@SAXXZ
     MCAPI static void setupWorkingDirectory();

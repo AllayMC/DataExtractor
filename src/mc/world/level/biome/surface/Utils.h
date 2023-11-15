@@ -22,7 +22,7 @@ struct SurfaceMaterialBlocks;
 namespace VanillaSurfaceBuilders::Utils {
     // NOLINTBEGIN
     // symbol: ?_buildSurface@Utils@VanillaSurfaceBuilders@@YAXAEBUSurfaceMaterialBlocks@@PEBVBlock@@AEBUSurfaceMaterialAdjustmentEvaluated@@AEAVRandom@@AEAVBlockVolume@@AEBVBlockPos@@FH_NW4WaterLevelStrategy@ISurfaceBuilder@@HAEBVHeightmapWrapper@@_N@Z
-    MCAPI void _buildSurface(struct SurfaceMaterialBlocks const &, class Block const *, struct SurfaceMaterialAdjustmentEvaluated const &, class Random &, class BlockVolume &, class BlockPos const &, short, int, bool, ::ISurfaceBuilder::WaterLevelStrategy, int, class HeightmapWrapper const &, bool);
+    MCAPI void _buildSurface(struct SurfaceMaterialBlocks const &, class Block const *, struct SurfaceMaterialAdjustmentEvaluated const &, class Random &, class BlockVolume &, class BlockPos const &, int16_t, int32_t, bool, ::ISurfaceBuilder::WaterLevelStrategy, int32_t, class HeightmapWrapper const &, bool);
 
     // symbol: ?buildSurface@Utils@VanillaSurfaceBuilders@@YAXAEBUBuildParameters@ISurfaceBuilder@@@Z
     MCAPI void buildSurface(struct ISurfaceBuilder::BuildParameters const &);
@@ -31,7 +31,7 @@ namespace VanillaSurfaceBuilders::Utils {
     MCAPI void ensureValidSurfaceMaterials(struct SurfaceMaterialAttributes &);
 
     // symbol: ?findGroundHeight@Utils@VanillaSurfaceBuilders@@YAFAEBVBlockVolume@@VPos@@AEBVHeightmapWrapper@@@Z
-    MCAPI short findGroundHeight(class BlockVolume const &, class Pos, class HeightmapWrapper const &);
+    MCAPI int16_t findGroundHeight(class BlockVolume const &, class Pos, class HeightmapWrapper const &);
 
     // symbol: ?isSteepTerrain@Utils@VanillaSurfaceBuilders@@YA_NAEBVBlockVolume@@AEBVBlockPos@@AEBUSteepMaterial@MountainAttributes@@AEBVHeightmapWrapper@@@Z
     MCAPI bool isSteepTerrain(class BlockVolume const &, class BlockPos const &, struct MountainAttributes::SteepMaterial const &, class HeightmapWrapper const &);

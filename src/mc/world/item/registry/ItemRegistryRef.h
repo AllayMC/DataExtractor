@@ -77,16 +77,16 @@ public:
     MCAPI class WeakPtr<class Item> getItem(class HashedString const &) const;
 
     // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@F@Z
-    MCAPI class WeakPtr<class Item> getItem(short) const;
+    MCAPI class WeakPtr<class Item> getItem(int16_t) const;
 
     // symbol: ?getItemCount@ItemRegistryRef@@QEBAHXZ
-    MCAPI int getItemCount() const;
+    MCAPI int32_t getItemCount() const;
 
     // symbol: ?getItemResponseFactory@ItemRegistryRef@@QEBAPEAVItemEventResponseFactory@@XZ
     MCAPI class ItemEventResponseFactory * getItemResponseFactory() const;
 
     // symbol: ?getNameFromLegacyID@ItemRegistryRef@@QEBA?AVHashedString@@F@Z
-    MCAPI class HashedString getNameFromLegacyID(short) const;
+    MCAPI class HashedString getNameFromLegacyID(int16_t) const;
 
     // symbol: ?getNameToItemMap@ItemRegistryRef@@QEBAAEBV?$unordered_map@VHashedString@@V?$WeakPtr@VItem@@@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@V?$WeakPtr@VItem@@@@@std@@@4@@std@@XZ
     MCAPI std::unordered_map<class HashedString,class WeakPtr<class Item>> const & getNameToItemMap() const;
@@ -116,13 +116,13 @@ public:
     MCAPI class ItemRegistryRef::LockGuard lockItemWorldCompatibilityMutex() const;
 
     // symbol: ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAHV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class WeakPtr<class Item> lookupByName(int &, std::string_view) const;
+    MCAPI class WeakPtr<class Item> lookupByName(int32_t &, std::string_view) const;
 
     // symbol: ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
     MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
 
     // symbol: ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAH0V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class WeakPtr<class Item> lookupByName(int &, int &, std::string_view) const;
+    MCAPI class WeakPtr<class Item> lookupByName(int32_t &, int32_t &, std::string_view) const;
 
     // symbol: ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const &) const;
@@ -131,7 +131,7 @@ public:
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string_view) const;
 
     // symbol: ?lookupByNameNoParsing@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAHAEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int &, class HashedString const &) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int32_t &, class HashedString const &) const;
 
     // symbol: ?lookupByTag@ItemRegistryRef@@QEBA?AV?$unordered_set@PEBVItem@@U?$hash@PEBVItem@@@std@@U?$equal_to@PEBVItem@@@3@V?$allocator@PEBVItem@@@3@@std@@AEBUItemTag@@@Z
     MCAPI std::unordered_set<class Item const *> lookupByTag(struct ItemTag const &) const;
@@ -149,16 +149,16 @@ public:
     MCAPI void registerExtraItemInitCallback(std::function<void (class ItemRegistryRef)>) const;
 
     // symbol: ?registerLegacyID@ItemRegistryRef@@QEBAXAEBVHashedString@@F@Z
-    MCAPI void registerLegacyID(class HashedString const &, short) const;
+    MCAPI void registerLegacyID(class HashedString const &, int16_t) const;
 
     // symbol: ?registerLegacyMapping@ItemRegistryRef@@QEBAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
     MCAPI void registerLegacyMapping(class HashedString const &, class HashedString const &, class BaseGameVersion const &) const;
 
     // symbol: ?remapToFullLegacyNameByHash@ItemRegistryRef@@QEBA_K_K@Z
-    MCAPI uint64 remapToFullLegacyNameByHash(uint64) const;
+    MCAPI uint64_t remapToFullLegacyNameByHash(uint64_t) const;
 
     // symbol: ?remapToLegacyNameByHash@ItemRegistryRef@@QEBA_K_K@Z
-    MCAPI uint64 remapToLegacyNameByHash(uint64) const;
+    MCAPI uint64_t remapToLegacyNameByHash(uint64_t) const;
 
     // symbol: ?setCheckForItemWorldCompatibility@ItemRegistryRef@@QEBAX_N@Z
     MCAPI void setCheckForItemWorldCompatibility(bool) const;

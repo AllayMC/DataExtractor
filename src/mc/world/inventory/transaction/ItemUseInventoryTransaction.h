@@ -23,7 +23,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?read@ItemUseInventoryTransaction@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream &);
 
     // vIndex: 2, symbol: ?write@ItemUseInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream &) const;
@@ -47,7 +47,7 @@ public:
     MCAPI class ItemUseInventoryTransaction & operator=(class ItemUseInventoryTransaction const &);
 
     // symbol: ?resendBlocksAroundArea@ItemUseInventoryTransaction@@QEBAXAEAVPlayer@@AEBVBlockPos@@E@Z
-    MCAPI void resendBlocksAroundArea(class Player &, class BlockPos const &, uchar) const;
+    MCAPI void resendBlocksAroundArea(class Player &, class BlockPos const &, uint8_t) const;
 
     // symbol: ?resendPlayerState@ItemUseInventoryTransaction@@QEBAXAEAVPlayer@@@Z
     MCAPI void resendPlayerState(class Player &) const;

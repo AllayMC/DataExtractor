@@ -33,19 +33,19 @@ public:
     virtual char readByte();
 
     // vIndex: 6, symbol: ?readShort@BigEndianStringByteInput@@UEAAFXZ
-    virtual short readShort();
+    virtual int16_t readShort();
 
     // vIndex: 7, symbol: ?readInt@BigEndianStringByteInput@@UEAAHXZ
-    virtual int readInt();
+    virtual int32_t readInt();
 
     // vIndex: 8, symbol: ?readLongLong@BigEndianStringByteInput@@UEAA_JXZ
-    virtual int64 readLongLong();
+    virtual int64_t readLongLong();
 
     // vIndex: 9, symbol: ?readBytes@RakDataInput@@UEAA_NPEAX_K@Z
-    virtual bool readBytes(void *, uint64);
+    virtual bool readBytes(void *, uint64_t);
 
     // vIndex: 10, symbol: ?numBytesLeft@RakDataInput@@UEBA_KXZ
-    virtual uint64 numBytesLeft() const;
+    virtual uint64_t numBytesLeft() const;
 
     // symbol: ??1RakDataInput@@UEAA@XZ
     MCVAPI ~RakDataInput();

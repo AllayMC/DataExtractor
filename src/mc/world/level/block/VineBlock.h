@@ -112,7 +112,7 @@ public:
     virtual void __unk_vfn_83();
 
     // vIndex: 92, symbol: ?mayPlace@VineBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uchar) const;
+    virtual bool mayPlace(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 100, symbol: ?neighborChanged@VineBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@VineBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -142,10 +142,10 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 134, symbol: ?getColor@VineBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const &) const;
+    virtual int32_t getColor(class Block const &) const;
 
     // vIndex: 135, symbol: ?getColor@VineBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
+    virtual int32_t getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -190,37 +190,37 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0VineBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI VineBlock(std::string const &, int);
+    MCAPI VineBlock(std::string const &, int32_t);
 
     // symbol: ?growDown@VineBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void growDown(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI void growDown(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // symbol: ?growSideways@VineBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void growSideways(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI void growSideways(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // symbol: ?growUp@VineBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void growUp(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI void growUp(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // symbol: ?getBlockForFace@VineBlock@@SAAEBVBlock@@E@Z
-    MCAPI static class Block const & getBlockForFace(uchar);
+    MCAPI static class Block const & getBlockForFace(uint8_t);
 
     // symbol: ?isAcceptableNeighbour@VineBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isAcceptableNeighbour(class Block const &);
 
     // symbol: ?VINE_ALL@VineBlock@@2HB
-    MCAPI static int const VINE_ALL;
+    MCAPI static int32_t const VINE_ALL;
 
     // symbol: ?VINE_EAST@VineBlock@@2HB
-    MCAPI static int const VINE_EAST;
+    MCAPI static int32_t const VINE_EAST;
 
     // symbol: ?VINE_NORTH@VineBlock@@2HB
-    MCAPI static int const VINE_NORTH;
+    MCAPI static int32_t const VINE_NORTH;
 
     // symbol: ?VINE_SOUTH@VineBlock@@2HB
-    MCAPI static int const VINE_SOUTH;
+    MCAPI static int32_t const VINE_SOUTH;
 
     // symbol: ?VINE_WEST@VineBlock@@2HB
-    MCAPI static int const VINE_WEST;
+    MCAPI static int32_t const VINE_WEST;
 
     // NOLINTEND
 
@@ -236,7 +236,7 @@ public:
     MCAPI bool _canSideSpread(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ?_nextVineDirections@VineBlock@@AEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI int _nextVineDirections(class BlockSource &, class BlockPos const &) const;
+    MCAPI int32_t _nextVineDirections(class BlockSource &, class BlockPos const &) const;
 
     // NOLINTEND
 

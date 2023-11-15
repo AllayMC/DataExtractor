@@ -66,16 +66,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?OnBroadcastDiscoveryRequestReceivedGetResponse@NetherNetConnector@@EEAA_NPEAXPEAH@Z
-    MCVAPI bool OnBroadcastDiscoveryRequestReceivedGetResponse(void *, int *);
+    MCVAPI bool OnBroadcastDiscoveryRequestReceivedGetResponse(void *, int32_t *);
 
     // symbol: ?OnBroadcastResponseReceived@NetherNetConnector@@EEAAXUNetworkID@NetherNet@@PEBXH@Z
-    MCVAPI void OnBroadcastResponseReceived(struct NetherNet::NetworkID, void const *, int);
+    MCVAPI void OnBroadcastResponseReceived(struct NetherNet::NetworkID, void const *, int32_t);
 
     // symbol: ?OnSessionConnectFailure@NetherNetConnector@@EEAAXUNetworkID@NetherNet@@W4ESessionError@3@@Z
     MCVAPI void OnSessionConnectFailure(struct NetherNet::NetworkID, ::NetherNet::ESessionError);
 
     // symbol: ?OnSessionGetConnectionFlags@NetherNetConnector@@EEAAXUNetworkID@NetherNet@@PEAI@Z
-    MCVAPI void OnSessionGetConnectionFlags(struct NetherNet::NetworkID, uint *);
+    MCVAPI void OnSessionGetConnectionFlags(struct NetherNet::NetworkID, uint32_t *);
 
     // symbol: ?OnSessionRequested@NetherNetConnector@@EEAAXUNetworkID@NetherNet@@@Z
     MCVAPI void OnSessionRequested(struct NetherNet::NetworkID);
@@ -129,26 +129,26 @@ public:
     MCAPI bool getSessionState(struct NetherNet::NetworkID, struct NetherNet::SessionState *) const;
 
     // symbol: ?isPacketAvailable@NetherNetConnector@@QEBA_NUNetworkID@NetherNet@@PEAI@Z
-    MCAPI bool isPacketAvailable(struct NetherNet::NetworkID, uint *) const;
+    MCAPI bool isPacketAvailable(struct NetherNet::NetworkID, uint32_t *) const;
 
     // symbol: ?readPacket@NetherNetConnector@@QEBA_NUNetworkID@NetherNet@@PEAXIPEAI@Z
-    MCAPI bool readPacket(struct NetherNet::NetworkID, void *, uint, uint *) const;
+    MCAPI bool readPacket(struct NetherNet::NetworkID, void *, uint32_t, uint32_t *) const;
 
     // symbol: ?sendPacket@NetherNetConnector@@QEBA_NUNetworkID@NetherNet@@PEBDIW4ESendType@3@@Z
-    MCAPI bool sendPacket(struct NetherNet::NetworkID, char const *, uint, ::NetherNet::ESendType) const;
+    MCAPI bool sendPacket(struct NetherNet::NetworkID, char const *, uint32_t, ::NetherNet::ESendType) const;
 
     // symbol: ?setBroadcastRequestCallback@NetherNetConnector@@QEAAX$$QEAV?$function@$$A6A_NPEAXPEAH@Z@std@@@Z
-    MCAPI void setBroadcastRequestCallback(std::function<bool (void *, int *)> &&);
+    MCAPI void setBroadcastRequestCallback(std::function<bool (void *, int32_t *)> &&);
 
     // symbol: ?setBroadcastResponseCallback@NetherNetConnector@@QEAAX$$QEAV?$function@$$A6AXAEBUNetworkID@NetherNet@@PEBXH@Z@std@@@Z
-    MCAPI void setBroadcastResponseCallback(std::function<void (struct NetherNet::NetworkID const &, void const *, int)> &&);
+    MCAPI void setBroadcastResponseCallback(std::function<void (struct NetherNet::NetworkID const &, void const *, int32_t)> &&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getOrCreatePeer@NetherNetConnector@@AEAA?AV?$not_null@V?$shared_ptr@VWebRTCNetworkPeer@@@std@@@gsl@@_KAEBV?$UniqueLock@VMutex@Threading@Bedrock@@@Threading@Bedrock@@@Z
-    MCAPI gsl::not_null<std::shared_ptr<class WebRTCNetworkPeer>> _getOrCreatePeer(uint64, class Bedrock::Threading::UniqueLock<class Bedrock::Threading::Mutex> const &);
+    MCAPI class gsl::not_null<std::shared_ptr<class WebRTCNetworkPeer>> _getOrCreatePeer(uint64_t, class Bedrock::Threading::UniqueLock<class Bedrock::Threading::Mutex> const &);
 
     // NOLINTEND
 

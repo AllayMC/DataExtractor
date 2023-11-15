@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ContainerValidationSlotData@@QEAA@W4ContainerEnumName@@H@Z
-    MCAPI ContainerValidationSlotData(::ContainerEnumName, int);
+    MCAPI ContainerValidationSlotData(::ContainerEnumName, int32_t);
 
     // symbol: ?AUTOPLACE@ContainerValidationSlotData@@2U1@B
     MCAPI static struct ContainerValidationSlotData const AUTOPLACE;

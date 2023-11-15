@@ -27,7 +27,7 @@ public:
     virtual bool finalize(class BlockSource &, class IRandom &);
 
     // symbol: ??0StructurePoolBlockPredicateCappedRandomBlockReplacement@@QEAA@AEBV?$map@VHashedString@@V1@U?$less@VHashedString@@@std@@V?$allocator@U?$pair@$$CBVHashedString@@V1@@std@@@3@@std@@_K@Z
-    MCAPI StructurePoolBlockPredicateCappedRandomBlockReplacement(std::map<class HashedString,class HashedString> const &, uint64);
+    MCAPI StructurePoolBlockPredicateCappedRandomBlockReplacement(std::map<class HashedString,class HashedString> const &, uint64_t);
 
     // NOLINTEND
 

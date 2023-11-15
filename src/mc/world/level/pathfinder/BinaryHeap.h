@@ -36,7 +36,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?downHeap@BinaryHeap@@AEAAXH@Z
-    MCAPI void downHeap(int);
+    MCAPI void downHeap(int32_t);
 
     // NOLINTEND
 

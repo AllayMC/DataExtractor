@@ -56,7 +56,7 @@ public:
     virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const &, std::vector<std::string>) const;
 
     // vIndex: 11, symbol: ?getPackStackIndexOfResource@ResourcePackManager@@UEBA?AU?$pair@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-    virtual std::pair<int, std::string const &> getPackStackIndexOfResource(class ResourceLocation const &, std::vector<std::string> const &) const;
+    virtual std::pair<int32_t, std::string const &> getPackStackIndexOfResource(class ResourceLocation const &, std::vector<std::string> const &) const;
 
     // vIndex: 12, symbol: ?hasCapability@ResourcePackManager@@UEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     virtual bool hasCapability(std::string_view) const;
@@ -65,13 +65,13 @@ public:
     MCVAPI ~ResourcePackManager();
 
     // symbol: ??0ResourcePackManager@@QEAA@V?$function@$$A6A?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ@std@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@gsl@@_N@Z
-    MCAPI ResourcePackManager(std::function<class Core::PathBuffer<std::string> (void)>, Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const &, bool);
+    MCAPI ResourcePackManager(std::function<class Core::PathBuffer<std::string> (void)>, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, bool);
 
     // symbol: ?clearStack@ResourcePackManager@@QEAAXW4ResourcePackStackType@@_N@Z
     MCAPI void clearStack(::ResourcePackStackType, bool);
 
     // symbol: ?composeFullStack@ResourcePackManager@@QEBAHAEAVResourcePackStack@@AEBV2@11@Z
-    MCAPI int composeFullStack(class ResourcePackStack &, class ResourcePackStack const &, class ResourcePackStack const &, class ResourcePackStack const &) const;
+    MCAPI int32_t composeFullStack(class ResourcePackStack &, class ResourcePackStack const &, class ResourcePackStack const &, class ResourcePackStack const &) const;
 
     // symbol: ?getFullStackMinEngineVersion@ResourcePackManager@@QEBA?AVSemVersion@@XZ
     MCAPI class SemVersion getFullStackMinEngineVersion() const;

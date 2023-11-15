@@ -83,7 +83,7 @@ public:
     virtual void buildDebugInfo(std::string &) const;
 
     // vIndex: 126, symbol: ?canBeAffected@Npc@@UEBA_NI@Z
-    virtual bool canBeAffected(uint) const;
+    virtual bool canBeAffected(uint32_t) const;
 
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
@@ -110,7 +110,7 @@ public:
     virtual void __unk_vfn_172();
 
     // vIndex: 173, symbol: ?knockback@Npc@@UEAAXPEAVActor@@HMMMMM@Z
-    virtual void knockback(class Actor *, int, float, float, float, float, float);
+    virtual void knockback(class Actor *, int32_t, float, float, float, float, float);
 
     // vIndex: 209, symbol: ?canExistWhenDisallowMob@Npc@@UEBA_NXZ
     virtual bool canExistWhenDisallowMob() const;

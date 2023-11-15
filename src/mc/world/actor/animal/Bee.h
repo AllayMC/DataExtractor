@@ -68,7 +68,7 @@ public:
     virtual void __unk_vfn_109();
 
     // vIndex: 114, symbol: ?onSynchedDataUpdate@Bee@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
 
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();

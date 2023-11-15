@@ -14,28 +14,28 @@ option("localbdslibrary")
     set_description("Use local bdslibrary")
 option_end()
 
+add_requires("localbdslibrary")
+
 -- xmake-repo
-add_requires("asio 1.28.0")
-add_requires("cpp-httplib v0.12.1")
-add_requires("entt v3.11.1")
-add_requires("fmt 9.1.0")
-add_requires("gsl v3.1.0")
-add_requires("gtest 1.12.1")
+add_requires("entt v3.12.2")
+add_requires("gsl v4.0.0")
 add_requires("leveldb 1.23")
-add_requires("openssl 1.1.1-t") -- should be installed before mariadb-connector-c
-add_requires("magic_enum v0.8.2")
-add_requires("nlohmann_json v3.11.2")
 add_requires("rapidjson v1.1.0")
 add_requires("zlib-ng 2.1.3")
 
+-- ^^^ for mc / for ll vvv
+add_requires("fmt 10.1.1")
+add_requires("magic_enum v0.9.0")
+add_requires("nlohmann_json v3.11.2")
+add_requires("gtest 1.12.1")
+
 -- liteldev-repo
-add_requires("dyncall 1.4")
-add_requires("compact_enc_det v1.0.1")
-add_requires("fifo_map v1.0.0")
 add_requires("pcg_cpp v1.0.0")
-add_requires("preloader v1.1.0")
-add_requires("symbolprovider v1.0.1")
-add_requires("localbdslibrary")
+add_requires("preloader v1.3.0")
+add_requires("symbolprovider v1.1.0")
+add_requires("ctre 3.8.1")
+add_requires("pfr 2.1.1")
+
 
 target("DataExtractor")
     set_license("LGPL-3")
@@ -43,6 +43,7 @@ target("DataExtractor")
     set_languages("c++20")
     set_symbols("debug")
     set_exceptions("none")
+    set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
     add_headerfiles("src/(**.h)", "src/(**.hpp)")
     add_includedirs("./src")
     add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4")
@@ -54,9 +55,9 @@ target("DataExtractor")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("src/**.cpp")
     -- xmake-repo
-    add_packages("zlib-ng","asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
+    add_packages("entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "rapidjson","zlib-ng")
     -- liteldev-repo
-    add_packages("fifo_map", "pcg_cpp", "dyncall", "compact_enc_det", "preloader", "symbolprovider")
+    add_packages("pcg_cpp", "preloader", "symbolprovider", "ctre", "pfr")
     add_packages("localbdslibrary")
 
 task("bds-lib")

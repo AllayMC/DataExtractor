@@ -28,13 +28,13 @@ public:
     MCVAPI class Container const * getContainer() const;
 
     // symbol: ?getContainerSize@DispenserBlockActor@@UEBAHXZ
-    MCVAPI int getContainerSize() const;
+    MCVAPI int32_t getContainerSize() const;
 
     // symbol: ?getItem@DispenserBlockActor@@UEBAAEBVItemStack@@H@Z
-    MCVAPI class ItemStack const & getItem(int) const;
+    MCVAPI class ItemStack const & getItem(int32_t) const;
 
     // symbol: ?getMaxStackSize@DispenserBlockActor@@UEBAHXZ
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
 
     // symbol: ?getName@DispenserBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getName() const;
@@ -49,10 +49,10 @@ public:
     MCVAPI bool save(class CompoundTag &) const;
 
     // symbol: ?serverInitItemStackIds@DispenserBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void (int, class ItemStack const &)>);
+    MCVAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void (int32_t, class ItemStack const &)>);
 
     // symbol: ?setItem@DispenserBlockActor@@UEAAXHAEBVItemStack@@@Z
-    MCVAPI void setItem(int, class ItemStack const &);
+    MCVAPI void setItem(int32_t, class ItemStack const &);
 
     // symbol: ?startOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z
     MCVAPI void startOpen(class Player &);
@@ -67,7 +67,7 @@ public:
     MCAPI DispenserBlockActor(class BlockPos, ::BlockActorType);
 
     // symbol: ?getRandomSlot@DispenserBlockActor@@QEAAHAEAVRandom@@@Z
-    MCAPI int getRandomSlot(class Random &);
+    MCAPI int32_t getRandomSlot(class Random &);
 
     // NOLINTEND
 

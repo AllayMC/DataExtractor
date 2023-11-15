@@ -36,10 +36,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_replaceArmorSlots@ItemReplacementCommandUtil@Util@@CAXAEAUReplacementResults@2@AEAVActor@@V?$span@$$CBVItemStack@@$0?0@gsl@@W4EquipmentSlot@@H@Z
-    MCAPI static void _replaceArmorSlots(struct Util::ReplacementResults &, class Actor &, gsl::span<class ItemStack const>, ::EquipmentSlot, int);
+    MCAPI static void _replaceArmorSlots(struct Util::ReplacementResults &, class Actor &, class gsl::span<class ItemStack const>, ::EquipmentSlot, int32_t);
 
     // symbol: ?_slotBoundsValid@ItemReplacementCommandUtil@Util@@CA_NAEAUReplacementResults@2@HHV?$optional@H@std@@1@Z
-    MCAPI static bool _slotBoundsValid(struct Util::ReplacementResults &, int, int, std::optional<int>, std::optional<int>);
+    MCAPI static bool _slotBoundsValid(struct Util::ReplacementResults &, int32_t, int32_t, std::optional<int32_t>, std::optional<int32_t>);
 
     // NOLINTEND
 

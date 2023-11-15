@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?setColorChoice@ColorDefinition@@QEAAXAEBH@Z
-    MCAPI void setColorChoice(int const &);
+    MCAPI void setColorChoice(int32_t const &);
 
     // symbol: ?buildSchema@ColorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UColorDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ColorDefinition>> &);

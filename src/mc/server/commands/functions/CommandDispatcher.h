@@ -17,7 +17,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?performCommand@CommandDispatcher@@UEAAHAEBVCommandOrigin@@AEAVCommand@@@Z
-    virtual int performCommand(class CommandOrigin const &, class Command &);
+    virtual int32_t performCommand(class CommandOrigin const &, class Command &);
 
     // symbol: ??0CommandDispatcher@@QEAA@XZ
     MCAPI CommandDispatcher();

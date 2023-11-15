@@ -72,7 +72,7 @@ public:
     virtual void __unk_vfn_109();
 
     // vIndex: 143, symbol: ?setAuxValue@ThrownPotion@@UEAAXH@Z
-    virtual void setAuxValue(int);
+    virtual void setAuxValue(int32_t);
 
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
@@ -102,7 +102,7 @@ public:
     MCAPI ThrownPotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
     // symbol: ?getPotionId@ThrownPotion@@QEBAFXZ
-    MCAPI short getPotionId() const;
+    MCAPI int16_t getPotionId() const;
 
     // symbol: ?setLinger@ThrownPotion@@QEAAX_N@Z
     MCAPI void setLinger(bool);

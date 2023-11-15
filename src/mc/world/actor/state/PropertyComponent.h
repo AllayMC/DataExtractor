@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PropertyComponent@@QEAA@V?$not_null@V?$shared_ptr@$$CBVPropertyGroup@@@std@@@gsl@@AEAVRenderParams@@@Z
-    MCAPI PropertyComponent(gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams &);
+    MCAPI PropertyComponent(class gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams &);
 
     // symbol: ??0PropertyComponent@@QEAA@$$QEAV0@@Z
     MCAPI PropertyComponent(class PropertyComponent &&);
@@ -24,25 +24,25 @@ public:
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
 
     // symbol: ?applyPendingChanges@PropertyComponent@@QEAAXAEBV?$unordered_map@_KV?$variant@HM_N_K@std@@U?$hash@_K@2@U?$equal_to@_K@2@V?$allocator@U?$pair@$$CB_KV?$variant@HM_N_K@std@@@std@@@2@@std@@@Z
-    MCAPI void applyPendingChanges(std::unordered_map<uint64,std::variant<int, float, bool, uint64>> const &);
+    MCAPI void applyPendingChanges(std::unordered_map<uint64_t,std::variant<int32_t, float, bool, uint64_t>> const &);
 
     // symbol: ?getBool@PropertyComponent@@QEBA_N_K@Z
-    MCAPI bool getBool(uint64) const;
+    MCAPI bool getBool(uint64_t) const;
 
     // symbol: ?getFloat@PropertyComponent@@QEBAM_K@Z
-    MCAPI float getFloat(uint64) const;
+    MCAPI float getFloat(uint64_t) const;
 
     // symbol: ?getInt@PropertyComponent@@QEBAH_K@Z
-    MCAPI int getInt(uint64) const;
+    MCAPI int32_t getInt(uint64_t) const;
 
     // symbol: ?getMolangValue@PropertyComponent@@QEBA_N_KAEAUMolangScriptArg@@@Z
-    MCAPI bool getMolangValue(uint64, struct MolangScriptArg &) const;
+    MCAPI bool getMolangValue(uint64_t, struct MolangScriptArg &) const;
 
     // symbol: ?getPropertyType@PropertyComponent@@QEBA?AW4ContainedType@PropertyMetadata@@_K@Z
-    MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64) const;
+    MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64_t) const;
 
     // symbol: ?getString@PropertyComponent@@QEBAAEBVHashedString@@_K@Z
-    MCAPI class HashedString const & getString(uint64) const;
+    MCAPI class HashedString const & getString(uint64_t) const;
 
     // symbol: ?hasDirtyProperties@PropertyComponent@@QEBA_NXZ
     MCAPI bool hasDirtyProperties() const;
@@ -63,16 +63,16 @@ public:
     MCAPI void setAliasProperties(std::unordered_map<class HashedString,std::shared_ptr<class Tag>> const &, std::string const &, std::string const &);
 
     // symbol: ?tryGetBool@PropertyComponent@@QEBA?AV?$optional@_N@std@@_K@Z
-    MCAPI std::optional<bool> tryGetBool(uint64) const;
+    MCAPI std::optional<bool> tryGetBool(uint64_t) const;
 
     // symbol: ?tryGetFloat@PropertyComponent@@QEBA?AV?$optional@M@std@@_K@Z
-    MCAPI std::optional<float> tryGetFloat(uint64) const;
+    MCAPI std::optional<float> tryGetFloat(uint64_t) const;
 
     // symbol: ?tryGetInt@PropertyComponent@@QEBA?AV?$optional@H@std@@_K@Z
-    MCAPI std::optional<int> tryGetInt(uint64) const;
+    MCAPI std::optional<int32_t> tryGetInt(uint64_t) const;
 
     // symbol: ?tryGetString@PropertyComponent@@QEBAPEBVHashedString@@_K@Z
-    MCAPI class HashedString const * tryGetString(uint64) const;
+    MCAPI class HashedString const * tryGetString(uint64_t) const;
 
     // symbol: ??1PropertyComponent@@QEAA@XZ
     MCAPI ~PropertyComponent();

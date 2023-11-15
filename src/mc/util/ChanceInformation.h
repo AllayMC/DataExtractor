@@ -21,7 +21,7 @@ public:
     MCAPI void set(float);
 
     // symbol: ?set@ChanceInformation@@QEAAXII@Z
-    MCAPI void set(uint, uint);
+    MCAPI void set(uint32_t, uint32_t);
 
     // NOLINTEND
 

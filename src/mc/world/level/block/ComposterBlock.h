@@ -44,7 +44,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@ComposterBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -137,7 +137,7 @@ public:
     virtual void __unk_vfn_124();
 
     // vIndex: 125, symbol: ?getComparatorSignal@ComposterBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uchar) const;
+    virtual int32_t getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uint8_t) const;
 
     // vIndex: 127, symbol: __unk_vfn_127
     virtual void __unk_vfn_127();
@@ -146,7 +146,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@ComposterBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -176,7 +176,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@ComposterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -188,16 +188,16 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 
     // symbol: ??0ComposterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ComposterBlock(std::string const &, int);
+    MCAPI ComposterBlock(std::string const &, int32_t);
 
     // symbol: ?addItem@ComposterBlock@@SA_NAEAVContainer@@HAEAVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
+    MCAPI static bool addItem(class Container &, int32_t, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
 
     // symbol: ?addItems@ComposterBlock@@SAHAEBVItemStack@@HAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI static int addItems(class ItemStack const &, int, class BlockSource &, class Block const &, class BlockPos const &);
+    MCAPI static int32_t addItems(class ItemStack const &, int32_t, class BlockSource &, class Block const &, class BlockPos const &);
 
     // symbol: ?addItems@ComposterBlock@@SA_NAEAVContainer@@HAEAVItemStack@@HAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI static bool addItems(class Container &, int, class ItemStack &, int, class BlockSource &, class Block const &, class BlockPos const &);
+    MCAPI static bool addItems(class Container &, int32_t, class ItemStack &, int32_t, class BlockSource &, class Block const &, class BlockPos const &);
 
     // symbol: ?empty@ComposterBlock@@SAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
     MCAPI static void empty(class BlockSource &, class Block const &, class BlockPos const &);
@@ -216,10 +216,10 @@ public:
     MCAPI void _emitBoneMeal(class Level &, class BlockSource &, class BlockPos const &) const;
 
     // symbol: ?_notifyClientComposterUsed@ComposterBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
-    MCAPI void _notifyClientComposterUsed(class Player const &, short, ::MinecraftEventing::POIBlockInteractionType) const;
+    MCAPI void _notifyClientComposterUsed(class Player const &, int16_t, ::MinecraftEventing::POIBlockInteractionType) const;
 
     // symbol: ?_getCompostableItems@ComposterBlock@@CAAEBV?$unordered_map@_KCU?$hash@_K@std@@U?$equal_to@_K@2@V?$allocator@U?$pair@$$CB_KC@std@@@2@@std@@XZ
-    MCAPI static std::unordered_map<uint64,schar> const & _getCompostableItems();
+    MCAPI static std::unordered_map<uint64_t,int8_t> const & _getCompostableItems();
 
     // NOLINTEND
 

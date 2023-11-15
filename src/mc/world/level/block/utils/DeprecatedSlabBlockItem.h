@@ -76,10 +76,10 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 133, symbol: ?_calculatePlacePos@DeprecatedSlabBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-    virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, uchar &, class BlockPos &) const;
+    virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, uint8_t &, class BlockPos &) const;
 
     // vIndex: 135, symbol: ?_useOn@DeprecatedSlabBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // symbol: ??1DeprecatedSlabBlockItem@@UEAA@XZ
     MCVAPI ~DeprecatedSlabBlockItem();
@@ -89,13 +89,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_canConvertToDoubleSlab@DeprecatedSlabBlockItem@@AEBA?AV?$optional@H@std@@AEAVItemStackBase@@AEBVActor@@AEBEAEBVBlock@@@Z
-    MCAPI std::optional<int> _canConvertToDoubleSlab(class ItemStackBase &, class Actor const &, uchar const &, class Block const &) const;
+    MCAPI std::optional<int32_t> _canConvertToDoubleSlab(class ItemStackBase &, class Actor const &, uint8_t const &, class Block const &) const;
 
     // symbol: ?_findSlabType@DeprecatedSlabBlockItem@@AEBAHAEBVBlock@@@Z
-    MCAPI int _findSlabType(class Block const &) const;
+    MCAPI int32_t _findSlabType(class Block const &) const;
 
     // symbol: ?_trySetDoubleBlock@DeprecatedSlabBlockItem@@AEBA_NAEAVBlockSource@@AEAVLevel@@AEBVBlockPos@@AEAVActor@@AEAVItemStack@@AEBVBlock@@V?$not_null@PEBVBlock@@@gsl@@@Z
-    MCAPI bool _trySetDoubleBlock(class BlockSource &, class Level &, class BlockPos const &, class Actor &, class ItemStack &, class Block const &, gsl::not_null<class Block const *>) const;
+    MCAPI bool _trySetDoubleBlock(class BlockSource &, class Level &, class BlockPos const &, class Actor &, class ItemStack &, class Block const &, class gsl::not_null<class Block const *>) const;
 
     // NOLINTEND
 

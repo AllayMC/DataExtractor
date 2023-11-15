@@ -24,7 +24,7 @@ public:
     MCAPI void FreeMemory();
 
     // symbol: ?GenerateFromFrequencyTable@HuffmanEncodingTree@RakNet@@QEAAXQEAI@Z
-    MCAPI void GenerateFromFrequencyTable(uint *const);
+    MCAPI void GenerateFromFrequencyTable(uint32_t *const);
 
     // symbol: ??0HuffmanEncodingTree@RakNet@@QEAA@XZ
     MCAPI HuffmanEncodingTree();

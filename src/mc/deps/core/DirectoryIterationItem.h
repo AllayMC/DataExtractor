@@ -28,10 +28,10 @@ public:
     MCAPI DirectoryIterationItem(::Core::DirectoryIterationFlags);
 
     // symbol: ?getFileSize@DirectoryIterationItem@Core@@QEBA_KXZ
-    MCAPI uint64 getFileSize() const;
+    MCAPI uint64_t getFileSize() const;
 
     // symbol: ?getFileSizeAllocationOnDisk@DirectoryIterationItem@Core@@QEBA_KXZ
-    MCAPI uint64 getFileSizeAllocationOnDisk() const;
+    MCAPI uint64_t getFileSizeAllocationOnDisk() const;
 
     // symbol: ?getFullPathName@DirectoryIterationItem@Core@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ
     MCAPI class Core::PathBuffer<std::string> const & getFullPathName() const;
@@ -49,16 +49,16 @@ public:
     MCAPI bool isFile() const;
 
     // symbol: ?setCreateTime@DirectoryIterationItem@Core@@QEAAX_J@Z
-    MCAPI void setCreateTime(int64);
+    MCAPI void setCreateTime(int64_t);
 
     // symbol: ?setFileSize@DirectoryIterationItem@Core@@QEAAX_K@Z
-    MCAPI void setFileSize(uint64);
+    MCAPI void setFileSize(uint64_t);
 
     // symbol: ?setFullPathName@DirectoryIterationItem@Core@@QEAAXAEBVPath@2@@Z
     MCAPI void setFullPathName(class Core::Path const &);
 
     // symbol: ?setModifyTime@DirectoryIterationItem@Core@@QEAAX_J@Z
-    MCAPI void setModifyTime(int64);
+    MCAPI void setModifyTime(int64_t);
 
     // symbol: ?setName@DirectoryIterationItem@Core@@QEAAXAEBVPathPart@2@@Z
     MCAPI void setName(class Core::PathPart const &);

@@ -13,7 +13,7 @@ namespace DripstoneUtils { struct PointedDripstoneBasePos; }
 namespace DripstoneUtils {
     // NOLINTBEGIN
     // symbol: ?buildBaseToTipColumn@DripstoneUtils@@YAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@EH_N@Z
-    MCAPI void buildBaseToTipColumn(class IBlockWorldGenAPI &, class BlockPos const &, uchar, int, bool);
+    MCAPI void buildBaseToTipColumn(class IBlockWorldGenAPI &, class BlockPos const &, uint8_t, int32_t, bool);
 
     // symbol: ?canBeAdjacentToWater@DripstoneUtils@@YA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
     MCAPI bool canBeAdjacentToWater(class IBlockWorldGenAPI &, class BlockPos const &);
@@ -22,7 +22,7 @@ namespace DripstoneUtils {
     MCAPI bool canPlacePool(class IBlockWorldGenAPI &, class BlockPos const &);
 
     // symbol: ?getPlacementBlock@DripstoneUtils@@YAAEBVBlock@@EAEBW4DripstoneThickness@@@Z
-    MCAPI class Block const & getPlacementBlock(uchar, ::DripstoneThickness const &);
+    MCAPI class Block const & getPlacementBlock(uint8_t, ::DripstoneThickness const &);
 
     // symbol: ?getPointedDripstoneBasePos@DripstoneUtils@@YA?AV?$optional@UPointedDripstoneBasePos@DripstoneUtils@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI std::optional<struct DripstoneUtils::PointedDripstoneBasePos> getPointedDripstoneBasePos(class IBlockWorldGenAPI &, class BlockPos const &, class Random &);

@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?containerContentChanged@ContainerModel@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -30,10 +30,10 @@ public:
     virtual void releaseResources();
 
     // vIndex: 4, symbol: ?getContainerSize@ContainerModel@@UEBAHXZ
-    virtual int getContainerSize() const;
+    virtual int32_t getContainerSize() const;
 
     // vIndex: 5, symbol: ?getFilteredContainerSize@ContainerModel@@UEBAHXZ
-    virtual int getFilteredContainerSize() const;
+    virtual int32_t getFilteredContainerSize() const;
 
     // vIndex: 6, symbol: __unk_vfn_6
     virtual void __unk_vfn_6();
@@ -42,22 +42,22 @@ public:
     virtual class ContainerWeakRef getContainerWeakRef() const;
 
     // vIndex: 8, symbol: ?getItemStack@ContainerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const & getItemStack(int) const;
+    virtual class ItemStack const & getItemStack(int32_t) const;
 
     // vIndex: 9, symbol: ?getItems@ContainerModel@@UEBAAEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
     virtual std::vector<class ItemStack> const & getItems() const;
 
     // vIndex: 10, symbol: ?getItemInstance@ContainerModel@@UEBAAEBVItemInstance@@H@Z
-    virtual class ItemInstance const & getItemInstance(int) const;
+    virtual class ItemInstance const & getItemInstance(int32_t) const;
 
     // vIndex: 11, symbol: ?getItemStackBase@ContainerModel@@UEBAAEBVItemStackBase@@H@Z
-    virtual class ItemStackBase const & getItemStackBase(int) const;
+    virtual class ItemStackBase const & getItemStackBase(int32_t) const;
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
 
     // vIndex: 13, symbol: ?setItem@ContainerModel@@UEAAXHAEBVItemStack@@@Z
-    virtual void setItem(int, class ItemStack const &);
+    virtual void setItem(int32_t, class ItemStack const &);
 
     // vIndex: 14, symbol: ?isValid@ContainerModel@@UEAA_NXZ
     virtual bool isValid();
@@ -69,10 +69,10 @@ public:
     virtual void __unk_vfn_16();
 
     // vIndex: 17, symbol: ?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z
-    virtual ::ContainerExpandStatus getItemExpandStatus(int) const;
+    virtual ::ContainerExpandStatus getItemExpandStatus(int32_t) const;
 
     // vIndex: 18, symbol: ?getItemGroupName@ContainerModel@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual std::string const & getItemGroupName(int) const;
+    virtual std::string const & getItemGroupName(int32_t) const;
 
     // vIndex: 19, symbol: __unk_vfn_19
     virtual void __unk_vfn_19();
@@ -81,13 +81,13 @@ public:
     virtual class Container * _getContainer() const;
 
     // vIndex: 21, symbol: ?_getContainerOffset@ContainerModel@@MEBAHXZ
-    virtual int _getContainerOffset() const;
+    virtual int32_t _getContainerOffset() const;
 
     // vIndex: 22, symbol: ?_onItemChanged@ContainerModel@@MEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
+    virtual void _onItemChanged(int32_t, class ItemStack const &, class ItemStack const &);
 
     // symbol: ?isExpanableItemFiltered@ContainerModel@@UEBA_NH@Z
-    MCVAPI bool isExpanableItemFiltered(int) const;
+    MCVAPI bool isExpanableItemFiltered(int32_t) const;
 
     // symbol: ?isItemFiltered@ContainerModel@@UEBA_NAEBVItemStackBase@@@Z
     MCVAPI bool isItemFiltered(class ItemStackBase const &) const;
@@ -96,16 +96,16 @@ public:
     MCVAPI bool isItemInstanceBased() const;
 
     // symbol: ?switchItemExpando@ContainerModel@@UEAAXH@Z
-    MCVAPI void switchItemExpando(int);
+    MCVAPI void switchItemExpando(int32_t);
 
     // symbol: ?tick@ContainerModel@@UEAAXH@Z
-    MCVAPI void tick(int);
+    MCVAPI void tick(int32_t);
 
     // symbol: ??1ContainerModel@@UEAA@XZ
     MCVAPI ~ContainerModel();
 
     // symbol: ??0ContainerModel@@QEAA@W4ContainerEnumName@@HW4ContainerCategory@@_N@Z
-    MCAPI ContainerModel(::ContainerEnumName, int, ::ContainerCategory, bool);
+    MCAPI ContainerModel(::ContainerEnumName, int32_t, ::ContainerCategory, bool);
 
     // symbol: ?getContainerEnumName@ContainerModel@@QEBA?AW4ContainerEnumName@@XZ
     MCAPI ::ContainerEnumName getContainerEnumName() const;
@@ -117,16 +117,16 @@ public:
     MCAPI void initContainerRuntimeId();
 
     // symbol: ?isContainerSlotInRange@ContainerModel@@QEBA_NH@Z
-    MCAPI bool isContainerSlotInRange(int) const;
+    MCAPI bool isContainerSlotInRange(int32_t) const;
 
     // symbol: ?networkUpdateItem@ContainerModel@@QEAAXHAEBVItemStack@@0@Z
-    MCAPI void networkUpdateItem(int, class ItemStack const &, class ItemStack const &);
+    MCAPI void networkUpdateItem(int32_t, class ItemStack const &, class ItemStack const &);
 
     // symbol: ?registerOnContainerChangedCallback@ContainerModel@@QEAAXV?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
-    MCAPI void registerOnContainerChangedCallback(std::function<void (int, class ItemStack const &, class ItemStack const &)>);
+    MCAPI void registerOnContainerChangedCallback(std::function<void (int32_t, class ItemStack const &, class ItemStack const &)>);
 
     // symbol: ?registerPlayerNotificationCallback@ContainerModel@@QEAAXV?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
-    MCAPI void registerPlayerNotificationCallback(std::function<void (int, class ItemStack const &, class ItemStack const &)>);
+    MCAPI void registerPlayerNotificationCallback(std::function<void (int32_t, class ItemStack const &, class ItemStack const &)>);
 
     // symbol: ?serverInitItemStackIds@ContainerModel@@QEAAXXZ
     MCAPI void serverInitItemStackIds();
@@ -146,7 +146,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_onClientUIItemNetworkChanged@ContainerModel@@AEAAXHAEBVItemStack@@0@Z
-    MCAPI void _onClientUIItemNetworkChanged(int, class ItemStack const &, class ItemStack const &);
+    MCAPI void _onClientUIItemNetworkChanged(int32_t, class ItemStack const &, class ItemStack const &);
 
     // NOLINTEND
 

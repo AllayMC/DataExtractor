@@ -35,7 +35,7 @@ public:
     MCAPI class Scripting::Result<std::string> getCooldownCategory();
 
     // symbol: ?getCooldownTicks@ScriptItemCooldownComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getCooldownTicks();
+    MCAPI class Scripting::Result<int32_t> getCooldownTicks();
 
     // symbol: ??4ScriptItemCooldownComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptItemCooldownComponent & operator=(class ScriptModuleMinecraft::ScriptItemCooldownComponent const &);

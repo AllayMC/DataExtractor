@@ -19,7 +19,7 @@ public:
     MCAPI class Actor * getActorFromArg(struct MolangScriptArg const &) const;
 
     // symbol: ?getActorPtrFromPushedArray@MolangEvalParams@@QEBAPEAVActor@@_K0AEA_N@Z
-    MCAPI class Actor * getActorPtrFromPushedArray(uint64, uint64, bool &) const;
+    MCAPI class Actor * getActorPtrFromPushedArray(uint64_t, uint64_t, bool &) const;
 
     // symbol: ?popActor@MolangEvalParams@@QEAAPEAVActor@@XZ
     MCAPI class Actor * popActor();
@@ -28,13 +28,13 @@ public:
     MCAPI float popFloat();
 
     // symbol: ?popHash@MolangEvalParams@@QEAA_KXZ
-    MCAPI uint64 popHash();
+    MCAPI uint64_t popHash();
 
     // symbol: ?popMissingVariableOrActorAddress@MolangEvalParams@@QEAA_KW4MolangVariableIndex@@@Z
-    MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex);
+    MCAPI uint64_t popMissingVariableOrActorAddress(::MolangVariableIndex);
 
     // symbol: ?popMissingVariableOrActorAddress@MolangEvalParams@@QEAA_KAEBVHashedString@@@Z
-    MCAPI uint64 popMissingVariableOrActorAddress(class HashedString const &);
+    MCAPI uint64_t popMissingVariableOrActorAddress(class HashedString const &);
 
     // symbol: ?popPublicAccessMode@MolangEvalParams@@QEAA_NXZ
     MCAPI bool popPublicAccessMode();
@@ -43,7 +43,7 @@ public:
     MCAPI void popRenderParamsCopyAndPtr();
 
     // symbol: ?pushLoopScope@MolangEvalParams@@QEAAX_K0@Z
-    MCAPI void pushLoopScope(uint64, uint64);
+    MCAPI void pushLoopScope(uint64_t, uint64_t);
 
     // symbol: ?pushRenderParams@MolangEvalParams@@QEAAXAEBVRenderParams@@@Z
     MCAPI void pushRenderParams(class RenderParams const &);
@@ -74,7 +74,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?mThreadLocalMolangEvalParams@MolangEvalParams@@0V?$ThreadLocalObject@UMolangEvalParams@@V?$allocator@UMolangEvalParams@@@std@@@Threading@Bedrock@@A
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<struct MolangEvalParams> mThreadLocalMolangEvalParams;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<struct MolangEvalParams, std::allocator<struct MolangEvalParams>> mThreadLocalMolangEvalParams;
 
     // NOLINTEND
 

@@ -52,7 +52,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 67, symbol: ?isValidAuxValue@GlowStickItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 70, symbol: __unk_vfn_70
     virtual void __unk_vfn_70();
@@ -82,16 +82,16 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 124, symbol: ?getLightEmission@GlowStickItem@@UEBA?AUBrightness@@H@Z
-    virtual struct Brightness getLightEmission(int) const;
+    virtual struct Brightness getLightEmission(int32_t) const;
 
     // symbol: ??0GlowStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI GlowStickItem(std::string const &, int);
+    MCAPI GlowStickItem(std::string const &, int32_t);
 
     // symbol: ?COLORS@GlowStickItem@@2QBW4ItemColor@@B
     MCAPI static ::ItemColor const COLORS[];
 
     // symbol: ?MAX_ACTIVE_TICKS@GlowStickItem@@2HB
-    MCAPI static int const MAX_ACTIVE_TICKS;
+    MCAPI static int32_t const MAX_ACTIVE_TICKS;
 
     // NOLINTEND
 

@@ -53,7 +53,7 @@ public:
     MCAPI void deserialize(class CompoundTag const &, struct cereal::ReflectionCtx const &);
 
     // symbol: ?getCollectionCount@DynamicProperties@@QEBA_KXZ
-    MCAPI uint64 getCollectionCount() const;
+    MCAPI uint64_t getCollectionCount() const;
 
     // symbol: ?getDynamicProperty@DynamicProperties@@QEAAPEAV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@0@Z
     MCAPI std::variant<double, float, bool, std::string, class Vec3> * getDynamicProperty(std::string const &, std::string const &);
@@ -62,10 +62,10 @@ public:
     MCAPI std::vector<std::string> getDynamicPropertyIds(std::string const &);
 
     // symbol: ?getTotalByteCount@DynamicProperties@@QEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI uint64 getTotalByteCount(std::string const &);
+    MCAPI uint64_t getTotalByteCount(std::string const &);
 
     // symbol: ?getTotalByteCount@DynamicProperties@@QEBA_KXZ
-    MCAPI uint64 getTotalByteCount() const;
+    MCAPI uint64_t getTotalByteCount() const;
 
     // symbol: ?removeDynamicProperty@DynamicProperties@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI bool removeDynamicProperty(std::string const &, std::string const &);
@@ -96,7 +96,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getPropertyVariant@DynamicProperties@@CA?AVmeta_any@entt@@AEBV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@Z
-    MCAPI static entt::meta_any _getPropertyVariant(std::variant<double, float, bool, std::string, class Vec3> const &);
+    MCAPI static class entt::meta_any _getPropertyVariant(std::variant<double, float, bool, std::string, class Vec3> const &);
 
     // NOLINTEND
 

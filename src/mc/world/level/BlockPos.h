@@ -27,13 +27,13 @@ public:
     MCAPI BlockPos(float, float, float);
 
     // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@H@Z
-    MCAPI BlockPos(class ChunkPos const &, int);
+    MCAPI BlockPos(class ChunkPos const &, int32_t);
 
     // symbol: ??0BlockPos@@QEAA@AEBVSubChunkPos@@@Z
     MCAPI BlockPos(class SubChunkPos const &);
 
     // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@AEBVChunkBlockPos@@F@Z
-    MCAPI BlockPos(class ChunkPos const &, class ChunkBlockPos const &, short);
+    MCAPI BlockPos(class ChunkPos const &, class ChunkBlockPos const &, int16_t);
 
     // symbol: ?above@BlockPos@@QEBA?AV1@XZ
     MCAPI class BlockPos above() const;
@@ -42,7 +42,7 @@ public:
     MCAPI class Vec3 center() const;
 
     // symbol: ?neighbor@BlockPos@@QEBA?AV1@E@Z
-    MCAPI class BlockPos neighbor(uchar) const;
+    MCAPI class BlockPos neighbor(uint8_t) const;
 
     // symbol: ??BBlockPos@@QEBA?AVVec3@@XZ
     MCAPI operator class Vec3() const;
@@ -57,10 +57,10 @@ public:
     MCAPI bool operator==(class BlockPos const &) const;
 
     // symbol: ?randomSeed@BlockPos@@QEBAHXZ
-    MCAPI int randomSeed() const;
+    MCAPI int32_t randomSeed() const;
 
     // symbol: ?relative@BlockPos@@QEBA?AV1@EH@Z
-    MCAPI class BlockPos relative(uchar, int) const;
+    MCAPI class BlockPos relative(uint8_t, int32_t) const;
 
     // symbol: ?toString@BlockPos@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;

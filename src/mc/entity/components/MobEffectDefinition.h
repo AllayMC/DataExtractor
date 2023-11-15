@@ -25,10 +25,10 @@ public:
     MCAPI void initialize(class EntityContext &, class MobEffectComponent &) const;
 
     // symbol: ?setCooldownTimeInTicks@MobEffectDefinition@@QEAAXAEBH@Z
-    MCAPI void setCooldownTimeInTicks(int const &);
+    MCAPI void setCooldownTimeInTicks(int32_t const &);
 
     // symbol: ?setEffectTimeInTicks@MobEffectDefinition@@QEAAXAEBH@Z
-    MCAPI void setEffectTimeInTicks(int const &);
+    MCAPI void setEffectTimeInTicks(int32_t const &);
 
     // symbol: ?setMobEffectByName@MobEffectDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setMobEffectByName(std::string const &);

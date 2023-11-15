@@ -11,7 +11,7 @@ namespace EquipmentSlots {
     MCAPI char const * equipmentSlotToString(::EquipmentSlot);
 
     // symbol: ?hashToEquipmentSlot@EquipmentSlots@@YA?AW4EquipmentSlot@@AEB_K@Z
-    MCAPI ::EquipmentSlot hashToEquipmentSlot(uint64 const &);
+    MCAPI ::EquipmentSlot hashToEquipmentSlot(uint64_t const &);
 
     // symbol: ?stringToEquipmentSlot@EquipmentSlots@@YA?AW4EquipmentSlot@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI ::EquipmentSlot stringToEquipmentSlot(std::string const &);

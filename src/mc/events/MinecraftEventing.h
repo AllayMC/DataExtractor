@@ -114,13 +114,13 @@ public:
     MCVAPI void fileEventCloudWorldPullFailed(std::string const &, std::string const &, bool);
 
     // symbol: ?fireBannedSkinVerificationEvent@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N2@Z
-    MCVAPI void fireBannedSkinVerificationEvent(uint const &, std::string const &, std::string const &, bool, bool);
+    MCVAPI void fireBannedSkinVerificationEvent(uint32_t const &, std::string const &, std::string const &, bool, bool);
 
     // symbol: ?fireCDNDownloadEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00AEBW4CDNDownloadResult@IMinecraftEventing@@AEBW4CDNDownloadEventOrigin@5@AEBM@Z
     MCVAPI void fireCDNDownloadEvent(std::string const &, std::string const &, std::string const &, ::IMinecraftEventing::CDNDownloadResult const &, ::IMinecraftEventing::CDNDownloadEventOrigin const &, float const &);
 
     // symbol: ?fireChatUsedEvent@MinecraftEventing@@UEAAXI_N@Z
-    MCVAPI void fireChatUsedEvent(uint, bool);
+    MCVAPI void fireChatUsedEvent(uint32_t, bool);
 
     // symbol: ?fireChunkRecyclerTelemetryData@MinecraftEventing@@UEAAXAEBUChunkRecyclerTelemetryOutput@@@Z
     MCVAPI void fireChunkRecyclerTelemetryData(struct ChunkRecyclerTelemetryOutput const &);
@@ -132,7 +132,7 @@ public:
     MCVAPI void fireClubsEngagementEvent(::IMinecraftEventing::ClubsEngagementAction, ::IMinecraftEventing::ClubsEngagementTargetType, char const *, struct Realms::RealmId, std::string const &);
 
     // symbol: ?fireClubsOpenFeedScreenEvent@MinecraftEventing@@UEAAXW4ClubsFeedScreenSource@IMinecraftEventing@@URealmId@Realms@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCVAPI void fireClubsOpenFeedScreenEvent(::IMinecraftEventing::ClubsFeedScreenSource, struct Realms::RealmId, std::string const &, int);
+    MCVAPI void fireClubsOpenFeedScreenEvent(::IMinecraftEventing::ClubsFeedScreenSource, struct Realms::RealmId, std::string const &, int32_t);
 
     // symbol: ?fireCodeCommandButtonPressed@MinecraftEventing@@UEAAXXZ
     MCVAPI void fireCodeCommandButtonPressed();
@@ -144,19 +144,19 @@ public:
     MCVAPI void fireCommunitySIFTFloodingDetected(std::string const &, ::TextProcessingEventOrigin, ::Safety::ChatFloodingAction, float, std::string const &);
 
     // symbol: ?fireCommunitySIFTProcessEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4TextProcessingEventOrigin@@G0_NNDDAEBVValue@Json@@@Z
-    MCVAPI void fireCommunitySIFTProcessEvent(std::string const &, ::TextProcessingEventOrigin, ushort, std::string const &, bool, double, char, char, class Json::Value const &);
+    MCVAPI void fireCommunitySIFTProcessEvent(std::string const &, ::TextProcessingEventOrigin, uint16_t, std::string const &, bool, double, char, char, class Json::Value const &);
 
     // symbol: ?fireCourseButtonPressed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCVAPI void fireCourseButtonPressed(std::string const &, std::string const &);
 
     // symbol: ?fireCurrentInputUpdated@MinecraftEventing@@UEAAXAEBV?$not_null@V?$NonOwnerPointer@VIClientInstance@@@Bedrock@@@gsl@@@Z
-    MCVAPI void fireCurrentInputUpdated(Bedrock::NotNullNonOwnerPtr<class IClientInstance> const &);
+    MCVAPI void fireCurrentInputUpdated(class gsl::not_null<class Bedrock::NonOwnerPointer<class IClientInstance>> const &);
 
     // symbol: ?fireDBStorageError@MinecraftEventing@@UEAAXAEBULevelStorageEventingContext@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireDBStorageError(struct LevelStorageEventingContext const &, std::string const &);
 
     // symbol: ?fireDayOneExperienceStateChanged@MinecraftEventing@@UEAAXW4DayOneExperienceState@IMinecraftEventing@@V?$optional@I@std@@V?$optional@_K@5@@Z
-    MCVAPI void fireDayOneExperienceStateChanged(::IMinecraftEventing::DayOneExperienceState, std::optional<uint>, std::optional<uint64>);
+    MCVAPI void fireDayOneExperienceStateChanged(::IMinecraftEventing::DayOneExperienceState, std::optional<uint32_t>, std::optional<uint64_t>);
 
     // symbol: ?fireDelayedEventReportOfflineAction@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireDelayedEventReportOfflineAction(std::string const &);
@@ -174,7 +174,7 @@ public:
     MCVAPI void fireEventAndroidHelpRequest();
 
     // symbol: ?fireEventAndroidScopedStorageDebug@MinecraftEventing@@UEAAX_K@Z
-    MCVAPI void fireEventAndroidScopedStorageDebug(uint64);
+    MCVAPI void fireEventAndroidScopedStorageDebug(uint64_t);
 
     // symbol: ?fireEventAppInitFileOpenStats@MinecraftEventing@@UEAAXAEBUFileCounters@Profile@Core@@0@Z
     MCVAPI void fireEventAppInitFileOpenStats(struct Core::Profile::FileCounters const &, struct Core::Profile::FileCounters const &);
@@ -198,16 +198,16 @@ public:
     MCVAPI void fireEventAssertFailed(std::string const &, std::string const &);
 
     // symbol: ?fireEventBlockPlacedByCommand@MinecraftEventing@@UEAAXAEBVBlock@@H@Z
-    MCVAPI void fireEventBlockPlacedByCommand(class Block const &, int);
+    MCVAPI void fireEventBlockPlacedByCommand(class Block const &, int32_t);
 
     // symbol: ?fireEventBlockTypeRegistryChecksumMismatch@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEB_K10@Z
-    MCVAPI void fireEventBlockTypeRegistryChecksumMismatch(std::string const &, uint64 const &, uint64 const &, std::string const &);
+    MCVAPI void fireEventBlockTypeRegistryChecksumMismatch(std::string const &, uint64_t const &, uint64_t const &, std::string const &);
 
     // symbol: ?fireEventBoardTextUpdated@MinecraftEventing@@UEAAXAEAVChalkboardBlockActor@@@Z
     MCVAPI void fireEventBoardTextUpdated(class ChalkboardBlockActor &);
 
     // symbol: ?fireEventBundleSubOfferClicked@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N0@Z
-    MCVAPI void fireEventBundleSubOfferClicked(int, int, std::string const &, std::string const &, bool, std::string const &);
+    MCVAPI void fireEventBundleSubOfferClicked(int32_t, int32_t, std::string const &, std::string const &, bool, std::string const &);
 
     // symbol: ?fireEventButtonPressed@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z
     MCVAPI void fireEventButtonPressed(std::string const &, std::unordered_map<std::string,std::string> const &) const;
@@ -243,28 +243,28 @@ public:
     MCVAPI void fireEventCodeBuilderRuntimeAction(std::string const &) const;
 
     // symbol: ?fireEventCodeBuilderScoreChanged@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCVAPI void fireEventCodeBuilderScoreChanged(std::string const &, int) const;
+    MCVAPI void fireEventCodeBuilderScoreChanged(std::string const &, int32_t) const;
 
     // symbol: ?fireEventCompoundCreatorCreated@MinecraftEventing@@UEAAXHH@Z
-    MCVAPI void fireEventCompoundCreatorCreated(int, int);
+    MCVAPI void fireEventCompoundCreatorCreated(int32_t, int32_t);
 
     // symbol: ?fireEventConnectedStorageError@MinecraftEventing@@UEAAXPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_J@Z
-    MCVAPI void fireEventConnectedStorageError(char const *, std::string const &, int64);
+    MCVAPI void fireEventConnectedStorageError(char const *, std::string const &, int64_t);
 
     // symbol: ?fireEventConnectedStorageResult@MinecraftEventing@@UEAAXW4ConnectedStorageEventType@@_NIV?$optional@I@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@3_J222@Z
-    MCVAPI void fireEventConnectedStorageResult(::ConnectedStorageEventType, bool, uint, std::optional<uint>, std::string const &, std::string const &, int64, std::optional<uint>, std::optional<uint>, std::optional<uint>);
+    MCVAPI void fireEventConnectedStorageResult(::ConnectedStorageEventType, bool, uint32_t, std::optional<uint32_t>, std::string const &, std::string const &, int64_t, std::optional<uint32_t>, std::optional<uint32_t>, std::optional<uint32_t>);
 
     // symbol: ?fireEventConnectionFailed@MinecraftEventing@@UEAAXW4ConnectionFailureReason@IConnectionEventing@@@Z
     MCVAPI void fireEventConnectionFailed(::IConnectionEventing::ConnectionFailureReason);
 
     // symbol: ?fireEventContentLogsInWorldSession@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@II@Z
-    MCVAPI void fireEventContentLogsInWorldSession(std::string const &, uint, uint);
+    MCVAPI void fireEventContentLogsInWorldSession(std::string const &, uint32_t, uint32_t);
 
     // symbol: ?fireEventContentShared@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBW4ShareMode@IMinecraftEventing@@@Z
     MCVAPI void fireEventContentShared(std::string const &, std::string const &, ::IMinecraftEventing::ShareMode const &);
 
     // symbol: ?fireEventControlRemappedByPlayer@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4RawInputType@@H@Z
-    MCVAPI void fireEventControlRemappedByPlayer(std::string const &, ::RawInputType, int) const;
+    MCVAPI void fireEventControlRemappedByPlayer(std::string const &, ::RawInputType, int32_t) const;
 
     // symbol: ?fireEventControlTipsPanelUpdated@MinecraftEventing@@UEBAXW4EduControlPanelUpdateType@@N@Z
     MCVAPI void fireEventControlTipsPanelUpdated(::EduControlPanelUpdateType, double) const;
@@ -276,7 +276,7 @@ public:
     MCVAPI void fireEventCrashSystemFailedToInit();
 
     // symbol: ?fireEventDefaultCastSelected@MinecraftEventing@@UEAAXHVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventDefaultCastSelected(int, class mce::UUID, std::string const &);
+    MCVAPI void fireEventDefaultCastSelected(int32_t, class mce::UUID, std::string const &);
 
     // symbol: ?fireEventDefaultGameTypeChanged@MinecraftEventing@@UEAAXW4GameType@@0@Z
     MCVAPI void fireEventDefaultGameTypeChanged(::GameType, ::GameType);
@@ -285,7 +285,7 @@ public:
     MCVAPI void fireEventDevSlashCommandExecuted(std::string const &, std::string const &);
 
     // symbol: ?fireEventDeviceAccountFailure@MinecraftEventing@@UEAAXW4SignInStage@IMinecraftEventing@@W4DeviceAccountFailurePhase@3@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventDeviceAccountFailure(::IMinecraftEventing::SignInStage, ::IMinecraftEventing::DeviceAccountFailurePhase, uint, std::string const &);
+    MCVAPI void fireEventDeviceAccountFailure(::IMinecraftEventing::SignInStage, ::IMinecraftEventing::DeviceAccountFailurePhase, uint32_t, std::string const &);
 
     // symbol: ?fireEventDeviceAccountSuccess@MinecraftEventing@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireEventDeviceAccountSuccess(bool, std::string const &);
@@ -300,10 +300,10 @@ public:
     MCVAPI void fireEventDifficultySet(::Difficulty, ::Difficulty);
 
     // symbol: ?fireEventDiskStatus@MinecraftEventing@@UEAAXW4DiskStatus@@W4LevelStorageState@Core@@_K@Z
-    MCVAPI void fireEventDiskStatus(::DiskStatus, ::Core::LevelStorageState, uint64);
+    MCVAPI void fireEventDiskStatus(::DiskStatus, ::Core::LevelStorageState, uint64_t);
 
     // symbol: ?fireEventDlcStorageFull@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K111@Z
-    MCVAPI void fireEventDlcStorageFull(std::string const &, uint64, uint64, uint64, uint64);
+    MCVAPI void fireEventDlcStorageFull(std::string const &, uint64_t, uint64_t, uint64_t, uint64_t);
 
     // symbol: ?fireEventEduContentVerificationFailed@MinecraftEventing@@UEBAXXZ
     MCVAPI void fireEventEduContentVerificationFailed() const;
@@ -315,13 +315,13 @@ public:
     MCVAPI void fireEventEduResources() const;
 
     // symbol: ?fireEventEduServiceStatus@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0HV?$buffer_span@U?$pair@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V12@@std@@@@@Z
-    MCVAPI void fireEventEduServiceStatus(std::string const &, std::string const &, int, class buffer_span<std::pair<std::string_view, std::string_view>>) const;
+    MCVAPI void fireEventEduServiceStatus(std::string const &, std::string const &, int32_t, class buffer_span<std::pair<std::string_view, std::string_view>>) const;
 
     // symbol: ?fireEventEduiOSPurchaseTransaction@MinecraftEventing@@UEBAXAEBW4TransactionStatus@@@Z
     MCVAPI void fireEventEduiOSPurchaseTransaction(::TransactionStatus const &) const;
 
     // symbol: ?fireEventElementConstructorUsed@MinecraftEventing@@UEAAXHHW4ElementConstructorUseType@IMinecraftEventing@@@Z
-    MCVAPI void fireEventElementConstructorUsed(int, int, ::IMinecraftEventing::ElementConstructorUseType);
+    MCVAPI void fireEventElementConstructorUsed(int32_t, int32_t, ::IMinecraftEventing::ElementConstructorUseType);
 
     // symbol: ?fireEventEmptyLibraryCategoryError@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireEventEmptyLibraryCategoryError(std::string const &) const;
@@ -333,13 +333,13 @@ public:
     MCVAPI void fireEventEntitlementListInfo(std::vector<class ContentIdentity> &, bool);
 
     // symbol: ?fireEventEntitySpawned@MinecraftEventing@@UEAAXPEAVPlayer@@HI@Z
-    MCVAPI void fireEventEntitySpawned(class Player *, int, uint);
+    MCVAPI void fireEventEntitySpawned(class Player *, int32_t, uint32_t);
 
     // symbol: ?fireEventFeedbackSubmitted@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
     MCVAPI void fireEventFeedbackSubmitted(std::string const &, bool, bool);
 
     // symbol: ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventGameRulesUpdated(int, int, std::string const &);
+    MCVAPI void fireEventGameRulesUpdated(int32_t, int32_t, std::string const &);
 
     // symbol: ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAX_N0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const &);
@@ -381,7 +381,7 @@ public:
     MCVAPI void fireEventJoinCanceled(::LoadingState);
 
     // symbol: ?fireEventLabTableCreated@MinecraftEventing@@UEAAXHHH@Z
-    MCVAPI void fireEventLabTableCreated(int, int, int);
+    MCVAPI void fireEventLabTableCreated(int32_t, int32_t, int32_t);
 
     // symbol: ?fireEventLevelChunkPerformanceData@MinecraftEventing@@UEAAX_N@Z
     MCVAPI void fireEventLevelChunkPerformanceData(bool);
@@ -399,7 +399,7 @@ public:
     MCVAPI void fireEventLibrarySearch(struct librarySearch::TelemetryData const &) const;
 
     // symbol: ?fireEventLibrarySearchItemSelected@MinecraftEventing@@UEBAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
-    MCVAPI void fireEventLibrarySearchItemSelected(int, int, std::string const &, int, int) const;
+    MCVAPI void fireEventLibrarySearchItemSelected(int32_t, int32_t, std::string const &, int32_t, int32_t) const;
 
     // symbol: ?fireEventLicenseCheck@MinecraftEventing@@UEAAX_NAEAUExtraLicenseData@@@Z
     MCVAPI void fireEventLicenseCheck(bool, struct ExtraLicenseData &);
@@ -411,7 +411,7 @@ public:
     MCVAPI void fireEventMessageServiceImpression(std::string const &, std::string const &, std::string const &, std::string const &);
 
     // symbol: ?fireEventMultiplayerSessionUpdate@MinecraftEventing@@UEAAXV?$not_null@PEBVLevel@@@gsl@@PEBVPlayer@@@Z
-    MCVAPI void fireEventMultiplayerSessionUpdate(gsl::not_null<class Level const *>, class Player const *);
+    MCVAPI void fireEventMultiplayerSessionUpdate(class gsl::not_null<class Level const *>, class Player const *);
 
     // symbol: ?fireEventNewContentCheckCompleted@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCVAPI void fireEventNewContentCheckCompleted(std::string const &, bool);
@@ -420,7 +420,7 @@ public:
     MCVAPI void fireEventNpcPropertiesUpdated(class Actor &, bool);
 
     // symbol: ?fireEventOfferRated@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHN@Z
-    MCVAPI void fireEventOfferRated(std::string const &, int, int, int, double);
+    MCVAPI void fireEventOfferRated(std::string const &, int32_t, int32_t, int32_t, double);
 
     // symbol: ?fireEventOnAppResume@MinecraftEventing@@UEAAXV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@@2@@std@@@Z
     MCVAPI void fireEventOnAppResume(std::vector<std::pair<std::string, float>>);
@@ -453,7 +453,7 @@ public:
     MCVAPI void fireEventOptionsUpdated(class Options &, ::InputMode, bool);
 
     // symbol: ?fireEventOreUIError@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventOreUIError(uint const &, std::string const &);
+    MCVAPI void fireEventOreUIError(uint32_t const &, std::string const &);
 
     // symbol: ?fireEventPackHashChanged@MinecraftEventing@@UEAAXAEBVPackManifest@@@Z
     MCVAPI void fireEventPackHashChanged(class PackManifest const &);
@@ -462,13 +462,13 @@ public:
     MCVAPI void fireEventPackImportTimeout(std::string const &);
 
     // symbol: ?fireEventPackPlayed@MinecraftEventing@@UEAAXAEBVPackInstance@@I@Z
-    MCVAPI void fireEventPackPlayed(class PackInstance const &, uint);
+    MCVAPI void fireEventPackPlayed(class PackInstance const &, uint32_t);
 
     // symbol: ?fireEventPackUpgradeAttempt@MinecraftEventing@@UEAAXAEBVPackManifest@@AEBVPackReport@@@Z
     MCVAPI void fireEventPackUpgradeAttempt(class PackManifest const &, class PackReport const &);
 
     // symbol: ?fireEventPacketViolationDetected@MinecraftEventing@@UEAAX_KV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z
-    MCVAPI void fireEventPacketViolationDetected(uint64, std::string, ::PacketViolationResponse, ::MinecraftPacketIds, class NetworkIdentifier const &);
+    MCVAPI void fireEventPacketViolationDetected(uint64_t, std::string, ::PacketViolationResponse, ::MinecraftPacketIds, class NetworkIdentifier const &);
 
     // symbol: ?fireEventPerformanceContext@MinecraftEventing@@UEAAXAEBVPerfContextTrackerReport@@@Z
     MCVAPI void fireEventPerformanceContext(class PerfContextTrackerReport const &);
@@ -489,25 +489,25 @@ public:
     MCVAPI void fireEventPersonaCreationFailed(std::string const &, std::string const &, bool, bool, std::string const &, std::string const &);
 
     // symbol: ?fireEventPersonaEmotePlayed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NH@Z
-    MCVAPI void fireEventPersonaEmotePlayed(std::string const &, bool, int);
+    MCVAPI void fireEventPersonaEmotePlayed(std::string const &, bool, int32_t);
 
     // symbol: ?fireEventPersonaGeneralError@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
-    MCVAPI void fireEventPersonaGeneralError(std::string const &, uint);
+    MCVAPI void fireEventPersonaGeneralError(std::string const &, uint32_t);
 
     // symbol: ?fireEventPersonaInitalizationEvent@MinecraftEventing@@UEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCVAPI void fireEventPersonaInitalizationEvent(uint, std::string const &, std::string const &);
+    MCVAPI void fireEventPersonaInitalizationEvent(uint32_t, std::string const &, std::string const &);
 
     // symbol: ?fireEventPersonaItemPreviewed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00IIW4PromotionType@IMinecraftEventing@@_N00NW4StoreType@5@@Z
-    MCVAPI void fireEventPersonaItemPreviewed(std::string const &, std::string const &, std::string const &, uint, uint, ::IMinecraftEventing::PromotionType, bool, std::string const &, std::string const &, double, ::IMinecraftEventing::StoreType);
+    MCVAPI void fireEventPersonaItemPreviewed(std::string const &, std::string const &, std::string const &, uint32_t, uint32_t, ::IMinecraftEventing::PromotionType, bool, std::string const &, std::string const &, double, ::IMinecraftEventing::StoreType);
 
     // symbol: ?fireEventPersonaLoadingPieces@MinecraftEventing@@UEAAXIN@Z
-    MCVAPI void fireEventPersonaLoadingPieces(uint, double);
+    MCVAPI void fireEventPersonaLoadingPieces(uint32_t, double);
 
     // symbol: ?fireEventPersonaSkinChanged@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
     MCVAPI void fireEventPersonaSkinChanged(std::string const &, std::string const &, bool);
 
     // symbol: ?fireEventPersonaStillLoading@MinecraftEventing@@UEAAX_N0000000AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@HN@Z
-    MCVAPI void fireEventPersonaStillLoading(bool, bool, bool, bool, bool, bool, bool, bool, std::vector<std::string> const &, int, double);
+    MCVAPI void fireEventPersonaStillLoading(bool, bool, bool, bool, bool, bool, bool, bool, std::vector<std::string> const &, int32_t, double);
 
     // symbol: ?fireEventPersonaUserLoadedActive@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
     MCVAPI void fireEventPersonaUserLoadedActive(std::string const &, std::string const &, bool);
@@ -525,13 +525,13 @@ public:
     MCVAPI void fireEventPlayerBanned(std::string const &);
 
     // symbol: ?fireEventPlayerBounced@MinecraftEventing@@UEAAXPEAVPlayer@@AEBVBlock@@H@Z
-    MCVAPI void fireEventPlayerBounced(class Player *, class Block const &, int);
+    MCVAPI void fireEventPlayerBounced(class Player *, class Block const &, int32_t);
 
     // symbol: ?fireEventPlayerDamaged@MinecraftEventing@@UEAAXPEAVPlayer@@W4ActorDamageCause@@@Z
     MCVAPI void fireEventPlayerDamaged(class Player *, ::ActorDamageCause);
 
     // symbol: ?fireEventPlayerJoinWorld@MinecraftEventing@@UEAAXAEBIW4SubClientId@@_NV?$optional@_N@std@@W4PlayerJoinWorldAttemptState@IConnectionEventing@@HW4DisconnectFailReason@Connection@@W4TransportLayer@@W4NetworkType@IMinecraftEventing@@@Z
-    MCVAPI void fireEventPlayerJoinWorld(uint const &, ::SubClientId, bool, std::optional<bool>, ::IConnectionEventing::PlayerJoinWorldAttemptState, int, ::Connection::DisconnectFailReason, ::TransportLayer, ::IMinecraftEventing::NetworkType);
+    MCVAPI void fireEventPlayerJoinWorld(uint32_t const &, ::SubClientId, bool, std::optional<bool>, ::IConnectionEventing::PlayerJoinWorldAttemptState, int32_t, ::Connection::DisconnectFailReason, ::TransportLayer, ::IMinecraftEventing::NetworkType);
 
     // symbol: ?fireEventPlayerKicked@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCVAPI void fireEventPlayerKicked(std::string const &, std::string const &);
@@ -564,7 +564,7 @@ public:
     MCVAPI void fireEventPopupFiredEdu(std::string const &, std::string const &, std::string const &, std::string const &, ::ActiveDirectoryAction);
 
     // symbol: ?fireEventPortfolioExported@MinecraftEventing@@UEAAXHH@Z
-    MCVAPI void fireEventPortfolioExported(int, int);
+    MCVAPI void fireEventPortfolioExported(int32_t, int32_t);
 
     // symbol: ?fireEventProgressionsSet@MinecraftEventing@@UEAAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     MCVAPI void fireEventProgressionsSet(std::vector<std::string> const &);
@@ -576,7 +576,7 @@ public:
     MCVAPI void fireEventPurchaseAttempt(std::string const &, std::string const &, std::string const &, ::IMinecraftEventing::StoreType, ::PurchasePath);
 
     // symbol: ?fireEventPurchaseFailureDetails@MinecraftEventing@@UEAAXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
-    MCVAPI void fireEventPurchaseFailureDetails(int, std::string const &, std::string const &, std::string const &);
+    MCVAPI void fireEventPurchaseFailureDetails(int32_t, std::string const &, std::string const &, std::string const &);
 
     // symbol: ?fireEventPurchaseGameAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
     MCVAPI void fireEventPurchaseGameAttempt(std::string const &, std::string const &, std::string const &);
@@ -594,19 +594,19 @@ public:
     MCVAPI void fireEventPushNotificationReceived(class PushNotificationMessage const &);
 
     // symbol: ?fireEventQueryPurchasesResult@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCVAPI void fireEventQueryPurchasesResult(std::string const &, int, bool);
+    MCVAPI void fireEventQueryPurchasesResult(std::string const &, int32_t, bool);
 
     // symbol: ?fireEventRealmDownload@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0HHH@Z
-    MCVAPI void fireEventRealmDownload(std::string const &, std::string const &, int, int, int);
+    MCVAPI void fireEventRealmDownload(std::string const &, std::string const &, int32_t, int32_t, int32_t);
 
     // symbol: ?fireEventRealmMemberlistCleared@MinecraftEventing@@UEAAXAEBURealmId@Realms@@AEBH@Z
-    MCVAPI void fireEventRealmMemberlistCleared(struct Realms::RealmId const &, int const &);
+    MCVAPI void fireEventRealmMemberlistCleared(struct Realms::RealmId const &, int32_t const &);
 
     // symbol: ?fireEventRealmShared@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4ShareMode@IMinecraftEventing@@AEBURealmId@Realms@@@Z
     MCVAPI void fireEventRealmShared(std::string const &, ::IMinecraftEventing::ShareMode const &, struct Realms::RealmId const &);
 
     // symbol: ?fireEventRealmUpload@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0HHH_N@Z
-    MCVAPI void fireEventRealmUpload(std::string const &, std::string const &, int, int, int, bool);
+    MCVAPI void fireEventRealmUpload(std::string const &, std::string const &, int32_t, int32_t, int32_t, bool);
 
     // symbol: ?fireEventRealmUrlGenerated@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBURealmId@Realms@@@Z
     MCVAPI void fireEventRealmUrlGenerated(std::string const &, struct Realms::RealmId const &);
@@ -627,16 +627,16 @@ public:
     MCVAPI void fireEventRenderingSizeChanged();
 
     // symbol: ?fireEventRespawn@MinecraftEventing@@UEAAXAEAVPlayer@@H@Z
-    MCVAPI void fireEventRespawn(class Player &, int);
+    MCVAPI void fireEventRespawn(class Player &, int32_t);
 
     // symbol: ?fireEventRespondedToAcceptContent@MinecraftEventing@@UEAAXAEBUPacksInfoData@@_N@Z
     MCVAPI void fireEventRespondedToAcceptContent(struct PacksInfoData const &, bool);
 
     // symbol: ?fireEventScreenChanged@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z
-    MCVAPI void fireEventScreenChanged(uint const &, std::string const &, std::unordered_map<std::string,std::string> const &);
+    MCVAPI void fireEventScreenChanged(uint32_t const &, std::string const &, std::unordered_map<std::string,std::string> const &);
 
     // symbol: ?fireEventScreenLoaded@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@NNNN@Z
-    MCVAPI void fireEventScreenLoaded(uint const &, std::string const &, double, double, double, double);
+    MCVAPI void fireEventScreenLoaded(uint32_t const &, std::string const &, double, double, double, double);
 
     // symbol: ?fireEventScriptDebuggerConnect@MinecraftEventing@@UEAAX_N@Z
     MCVAPI void fireEventScriptDebuggerConnect(bool);
@@ -651,19 +651,19 @@ public:
     MCVAPI void fireEventScriptPluginRun(class ScriptPluginResult const &, std::chrono::microseconds, bool);
 
     // symbol: ?fireEventScriptWatchdog@MinecraftEventing@@UEAAXW4WatchdogEventType@Scripting@@_N_KMH2PEBUModuleDescriptor@3@1@Z
-    MCVAPI void fireEventScriptWatchdog(::Scripting::WatchdogEventType, bool, uint64, float, int, uint64, struct Scripting::ModuleDescriptor const *, bool);
+    MCVAPI void fireEventScriptWatchdog(::Scripting::WatchdogEventType, bool, uint64_t, float, int32_t, uint64_t, struct Scripting::ModuleDescriptor const *, bool);
 
     // symbol: ?fireEventSearchCatalogRequest@MinecraftEventing@@UEAAXAEBVSearchRequestTelemetry@@@Z
     MCVAPI void fireEventSearchCatalogRequest(class SearchRequestTelemetry const &);
 
     // symbol: ?fireEventSearchItemSelected@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
-    MCVAPI void fireEventSearchItemSelected(int, int, std::string const &, int, int, int);
+    MCVAPI void fireEventSearchItemSelected(int32_t, int32_t, std::string const &, int32_t, int32_t, int32_t);
 
     // symbol: ?fireEventServerDrivenLayoutImagesLoaded@MinecraftEventing@@UEAAXAEAVRequestTelemetry@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_KHHHAEAV?$vector@GV?$allocator@G@std@@@4@@Z
-    MCVAPI void fireEventServerDrivenLayoutImagesLoaded(class RequestTelemetry &, std::string, int, uint64, int, int, int, std::vector<ushort> &);
+    MCVAPI void fireEventServerDrivenLayoutImagesLoaded(class RequestTelemetry &, std::string, int32_t, uint64_t, int32_t, int32_t, int32_t, std::vector<uint16_t> &);
 
     // symbol: ?fireEventServerDrivenLayoutPageLoaded@MinecraftEventing@@UEAAXAEAVRequestTelemetry@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHHH@Z
-    MCVAPI void fireEventServerDrivenLayoutPageLoaded(class RequestTelemetry &, std::string, int, int, int, int, int);
+    MCVAPI void fireEventServerDrivenLayoutPageLoaded(class RequestTelemetry &, std::string, int32_t, int32_t, int32_t, int32_t, int32_t);
 
     // symbol: ?fireEventServerRespawnSearchTime@MinecraftEventing@@UEAAXAEAVPlayer@@AEBVPlayerRespawnTelemetryData@@@Z
     MCVAPI void fireEventServerRespawnSearchTime(class Player &, class PlayerRespawnTelemetryData const &);
@@ -678,16 +678,16 @@ public:
     MCVAPI void fireEventSetValidForAchievements(class Player *, bool);
 
     // symbol: ?fireEventSidebarNavigation@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1H_N22@Z
-    MCVAPI void fireEventSidebarNavigation(uint const &, std::string const &, std::string const &, int, bool, bool, bool);
+    MCVAPI void fireEventSidebarNavigation(uint32_t const &, std::string const &, std::string const &, int32_t, bool, bool, bool);
 
     // symbol: ?fireEventSidebarVerboseToggled@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N@Z
-    MCVAPI void fireEventSidebarVerboseToggled(uint const &, std::string const &, std::string const &, bool);
+    MCVAPI void fireEventSidebarVerboseToggled(uint32_t const &, std::string const &, std::string const &, bool);
 
     // symbol: ?fireEventSignInEdu@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Role@edu@@W4EduSignInStage@Identity@@00AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z
     MCVAPI void fireEventSignInEdu(std::string const &, ::edu::Role, ::Identity::EduSignInStage, std::string const &, std::string const &, std::vector<std::pair<std::string, std::string>> const &);
 
     // symbol: ?fireEventSignInToIdentity@MinecraftEventing@@UEAAXW4SignInAccountType@IMinecraftEventing@@W4SignInTrigger@3@_NW4SignInStage@3@W4SignInResult@Social@@HUPlayerIDs@7@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventSignInToIdentity(::IMinecraftEventing::SignInAccountType, ::IMinecraftEventing::SignInTrigger, bool, ::IMinecraftEventing::SignInStage, ::Social::SignInResult, int, struct Social::PlayerIDs, std::string const &);
+    MCVAPI void fireEventSignInToIdentity(::IMinecraftEventing::SignInAccountType, ::IMinecraftEventing::SignInTrigger, bool, ::IMinecraftEventing::SignInStage, ::Social::SignInResult, int32_t, struct Social::PlayerIDs, std::string const &);
 
     // symbol: ?fireEventSignOutEdu@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Role@edu@@000@Z
     MCVAPI void fireEventSignOutEdu(std::string const &, ::edu::Role, std::string const &, std::string const &, std::string const &);
@@ -696,7 +696,7 @@ public:
     MCVAPI void fireEventSignOutOfIdentity(::IMinecraftEventing::SignInAccountType, ::IMinecraftEventing::SignInTrigger, std::string const &, std::string const &);
 
     // symbol: ?fireEventSignalServiceConnect@MinecraftEventing@@UEAAXW4SignalServiceConnectState@IConnectionEventing@@_NHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventSignalServiceConnect(::IConnectionEventing::SignalServiceConnectState, bool, int, std::string const &);
+    MCVAPI void fireEventSignalServiceConnect(::IConnectionEventing::SignalServiceConnectState, bool, int32_t, std::string const &);
 
     // symbol: ?fireEventSplitScreenUpdated@MinecraftEventing@@UEAAXAEBVIClientInstance@@@Z
     MCVAPI void fireEventSplitScreenUpdated(class IClientInstance const &);
@@ -711,7 +711,7 @@ public:
     MCVAPI void fireEventStartWorld(::IMinecraftEventing::NetworkType, std::string const &, ::Social::MultiplayerServiceIdentifier);
 
     // symbol: ?fireEventStorage@MinecraftEventing@@UEAAXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventStorage(int, std::string const &);
+    MCVAPI void fireEventStorage(int32_t, std::string const &);
 
     // symbol: ?fireEventStorageAreaFull@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@UDirectoryEntry@Bedrock@@V?$allocator@UDirectoryEntry@Bedrock@@@std@@@3@@Z
     MCVAPI void fireEventStorageAreaFull(std::string const &, std::vector<struct Bedrock::DirectoryEntry> const &);
@@ -720,19 +720,19 @@ public:
     MCVAPI void fireEventStorageReport(std::string const &);
 
     // symbol: ?fireEventStoreDiscoveryRequestResponse@MinecraftEventing@@UEAAXHH@Z
-    MCVAPI void fireEventStoreDiscoveryRequestResponse(int, int);
+    MCVAPI void fireEventStoreDiscoveryRequestResponse(int32_t, int32_t);
 
     // symbol: ?fireEventStoreErrorPage@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCVAPI void fireEventStoreErrorPage(std::string const &, std::string const &);
 
     // symbol: ?fireEventStoreLocalizationBinaryFetchResponse@MinecraftEventing@@UEAAXHI@Z
-    MCVAPI void fireEventStoreLocalizationBinaryFetchResponse(int, uint);
+    MCVAPI void fireEventStoreLocalizationBinaryFetchResponse(int32_t, uint32_t);
 
     // symbol: ?fireEventStoreOfferClicked@MinecraftEventing@@UEAAXHHHHHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NH0@Z
-    MCVAPI void fireEventStoreOfferClicked(int, int, int, int, int, int, std::string const &, std::string const &, bool, int, std::string const &);
+    MCVAPI void fireEventStoreOfferClicked(int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, std::string const &, std::string const &, bool, int32_t, std::string const &);
 
     // symbol: ?fireEventStorePlayFabRequestResponse@MinecraftEventing@@UEAAXG@Z
-    MCVAPI void fireEventStorePlayFabRequestResponse(ushort);
+    MCVAPI void fireEventStorePlayFabRequestResponse(uint16_t);
 
     // symbol: ?fireEventStorePromotionNotification@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireEventStorePromotionNotification(std::string const &);
@@ -741,7 +741,7 @@ public:
     MCVAPI void fireEventStoreSearch(struct storeSearch::TelemetryData const &);
 
     // symbol: ?fireEventStoreSessionResponse@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
-    MCVAPI void fireEventStoreSessionResponse(std::string const &, int, int);
+    MCVAPI void fireEventStoreSessionResponse(std::string const &, int32_t, int32_t);
 
     // symbol: ?fireEventStructureExport@MinecraftEventing@@UEBAXAEBUglTFExportData@@W4ExportOutcome@IMinecraftEventing@@W4ExportStage@4@@Z
     MCVAPI void fireEventStructureExport(struct glTFExportData const &, ::IMinecraftEventing::ExportOutcome, ::IMinecraftEventing::ExportStage) const;
@@ -774,13 +774,13 @@ public:
     MCVAPI void fireEventTreatmentsSet(std::vector<std::string> const &);
 
     // symbol: ?fireEventTrialDeviceIdCorrelation@MinecraftEventing@@UEAAX_JAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@01@Z
-    MCVAPI void fireEventTrialDeviceIdCorrelation(int64, std::string const &, int64, std::string const &);
+    MCVAPI void fireEventTrialDeviceIdCorrelation(int64_t, std::string const &, int64_t, std::string const &);
 
     // symbol: ?fireEventUgcAcquisitionStateChanged@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KN_NH2H00@Z
-    MCVAPI void fireEventUgcAcquisitionStateChanged(std::string const &, uint64, double, bool, int, bool, int, std::string const &, std::string const &);
+    MCVAPI void fireEventUgcAcquisitionStateChanged(std::string const &, uint64_t, double, bool, int32_t, bool, int32_t, std::string const &, std::string const &);
 
     // symbol: ?fireEventUnknownBlockReceived@MinecraftEventing@@UEAAXAEBUNewBlockID@@G@Z
-    MCVAPI void fireEventUnknownBlockReceived(struct NewBlockID const &, ushort);
+    MCVAPI void fireEventUnknownBlockReceived(struct NewBlockID const &, uint16_t);
 
     // symbol: ?fireEventUserListUpdated@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00_N@Z
     MCVAPI void fireEventUserListUpdated(std::string const &, std::string const &, std::string const &, bool);
@@ -801,10 +801,10 @@ public:
     MCVAPI void fireEventWorldCorruptionCausedWorldShutdown(struct LevelStorageEventingContext const &, std::string const &, std::optional<bool>);
 
     // symbol: ?fireEventWorldExported@MinecraftEventing@@UEAAX_J_K@Z
-    MCVAPI void fireEventWorldExported(int64, uint64);
+    MCVAPI void fireEventWorldExported(int64_t, uint64_t);
 
     // symbol: ?fireEventWorldFilesListed@MinecraftEventing@@UEAAX_K000@Z
-    MCVAPI void fireEventWorldFilesListed(uint64, uint64, uint64, uint64);
+    MCVAPI void fireEventWorldFilesListed(uint64_t, uint64_t, uint64_t, uint64_t);
 
     // symbol: ?fireEventWorldGenerated@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVLevelSettings@@_N@Z
     MCVAPI void fireEventWorldGenerated(std::string const &, class LevelSettings const &, bool);
@@ -813,7 +813,7 @@ public:
     MCVAPI void fireEventWorldHistoryPackSourceMissingDuringUpgrade(std::string const &, std::string const &, std::string const &);
 
     // symbol: ?fireEventWorldImported@MinecraftEventing@@UEAAX_J_K@Z
-    MCVAPI void fireEventWorldImported(int64, uint64);
+    MCVAPI void fireEventWorldImported(int64_t, uint64_t);
 
     // symbol: ?fireEventWorldImportedResult@MinecraftEventing@@UEAAXW4Outcome@FileArchiver@@@Z
     MCVAPI void fireEventWorldImportedResult(::FileArchiver::Outcome);
@@ -828,16 +828,16 @@ public:
     MCVAPI void fireExternalUriLaunched(std::string const &) const;
 
     // symbol: ?fireGlobalResourcePackCrashRecovery@MinecraftEventing@@UEAAXAEAVPackInstance@@VUUID@mce@@H@Z
-    MCVAPI void fireGlobalResourcePackCrashRecovery(class PackInstance &, class mce::UUID, int);
+    MCVAPI void fireGlobalResourcePackCrashRecovery(class PackInstance &, class mce::UUID, int32_t);
 
     // symbol: ?fireHostClientTransportSettingSync@MinecraftEventing@@UEAAXW4TransportLayer@@0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@11_K_N@Z
-    MCVAPI void fireHostClientTransportSettingSync(::TransportLayer, ::TransportLayer, std::string const &, std::string const &, std::string const &, uint64, bool);
+    MCVAPI void fireHostClientTransportSettingSync(::TransportLayer, ::TransportLayer, std::string const &, std::string const &, std::string const &, uint64_t, bool);
 
     // symbol: ?fireIDESelected@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireIDESelected(std::string const &) const;
 
     // symbol: ?fireIgnoredNotificationsEvent@MinecraftEventing@@UEAAXW4IgnoredNotificationsType@IMinecraftEventing@@HV?$set@W4IgnoredNotificationSource@IMinecraftEventing@@U?$less@W4IgnoredNotificationSource@IMinecraftEventing@@@std@@V?$allocator@W4IgnoredNotificationSource@IMinecraftEventing@@@4@@std@@@Z
-    MCVAPI void fireIgnoredNotificationsEvent(::IMinecraftEventing::IgnoredNotificationsType, int, std::set<::IMinecraftEventing::IgnoredNotificationSource>);
+    MCVAPI void fireIgnoredNotificationsEvent(::IMinecraftEventing::IgnoredNotificationsType, int32_t, std::set<::IMinecraftEventing::IgnoredNotificationSource>);
 
     // symbol: ?fireInAppCodeBuilderActivated@MinecraftEventing@@UEBAXW4OpenCodeMethod@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireInAppCodeBuilderActivated(::OpenCodeMethod, std::string const &) const;
@@ -849,22 +849,22 @@ public:
     MCVAPI void fireInviteStatusReceived(std::string);
 
     // symbol: ?fireInviteStatusSentImpl@MinecraftEventing@@UEAAXIV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCVAPI void fireInviteStatusSentImpl(uint, std::vector<std::string>);
+    MCVAPI void fireInviteStatusSentImpl(uint32_t, std::vector<std::string>);
 
     // symbol: ?fireLessonActionTaken@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4EducationLessonAction@IMinecraftEventing@@H@Z
-    MCVAPI void fireLessonActionTaken(std::string const &, std::string const &, std::string const &, ::IMinecraftEventing::EducationLessonAction, int);
+    MCVAPI void fireLessonActionTaken(std::string const &, std::string const &, std::string const &, ::IMinecraftEventing::EducationLessonAction, int32_t);
 
     // symbol: ?fireLessonCompleteDialogOpened@MinecraftEventing@@UEBAXW4LessonCompleteDialogEntryPoint@IMinecraftEventing@@@Z
     MCVAPI void fireLessonCompleteDialogOpened(::IMinecraftEventing::LessonCompleteDialogEntryPoint) const;
 
     // symbol: ?fireLessonProgressEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0000H@Z
-    MCVAPI void fireLessonProgressEvent(std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, int);
+    MCVAPI void fireLessonProgressEvent(std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, int32_t);
 
     // symbol: ?fireLibraryButtonPressed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
     MCVAPI void fireLibraryButtonPressed(std::string const &, std::string const &, std::string const &);
 
     // symbol: ?fireMinecraftVersionInviteAccepted@MinecraftEventing@@UEAAX_N_K@Z
-    MCVAPI void fireMinecraftVersionInviteAccepted(bool, uint64);
+    MCVAPI void fireMinecraftVersionInviteAccepted(bool, uint64_t);
 
     // symbol: ?fireMinecraftVersionLaunched@MinecraftEventing@@UEAAX_N@Z
     MCVAPI void fireMinecraftVersionLaunched(bool);
@@ -876,13 +876,13 @@ public:
     MCVAPI void firePackSettingsEvent(class PackSettings const &, class PackManifest const &);
 
     // symbol: ?firePerfTestEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00II0AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@@2@@3@@Z
-    MCVAPI void firePerfTestEvent(std::string const &, std::string const &, std::string const &, uint, uint, std::string const &, std::vector<std::pair<std::string, float>> const &);
+    MCVAPI void firePerfTestEvent(std::string const &, std::string const &, std::string const &, uint32_t, uint32_t, std::string const &, std::vector<std::pair<std::string, float>> const &);
 
     // symbol: ?firePermissionsSetEvent@MinecraftEventing@@UEAAXW4PlayerPermissionLevel@@W4CommandPermissionLevel@@01@Z
     MCVAPI void firePermissionsSetEvent(::PlayerPermissionLevel, ::CommandPermissionLevel, ::PlayerPermissionLevel, ::CommandPermissionLevel);
 
     // symbol: ?fireQueryOfferResult@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCVAPI void fireQueryOfferResult(std::string const &, int, bool);
+    MCVAPI void fireQueryOfferResult(std::string const &, int32_t, bool);
 
     // symbol: ?fireQuickPlayEvent@MinecraftEventing@@UEAAXXZ
     MCVAPI void fireQuickPlayEvent();
@@ -894,19 +894,19 @@ public:
     MCVAPI void fireRealmConnectionEventRealmAPIRequest(::IMinecraftEventing::RealmConnectionFlow);
 
     // symbol: ?fireRealmConnectionEventRealmAPIResponse@MinecraftEventing@@UEAAXW4RealmConnectionFlow@IMinecraftEventing@@H@Z
-    MCVAPI void fireRealmConnectionEventRealmAPIResponse(::IMinecraftEventing::RealmConnectionFlow, int);
+    MCVAPI void fireRealmConnectionEventRealmAPIResponse(::IMinecraftEventing::RealmConnectionFlow, int32_t);
 
     // symbol: ?fireRealmConnectionEventStart@MinecraftEventing@@UEAAXW4RealmConnectionFlow@IMinecraftEventing@@@Z
     MCVAPI void fireRealmConnectionEventStart(::IMinecraftEventing::RealmConnectionFlow);
 
     // symbol: ?fireScreenLoadTimeUpdateEvent@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@3@1@Z
-    MCVAPI void fireScreenLoadTimeUpdateEvent(uint const &, std::string const &, std::chrono::nanoseconds, std::string const &);
+    MCVAPI void fireScreenLoadTimeUpdateEvent(uint32_t const &, std::string const &, std::chrono::nanoseconds, std::string const &);
 
     // symbol: ?fireServerConnectionAttemptEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N0@Z
     MCVAPI void fireServerConnectionAttemptEvent(std::string const &, bool, std::string const &);
 
     // symbol: ?fireServerConnectionEvent@MinecraftEventing@@UEAAXW4ServerConnectionOutcome@IConnectionEventing@@INAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireServerConnectionEvent(::IConnectionEventing::ServerConnectionOutcome, uint, double, std::string const &);
+    MCVAPI void fireServerConnectionEvent(::IConnectionEventing::ServerConnectionOutcome, uint32_t, double, std::string const &);
 
     // symbol: ?fireServerShutdown@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireServerShutdown(std::string const &);
@@ -918,7 +918,7 @@ public:
     MCVAPI void fireShareButtonPressed(std::string const &, ::EduShareUriType, ::EduShareMethodType, bool);
 
     // symbol: ?fireStorageMigrationEvent@MinecraftEventing@@UEAAX_NW4StorageMigrationType@StorageMigration@Bedrock@@HHV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@7@@Z
-    MCVAPI void fireStorageMigrationEvent(bool, ::Bedrock::StorageMigration::StorageMigrationType, int, int, std::chrono::nanoseconds, std::string const &);
+    MCVAPI void fireStorageMigrationEvent(bool, ::Bedrock::StorageMigration::StorageMigrationType, int32_t, int32_t, std::chrono::nanoseconds, std::string const &);
 
     // symbol: ?fireStructureBlockAction@MinecraftEventing@@UEAAXW4StructureBlockActionType@IMinecraftEventing@@AEBVStructureEditorData@@PEBVStructureTelemetryClientData@@@Z
     MCVAPI void fireStructureBlockAction(::IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, class StructureTelemetryClientData const *);
@@ -960,7 +960,7 @@ public:
     MCVAPI bool getAchievementsAlwaysEnabled();
 
     // symbol: ?getCrashTelemetryProcessor@MinecraftEventing@@UEAA?AV?$not_null@PEAVCrashTelemetryProcessor@Bedrock@@@gsl@@XZ
-    MCVAPI gsl::not_null<class Bedrock::CrashTelemetryProcessor *> getCrashTelemetryProcessor();
+    MCVAPI class gsl::not_null<class Bedrock::CrashTelemetryProcessor *> getCrashTelemetryProcessor();
 
     // symbol: ?getEventManager@MinecraftEventing@@EEBAAEAVEventManager@Events@Social@@XZ
     MCVAPI class Social::Events::EventManager & getEventManager() const;
@@ -969,7 +969,7 @@ public:
     MCVAPI std::string const & getPlayerSessionId();
 
     // symbol: ?getPrimaryLocalUserId@MinecraftEventing@@EEBAIXZ
-    MCVAPI uint getPrimaryLocalUserId() const;
+    MCVAPI uint32_t getPrimaryLocalUserId() const;
 
     // symbol: ?getSessionId@MinecraftEventing@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getSessionId();
@@ -978,7 +978,7 @@ public:
     MCVAPI bool getShouldHaveAchievementsEnabled();
 
     // symbol: ?init@MinecraftEventing@@UEAAXAEBV?$not_null@V?$NonOwnerPointer@VIUserManager@Social@@@Bedrock@@@gsl@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    MCVAPI void init(Bedrock::NotNullNonOwnerPtr<class Social::IUserManager> const &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
+    MCVAPI void init(class gsl::not_null<class Bedrock::NonOwnerPointer<class Social::IUserManager>> const &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
 
     // symbol: ?initDeviceAndSessionIds@MinecraftEventing@@UEAAXXZ
     MCVAPI void initDeviceAndSessionIds();
@@ -1044,7 +1044,7 @@ public:
     MCVAPI void updatePlayerUndergroundStatus(class Player *, bool);
 
     // symbol: ?updatePrimaryLocalUserId@MinecraftEventing@@UEAAXAEBI@Z
-    MCVAPI void updatePrimaryLocalUserId(uint const &);
+    MCVAPI void updatePrimaryLocalUserId(uint32_t const &);
 
     // symbol: ??1MinecraftEventing@@UEAA@XZ
     MCVAPI ~MinecraftEventing();
@@ -1071,7 +1071,7 @@ public:
     MCAPI static void fireEventBellBlockUsed(class Player *, std::string const &);
 
     // symbol: ?fireEventBlockBroken@MinecraftEventing@@SAXPEAVPlayer@@AEBVBlock@@W4BlockPlacementMethod@1@H@Z
-    MCAPI static void fireEventBlockBroken(class Player *, class Block const &, ::MinecraftEventing::BlockPlacementMethod, int);
+    MCAPI static void fireEventBlockBroken(class Player *, class Block const &, ::MinecraftEventing::BlockPlacementMethod, int32_t);
 
     // symbol: ?fireEventBlockFound@MinecraftEventing@@SAXPEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI static void fireEventBlockFound(class Player *, class BlockPos const &);
@@ -1080,7 +1080,7 @@ public:
     MCAPI static void fireEventCampfireBlockUsed(class Player *, std::string const &, ::MinecraftEventing::POIBlockInteractionType);
 
     // symbol: ?fireEventCaravanChanged@MinecraftEventing@@SAXAEAVMob@@H@Z
-    MCAPI static void fireEventCaravanChanged(class Mob &, int);
+    MCAPI static void fireEventCaravanChanged(class Mob &, int32_t);
 
     // symbol: ?fireEventItemUsed@MinecraftEventing@@SAXPEAVPlayer@@AEBVItemDescriptor@@W4ItemUseMethod@@@Z
     MCAPI static void fireEventItemUsed(class Player *, class ItemDescriptor const &, ::ItemUseMethod);
@@ -1095,13 +1095,13 @@ public:
     MCAPI static void fireEventMobEffectChanged(class Mob &, class MobEffectInstance const &, ::MinecraftEventing::ChangeType);
 
     // symbol: ?fireEventPlayerTeleported@MinecraftEventing@@SAXPEAVPlayer@@MW4TeleportationCause@1@H@Z
-    MCAPI static void fireEventPlayerTeleported(class Player *, float, ::MinecraftEventing::TeleportationCause, int);
+    MCAPI static void fireEventPlayerTeleported(class Player *, float, ::MinecraftEventing::TeleportationCause, int32_t);
 
     // symbol: ?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z
     MCAPI static void fireEventPlayerTransform(class Player &);
 
     // symbol: ?fireEventSlashCommandExecuted@MinecraftEventing@@SAXPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH1@Z
-    MCAPI static void fireEventSlashCommandExecuted(class Player *, std::string const &, int, int, std::string const &);
+    MCAPI static void fireEventSlashCommandExecuted(class Player *, std::string const &, int32_t, int32_t, std::string const &);
 
     // NOLINTEND
 
@@ -1133,7 +1133,7 @@ private:
     MCAPI static std::unordered_map<::ItemAcquisitionMethod,::MinecraftEventing::AcquisitionMethod> const mAcquisitionMethodMap;
 
     // symbol: ?mPlayerTelemetry@MinecraftEventing@@0V?$unordered_map@IVPlayerTelemetry@Events@Social@@U?$hash@I@std@@U?$equal_to@I@5@V?$allocator@U?$pair@$$CBIVPlayerTelemetry@Events@Social@@@std@@@5@@std@@A
-    MCAPI static std::unordered_map<uint,class Social::Events::PlayerTelemetry> mPlayerTelemetry;
+    MCAPI static std::unordered_map<uint32_t,class Social::Events::PlayerTelemetry> mPlayerTelemetry;
 
     // symbol: ?mUseMethodMap@MinecraftEventing@@0V?$unordered_map@W4ItemUseMethod@@W4UseMethod@MinecraftEventing@@U?$hash@W4ItemUseMethod@@@std@@U?$equal_to@W4ItemUseMethod@@@5@V?$allocator@U?$pair@$$CBW4ItemUseMethod@@W4UseMethod@MinecraftEventing@@@std@@@5@@std@@B
     MCAPI static std::unordered_map<::ItemUseMethod,::MinecraftEventing::UseMethod> const mUseMethodMap;

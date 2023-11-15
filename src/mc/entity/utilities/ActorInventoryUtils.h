@@ -24,7 +24,7 @@ namespace ActorInventoryUtils {
     MCAPI void forEachItemOnActorInventory(class Actor const &, class CommandIntegerRange const &, std::function<void (class ItemStack const &)>);
 
     // symbol: ?getItem@ActorInventoryUtils@@YAPEBVItemStack@@AEBVActor@@W4EquipmentSlot@@H@Z
-    MCAPI class ItemStack const * getItem(class Actor const &, ::EquipmentSlot, int);
+    MCAPI class ItemStack const * getItem(class Actor const &, ::EquipmentSlot, int32_t);
 
     // symbol: ?queryActorEquipmentSlotForItem@ActorInventoryUtils@@YA_NAEBVActor@@AEBVItemInstance@@W4EquipmentSlot@@AEBVCommandIntegerRange@@3AEBUComparisonOptions@ItemStackBase@@@Z
     MCAPI bool queryActorEquipmentSlotForItem(class Actor const &, class ItemInstance const &, ::EquipmentSlot, class CommandIntegerRange const &, class CommandIntegerRange const &, struct ItemStackBase::ComparisonOptions const &);

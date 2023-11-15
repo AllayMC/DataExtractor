@@ -26,16 +26,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?connect@WebSocketInterfaceInternal@Http@Bedrock@@UEAAJPEBD0V?$not_null@PEAUHC_WEBSOCKET_OBSERVER@@@gsl@@V?$not_null@PEAUXAsyncBlock@@@5@PEAUHC_PERFORM_ENV@@@Z
-    MCVAPI long connect(char const *, char const *, gsl::not_null<struct HC_WEBSOCKET_OBSERVER *>, gsl::not_null<struct XAsyncBlock *>, struct HC_PERFORM_ENV *);
+    MCVAPI long connect(char const *, char const *, class gsl::not_null<struct HC_WEBSOCKET_OBSERVER *>, class gsl::not_null<struct XAsyncBlock *>, struct HC_PERFORM_ENV *);
 
     // symbol: ?disconnect@WebSocketInterfaceInternal@Http@Bedrock@@UEAAJV?$not_null@PEAUHC_WEBSOCKET_OBSERVER@@@gsl@@W4HCWebSocketCloseStatus@@@Z
-    MCVAPI long disconnect(gsl::not_null<struct HC_WEBSOCKET_OBSERVER *>, ::HCWebSocketCloseStatus);
+    MCVAPI long disconnect(class gsl::not_null<struct HC_WEBSOCKET_OBSERVER *>, ::HCWebSocketCloseStatus);
 
     // symbol: ?sendBinaryMessage@WebSocketInterfaceInternal@Http@Bedrock@@UEAAJV?$not_null@PEAUHC_WEBSOCKET_OBSERVER@@@gsl@@V?$span@$$CBE$0?0@5@V?$not_null@PEAUXAsyncBlock@@@5@@Z
-    MCVAPI long sendBinaryMessage(gsl::not_null<struct HC_WEBSOCKET_OBSERVER *>, gsl::span<uchar const>, gsl::not_null<struct XAsyncBlock *>);
+    MCVAPI long sendBinaryMessage(class gsl::not_null<struct HC_WEBSOCKET_OBSERVER *>, class gsl::span<uint8_t const>, class gsl::not_null<struct XAsyncBlock *>);
 
     // symbol: ?sendMessage@WebSocketInterfaceInternal@Http@Bedrock@@UEAAJV?$not_null@PEAUHC_WEBSOCKET_OBSERVER@@@gsl@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$not_null@PEAUXAsyncBlock@@@5@@Z
-    MCVAPI long sendMessage(gsl::not_null<struct HC_WEBSOCKET_OBSERVER *>, std::string_view, gsl::not_null<struct XAsyncBlock *>);
+    MCVAPI long sendMessage(class gsl::not_null<struct HC_WEBSOCKET_OBSERVER *>, std::string_view, class gsl::not_null<struct XAsyncBlock *>);
 
     // NOLINTEND
 

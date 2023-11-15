@@ -29,7 +29,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@MobEquipmentPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1MobEquipmentPacket@@UEAA@XZ
     MCVAPI ~MobEquipmentPacket();
@@ -38,10 +38,10 @@ public:
     MCAPI MobEquipmentPacket(class MobEquipmentPacket &&);
 
     // symbol: ??0MobEquipmentPacket@@QEAA@VActorRuntimeID@@AEBVItemStack@@HHW4ContainerID@@@Z
-    MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const &, int, int, ::ContainerID);
+    MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const &, int32_t, int32_t, ::ContainerID);
 
     // symbol: ??0MobEquipmentPacket@@QEAA@VActorRuntimeID@@AEBVNetworkItemStackDescriptor@@HHW4ContainerID@@@Z
-    MCAPI MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const &, int, int, ::ContainerID);
+    MCAPI MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const &, int32_t, int32_t, ::ContainerID);
 
     // symbol: ??0MobEquipmentPacket@@QEAA@XZ
     MCAPI MobEquipmentPacket();

@@ -28,16 +28,16 @@ public:
     MCAPI void setJumpDistance(double);
 
     // symbol: ?setLongJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
-    MCAPI void setLongJumpCount(uint);
+    MCAPI void setLongJumpCount(uint32_t);
 
     // symbol: ?setPositionSourceType@PlayerRespawnTelemetryData@@QEAAXI@Z
-    MCAPI void setPositionSourceType(uint);
+    MCAPI void setPositionSourceType(uint32_t);
 
     // symbol: ?setSearchTime@PlayerRespawnTelemetryData@@QEAAXN@Z
     MCAPI void setSearchTime(double);
 
     // symbol: ?setShortJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
-    MCAPI void setShortJumpCount(uint);
+    MCAPI void setShortJumpCount(uint32_t);
 
     // NOLINTEND
 

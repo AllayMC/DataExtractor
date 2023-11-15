@@ -18,7 +18,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getAmount@MultiplyValueAmplifier@@UEBAMHM@Z
-    virtual float getAmount(int, float) const;
+    virtual float getAmount(int32_t, float) const;
 
     // NOLINTEND
 

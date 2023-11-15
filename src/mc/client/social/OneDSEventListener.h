@@ -30,7 +30,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 3, symbol: ?getEventTagsFilter@OneDSEventListener@Events@Social@@UEBAHXZ
-    virtual int getEventTagsFilter() const;
+    virtual int32_t getEventTagsFilter() const;
 
     // vIndex: 5, symbol: ?sendEvent@OneDSEventListener@Events@Social@@UEAAXAEBVEvent@23@@Z
     virtual void sendEvent(class Social::Events::Event const &);

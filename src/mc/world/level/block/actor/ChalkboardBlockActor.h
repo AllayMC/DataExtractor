@@ -144,13 +144,13 @@ public:
     MCAPI bool getLocked() const;
 
     // symbol: ?getRotation@ChalkboardBlockActor@@QEBAHAEAVBlockSource@@@Z
-    MCAPI int getRotation(class BlockSource &) const;
+    MCAPI int32_t getRotation(class BlockSource &) const;
 
     // symbol: ?getText@ChalkboardBlockActor@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getText() const;
 
     // symbol: ?getTextCharCount@ChalkboardBlockActor@@QEBAHXZ
-    MCAPI int getTextCharCount() const;
+    MCAPI int32_t getTextCharCount() const;
 
     // symbol: ?setText@ChalkboardBlockActor@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setText(std::string const &);
@@ -159,16 +159,16 @@ public:
     MCAPI void validate(class BlockSource &);
 
     // symbol: ?calculateAllBlocks@ChalkboardBlockActor@@SA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVBlockPos@@W4ChalkboardSize@@H@Z
-    MCAPI static std::vector<class BlockPos> calculateAllBlocks(class BlockPos const &, ::ChalkboardSize, int);
+    MCAPI static std::vector<class BlockPos> calculateAllBlocks(class BlockPos const &, ::ChalkboardSize, int32_t);
 
     // symbol: ?canCreateChalkboard@ChalkboardBlockActor@@SA_NPEAVActor@@AEAVBlockSource@@AEBVBlockPos@@W4ChalkboardSize@@EHAEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVItemStack@@_N@Z
-    MCAPI static bool canCreateChalkboard(class Actor *, class BlockSource &, class BlockPos const &, ::ChalkboardSize, uchar, int, std::vector<class BlockPos> &, class ItemStack const &, bool);
+    MCAPI static bool canCreateChalkboard(class Actor *, class BlockSource &, class BlockPos const &, ::ChalkboardSize, uint8_t, int32_t, std::vector<class BlockPos> &, class ItemStack const &, bool);
 
     // symbol: ?convertFromEntity@ChalkboardBlockActor@@SAPEAV1@AEAVBlockSource@@AEBVCompoundTag@@@Z
     MCAPI static class ChalkboardBlockActor * convertFromEntity(class BlockSource &, class CompoundTag const &);
 
     // symbol: ?createChalkboard@ChalkboardBlockActor@@SAPEAV1@PEAVActor@@AEAVBlockSource@@AEBVBlockPos@@W4ChalkboardSize@@EH_NAEBVItemStack@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class ChalkboardBlockActor * createChalkboard(class Actor *, class BlockSource &, class BlockPos const &, ::ChalkboardSize, uchar, int, bool, class ItemStack const &, std::string);
+    MCAPI static class ChalkboardBlockActor * createChalkboard(class Actor *, class BlockSource &, class BlockPos const &, ::ChalkboardSize, uint8_t, int32_t, bool, class ItemStack const &, std::string);
 
     // NOLINTEND
 

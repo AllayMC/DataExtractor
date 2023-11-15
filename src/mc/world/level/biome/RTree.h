@@ -40,7 +40,7 @@ public:
         MCAPI class RTree::Node & operator=(class RTree::Node &&);
     
         // symbol: ?search@Node@RTree@@QEBAXAEBUTargetSpace@ClimateUtils@@AEAU?$pair@PEBVNode@RTree@@_J@std@@@Z
-        MCAPI void search(struct ClimateUtils::TargetSpace const &, std::pair<class RTree::Node const *, int64> &) const;
+        MCAPI void search(struct ClimateUtils::TargetSpace const &, std::pair<class RTree::Node const *, int64_t> &) const;
     
         // symbol: ??1Node@RTree@@QEAA@XZ
         MCAPI ~Node();
@@ -52,7 +52,7 @@ public:
         MCAPI static std::vector<class RTree::Node> bucketize(std::vector<class RTree::Node> &&);
     
         // symbol: ?sort@Node@RTree@@SAXAEAV?$vector@VNode@RTree@@V?$allocator@VNode@RTree@@@std@@@std@@H_N@Z
-        MCAPI static void sort(std::vector<class RTree::Node> &, int, bool);
+        MCAPI static void sort(std::vector<class RTree::Node> &, int32_t, bool);
     
         // NOLINTEND
     

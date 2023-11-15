@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?doValidate@StringConstraint@cereal@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@2@@Z
-    virtual void doValidate(entt::meta_any const &, class cereal::SerializerContext &) const;
+    virtual void doValidate(class entt::meta_any const &, class cereal::SerializerContext &) const;
 
     // symbol: ??1StringConstraint@cereal@@UEAA@XZ
     MCVAPI ~StringConstraint();
@@ -36,7 +36,7 @@ public:
     MCAPI StringConstraint(class cereal::StringConstraint &&);
 
     // symbol: ?maxSize@StringConstraint@cereal@@QEAAAEAV12@_K@Z
-    MCAPI class cereal::StringConstraint & maxSize(uint64);
+    MCAPI class cereal::StringConstraint & maxSize(uint64_t);
 
     // symbol: ?regex@StringConstraint@cereal@@QEAAAEAV12@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class cereal::StringConstraint & regex(std::string);

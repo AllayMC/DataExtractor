@@ -49,13 +49,13 @@ public:
     virtual void __unk_vfn_53();
 
     // vIndex: 56, symbol: ?isDestructive@BlockItem@@UEBA_NH@Z
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int32_t) const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
 
     // vIndex: 67, symbol: ?isValidAuxValue@BlockItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int32_t) const;
 
     // vIndex: 70, symbol: __unk_vfn_70
     virtual void __unk_vfn_70();
@@ -85,32 +85,32 @@ public:
     virtual void __unk_vfn_116();
 
     // vIndex: 120, symbol: ?getIconInfo@BlockItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int32_t, bool) const;
 
     // vIndex: 124, symbol: ?getLightEmission@BlockItem@@UEBA?AUBrightness@@H@Z
-    virtual struct Brightness getLightEmission(int) const;
+    virtual struct Brightness getLightEmission(int32_t) const;
 
     // vIndex: 125, symbol: ?getIconYOffset@BlockItem@@UEBAHXZ
-    virtual int getIconYOffset() const;
+    virtual int32_t getIconYOffset() const;
 
     // vIndex: 133, symbol: ?_calculatePlacePos@BlockItem@@MEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-    virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, uchar &, class BlockPos &) const;
+    virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, uint8_t &, class BlockPos &) const;
 
     // vIndex: 135, symbol: ?_useOn@BlockItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uchar, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, uint8_t, class Vec3 const &) const;
 
     // symbol: ??1BlockItem@@UEAA@XZ
     MCVAPI ~BlockItem();
 
     // symbol: ??0BlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BlockItem(std::string const &, int);
+    MCAPI BlockItem(std::string const &, int32_t);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_displayHeightLimitErrorMessages@BlockItem@@IEBAXAEAVActor@@H_N@Z
-    MCAPI void _displayHeightLimitErrorMessages(class Actor &, int, bool) const;
+    MCAPI void _displayHeightLimitErrorMessages(class Actor &, int32_t, bool) const;
 
     // NOLINTEND
 

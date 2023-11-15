@@ -66,10 +66,10 @@ public:
     MCAPI void acquireAllTicks(class BlockTickingQueue &);
 
     // symbol: ?add@BlockTickingQueue@@QEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@HH@Z
-    MCAPI void add(class BlockSource &, class BlockPos const &, class Block const &, int, int);
+    MCAPI void add(class BlockSource &, class BlockPos const &, class Block const &, int32_t, int32_t);
 
     // symbol: ?addTickToLevelChunk@BlockTickingQueue@@QEAAXAEAVLevelChunk@@AEBVBlockPos@@AEBVBlock@@HH@Z
-    MCAPI void addTickToLevelChunk(class LevelChunk &, class BlockPos const &, class Block const &, int, int);
+    MCAPI void addTickToLevelChunk(class LevelChunk &, class BlockPos const &, class Block const &, int32_t, int32_t);
 
     // symbol: ?eliminateAllTicksZeroAndAbove@BlockTickingQueue@@QEAAXXZ
     MCAPI void eliminateAllTicksZeroAndAbove();
@@ -87,7 +87,7 @@ public:
     MCAPI std::optional<struct Tick> getTickDelayForNextTickUpdateAtPos(class BlockPos const &) const;
 
     // symbol: ?getTickDelaysInArea@BlockTickingQueue@@QEBA?AV?$unordered_multimap@VBlockPos@@UTickDelayBlock@@U?$hash@VBlockPos@@@std@@U?$equal_to@VBlockPos@@@4@V?$allocator@U?$pair@$$CBVBlockPos@@UTickDelayBlock@@@std@@@4@@std@@AEBVBoundingBox@@@Z
-    MCAPI std::unordered_multimap<class BlockPos,struct TickDelayBlock> getTickDelaysInArea(class BoundingBox const &) const;
+    MCAPI std::unordered_multimap<class BlockPos, struct TickDelayBlock, std::hash<class BlockPos>, std::equal_to<class BlockPos>, std::allocator<std::pair<class BlockPos const, struct TickDelayBlock>>> getTickDelaysInArea(class BoundingBox const &) const;
 
     // symbol: ?hasTickInCurrentTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool hasTickInCurrentTick(class BlockPos const &) const;
@@ -123,13 +123,13 @@ public:
     MCAPI void setOwningChunk(class LevelChunk *);
 
     // symbol: ?tickAllPendingTicks@BlockTickingQueue@@QEAAXAEAVBlockSource@@_K@Z
-    MCAPI void tickAllPendingTicks(class BlockSource &, uint64);
+    MCAPI void tickAllPendingTicks(class BlockSource &, uint64_t);
 
     // symbol: ?tickPendingTicks@BlockTickingQueue@@QEAA_NAEAVBlockSource@@AEBUTick@@H_N@Z
-    MCAPI bool tickPendingTicks(class BlockSource &, struct Tick const &, int, bool);
+    MCAPI bool tickPendingTicks(class BlockSource &, struct Tick const &, int32_t, bool);
 
     // symbol: ?ticksFromNow@BlockTickingQueue@@QEBAHH@Z
-    MCAPI int ticksFromNow(int) const;
+    MCAPI int32_t ticksFromNow(int32_t) const;
 
     // symbol: ??1BlockTickingQueue@@QEAA@XZ
     MCAPI ~BlockTickingQueue();
@@ -149,7 +149,7 @@ public:
     MCAPI void _acquireAllTicks(class BlockTickingQueue &);
 
     // symbol: ?_addToNextTickQueue@BlockTickingQueue@@AEAAXAEBVBlockPos@@AEBVBlock@@HH@Z
-    MCAPI void _addToNextTickQueue(class BlockPos const &, class Block const &, int, int);
+    MCAPI void _addToNextTickQueue(class BlockPos const &, class Block const &, int32_t, int32_t);
 
     // symbol: ?_eliminateTicksForZeroAndAbove@BlockTickingQueue@@AEAAXAEAVTickDataSet@1@@Z
     MCAPI void _eliminateTicksForZeroAndAbove(class BlockTickingQueue::TickDataSet &);

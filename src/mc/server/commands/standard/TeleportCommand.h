@@ -32,7 +32,7 @@ public:
     MCAPI static void applyTarget(class Actor &, class TeleportTarget, bool);
 
     // symbol: ?computeTarget@TeleportCommand@@SA?AVTeleportTarget@@AEAVActor@@VVec3@@PEAV4@V?$AutomaticID@VDimension@@H@@AEBV?$optional@VRotationData@RotationCommandUtils@@@std@@H@Z
-    MCAPI static class TeleportTarget computeTarget(class Actor &, class Vec3, class Vec3 *, DimensionType, std::optional<class RotationCommandUtils::RotationData> const &, int);
+    MCAPI static class TeleportTarget computeTarget(class Actor &, class Vec3, class Vec3 *, DimensionType, std::optional<class RotationCommandUtils::RotationData> const &, int32_t);
 
     // symbol: ?setup@TeleportCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry &);
@@ -45,7 +45,7 @@ public:
     MCAPI ::RotationCommandUtils::FacingResult getFacingDirection(class CommandOrigin const &, class CommandOutput &, class Vec3 &, class Actor *) const;
 
     // symbol: ?getCommandAreaForTargets@TeleportCommand@@CA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVCommandOrigin@@AEBV?$CommandSelectorResults@VActor@@@@VVec3@@H_N@Z
-    MCAPI static std::unique_ptr<class CommandArea> getCommandAreaForTargets(class CommandOrigin const &, class CommandSelectorResults<class Actor> const &, class Vec3, int, bool);
+    MCAPI static std::unique_ptr<class CommandArea> getCommandAreaForTargets(class CommandOrigin const &, class CommandSelectorResults<class Actor> const &, class Vec3, int32_t, bool);
 
     // NOLINTEND
 

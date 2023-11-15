@@ -34,7 +34,7 @@ public:
     virtual void appendDebugInfo(std::string &) const;
 
     // symbol: ??0RandomLookAroundGoal@@QEAA@AEAVMob@@HHMMM@Z
-    MCAPI RandomLookAroundGoal(class Mob &, int, int, float, float, float);
+    MCAPI RandomLookAroundGoal(class Mob &, int32_t, int32_t, float, float, float);
 
     // NOLINTEND
 

@@ -31,10 +31,10 @@ public:
     MCAPI void setSpawnSound(std::string const &);
 
     // symbol: ?setSpawnTimeMax@SpawnActorParameters@@QEAAXAEBH@Z
-    MCAPI void setSpawnTimeMax(int const &);
+    MCAPI void setSpawnTimeMax(int32_t const &);
 
     // symbol: ?setSpawnTimeMin@SpawnActorParameters@@QEAAXAEBH@Z
-    MCAPI void setSpawnTimeMin(int const &);
+    MCAPI void setSpawnTimeMin(int32_t const &);
 
     // symbol: ?spawnsItemStack@SpawnActorParameters@@QEBA_NXZ
     MCAPI bool spawnsItemStack() const;

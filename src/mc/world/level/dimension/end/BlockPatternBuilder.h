@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?aisle@BlockPatternBuilder@@QEAAAEAV1@HZZ
-    MCAPI class BlockPatternBuilder & aisle(int, ...);
+    MCAPI class BlockPatternBuilder & aisle(int32_t, ...);
 
     // symbol: ?build@BlockPatternBuilder@@QEAAAEAV1@XZ
     MCAPI class BlockPatternBuilder & build();
@@ -30,10 +30,10 @@ public:
     MCAPI struct BuildMatch match(class BlockPos const &);
 
     // symbol: ?match@BlockPatternBuilder@@QEAA?AUBuildMatch@@AEBVBlockPos@@HH@Z
-    MCAPI struct BuildMatch match(class BlockPos const &, int, int);
+    MCAPI struct BuildMatch match(class BlockPos const &, int32_t, int32_t);
 
     // symbol: ?match@BlockPatternBuilder@@QEAA?AUBuildMatch@@AEBVBlockPos@@HHEE@Z
-    MCAPI struct BuildMatch match(class BlockPos const &, int, int, uchar, uchar);
+    MCAPI struct BuildMatch match(class BlockPos const &, int32_t, int32_t, uint8_t, uint8_t);
 
     // symbol: ?replaceBlocks@BlockPatternBuilder@@QEAAXDUBuildMatch@@AEBVBlock@@V?$function@$$A6AXAEBVBlock@@AEBVBlockPos@@@Z@std@@@Z
     MCAPI void replaceBlocks(char, struct BuildMatch, class Block const &, std::function<void (class Block const &, class BlockPos const &)>);
@@ -46,7 +46,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_fitsBlockPatternEntry@BlockPatternBuilder@@AEAA_NHHAEBVBlockPos@@AEBVBlock@@@Z
-    MCAPI bool _fitsBlockPatternEntry(int, int, class BlockPos const &, class Block const &);
+    MCAPI bool _fitsBlockPatternEntry(int32_t, int32_t, class BlockPos const &, class Block const &);
 
     // NOLINTEND
 

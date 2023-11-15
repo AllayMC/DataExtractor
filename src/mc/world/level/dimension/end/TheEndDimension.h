@@ -33,7 +33,7 @@ public:
     MCVAPI void fixWallChunk(class ChunkSource &, class LevelChunk &);
 
     // symbol: ?getCloudHeight@TheEndDimension@@UEBAFXZ
-    MCVAPI short getCloudHeight() const;
+    MCVAPI int16_t getCloudHeight() const;
 
     // symbol: ?getDefaultBiome@TheEndDimension@@UEBA?AVHashedString@@XZ
     MCVAPI class HashedString getDefaultBiome() const;
@@ -42,13 +42,13 @@ public:
     MCVAPI class BlockPos getSpawnPos() const;
 
     // symbol: ?getSpawnYPosition@TheEndDimension@@UEBAHXZ
-    MCVAPI int getSpawnYPosition() const;
+    MCVAPI int32_t getSpawnYPosition() const;
 
     // symbol: ?getSunIntensity@TheEndDimension@@UEBAMMAEBVVec3@@M@Z
     MCVAPI float getSunIntensity(float, class Vec3 const &, float) const;
 
     // symbol: ?getTimeOfDay@TheEndDimension@@UEBAMHM@Z
-    MCVAPI float getTimeOfDay(int, float) const;
+    MCVAPI float getTimeOfDay(int32_t, float) const;
 
     // symbol: ?hasGround@TheEndDimension@@UEBA_NXZ
     MCVAPI bool hasGround() const;
@@ -60,13 +60,13 @@ public:
     MCVAPI bool isDay() const;
 
     // symbol: ?isFoggyAt@TheEndDimension@@UEBA_NHH@Z
-    MCVAPI bool isFoggyAt(int, int) const;
+    MCVAPI bool isFoggyAt(int32_t, int32_t) const;
 
     // symbol: ?isNaturalDimension@TheEndDimension@@UEBA_NXZ
     MCVAPI bool isNaturalDimension() const;
 
     // symbol: ?isValidSpawn@TheEndDimension@@UEBA_NHH@Z
-    MCVAPI bool isValidSpawn(int, int) const;
+    MCVAPI bool isValidSpawn(int32_t, int32_t) const;
 
     // symbol: ?levelChunkNeedsUpgrade@TheEndDimension@@UEBA_NAEBVLevelChunk@@@Z
     MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const &) const;
@@ -97,7 +97,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?makeStructureFeatures@TheEndDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@AEAVDimension@@I@Z
-    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(class Dimension &, uint);
+    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(class Dimension &, uint32_t);
 
     // NOLINTEND
 

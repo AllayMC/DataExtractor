@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?sendBandwidthMetric@ServerCommunicationInterface@@QEAAX_K000AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void sendBandwidthMetric(uint64, uint64, uint64, uint64, std::string const &);
+    MCAPI void sendBandwidthMetric(uint64_t, uint64_t, uint64_t, uint64_t, std::string const &);
 
     // symbol: ?sendChunkLoadTelemtryData@ServerCommunicationInterface@@QEAAXAEBUChunkLoadTelemetryData@@@Z
     MCAPI void sendChunkLoadTelemtryData(struct ChunkLoadTelemetryData const &);

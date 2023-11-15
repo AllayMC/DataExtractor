@@ -48,7 +48,7 @@ public:
     MCAPI class Scripting::Result<void> ejectPassengers() const;
 
     // symbol: ?getControllingSeat@ScriptRideableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getControllingSeat() const;
+    MCAPI class Scripting::Result<int32_t> getControllingSeat() const;
 
     // symbol: ?getCrouchingSkipInteract@ScriptRideableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> getCrouchingSkipInteract() const;
@@ -69,7 +69,7 @@ public:
     MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>> getRiders() const;
 
     // symbol: ?getSeatCount@ScriptRideableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getSeatCount() const;
+    MCAPI class Scripting::Result<int32_t> getSeatCount() const;
 
     // symbol: ?getSeats@ScriptRideableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@USeatDescription@@V?$allocator@USeatDescription@@@std@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::vector<struct SeatDescription>> getSeats() const;

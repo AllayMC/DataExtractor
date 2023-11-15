@@ -39,7 +39,7 @@ public:
     virtual class Container * _tryGetContainer() const;
 
     // vIndex: 14, symbol: ?_getItemContext@ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
-    virtual class ItemContext _getItemContext(int) const;
+    virtual class ItemContext _getItemContext(int32_t) const;
 
     // symbol: ??1ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptPlayerInventoryComponentContainer();

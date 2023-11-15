@@ -23,7 +23,7 @@ public:
     MCAPI std::string const & getCommitId() const;
 
     // symbol: ?getCrashTimestamp@SessionInfo@Bedrock@@QEBA_JXZ
-    MCAPI int64 getCrashTimestamp() const;
+    MCAPI int64_t getCrashTimestamp() const;
 
     // symbol: ?getSessionId@SessionInfo@Bedrock@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getSessionId() const;

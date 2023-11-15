@@ -21,10 +21,10 @@ public:
     MCVAPI bool addItemToFirstEmptySlot(class ItemStack const &);
 
     // symbol: ?canPullOutItem@ChiseledBookshelfBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const &) const;
+    MCVAPI bool canPullOutItem(int32_t, int32_t, class ItemStack const &) const;
 
     // symbol: ?canPushInItem@ChiseledBookshelfBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPushInItem(int, int, class ItemStack const &) const;
+    MCVAPI bool canPushInItem(int32_t, int32_t, class ItemStack const &) const;
 
     // symbol: ?getContainer@ChiseledBookshelfBlockActor@@UEAAPEAVContainer@@XZ
     MCVAPI class Container * getContainer();
@@ -33,13 +33,13 @@ public:
     MCVAPI class Container const * getContainer() const;
 
     // symbol: ?getContainerSize@ChiseledBookshelfBlockActor@@UEBAHXZ
-    MCVAPI int getContainerSize() const;
+    MCVAPI int32_t getContainerSize() const;
 
     // symbol: ?getItem@ChiseledBookshelfBlockActor@@UEBAAEBVItemStack@@H@Z
-    MCVAPI class ItemStack const & getItem(int) const;
+    MCVAPI class ItemStack const & getItem(int32_t) const;
 
     // symbol: ?getMaxStackSize@ChiseledBookshelfBlockActor@@UEBAHXZ
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
 
     // symbol: ?getName@ChiseledBookshelfBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getName() const;
@@ -57,10 +57,10 @@ public:
     MCVAPI bool save(class CompoundTag &) const;
 
     // symbol: ?serverInitItemStackIds@ChiseledBookshelfBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void (int, class ItemStack const &)>);
+    MCVAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void (int32_t, class ItemStack const &)>);
 
     // symbol: ?setItem@ChiseledBookshelfBlockActor@@UEAAXHAEBVItemStack@@@Z
-    MCVAPI void setItem(int, class ItemStack const &);
+    MCVAPI void setItem(int32_t, class ItemStack const &);
 
     // symbol: ?startOpen@ChiseledBookshelfBlockActor@@UEAAXAEAVPlayer@@@Z
     MCVAPI void startOpen(class Player &);
@@ -72,10 +72,10 @@ public:
     MCAPI ChiseledBookshelfBlockActor(class BlockPos const &);
 
     // symbol: ?getLastInteractedSlot@ChiseledBookshelfBlockActor@@QEBAIXZ
-    MCAPI uint getLastInteractedSlot() const;
+    MCAPI uint32_t getLastInteractedSlot() const;
 
     // symbol: ?retrieveBook@ChiseledBookshelfBlockActor@@QEAA?AVItemStack@@H@Z
-    MCAPI class ItemStack retrieveBook(int);
+    MCAPI class ItemStack retrieveBook(int32_t);
 
     // symbol: ?allowedItem@ChiseledBookshelfBlockActor@@SA_NAEBVItemStack@@@Z
     MCAPI static bool allowedItem(class ItemStack const &);
@@ -88,10 +88,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_numberOfBooksStored@ChiseledBookshelfBlockActor@@AEBAIXZ
-    MCAPI uint _numberOfBooksStored() const;
+    MCAPI uint32_t _numberOfBooksStored() const;
 
     // symbol: ?_setItemInternal@ChiseledBookshelfBlockActor@@AEAAXHAEBVItemStack@@_N@Z
-    MCAPI void _setItemInternal(int, class ItemStack const &, bool);
+    MCAPI void _setItemInternal(int32_t, class ItemStack const &, bool);
 
     // NOLINTEND
 

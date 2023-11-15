@@ -18,7 +18,7 @@ public:
     virtual void __unk_vfn_0();
 
     // symbol: ??0NetherFortressStart@@QEAA@AEAVRandom@@FHH@Z
-    MCAPI NetherFortressStart(class Random &, short, int, int);
+    MCAPI NetherFortressStart(class Random &, int16_t, int32_t, int32_t);
 
     // NOLINTEND
 

@@ -31,10 +31,10 @@ public:
     MCAPI class PortalRecord const & addPortalRecord(DimensionType, class PortalShape const &);
 
     // symbol: ?createPortal@PortalForcer@@QEAAAEBVPortalRecord@@AEBVActor@@H@Z
-    MCAPI class PortalRecord const & createPortal(class Actor const &, int);
+    MCAPI class PortalRecord const & createPortal(class Actor const &, int32_t);
 
     // symbol: ?findPortal@PortalForcer@@QEBA_NV?$AutomaticID@VDimension@@H@@AEBVBlockPos@@HAEAV3@@Z
-    MCAPI bool findPortal(DimensionType, class BlockPos const &, int, class BlockPos &) const;
+    MCAPI bool findPortal(DimensionType, class BlockPos const &, int32_t, class BlockPos &) const;
 
     // symbol: ?force@PortalForcer@@QEAAXAEAVActor@@AEBUDimensionTransitionComponent@@@Z
     MCAPI void force(class Actor &, struct DimensionTransitionComponent const &);
@@ -62,7 +62,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_findPortal@PortalForcer@@AEBA?AV?$optional@VPortalRecord@@@std@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@HAEAV5@@Z
-    MCAPI std::optional<class PortalRecord> _findPortal(DimensionType, class BlockPos const &, int, class BlockPos &) const;
+    MCAPI std::optional<class PortalRecord> _findPortal(DimensionType, class BlockPos const &, int32_t, class BlockPos &) const;
 
     // NOLINTEND
 

@@ -23,7 +23,7 @@ public:
     virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
 
     // symbol: ?deserialize@LootTableReference@@SA?AV?$unique_ptr@VLootPoolEntry@@U?$default_delete@VLootPoolEntry@@@std@@@std@@VValue@Json@@HHAEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
-    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value, int, int, std::vector<std::unique_ptr<class LootItemCondition>> &);
+    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value, int32_t, int32_t, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
     // NOLINTEND
 

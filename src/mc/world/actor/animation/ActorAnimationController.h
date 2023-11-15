@@ -18,7 +18,7 @@ public:
     MCAPI std::shared_ptr<class ActorAnimationControllerState> & addState(class HashedString const &);
 
     // symbol: ?findStateIndex@ActorAnimationController@@QEBA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N_K@Z
-    MCAPI uint64 findStateIndex(std::string const &, bool, uint64) const;
+    MCAPI uint64_t findStateIndex(std::string const &, bool, uint64_t) const;
 
     // symbol: ?resolveTransitionStateIndices@ActorAnimationController@@QEAAXXZ
     MCAPI void resolveTransitionStateIndices();

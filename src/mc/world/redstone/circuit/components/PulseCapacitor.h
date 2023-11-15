@@ -18,10 +18,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getStrength@PulseCapacitor@@UEBAHXZ
-    virtual int getStrength() const;
+    virtual int32_t getStrength() const;
 
     // vIndex: 3, symbol: ?setStrength@PulseCapacitor@@UEAAXH@Z
-    virtual void setStrength(int);
+    virtual void setStrength(int32_t);
 
     // vIndex: 6, symbol: ?canConsumePowerAnyDirection@PulseCapacitor@@UEBA_NXZ
     virtual bool canConsumePowerAnyDirection() const;
@@ -45,7 +45,7 @@ public:
     virtual ::CircuitComponentType getCircuitComponentType() const;
 
     // vIndex: 25, symbol: ?getPoweroutDirection@PulseCapacitor@@UEBAEXZ
-    virtual uchar getPoweroutDirection() const;
+    virtual uint8_t getPoweroutDirection() const;
 
     // symbol: ??0PulseCapacitor@@QEAA@XZ
     MCAPI PulseCapacitor();

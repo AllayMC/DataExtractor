@@ -68,7 +68,7 @@ public:
     virtual bool canAttack(class Actor *, bool) const;
 
     // vIndex: 84, symbol: ?handleEntityEvent@Witch@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();

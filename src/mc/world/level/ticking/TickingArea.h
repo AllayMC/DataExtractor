@@ -83,7 +83,7 @@ public:
     virtual void updateAndCenter(class LevelStorage &, struct Tick);
 
     // vIndex: 20, symbol: ?findOwner@TickingArea@@UEAAPEAVActor@@AEAE@Z
-    virtual class Actor * findOwner(uchar &);
+    virtual class Actor * findOwner(uint8_t &);
 
     // vIndex: 21, symbol: ?entityHasBeenFound@TickingArea@@UEBA_NXZ
     virtual bool entityHasBeenFound() const;
@@ -98,7 +98,7 @@ public:
     virtual void remove(class LevelStorage &);
 
     // vIndex: 25, symbol: ?onComponentChanged@TickingArea@@UEAAXIM_NAEAVLevelStorage@@@Z
-    virtual void onComponentChanged(uint, float, bool, class LevelStorage &);
+    virtual void onComponentChanged(uint32_t, float, bool, class LevelStorage &);
 
     // vIndex: 26, symbol: ?updateBlockSourceCurrentTick@TickingArea@@UEAAXAEBUTick@@@Z
     virtual void updateBlockSourceCurrentTick(struct Tick const &);

@@ -75,7 +75,7 @@ public:
     virtual void __unk_vfn_109();
 
     // vIndex: 114, symbol: ?onSynchedDataUpdate@Slime@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int32_t);
 
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
@@ -111,7 +111,7 @@ public:
     virtual ::LevelSoundEvent getSquishSound();
 
     // vIndex: 218, symbol: ?setSlimeSize@Slime@@MEAAXH@Z
-    virtual void setSlimeSize(int);
+    virtual void setSlimeSize(int32_t);
 
     // vIndex: 219, symbol: ?doPlayJumpSound@Slime@@MEAA_NXZ
     virtual bool doPlayJumpSound();
@@ -129,7 +129,7 @@ public:
     virtual void decreaseSquish();
 
     // vIndex: 224, symbol: ?createChild@Slime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z
-    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
+    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int32_t);
 
     // symbol: ??1Slime@@UEAA@XZ
     MCVAPI ~Slime();

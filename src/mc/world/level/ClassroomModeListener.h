@@ -36,7 +36,7 @@ public:
     MCVAPI void onAreaChanged(class BlockSource &, class BlockPos const &, class BlockPos const &);
 
     // symbol: ?onBlockChanged@ClassroomModeListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
-    MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, uint, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, ::BlockChangedEventTarget, class Actor *);
+    MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, uint32_t, class Block const &, class Block const &, int32_t, struct ActorBlockSyncMessage const *, ::BlockChangedEventTarget, class Actor *);
 
     // symbol: ?onChunkLoaded@ClassroomModeListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);

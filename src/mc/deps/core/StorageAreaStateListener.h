@@ -24,7 +24,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?onExtendDiskSpace@StorageAreaStateListener@Core@@UEAAX_NAEAV?$weak_ptr@VFileStorageArea@Core@@@std@@_KV?$function@$$A6AXXZ@4@@Z
-    virtual void onExtendDiskSpace(bool, std::weak_ptr<class Core::FileStorageArea> &, uint64, std::function<void (void)>);
+    virtual void onExtendDiskSpace(bool, std::weak_ptr<class Core::FileStorageArea> &, uint64_t, std::function<void (void)>);
 
     // symbol: ?onCriticalDiskError@StorageAreaStateListener@Core@@UEAAX_NAEBW4LevelStorageState@2@@Z
     MCVAPI void onCriticalDiskError(bool, ::Core::LevelStorageState const &);

@@ -69,7 +69,7 @@ public:
     MCVAPI float getClearColorScale();
 
     // symbol: ?getCloudHeight@Dimension@@UEBAFXZ
-    MCVAPI short getCloudHeight() const;
+    MCVAPI int16_t getCloudHeight() const;
 
     // symbol: ?getDefaultBiome@Dimension@@UEBA?AVHashedString@@XZ
     MCVAPI class HashedString getDefaultBiome() const;
@@ -84,13 +84,13 @@ public:
     MCVAPI class BlockPos getSpawnPos() const;
 
     // symbol: ?getSpawnYPosition@Dimension@@UEBAHXZ
-    MCVAPI int getSpawnYPosition() const;
+    MCVAPI int32_t getSpawnYPosition() const;
 
     // symbol: ?getSunIntensity@Dimension@@UEBAMMAEBVVec3@@M@Z
     MCVAPI float getSunIntensity(float, class Vec3 const &, float) const;
 
     // symbol: ?getTimeOfDay@Dimension@@MEBAMHM@Z
-    MCVAPI float getTimeOfDay(int, float) const;
+    MCVAPI float getTimeOfDay(int32_t, float) const;
 
     // symbol: ?hasBedrockFog@Dimension@@UEAA_NXZ
     MCVAPI bool hasBedrockFog();
@@ -117,22 +117,22 @@ public:
     MCVAPI bool isDay() const;
 
     // symbol: ?isFoggyAt@Dimension@@UEBA_NHH@Z
-    MCVAPI bool isFoggyAt(int, int) const;
+    MCVAPI bool isFoggyAt(int32_t, int32_t) const;
 
     // symbol: ?isNaturalDimension@Dimension@@UEBA_NXZ
     MCVAPI bool isNaturalDimension() const;
 
     // symbol: ?isValidSpawn@Dimension@@UEBA_NHH@Z
-    MCVAPI bool isValidSpawn(int, int) const;
+    MCVAPI bool isValidSpawn(int32_t, int32_t) const;
 
     // symbol: ?mayRespawnViaBed@Dimension@@UEBA_NXZ
     MCVAPI bool mayRespawnViaBed() const;
 
     // symbol: ?onBlockChanged@Dimension@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
-    MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, uint, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, ::BlockChangedEventTarget, class Actor *);
+    MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, uint32_t, class Block const &, class Block const &, int32_t, struct ActorBlockSyncMessage const *, ::BlockChangedEventTarget, class Actor *);
 
     // symbol: ?onBlockEvent@Dimension@@UEAAXAEAVBlockSource@@HHHHH@Z
-    MCVAPI void onBlockEvent(class BlockSource &, int, int, int, int, int);
+    MCVAPI void onBlockEvent(class BlockSource &, int32_t, int32_t, int32_t, int32_t, int32_t);
 
     // symbol: ?onChunkLoaded@Dimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
@@ -225,7 +225,7 @@ public:
     MCAPI class ChunkBuildOrderPolicyBase & getChunkBuildOrderPolicy();
 
     // symbol: ?getChunkLoadActionList@Dimension@@QEAA?AV?$not_null@PEAVChunkLoadActionList@@@gsl@@XZ
-    MCAPI gsl::not_null<class ChunkLoadActionList *> getChunkLoadActionList();
+    MCAPI class gsl::not_null<class ChunkLoadActionList *> getChunkLoadActionList();
 
     // symbol: ?getChunkSource@Dimension@@QEBAAEAVChunkSource@@XZ
     MCAPI class ChunkSource & getChunkSource() const;
@@ -234,7 +234,7 @@ public:
     MCAPI class CircuitSystem & getCircuitSystem();
 
     // symbol: ?getDelayActionList@Dimension@@QEAA?AV?$not_null@PEAVDelayActionList@@@gsl@@XZ
-    MCAPI gsl::not_null<class DelayActionList *> getDelayActionList();
+    MCAPI class gsl::not_null<class DelayActionList *> getDelayActionList();
 
     // symbol: ?getDisplayEntities@Dimension@@QEAAAEAV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@XZ
     MCAPI std::vector<class WeakEntityRef> & getDisplayEntities();
@@ -249,10 +249,10 @@ public:
     MCAPI class GameEventDispatcher * getGameEventDispatcher() const;
 
     // symbol: ?getHeight@Dimension@@QEBAFXZ
-    MCAPI short getHeight() const;
+    MCAPI int16_t getHeight() const;
 
     // symbol: ?getHeightInSubchunks@Dimension@@QEBAGXZ
-    MCAPI ushort getHeightInSubchunks() const;
+    MCAPI uint16_t getHeightInSubchunks() const;
 
     // symbol: ?getHeightRange@Dimension@@QEBAAEBVDimensionHeightRange@@XZ
     MCAPI class DimensionHeightRange const & getHeightRange() const;
@@ -264,16 +264,16 @@ public:
     MCAPI class Level const & getLevelConst() const;
 
     // symbol: ?getMinHeight@Dimension@@QEBAFXZ
-    MCAPI short getMinHeight() const;
+    MCAPI int16_t getMinHeight() const;
 
     // symbol: ?getMoonBrightness@Dimension@@QEBAMXZ
     MCAPI float getMoonBrightness() const;
 
     // symbol: ?getMoonPhase@Dimension@@QEBAHXZ
-    MCAPI int getMoonPhase() const;
+    MCAPI int32_t getMoonPhase() const;
 
     // symbol: ?getPopCap@Dimension@@QEBAMH_N@Z
-    MCAPI float getPopCap(int, bool) const;
+    MCAPI float getPopCap(int32_t, bool) const;
 
     // symbol: ?getSeasons@Dimension@@QEAAAEAVSeasons@@XZ
     MCAPI class Seasons & getSeasons();
@@ -318,7 +318,7 @@ public:
     MCAPI bool const isClientSideGenerationEnabled() const;
 
     // symbol: ?isHeightWithinRange@Dimension@@QEBA_NAEBF@Z
-    MCAPI bool isHeightWithinRange(short const &) const;
+    MCAPI bool isHeightWithinRange(int16_t const &) const;
 
     // symbol: ?isLeaveGameDone@Dimension@@QEAA_NXZ
     MCAPI bool isLeaveGameDone();
@@ -327,7 +327,7 @@ public:
     MCAPI bool isRedstoneTick();
 
     // symbol: ?isSubChunkHeightWithinRange@Dimension@@QEBA_NAEBF@Z
-    MCAPI bool isSubChunkHeightWithinRange(short const &) const;
+    MCAPI bool isSubChunkHeightWithinRange(int16_t const &) const;
 
     // symbol: ?isUltraWarm@Dimension@@QEBA_NXZ
     MCAPI bool isUltraWarm() const;
@@ -396,7 +396,7 @@ public:
     MCAPI static ::LimboEntitiesVersion const CurrentLimboEntitiesVersion;
 
     // symbol: ?LOW_CPU_PACKET_BLOCK_LIMIT@Dimension@@2IB
-    MCAPI static uint const LOW_CPU_PACKET_BLOCK_LIMIT;
+    MCAPI static uint32_t const LOW_CPU_PACKET_BLOCK_LIMIT;
 
     // symbol: ?MOON_BRIGHTNESS_PER_PHASE@Dimension@@2QBMB
     MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];

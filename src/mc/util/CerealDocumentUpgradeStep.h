@@ -19,7 +19,7 @@ public:
     MCAPI void addUpgrade(std::shared_ptr<class CerealSchemaUpgrade>);
 
     // symbol: ?apply@CerealDocumentUpgradeStep@@QEAA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@@Z
-    MCAPI bool apply(rapidjson::GenericDocument<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>, rapidjson::CrtAllocator> &, class SemVersion const &);
+    MCAPI bool apply(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &, class SemVersion const &);
 
     // symbol: ??4CerealDocumentUpgradeStep@@QEAAAEAV0@AEBV0@@Z
     MCAPI class CerealDocumentUpgradeStep & operator=(class CerealDocumentUpgradeStep const &);

@@ -18,19 +18,19 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol: ?getMinCost@ProtectionEnchant@@UEBAHH@Z
-    virtual int getMinCost(int) const;
+    virtual int32_t getMinCost(int32_t) const;
 
     // vIndex: 3, symbol: ?getMaxCost@ProtectionEnchant@@UEBAHH@Z
-    virtual int getMaxCost(int) const;
+    virtual int32_t getMaxCost(int32_t) const;
 
     // vIndex: 5, symbol: ?getMaxLevel@ProtectionEnchant@@UEBAHXZ
-    virtual int getMaxLevel() const;
+    virtual int32_t getMaxLevel() const;
 
     // vIndex: 6, symbol: ?getDamageProtection@ProtectionEnchant@@UEBAHHAEBVActorDamageSource@@@Z
-    virtual int getDamageProtection(int, class ActorDamageSource const &) const;
+    virtual int32_t getDamageProtection(int32_t, class ActorDamageSource const &) const;
 
     // vIndex: 9, symbol: ?doPostHurt@ProtectionEnchant@@UEBAXAEAVItemInstance@@AEAVActor@@1H@Z
-    virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
+    virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int32_t) const;
 
     // vIndex: 10, symbol: __unk_vfn_10
     virtual void __unk_vfn_10();

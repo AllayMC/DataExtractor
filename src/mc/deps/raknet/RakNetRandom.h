@@ -16,7 +16,7 @@ public:
     MCAPI RakNetRandom();
 
     // symbol: ?SeedMT@RakNetRandom@RakNet@@QEAAXI@Z
-    MCAPI void SeedMT(uint);
+    MCAPI void SeedMT(uint32_t);
 
     // symbol: ??1RakNetRandom@RakNet@@QEAA@XZ
     MCAPI ~RakNetRandom();

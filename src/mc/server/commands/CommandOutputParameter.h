@@ -39,7 +39,7 @@ public:
     MCAPI CommandOutputParameter(float);
 
     // symbol: ??0CommandOutputParameter@@QEAA@H@Z
-    MCAPI CommandOutputParameter(int);
+    MCAPI CommandOutputParameter(int32_t);
 
     // symbol: ??0CommandOutputParameter@@QEAA@W4NoCountType@0@@Z
     MCAPI CommandOutputParameter(::CommandOutputParameter::NoCountType);

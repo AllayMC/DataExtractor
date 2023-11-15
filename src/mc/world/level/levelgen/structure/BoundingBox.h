@@ -24,7 +24,7 @@ public:
     MCAPI bool operator==(class BoundingBox const &) const;
 
     // symbol: ?orientBox@BoundingBox@@SA?AV1@HHHHHHHHHH@Z
-    MCAPI static class BoundingBox orientBox(int, int, int, int, int, int, int, int, int, int);
+    MCAPI static class BoundingBox orientBox(int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t);
 
     // NOLINTEND
 

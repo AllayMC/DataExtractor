@@ -23,13 +23,13 @@ public:
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &) = 0;
 
     // vIndex: 2, symbol: ?apply@LootItemFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
-    virtual int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
+    virtual int32_t apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
 
     // vIndex: 3, symbol: ?apply@SetSpawnEggFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &) = 0;
 
     // vIndex: 4, symbol: ?apply@LootItemFunction@@UEAAHAEAVItemInstance@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
-    virtual int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
+    virtual int32_t apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
 
     // symbol: ??1LootItemFunction@@UEAA@XZ
     MCVAPI ~LootItemFunction();

@@ -56,7 +56,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 26, symbol: ?teleportTo@SimulatedPlayer@@UEAAXAEBVVec3@@_NHH1@Z
-    virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const &, bool, int32_t, int32_t, bool);
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
@@ -155,7 +155,7 @@ public:
     virtual std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
 
     // vIndex: 282, symbol: ?_getSpawnChunkLimit@SimulatedPlayer@@MEBAHXZ
-    virtual int _getSpawnChunkLimit() const;
+    virtual int32_t _getSpawnChunkLimit() const;
 
     // vIndex: 283, symbol: ?_updateChunkPublisherView@SimulatedPlayer@@MEAAXAEBVVec3@@M@Z
     virtual void _updateChunkPublisherView(class Vec3 const &, float);
@@ -164,7 +164,7 @@ public:
     MCVAPI bool isSimulated() const;
 
     // symbol: ??0SimulatedPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVServerNetworkSystem@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@V?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H_NAEAVEntityContext@@@Z
-    MCAPI SimulatedPlayer(class Level &, class PacketSender &, class ServerNetworkSystem &, class ClientBlobCache::Server::ActiveTransfersManager &, ::GameType, class NetworkIdentifier const &, ::SubClientId, std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
+    MCAPI SimulatedPlayer(class Level &, class PacketSender &, class ServerNetworkSystem &, class ClientBlobCache::Server::ActiveTransfersManager &, ::GameType, class NetworkIdentifier const &, ::SubClientId, std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int32_t, bool, class EntityContext &);
 
     // symbol: ?getGameTestHelper@SimulatedPlayer@@QEBA?AV?$NonOwnerPointer@VBaseGameTestHelper@gametest@@@Bedrock@@XZ
     MCAPI class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper> getGameTestHelper() const;
@@ -248,7 +248,7 @@ public:
     MCAPI void simulateSetBodyRotation(float);
 
     // symbol: ?simulateSetItem@SimulatedPlayer@@QEAA_NAEAVItemStack@@_NH@Z
-    MCAPI bool simulateSetItem(class ItemStack &, bool, int);
+    MCAPI bool simulateSetItem(class ItemStack &, bool, int32_t);
 
     // symbol: ?simulateStopDestroyingBlock@SimulatedPlayer@@QEAAXXZ
     MCAPI void simulateStopDestroyingBlock();
@@ -269,10 +269,10 @@ public:
     MCAPI bool simulateUseItem(class ItemStack &);
 
     // symbol: ?simulateUseItemInSlot@SimulatedPlayer@@QEAA_NH@Z
-    MCAPI bool simulateUseItemInSlot(int);
+    MCAPI bool simulateUseItemInSlot(int32_t);
 
     // symbol: ?simulateUseItemInSlotOnBlock@SimulatedPlayer@@QEAA_NHAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@AEBVVec3@@@Z
-    MCAPI bool simulateUseItemInSlotOnBlock(int, class BlockPos const &, ::ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
+    MCAPI bool simulateUseItemInSlotOnBlock(int32_t, class BlockPos const &, ::ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
 
     // symbol: ?simulateUseItemOnBlock@SimulatedPlayer@@QEAA_NAEAVItemStack@@AEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@AEBVVec3@@@Z
     MCAPI bool simulateUseItemOnBlock(class ItemStack &, class BlockPos const &, ::ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
@@ -281,7 +281,7 @@ public:
     MCAPI void simulateWorldMove(class Vec3 const &, float);
 
     // symbol: ?create@SimulatedPlayer@@SAPEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@V?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@0@Z
-    MCAPI static class SimulatedPlayer * create(std::string const &, class BlockPos const &, DimensionType, Bedrock::NotNullNonOwnerPtr<class ServerNetworkHandler>, std::string const &);
+    MCAPI static class SimulatedPlayer * create(std::string const &, class BlockPos const &, DimensionType, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, std::string const &);
 
     // symbol: ?tryGetFromEntity@SimulatedPlayer@@SAPEAV1@AEAVEntityContext@@_N@Z
     MCAPI static class SimulatedPlayer * tryGetFromEntity(class EntityContext &, bool);

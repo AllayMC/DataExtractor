@@ -36,13 +36,13 @@ public:
     MCAPI static class BlockPos const END_PODIUM_LOCATION;
 
     // symbol: ?PODIUM_PILLAR_HEIGHT@EndPodiumFeature@@2HB
-    MCAPI static int const PODIUM_PILLAR_HEIGHT;
+    MCAPI static int32_t const PODIUM_PILLAR_HEIGHT;
 
     // symbol: ?PODIUM_RADIUS@EndPodiumFeature@@2HB
-    MCAPI static int const PODIUM_RADIUS;
+    MCAPI static int32_t const PODIUM_RADIUS;
 
     // symbol: ?RIM_RADIUS@EndPodiumFeature@@2HB
-    MCAPI static int const RIM_RADIUS;
+    MCAPI static int32_t const RIM_RADIUS;
 
     // NOLINTEND
 

@@ -28,13 +28,13 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@NetworkChunkPublisherUpdatePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1NetworkChunkPublisherUpdatePacket@@UEAA@XZ
     MCVAPI ~NetworkChunkPublisherUpdatePacket();
 
     // symbol: ??0NetworkChunkPublisherUpdatePacket@@QEAA@AEBVBlockPos@@I@Z
-    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const &, uint);
+    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const &, uint32_t);
 
     // symbol: ??0NetworkChunkPublisherUpdatePacket@@QEAA@XZ
     MCAPI NetworkChunkPublisherUpdatePacket();

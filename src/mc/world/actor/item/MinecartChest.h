@@ -103,7 +103,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?ITEMS_SIZE@MinecartChest@@0HB
-    MCAPI static int const ITEMS_SIZE;
+    MCAPI static int32_t const ITEMS_SIZE;
 
     // NOLINTEND
 

@@ -40,7 +40,7 @@ public:
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &) = 0;
 
     // vIndex: 12, symbol: ?_nextStartTick@BaseMoveToGoal@@MEAAHXZ
-    virtual int _nextStartTick();
+    virtual int32_t _nextStartTick();
 
     // vIndex: 13, symbol: ?_canReach@BaseMoveToGoal@@MEAA_NAEBVBlockPos@@@Z
     virtual bool _canReach(class BlockPos const &);
@@ -52,13 +52,13 @@ public:
     virtual class Vec3 _getTargetPosition() const;
 
     // vIndex: 16, symbol: ?_getRepathTime@BaseMoveToGoal@@MEBA_KXZ
-    virtual uint64 _getRepathTime() const;
+    virtual uint64_t _getRepathTime() const;
 
     // symbol: ??1BaseMoveToGoal@@UEAA@XZ
     MCVAPI ~BaseMoveToGoal();
 
     // symbol: ??0BaseMoveToGoal@@QEAA@AEAVMob@@MMMHH@Z
-    MCAPI BaseMoveToGoal(class Mob &, float, float, float, int, int);
+    MCAPI BaseMoveToGoal(class Mob &, float, float, float, int32_t, int32_t);
 
     // symbol: ?setTargetPositionOffset@BaseMoveToGoal@@QEAAXAEBVVec3@@@Z
     MCAPI void setTargetPositionOffset(class Vec3 const &);
@@ -77,7 +77,7 @@ public:
     MCAPI bool _isCooldownActive() const;
 
     // symbol: ?setInterval@BaseMoveToGoal@@IEAAXH@Z
-    MCAPI void setInterval(int);
+    MCAPI void setInterval(int32_t);
 
     // NOLINTEND
 

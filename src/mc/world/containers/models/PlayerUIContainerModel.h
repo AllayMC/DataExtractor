@@ -35,7 +35,7 @@ public:
     virtual void __unk_vfn_19();
 
     // vIndex: 21, symbol: ?_getContainerOffset@PlayerUIContainerModel@@MEBAHXZ
-    virtual int _getContainerOffset() const;
+    virtual int32_t _getContainerOffset() const;
 
     // symbol: ??0PlayerUIContainerModel@@QEAA@W4ContainerEnumName@@AEAVPlayer@@@Z
     MCAPI PlayerUIContainerModel(::ContainerEnumName, class Player &);

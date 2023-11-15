@@ -23,28 +23,28 @@ public:
     MCAPI class SynchedActorData _clone() const;
 
     // symbol: ?getFloat@SynchedActorData@@QEBAMG@Z
-    MCAPI float getFloat(ushort) const;
+    MCAPI float getFloat(uint16_t) const;
 
     // symbol: ?getInt@SynchedActorData@@QEBAHG@Z
-    MCAPI int getInt(ushort) const;
+    MCAPI int32_t getInt(uint16_t) const;
 
     // symbol: ?getInt64@SynchedActorData@@QEBA_JG@Z
-    MCAPI int64 getInt64(ushort) const;
+    MCAPI int64_t getInt64(uint16_t) const;
 
     // symbol: ?getInt8@SynchedActorData@@QEBACG@Z
-    MCAPI schar getInt8(ushort) const;
+    MCAPI int8_t getInt8(uint16_t) const;
 
     // symbol: ?getStatusFlag@SynchedActorData@@QEBA_NW4ActorFlags@@@Z
     MCAPI bool getStatusFlag(::ActorFlags) const;
 
     // symbol: ?getVec3@SynchedActorData@@QEBA?AVVec3@@G@Z
-    MCAPI class Vec3 getVec3(ushort) const;
+    MCAPI class Vec3 getVec3(uint16_t) const;
 
     // symbol: ?hasData@SynchedActorData@@QEBA_NG@Z
-    MCAPI bool hasData(ushort) const;
+    MCAPI bool hasData(uint16_t) const;
 
     // symbol: ?markDirty@SynchedActorData@@QEAAXG@Z
-    MCAPI void markDirty(ushort);
+    MCAPI void markDirty(uint16_t);
 
     // symbol: ??4SynchedActorData@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class SynchedActorData & operator=(class SynchedActorData &&);
@@ -69,13 +69,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_find@SynchedActorData@@AEBAPEAVDataItem@@G@Z
-    MCAPI class DataItem * _find(ushort) const;
+    MCAPI class DataItem * _find(uint16_t) const;
 
     // symbol: ?_get@SynchedActorData@@AEAAAEAVDataItem@@G@Z
-    MCAPI class DataItem & _get(ushort);
+    MCAPI class DataItem & _get(uint16_t);
 
     // symbol: ?_resizeToContain@SynchedActorData@@AEAAXG@Z
-    MCAPI void _resizeToContain(ushort);
+    MCAPI void _resizeToContain(uint16_t);
 
     // NOLINTEND
 

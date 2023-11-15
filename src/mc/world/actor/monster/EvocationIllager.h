@@ -92,7 +92,7 @@ public:
     virtual bool isAlliedTo(class Mob *);
 
     // vIndex: 191, symbol: ?getArmorValue@EvocationIllager@@MEBAHXZ
-    virtual int getArmorValue() const;
+    virtual int32_t getArmorValue() const;
 
     // symbol: ?canExistInPeaceful@EvocationIllager@@UEBA_NXZ
     MCVAPI bool canExistInPeaceful() const;

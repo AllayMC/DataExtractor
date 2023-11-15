@@ -32,7 +32,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@NpcRequestPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1NpcRequestPacket@@UEAA@XZ
     MCVAPI ~NpcRequestPacket();
@@ -50,7 +50,7 @@ public:
     MCAPI std::string const & getSceneName() const;
 
     // symbol: ?getSkin@NpcRequestPacket@@QEBAHXZ
-    MCAPI int getSkin() const;
+    MCAPI int32_t getSkin() const;
 
     // symbol: ?requestSetInteractText@NpcRequestPacket@@SA?AV1@VActorRuntimeID@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static class NpcRequestPacket requestSetInteractText(class ActorRuntimeID, std::string);
@@ -59,14 +59,14 @@ public:
     MCAPI static class NpcRequestPacket requestSetName(class ActorRuntimeID, std::string);
 
     // symbol: ?requestSetSkin@NpcRequestPacket@@SA?AV1@VActorRuntimeID@@H@Z
-    MCAPI static class NpcRequestPacket requestSetSkin(class ActorRuntimeID, int);
+    MCAPI static class NpcRequestPacket requestSetSkin(class ActorRuntimeID, int32_t);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ??0NpcRequestPacket@@AEAA@VActorRuntimeID@@W4RequestType@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@E@Z
-    MCAPI NpcRequestPacket(class ActorRuntimeID, ::NpcRequestPacket::RequestType, std::string, uchar);
+    MCAPI NpcRequestPacket(class ActorRuntimeID, ::NpcRequestPacket::RequestType, std::string, uint8_t);
 
     // NOLINTEND
 

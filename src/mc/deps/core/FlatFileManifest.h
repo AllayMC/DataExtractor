@@ -27,7 +27,7 @@ public:
     MCAPI class Core::FlatFileManifestInfo const * findFileOrDirectoryEntry(class Core::Path const &, bool) const;
 
     // symbol: ?readFromStream@FlatFileManifest@Core@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@2@_N@Z
-    MCAPI class Bedrock::Result<void> readFromStream(std::string const &, class Core::Path const &, bool);
+    MCAPI class Bedrock::Result<void, std::error_code> readFromStream(std::string const &, class Core::Path const &, bool);
 
     // NOLINTEND
 
@@ -40,10 +40,10 @@ public:
     MCAPI void _clear();
 
     // symbol: ?_createFromVector@FlatFileManifest@Core@@AEAAXAEBVPath@2@AEBV?$vector@VFlatFileManifestInfo@Core@@V?$allocator@VFlatFileManifestInfo@Core@@@std@@@std@@_K_N@Z
-    MCAPI void _createFromVector(class Core::Path const &, std::vector<class Core::FlatFileManifestInfo> const &, uint64, bool);
+    MCAPI void _createFromVector(class Core::Path const &, std::vector<class Core::FlatFileManifestInfo> const &, uint64_t, bool);
 
     // symbol: ?_readHeaderFromStream@FlatFileManifest@Core@@AEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void> _readHeaderFromStream(class ReadOnlyBinaryStream &);
+    MCAPI class Bedrock::Result<void, std::error_code> _readHeaderFromStream(class ReadOnlyBinaryStream &);
 
     // NOLINTEND
 

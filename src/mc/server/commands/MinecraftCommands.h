@@ -55,7 +55,7 @@ public:
     MCAPI void runCommand(class HashedString const &, class CommandOrigin &, ::CurrentCmdVersion);
 
     // symbol: ?runOrDeferCommand@MinecraftCommands@@QEAAXV?$not_null@PEAVCommand@@@gsl@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
-    MCAPI void runOrDeferCommand(gsl::not_null<class Command *>, class CommandOrigin &, ::CurrentCmdVersion);
+    MCAPI void runOrDeferCommand(class gsl::not_null<class Command *>, class CommandOrigin &, ::CurrentCmdVersion);
 
     // symbol: ?runOrDeferCommand@MinecraftCommands@@QEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
     MCAPI void runOrDeferCommand(class HashedString const &, class CommandOrigin &, ::CurrentCmdVersion);

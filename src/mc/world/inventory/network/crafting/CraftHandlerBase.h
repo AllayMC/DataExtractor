@@ -20,7 +20,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?handleConsumedItem@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
-    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uchar, class ItemStack const &);
+    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uint8_t, class ItemStack const &);
 
     // vIndex: 2, symbol: ?preHandleAction@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z
     virtual ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType);

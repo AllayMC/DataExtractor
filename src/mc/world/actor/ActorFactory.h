@@ -20,7 +20,7 @@ public:
     MCVAPI ~ActorFactory();
 
     // symbol: ??0ActorFactory@@QEAA@V?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@@Z
-    MCAPI ActorFactory(Bedrock::NotNullNonOwnerPtr<class Level>);
+    MCAPI ActorFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>>);
 
     // symbol: ?applyEntityInitializer@ActorFactory@@QEBAXV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEAVEntityContext@@@Z
     MCAPI void applyEntityInitializer(std::unique_ptr<class Actor>, class EntityContext &) const;
@@ -83,7 +83,7 @@ public:
     MCAPI static class Actor * fixLegacyEntity(class BlockSource &, class CompoundTag const *);
 
     // symbol: ?registerEntityMapping@ActorFactory@@SAXAEBW4ActorType@@_NAEBQ6A?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@ZV?$optional@H@4@@Z
-    MCAPI static void registerEntityMapping(::ActorType const &, bool, std::unique_ptr<class Actor> ( *const &)(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &), std::optional<int>);
+    MCAPI static void registerEntityMapping(::ActorType const &, bool, std::unique_ptr<class Actor> (__cdecl *const &)(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &), std::optional<int32_t>);
 
     // NOLINTEND
 

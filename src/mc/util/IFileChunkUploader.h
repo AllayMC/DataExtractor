@@ -30,10 +30,10 @@ public:
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol: ?uploadChunk@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@AEBV?$vector@EV?$allocator@E@std@@@std@@V?$function@$$A6AX_N@Z@5@@Z
-    virtual void uploadChunk(struct FileInfo const &, struct FileChunkInfo const &, std::vector<uchar> const &, std::function<void (bool)>);
+    virtual void uploadChunk(struct FileInfo const &, struct FileChunkInfo const &, std::vector<uint8_t> const &, std::function<void (bool)>);
 
     // vIndex: 6, symbol: ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
-    virtual void uploadStream(struct FileInfo const &, uint64, std::string const &, std::function<void (::IFileChunkUploader::UploadStreamResult)>);
+    virtual void uploadStream(struct FileInfo const &, uint64_t, std::string const &, std::function<void (::IFileChunkUploader::UploadStreamResult)>);
 
     // vIndex: 7, symbol: __unk_vfn_7
     virtual void __unk_vfn_7() = 0;
@@ -48,7 +48,7 @@ public:
     virtual void __unk_vfn_10() = 0;
 
     // vIndex: 11, symbol: ?getChunkInfo@IFileChunkUploader@@UEBA?AUFileChunkInfo@@AEBUFileInfo@@H@Z
-    virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
+    virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int32_t) const;
 
     // symbol: ?confirmChunkReceived@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z
     MCVAPI void confirmChunkReceived(struct FileInfo const &, struct FileChunkInfo const &);

@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?registerListener@GameEventListenerRegistry@@QEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@AEAVGameEventListener@@@Z
-    MCAPI gsl::final_action<std::function<void (void)>> registerListener(class GameEventListener &);
+    MCAPI class gsl::final_action<std::function<void (void)>> registerListener(class GameEventListener &);
 
     // NOLINTEND
 

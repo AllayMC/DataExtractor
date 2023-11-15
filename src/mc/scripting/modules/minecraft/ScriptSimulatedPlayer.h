@@ -143,7 +143,7 @@ public:
     MCAPI class Scripting::Result<void> setGameMode(::GameType);
 
     // symbol: ?setItem@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVScriptItemStack@ScriptModuleMinecraft@@H_N@Z
-    MCAPI class Scripting::Result<bool> setItem(class ScriptModuleMinecraft::ScriptItemStack const &, int, bool) const;
+    MCAPI class Scripting::Result<bool> setItem(class ScriptModuleMinecraft::ScriptItemStack const &, int32_t, bool) const;
 
     // symbol: ?setSprinting@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@_N@Z
     MCAPI class Scripting::Result<void> setSprinting(bool) const;
@@ -179,10 +179,10 @@ public:
     MCAPI class Scripting::Result<bool> useItem(class ScriptModuleMinecraft::ScriptItemStack const &) const;
 
     // symbol: ?useItemInSlot@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<bool> useItemInSlot(int) const;
+    MCAPI class Scripting::Result<bool> useItemInSlot(int32_t) const;
 
     // symbol: ?useItemInSlotOnBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@HAEBVVec3@@W4ScriptFacing@ScriptModuleMinecraft@@V?$optional@VVec3@@@std@@@Z
-    MCAPI class Scripting::Result<bool> useItemInSlotOnBlock(int, class Vec3 const &, ::ScriptModuleMinecraft::ScriptFacing, std::optional<class Vec3>) const;
+    MCAPI class Scripting::Result<bool> useItemInSlotOnBlock(int32_t, class Vec3 const &, ::ScriptModuleMinecraft::ScriptFacing, std::optional<class Vec3>) const;
 
     // symbol: ?useItemOnBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVScriptItemStack@ScriptModuleMinecraft@@AEBVVec3@@W4ScriptFacing@6@V?$optional@VVec3@@@std@@@Z
     MCAPI class Scripting::Result<bool> useItemOnBlock(class ScriptModuleMinecraft::ScriptItemStack const &, class Vec3 const &, ::ScriptModuleMinecraft::ScriptFacing, std::optional<class Vec3>) const;
@@ -198,7 +198,7 @@ public:
     MCAPI static class gametest::BaseGameTestHelper const * _getHelper(class SimulatedPlayer const &);
 
     // symbol: ?_toWorld@ScriptSimulatedPlayer@ScriptModuleGameTest@@CA?AV?$optional@UGameTestError@gametest@@@std@@AEAVSimulatedPlayer@@PEAVBlockPos@@PEAEPEAVVec3@@@Z
-    MCAPI static std::optional<struct gametest::GameTestError> _toWorld(class SimulatedPlayer &, class BlockPos *, uchar *, class Vec3 *);
+    MCAPI static std::optional<struct gametest::GameTestError> _toWorld(class SimulatedPlayer &, class BlockPos *, uint8_t *, class Vec3 *);
 
     // symbol: ?_worldToLocalNavigationResult@ScriptSimulatedPlayer@ScriptModuleGameTest@@CA?AUScriptNavigationResult@ScriptModuleMinecraft@@AEAVSimulatedPlayer@@U34@@Z
     MCAPI static struct ScriptModuleMinecraft::ScriptNavigationResult _worldToLocalNavigationResult(class SimulatedPlayer &, struct ScriptModuleMinecraft::ScriptNavigationResult);

@@ -148,7 +148,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 134, symbol: ?getColor@KelpBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const &) const;
+    virtual int32_t getColor(class Block const &) const;
 
     // vIndex: 139, symbol: ?onGraphicsModeChanged@KelpBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
@@ -190,7 +190,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0KelpBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI KelpBlock(std::string const &, int);
+    MCAPI KelpBlock(std::string const &, int32_t);
 
     // symbol: ?shouldGrow@KelpBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool shouldGrow(class BlockSource &, class BlockPos const &) const;
@@ -200,7 +200,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_tryGrow@KelpBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // NOLINTEND
 

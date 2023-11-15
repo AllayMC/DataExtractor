@@ -34,7 +34,7 @@ public:
     virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol: ?onBlockDestructionStarted@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual ::EventResult onBlockDestructionStarted(class Player &, class BlockPos const &, uchar);
+    virtual ::EventResult onBlockDestructionStarted(class Player &, class BlockPos const &, uint8_t);
 
     // vIndex: 7, symbol: __unk_vfn_7
     virtual void __unk_vfn_7();
@@ -52,7 +52,7 @@ public:
     virtual ::EventResult onEvent(struct BlockNotificationEvent const &);
 
     // symbol: ?onBlockDestructionStopped@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@H@Z
-    MCVAPI ::EventResult onBlockDestructionStopped(class Player &, class BlockPos const &, int);
+    MCVAPI ::EventResult onBlockDestructionStopped(class Player &, class BlockPos const &, int32_t);
 
     // symbol: ?onBlockInPosWillBeDestroyedByPlayer@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCVAPI ::EventResult onBlockInPosWillBeDestroyedByPlayer(class Player &, class BlockPos const &);
@@ -67,7 +67,7 @@ public:
     MCVAPI ::EventResult onBlockMovedByPiston(class BlockPos const &, class BlockPos const &, ::PistonState);
 
     // symbol: ?onUnknownBlockReceived@BlockEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEBUNewBlockID@@G@Z
-    MCVAPI ::EventResult onUnknownBlockReceived(class Level &, struct NewBlockID const &, ushort);
+    MCVAPI ::EventResult onUnknownBlockReceived(class Level &, struct NewBlockID const &, uint16_t);
 
     // NOLINTEND
 

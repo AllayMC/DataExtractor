@@ -30,13 +30,13 @@ public:
     virtual void reset();
 
     // vIndex: 2, symbol: ?update@Hash@1Crypto@@UEAAXPEBXI@Z
-    virtual void update(void const *, uint);
+    virtual void update(void const *, uint32_t);
 
     // vIndex: 3, symbol: ?final@Hash@1Crypto@@UEAAXPEAE@Z
-    virtual void final(uchar *);
+    virtual void final(uint8_t *);
 
     // vIndex: 4, symbol: ?resultSize@Hash@1Crypto@@UEBA_KXZ
-    virtual uint64 resultSize() const;
+    virtual uint64_t resultSize() const;
 
     // symbol: ??1Hash@0Crypto@@UEAA@XZ
     MCVAPI ~Hash();

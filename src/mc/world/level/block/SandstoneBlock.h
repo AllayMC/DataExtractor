@@ -157,7 +157,7 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0SandstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SandstoneBlock(std::string const &, int, class Material const &);
+    MCAPI SandstoneBlock(std::string const &, int32_t, class Material const &);
 
     // NOLINTEND
 

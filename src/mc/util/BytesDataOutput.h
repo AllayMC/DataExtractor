@@ -24,16 +24,16 @@ public:
     MCVAPI void writeFloat(float);
 
     // symbol: ?writeInt@BytesDataOutput@@UEAAXH@Z
-    MCVAPI void writeInt(int);
+    MCVAPI void writeInt(int32_t);
 
     // symbol: ?writeLongLong@BytesDataOutput@@UEAAX_J@Z
-    MCVAPI void writeLongLong(int64);
+    MCVAPI void writeLongLong(int64_t);
 
     // symbol: ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCVAPI void writeLongString(std::string_view);
 
     // symbol: ?writeShort@BytesDataOutput@@UEAAXF@Z
-    MCVAPI void writeShort(short);
+    MCVAPI void writeShort(int16_t);
 
     // symbol: ?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCVAPI void writeString(std::string_view);

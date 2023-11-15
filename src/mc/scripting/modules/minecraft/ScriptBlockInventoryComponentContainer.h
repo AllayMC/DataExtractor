@@ -32,13 +32,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 2, symbol: ?getEmptySlotsCount@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H$$V@Scripting@@XZ
-    virtual class Scripting::Result<int> getEmptySlotsCount() const;
+    virtual class Scripting::Result<int32_t> getEmptySlotsCount() const;
 
     // vIndex: 13, symbol: ?_tryGetContainer@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBAPEAVContainer@@XZ
     virtual class Container * _tryGetContainer() const;
 
     // vIndex: 14, symbol: ?_getItemContext@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
-    virtual class ItemContext _getItemContext(int) const;
+    virtual class ItemContext _getItemContext(int32_t) const;
 
     // NOLINTEND
 

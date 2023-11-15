@@ -18,13 +18,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
+    virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int32_t) const;
 
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
 
     // vIndex: 3, symbol: ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-    virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
+    virtual int32_t getAvailableSetCount(int32_t, class ItemStackBase const &) const;
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();
@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_8();
 
     // vIndex: 9, symbol: ?getContainerSize@CombinedHotbarAndInventoryContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-    virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
+    virtual int32_t getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 
     // symbol: ?canItemMoveToContainer@CombinedHotbarAndInventoryContainerValidation@@UEBA_NAEBVItemStackBase@@@Z
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;

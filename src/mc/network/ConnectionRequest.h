@@ -30,16 +30,16 @@ public:
     MCAPI std::string getArmSize() const;
 
     // symbol: ?getCapeData@ConnectionRequest@@QEBA?AV?$vector@EV?$allocator@E@std@@@std@@XZ
-    MCAPI std::vector<uchar> getCapeData() const;
+    MCAPI std::vector<uint8_t> getCapeData() const;
 
     // symbol: ?getCapeId@ConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getCapeId() const;
 
     // symbol: ?getCapeImageHeight@ConnectionRequest@@QEBAGXZ
-    MCAPI ushort getCapeImageHeight() const;
+    MCAPI uint16_t getCapeImageHeight() const;
 
     // symbol: ?getCapeImageWidth@ConnectionRequest@@QEBAGXZ
-    MCAPI ushort getCapeImageWidth() const;
+    MCAPI uint16_t getCapeImageWidth() const;
 
     // symbol: ?getCertificate@ConnectionRequest@@QEBAPEBVCertificate@@XZ
     MCAPI class Certificate const * getCertificate() const;
@@ -54,7 +54,7 @@ public:
     MCAPI std::string getClientPlatformOnlineId() const;
 
     // symbol: ?getClientRandomId@ConnectionRequest@@QEBA_KXZ
-    MCAPI uint64 getClientRandomId() const;
+    MCAPI uint64_t getClientRandomId() const;
 
     // symbol: ?getClientSubId@ConnectionRequest@@QEBA?AW4SubClientId@@XZ
     MCAPI ::SubClientId getClientSubId() const;
@@ -87,7 +87,7 @@ public:
     MCAPI class mce::Color getSkinColor() const;
 
     // symbol: ?getSkinData@ConnectionRequest@@QEBA?AV?$vector@EV?$allocator@E@std@@@std@@XZ
-    MCAPI std::vector<uchar> getSkinData() const;
+    MCAPI std::vector<uint8_t> getSkinData() const;
 
     // symbol: ?getSkinGeometry@ConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getSkinGeometry() const;
@@ -99,10 +99,10 @@ public:
     MCAPI std::string getSkinId() const;
 
     // symbol: ?getSkinImageHeight@ConnectionRequest@@QEBAGXZ
-    MCAPI ushort getSkinImageHeight() const;
+    MCAPI uint16_t getSkinImageHeight() const;
 
     // symbol: ?getSkinImageWidth@ConnectionRequest@@QEBAGXZ
-    MCAPI ushort getSkinImageWidth() const;
+    MCAPI uint16_t getSkinImageWidth() const;
 
     // symbol: ?getSkinResourcePatch@ConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getSkinResourcePatch() const;
@@ -138,7 +138,7 @@ public:
     MCAPI std::string toString();
 
     // symbol: ?verify@ConnectionRequest@@QEAA_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_J@Z
-    MCAPI bool verify(std::vector<std::string> const &, int64);
+    MCAPI bool verify(std::vector<std::string> const &, int64_t);
 
     // symbol: ?verifySelfSigned@ConnectionRequest@@QEAA_NXZ
     MCAPI bool verifySelfSigned();
@@ -157,7 +157,7 @@ public:
     MCAPI ConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
 
     // symbol: ?validate@ConnectionRequest@@AEBA?AV?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@V23@_J_N@Z
-    MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, int64, bool) const;
+    MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, int64_t, bool) const;
 
     // NOLINTEND
 

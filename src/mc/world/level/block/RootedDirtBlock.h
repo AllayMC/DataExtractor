@@ -151,7 +151,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@RootedDirtBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -160,7 +160,7 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0RootedDirtBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI RootedDirtBlock(std::string const &, int);
+    MCAPI RootedDirtBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

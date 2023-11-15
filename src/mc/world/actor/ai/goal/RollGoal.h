@@ -47,7 +47,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_handleRoll@RollGoal@@AEBAXHAEAVVec3@@AEAM1@Z
-    MCAPI void _handleRoll(int, class Vec3 &, float &, float &) const;
+    MCAPI void _handleRoll(int32_t, class Vec3 &, float &, float &) const;
 
     // NOLINTEND
 

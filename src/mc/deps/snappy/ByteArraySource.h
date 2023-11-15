@@ -17,13 +17,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?Available@ByteArraySource@snappy@@UEBA_KXZ
-    virtual uint64 Available() const;
+    virtual uint64_t Available() const;
 
     // vIndex: 2, symbol: ?Peek@ByteArraySource@snappy@@UEAAPEBDPEA_K@Z
-    virtual char const * Peek(uint64 *);
+    virtual char const * Peek(uint64_t *);
 
     // vIndex: 3, symbol: ?Skip@ByteArraySource@snappy@@UEAAX_K@Z
-    virtual void Skip(uint64);
+    virtual void Skip(uint64_t);
 
     // symbol: ??1ByteArraySource@snappy@@UEAA@XZ
     MCVAPI ~ByteArraySource();

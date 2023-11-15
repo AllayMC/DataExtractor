@@ -69,7 +69,7 @@ public:
     MCAPI void _pruneDenyList();
 
     // symbol: ?_pushRange@RopeSystem@@AEAAX_K0@Z
-    MCAPI void _pushRange(uint64, uint64);
+    MCAPI void _pushRange(uint64_t, uint64_t);
 
     // symbol: ?_resizeRope@RopeSystem@@AEAAXXZ
     MCAPI void _resizeRope();

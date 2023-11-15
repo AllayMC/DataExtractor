@@ -116,7 +116,7 @@ public:
     MCAPI Guardian(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
     // symbol: ?getAttackDuration@Guardian@@QEAAHXZ
-    MCAPI int getAttackDuration();
+    MCAPI int32_t getAttackDuration();
 
     // symbol: ?getMoveEyeVector@Guardian@@QEAA?AVVec3@@XZ
     MCAPI class Vec3 getMoveEyeVector();
@@ -134,7 +134,7 @@ public:
     MCAPI void preAiStep();
 
     // symbol: ?setAttackTime@Guardian@@QEAAXH@Z
-    MCAPI void setAttackTime(int);
+    MCAPI void setAttackTime(int32_t);
 
     // symbol: ?setElder@Guardian@@QEAAX_N@Z
     MCAPI void setElder(bool);
@@ -151,10 +151,10 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?ATTACK_TIME@Guardian@@0HB
-    MCAPI static int const ATTACK_TIME;
+    MCAPI static int32_t const ATTACK_TIME;
 
     // symbol: ?FIRST_DAMAGE_TIME@Guardian@@0HB
-    MCAPI static int const FIRST_DAMAGE_TIME;
+    MCAPI static int32_t const FIRST_DAMAGE_TIME;
 
     // NOLINTEND
 

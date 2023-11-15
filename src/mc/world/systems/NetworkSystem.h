@@ -50,10 +50,10 @@ public:
     MCVAPI void _onEnable();
 
     // symbol: ?getDefaultGamePort@NetworkSystem@@UEBAGXZ
-    MCVAPI ushort getDefaultGamePort() const;
+    MCVAPI uint16_t getDefaultGamePort() const;
 
     // symbol: ?getDefaultGamePortv6@NetworkSystem@@UEBAGXZ
-    MCVAPI ushort getDefaultGamePortv6() const;
+    MCVAPI uint16_t getDefaultGamePortv6() const;
 
     // symbol: ?onAllConnectionsClosed@NetworkSystem@@EEAAXW4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCVAPI void onAllConnectionsClosed(::Connection::DisconnectFailReason, std::string const &, bool);
@@ -113,10 +113,10 @@ public:
     MCAPI class NetworkIdentifier getPrimaryNetworkId() const;
 
     // symbol: ?getRemoteConnector@NetworkSystem@@QEAA?AV?$not_null@V?$NonOwnerPointer@VRemoteConnector@@@Bedrock@@@gsl@@XZ
-    MCAPI Bedrock::NotNullNonOwnerPtr<class RemoteConnector> getRemoteConnector();
+    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class RemoteConnector>> getRemoteConnector();
 
     // symbol: ?getRemoteConnector@NetworkSystem@@QEBA?AV?$not_null@V?$NonOwnerPointer@$$CBVRemoteConnector@@@Bedrock@@@gsl@@XZ
-    MCAPI Bedrock::NotNullNonOwnerPtr<class RemoteConnector const> getRemoteConnector() const;
+    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class RemoteConnector const>> getRemoteConnector() const;
 
     // symbol: ?getResourcePackUploadManager@NetworkSystem@@QEAAAEAVResourcePackFileUploadManager@@AEAVPacketSender@@AEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class ResourcePackFileUploadManager & getResourcePackUploadManager(class PacketSender &, class NetworkIdentifier const &, std::string const &);
@@ -143,7 +143,7 @@ public:
     MCAPI void send(class NetworkIdentifier const &, class Packet const &, ::SubClientId);
 
     // symbol: ?setClientUpdateAndRenderThrottle@NetworkSystem@@QEAAX_NHM@Z
-    MCAPI void setClientUpdateAndRenderThrottle(bool, int, float);
+    MCAPI void setClientUpdateAndRenderThrottle(bool, int32_t, float);
 
     // symbol: ?setCloseConnection@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void setCloseConnection(class NetworkIdentifier const &);

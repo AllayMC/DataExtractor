@@ -18,10 +18,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
+    virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int32_t) const;
 
     // vIndex: 2, symbol: ?isItemAllowedInSlot@EnchantingInputContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-    virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
+    virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int32_t, class ItemStackBase const &, int32_t) const;
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
@@ -39,10 +39,10 @@ public:
     virtual bool canDestroy(class ContainerScreenContext const &) const;
 
     // vIndex: 8, symbol: ?getContainerOffset@EnchantingInputContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
-    virtual int getContainerOffset(class ContainerScreenContext const &) const;
+    virtual int32_t getContainerOffset(class ContainerScreenContext const &) const;
 
     // symbol: ?getAvailableSetCount@EnchantingInputContainerValidation@@UEBAHHAEBVItemStackBase@@@Z
-    MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
+    MCVAPI int32_t getAvailableSetCount(int32_t, class ItemStackBase const &) const;
 
     // NOLINTEND
 

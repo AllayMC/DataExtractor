@@ -30,7 +30,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@UpdateEquipPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1UpdateEquipPacket@@UEAA@XZ
     MCVAPI ~UpdateEquipPacket();
@@ -39,7 +39,7 @@ public:
     MCAPI UpdateEquipPacket();
 
     // symbol: ??0UpdateEquipPacket@@QEAA@W4ContainerID@@W4ContainerType@@H$$QEAVCompoundTag@@AEBUActorUniqueID@@@Z
-    MCAPI UpdateEquipPacket(::ContainerID, ::ContainerType, int, class CompoundTag &&, struct ActorUniqueID const &);
+    MCAPI UpdateEquipPacket(::ContainerID, ::ContainerType, int32_t, class CompoundTag &&, struct ActorUniqueID const &);
 
     // NOLINTEND
 

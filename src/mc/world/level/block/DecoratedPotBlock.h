@@ -34,7 +34,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@DecoratedPotBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -166,17 +166,17 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 192, symbol: ?getEntityResourceItem@DecoratedPotBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
+    virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int32_t) const;
 
     // symbol: ??0DecoratedPotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DecoratedPotBlock(std::string const &, int);
+    MCAPI DecoratedPotBlock(std::string const &, int32_t);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_addUserDataToItemInstance@DecoratedPotBlock@@AEBAXV?$not_null@PEBVDecoratedPotBlockActor@@@gsl@@AEAVItemInstance@@@Z
-    MCAPI void _addUserDataToItemInstance(gsl::not_null<class DecoratedPotBlockActor const *>, class ItemInstance &) const;
+    MCAPI void _addUserDataToItemInstance(class gsl::not_null<class DecoratedPotBlockActor const *>, class ItemInstance &) const;
 
     // NOLINTEND
 

@@ -74,7 +74,7 @@ public:
     virtual ::Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const;
 
     // vIndex: 10, symbol: ?_enqueue@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@EEAAXV?$function@$$A6AXXZ@std@@W4ConnectPosition@23@V?$optional@H@5@@Z
-    virtual void _enqueue(std::function<void (void)>, ::Bedrock::PubSub::ConnectPosition, std::optional<int>);
+    virtual void _enqueue(std::function<void (void)>, ::Bedrock::PubSub::ConnectPosition, std::optional<int32_t>);
 
     // vIndex: 11, symbol: ?_runOneEvent@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@EEAA_NXZ
     virtual bool _runOneEvent();

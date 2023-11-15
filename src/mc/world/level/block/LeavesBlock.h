@@ -35,10 +35,10 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@LeavesBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 27, symbol: ?canProvideMultifaceSupport@LeavesBlock@@UEBA_NAEBVBlock@@E@Z
-    virtual bool canProvideMultifaceSupport(class Block const &, uchar) const;
+    virtual bool canProvideMultifaceSupport(class Block const &, uint8_t) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -122,7 +122,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@LeavesBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -140,7 +140,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 135, symbol: ?getColor@LeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
+    virtual int32_t getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
 
     // vIndex: 138, symbol: ?isSeasonTinted@LeavesBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isSeasonTinted(class Block const &, class BlockSource &, class BlockPos const &) const;
@@ -185,7 +185,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 186, symbol: ?getResourceCount@LeavesBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 192, symbol: ?getExtraResourceItem@LeavesBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getExtraResourceItem(class Block const &) const;
@@ -194,13 +194,13 @@ public:
     MCVAPI ~LeavesBlock();
 
     // symbol: ??0LeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI LeavesBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
+    MCAPI LeavesBlock(std::string const &, int32_t, class WeakPtr<class BlockLegacy>);
 
     // symbol: ?getSeasonsColor@LeavesBlock@@QEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@HH@Z
-    MCAPI class mce::Color getSeasonsColor(class BlockSource &, class BlockPos const &, int, int) const;
+    MCAPI class mce::Color getSeasonsColor(class BlockSource &, class BlockPos const &, int32_t, int32_t) const;
 
     // symbol: ?runDecay@LeavesBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI static void runDecay(class BlockSource &, class BlockPos const &, int);
+    MCAPI static void runDecay(class BlockSource &, class BlockPos const &, int32_t);
 
     // NOLINTEND
 

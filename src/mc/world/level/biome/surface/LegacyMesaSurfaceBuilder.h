@@ -29,7 +29,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?init@LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
-    virtual void init(class EntityContext &, uint);
+    virtual void init(class EntityContext &, uint32_t);
 
     // vIndex: 2, symbol: ?buildSurfaceAt@LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
     virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const &) const;
@@ -42,7 +42,7 @@ public:
     MCAPI void generateBands(class Random &);
 
     // symbol: ?getBand@LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@AEBA?AW4BlockColor@@HHHAEBVPerlinSimplexNoise@@@Z
-    MCAPI ::BlockColor getBand(int, int, int, class PerlinSimplexNoise const &) const;
+    MCAPI ::BlockColor getBand(int32_t, int32_t, int32_t, class PerlinSimplexNoise const &) const;
 
     // NOLINTEND
 

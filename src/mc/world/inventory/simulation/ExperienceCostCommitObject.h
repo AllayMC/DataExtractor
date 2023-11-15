@@ -27,7 +27,7 @@ public:
     virtual void commit(class ContainerScreenContext const &);
 
     // symbol: ??0ExperienceCostCommitObject@@QEAA@H@Z
-    MCAPI ExperienceCostCommitObject(int);
+    MCAPI ExperienceCostCommitObject(int32_t);
 
     // NOLINTEND
 

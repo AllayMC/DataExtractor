@@ -17,7 +17,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?postCommitItemRemoved@ContainerScreenValidatorBase@@UEAA?AV?$shared_ptr@VContainerValidationCommitObject@@@std@@W4ContainerEnumName@@HAEBVItemStack@@@Z
-    virtual std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(::ContainerEnumName, int, class ItemStack const &);
+    virtual std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(::ContainerEnumName, int32_t, class ItemStack const &);
 
     // vIndex: 2, symbol: ?isCraftingImplemented@ContainerScreenValidatorBase@@UEAA_NXZ
     virtual bool isCraftingImplemented();

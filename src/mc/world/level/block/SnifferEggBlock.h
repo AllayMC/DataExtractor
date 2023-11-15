@@ -131,7 +131,7 @@ public:
     virtual std::string buildDescriptionId(class Block const &) const;
 
     // vIndex: 142, symbol: ?getVariant@SnifferEggBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -164,7 +164,7 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@SnifferEggBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // symbol: ?canBeSilkTouched@SnifferEggBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -173,7 +173,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SnifferEggBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SnifferEggBlock(std::string const &, int);
+    MCAPI SnifferEggBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

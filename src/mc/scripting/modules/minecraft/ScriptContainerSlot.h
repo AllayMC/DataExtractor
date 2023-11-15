@@ -36,7 +36,7 @@ public:
     MCAPI ScriptContainerSlot(class ScriptModuleMinecraft::ScriptContainerSlot &&);
 
     // symbol: ?getAmount@ScriptContainerSlot@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getAmount() const;
+    MCAPI class Scripting::Result<int32_t> getAmount() const;
 
     // symbol: ?getItem@ScriptContainerSlot@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>> getItem() const;
@@ -51,7 +51,7 @@ public:
     MCAPI class Scripting::Result<std::vector<std::string>> getLore() const;
 
     // symbol: ?getMaxAmount@ScriptContainerSlot@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getMaxAmount() const;
+    MCAPI class Scripting::Result<int32_t> getMaxAmount() const;
 
     // symbol: ?getNameTag@ScriptContainerSlot@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<std::optional<std::string>> getNameTag() const;
@@ -78,7 +78,7 @@ public:
     MCAPI class ScriptModuleMinecraft::ScriptContainerSlot & operator=(class ScriptModuleMinecraft::ScriptContainerSlot &&);
 
     // symbol: ?setAmount@ScriptContainerSlot@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<void> setAmount(int);
+    MCAPI class Scripting::Result<void> setAmount(int32_t);
 
     // symbol: ?setCanDestroy@ScriptContainerSlot@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$optional@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@@Z
     MCAPI class Scripting::Result<void> setCanDestroy(std::optional<std::vector<std::string>> const &);

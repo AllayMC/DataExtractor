@@ -27,7 +27,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?getPackSize@ZipPackAccessStrategy@@UEBA_KXZ
-    virtual uint64 getPackSize() const;
+    virtual uint64_t getPackSize() const;
 
     // vIndex: 2, symbol: ?getPackLocation@ZipPackAccessStrategy@@UEBAAEBVResourceLocation@@XZ
     virtual class ResourceLocation const & getPackLocation() const;
@@ -81,7 +81,7 @@ public:
     MCVAPI ~ZipPackAccessStrategy();
 
     // symbol: ??0ZipPackAccessStrategy@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@AEBVResourceLocation@@AEBVPath@Core@@@Z
-    MCAPI ZipPackAccessStrategy(Bedrock::NotNullNonOwnerPtr<class IFileAccess> const &, class ResourceLocation const &, class Core::Path const &);
+    MCAPI ZipPackAccessStrategy(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, class ResourceLocation const &, class Core::Path const &);
 
     // NOLINTEND
 

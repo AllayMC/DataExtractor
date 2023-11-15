@@ -102,7 +102,7 @@ public:
     MCVAPI ~ScriptV010Events();
 
     // symbol: ??0ScriptV010Events@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVLevel@@@gsl@@@Z
-    MCAPI ScriptV010Events(class Scripting::WeakLifetimeScope const &, gsl::not_null<class Level *>);
+    MCAPI ScriptV010Events(class Scripting::WeakLifetimeScope const &, class gsl::not_null<class Level *>);
 
     // symbol: ??0ScriptV010Events@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptV010Events(class ScriptModuleMinecraft::ScriptV010Events &&);

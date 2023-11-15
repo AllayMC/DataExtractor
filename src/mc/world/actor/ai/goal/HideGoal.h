@@ -35,7 +35,7 @@ public:
     virtual void appendDebugInfo(std::string &) const;
 
     // vIndex: 16, symbol: ?_getRepathTime@HideGoal@@MEBA_KXZ
-    virtual uint64 _getRepathTime() const;
+    virtual uint64_t _getRepathTime() const;
 
     // vIndex: 17, symbol: ?_getOwnedPOI@HideGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
     virtual std::weak_ptr<class POIInstance> _getOwnedPOI(::POIType) const;

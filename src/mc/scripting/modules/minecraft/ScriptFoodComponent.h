@@ -34,7 +34,7 @@ public:
     MCAPI class Scripting::Result<bool> getCanAlwaysEat();
 
     // symbol: ?getNutrition@ScriptFoodComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<int> getNutrition();
+    MCAPI class Scripting::Result<int32_t> getNutrition();
 
     // symbol: ?getSaturationModifier@ScriptFoodComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSaturationModifier();

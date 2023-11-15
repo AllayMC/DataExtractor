@@ -22,10 +22,10 @@ public:
     virtual void initFilePick(class Core::Path const &, std::function<void (bool, struct FileInfo)>);
 
     // vIndex: 2, symbol: ?readBytes@SystemFilePicker@@UEAA_KAEBUFileInfo@@_K1AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-    virtual uint64 readBytes(struct FileInfo const &, uint64, uint64, std::vector<uchar> &);
+    virtual uint64_t readBytes(struct FileInfo const &, uint64_t, uint64_t, std::vector<uint8_t> &);
 
     // vIndex: 3, symbol: ?writeBytes@SystemFilePicker@@UEAA_NAEBUFileInfo@@_K1AEBV?$vector@EV?$allocator@E@std@@@std@@@Z
-    virtual bool writeBytes(struct FileInfo const &, uint64, uint64, std::vector<uchar> const &);
+    virtual bool writeBytes(struct FileInfo const &, uint64_t, uint64_t, std::vector<uint8_t> const &);
 
     // symbol: ??0SystemFilePicker@@QEAA@XZ
     MCAPI SystemFilePicker();

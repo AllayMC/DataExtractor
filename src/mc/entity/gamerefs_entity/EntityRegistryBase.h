@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0EntityRegistryBase@@QEAA@AEAV?$basic_registry@VEntityId@@V?$allocator@VEntityId@@@std@@@entt@@@Z
-    MCAPI EntityRegistryBase(entt::basic_registry<class EntityId> &);
+    MCAPI EntityRegistryBase(class entt::basic_registry<class EntityId, std::allocator<class EntityId>> &);
 
     // symbol: ?isValidEntity@EntityRegistryBase@@QEBA_NAEBVEntityContextBase@@@Z
     MCAPI bool isValidEntity(class EntityContextBase const &) const;
@@ -29,7 +29,7 @@ public:
 protected:
     // NOLINTBEGIN
     // symbol: ?mRegistryCount@EntityRegistryBase@@1U?$atomic@I@std@@A
-    MCAPI static std::atomic<uint> mRegistryCount;
+    MCAPI static std::atomic<uint32_t> mRegistryCount;
 
     // NOLINTEND
 

@@ -58,7 +58,7 @@ public:
     virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
 
     // vIndex: 62, symbol: ?getEnchantSlot@ShieldItem@@UEBAHXZ
-    virtual int getEnchantSlot() const;
+    virtual int32_t getEnchantSlot() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
@@ -85,7 +85,7 @@ public:
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
 
     // vIndex: 85, symbol: ?dispense@ShieldItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, uchar) const;
+    virtual bool dispense(class BlockSource &, class Container &, int32_t, class Vec3 const &, uint8_t) const;
 
     // vIndex: 89, symbol: ?hurtActor@ShieldItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
@@ -100,13 +100,13 @@ public:
     virtual void writeUserData(class ItemStackBase const &, class IDataOutput &) const;
 
     // vIndex: 101, symbol: ?inventoryTick@ShieldItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
-    virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
+    virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int32_t, bool) const;
 
     // vIndex: 103, symbol: ?getCooldownType@ShieldItem@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const & getCooldownType() const;
 
     // vIndex: 104, symbol: ?getCooldownTime@ShieldItem@@UEBAHXZ
-    virtual int getCooldownTime() const;
+    virtual int32_t getCooldownTime() const;
 
     // vIndex: 109, symbol: ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
     virtual ::InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_116();
 
     // symbol: ??0ShieldItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ShieldItem(std::string const &, int);
+    MCAPI ShieldItem(std::string const &, int32_t);
 
     // symbol: ?playBlockSound@ShieldItem@@QEBAXPEAVPlayer@@@Z
     MCAPI void playBlockSound(class Player *) const;
@@ -133,13 +133,13 @@ public:
     MCAPI void playBreakSound(class Player *) const;
 
     // symbol: ?EFFECTIVE_BLOCK_DELAY@ShieldItem@@2HB
-    MCAPI static int const EFFECTIVE_BLOCK_DELAY;
+    MCAPI static int32_t const EFFECTIVE_BLOCK_DELAY;
 
     // symbol: ?IN_HAND_BLOCK_DURATION@ShieldItem@@2HB
-    MCAPI static int const IN_HAND_BLOCK_DURATION;
+    MCAPI static int32_t const IN_HAND_BLOCK_DURATION;
 
     // symbol: ?NO_SHIELD_PATTERN@ShieldItem@@2HB
-    MCAPI static int const NO_SHIELD_PATTERN;
+    MCAPI static int32_t const NO_SHIELD_PATTERN;
 
     // symbol: ?TIMESTAMP_TAG@ShieldItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const TIMESTAMP_TAG;

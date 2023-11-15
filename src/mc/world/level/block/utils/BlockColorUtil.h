@@ -17,7 +17,7 @@ namespace BlockColorUtil {
     MCAPI extern std::array<::BlockColor, 16> RAINBOW;
 
     // symbol: ?fromInt@BlockColorUtil@@YA?AW4BlockColor@@H@Z
-    MCAPI ::BlockColor fromInt(int);
+    MCAPI ::BlockColor fromInt(int32_t);
 
     // symbol: ?fromItemColor@BlockColorUtil@@YA?AW4BlockColor@@W4ItemColor@@@Z
     MCAPI ::BlockColor fromItemColor(::ItemColor);
@@ -35,7 +35,7 @@ namespace BlockColorUtil {
     MCAPI std::string const & getNameSnakeCase(::BlockColor);
 
     // symbol: ?getRGBColor@BlockColorUtil@@YAHW4BlockColor@@@Z
-    MCAPI int getRGBColor(::BlockColor);
+    MCAPI int32_t getRGBColor(::BlockColor);
     // NOLINTEND
 
 };

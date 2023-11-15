@@ -28,7 +28,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?send@HttpInterfaceInternal@Http@Bedrock@@UEAAXV?$not_null@PEAUHC_CALL@@@gsl@@V?$not_null@PEAUXAsyncBlock@@@5@PEAUHC_PERFORM_ENV@@@Z
-    virtual void send(gsl::not_null<struct HC_CALL *>, gsl::not_null<struct XAsyncBlock *>, struct HC_PERFORM_ENV *);
+    virtual void send(class gsl::not_null<struct HC_CALL *>, class gsl::not_null<struct XAsyncBlock *>, struct HC_PERFORM_ENV *);
 
     // NOLINTEND
 

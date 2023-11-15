@@ -37,7 +37,7 @@ namespace SharedConstants {
     MCAPI extern bool const DevInitiallyMuteMusic;
 
     // symbol: ?EduDiscoveryProtocolVersion@SharedConstants@@3HB
-    MCAPI extern int const EduDiscoveryProtocolVersion;
+    MCAPI extern int32_t const EduDiscoveryProtocolVersion;
 
     // symbol: ?IsAnyBeta@SharedConstants@@3_NB
     MCAPI extern bool const IsAnyBeta;
@@ -61,49 +61,49 @@ namespace SharedConstants {
     MCAPI extern bool const IsWin32Platform;
 
     // symbol: ?LevelDBCompressorID@SharedConstants@@3HB
-    MCAPI extern int const LevelDBCompressorID;
+    MCAPI extern int32_t const LevelDBCompressorID;
 
     // symbol: ?MajorVersion@SharedConstants@@3HB
-    MCAPI extern int const MajorVersion;
+    MCAPI extern int32_t const MajorVersion;
 
     // symbol: ?MaxChatLength@SharedConstants@@3HB
-    MCAPI extern int const MaxChatLength;
+    MCAPI extern int32_t const MaxChatLength;
 
     // symbol: ?MinTickingChunksRadius@SharedConstants@@3IB
-    MCAPI extern uint const MinTickingChunksRadius;
+    MCAPI extern uint32_t const MinTickingChunksRadius;
 
     // symbol: ?MinimumCompatibleGameVersionForLevelData@SharedConstants@@3VGameVersion@@B
     MCAPI extern class GameVersion const MinimumCompatibleGameVersionForLevelData;
 
     // symbol: ?MinorVersion@SharedConstants@@3HB
-    MCAPI extern int const MinorVersion;
+    MCAPI extern int32_t const MinorVersion;
 
     // symbol: ?NetworkDefaultGamePort@SharedConstants@@3GB
-    MCAPI extern ushort const NetworkDefaultGamePort;
+    MCAPI extern uint16_t const NetworkDefaultGamePort;
 
     // symbol: ?NetworkDefaultGamePortv6@SharedConstants@@3GB
-    MCAPI extern ushort const NetworkDefaultGamePortv6;
+    MCAPI extern uint16_t const NetworkDefaultGamePortv6;
 
     // symbol: ?NetworkDefaultMaxConnections@SharedConstants@@3HB
-    MCAPI extern int const NetworkDefaultMaxConnections;
+    MCAPI extern int32_t const NetworkDefaultMaxConnections;
 
     // symbol: ?NetworkEphemeralPort@SharedConstants@@3GB
-    MCAPI extern ushort const NetworkEphemeralPort;
+    MCAPI extern uint16_t const NetworkEphemeralPort;
 
     // symbol: ?NetworkMaxPlayerCount@SharedConstants@@3HB
-    MCAPI extern int const NetworkMaxPlayerCount;
+    MCAPI extern int32_t const NetworkMaxPlayerCount;
 
     // symbol: ?NetworkProtocolVersion@SharedConstants@@3HB
-    MCAPI extern int const NetworkProtocolVersion;
+    MCAPI extern int32_t const NetworkProtocolVersion;
 
     // symbol: ?PatchVersion@SharedConstants@@3HB
-    MCAPI extern int const PatchVersion;
+    MCAPI extern int32_t const PatchVersion;
 
     // symbol: ?RevisionVersion@SharedConstants@@3HB
-    MCAPI extern int const RevisionVersion;
+    MCAPI extern int32_t const RevisionVersion;
 
     // symbol: ?StoreVersion@SharedConstants@@3HB
-    MCAPI extern int const StoreVersion;
+    MCAPI extern int32_t const StoreVersion;
     // NOLINTEND
 
 };

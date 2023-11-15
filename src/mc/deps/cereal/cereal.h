@@ -38,28 +38,28 @@ namespace cereal::internal { struct SchemaInfo; }
 namespace cereal {
     // NOLINTBEGIN
     // symbol: ?fillOptional@cereal@@YA?AVmeta_any@entt@@AEAV23@@Z
-    MCAPI entt::meta_any fillOptional(entt::meta_any &);
+    MCAPI class entt::meta_any fillOptional(class entt::meta_any &);
 
     // symbol: ?getSchemaName@cereal@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVmeta_type@entt@@@Z
-    MCAPI std::string const & getSchemaName(entt::meta_type const &);
+    MCAPI std::string const & getSchemaName(class entt::meta_type const &);
 
     // symbol: ?isOptional@cereal@@YA_NAEBVmeta_type@entt@@@Z
-    MCAPI bool isOptional(entt::meta_type const &);
+    MCAPI bool isOptional(class entt::meta_type const &);
 
     // symbol: ?metaDataTraits@cereal@@YAPEBUSerializerTraits@1@AEBUmeta_data@entt@@@Z
-    MCAPI struct cereal::SerializerTraits const * metaDataTraits(entt::meta_data const &);
+    MCAPI struct cereal::SerializerTraits const * metaDataTraits(struct entt::meta_data const &);
 
     // symbol: ?resolve@cereal@@YA?AVmeta_type@entt@@AEBUReflectionCtx@1@AEBUtype_info@3@@Z
-    MCAPI entt::meta_type resolve(struct cereal::ReflectionCtx const &, entt::type_info const &);
+    MCAPI class entt::meta_type resolve(struct cereal::ReflectionCtx const &, struct entt::type_info const &);
 
     // symbol: ?tryGetOptionalValue@cereal@@YA?AVmeta_any@entt@@Umeta_handle@3@@Z
-    MCAPI entt::meta_any tryGetOptionalValue(entt::meta_handle);
+    MCAPI class entt::meta_any tryGetOptionalValue(struct entt::meta_handle);
 
     // symbol: ?typeLevelGetter@cereal@@YA?AUmeta_func@entt@@AEBVmeta_type@3@@Z
-    MCAPI entt::meta_func typeLevelGetter(entt::meta_type const &);
+    MCAPI struct entt::meta_func typeLevelGetter(class entt::meta_type const &);
 
     // symbol: ?typeLevelSetters@cereal@@YA?AV?$vector@Umeta_func@entt@@V?$allocator@Umeta_func@entt@@@std@@@std@@AEBVmeta_type@entt@@@Z
-    MCAPI std::vector<entt::meta_func> typeLevelSetters(entt::meta_type const &);
+    MCAPI std::vector<struct entt::meta_func> typeLevelSetters(class entt::meta_type const &);
     // NOLINTEND
 
 };

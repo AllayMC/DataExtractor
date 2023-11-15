@@ -41,7 +41,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?getEnTTMetaType@BlockDefinition@@CA?AVmeta_type@entt@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI static entt::meta_type getEnTTMetaType(struct cereal::ReflectionCtx &);
+    MCAPI static class entt::meta_type getEnTTMetaType(struct cereal::ReflectionCtx &);
 
     // symbol: ?getPropCerealDocumentUpgrader@BlockDefinition@@CAAEAVCerealDocumentUpgrader@@AEAUReflectionCtx@cereal@@@Z
     MCAPI static class CerealDocumentUpgrader & getPropCerealDocumentUpgrader(struct cereal::ReflectionCtx &);

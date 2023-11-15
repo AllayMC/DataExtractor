@@ -18,7 +18,7 @@ public:
     virtual void __unk_vfn_0();
 
     // symbol: ??0ShipwreckStart@@QEAA@AEBVBiomeSource@@AEAVRandom@@HHF@Z
-    MCAPI ShipwreckStart(class BiomeSource const &, class Random &, int, int, short);
+    MCAPI ShipwreckStart(class BiomeSource const &, class Random &, int32_t, int32_t, int16_t);
 
     // NOLINTEND
 

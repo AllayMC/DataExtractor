@@ -14,10 +14,10 @@ namespace GameTypeConv {
     MCAPI std::string gameTypeToString(::GameType);
 
     // symbol: ?intToGameType@GameTypeConv@@YA?AW4GameType@@H@Z
-    MCAPI ::GameType intToGameType(int);
+    MCAPI ::GameType intToGameType(int32_t);
 
     // symbol: ?intToGameTypeForCommands@GameTypeConv@@YA?AW4GameType@@H@Z
-    MCAPI ::GameType intToGameTypeForCommands(int);
+    MCAPI ::GameType intToGameTypeForCommands(int32_t);
 
     // symbol: ?stringToGameType@GameTypeConv@@YA?AW4GameType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI ::GameType stringToGameType(std::string const &);

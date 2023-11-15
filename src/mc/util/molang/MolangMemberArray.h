@@ -34,7 +34,7 @@ public:
     MCAPI MolangMemberArray(::MolangStruct_TentacleAngleAndSwimRotation, float, float);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_BaseAndPattern@@HH@Z
-    MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int, int);
+    MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int32_t, int32_t);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_RGB@@AEBVColor@mce@@@Z
     MCAPI MolangMemberArray(::MolangStruct_RGB, class mce::Color const &);
@@ -58,7 +58,7 @@ public:
     MCAPI MolangMemberArray(::MolangStruct_RotYAndPosY, float, float);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_PoseIndexAndHurtTime@@HH@Z
-    MCAPI MolangMemberArray(::MolangStruct_PoseIndexAndHurtTime, int, int);
+    MCAPI MolangMemberArray(::MolangStruct_PoseIndexAndHurtTime, int32_t, int32_t);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_XY@@AEBVVec2@@@Z
     MCAPI MolangMemberArray(::MolangStruct_XY, class Vec2 const &);

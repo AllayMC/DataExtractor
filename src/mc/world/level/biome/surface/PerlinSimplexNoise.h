@@ -11,16 +11,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PerlinSimplexNoise@@QEAA@IH@Z
-    MCAPI PerlinSimplexNoise(uint, int);
+    MCAPI PerlinSimplexNoise(uint32_t, int32_t);
 
     // symbol: ??0PerlinSimplexNoise@@QEAA@AEBV0@@Z
     MCAPI PerlinSimplexNoise(class PerlinSimplexNoise const &);
 
     // symbol: ??0PerlinSimplexNoise@@QEAA@AEAVIRandom@@H_N@Z
-    MCAPI PerlinSimplexNoise(class IRandom &, int, bool);
+    MCAPI PerlinSimplexNoise(class IRandom &, int32_t, bool);
 
     // symbol: ?getRegion@PerlinSimplexNoise@@QEBAPEAMPEAMAEBVVec2@@HH1MM@Z
-    MCAPI float * getRegion(float *, class Vec2 const &, int, int, class Vec2 const &, float, float) const;
+    MCAPI float * getRegion(float *, class Vec2 const &, int32_t, int32_t, class Vec2 const &, float, float) const;
 
     // symbol: ?getValue@PerlinSimplexNoise@@QEBAMAEBVVec3@@@Z
     MCAPI float getValue(class Vec3 const &) const;

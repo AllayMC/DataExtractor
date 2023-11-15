@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BannerPattern@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0VItemStack@@F_N@Z
-    MCAPI BannerPattern(std::string const &, std::string const &, class ItemStack, short, bool);
+    MCAPI BannerPattern(std::string const &, std::string const &, class ItemStack, int16_t, bool);
 
     // symbol: ?getIgnoreAux@BannerPattern@@QEBA_NXZ
     MCAPI bool getIgnoreAux() const;
@@ -50,13 +50,13 @@ public:
     MCAPI bool requiresPatternItem() const;
 
     // symbol: ?findPatternIndexByNameID@BannerPattern@@SA?AV?$optional@E@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI static std::optional<uchar> findPatternIndexByNameID(std::string const &);
+    MCAPI static std::optional<uint8_t> findPatternIndexByNameID(std::string const &);
 
     // symbol: ?getPatternIndexFromName@BannerPattern@@SA?AV?$optional@E@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI static std::optional<uchar> getPatternIndexFromName(std::string const &);
+    MCAPI static std::optional<uint8_t> getPatternIndexFromName(std::string const &);
 
     // symbol: ?getPatternIndexFromNameID@BannerPattern@@SAEAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static uchar getPatternIndexFromNameID(std::string const &);
+    MCAPI static uint8_t getPatternIndexFromNameID(std::string const &);
 
     // symbol: ?initPatterns@BannerPattern@@SAXXZ
     MCAPI static void initPatterns();

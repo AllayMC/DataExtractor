@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?containerContentChanged@LegacyActorArmorChangedListener@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
 
     // symbol: ?containerContentChanged@LegacyActorArmorChangedListener@@QEAAXAEAVActor@@@Z
     MCAPI void containerContentChanged(class Actor &);

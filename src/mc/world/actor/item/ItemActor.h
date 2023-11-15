@@ -79,7 +79,7 @@ public:
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
 
     // vIndex: 84, symbol: ?handleEntityEvent@ItemActor@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int32_t);
 
     // vIndex: 102, symbol: ?getSourceUniqueID@ItemActor@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
@@ -150,7 +150,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?LIFETIME@ItemActor@@0HB
-    MCAPI static int const LIFETIME;
+    MCAPI static int32_t const LIFETIME;
 
     // NOLINTEND
 

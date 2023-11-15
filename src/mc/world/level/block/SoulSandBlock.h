@@ -166,7 +166,7 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0SoulSandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SoulSandBlock(std::string const &, int);
+    MCAPI SoulSandBlock(std::string const &, int32_t);
 
     // symbol: ?BLOCK_AABB@SoulSandBlock@@2VAABB@@A
     MCAPI static class AABB BLOCK_AABB;

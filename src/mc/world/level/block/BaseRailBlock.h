@@ -39,7 +39,7 @@ public:
         MCAPI Rail(class BlockSource &, class BlockPos const &);
     
         // symbol: ?place@Rail@BaseRailBlock@@QEAAXH_N@Z
-        MCAPI void place(int, bool);
+        MCAPI void place(int32_t, bool);
     
         // symbol: ??1Rail@BaseRailBlock@@QEAA@XZ
         MCAPI ~Rail();
@@ -64,7 +64,7 @@ public:
         MCAPI void removeSoftConnections();
     
         // symbol: ?updateConnections@Rail@BaseRailBlock@@IEAAXH@Z
-        MCAPI void updateConnections(int);
+        MCAPI void updateConnections(int32_t);
     
         // NOLINTEND
     
@@ -160,7 +160,7 @@ public:
     virtual bool canContainLiquid() const;
 
     // vIndex: 74, symbol: ?onRedstoneUpdate@BaseRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int32_t, bool) const;
 
     // vIndex: 76, symbol: __unk_vfn_76
     virtual void __unk_vfn_76();
@@ -244,7 +244,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0BaseRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI BaseRailBlock(std::string const &, int, bool);
+    MCAPI BaseRailBlock(std::string const &, int32_t, bool);
 
     // symbol: ?isCorner@BaseRailBlock@@SA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isCorner(class BlockSource const &, class BlockPos const &);
@@ -262,7 +262,7 @@ public:
     MCAPI static bool isSlope(class Block const &);
 
     // symbol: ?isSlope@BaseRailBlock@@SA_NH@Z
-    MCAPI static bool isSlope(int);
+    MCAPI static bool isSlope(int32_t);
 
     // NOLINTEND
 

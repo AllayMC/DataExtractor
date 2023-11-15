@@ -28,10 +28,10 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@PassengerJumpPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??0PassengerJumpPacket@@QEAA@H@Z
-    MCAPI PassengerJumpPacket(int);
+    MCAPI PassengerJumpPacket(int32_t);
 
     // symbol: ??0PassengerJumpPacket@@QEAA@XZ
     MCAPI PassengerJumpPacket();

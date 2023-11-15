@@ -24,10 +24,10 @@ public:
     MCAPI class ItemStack const & getItemInUse() const;
 
     // symbol: ?getMoveToMouthDuration@PlayerItemInUse@@QEBAHXZ
-    MCAPI int getMoveToMouthDuration() const;
+    MCAPI int32_t getMoveToMouthDuration() const;
 
     // symbol: ?getUsedDuration@PlayerItemInUse@@QEBAHXZ
-    MCAPI int getUsedDuration() const;
+    MCAPI int32_t getUsedDuration() const;
 
     // symbol: ?isInSlot@PlayerItemInUse@@QEBA_NUSlotData@PlayerInventory@@@Z
     MCAPI bool isInSlot(struct PlayerInventory::SlotData) const;
@@ -36,7 +36,7 @@ public:
     MCAPI void releaseUsing(class Player &);
 
     // symbol: ?setItemInUse@PlayerItemInUse@@QEAAXAEBVItemStack@@AEAVEntityContext@@HUSlotData@PlayerInventory@@@Z
-    MCAPI void setItemInUse(class ItemStack const &, class EntityContext &, int, struct PlayerInventory::SlotData);
+    MCAPI void setItemInUse(class ItemStack const &, class EntityContext &, int32_t, struct PlayerInventory::SlotData);
 
     // symbol: ??1PlayerItemInUse@@QEAA@XZ
     MCAPI ~PlayerItemInUse();

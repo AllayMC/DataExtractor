@@ -16,7 +16,7 @@ public:
     MCAPI GameVersion(class GameVersion const &);
 
     // symbol: ??0GameVersion@@QEAA@IIIII@Z
-    MCAPI GameVersion(uint, uint, uint, uint, uint);
+    MCAPI GameVersion(uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
 
     // symbol: ??0GameVersion@@QEAA@AEBVListTag@@@Z
     MCAPI GameVersion(class ListTag const &);

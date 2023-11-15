@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?containerContentChanged@InventoryContainerModel@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -53,20 +53,20 @@ public:
     virtual class Container * _getContainer() const;
 
     // vIndex: 21, symbol: ?_getContainerOffset@InventoryContainerModel@@MEBAHXZ
-    virtual int _getContainerOffset() const;
+    virtual int32_t _getContainerOffset() const;
 
     // vIndex: 22, symbol: ?_onItemChanged@InventoryContainerModel@@EEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
+    virtual void _onItemChanged(int32_t, class ItemStack const &, class ItemStack const &);
 
     // symbol: ??0InventoryContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@@Z
-    MCAPI InventoryContainerModel(::ContainerEnumName, int, class Player &);
+    MCAPI InventoryContainerModel(::ContainerEnumName, int32_t, class Player &);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_refreshSlot@InventoryContainerModel@@AEAAXH@Z
-    MCAPI void _refreshSlot(int);
+    MCAPI void _refreshSlot(int32_t);
 
     // NOLINTEND
 

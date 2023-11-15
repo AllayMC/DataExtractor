@@ -49,7 +49,7 @@ public:
     MCAPI void decrementLoveTimer();
 
     // symbol: ?getBreedCooldown@BreedableComponent@@QEBAHXZ
-    MCAPI int getBreedCooldown() const;
+    MCAPI int32_t getBreedCooldown() const;
 
     // symbol: ?getInteraction@BreedableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
@@ -58,7 +58,7 @@ public:
     MCAPI class Player * getLoveCause(class Actor const &) const;
 
     // symbol: ?getLoveTimer@BreedableComponent@@QEBAHXZ
-    MCAPI int getLoveTimer() const;
+    MCAPI int32_t getLoveTimer() const;
 
     // symbol: ?mate@BreedableComponent@@QEAA?AUMatingResult@1@AEAVActor@@0@Z
     MCAPI struct BreedableComponent::MatingResult mate(class Actor &, class Actor &);
@@ -76,7 +76,7 @@ public:
     MCAPI void setInLove(class Actor &, class Player const *);
 
     // symbol: ?setLoveTimer@BreedableComponent@@QEAAXH@Z
-    MCAPI void setLoveTimer(int);
+    MCAPI void setLoveTimer(int32_t);
 
     // symbol: ?setOffspringAttributesWithParentCentricBlending@BreedableComponent@@SAXAEAVAttributeInstance@@AEBV2@1AEAVIRandom@@MM@Z
     MCAPI static void setOffspringAttributesWithParentCentricBlending(class AttributeInstance &, class AttributeInstance const &, class AttributeInstance const &, class IRandom &, float, float);

@@ -20,10 +20,10 @@ public:
     MCAPI float getLightTeleportChance();
 
     // symbol: ?getMaxTeleportTime@TeleportComponent@@QEAAHXZ
-    MCAPI int getMaxTeleportTime();
+    MCAPI int32_t getMaxTeleportTime();
 
     // symbol: ?getMinTeleportTime@TeleportComponent@@QEAAHXZ
-    MCAPI int getMinTeleportTime();
+    MCAPI int32_t getMinTeleportTime();
 
     // symbol: ?getRandomTeleports@TeleportComponent@@QEAA_NXZ
     MCAPI bool getRandomTeleports();
@@ -35,7 +35,7 @@ public:
     MCAPI float getTargetTeleportChance();
 
     // symbol: ?getTeleportTime@TeleportComponent@@QEAAHXZ
-    MCAPI int getTeleportTime();
+    MCAPI int32_t getTeleportTime();
 
     // symbol: ?initFromDefinition@TeleportComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor &);
@@ -44,7 +44,7 @@ public:
     MCAPI bool randomTeleport(class Actor &);
 
     // symbol: ?setTeleportTime@TeleportComponent@@QEAAXH@Z
-    MCAPI void setTeleportTime(int);
+    MCAPI void setTeleportTime(int32_t);
 
     // symbol: ?teleport@TeleportComponent@@QEAA_NAEAVActor@@AEBVVec3@@@Z
     MCAPI bool teleport(class Actor &, class Vec3 const &);

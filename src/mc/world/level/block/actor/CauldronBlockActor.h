@@ -32,13 +32,13 @@ public:
     MCVAPI class Container const * getContainer() const;
 
     // symbol: ?getContainerSize@CauldronBlockActor@@UEBAHXZ
-    MCVAPI int getContainerSize() const;
+    MCVAPI int32_t getContainerSize() const;
 
     // symbol: ?getItem@CauldronBlockActor@@UEBAAEBVItemStack@@H@Z
-    MCVAPI class ItemStack const & getItem(int) const;
+    MCVAPI class ItemStack const & getItem(int32_t) const;
 
     // symbol: ?getMaxStackSize@CauldronBlockActor@@UEBAHXZ
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
 
     // symbol: ?getName@CauldronBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getName() const;
@@ -53,10 +53,10 @@ public:
     MCVAPI bool save(class CompoundTag &) const;
 
     // symbol: ?serverInitItemStackIds@CauldronBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void (int, class ItemStack const &)>);
+    MCVAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void (int32_t, class ItemStack const &)>);
 
     // symbol: ?setItem@CauldronBlockActor@@UEAAXHAEBVItemStack@@@Z
-    MCVAPI void setItem(int, class ItemStack const &);
+    MCVAPI void setItem(int32_t, class ItemStack const &);
 
     // symbol: ?startOpen@CauldronBlockActor@@UEAAXAEAVPlayer@@@Z
     MCVAPI void startOpen(class Player &);

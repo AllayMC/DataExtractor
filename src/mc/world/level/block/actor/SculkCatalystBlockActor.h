@@ -27,7 +27,7 @@ public:
     MCVAPI class GameEvents::PositionSource const & getPositionSource() const;
 
     // symbol: ?getRange@SculkCatalystBlockActor@@UEBAIXZ
-    MCVAPI uint getRange() const;
+    MCVAPI uint32_t getRange() const;
 
     // symbol: ?handleGameEvent@SculkCatalystBlockActor@@UEAAXAEBVGameEvent@@AEBUGameEventContext@@AEAVBlockSource@@@Z
     MCVAPI void handleGameEvent(class GameEvent const &, struct GameEventContext const &, class BlockSource &);

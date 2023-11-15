@@ -115,7 +115,7 @@ public:
     virtual void __unk_vfn_124();
 
     // vIndex: 125, symbol: ?getComparatorSignal@RespawnAnchorBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uchar) const;
+    virtual int32_t getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uint8_t) const;
 
     // vIndex: 127, symbol: __unk_vfn_127
     virtual void __unk_vfn_127();
@@ -130,7 +130,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@RespawnAnchorBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 147, symbol: ?animateTickBedrockLegacy@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource &, class BlockPos const &, class Random &) const;
@@ -160,7 +160,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@RespawnAnchorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -175,17 +175,17 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0RespawnAnchorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI RespawnAnchorBlock(std::string const &, int);
+    MCAPI RespawnAnchorBlock(std::string const &, int32_t);
 
     // symbol: ?addItem@RespawnAnchorBlock@@SA_NAEAVContainer@@HAEAVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
+    MCAPI static bool addItem(class Container &, int32_t, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_bumpCharge@RespawnAnchorBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@PEAVPlayer@@F@Z
-    MCAPI static void _bumpCharge(class BlockSource &, class BlockPos const &, class Player *, short);
+    MCAPI static void _bumpCharge(class BlockSource &, class BlockPos const &, class Player *, int16_t);
 
     // symbol: ?_explode@RespawnAnchorBlock@@CAXAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z
     MCAPI static void _explode(class Player &, class BlockPos const &, class BlockSource &, class Level &);

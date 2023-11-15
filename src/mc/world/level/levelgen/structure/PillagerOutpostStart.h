@@ -21,7 +21,7 @@ public:
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 
     // symbol: ??0PillagerOutpostStart@@QEAA@AEAVDimension@@AEAVRandom@@HH@Z
-    MCAPI PillagerOutpostStart(class Dimension &, class Random &, int, int);
+    MCAPI PillagerOutpostStart(class Dimension &, class Random &, int32_t, int32_t);
 
     // NOLINTEND
 

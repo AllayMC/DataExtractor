@@ -21,7 +21,7 @@ public:
     virtual class ItemStackRequestActionCraftBase const * getCraftAction() const;
 
     // vIndex: 2, symbol: ?getFilteredStringIndex@ItemStackRequestAction@@UEBAHXZ
-    virtual int getFilteredStringIndex() const;
+    virtual int32_t getFilteredStringIndex() const;
 
     // vIndex: 3, symbol: ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftBase@@UEAAXAEAVBlockPalette@@_N@Z
     virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
@@ -30,7 +30,7 @@ public:
     virtual void _write(class BinaryStream &) const;
 
     // vIndex: 5, symbol: ?_read@ItemStackRequestActionCraftLoom@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??0ItemStackRequestActionCraftLoom@@QEAA@XZ
     MCAPI ItemStackRequestActionCraftLoom();

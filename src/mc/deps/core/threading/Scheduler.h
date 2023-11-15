@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Scheduler@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
-    MCAPI Scheduler(std::string, uint);
+    MCAPI Scheduler(std::string, uint32_t);
 
     // symbol: ?changeThread@Scheduler@@QEAAXVid@thread@std@@@Z
     MCAPI void changeThread(std::thread::id);
@@ -32,7 +32,7 @@ public:
     MCAPI void processCoroutines(std::chrono::nanoseconds, std::chrono::nanoseconds);
 
     // symbol: ?setTargetFPS@Scheduler@@QEAAXI@Z
-    MCAPI void setTargetFPS(uint);
+    MCAPI void setTargetFPS(uint32_t);
 
     // symbol: ?AVERAGE_TASK_TOLERANCE@Scheduler@@2MB
     MCAPI static float const AVERAGE_TASK_TOLERANCE;

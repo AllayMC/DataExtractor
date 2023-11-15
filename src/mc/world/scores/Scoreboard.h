@@ -77,7 +77,7 @@ public:
     MCAPI void addScoreListener(class Player &, std::string const &);
 
     // symbol: ?applyPlayerOperation@Scoreboard@@QEAAHAEA_NAEAV?$vector@UScoreboardId@@V?$allocator@UScoreboardId@@@std@@@std@@AEBUScoreboardId@@AEAVObjective@@13W4CommandOperator@@@Z
-    MCAPI int applyPlayerOperation(bool &, std::vector<struct ScoreboardId> &, struct ScoreboardId const &, class Objective &, std::vector<struct ScoreboardId> &, class Objective &, ::CommandOperator);
+    MCAPI int32_t applyPlayerOperation(bool &, std::vector<struct ScoreboardId> &, struct ScoreboardId const &, class Objective &, std::vector<struct ScoreboardId> &, class Objective &, ::CommandOperator);
 
     // symbol: ?forEachIdentityRef@Scoreboard@@QEAAXV?$function@$$A6AXAEAVScoreboardIdentityRef@@@Z@std@@@Z
     MCAPI void forEachIdentityRef(std::function<void (class ScoreboardIdentityRef &)>);
@@ -143,10 +143,10 @@ public:
     MCAPI bool hasIdentityFor(struct ScoreboardId const &) const;
 
     // symbol: ?modifyPlayerScore@Scoreboard@@QEAAHAEA_NAEBUScoreboardId@@AEAVObjective@@HW4PlayerScoreSetFunction@@@Z
-    MCAPI int modifyPlayerScore(bool &, struct ScoreboardId const &, class Objective &, int, ::PlayerScoreSetFunction);
+    MCAPI int32_t modifyPlayerScore(bool &, struct ScoreboardId const &, class Objective &, int32_t, ::PlayerScoreSetFunction);
 
     // symbol: ?modifyPlayerScore@Scoreboard@@QEAAHAEA_NPEAVScoreboardIdentityRef@@AEAVObjective@@HW4PlayerScoreSetFunction@@@Z
-    MCAPI int modifyPlayerScore(bool &, class ScoreboardIdentityRef *, class Objective &, int, ::PlayerScoreSetFunction);
+    MCAPI int32_t modifyPlayerScore(bool &, class ScoreboardIdentityRef *, class Objective &, int32_t, ::PlayerScoreSetFunction);
 
     // symbol: ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBUActorUniqueID@@@Z
     MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, struct ActorUniqueID const &);

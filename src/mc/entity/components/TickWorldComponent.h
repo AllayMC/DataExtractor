@@ -17,7 +17,7 @@ public:
     MCAPI TickWorldComponent();
 
     // symbol: ?getChunkRadius@TickWorldComponent@@QEBAIXZ
-    MCAPI uint getChunkRadius() const;
+    MCAPI uint32_t getChunkRadius() const;
 
     // symbol: ?getMaxDistToPlayers@TickWorldComponent@@QEBAMXZ
     MCAPI float getMaxDistToPlayers() const;

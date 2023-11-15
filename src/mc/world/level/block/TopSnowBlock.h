@@ -142,7 +142,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@TopSnowBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 113, symbol: ?canBeBuiltOver@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
     virtual bool canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const &) const;
@@ -205,10 +205,10 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@TopSnowBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 186, symbol: ?getResourceCount@TopSnowBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 192, symbol: ?getDustColor@TopSnowBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
     virtual class mce::Color getDustColor(class Block const &) const;
@@ -238,34 +238,34 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0TopSnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI TopSnowBlock(std::string const &, int, bool);
+    MCAPI TopSnowBlock(std::string const &, int32_t, bool);
 
     // symbol: ?getResourceItemFromFalling@TopSnowBlock@@QEBA?AVItemInstance@@XZ
     MCAPI class ItemInstance getResourceItemFromFalling() const;
 
     // symbol: ?melt@TopSnowBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI bool melt(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI bool melt(class BlockSource &, class BlockPos const &, int32_t) const;
 
     // symbol: ?startFallingIfLostSupport@TopSnowBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI void startFallingIfLostSupport(class BlockSource &, class BlockPos const &, class Random &) const;
 
     // symbol: ?buildSnowBlock@TopSnowBlock@@SAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    MCAPI static class Block const & buildSnowBlock(class BlockSource &, class BlockPos const &, int, bool);
+    MCAPI static class Block const & buildSnowBlock(class BlockSource &, class BlockPos const &, int32_t, bool);
 
     // symbol: ?getCoveredBlock@TopSnowBlock@@SAAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static class Block const & getCoveredBlock(class BlockSource const &, class BlockPos const &);
 
     // symbol: ?getSnowBlockToBuild@TopSnowBlock@@SAAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@H_N@Z
-    MCAPI static class Block const & getSnowBlockToBuild(class BlockSource const &, class BlockPos const &, int, bool);
+    MCAPI static class Block const & getSnowBlockToBuild(class BlockSource const &, class BlockPos const &, int32_t, bool);
 
     // symbol: ?HALF_HEIGHT@TopSnowBlock@@2HB
-    MCAPI static int const HALF_HEIGHT;
+    MCAPI static int32_t const HALF_HEIGHT;
 
     // symbol: ?HEIGHT_IMPASSABLE@TopSnowBlock@@2HB
-    MCAPI static int const HEIGHT_IMPASSABLE;
+    MCAPI static int32_t const HEIGHT_IMPASSABLE;
 
     // symbol: ?MAX_HEIGHT@TopSnowBlock@@2HB
-    MCAPI static int const MAX_HEIGHT;
+    MCAPI static int32_t const MAX_HEIGHT;
 
     // symbol: ?TOP_SNOW_JAVA_PARITY_VERSION@TopSnowBlock@@2VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const TOP_SNOW_JAVA_PARITY_VERSION;

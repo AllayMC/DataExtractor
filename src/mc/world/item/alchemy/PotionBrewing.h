@@ -27,10 +27,10 @@ public:
         MCAPI bool equals(class ItemDescriptor const &) const;
     
         // symbol: ?getData@Ingredient@PotionBrewing@@QEBAHXZ
-        MCAPI int getData() const;
+        MCAPI int32_t getData() const;
     
         // symbol: ?getItemId@Ingredient@PotionBrewing@@QEBAHXZ
-        MCAPI int getItemId() const;
+        MCAPI int32_t getItemId() const;
     
         // NOLINTEND
     
@@ -61,7 +61,7 @@ public:
     MCAPI static void addPotionMix(class ItemDescriptor const &, class PotionBrewing::Ingredient const &, class ItemDescriptor const &);
 
     // symbol: ?getFuelValue@PotionBrewing@@SAHAEBVItemDescriptor@@@Z
-    MCAPI static int getFuelValue(class ItemDescriptor const &);
+    MCAPI static int32_t getFuelValue(class ItemDescriptor const &);
 
     // symbol: ?hasMix@PotionBrewing@@SA_NAEBVItemInstance@@AEBVItemDescriptor@@@Z
     MCAPI static bool hasMix(class ItemInstance const &, class ItemDescriptor const &);

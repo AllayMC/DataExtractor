@@ -22,7 +22,7 @@ public:
     MCVAPI void initializeContainerContents(class BlockSource &);
 
     // symbol: ?setContainerChanged@RandomizableBlockActorContainer@@UEAAXH@Z
-    MCVAPI void setContainerChanged(int);
+    MCVAPI void setContainerChanged(int32_t);
 
     // symbol: ?startOpen@RandomizableBlockActorContainer@@UEAAXAEAVPlayer@@@Z
     MCVAPI void startOpen(class Player &);

@@ -28,7 +28,7 @@ public:
     MCAPI void evaluate(class BlockPos const &, class BlockSource const &);
 
     // symbol: ?getNumberOfPortalBlocks@PortalShape@@QEBAHXZ
-    MCAPI int getNumberOfPortalBlocks() const;
+    MCAPI int32_t getNumberOfPortalBlocks() const;
 
     // symbol: ?isFilled@PortalShape@@QEBA_NXZ
     MCAPI bool isFilled() const;
@@ -50,10 +50,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_calculatePortalHeight@PortalShape@@AEAAHAEBVBlockSource@@@Z
-    MCAPI int _calculatePortalHeight(class BlockSource const &);
+    MCAPI int32_t _calculatePortalHeight(class BlockSource const &);
 
     // symbol: ?_getDistanceUntilEdge@PortalShape@@AEBAHAEBVBlockPos@@W4Name@Facing@@AEBVBlockSource@@@Z
-    MCAPI int _getDistanceUntilEdge(class BlockPos const &, ::Facing::Name, class BlockSource const &) const;
+    MCAPI int32_t _getDistanceUntilEdge(class BlockPos const &, ::Facing::Name, class BlockSource const &) const;
 
     // NOLINTEND
 

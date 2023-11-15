@@ -24,7 +24,7 @@ public:
     MCAPI bool optimizeAndGetDataValues(class Vec3 &, class Vec3 &);
 
     // symbol: ?set@KeyFrameTransform@@QEAAXAEBVExpressionNode@@H@Z
-    MCAPI void set(class ExpressionNode const &, int);
+    MCAPI void set(class ExpressionNode const &, int32_t);
 
     // symbol: ?set@KeyFrameTransform@@QEAAXAEBVExpressionNode@@AEBVVec3@@@Z
     MCAPI void set(class ExpressionNode const &, class Vec3 const &);
@@ -33,10 +33,10 @@ public:
     MCAPI void set(class ExpressionNode const &);
 
     // symbol: ?setPost@KeyFrameTransform@@QEAAXAEBVExpressionNode@@H@Z
-    MCAPI void setPost(class ExpressionNode const &, int);
+    MCAPI void setPost(class ExpressionNode const &, int32_t);
 
     // symbol: ?setPre@KeyFrameTransform@@QEAAXAEBVExpressionNode@@H@Z
-    MCAPI void setPre(class ExpressionNode const &, int);
+    MCAPI void setPre(class ExpressionNode const &, int32_t);
 
     // symbol: ??1KeyFrameTransform@@QEAA@XZ
     MCAPI ~KeyFrameTransform();

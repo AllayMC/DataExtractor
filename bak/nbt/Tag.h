@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class IDataOutput;
+class IDataInput;
+class PrintStream;
+
 class Tag {
 public:
     // Tag inner types define
@@ -20,75 +24,58 @@ public:
         IntArray  = 0xB,
     };
 
-
-    template <typename T>
+    template <std::derived_from<Tag> T>
     T const* as_ptr() const {
-        return dynamic_cast<T const*>(this);
+        return static_cast<T const*>(this);
     }
-    template <typename T>
+    template <std::derived_from<Tag> T>
     T* as_ptr() {
-        return dynamic_cast<T*>(this);
+        return static_cast<T*>(this);
     }
-    template <typename T>
+    template <std::derived_from<Tag> T>
     T const& as() const {
-        auto* res = dynamic_cast<T const*>(this);
-        if (res) {
-            return *res;
-        }
-        throw std::runtime_error("Invalid Tag As");
+        return *static_cast<T const*>(this);
     }
-    template <typename T>
+    template <std::derived_from<Tag> T>
     T& as() {
-        auto* res = dynamic_cast<T*>(this);
-        if (res) {
-            return *res;
-        }
-        throw std::runtime_error("Invalid Tag As");
+        return *static_cast<T*>(this);
     }
-    
-public:
-    // prevent constructor by default
-    Tag& operator=(Tag const &) = delete;
-    Tag(Tag const &) = delete;
-    Tag() = delete;
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Tag@@UEAA@XZ
+    virtual ~Tag();
 
     // vIndex: 1, symbol: ?deleteChildren@Tag@@UEAAXXZ
     virtual void deleteChildren();
 
-    // vIndex: 2, symbol: ?write@Int64Tag@@UEBAXAEAVIDataOutput@@@Z
-    virtual void write(class IDataOutput &) const = 0;
+    // vIndex: 2, symbol: ?write@ByteTag@@UEBAXAEAVIDataOutput@@@Z
+    virtual void write(class IDataOutput&) const = 0;
 
-    // vIndex: 3, symbol: ?load@Int64Tag@@UEAAXAEAVIDataInput@@@Z
-    virtual void load(class IDataInput &) = 0;
+    // vIndex: 3, symbol: ?load@ByteTag@@UEAAXAEAVIDataInput@@@Z
+    virtual void load(class IDataInput&) = 0;
 
-    // vIndex: 4, symbol: ?toString@Int64Tag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 4, symbol: ?toString@ByteTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string toString() const = 0;
 
-    // vIndex: 5, symbol: ?getId@Int64Tag@@UEBA?AW4Type@Tag@@XZ
+    // vIndex: 5, symbol: ?getId@ByteTag@@UEBA?AW4Type@Tag@@XZ
     virtual ::Tag::Type getId() const = 0;
 
     // vIndex: 6, symbol: ?equals@Tag@@UEBA_NAEBV1@@Z
-    virtual bool equals(class Tag const &) const;
+    virtual bool equals(class Tag const&) const;
 
     // vIndex: 7, symbol: ?print@Tag@@UEBAXAEAVPrintStream@@@Z
-    virtual void print(class PrintStream &) const;
+    virtual void print(class PrintStream&) const;
 
-    // vIndex: 8, symbol: ?print@Tag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z
-    virtual void print(std::string const &, class PrintStream &) const;
+    // vIndex: 8, symbol:
+    // ?print@Tag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z
+    virtual void print(std::string const&, class PrintStream&) const;
 
-    // vIndex: 9, symbol: ?copy@Int64Tag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+    // vIndex: 9, symbol: ?copy@ByteTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class Tag> copy() const = 0;
 
-    // vIndex: 10, symbol: ?hash@Int64Tag@@UEBA_KXZ
+    // vIndex: 10, symbol: ?hash@ByteTag@@UEBA_KXZ
     virtual uint64 hash() const = 0;
-
-    // symbol: ??1Tag@@UEAA@XZ
-    MCVAPI ~Tag();
 
     // symbol: ?getTagName@Tag@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@1@@Z
     MCAPI static std::string getTagName(::Tag::Type);
@@ -96,16 +83,16 @@ public:
     // symbol: ?newTag@Tag@@SA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@W4Type@1@@Z
     MCAPI static std::unique_ptr<class Tag> newTag(::Tag::Type);
 
-    // symbol: ?readNamedTag@Tag@@SA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@AEAVIDataInput@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput &, std::string &);
+    // symbol:
+    // ?readNamedTag@Tag@@SA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@AEAVIDataInput@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput&, std::string&);
 
-    // symbol: ?writeNamedTag@Tag@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV1@AEAVIDataOutput@@@Z
-    MCAPI static void writeNamedTag(std::string const &, class Tag const &, class IDataOutput &);
+    // symbol:
+    // ?writeNamedTag@Tag@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV1@AEAVIDataOutput@@@Z
+    MCAPI static void writeNamedTag(std::string const&, class Tag const&, class IDataOutput&);
 
     // symbol: ?NullString@Tag@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NullString;
 
     // NOLINTEND
-
 };
-

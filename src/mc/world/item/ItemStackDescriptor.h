@@ -28,7 +28,7 @@ public:
     MCAPI ItemStackDescriptor();
 
     // symbol: ??0ItemStackDescriptor@@QEAA@AEBVItem@@HGPEBVCompoundTag@@@Z
-    MCAPI ItemStackDescriptor(class Item const &, int, ushort, class CompoundTag const *);
+    MCAPI ItemStackDescriptor(class Item const &, int32_t, uint16_t, class CompoundTag const *);
 
     // symbol: ??4ItemStackDescriptor@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ItemStackDescriptor & operator=(class ItemStackDescriptor &&);

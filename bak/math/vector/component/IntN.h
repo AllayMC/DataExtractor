@@ -5,7 +5,7 @@ template <size_t N>
 class doubleN;
 
 template <typename T, typename... Components>
-    requires AllSame<Components...>
+// requires ll::concepts::IsAllSame<Components...>
 class LL_EBO IntN : public Field<T, Components...>, IntNTag {
 public:
     using first_type = Field<T, Components...>::first_type;
@@ -14,12 +14,12 @@ public:
         requires(IntN::size() == 3)
     {
         return {
-            static_cast<T const*>(this)->template get<first_type>(1) * b.template get<first_type>(2) -
-                static_cast<T const*>(this)->template get<first_type>(2) * b.template get<first_type>(1),
-            static_cast<T const*>(this)->template get<first_type>(2) * b.template get<first_type>(0) -
-                static_cast<T const*>(this)->template get<first_type>(0) * b.template get<first_type>(2),
-            static_cast<T const*>(this)->template get<first_type>(0) * b.template get<first_type>(1) -
-                static_cast<T const*>(this)->template get<first_type>(1) * b.template get<first_type>(0)};
+            static_cast<T const*>(this)->template get<first_type>(1) * b.template get<first_type>(2)
+                - static_cast<T const*>(this)->template get<first_type>(2) * b.template get<first_type>(1),
+            static_cast<T const*>(this)->template get<first_type>(2) * b.template get<first_type>(0)
+                - static_cast<T const*>(this)->template get<first_type>(0) * b.template get<first_type>(2),
+            static_cast<T const*>(this)->template get<first_type>(0) * b.template get<first_type>(1)
+                - static_cast<T const*>(this)->template get<first_type>(1) * b.template get<first_type>(0)};
     }
 };
 
@@ -41,7 +41,6 @@ GEN_VEC_BASIC_MATH_FUNC_INT(atan)
 GEN_VEC_BASIC_MATH_FUNC_INT(acosh)
 GEN_VEC_BASIC_MATH_FUNC_INT(asinh)
 GEN_VEC_BASIC_MATH_FUNC_INT(atanh)
-GEN_VEC_BASIC_MATH_FUNC_INT(atan2)
 GEN_VEC_BASIC_MATH_FUNC_INT(ceil)
 GEN_VEC_BASIC_MATH_FUNC_INT(cos)
 GEN_VEC_BASIC_MATH_FUNC_INT(cosh)
@@ -58,6 +57,7 @@ GEN_VEC_BASIC_MATH_FUNC_INT(sqrt)
 GEN_VEC_BASIC_MATH_FUNC_INT(tan)
 GEN_VEC_BASIC_MATH_FUNC_INT(tanh)
 
+// GEN_VEC_BASIC_MATH_FUNC_INT(atan2)
 // GEN_VEC_BASIC_MATH_FUNC_INT(modf)
 // GEN_VEC_BASIC_MATH_FUNC_INT(fmod)
 // GEN_VEC_BASIC_MATH_FUNC_INT(pow)

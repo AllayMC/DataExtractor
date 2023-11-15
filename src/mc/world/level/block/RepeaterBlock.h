@@ -169,7 +169,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@RepeaterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -187,7 +187,7 @@ public:
     virtual bool isAlternateInput(class Block const &) const;
 
     // vIndex: 203, symbol: ?getTurnOnDelay@RepeaterBlock@@MEBAHAEBVBlock@@@Z
-    virtual int getTurnOnDelay(class Block const &) const;
+    virtual int32_t getTurnOnDelay(class Block const &) const;
 
     // vIndex: 204, symbol: ?getOnBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
     virtual class Block const * getOnBlock(class Block const *) const;
@@ -202,7 +202,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0RepeaterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI RepeaterBlock(std::string const &, int, bool);
+    MCAPI RepeaterBlock(std::string const &, int32_t, bool);
 
     // symbol: ?updateDelay@RepeaterBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
     MCAPI void updateDelay(class BlockSource &, class BlockPos const &, bool) const;
@@ -215,7 +215,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?DELAYS@RepeaterBlock@@0QBHB
-    MCAPI static int const DELAYS[];
+    MCAPI static int32_t const DELAYS[];
 
     // NOLINTEND
 

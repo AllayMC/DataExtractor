@@ -25,22 +25,22 @@ namespace gametest::StructureUtils {
     MCAPI void AddCommandBlockAndButtonToStartTest(class BlockPos const &, ::Rotation, class BlockPos const &, std::string const &, class BlockSource &);
 
     // symbol: ?ClearSpaceForStructure@StructureUtils@gametest@@YAXAEBVBoundingBox@@HAEAVBlockSource@@@Z
-    MCAPI void ClearSpaceForStructure(class BoundingBox const &, int, class BlockSource &);
+    MCAPI void ClearSpaceForStructure(class BoundingBox const &, int32_t, class BlockSource &);
 
     // symbol: ?CreateNewEmptyStructureBlock@StructureUtils@gametest@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@1W4Rotation@@AEAVBlockSource@@@Z
     MCAPI void CreateNewEmptyStructureBlock(std::string const &, class BlockPos const &, class BlockPos const &, ::Rotation, class BlockSource &);
 
     // symbol: ?FindNearestStructureBlock@StructureUtils@gametest@@YAPEAVStructureBlockActor@@AEBVBlockPos@@HAEAVBlockSource@@@Z
-    MCAPI class StructureBlockActor * FindNearestStructureBlock(class BlockPos const &, int, class BlockSource &);
+    MCAPI class StructureBlockActor * FindNearestStructureBlock(class BlockPos const &, int32_t, class BlockSource &);
 
     // symbol: ?FindStructureBlockContainingPos@StructureUtils@gametest@@YA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@HAEAVBlockSource@@@Z
-    MCAPI std::optional<class BlockPos> FindStructureBlockContainingPos(class BlockPos const &, int, class BlockSource &);
+    MCAPI std::optional<class BlockPos> FindStructureBlockContainingPos(class BlockPos const &, int32_t, class BlockSource &);
 
     // symbol: ?FindStructureBlocks@StructureUtils@gametest@@YA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVBlockPos@@HAEAVBlockSource@@@Z
-    MCAPI std::vector<class BlockPos> FindStructureBlocks(class BlockPos const &, int, class BlockSource &);
+    MCAPI std::vector<class BlockPos> FindStructureBlocks(class BlockPos const &, int32_t, class BlockSource &);
 
     // symbol: ?GetRotationForRotationSteps@StructureUtils@gametest@@YA?AW4Rotation@@H@Z
-    MCAPI ::Rotation GetRotationForRotationSteps(int);
+    MCAPI ::Rotation GetRotationForRotationSteps(int32_t);
 
     // symbol: ?GetStructureBoundingBox@StructureUtils@gametest@@YA?AVBoundingBox@@AEBVStructureBlockActor@@@Z
     MCAPI class BoundingBox GetStructureBoundingBox(class StructureBlockActor const &);
@@ -58,7 +58,7 @@ namespace gametest::StructureUtils {
     MCAPI class StructureTemplate * GetStructureTemplate(std::string const &, class Level &);
 
     // symbol: ?SpawnStructure@StructureUtils@gametest@@YAPEAVStructureBlockActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@HAEAVBlockSource@@@Z
-    MCAPI class StructureBlockActor * SpawnStructure(std::string const &, class BlockPos const &, ::Rotation, int, class BlockSource &);
+    MCAPI class StructureBlockActor * SpawnStructure(std::string const &, class BlockPos const &, ::Rotation, int32_t, class BlockSource &);
 
     // symbol: ?transform@StructureUtils@gametest@@YA?AVVec3@@AEBV3@W4Mirror@@W4Rotation@@0@Z
     MCAPI class Vec3 transform(class Vec3 const &, ::Mirror, ::Rotation, class Vec3 const &);

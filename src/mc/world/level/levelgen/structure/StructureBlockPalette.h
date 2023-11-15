@@ -46,13 +46,13 @@ public:
     MCAPI StructureBlockPalette(class StructureBlockPalette &&);
 
     // symbol: ?addMapping@StructureBlockPalette@@QEAA_KV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@Z
-    MCAPI uint64 addMapping(std::unique_ptr<class CompoundTag>);
+    MCAPI uint64_t addMapping(std::unique_ptr<class CompoundTag>);
 
     // symbol: ?getBlock@StructureBlockPalette@@QEBAAEBVBlock@@AEBVBlockPalette@@_KV?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@@Z
-    MCAPI class Block const & getBlock(class BlockPalette const &, uint64, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>) const;
+    MCAPI class Block const & getBlock(class BlockPalette const &, uint64_t, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>) const;
 
     // symbol: ?getBlockPositionData@StructureBlockPalette@@QEBAPEBUBlockPositionData@1@_K@Z
-    MCAPI struct StructureBlockPalette::BlockPositionData const * getBlockPositionData(uint64) const;
+    MCAPI struct StructureBlockPalette::BlockPositionData const * getBlockPositionData(uint64_t) const;
 
     // symbol: ?save@StructureBlockPalette@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> save() const;
@@ -65,7 +65,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_parseBlockPositionData@StructureBlockPalette@@IEAA?AW4StructureBlockPaletteLoadResult@@AEBVCompoundTag@@H@Z
-    MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const &, int);
+    MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const &, int32_t);
 
     // symbol: ?_parseBlockPositionDataList@StructureBlockPalette@@IEAA?AW4StructureBlockPaletteLoadResult@@AEBVCompoundTag@@@Z
     MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionDataList(class CompoundTag const &);

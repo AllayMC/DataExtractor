@@ -20,7 +20,7 @@ public:
     MCAPI ChunkViewOwner(class ChunkViewOwner const &);
 
     // symbol: ?getHash@ChunkViewOwner@@QEBA_KXZ
-    MCAPI uint64 getHash() const;
+    MCAPI uint64_t getHash() const;
 
     // NOLINTEND
 

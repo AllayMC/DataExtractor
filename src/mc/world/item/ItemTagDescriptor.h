@@ -33,7 +33,7 @@ public:
     virtual struct ItemDescriptor::ItemEntry getItem() const;
 
     // vIndex: 5, symbol: ?forEachItemUntil@ItemTagDescriptor@@UEBA_NV?$function@$$A6A_NAEBVItem@@F@Z@std@@@Z
-    virtual bool forEachItemUntil(std::function<bool (class Item const &, short)>) const;
+    virtual bool forEachItemUntil(std::function<bool (class Item const &, int16_t)>) const;
 
     // vIndex: 6, symbol: ?toMap@ItemTagDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
     virtual std::map<std::string,std::string> toMap() const;
@@ -51,10 +51,10 @@ public:
     virtual ::ItemDescriptor::InternalType getType() const;
 
     // vIndex: 12, symbol: ?getHash@ItemTagDescriptor@@UEBA_KXZ
-    virtual uint64 getHash() const;
+    virtual uint64_t getHash() const;
 
     // symbol: ?deserialize@ItemTagDescriptor@@SA?AV?$Result@V?$unique_ptr@UItemTagDescriptor@@U?$default_delete@UItemTagDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<struct ItemTagDescriptor>> deserialize(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct ItemTagDescriptor>, std::error_code> deserialize(class ReadOnlyBinaryStream &);
 
     // NOLINTEND
 

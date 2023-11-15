@@ -30,7 +30,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?NO_MAX_COUNT@EntitySensorComponent@@0HB
-    MCAPI static int const NO_MAX_COUNT;
+    MCAPI static int32_t const NO_MAX_COUNT;
 
     // NOLINTEND
 

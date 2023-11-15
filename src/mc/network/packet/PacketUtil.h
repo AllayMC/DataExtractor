@@ -5,10 +5,10 @@
 namespace PacketUtil {
     // NOLINTBEGIN
     // symbol: ?byteToDegrees@PacketUtil@@YAMC@Z
-    MCAPI float byteToDegrees(schar);
+    MCAPI float byteToDegrees(int8_t);
 
     // symbol: ?degreesToByte@PacketUtil@@YACM@Z
-    MCAPI schar degreesToByte(float);
+    MCAPI int8_t degreesToByte(float);
     // NOLINTEND
 
 };

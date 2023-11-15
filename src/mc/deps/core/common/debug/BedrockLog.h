@@ -37,13 +37,13 @@ namespace BedrockLog {
     MCAPI void _initPriorityFilterMap();
 
     // symbol: ?_messageIdString@BedrockLog@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI std::string _messageIdString(int);
+    MCAPI std::string _messageIdString(int32_t);
 
     // symbol: ?_openChannel@BedrockLog@@YAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1W4LogCategory@1@W4LogChannel@1@_NPEAVLogSettingsUpdater@@N@Z
     MCAPI void _openChannel(class Core::Path const &, std::string const &, std::string const &, ::BedrockLog::LogCategory, ::BedrockLog::LogChannel, bool, class LogSettingsUpdater *, double);
 
     // symbol: ?_priorityFilterString@BedrockLog@@YAPEBDI@Z
-    MCAPI char const * _priorityFilterString(uint);
+    MCAPI char const * _priorityFilterString(uint32_t);
 
     // symbol: ?_processIdString@BedrockLog@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string _processIdString();
@@ -61,10 +61,10 @@ namespace BedrockLog {
     MCAPI void initializeLogExtensions();
 
     // symbol: ?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z
-    MCAPI void log_va(::BedrockLog::LogCategory, std::bitset<3>, ::BedrockLog::LogRule, ::LogAreaID, uint, char const *, int, char const *, char *);
+    MCAPI void log_va(::BedrockLog::LogCategory, std::bitset<3>, ::BedrockLog::LogRule, ::LogAreaID, uint32_t, char const *, int32_t, char const *, char *);
 
     // symbol: ?rakDebugLog@BedrockLog@@YAHPEBDZZ
-    MCAPI int rakDebugLog(char const *, ...);
+    MCAPI int32_t rakDebugLog(char const *, ...);
 
     // symbol: ?update@BedrockLog@@YAXXZ
     MCAPI void update();

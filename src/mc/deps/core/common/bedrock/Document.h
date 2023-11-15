@@ -46,7 +46,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_acquireNode@Document@JSONObject@Bedrock@@AEAAPEAXAEAV?$list@VNodeBase@JSONObject@Bedrock@@V123@V123@@Intrusive@3@_K1@Z
-    MCAPI void * _acquireNode(class Bedrock::Intrusive::list<class Bedrock::JSONObject::NodeBase, class Bedrock::JSONObject::NodeBase, class Bedrock::JSONObject::NodeBase> &, uint64, uint64);
+    MCAPI void * _acquireNode(class Bedrock::Intrusive::list<class Bedrock::JSONObject::NodeBase, class Bedrock::JSONObject::NodeBase, class Bedrock::JSONObject::NodeBase> &, uint64_t, uint64_t);
 
     // symbol: ?_createNode@Document@JSONObject@Bedrock@@AEAAPEAVNodeBase@23@AEBVValueWrapper@23@@Z
     MCAPI class Bedrock::JSONObject::NodeBase * _createNode(class Bedrock::JSONObject::ValueWrapper const &);

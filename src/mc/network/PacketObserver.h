@@ -23,7 +23,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0PacketStats@PacketObserver@@QEAA@I@Z
-        MCAPI PacketStats(uint);
+        MCAPI PacketStats(uint32_t);
     
         // NOLINTEND
     
@@ -41,10 +41,10 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?packetSentTo@PacketObserver@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-    virtual void packetSentTo(class NetworkIdentifier const &, class Packet const &, uint);
+    virtual void packetSentTo(class NetworkIdentifier const &, class Packet const &, uint32_t);
 
     // vIndex: 2, symbol: ?packetReceivedFrom@PacketObserver@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-    virtual void packetReceivedFrom(class NetworkIdentifier const &, class Packet const &, uint);
+    virtual void packetReceivedFrom(class NetworkIdentifier const &, class Packet const &, uint32_t);
 
     // vIndex: 3, symbol: ?dataSentTo@PacketObserver@@UEAAXAEBVNetworkIdentifier@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     virtual void dataSentTo(class NetworkIdentifier const &, std::string_view);

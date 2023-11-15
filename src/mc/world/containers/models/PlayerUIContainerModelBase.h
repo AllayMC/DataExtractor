@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?containerContentChanged@PlayerUIContainerModelBase@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int32_t);
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -54,13 +54,13 @@ public:
     virtual class Container * _getContainer() const;
 
     // vIndex: 21, symbol: ?_getContainerOffset@PlayerUIContainerModelBase@@MEBAHXZ
-    virtual int _getContainerOffset() const;
+    virtual int32_t _getContainerOffset() const;
 
     // vIndex: 22, symbol: ?_onItemChanged@PlayerUIContainerModelBase@@MEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
+    virtual void _onItemChanged(int32_t, class ItemStack const &, class ItemStack const &);
 
     // symbol: ??0PlayerUIContainerModelBase@@QEAA@W4ContainerEnumName@@AEAVPlayer@@HW4ContainerCategory@@@Z
-    MCAPI PlayerUIContainerModelBase(::ContainerEnumName, class Player &, int, ::ContainerCategory);
+    MCAPI PlayerUIContainerModelBase(::ContainerEnumName, class Player &, int32_t, ::ContainerCategory);
 
     // NOLINTEND
 

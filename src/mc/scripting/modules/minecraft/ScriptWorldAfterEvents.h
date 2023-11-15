@@ -263,7 +263,7 @@ public:
     MCVAPI ~ScriptWorldAfterEvents();
 
     // symbol: ??0ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVLevel@@@gsl@@@Z
-    MCAPI ScriptWorldAfterEvents(class Scripting::WeakLifetimeScope const &, gsl::not_null<class Level *>);
+    MCAPI ScriptWorldAfterEvents(class Scripting::WeakLifetimeScope const &, class gsl::not_null<class Level *>);
 
     // symbol: ??0ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptWorldAfterEvents(class ScriptModuleMinecraft::ScriptWorldAfterEvents &&);

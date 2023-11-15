@@ -28,7 +28,7 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@SetHealthPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1SetHealthPacket@@UEAA@XZ
     MCVAPI ~SetHealthPacket();
@@ -37,7 +37,7 @@ public:
     MCAPI SetHealthPacket();
 
     // symbol: ??0SetHealthPacket@@QEAA@H@Z
-    MCAPI SetHealthPacket(int);
+    MCAPI SetHealthPacket(int32_t);
 
     // NOLINTEND
 

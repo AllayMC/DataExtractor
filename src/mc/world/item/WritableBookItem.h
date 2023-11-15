@@ -85,19 +85,19 @@ public:
     virtual std::string getInteractText(class Player const &) const;
 
     // symbol: ?addPageAt@WritableBookItem@@SAXAEAVItemStack@@HAEBUPageContent@@@Z
-    MCAPI static void addPageAt(class ItemStack &, int, struct PageContent const &);
+    MCAPI static void addPageAt(class ItemStack &, int32_t, struct PageContent const &);
 
     // symbol: ?deletePage@WritableBookItem@@SA?AUPageContent@@AEAVItemStack@@H@Z
-    MCAPI static struct PageContent deletePage(class ItemStack &, int);
+    MCAPI static struct PageContent deletePage(class ItemStack &, int32_t);
 
     // symbol: ?replacePage@WritableBookItem@@SAXAEAVItemStack@@HAEBUPageContent@@@Z
-    MCAPI static void replacePage(class ItemStack &, int, struct PageContent const &);
+    MCAPI static void replacePage(class ItemStack &, int32_t, struct PageContent const &);
 
     // symbol: ?signBook@WritableBookItem@@SAXAEAVItemStack@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@11@Z
     MCAPI static void signBook(class ItemStack &, std::string, std::string, std::string);
 
     // symbol: ?swapPages@WritableBookItem@@SAXAEAVItemStack@@HH@Z
-    MCAPI static void swapPages(class ItemStack &, int, int);
+    MCAPI static void swapPages(class ItemStack &, int32_t, int32_t);
 
     // NOLINTEND
 

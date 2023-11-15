@@ -33,13 +33,13 @@ public:
     virtual class GameEvents::PositionSource const & getPositionSource() const;
 
     // vIndex: 3, symbol: ?getRange@VibrationListener@@UEBAIXZ
-    virtual uint getRange() const;
+    virtual uint32_t getRange() const;
 
     // vIndex: 4, symbol: ?getDeliveryMode@GameEventListener@@UEBA?AW4DeliveryMode@1@XZ
     virtual ::GameEventListener::DeliveryMode getDeliveryMode() const;
 
     // symbol: ??0VibrationListener@@QEAA@$$QEAV?$unique_ptr@VVibrationListenerConfig@@U?$default_delete@VVibrationListenerConfig@@@std@@@std@@VPositionSource@GameEvents@@IW4OwnerType@0@@Z
-    MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, uint, ::VibrationListener::OwnerType);
+    MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, uint32_t, ::VibrationListener::OwnerType);
 
     // symbol: ?getLatestReceivedVibration@VibrationListener@@QEBAAEBVGameEvent@@XZ
     MCAPI class GameEvent const & getLatestReceivedVibration() const;

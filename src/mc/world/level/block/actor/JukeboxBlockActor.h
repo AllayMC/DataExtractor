@@ -21,10 +21,10 @@ public:
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 
     // symbol: ?canPullOutItem@JukeboxBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const &) const;
+    MCVAPI bool canPullOutItem(int32_t, int32_t, class ItemStack const &) const;
 
     // symbol: ?canPushInItem@JukeboxBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPushInItem(int, int, class ItemStack const &) const;
+    MCVAPI bool canPushInItem(int32_t, int32_t, class ItemStack const &) const;
 
     // symbol: ?getContainer@JukeboxBlockActor@@UEAAPEAVContainer@@XZ
     MCVAPI class Container * getContainer();
@@ -33,13 +33,13 @@ public:
     MCVAPI class Container const * getContainer() const;
 
     // symbol: ?getContainerSize@JukeboxBlockActor@@UEBAHXZ
-    MCVAPI int getContainerSize() const;
+    MCVAPI int32_t getContainerSize() const;
 
     // symbol: ?getItem@JukeboxBlockActor@@UEBAAEBVItemStack@@H@Z
-    MCVAPI class ItemStack const & getItem(int) const;
+    MCVAPI class ItemStack const & getItem(int32_t) const;
 
     // symbol: ?getMaxStackSize@JukeboxBlockActor@@UEBAHXZ
-    MCVAPI int getMaxStackSize() const;
+    MCVAPI int32_t getMaxStackSize() const;
 
     // symbol: ?load@JukeboxBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -51,10 +51,10 @@ public:
     MCVAPI bool save(class CompoundTag &) const;
 
     // symbol: ?serverInitItemStackIds@JukeboxBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void (int, class ItemStack const &)>);
+    MCVAPI void serverInitItemStackIds(int32_t, int32_t, std::function<void (int32_t, class ItemStack const &)>);
 
     // symbol: ?setItem@JukeboxBlockActor@@UEAAXHAEBVItemStack@@@Z
-    MCVAPI void setItem(int, class ItemStack const &);
+    MCVAPI void setItem(int32_t, class ItemStack const &);
 
     // symbol: ?startOpen@JukeboxBlockActor@@UEAAXAEAVPlayer@@@Z
     MCVAPI void startOpen(class Player &);

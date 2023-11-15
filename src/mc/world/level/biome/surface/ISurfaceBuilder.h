@@ -22,7 +22,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0BuildParameters@ISurfaceBuilder@@QEAA@AEBVBiome@@AEAVRandom@@AEAVBlockVolume@@AEBVBlockPos@@MFAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@W4WaterLevelStrategy@1@HAEBVHeightmapWrapper@@_N@Z
-        MCAPI BuildParameters(class Biome const &, class Random &, class BlockVolume &, class BlockPos const &, float, short, std::unique_ptr<class PerlinSimplexNoise> const &, ::ISurfaceBuilder::WaterLevelStrategy, int, class HeightmapWrapper const &, bool);
+        MCAPI BuildParameters(class Biome const &, class Random &, class BlockVolume &, class BlockPos const &, float, int16_t, std::unique_ptr<class PerlinSimplexNoise> const &, ::ISurfaceBuilder::WaterLevelStrategy, int32_t, class HeightmapWrapper const &, bool);
     
         // NOLINTEND
     

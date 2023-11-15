@@ -44,7 +44,7 @@ public:
     virtual void __unk_vfn_22();
 
     // vIndex: 28, symbol: ?canConnect@FenceGateBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const &, uchar, class Block const &) const;
+    virtual bool canConnect(class Block const &, uint8_t, class Block const &) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -113,7 +113,7 @@ public:
     virtual bool canContainLiquid() const;
 
     // vIndex: 74, symbol: ?onRedstoneUpdate@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int32_t, bool) const;
 
     // vIndex: 76, symbol: __unk_vfn_76
     virtual void __unk_vfn_76();
@@ -134,7 +134,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@FenceGateBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -176,7 +176,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@FenceGateBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -191,7 +191,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0FenceGateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4WoodType@@@Z
-    MCAPI FenceGateBlock(std::string const &, int, ::WoodType);
+    MCAPI FenceGateBlock(std::string const &, int32_t, ::WoodType);
 
     // symbol: ?resolveIsInWall@FenceGateBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void resolveIsInWall(class BlockSource &, class BlockPos const &) const;
@@ -204,7 +204,7 @@ public:
     MCAPI void _onOpenChanged(class BlockSource &, class BlockPos const &) const;
 
     // symbol: ?_setOpen@FenceGateBlock@@AEBAXAEAVBlockSource@@V?$not_null@PEBVBlock@@@gsl@@AEBVBlockPos@@PEAVPlayer@@_N@Z
-    MCAPI void _setOpen(class BlockSource &, gsl::not_null<class Block const *>, class BlockPos const &, class Player *, bool) const;
+    MCAPI void _setOpen(class BlockSource &, class gsl::not_null<class Block const *>, class BlockPos const &, class Player *, bool) const;
 
     // symbol: ?_getShape@FenceGateBlock@@CAAEBVAABB@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
     MCAPI static class AABB const & _getShape(class BlockPos const &, class Block const &, class AABB &, bool);

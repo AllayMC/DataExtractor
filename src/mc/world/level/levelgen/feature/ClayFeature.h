@@ -21,7 +21,7 @@ public:
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
     // symbol: ??0ClayFeature@@QEAA@H@Z
-    MCAPI ClayFeature(int);
+    MCAPI ClayFeature(int32_t);
 
     // NOLINTEND
 

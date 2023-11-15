@@ -5,7 +5,7 @@
 namespace DebugUtils {
     // NOLINTBEGIN
     // symbol: ?handleAssert_va@DebugUtils@@YA_NPEBD0AEA_NH00PEAD@Z
-    MCAPI bool handleAssert_va(char const *, char const *, bool &, int, char const *, char const *, char *);
+    MCAPI bool handleAssert_va(char const *, char const *, bool &, int32_t, char const *, char const *, char *);
 
     // symbol: ?isDebuggerAttached@DebugUtils@@YA_NXZ
     MCAPI bool isDebuggerAttached();

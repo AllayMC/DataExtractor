@@ -24,10 +24,10 @@ public:
     virtual void appendBlock(class Block const &);
 
     // vIndex: 3, symbol: ?getBlock@BlockHashPalette@@UEBAAEBVBlock@@AEBI@Z
-    virtual class Block const & getBlock(uint const &) const;
+    virtual class Block const & getBlock(uint32_t const &) const;
 
     // vIndex: 4, symbol: ?assignBlockNetworkId@BlockHashPalette@@MEBAXAEBVBlock@@_K@Z
-    virtual void assignBlockNetworkId(class Block const &, uint64) const;
+    virtual void assignBlockNetworkId(class Block const &, uint64_t) const;
 
     // symbol: ??0BlockHashPalette@@QEAA@AEAVLevel@@@Z
     MCAPI BlockHashPalette(class Level &);

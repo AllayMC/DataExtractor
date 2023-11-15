@@ -43,7 +43,7 @@ public:
     MCAPI void _outputError(class CommandOutput &, struct Util::ReplacementResults, class Actor const *) const;
 
     // symbol: ?_outputSuccess@LootCommand@@AEBAXAEAVCommandOutput@@H@Z
-    MCAPI void _outputSuccess(class CommandOutput &, int) const;
+    MCAPI void _outputSuccess(class CommandOutput &, int32_t) const;
 
     // symbol: ?_placeItemsInTarget@LootCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
     MCAPI void _placeItemsInTarget(class CommandOrigin const &, class CommandOutput &, std::vector<class ItemStack> &) const;

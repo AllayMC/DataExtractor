@@ -123,7 +123,7 @@ public:
     virtual void __unk_vfn_106();
 
     // vIndex: 107, symbol: ?getPlacementBlock@TorchBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uchar, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, uint8_t, class Vec3 const &, int32_t) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
@@ -141,7 +141,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 131, symbol: ?getIconYOffset@TorchBlock@@UEBAHXZ
-    virtual int getIconYOffset() const;
+    virtual int32_t getIconYOffset() const;
 
     // vIndex: 147, symbol: ?animateTickBedrockLegacy@TorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource &, class BlockPos const &, class Random &) const;
@@ -192,7 +192,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0TorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4MaterialType@@@Z
-    MCAPI TorchBlock(std::string const &, int, ::MaterialType);
+    MCAPI TorchBlock(std::string const &, int32_t, ::MaterialType);
 
     // NOLINTEND
 
@@ -202,7 +202,7 @@ public:
     MCAPI class Vec3 _flameParticlePos(class BlockPos const &, ::TorchFacing) const;
 
     // symbol: ?canBePlacedOn@TorchBlock@@IEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI bool canBePlacedOn(class BlockSource &, class BlockPos const &, uchar) const;
+    MCAPI bool canBePlacedOn(class BlockSource &, class BlockPos const &, uint8_t) const;
 
     // NOLINTEND
 
@@ -212,7 +212,7 @@ private:
     MCAPI static ::TorchFacing const DATA_FROM_FACING[];
 
     // symbol: ?FACING_FROM_DATA@TorchBlock@@0QBGB
-    MCAPI static ushort const FACING_FROM_DATA[];
+    MCAPI static uint16_t const FACING_FROM_DATA[];
 
     // NOLINTEND
 

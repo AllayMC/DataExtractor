@@ -154,7 +154,7 @@ public:
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
 
     // symbol: ??0LiquidBlockStatic@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LiquidBlockStatic(std::string const &, int, class Material const &);
+    MCAPI LiquidBlockStatic(std::string const &, int32_t, class Material const &);
 
     // NOLINTEND
 

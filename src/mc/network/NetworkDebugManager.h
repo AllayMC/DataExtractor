@@ -45,10 +45,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?MAX_NUMBER_OF_SAMPLES@NetworkDebugManager@@2HB
-    MCAPI static int const MAX_NUMBER_OF_SAMPLES;
+    MCAPI static int32_t const MAX_NUMBER_OF_SAMPLES;
 
     // symbol: ?UPDATE_INTERVAL_MILLISECONDS@NetworkDebugManager@@2HB
-    MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
+    MCAPI static int32_t const UPDATE_INTERVAL_MILLISECONDS;
 
     // NOLINTEND
 

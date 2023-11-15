@@ -22,7 +22,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 11, symbol: ?addSource@ComparatorCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-    virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
+    virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int32_t &, bool &);
 
     // vIndex: 14, symbol: ?evaluate@ComparatorCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
@@ -46,16 +46,16 @@ public:
     MCAPI ComparatorCapacitor();
 
     // symbol: ?clearAnalogStrength@ComparatorCapacitor@@QEAAXE@Z
-    MCAPI void clearAnalogStrength(uchar);
+    MCAPI void clearAnalogStrength(uint8_t);
 
     // symbol: ?getOldStrength@ComparatorCapacitor@@QEAAHXZ
-    MCAPI int getOldStrength();
+    MCAPI int32_t getOldStrength();
 
     // symbol: ?isSubtractMode@ComparatorCapacitor@@QEAA_NXZ
     MCAPI bool isSubtractMode();
 
     // symbol: ?setAnalogStrength@ComparatorCapacitor@@QEAAXHE@Z
-    MCAPI void setAnalogStrength(int, uchar);
+    MCAPI void setAnalogStrength(int32_t, uint8_t);
 
     // symbol: ?setMode@ComparatorCapacitor@@QEAAXW4Mode@1@@Z
     MCAPI void setMode(::ComparatorCapacitor::Mode);

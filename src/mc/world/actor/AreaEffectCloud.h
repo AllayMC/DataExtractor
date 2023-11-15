@@ -106,7 +106,7 @@ public:
     MCAPI void addAreaEffect(class MobEffectInstance);
 
     // symbol: ?getDuration@AreaEffectCloud@@QEBAHXZ
-    MCAPI int getDuration() const;
+    MCAPI int32_t getDuration() const;
 
     // symbol: ?getEffectiveRadius@AreaEffectCloud@@QEBAMXZ
     MCAPI float getEffectiveRadius() const;
@@ -121,7 +121,7 @@ public:
     MCAPI void setAffectOwner(bool);
 
     // symbol: ?setDuration@AreaEffectCloud@@QEAAXH@Z
-    MCAPI void setDuration(int);
+    MCAPI void setDuration(int32_t);
 
     // symbol: ?setInitialRadius@AreaEffectCloud@@QEAAXM@Z
     MCAPI void setInitialRadius(float);
@@ -133,7 +133,7 @@ public:
     MCAPI void setParticleColor(class mce::Color &);
 
     // symbol: ?setPotion@AreaEffectCloud@@QEAAXF@Z
-    MCAPI void setPotion(short);
+    MCAPI void setPotion(int16_t);
 
     // symbol: ?setRadiusChangeOnPickup@AreaEffectCloud@@QEAAXM@Z
     MCAPI void setRadiusChangeOnPickup(float);
@@ -145,20 +145,20 @@ public:
     MCAPI void setRadiusPerTick(float);
 
     // symbol: ?setReapplicationDelay@AreaEffectCloud@@QEAAXH@Z
-    MCAPI void setReapplicationDelay(int);
+    MCAPI void setReapplicationDelay(int32_t);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getTicksAlive@AreaEffectCloud@@AEBA_JXZ
-    MCAPI int64 _getTicksAlive() const;
+    MCAPI int64_t _getTicksAlive() const;
 
     // symbol: ?_setSpawnTick@AreaEffectCloud@@AEAAX_J@Z
-    MCAPI void _setSpawnTick(int64);
+    MCAPI void _setSpawnTick(int64_t);
 
     // symbol: ?_spawnParticles@AreaEffectCloud@@AEAAXAEAVRandom@@IM@Z
-    MCAPI void _spawnParticles(class Random &, uint, float);
+    MCAPI void _spawnParticles(class Random &, uint32_t, float);
 
     // NOLINTEND
 

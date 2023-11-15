@@ -28,7 +28,7 @@ public:
     MCAPI class EntityId _getEntityId() const;
 
     // symbol: ?_getRegistryId@EntityContextBase@@IEBAIXZ
-    MCAPI uint _getRegistryId() const;
+    MCAPI uint32_t _getRegistryId() const;
 
     // NOLINTEND
 

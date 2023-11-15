@@ -148,7 +148,7 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0LodestoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LodestoneBlock(std::string const &, int, class Material const &);
+    MCAPI LodestoneBlock(std::string const &, int32_t, class Material const &);
 
     // symbol: ?getBlockActor@LodestoneBlock@@SAPEAVLodestoneBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static class LodestoneBlockActor * getBlockActor(class BlockSource &, class BlockPos const &);

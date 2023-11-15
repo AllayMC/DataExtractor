@@ -27,10 +27,10 @@ public:
     MCAPI bool generatesBubbles() const;
 
     // symbol: ?getAirRegenPerTick@BreathableComponent@@QEBAHXZ
-    MCAPI int getAirRegenPerTick() const;
+    MCAPI int32_t getAirRegenPerTick() const;
 
     // symbol: ?getAirSupply@BreathableComponent@@QEBAFXZ
-    MCAPI short getAirSupply() const;
+    MCAPI int16_t getAirSupply() const;
 
     // symbol: ?getBreathableState@BreathableComponent@@QEAAAEAW4BreathableState@1@XZ
     MCAPI ::BreathableComponent::BreathableState & getBreathableState();
@@ -39,10 +39,10 @@ public:
     MCAPI float getInhaleTime() const;
 
     // symbol: ?getMaxAirSupply@BreathableComponent@@QEBAFXZ
-    MCAPI short getMaxAirSupply() const;
+    MCAPI int16_t getMaxAirSupply() const;
 
     // symbol: ?getSuffocateTime@BreathableComponent@@QEBAHXZ
-    MCAPI int getSuffocateTime() const;
+    MCAPI int32_t getSuffocateTime() const;
 
     // symbol: ??4BreathableComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class BreathableComponent & operator=(class BreathableComponent &&);
@@ -51,7 +51,7 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 
     // symbol: ?setAirSupply@BreathableComponent@@QEAAXF@Z
-    MCAPI void setAirSupply(short);
+    MCAPI void setAirSupply(int16_t);
 
     // symbol: ?updateBreathableState@BreathableComponent@@QEAAXAEAVActor@@@Z
     MCAPI void updateBreathableState(class Actor &);

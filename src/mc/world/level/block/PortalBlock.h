@@ -187,7 +187,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0PortalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PortalBlock(std::string const &, int);
+    MCAPI PortalBlock(std::string const &, int32_t);
 
     // symbol: ?tryMatchPortalRecordToFrameBlocksContainingPos@PortalBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void tryMatchPortalRecordToFrameBlocksContainingPos(class BlockSource &, class BlockPos const &) const;

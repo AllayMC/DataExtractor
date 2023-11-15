@@ -121,7 +121,7 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@RailBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -148,7 +148,7 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0RailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI RailBlock(std::string const &, int);
+    MCAPI RailBlock(std::string const &, int32_t);
 
     // NOLINTEND
 

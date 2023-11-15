@@ -32,13 +32,13 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 20, symbol: ?liquidCanFlowIntoFromDirection@SculkSensorBlock@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z
-    virtual bool liquidCanFlowIntoFromDirection(uchar, std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
+    virtual bool liquidCanFlowIntoFromDirection(uint8_t, std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
 
     // vIndex: 25, symbol: ?canProvideSupport@SculkSensorBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const &, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, uint8_t, ::BlockSupportType) const;
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
@@ -131,7 +131,7 @@ public:
     virtual void __unk_vfn_124();
 
     // vIndex: 125, symbol: ?getComparatorSignal@SculkSensorBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uchar) const;
+    virtual int32_t getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, uint8_t) const;
 
     // vIndex: 127, symbol: __unk_vfn_127
     virtual void __unk_vfn_127();
@@ -182,10 +182,10 @@ public:
     virtual void __unk_vfn_183();
 
     // vIndex: 185, symbol: ?getResourceItem@SculkSensorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 186, symbol: ?getResourceCount@SculkSensorBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    virtual int32_t getResourceCount(class Randomize &, class Block const &, int32_t) const;
 
     // vIndex: 187, symbol: ?getSilkTouchItemInstance@SculkSensorBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -197,10 +197,10 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 
     // symbol: ??0SculkSensorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SculkSensorBlock(std::string const &, int);
+    MCAPI SculkSensorBlock(std::string const &, int32_t);
 
     // symbol: ??0SculkSensorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BlockActorType@@H@Z
-    MCAPI SculkSensorBlock(std::string const &, int, ::BlockActorType, int);
+    MCAPI SculkSensorBlock(std::string const &, int32_t, ::BlockActorType, int32_t);
 
     // symbol: ?isActive@SculkSensorBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isActive(class BlockSource &, class BlockPos const &);
@@ -209,7 +209,7 @@ public:
     MCAPI static bool isOnCooldown(class BlockSource &, class BlockPos const &);
 
     // symbol: ?setActivePhase@SculkSensorBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@HH@Z
-    MCAPI static void setActivePhase(class BlockSource &, class BlockPos const &, class Actor *, int, int);
+    MCAPI static void setActivePhase(class BlockSource &, class BlockPos const &, class Actor *, int32_t, int32_t);
 
     // NOLINTEND
 

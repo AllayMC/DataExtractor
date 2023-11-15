@@ -32,7 +32,7 @@ public:
     MCAPI ScriptItemStack(class ScriptModuleMinecraft::ScriptItemStack &&);
 
     // symbol: ??0ScriptItemStack@ScriptModuleMinecraft@@QEAA@AEBVScriptItemType@1@V?$StrongTypedObjectHandle@VScriptItemType@ScriptModuleMinecraft@@@Scripting@@HH@Z
-    MCAPI ScriptItemStack(class ScriptModuleMinecraft::ScriptItemType const &, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemType>, int, int);
+    MCAPI ScriptItemStack(class ScriptModuleMinecraft::ScriptItemType const &, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemType>, int32_t, int32_t);
 
     // symbol: ??0ScriptItemStack@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptItemStack(class ScriptModuleMinecraft::ScriptItemStack const &);
@@ -89,7 +89,7 @@ public:
     MCAPI class ScriptModuleMinecraft::ScriptItemStack & operator=(class ScriptModuleMinecraft::ScriptItemStack const &);
 
     // symbol: ?setAmount@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<void> setAmount(int);
+    MCAPI class Scripting::Result<void> setAmount(int32_t);
 
     // symbol: ?setCanDestroy@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$optional@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@@Z
     MCAPI class Scripting::Result<void> setCanDestroy(std::optional<std::vector<std::string>> const &);

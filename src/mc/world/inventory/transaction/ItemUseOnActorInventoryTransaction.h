@@ -24,7 +24,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol: ?read@ItemUseOnActorInventoryTransaction@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream &);
 
     // vIndex: 2, symbol: ?write@ItemUseOnActorInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream &) const;

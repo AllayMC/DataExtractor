@@ -14,7 +14,7 @@ public:
     MCAPI CommandWildcardInt();
 
     // symbol: ?getValue@CommandWildcardInt@@QEBAHXZ
-    MCAPI int getValue() const;
+    MCAPI int32_t getValue() const;
 
     // symbol: ?isWildcard@CommandWildcardInt@@QEBA_NXZ
     MCAPI bool isWildcard() const;

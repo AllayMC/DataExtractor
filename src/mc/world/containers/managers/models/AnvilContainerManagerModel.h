@@ -23,13 +23,13 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@AnvilContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const &, bool);
+    virtual void setSlot(int32_t, class ItemStack const &, bool);
 
     // vIndex: 8, symbol: ?getSlot@AnvilContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const & getSlot(int) const;
+    virtual class ItemStack const & getSlot(int32_t) const;
 
     // vIndex: 9, symbol: ?setData@AnvilContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int, int);
+    virtual void setData(int32_t, int32_t);
 
     // vIndex: 10, symbol: ?broadcastChanges@AnvilContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();
@@ -44,13 +44,13 @@ public:
     MCAPI AnvilContainerManagerModel(::ContainerID, class Player &, class BlockPos const &);
 
     // symbol: ?INPUT_SLOT@AnvilContainerManagerModel@@2HB
-    MCAPI static int const INPUT_SLOT;
+    MCAPI static int32_t const INPUT_SLOT;
 
     // symbol: ?MATERIAL_SLOT@AnvilContainerManagerModel@@2HB
-    MCAPI static int const MATERIAL_SLOT;
+    MCAPI static int32_t const MATERIAL_SLOT;
 
     // symbol: ?RESULT_SLOT@AnvilContainerManagerModel@@2HB
-    MCAPI static int const RESULT_SLOT;
+    MCAPI static int32_t const RESULT_SLOT;
 
     // NOLINTEND
 

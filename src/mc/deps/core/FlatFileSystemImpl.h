@@ -54,7 +54,7 @@ public:
     MCAPI class Core::FlatFileSearchResult _findFileOrDirectoryEntry(class Core::Path const &, class Core::Path const &, bool);
 
     // symbol: ?_getSeekPositionAndSize@FlatFileSystemImpl@Core@@AEAA?AVResult@2@AEBVPath@2@0AEA_K1@Z
-    MCAPI class Core::Result _getSeekPositionAndSize(class Core::Path const &, class Core::Path const &, uint64 &, uint64 &);
+    MCAPI class Core::Result _getSeekPositionAndSize(class Core::Path const &, class Core::Path const &, uint64_t &, uint64_t &);
 
     // NOLINTEND
 

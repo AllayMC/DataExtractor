@@ -54,13 +54,13 @@ public:
     MCAPI float getClientThrottleScalar() const;
 
     // symbol: ?getClientThrottleThreshold@PropertiesSettings@@QEBAHXZ
-    MCAPI int getClientThrottleThreshold() const;
+    MCAPI int32_t getClientThrottleThreshold() const;
 
     // symbol: ?getCompressionAlgorithm@PropertiesSettings@@QEBA?AW4PacketCompressionAlgorithm@@XZ
     MCAPI ::PacketCompressionAlgorithm getCompressionAlgorithm() const;
 
     // symbol: ?getCompressionThresholdBytesize@PropertiesSettings@@QEBAGXZ
-    MCAPI ushort getCompressionThresholdBytesize() const;
+    MCAPI uint16_t getCompressionThresholdBytesize() const;
 
     // symbol: ?getContentLogLevel@PropertiesSettings@@QEBA?AW4LogLevel@@XZ
     MCAPI ::LogLevel getContentLogLevel() const;
@@ -93,16 +93,16 @@ public:
     MCAPI std::string const & getLevelType() const;
 
     // symbol: ?getMaxPlayerIdleTime@PropertiesSettings@@QEBA?AV?$duration@HU?$ratio@$0DM@$00@std@@@chrono@std@@XZ
-    MCAPI std::chrono::minutes getMaxPlayerIdleTime() const;
+    MCAPI std::chrono::duration<int32_t, std::ratio<60, 1>> getMaxPlayerIdleTime() const;
 
     // symbol: ?getMaxPlayers@PropertiesSettings@@QEBAHXZ
-    MCAPI int getMaxPlayers() const;
+    MCAPI int32_t getMaxPlayers() const;
 
     // symbol: ?getMaxThreads@PropertiesSettings@@QEBAIXZ
-    MCAPI uint getMaxThreads() const;
+    MCAPI uint32_t getMaxThreads() const;
 
     // symbol: ?getMaxViewDistanceChunks@PropertiesSettings@@QEBAHXZ
-    MCAPI int getMaxViewDistanceChunks() const;
+    MCAPI int32_t getMaxViewDistanceChunks() const;
 
     // symbol: ?getMotd@PropertiesSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getMotd() const;
@@ -129,19 +129,19 @@ public:
     MCAPI std::string const & getServerId() const;
 
     // symbol: ?getServerPort@PropertiesSettings@@QEBAGXZ
-    MCAPI ushort getServerPort() const;
+    MCAPI uint16_t getServerPort() const;
 
     // symbol: ?getServerPortv6@PropertiesSettings@@QEBAGXZ
-    MCAPI ushort getServerPortv6() const;
+    MCAPI uint16_t getServerPortv6() const;
 
     // symbol: ?getServerTickRange@PropertiesSettings@@QEBAHXZ
-    MCAPI int getServerTickRange() const;
+    MCAPI int32_t getServerTickRange() const;
 
     // symbol: ?getServerType@PropertiesSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const & getServerType() const;
 
     // symbol: ?getServerWakeupFrequency@PropertiesSettings@@QEBAHXZ
-    MCAPI int getServerWakeupFrequency() const;
+    MCAPI int32_t getServerWakeupFrequency() const;
 
     // symbol: ?isClientSideGenEnabled@PropertiesSettings@@QEBA_NXZ
     MCAPI bool isClientSideGenEnabled() const;
@@ -195,7 +195,7 @@ public:
     MCAPI static ::GameType parseGameMode(std::string const &);
 
     // symbol: ?parseInt32Value@PropertiesSettings@@SAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static int parseInt32Value(std::string const &);
+    MCAPI static int32_t parseInt32Value(std::string const &);
 
     // NOLINTEND
 

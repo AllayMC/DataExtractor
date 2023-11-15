@@ -124,13 +124,13 @@ public:
     virtual void __unk_vfn_130();
 
     // vIndex: 142, symbol: ?getVariant@CalibratedSculkSensorBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const &) const;
+    virtual int32_t getVariant(class Block const &) const;
 
     // vIndex: 145, symbol: ?getMappedFace@CalibratedSculkSensorBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const &) const;
+    virtual uint8_t getMappedFace(uint8_t, class Block const &) const;
 
     // vIndex: 146, symbol: ?getFaceFlip@CalibratedSculkSensorBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-    virtual ::Flip getFaceFlip(uchar, class Block const &) const;
+    virtual ::Flip getFaceFlip(uint8_t, class Block const &) const;
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();
@@ -157,10 +157,10 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0CalibratedSculkSensorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CalibratedSculkSensorBlock(std::string const &, int);
+    MCAPI CalibratedSculkSensorBlock(std::string const &, int32_t);
 
     // symbol: ?getInputStrength@CalibratedSculkSensorBlock@@SAHAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static int getInputStrength(class BlockSource const &, class BlockPos const &);
+    MCAPI static int32_t getInputStrength(class BlockSource const &, class BlockPos const &);
 
     // NOLINTEND
 

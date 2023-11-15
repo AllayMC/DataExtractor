@@ -29,16 +29,16 @@ public:
     virtual void write(class BinaryStream &) const;
 
     // vIndex: 7, symbol: ?_read@LevelEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream &);
 
     // symbol: ??1LevelEventPacket@@UEAA@XZ
     MCVAPI ~LevelEventPacket();
 
     // symbol: ??0LevelEventPacket@@QEAA@W4LevelEvent@@AEBVVec3@@H@Z
-    MCAPI LevelEventPacket(::LevelEvent, class Vec3 const &, int);
+    MCAPI LevelEventPacket(::LevelEvent, class Vec3 const &, int32_t);
 
     // symbol: ??0LevelEventPacket@@QEAA@W4LevelEvent@@MMMH@Z
-    MCAPI LevelEventPacket(::LevelEvent, float, float, float, int);
+    MCAPI LevelEventPacket(::LevelEvent, float, float, float, int32_t);
 
     // symbol: ??0LevelEventPacket@@QEAA@XZ
     MCAPI LevelEventPacket();

@@ -35,10 +35,10 @@ public:
     MCAPI static struct mce::Radian atan2(float, float);
 
     // symbol: ?ceil@Math@mce@@SAHM@Z
-    MCAPI static int ceil(float);
+    MCAPI static int32_t ceil(float);
 
     // symbol: ?clamp@Math@mce@@SAHHHH@Z
-    MCAPI static int clamp(int, int, int);
+    MCAPI static int32_t clamp(int32_t, int32_t, int32_t);
 
     // symbol: ?clamp@Math@mce@@SAMMMM@Z
     MCAPI static float clamp(float, float, float);
@@ -68,13 +68,13 @@ public:
     MCAPI static float fastInvSqrt(float);
 
     // symbol: ?fastRandom@Math@mce@@SAIXZ
-    MCAPI static uint fastRandom();
+    MCAPI static uint32_t fastRandom();
 
     // symbol: ?floatEqualsEpsilon@Math@mce@@SA_NMMM@Z
     MCAPI static bool floatEqualsEpsilon(float, float, float);
 
     // symbol: ?floor@Math@mce@@SAHM@Z
-    MCAPI static int floor(float);
+    MCAPI static int32_t floor(float);
 
     // symbol: ?hermiteBlend@Math@mce@@SAMM@Z
     MCAPI static float hermiteBlend(float);
@@ -98,7 +98,7 @@ public:
     MCAPI static float map(float, float, float, float, float);
 
     // symbol: ?safeIncrement@Math@mce@@SAXAEAH@Z
-    MCAPI static void safeIncrement(int &);
+    MCAPI static void safeIncrement(int32_t &);
 
     // symbol: ?signum@Math@mce@@SAMM@Z
     MCAPI static float signum(float);

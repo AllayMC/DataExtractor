@@ -149,7 +149,7 @@ public:
     virtual void __unk_vfn_171();
 
     // vIndex: 173, symbol: ?use@CopperBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player &, class BlockPos const &, uchar) const;
+    virtual bool use(class Player &, class BlockPos const &, uint8_t) const;
 
     // vIndex: 174, symbol: __unk_vfn_174
     virtual void __unk_vfn_174();
@@ -158,10 +158,10 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol: ??0CopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CopperType@@AEBVHashedString@@22@Z
-    MCAPI CopperBlock(std::string const &, int, ::CopperType, class HashedString const &, class HashedString const &, class HashedString const &);
+    MCAPI CopperBlock(std::string const &, int32_t, ::CopperType, class HashedString const &, class HashedString const &, class HashedString const &);
 
     // symbol: ??0CopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CopperType@@AEBVHashedString@@@Z
-    MCAPI CopperBlock(std::string const &, int, ::CopperType, class HashedString const &);
+    MCAPI CopperBlock(std::string const &, int32_t, ::CopperType, class HashedString const &);
 
     // NOLINTEND
 

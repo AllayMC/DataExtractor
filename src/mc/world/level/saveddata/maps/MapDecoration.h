@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0MapDecoration@@QEAA@W4Type@0@CCCAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
-    MCAPI MapDecoration(::MapDecoration::Type, schar, schar, schar, std::string const &, class mce::Color const &);
+    MCAPI MapDecoration(::MapDecoration::Type, int8_t, int8_t, int8_t, std::string const &, class mce::Color const &);
 
     // symbol: ?getColor@MapDecoration@@QEBAAEBVColor@mce@@XZ
     MCAPI class mce::Color const & getColor() const;
@@ -33,13 +33,13 @@ public:
     MCAPI std::string const & getLabel() const;
 
     // symbol: ?getRot@MapDecoration@@QEBACXZ
-    MCAPI schar getRot() const;
+    MCAPI int8_t getRot() const;
 
     // symbol: ?getX@MapDecoration@@QEBACXZ
-    MCAPI schar getX() const;
+    MCAPI int8_t getX() const;
 
     // symbol: ?getY@MapDecoration@@QEBACXZ
-    MCAPI schar getY() const;
+    MCAPI int8_t getY() const;
 
     // symbol: ??1MapDecoration@@QEAA@XZ
     MCAPI ~MapDecoration();

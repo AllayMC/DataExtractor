@@ -36,7 +36,7 @@ public:
     MCAPI void writeBool(bool);
 
     // symbol: ?writeByte@BinaryStream@@QEAAXE@Z
-    MCAPI void writeByte(uchar);
+    MCAPI void writeByte(uint8_t);
 
     // symbol: ?writeDouble@BinaryStream@@QEAAXN@Z
     MCAPI void writeDouble(double);
@@ -45,50 +45,50 @@ public:
     MCAPI void writeFloat(float);
 
     // symbol: ?writeSignedBigEndianInt@BinaryStream@@QEAAXH@Z
-    MCAPI void writeSignedBigEndianInt(int);
+    MCAPI void writeSignedBigEndianInt(int32_t);
 
     // symbol: ?writeSignedInt@BinaryStream@@QEAAXH@Z
-    MCAPI void writeSignedInt(int);
+    MCAPI void writeSignedInt(int32_t);
 
     // symbol: ?writeSignedInt64@BinaryStream@@QEAAX_J@Z
-    MCAPI void writeSignedInt64(int64);
+    MCAPI void writeSignedInt64(int64_t);
 
     // symbol: ?writeSignedShort@BinaryStream@@QEAAXF@Z
-    MCAPI void writeSignedShort(short);
+    MCAPI void writeSignedShort(int16_t);
 
     // symbol: ?writeString@BinaryStream@@QEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI void writeString(std::string_view);
 
     // symbol: ?writeUnsignedChar@BinaryStream@@QEAAXE@Z
-    MCAPI void writeUnsignedChar(uchar);
+    MCAPI void writeUnsignedChar(uint8_t);
 
     // symbol: ?writeUnsignedInt@BinaryStream@@QEAAXI@Z
-    MCAPI void writeUnsignedInt(uint);
+    MCAPI void writeUnsignedInt(uint32_t);
 
     // symbol: ?writeUnsignedInt64@BinaryStream@@QEAAX_K@Z
-    MCAPI void writeUnsignedInt64(uint64);
+    MCAPI void writeUnsignedInt64(uint64_t);
 
     // symbol: ?writeUnsignedShort@BinaryStream@@QEAAXG@Z
-    MCAPI void writeUnsignedShort(ushort);
+    MCAPI void writeUnsignedShort(uint16_t);
 
     // symbol: ?writeUnsignedVarInt@BinaryStream@@QEAAXI@Z
-    MCAPI void writeUnsignedVarInt(uint);
+    MCAPI void writeUnsignedVarInt(uint32_t);
 
     // symbol: ?writeUnsignedVarInt64@BinaryStream@@QEAAX_K@Z
-    MCAPI void writeUnsignedVarInt64(uint64);
+    MCAPI void writeUnsignedVarInt64(uint64_t);
 
     // symbol: ?writeVarInt@BinaryStream@@QEAAXH@Z
-    MCAPI void writeVarInt(int);
+    MCAPI void writeVarInt(int32_t);
 
     // symbol: ?writeVarInt64@BinaryStream@@QEAAX_J@Z
-    MCAPI void writeVarInt64(int64);
+    MCAPI void writeVarInt64(int64_t);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?write@BinaryStream@@AEAAXPEBX_K@Z
-    MCAPI void write(void const *, uint64);
+    MCAPI void write(void const *, uint64_t);
 
     // NOLINTEND
 

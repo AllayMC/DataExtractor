@@ -49,10 +49,10 @@ public:
     MCAPI MeleeAttackGoal(class Mob &);
 
     // symbol: ?canReachTarget@MeleeAttackGoal@@SA_NAEBVMob@@AEBVVec3@@MMMMH@Z
-    MCAPI static bool canReachTarget(class Mob const &, class Vec3 const &, float, float, float, float, int);
+    MCAPI static bool canReachTarget(class Mob const &, class Vec3 const &, float, float, float, float, int32_t);
 
     // symbol: ?canReachTargetLegacy@MeleeAttackGoal@@SA_NAEBVMob@@AEBVVec3@@MMMMH@Z
-    MCAPI static bool canReachTargetLegacy(class Mob const &, class Vec3 const &, float, float, float, float, int);
+    MCAPI static bool canReachTargetLegacy(class Mob const &, class Vec3 const &, float, float, float, float, int32_t);
 
     // symbol: ?isTargetInLineOfSight@MeleeAttackGoal@@SA_NAEBVMob@@AEBVActor@@@Z
     MCAPI static bool isTargetInLineOfSight(class Mob const &, class Actor const &);

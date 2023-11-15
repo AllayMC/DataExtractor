@@ -46,7 +46,7 @@ public:
     private:
         // NOLINTBEGIN
         // symbol: ?mSequenceIdGenerator@HistoryTimestampData@PredictedMovementComponent@@0IA
-        MCAPI static uint mSequenceIdGenerator;
+        MCAPI static uint32_t mSequenceIdGenerator;
     
         // NOLINTEND
     
@@ -96,7 +96,7 @@ public:
         private:
             // NOLINTBEGIN
             // symbol: ?mMaxTicks@LerpedInterval@RuntimePredictionData@PredictedMovementComponent@@0IB
-            MCAPI static uint const mMaxTicks;
+            MCAPI static uint32_t const mMaxTicks;
         
             // NOLINTEND
         
@@ -170,7 +170,7 @@ public:
 private:
     // NOLINTBEGIN
     // symbol: ?LERP_STEP_SIZE@PredictedMovementComponent@@0IB
-    MCAPI static uint const LERP_STEP_SIZE;
+    MCAPI static uint32_t const LERP_STEP_SIZE;
 
     // symbol: ?mGlobalRuntimePredictionData@PredictedMovementComponent@@0V?$unique_ptr@URuntimePredictionData@PredictedMovementComponent@@U?$default_delete@URuntimePredictionData@PredictedMovementComponent@@@std@@@std@@A
     MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;

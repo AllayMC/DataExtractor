@@ -101,7 +101,7 @@ public:
     MCAPI float getTerminationThreshold() const;
 
     // symbol: ?getTickTimeout@NavigationComponent@@QEBAHXZ
-    MCAPI int getTickTimeout() const;
+    MCAPI int32_t getTickTimeout() const;
 
     // symbol: ?incrementTick@NavigationComponent@@QEAAXXZ
     MCAPI void incrementTick();
@@ -119,7 +119,7 @@ public:
     MCAPI ::NodeType isFree(class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, ::CanJumpIntoNode);
 
     // symbol: ?isStuck@NavigationComponent@@QEBA_NH@Z
-    MCAPI bool isStuck(int) const;
+    MCAPI bool isStuck(int32_t) const;
 
     // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEAVActor@@M@Z
     MCAPI bool moveTo(class Mob &, class Actor &, float);
@@ -194,7 +194,7 @@ public:
     MCAPI void setTerminationThreshold(float);
 
     // symbol: ?setTickTimeout@NavigationComponent@@QEAAXH@Z
-    MCAPI void setTickTimeout(int);
+    MCAPI void setTickTimeout(int32_t);
 
     // symbol: ?stop@NavigationComponent@@QEAAXAEAVMob@@@Z
     MCAPI void stop(class Mob &);
