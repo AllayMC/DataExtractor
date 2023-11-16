@@ -10,6 +10,7 @@ static std::unique_ptr<class CompoundTag> baseNBT = nullptr;
 static std::unique_ptr<class ListTag> baseListTag = nullptr;
 static unsigned int blockStateCounter = 0;
 static AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
+static unordered_set<string> recipeTypeSet = {};
 
 #pragma region HOOK 
 LL_AUTO_TYPED_INSTANCE_HOOK(
@@ -29,6 +30,47 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 	return;
 }
 
+LL_AUTO_TYPED_INSTANCE_HOOK(
+	ServerInstanceEventCoordinatorHook,
+	ll::memory::HookPriority::Normal,
+	ServerInstanceEventCoordinator,
+	"?sendServerInitializeEnd@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z",
+	void,
+	ServerInstance& server
+) {
+	origin(server);
+	overworld = mc->getLevel()->getDimension(DimensionType(0)).get();
+	std::cout << "INJECT OVERWORLD INSTANCE" << std::endl;
+}
+
+LL_AUTO_TYPED_INSTANCE_HOOK(
+	RecipesHook,
+	ll::memory::HookPriority::Normal,
+	Recipes,
+	"?loadRecipe@Recipes@@QEAA_NAEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VValue@Json@@@std@@AEBVSemVersion@@1_N@Z",
+	bool,
+	std::pair<std::string, Json::Value> const& a1,
+	SemVersion const& a2,
+	SemVersion const& a3,
+	bool a4
+) {
+	Logger logger;
+	const Json::Value& json = a1.second;
+	std::string identifier = json["description"]["identifier"].asCString();
+
+	if (recipeTypeSet.find(a1.first) == recipeTypeSet.end()) {
+		recipeTypeSet.insert(a1.first);
+		auto saveFolder = "data/" + a1.first;
+		if (!folderExists(saveFolder)) {
+			createFolder(saveFolder);
+		}
+	}
+	auto path = "data/" + a1.first + "/" + identifier.replace(0, 10, "") + ".json";
+	logger.text(path);
+	writeJSON(path, json);
+	return origin(a1, a2, a3, a4);
+}
+
 // Minecraft
 LL_AUTO_TYPED_INSTANCE_HOOK(
 	MinecraftHook,
@@ -37,25 +79,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 	"?initAsDedicatedServer@Minecraft@@QEAAXXZ",
 	void
 ) {
-	std::cout << "INJECT MINECRAFT INSTANCE" << std::endl;
 	mc = this;
 	origin();
-}
-
-// Dimension
-LL_AUTO_TYPED_INSTANCE_HOOK(
-	DimensionHook,
-	HookPriority::Normal,
-	Dimension,
-	"?init@Dimension@@UEAAXXZ",
-	void*,
-	Dimension* a1
-) {
-	if (a1->getHeight() > 256) {
-		std::cout << "INJECT DIMENSION INSTANCE" << std::endl;
-		overworld = a1;
-	}
-	return origin(a1);
+	std::cout << "INJECT MINECRAFT INSTANCE" << std::endl;
 }
 
 // MinecraftCommands
@@ -72,15 +98,16 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 	void* a5,
 	void* a6
 ) {
-	origin(a2, a3, a4, a5, a6);
 	commands = this;
+	origin(a2, a3, a4, a5, a6);
+	std::cout << "INJECT MINECRAFTCOMMANDS INSTANCE" << std::endl;
 }
 #pragma endregion HOOK
 
 #pragma region TOOL_FUNCTION
-static bool folderExists(const char* folderName) {
+static bool folderExists(std::string folderName) {
 	struct stat info {};
-	if (stat(folderName, &info) != 0) {
+	if (stat(folderName.c_str(), &info) != 0) {
 		return false;
 	}
 	else if (info.st_mode & S_IFDIR) {
@@ -91,9 +118,9 @@ static bool folderExists(const char* folderName) {
 	}
 }
 
-static void createFolder(const char* folderName) {
+static void createFolder(std::string folderName) {
 	Logger logger;
-	int result = _mkdir(folderName);
+	int result = _mkdir(folderName.c_str());
 	if (result != 0) {
 		logger.error("Failed to create folder.");
 	}
@@ -152,6 +179,12 @@ static void writeJSON(const string& fileName, nlohmann::json& json) {
 	out.close();
 }
 
+static void writeJSON(const string& fileName, const Json::Value& json) {
+	auto out = ofstream(fileName, ofstream::out | ofstream::trunc);
+	out << json.toStyledString();
+	out.close();
+}
+
 static std::unique_ptr<class CompoundTag> createCompound() {
 	return std::make_unique<CompoundTag>();
 }
@@ -170,13 +203,12 @@ static std::string aabbToStr(const AABB& aabb) {
 void PluginInit() {
 	Logger logger;
 	logger.info("DataExtractor plugin loaded!");
-}
-
-void extractData() {
 	if (!folderExists("data")) {
 		createFolder("data");
 	}
+}
 
+void extractData() {
 	dumpCreativeItemData();
 	dumpBlockAttributesData();
 	dumpItemData();
@@ -184,7 +216,6 @@ void extractData() {
 	dumpPalette();
 	dumpBlockIdToItemIdMap();
 	dumpBiomeData();
-	//todo fix the bug
 	//dumpCommandArgData();
 	//dumpAvailableCommand();
 	dumpPropertyTypeData();
@@ -202,7 +233,7 @@ void dumpCreativeItemData() {
 			logger.warn("Failed to extract creative item - " + itemInstance.getName() + ", index: " + to_string(index));
 			return true;
 		}
-		logger.info("Extracting creative item - " + itemInstance.getName() + ", index: " + to_string(index));
+		logger.text("Extracting creative item - " + itemInstance.getName() + ", index: " + to_string(index));
 		auto obj = createCompound();
 		obj->putInt64("index", index);
 		obj->putString("name", itemInstance.getItem()->getFullItemName());
@@ -219,7 +250,7 @@ void dumpCreativeItemData() {
 		});
 	writeNBT("data/creative_items.nbt", global.get());
 	global.release();
-	logger.info(R"(Creative items data has been saved to "data/creative_items.snbt", "data/creative_items.nbt")");
+	logger.info(R"(Creative items data has been saved to "data/creative_items.nbt")");
 }
 
 std::unique_ptr<class CompoundTag> generateNBTFromBlockState(const Block& block) {
@@ -228,7 +259,7 @@ std::unique_ptr<class CompoundTag> generateNBTFromBlockState(const Block& block)
 	try {
 		auto& legacy = block.getLegacyBlock();
 		auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
-		logger.info("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
+		logger.text("Extracting block state - " + name + ":" + to_string(block.getRuntimeId()));
 		const Material& material = legacy.getMaterial();
 		auto sid = block.getSerializationId().clone();
 		nbt->putString("name", sid->getString("name"));
@@ -481,7 +512,7 @@ void dumpBlockIdToItemIdMap() {
 		if (item.expired() || item.get() == nullptr) {
 			continue;
 		}
-		logger.info("Extracting block id to item id map:" + item.get()->getFullItemName());
+		logger.text("Extracting block id to item id map:" + item.get()->getFullItemName());
 		string item_id = item->getFullItemName();
 		auto& block = item->getLegacyBlock();
 		string block_id;

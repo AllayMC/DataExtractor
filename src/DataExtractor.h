@@ -2,11 +2,11 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include <Nlohmann/json.hpp>
 #include <fstream>
-#include <direct.h>
 #include "zlib.h"
 #include "magic_enum.hpp"
+#include <Nlohmann/json.hpp>
+#include <direct.h>
 
 //ll header
 #include "ll/api/memory/Hook.h"
@@ -67,76 +67,84 @@
 #include <mc\common\TagRegistry.h>
 #include <mc\common\wrapper\IDType.h>
 #include <mc\world\level\dimension\Dimension.h>
+#include <mc\world\events\ServerInstanceEventCoordinator.h>
+#include <mc\world\item\crafting\Recipes.h>
+#include <mc\deps\core\sem_ver\SemVersion.h>
+#include <mc\deps\json\Value.h>
 
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
 
 class BigEndianStringByteOutput {
-    void writeBigEndianBytes(std::byte* bytes, size_t count) {
-        auto right = bytes + count - 1;
-        if (right >= bytes) {
-            auto left = bytes;
-            do {
-                auto tmp = *left;
-                *left = *right;
-                *right-- = tmp;
-            } while (left++ < right);
-        }
-        writeBytes(bytes, count);
-    }
+	void writeBigEndianBytes(std::byte* bytes, size_t count) {
+		auto right = bytes + count - 1;
+		if (right >= bytes) {
+			auto left = bytes;
+			do {
+				auto tmp = *left;
+				*left = *right;
+				*right-- = tmp;
+			} while (left++ < right);
+		}
+		writeBytes(bytes, count);
+	}
 
 public:
-    virtual ~BigEndianStringByteOutput() = default;
-    ;
-    virtual void* writeString(std::string_view string_span) {
-        void* (*rv)(void*, std::string_view);
-        *((void**)&rv) = LL_RESOLVE_SYMBOL("?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z");
-        return (*rv)((void*)this, std::move(string_span));
-    }
+	virtual ~BigEndianStringByteOutput() = default;
+	;
+	virtual void* writeString(std::string_view string_span) {
+		void* (*rv)(void*, std::string_view);
+		*((void**)&rv) = LL_RESOLVE_SYMBOL("?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z");
+		return (*rv)((void*)this, std::move(string_span));
+	}
 
-    virtual void* writeLongString(std::string_view string_span) {
-        void* (*rv)(void*, std::string_view);
-        *((void**)&rv) = LL_RESOLVE_SYMBOL("?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z");
-        return (*rv)((void*)this, std::move(string_span));
-    }
-    virtual void writeFloat(float data) {
-        writeBigEndianBytes((std::byte*)&data, 4);
-    }
-    virtual void writeDouble(double data) {
-        writeBigEndianBytes((std::byte*)&data, 8);
-    }
-    virtual void writeByte(std::byte data) {
-        writeBytes(&data, 1);
-    }
-    virtual void writeShort(short data) {
-        writeBigEndianBytes((std::byte*)&data, 2);
-    }
-    virtual void writeInt(int data) {
-        writeBigEndianBytes((std::byte*)&data, 4);
-    }
-    virtual void writeLongLong(long long data) {
-        writeBigEndianBytes((std::byte*)&data, 8);
-    }
-    virtual void* writeBytes(std::byte* bytes, size_t count) {
-        void* (*rv)(void*, std::byte*, size_t);
-        *((void**)&rv) = LL_RESOLVE_SYMBOL("?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z");
-        return (*rv)((void*)this, bytes, count);
-    }
+	virtual void* writeLongString(std::string_view string_span) {
+		void* (*rv)(void*, std::string_view);
+		*((void**)&rv) = LL_RESOLVE_SYMBOL("?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z");
+		return (*rv)((void*)this, std::move(string_span));
+	}
+	virtual void writeFloat(float data) {
+		writeBigEndianBytes((std::byte*)&data, 4);
+	}
+	virtual void writeDouble(double data) {
+		writeBigEndianBytes((std::byte*)&data, 8);
+	}
+	virtual void writeByte(std::byte data) {
+		writeBytes(&data, 1);
+	}
+	virtual void writeShort(short data) {
+		writeBigEndianBytes((std::byte*)&data, 2);
+	}
+	virtual void writeInt(int data) {
+		writeBigEndianBytes((std::byte*)&data, 4);
+	}
+	virtual void writeLongLong(long long data) {
+		writeBigEndianBytes((std::byte*)&data, 8);
+	}
+	virtual void* writeBytes(std::byte* bytes, size_t count) {
+		void* (*rv)(void*, std::byte*, size_t);
+		*((void**)&rv) = LL_RESOLVE_SYMBOL("?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z");
+		return (*rv)((void*)this, bytes, count);
+	}
 };
 
 class Logger {
 public:
-    void error(const std::string& error) {
-        std::cout << "\033[0;1;34m" << error << "\033[0m" << std::endl;
-    }
+	void error(const std::string& error) {
+		std::cout << "\033[0;1;31m" << error << "\033[0m" << std::endl;
+	}
 
-    void warn(const std::string& warn) {
-        std::cout << "\033[0;1;33m" << warn << "\033[0m" << std::endl;
-    }
+	void warn(const std::string& warn) {
+		std::cout << "\033[0;1;33m" << warn << "\033[0m" << std::endl;
+	}
 
-    void info(const std::string& info) {
-        std::cout << "\033[0;1;37m" << info << "\033[0m" << std::endl;
-    }
+	void info(const std::string& info) {
+		std::cout << "\033[0;1;32m" << info << "\033[0m" << std::endl;
+	}
+
+	void text(const std::string& info) {
+		std::cout << "\033[0;1;37m" << info << "\033[0m" << std::endl;
+	}
 };
 void extractData();
 
@@ -162,3 +170,9 @@ void dumpEntityAABB(const Level* level, const std::pair<std::string, const Actor
 	nlohmann::basic_json<std::map, std::vector, std::string, bool, int64_t, uint64_t, double, std::allocator, nlohmann::adl_serializer, std::vector<std::uint8_t>>& obj);
 
 void dumpPropertyTypeData();
+
+static void writeJSON(const std::string& fileName, const Json::Value& json);
+
+static bool folderExists(std::string folderName);
+
+static void createFolder(std::string folderName);
