@@ -1,6 +1,6 @@
 # DataExtractor
 
-This is a BDS mod which allows generating useful data used in Allay Project  
+This is a BDS mod which allows generating useful data used in AllayMC Project  
 (such as block_attributes and item_data) from BDS server.
 
 ## How to use?
@@ -21,7 +21,7 @@ After that, a file selection window will pop up, please select the symbol file(.
 
 ## I want to update the version of the bds data file it generate
 1. Update the header file, download `HeaderOutput` and its default configuration file(`assets/*`).
-2. From [BDSOriginalData](https://github.com/LiteLDev/BDSOriginalData)Download the target version of BDS data.
+2. From [BDSOriginalData](https://github.com/LiteLDev/BDSOriginalData) Download the target version of BDS data.
 3. Move `HeaderGenerator`, its configuration file, and downloaded BDS data in the same path.
 4. Run `java -jar HeaderGenerator.jar`, and the header file will be generated in the `header/*`.
 5. You need to manually modify some header file definition. You can refer to the modification backup in the `bak` path.
