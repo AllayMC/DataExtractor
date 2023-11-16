@@ -6,11 +6,9 @@ using namespace std;
 static Minecraft* mc = nullptr;
 static Dimension* overworld = nullptr;
 static MinecraftCommands* commands = nullptr;
-static std::unique_ptr<class CompoundTag> baseNBT = nullptr;
-static std::unique_ptr<class ListTag> baseListTag = nullptr;
 static unsigned int blockStateCounter = 0;
 static AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
-static unordered_set<string> recipeTypeSet = {};
+static std::unordered_map<std::string, std::unordered_set<nlohmann::json>> recipeMap{};
 
 #pragma region HOOK 
 LL_AUTO_TYPED_INSTANCE_HOOK(
@@ -41,6 +39,18 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 	origin(server);
 	overworld = mc->getLevel()->getDimension(DimensionType(0)).get();
 	std::cout << "INJECT OVERWORLD INSTANCE" << std::endl;
+
+	for (auto& e : recipeMap) {
+		json recipes = json::array({});
+		int i = 0;
+		for (nlohmann::json recipe : e.second) {
+			recipes[i++] = recipe;
+		}
+		if (!folderExists("data/recipes")) {
+			createFolder("data/recipes");
+		}
+		writeJSON("data/recipes/" + e.first + ".json", recipes);
+	}
 }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
@@ -55,19 +65,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 	bool a4
 ) {
 	Logger logger;
-	const Json::Value& json = a1.second;
-	std::string identifier = json["description"]["identifier"].asCString();
+	const Json::Value& v1 = a1.second;
+	std::string identifier = v1["description"]["identifier"].asCString();
+	logger.text(identifier);
 
-	if (recipeTypeSet.find(a1.first) == recipeTypeSet.end()) {
-		recipeTypeSet.insert(a1.first);
-		auto saveFolder = "data/" + a1.first;
-		if (!folderExists(saveFolder)) {
-			createFolder(saveFolder);
-		}
+	if (recipeMap.find(a1.first) == recipeMap.end()) {
+		unordered_set<nlohmann::json> initArray{};
+		recipeMap[a1.first] = initArray;
 	}
-	auto path = "data/" + a1.first + "/" + identifier.replace(0, 10, "") + ".json";
-	logger.text(path);
-	writeJSON(path, json);
+	
+	json v2 = json::parse(v1.toStyledString());
+	recipeMap[a1.first].insert(v2);
 	return origin(a1, a2, a3, a4);
 }
 
@@ -173,7 +181,7 @@ static void writeNBT(const string& fileName, CompoundTag* tag) {
 	out.close();
 }
 
-static void writeJSON(const string& fileName, nlohmann::json& json) {
+static void writeJSON(const string& fileName, const nlohmann::json& json) {
 	auto out = ofstream(fileName, ofstream::out | ofstream::trunc);
 	out << json.dump(4);
 	out.close();

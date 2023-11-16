@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 #include <fstream>
 #include "zlib.h"
@@ -172,6 +173,8 @@ void dumpEntityAABB(const Level* level, const std::pair<std::string, const Actor
 void dumpPropertyTypeData();
 
 static void writeJSON(const std::string& fileName, const Json::Value& json);
+
+static void writeJSON(const std::string& fileName, const nlohmann::json& json);
 
 static bool folderExists(std::string folderName);
 
