@@ -72,10 +72,11 @@
 #include <mc\world\item\crafting\Recipes.h>
 #include <mc\deps\core\sem_ver\SemVersion.h>
 #include <mc\deps\json\Value.h>
-#include <mc/world/item/ItemTag.h>
+#include <mc/world/item/VanillaItemTags.h>
 
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
+struct ItemTag : HashedString {};
 
 class BigEndianStringByteOutput {
 	void writeBigEndianBytes(std::byte* bytes, size_t count) {
