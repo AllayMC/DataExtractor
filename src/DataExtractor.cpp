@@ -227,6 +227,7 @@ void extractData() {
 	//dumpCommandArgData();
 	//dumpAvailableCommand();
 	dumpPropertyTypeData();
+    dumpItemTags();
 }
 
 void dumpCreativeItemData() {
@@ -867,4 +868,80 @@ void dumpPropertyTypeData() {
 	globalJson["specialBlockTypes"] = specialBlockTypes;
 	writeJSON("data/block_property_types.json", globalJson);
 	logger.info("Block property type data have been saved to \"data/block_property_types.json\"");
+}
+
+void dumpItemTags() {
+	auto reg = mc->getLevel()->getItemRegistry();
+#define DUMP(C)                                                                \
+        do {                                                                   \
+          auto items = reg.lookupByTag(VanillaItemTags::##C);                  \
+          auto arr = nlohmann::json::array();                                  \
+          for (auto item : items) {                                            \
+            arr.push_back(item->getFullItemName());                            \
+          }                                                                    \
+          res[VanillaItemTags::##C.getString()] = arr;                           \
+        } while (false)
+        nlohmann::json res = nlohmann::json::object();
+        DUMP(Armor);
+        DUMP(Arrows);
+        DUMP(Banners);
+        DUMP(Boat);
+        DUMP(Boats);
+        DUMP(BookshelfBooks);
+        DUMP(ChainmailTier);
+        DUMP(ChestBoat);
+        DUMP(Coals);
+        DUMP(Cooked);
+        DUMP(CrimsonStems);
+        DUMP(DecoratedPotSherds);
+        DUMP(DiamondTier);
+        DUMP(Digger);
+        DUMP(Door);
+        DUMP(Fishes);
+        DUMP(Food);
+        DUMP(GoldenTier);
+        DUMP(HangingActor);
+        DUMP(HangingSign);
+        DUMP(Hatchet);
+        DUMP(Hoe);
+        DUMP(HorseArmor);
+        DUMP(IronTier);
+        DUMP(LeatherTier);
+        DUMP(LecternBooks);
+        DUMP(Logs);
+        DUMP(LogsThatBurn);
+        DUMP(MangroveLogs);
+        DUMP(Meat);
+        DUMP(Minecart);
+        DUMP(MusicDiscs);
+        DUMP(NetheriteTier);
+        DUMP(Pickaxe);
+        DUMP(PiglinLoved);
+        DUMP(PiglinRepellents);
+        DUMP(Planks);
+        DUMP(Sand);
+        DUMP(Shovel);
+        DUMP(Sign);
+        DUMP(SoulFireBaseBlocks);
+        DUMP(SpawnEgg);
+        DUMP(StoneBricks);
+        DUMP(StoneCraftingMaterials);
+        DUMP(StoneTier);
+        DUMP(StoneToolMaterials);
+        DUMP(Sword);
+        DUMP(Tool);
+        DUMP(TransformMaterials);
+        DUMP(TransformTemplates);
+        DUMP(TransformableItems);
+        DUMP(Trident);
+        DUMP(TrimMaterials);
+        DUMP(TrimTemplates);
+        DUMP(TrimmableArmors);
+        DUMP(VibrationDamper);
+        DUMP(WarpedStems);
+        DUMP(WoodenSlabs);
+        DUMP(WoodenTier);
+        DUMP(Wool);
+#undef DUMP
+        writeJSON("data/item_tags.json", res);
 }

@@ -72,9 +72,11 @@
 #include <mc\world\item\crafting\Recipes.h>
 #include <mc\deps\core\sem_ver\SemVersion.h>
 #include <mc\deps\json\Value.h>
+#include <mc/world/item/VanillaItemTags.h>
 
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
+struct ItemTag : HashedString {};
 
 class BigEndianStringByteOutput {
 	void writeBigEndianBytes(std::byte* bytes, size_t count) {
@@ -166,6 +168,8 @@ void dumpBiomeData();
 void dumpCommandArgData();
 
 void dumpAvailableCommand();
+
+void dumpItemTags();
 
 void dumpEntityAABB(const Level* level, const std::pair<std::string, const ActorDefinitionIdentifier*>& pair,
 	nlohmann::basic_json<std::map, std::vector, std::string, bool, int64_t, uint64_t, double, std::allocator, nlohmann::adl_serializer, std::vector<std::uint8_t>>& obj);
