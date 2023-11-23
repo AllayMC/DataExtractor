@@ -227,7 +227,8 @@ void extractData() {
 	//dumpCommandArgData();
 	//dumpAvailableCommand();
 	dumpPropertyTypeData();
-    dumpItemTags();
+    // dumpItemTags();
+    dumpBlockTags();
 }
 
 void dumpCreativeItemData() {
@@ -944,4 +945,50 @@ void dumpItemTags() {
         DUMP(Wool);
 #undef DUMP
         writeJSON("data/item_tags.json", res);
+}
+
+void dumpBlockTags() {
+        nlohmann::json res = nlohmann::json::object();
+#define DUMP(TAG)                                                              \
+        do {                                                                   \
+          auto arr = nlohmann::json::array();                                  \
+          BlockTypeRegistry::forEachBlock([&arr](const BlockLegacy &b) {       \
+            if (b.hasTag(VanillaBlockTags::##TAG)) {                           \
+              arr.push_back(b.getRawNameId());                                 \
+            }                                                                  \
+            return true;                                                       \
+          });                                                                  \
+          res[VanillaBlockTags::##TAG.getString()] = arr;                      \
+        } while (false)
+        DUMP(Acacia);
+        DUMP(Birch);
+        DUMP(Crop);
+        DUMP(DarkOak);
+        DUMP(DiamondDiggable);
+        DUMP(Dirt);
+        DUMP(FertilizeArea);
+        DUMP(GoldDiggable);
+        DUMP(Grass);
+        DUMP(Gravel);
+        DUMP(IronDiggable);
+        DUMP(Jungle);
+        DUMP(Log);
+        DUMP(Metal);
+        DUMP(MobSpawner);
+        DUMP(NotFeatureReplaceable);
+        DUMP(Oak);
+        DUMP(Plant);
+        DUMP(Pumpkin);
+        DUMP(Rail);
+        DUMP(Sand);
+        DUMP(Snow);
+        DUMP(Spruce);
+        DUMP(Stone);
+        DUMP(StoneDiggable);
+        DUMP(TextSign);
+        DUMP(Water);
+        DUMP(Wood);
+        DUMP(WoodDiggable);
+#undef DUMP
+        writeJSON("data/block_tags.json", res);
 }

@@ -73,6 +73,7 @@
 #include <mc\deps\core\sem_ver\SemVersion.h>
 #include <mc\deps\json\Value.h>
 #include <mc/world/item/VanillaItemTags.h>
+#include <mc/world/level/block/VanillaBlockTags.h>
 
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
@@ -170,6 +171,8 @@ void dumpCommandArgData();
 void dumpAvailableCommand();
 
 void dumpItemTags();
+
+void dumpBlockTags();
 
 void dumpEntityAABB(const Level* level, const std::pair<std::string, const ActorDefinitionIdentifier*>& pair,
 	nlohmann::basic_json<std::map, std::vector, std::string, bool, int64_t, uint64_t, double, std::allocator, nlohmann::adl_serializer, std::vector<std::uint8_t>>& obj);
