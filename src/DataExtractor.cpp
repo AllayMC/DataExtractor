@@ -28,6 +28,22 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 	return;
 }
 
+// Dimension
+LL_AUTO_TYPED_INSTANCE_HOOK(
+	DimensionService,
+	ll::memory::HookPriority::Normal,
+	Dimension,
+	"?init@Dimension@@UEAAXXZ",
+	void*,
+	Dimension* a1
+) {
+	if (a1->getHeight() > 256) {
+		std::cout << "INJECT DIMENSION INSTANCE" << std::endl;
+		overworld = a1;
+	}
+	return origin(a1);
+}
+
 LL_AUTO_TYPED_INSTANCE_HOOK(
 	ServerInstanceEventCoordinatorHook,
 	ll::memory::HookPriority::Normal,
@@ -37,8 +53,6 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 	ServerInstance& server
 ) {
 	origin(server);
-	overworld = mc->getLevel()->getDimension(DimensionType(0)).get();
-	std::cout << "INJECT OVERWORLD INSTANCE" << std::endl;
 
 	for (auto& e : recipeMap) {
 		json recipes = json::array({});
@@ -73,7 +87,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 		unordered_set<nlohmann::json> initArray{};
 		recipeMap[a1.first] = initArray;
 	}
-	
+
 	json v2 = json::parse(v1.toStyledString());
 	recipeMap[a1.first].insert(v2);
 	return origin(a1, a2, a3, a4);
@@ -227,8 +241,8 @@ void extractData() {
 	//dumpCommandArgData();
 	//dumpAvailableCommand();
 	dumpPropertyTypeData();
-    // dumpItemTags();
-    dumpBlockTags();
+	dumpItemTags();
+	dumpBlockTags();
 }
 
 void dumpCreativeItemData() {
@@ -296,7 +310,6 @@ std::unique_ptr<class CompoundTag> generateNBTFromBlockState(const Block& block)
 		colornbt->putInt("a", (int)(color.a * 255));
 		colornbt->putString("hexString", color.toHexString());
 		nbt->putCompound("color", colornbt->clone());
-
 		AABB tmp = AABB(0, 0, 0, 0, 0, 0);
 		block.getCollisionShapeForCamera(tmp, *(IConstBlockSource*)&overworld->getBlockSourceFromMainChunkSource(), BlockPos(0, 0, 0));
 		nbt->putString("aabbVisual", aabbToStr(tmp));
@@ -872,83 +885,82 @@ void dumpPropertyTypeData() {
 }
 
 void dumpItemTags() {
-	auto reg = mc->getLevel()->getItemRegistry();
 #define DUMP(C)                                                                \
         do {                                                                   \
-          auto items = reg.lookupByTag(VanillaItemTags::##C);                  \
+          auto items = ItemRegistryManager::getItemRegistry().lookupByTag(VanillaItemTags::##C);                  \
           auto arr = nlohmann::json::array();                                  \
           for (auto item : items) {                                            \
             arr.push_back(item->getFullItemName());                            \
           }                                                                    \
           res[VanillaItemTags::##C.getString()] = arr;                           \
         } while (false)
-        nlohmann::json res = nlohmann::json::object();
-        DUMP(Armor);
-        DUMP(Arrows);
-        DUMP(Banners);
-        DUMP(Boat);
-        DUMP(Boats);
-        DUMP(BookshelfBooks);
-        DUMP(ChainmailTier);
-        DUMP(ChestBoat);
-        DUMP(Coals);
-        DUMP(Cooked);
-        DUMP(CrimsonStems);
-        DUMP(DecoratedPotSherds);
-        DUMP(DiamondTier);
-        DUMP(Digger);
-        DUMP(Door);
-        DUMP(Fishes);
-        DUMP(Food);
-        DUMP(GoldenTier);
-        DUMP(HangingActor);
-        DUMP(HangingSign);
-        DUMP(Hatchet);
-        DUMP(Hoe);
-        DUMP(HorseArmor);
-        DUMP(IronTier);
-        DUMP(LeatherTier);
-        DUMP(LecternBooks);
-        DUMP(Logs);
-        DUMP(LogsThatBurn);
-        DUMP(MangroveLogs);
-        DUMP(Meat);
-        DUMP(Minecart);
-        DUMP(MusicDiscs);
-        DUMP(NetheriteTier);
-        DUMP(Pickaxe);
-        DUMP(PiglinLoved);
-        DUMP(PiglinRepellents);
-        DUMP(Planks);
-        DUMP(Sand);
-        DUMP(Shovel);
-        DUMP(Sign);
-        DUMP(SoulFireBaseBlocks);
-        DUMP(SpawnEgg);
-        DUMP(StoneBricks);
-        DUMP(StoneCraftingMaterials);
-        DUMP(StoneTier);
-        DUMP(StoneToolMaterials);
-        DUMP(Sword);
-        DUMP(Tool);
-        DUMP(TransformMaterials);
-        DUMP(TransformTemplates);
-        DUMP(TransformableItems);
-        DUMP(Trident);
-        DUMP(TrimMaterials);
-        DUMP(TrimTemplates);
-        DUMP(TrimmableArmors);
-        DUMP(VibrationDamper);
-        DUMP(WarpedStems);
-        DUMP(WoodenSlabs);
-        DUMP(WoodenTier);
-        DUMP(Wool);
+	nlohmann::json res = nlohmann::json::object();
+	DUMP(Armor);
+	DUMP(Arrows);
+	DUMP(Banners);
+	DUMP(Boat);
+	DUMP(Boats);
+	DUMP(BookshelfBooks);
+	DUMP(ChainmailTier);
+	DUMP(ChestBoat);
+	DUMP(Coals);
+	DUMP(Cooked);
+	DUMP(CrimsonStems);
+	DUMP(DecoratedPotSherds);
+	DUMP(DiamondTier);
+	DUMP(Digger);
+	DUMP(Door);
+	DUMP(Fishes);
+	DUMP(Food);
+	DUMP(GoldenTier);
+	DUMP(HangingActor);
+	DUMP(HangingSign);
+	DUMP(Hatchet);
+	DUMP(Hoe);
+	DUMP(HorseArmor);
+	DUMP(IronTier);
+	DUMP(LeatherTier);
+	DUMP(LecternBooks);
+	DUMP(Logs);
+	DUMP(LogsThatBurn);
+	DUMP(MangroveLogs);
+	DUMP(Meat);
+	DUMP(Minecart);
+	DUMP(MusicDiscs);
+	DUMP(NetheriteTier);
+	DUMP(Pickaxe);
+	DUMP(PiglinLoved);
+	DUMP(PiglinRepellents);
+	DUMP(Planks);
+	DUMP(Sand);
+	DUMP(Shovel);
+	DUMP(Sign);
+	DUMP(SoulFireBaseBlocks);
+	DUMP(SpawnEgg);
+	DUMP(StoneBricks);
+	DUMP(StoneCraftingMaterials);
+	DUMP(StoneTier);
+	DUMP(StoneToolMaterials);
+	DUMP(Sword);
+	DUMP(Tool);
+	DUMP(TransformMaterials);
+	DUMP(TransformTemplates);
+	DUMP(TransformableItems);
+	DUMP(Trident);
+	DUMP(TrimMaterials);
+	DUMP(TrimTemplates);
+	DUMP(TrimmableArmors);
+	DUMP(VibrationDamper);
+	DUMP(WarpedStems);
+	DUMP(WoodenSlabs);
+	DUMP(WoodenTier);
+	DUMP(Wool);
 #undef DUMP
-        writeJSON("data/item_tags.json", res);
+	writeJSON("data/item_tags.json", res);
 }
 
 void dumpBlockTags() {
-        nlohmann::json res = nlohmann::json::object();
+	nlohmann::json res = nlohmann::json::object();
 #define DUMP(TAG)                                                              \
         do {                                                                   \
           auto arr = nlohmann::json::array();                                  \
@@ -960,35 +972,35 @@ void dumpBlockTags() {
           });                                                                  \
           res[VanillaBlockTags::##TAG.getString()] = arr;                      \
         } while (false)
-        DUMP(Acacia);
-        DUMP(Birch);
-        DUMP(Crop);
-        DUMP(DarkOak);
-        DUMP(DiamondDiggable);
-        DUMP(Dirt);
-        DUMP(FertilizeArea);
-        DUMP(GoldDiggable);
-        DUMP(Grass);
-        DUMP(Gravel);
-        DUMP(IronDiggable);
-        DUMP(Jungle);
-        DUMP(Log);
-        DUMP(Metal);
-        DUMP(MobSpawner);
-        DUMP(NotFeatureReplaceable);
-        DUMP(Oak);
-        DUMP(Plant);
-        DUMP(Pumpkin);
-        DUMP(Rail);
-        DUMP(Sand);
-        DUMP(Snow);
-        DUMP(Spruce);
-        DUMP(Stone);
-        DUMP(StoneDiggable);
-        DUMP(TextSign);
-        DUMP(Water);
-        DUMP(Wood);
-        DUMP(WoodDiggable);
+	DUMP(Acacia);
+	DUMP(Birch);
+	DUMP(Crop);
+	DUMP(DarkOak);
+	DUMP(DiamondDiggable);
+	DUMP(Dirt);
+	DUMP(FertilizeArea);
+	DUMP(GoldDiggable);
+	DUMP(Grass);
+	DUMP(Gravel);
+	DUMP(IronDiggable);
+	DUMP(Jungle);
+	DUMP(Log);
+	DUMP(Metal);
+	DUMP(MobSpawner);
+	DUMP(NotFeatureReplaceable);
+	DUMP(Oak);
+	DUMP(Plant);
+	DUMP(Pumpkin);
+	DUMP(Rail);
+	DUMP(Sand);
+	DUMP(Snow);
+	DUMP(Spruce);
+	DUMP(Stone);
+	DUMP(StoneDiggable);
+	DUMP(TextSign);
+	DUMP(Water);
+	DUMP(Wood);
+	DUMP(WoodDiggable);
 #undef DUMP
-        writeJSON("data/block_tags.json", res);
+	writeJSON("data/block_tags.json", res);
 }
