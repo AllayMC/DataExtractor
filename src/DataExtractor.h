@@ -74,6 +74,7 @@
 #include <mc\deps\json\Value.h>
 #include <mc/world/item/VanillaItemTags.h>
 #include <mc/world/level/block/VanillaBlockTags.h>
+#include <mc\network\packet\CraftingDataPacket.h>
 
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;

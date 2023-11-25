@@ -8,7 +8,6 @@ static Dimension* overworld = nullptr;
 static MinecraftCommands* commands = nullptr;
 static unsigned int blockStateCounter = 0;
 static AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
-static std::unordered_map<std::string, std::unordered_set<nlohmann::json>> recipeMap{};
 
 #pragma region HOOK 
 LL_AUTO_TYPED_INSTANCE_HOOK(
@@ -44,53 +43,24 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 	return origin(a1);
 }
 
+//Recipe packet
 LL_AUTO_TYPED_INSTANCE_HOOK(
-	ServerInstanceEventCoordinatorHook,
+	CraftingDataPacketHook,
 	ll::memory::HookPriority::Normal,
-	ServerInstanceEventCoordinator,
-	"?sendServerInitializeEnd@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z",
+	CraftingDataPacket,
+	"?write@CraftingDataPacket@@UEBAXAEAVBinaryStream@@@Z",
 	void,
-	ServerInstance& server
+	BinaryStream& stream
 ) {
-	origin(server);
-
-	for (auto& e : recipeMap) {
-		json recipes = json::array({});
-		int i = 0;
-		for (nlohmann::json recipe : e.second) {
-			recipes[i++] = recipe;
-		}
-		if (!folderExists("data/recipes")) {
-			createFolder("data/recipes");
-		}
-		writeJSON("data/recipes/" + e.first + ".json", recipes);
-	}
-}
-
-LL_AUTO_TYPED_INSTANCE_HOOK(
-	RecipesHook,
-	ll::memory::HookPriority::Normal,
-	Recipes,
-	"?loadRecipe@Recipes@@QEAA_NAEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VValue@Json@@@std@@AEBVSemVersion@@1_N@Z",
-	bool,
-	std::pair<std::string, Json::Value> const& a1,
-	SemVersion const& a2,
-	SemVersion const& a3,
-	bool a4
-) {
+	origin(stream);
+	const std::string& data = stream.getAndReleaseData();
+	std::string datacopy = data;
+	stream.writeString(data);
+	auto out = ofstream("data/crafting_data_packet.bin", ofstream::out | ofstream::binary | ofstream::trunc);
+	out << datacopy;
+	out.close();
 	Logger logger;
-	const Json::Value& v1 = a1.second;
-	std::string identifier = v1["description"]["identifier"].asCString();
-	logger.text(identifier);
-
-	if (recipeMap.find(a1.first) == recipeMap.end()) {
-		unordered_set<nlohmann::json> initArray{};
-		recipeMap[a1.first] = initArray;
-	}
-
-	json v2 = json::parse(v1.toStyledString());
-	recipeMap[a1.first].insert(v2);
-	return origin(a1, a2, a3, a4);
+	logger.info("create crafting_data_packet.bin success!");
 }
 
 // Minecraft
