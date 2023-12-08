@@ -429,20 +429,23 @@ void dumpItemData() {
 void dumpEntityAABB(const Level* level, const pair<string, const ActorDefinitionIdentifier*>& pair,
 	nlohmann::basic_json<map, vector, string, bool, int64_t, uint64_t, double, allocator, nlohmann::adl_serializer, vector<std::uint8_t>>& obj) {
 	Logger logger;
-	Mob* actor = level->getSpawner().spawnMob(overworld->getBlockSourceFromMainChunkSource(), pair.first, nullptr, Vec3(0, 64, 0), false, true, false);
+	Mob* actor = level->getSpawner().spawnMob(overworld->getBlockSourceFromMainChunkSource(), *pair.second, nullptr, Vec3(0, 64, 0), false, true, false);
 	if (actor == nullptr) {
 		logger.warn("Failed to spawn entity: " + pair.first);
 		logger.warn("It is possible to solve this problem by adding a ticking area around 0 64 0");
 		logger.warn("AABB data for this entity will be missing!");
 	}
 	else {
-		auto& aabb = actor->getAABB();
+		const auto& aabb = actor->getAABB();
 		stringstream aabbStr;
 		aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
 			<< "," << aabb.max.y << "," << aabb.max.z;
 		obj["aabb"] = aabbStr.str();
-		//todo: nbt
-		actor->kill();
+
+		//直接调用kill会出错，现在没有能力维护虚函数表，直接通过符号解析调用
+		void* (*rv)(Mob*);
+		*((void**)&rv) = LL_RESOLVE_SYMBOL("?kill@Mob@@UEAAXXZ");
+		(*rv)(actor);
 	}
 }
 
