@@ -21,7 +21,7 @@ After that, a file selection window will pop up, please select the symbol file(`
 
 ## Special thanks
 
-Thanks to [LiteLoaderBDS](https://github.com/LiteLDev/LiteLoaderBDS) for their great work!
+Thanks to [LeviLamina](https://github.com/LiteLDev/LeviLamina) for their great work!
 
 Thanks to [bds-data-scraper](https://github.com/Creeperface01/bds-data-scraper) for providing me some ideas about how to get the block types!
 
