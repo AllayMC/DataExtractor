@@ -106,7 +106,8 @@ public:
     virtual class Item & setDescriptionId(std::string const &);
 
     // vIndex: 4, symbol: ?getDescriptionId@Item@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    virtual std::string const & getDescriptionId() const;
+    // 这其实是虚函数, 但是我们已经没有能力维护虚函数表了,目前它的偏移量不正确,不过这样也可以调用
+    std::string const & getDescriptionId() const;
 
     // vIndex: 5, symbol: ?getMaxUseDuration@Item@@UEBAHPEBVItemInstance@@@Z
     virtual int32_t getMaxUseDuration(class ItemInstance const *) const;
@@ -130,10 +131,10 @@ public:
     virtual void __unk_vfn_11();
 
     // vIndex: 12, symbol: ?isArmor@Item@@UEBA_NXZ
-    virtual bool isArmor() const;
+    bool isArmor() const;
 
     // vIndex: 13, symbol: ?isBlockPlanterItem@Item@@UEBA_NXZ
-    virtual bool isBlockPlanterItem() const;
+    bool isBlockPlanterItem() const;
 
     // vIndex: 14, symbol: __unk_vfn_14
     virtual void __unk_vfn_14();
@@ -145,28 +146,28 @@ public:
     virtual void __unk_vfn_16();
 
     // vIndex: 17, symbol: ?isDamageable@Item@@UEBA_NXZ
-    virtual bool isDamageable() const;
+    bool isDamageable() const;
 
     // vIndex: 18, symbol: ?isDyeable@Item@@UEBA_NXZ
     virtual bool isDyeable() const;
 
     // vIndex: 19, symbol: ?isDye@Item@@UEBA_NXZ
-    virtual bool isDye() const;
+    bool isDye() const;
 
     // vIndex: 20, symbol: ?getItemColor@Item@@UEBA?AW4ItemColor@@XZ
-    virtual ::ItemColor getItemColor() const;
+    ::ItemColor getItemColor() const;
 
     // vIndex: 21, symbol: __unk_vfn_21
     virtual void __unk_vfn_21();
 
     // vIndex: 22, symbol: ?isFood@Item@@UEBA_NXZ
-    virtual bool isFood() const;
+    bool isFood() const;
 
     // vIndex: 23, symbol: ?isThrowable@Item@@UEBA_NXZ
-    virtual bool isThrowable() const;
+    bool isThrowable() const;
 
     // vIndex: 24, symbol: ?isUseable@Item@@UEBA_NXZ
-    virtual bool isUseable() const;
+    bool isUseable() const;
 
     // vIndex: 25, symbol: ?getComponent@Item@@UEBAPEAVItemComponent@@AEBVHashedString@@@Z
     virtual class ItemComponent * getComponent(class HashedString const &) const;
@@ -223,7 +224,7 @@ public:
     virtual ::BlockShape getBlockShape() const;
 
     // vIndex: 43, symbol: ?canBeDepleted@Item@@UEBA_NXZ
-    virtual bool canBeDepleted() const;
+    bool canBeDepleted() const;
 
     // vIndex: 44, symbol: ?canDestroySpecial@Item@@UEBA_NAEBVBlock@@@Z
     virtual bool canDestroySpecial(class Block const &) const;
@@ -235,7 +236,7 @@ public:
     virtual bool isStackedByData() const;
 
     // vIndex: 47, symbol: ?getMaxDamage@Item@@UEBAFXZ
-    virtual int16_t getMaxDamage() const;
+    int16_t getMaxDamage() const;
 
     // vIndex: 48, symbol: ?getAttackDamage@Item@@UEBAHXZ
     virtual int32_t getAttackDamage() const;
@@ -259,7 +260,7 @@ public:
     virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
 
     // vIndex: 55, symbol: ?canDestroyInCreative@Item@@UEBA_NXZ
-    virtual bool canDestroyInCreative() const;
+    bool canDestroyInCreative() const;
 
     // vIndex: 56, symbol: ?isDestructive@Item@@UEBA_NH@Z
     virtual bool isDestructive(int32_t) const;
@@ -289,7 +290,7 @@ public:
     virtual int32_t getArmorValue() const;
 
     // vIndex: 65, symbol: ?getToughnessValue@Item@@UEBAHXZ
-    virtual int32_t getToughnessValue() const;
+    int32_t getToughnessValue() const;
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
@@ -301,7 +302,7 @@ public:
     virtual int32_t getDamageChance(int32_t) const;
 
     // vIndex: 69, symbol: ?getViewDamping@Item@@UEBAMXZ
-    virtual float getViewDamping() const;
+    float getViewDamping() const;
 
     // vIndex: 70, symbol: __unk_vfn_70
     virtual void __unk_vfn_70();
@@ -343,7 +344,8 @@ public:
     virtual int32_t buildIdAux(int16_t, class CompoundTag const *) const;
 
     // vIndex: 83, symbol: ?canUseOnSimTick@Item@@UEBA_NXZ
-    virtual bool canUseOnSimTick() const;
+    // 这是虚函数
+    bool canUseOnSimTick() const;
 
     // vIndex: 84, symbol: ?use@Item@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
@@ -403,10 +405,10 @@ public:
     virtual void refreshedInContainer(class ItemStackBase const &, class Level &) const;
 
     // vIndex: 103, symbol: ?getCooldownType@Item@@UEBAAEBVHashedString@@XZ
-    virtual class HashedString const & getCooldownType() const;
+    class HashedString const & getCooldownType() const;
 
     // vIndex: 104, symbol: ?getCooldownTime@Item@@UEBAHXZ
-    virtual int32_t getCooldownTime() const;
+    int32_t getCooldownTime() const;
 
     // vIndex: 105, symbol: ?fixupCommon@Item@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase &) const;
@@ -472,7 +474,7 @@ public:
     virtual int32_t getIconYOffset() const;
 
     // vIndex: 126, symbol: ?canBeCharged@Item@@UEBA_NXZ
-    virtual bool canBeCharged() const;
+    bool canBeCharged() const;
 
     // vIndex: 127, symbol: ?playSoundIncrementally@Item@@UEBAXAEBVItemInstance@@AEAVMob@@@Z
     virtual void playSoundIncrementally(class ItemInstance const &, class Mob &) const;

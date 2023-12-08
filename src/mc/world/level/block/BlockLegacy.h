@@ -345,7 +345,8 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 63, symbol: ?canContainLiquid@BlockLegacy@@UEBA_NXZ
-    virtual bool canContainLiquid() const;
+    // 这其实是虚函数, 但是我们已经没有能力维护虚函数表了,目前它的偏移量不正确,不过这样也可以调用
+    bool canContainLiquid() const;
 
     // vIndex: 64, symbol: ?getRequiredMedium@BlockLegacy@@UEBA?AV?$optional@VHashedString@@@std@@XZ
     virtual std::optional<class HashedString> getRequiredMedium() const;

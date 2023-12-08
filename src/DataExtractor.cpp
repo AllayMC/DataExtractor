@@ -55,7 +55,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 	origin(stream);
 	const std::string& data = stream.getAndReleaseData();
 	std::string datacopy = data;
-	stream.writeString(data);
+	stream.writeString(data, nullptr, nullptr);
 	auto out = ofstream("data/crafting_data_packet.bin", ofstream::out | ofstream::binary | ofstream::trunc);
 	out << datacopy;
 	out.close();
@@ -208,11 +208,12 @@ void extractData() {
 	dumpPalette();
 	dumpBlockIdToItemIdMap();
 	dumpBiomeData();
-	//dumpCommandArgData();
-	//dumpAvailableCommand();
 	dumpPropertyTypeData();
 	dumpItemTags();
 	dumpBlockTags();
+
+	//dumpCommandArgData();
+	//dumpAvailableCommand();
 }
 
 void dumpCreativeItemData() {
@@ -400,7 +401,6 @@ std::unique_ptr<class CompoundTag> generateNBTFromItem(const Item& item) {
 	nbt->putFloat("viewDamping", item.getViewDamping());
 	nbt->putInt("cooldownTime", item.getCooldownTime());
 	nbt->putString("cooldownType", item.getCooldownType().getString());
-	//必须在最后，因为构建itemstack持有了item
 	nbt->putInt("maxStackSize", (int)ItemStack(item, 1, 0, 0).getMaxStackSize());
 	return nbt;
 }
