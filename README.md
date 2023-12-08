@@ -16,8 +16,10 @@ run `PeEditor -m -n`.
 1. Clone project source `git clone https://github.com/AllayMC/DataExtractor`.
 2. You need to install [Visual Studio](https://visualstudio.microsoft.com/)'s C++ desktop application development and SDK for Windows 10 or above, as well as `xmake` build tool.
 3. Before building, please run `xmake project -k cmake` to generate the cmakefile for code completion, then will download the `PeEditor.exe`.
-After that, a file selection window will pop up, please select the symbol file(`.pdb`) corresponding to the BDS version.
-5. Install the xmake extension for Visual Studio, open it in `extensions/XMake`, select `mode release`, `platform windows`, `architecture x64`, and click Build.
+  After that, a file selection window will pop up, please select the symbol file(`.pdb`) corresponding to the BDS version.
+4. Install the xmake extension for Visual Studio, open it in `extensions/XMake`, select `mode release`, `platform windows`, `architecture x64`, and click Build.
+
+Note: If you are updating your BDS version, before build this plugin, you also need to update `bedrock_server_api.lib` and `bedrock_server_var.lib` in the `DataExtractor\build\bds\lib` folder. To generate these files, please run `PeEditor.exe -l` in the same path as BDS
 
 ## Special thanks
 
