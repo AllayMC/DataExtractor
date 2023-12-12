@@ -19,7 +19,7 @@ run `PeEditor -m -n`.
 it will download the `PeEditor.exe`,after that a window will pop,
 please select the symbol file(`.pdb`) corresponding to the BDS version.
 4. Use `xmake project -k vsxmake -m "release"` to generate the vsproject files
-5. Open `vsxmake2022/DataExtractor.sln`, select `Build/Build Solution`
+5. Install the xmake extension for Visual Studio, open it in `extensions/XMake`, select `mode release`, `platform windows`, `architecture x64`, and click Build.
 
 ## Note 
 1. If you are updating your BDS version, before build this plugin, you also need to update `bedrock_server_api.lib` and `bedrock_server_var.lib` in the `DataExtractor\build\bds\lib` folder. To generate these files, please run `PeEditor.exe -l` in the same path as BDS.

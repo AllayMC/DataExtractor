@@ -6,7 +6,7 @@
 # vs studio cache
 .vs/
 
-.vsxmake2022/*
+vsxmake2022/
 
 # unuse out folder
 out/
