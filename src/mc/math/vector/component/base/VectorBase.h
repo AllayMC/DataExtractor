@@ -6,10 +6,10 @@
 #include <type_traits>
 #include <utility>
 
-#include "ll/api/base/Concepts.h"
-#include "ll/api/base/Hash.h"
-#include "ll/api/base/Macro.h"
-#include "ll/api/base/Meta.h"
+#include "ll/base/Concepts.h"
+#include "ll/base/Hash.h"
+#include "ll/base/Macro.h"
+#include "ll/base/Meta.h"
 
 template <typename T, typename = void>
 struct has_toString : std::false_type {};

@@ -8,78 +8,68 @@
 #include "magic_enum.hpp"
 #include <Nlohmann/json.hpp>
 #include <direct.h>
-#include <Windows.h>
 
 //ll header
-#include "ll/api/memory/Hook.h"
-#include "ll/api/memory/Memory.h"
+#include "ll/memory/Hook.h"
+#include "ll/memory/Memory.h"
 
 //mc header
-#include "mc/world/level/Level.h"
-#include "mc/world/level/block/registry/BlockTypeRegistry.h"
-#include "mc/world/level/block/Block.h"
+#include "mc/Minecraft.h"
+#include "mc/MinecraftCommands.h"
+#include "mc/IDataOutput.h"
+#include "mc/common/HashedString.h"
+#include "mc/world/Dimension.h"
+#include "mc/math/AABB.h"
 #include "mc/math/Vec3.h"
-#include "mc/world/level/material/Material.h"
-#include "mc/common/Brightness.h"
-#include "mc/resources/BaseGameVersion.h"
-#include "mc/server/commands/CommandOrigin.h"
-#include "mc/server/commands/CommandOutput.h"
-#include "mc/world/phys/AABB.h"
-#include "mc/world/level/BlockSource.h"
-#include "mc/world/Minecraft.h"
-#include "mc/world/level/BlockPalette.h"
-#include "mc/world/item/registry/ItemRegistryRef.h"
-#include "mc/world/item/registry/ItemRegistryManager.h"
-#include "mc/world/item/Item.h"
-#include "mc/world/level/storage/Experiments.h"
-#include "mc/world/item/registry/ItemStack.h"
-#include "mc/world/item/registry/CreativeItemRegistry.h"
-#include "mc/world/item/components/ItemColorUtil.h"
-#include "mc/world/actor/ActorDefinitionGroup.h"
-#include "mc/world/actor/ActorInfoRegistry.h"
-#include "mc/world/actor/ActorInfo.h"
-#include "mc/nbt/ListTag.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/world/level/biome/registry/BiomeRegistry.h"
-#include "mc/world/level/biome/Biome.h"
-#include "mc/server/commands/CommandRegistry.h"
-#include "mc/network/packet/AvailableCommandsPacket.h"
-#include "mc/world/actor/ActorFactory.h"
-#include "mc/world/level/storage/LevelData.h"
-#include "mc/world/level/PropertyGroupManager.h"
-#include "mc/world/level/Spawner.h"
-#include "mc/server/commands/MinecraftCommands.h"
-#include "mc/world/item/registry/CreativeItemEntry.h"
-#include "mc/world/item/ItemInstance.h"
-#include "mc/deps/core/utility/BinaryStream.h"
-#include "mc/nbt/CompoundTagVariant.h"
-#include "mc/world/level/IConstBlockSource.h"
-#include "mc/world/actor/ActorDefinitionIdentifier.h"
-#include "mc/deps/core/string/HashedString.h"
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/level/block/utils/GetCollisionShapeInterface.h"
-#include "mc/common/wrapper/optional_ref.h"
-#include "mc/deps/core/mce/Color.h"
-#include "mc/common/ColorFormat.h"
-#include "mc/network/NetworkIdentifier.h"
-#include "mc/network/ServerNetworkHandler.h"
+#include "mc/network/CraftingDataPacket.h"
+#include "mc/network/BinaryStream.h"
+#include "mc/network/ReadOnlyBinaryStream.h"
 #include "mc/nbt/NbtIo.h"
-#include "mc/common/wrapper/WeakPtr.h"
-#include "mc/world/actor/Mob.h"
-#include "mc/common/TagRegistry.h"
-#include "mc/common/wrapper/IDType.h"
-#include "mc/world/level/dimension/Dimension.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
-#include "mc/world/item/crafting/Recipes.h"
-#include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/deps/json/Value.h"
-#include "mc/world/item/VanillaItemTags.h"
-#include "mc/world/level/block/VanillaBlockTags.h"
-#include "mc/network/packet/CraftingDataPacket.h"
+#include "mc/CreativeItemRegistry.h"
+#include "mc/item/ItemInstance.h"
+#include "mc/item/ItemStack.h"
+#include "mc/item/Item.h"
+#include "mc/item/ItemRegistryManager.h"
+#include "mc/item/ItemRegistryRef.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/util/ItemColorUtil.h"
+#include "mc/world/Level.h"
+#include "mc/world/BlockPalette.h"
+#include "mc/world/BlockLegacy.h"
+#include "mc/world/Block.h"
+#include "mc/world/Experiments.h"
+#include "mc/world/LevelData.h"
+#include "mc/world/ActorFactory.h"
+#include "mc/ActorDefinitionIdentifier.h"
+#include "mc/world/BiomeRegistry.h"
+#include "mc/world/Biome.h"
+#include "mc/world/ItemTag.h"
+#include "mc/world/VanillaItemTags.h"
+#include "mc/world/VanillaBlockTags.h"
+#include "mc/world/BlockTypeRegistry.h"
+#include "mc/world/BlockSource.h"
+#include "mc/world/Mob.h"
+#include "mc/world/Material.h"
+#include "mc/util/Spawner.h"
+#include "mc/common/Brightness.h"
+#include "mc/math/BlockPos.h"
+#include "mc/util/json/Value.h"
 
+class ServerNetworkHandler {
+public:
+	// symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z
+	// 只是前向声明这两个类作为参数，不需要导入它们
+	MCVAPI void handle(class NetworkIdentifier const&, class TextPacket const&);
+};
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
-struct ItemTag : HashedString {};
+class GetCollisionShapeInterface {
+public:
+	// prevent constructor by default
+	GetCollisionShapeInterface& operator=(GetCollisionShapeInterface const&);
+	GetCollisionShapeInterface(GetCollisionShapeInterface const&);
+	GetCollisionShapeInterface();
+};
 
 class BigEndianStringByteOutput {
 	void writeBigEndianBytes(std::byte* bytes, size_t count) {

@@ -93,11 +93,11 @@
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/writer.h"
 
-#include "ll/api/base/Macro.h"
-#include "ll/api/base/StdInt.h"
-#include "ll/api/memory/Memory.h"
+#include "ll/base/Macro.h"
+#include "ll/base/StdInt.h"
+#include "ll/memory/Memory.h"
 
-#include "mc/common/wrapper/optional_ref.h" // replace optional<reference_wrapper<>>
+#include "mc/common/optional_ref.h" // replace optional<reference_wrapper<>>
 #include "mc/math/vector/Vecs.h"            // for vector types
 
 using FacingID = uchar;

@@ -16,11 +16,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 	ServerNetworkHandler,
 	"?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z",
 	void,
-	NetworkIdentifier* id,
-	void* text
+	void* networkIdentifier,//通过空指针的魔法，不用声明类型就能调用
+	void* textPk
 ) {
-	std::string     originMessage = ll::memory::dAccess<std::string>(text, 88);
-	origin(id, text);
+	std::string     originMessage = ll::memory::dAccess<std::string>(textPk, 88);//通过LL提供的memory库直接基于偏移量动态访问这个地址所在的内容
+	origin(networkIdentifier, textPk);
 	if (originMessage == "ext") {
 		extractData();
 	}
@@ -211,7 +211,6 @@ void extractData() {
 	dumpPropertyTypeData();
 	dumpItemTags();
 	dumpBlockTags();
-
 	//dumpCommandArgData();
 	//dumpAvailableCommand();
 }
@@ -333,7 +332,7 @@ std::unique_ptr<class CompoundTag> generateNBTFromBlockState(const Block& block)
 void dumpBlockAttributesData() {
 	Logger logger;
 	logger.info("Extracting block states' attributes...");
-	auto& palette = mc->getLevel()->getBlockPalette();
+	const auto& palette = mc->getLevel()->getBlockPalette();
 	int airCount = 0;
 	auto array = json::array();
 
@@ -341,7 +340,7 @@ void dumpBlockAttributesData() {
 	auto list = createListTag();
 	blockStateCounter = 0;
 	while (true) {
-		auto& block = palette.getBlock(blockStateCounter);
+		const auto& block = palette.getBlock(blockStateCounter);
 		//HACK: 用于确定最大size
 		if (block.getName().getString() == "minecraft:air") {
 			airCount++;
@@ -401,6 +400,7 @@ std::unique_ptr<class CompoundTag> generateNBTFromItem(const Item& item) {
 	nbt->putFloat("viewDamping", item.getViewDamping());
 	nbt->putInt("cooldownTime", item.getCooldownTime());
 	nbt->putString("cooldownType", item.getCooldownType().getString());
+	//必须在最后，因为构建itemstack持有了item
 	nbt->putInt("maxStackSize", (int)ItemStack(item, 1, 0, 0).getMaxStackSize());
 	return nbt;
 }
@@ -411,7 +411,7 @@ void dumpItemData() {
 	auto list = createListTag();
 	short counter = 0;
 	for (short id = -2000; id <= 2000; id++) {
-		WeakPtr<Item> item = ItemRegistryManager::getItemRegistry().getItem(id);
+		const WeakPtr<Item> item = ItemRegistryManager::getItemRegistry().getItem(id);
 		if (item.expired()) {
 			continue;
 		}
@@ -436,16 +436,13 @@ void dumpEntityAABB(const Level* level, const pair<string, const ActorDefinition
 		logger.warn("AABB data for this entity will be missing!");
 	}
 	else {
-		const auto& aabb = actor->getAABB();
+		auto& aabb = actor->getAABB();
 		stringstream aabbStr;
 		aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x
 			<< "," << aabb.max.y << "," << aabb.max.z;
 		obj["aabb"] = aabbStr.str();
-
-		//直接调用kill会出错，现在没有能力维护虚函数表，直接通过符号解析调用
-		void* (*rv)(Mob*);
-		*((void**)&rv) = LL_RESOLVE_SYMBOL("?kill@Mob@@UEAAXXZ");
-		(*rv)(actor);
+		//todo: nbt
+		actor->kill();
 	}
 }
 

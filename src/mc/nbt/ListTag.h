@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ll/api/base/Concepts.h"
+#include "ll/base/Concepts.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list

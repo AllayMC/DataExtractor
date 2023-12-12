@@ -4,10 +4,9 @@
 
 class IPacketHandlerDispatcher {
 public:
-    // prevent constructor by default
-    IPacketHandlerDispatcher& operator=(IPacketHandlerDispatcher const &) = delete;
-    IPacketHandlerDispatcher(IPacketHandlerDispatcher const &) = delete;
-    IPacketHandlerDispatcher() = delete;
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: __gen_??1IPacketHandlerDispatcher@@UEAA@XZ
+    virtual ~IPacketHandlerDispatcher() = default;
 
+    // NOLINTEND
 };
-

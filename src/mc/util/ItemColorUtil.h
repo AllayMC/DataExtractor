@@ -1,0 +1,39 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/common/ItemColor.h"
+#include "mc/common/BlockColor.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { class Color; }
+// clang-format on
+
+namespace ItemColorUtil {
+	// NOLINTBEGIN
+	// symbol: ?fromBlockColor@ItemColorUtil@@YA?AW4ItemColor@@W4BlockColor@@@Z
+	MCAPI::ItemColor fromBlockColor(::BlockColor);
+
+	// symbol: ?fromColor@ItemColorUtil@@YA?AW4ItemColor@@AEBVColor@mce@@@Z
+	MCAPI::ItemColor fromColor(class mce::Color const&);
+
+	// symbol: ?fromInt@ItemColorUtil@@YA?AW4ItemColor@@H@Z
+	MCAPI::ItemColor fromInt(int);
+
+	// symbol: ?getColor@ItemColorUtil@@YA?AVColor@mce@@W4ItemColor@@@Z
+	MCAPI class mce::Color getColor(::ItemColor);
+
+	// symbol: ?getName@ItemColorUtil@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemColor@@@Z
+	MCAPI std::string const& getName(::ItemColor);
+
+	// symbol:
+	// ?getNameMixedCase@ItemColorUtil@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemColor@@@Z
+	MCAPI std::string const& getNameMixedCase(::ItemColor);
+
+	// symbol: ?getRGBColor@ItemColorUtil@@YAHW4ItemColor@@@Z
+	MCAPI int getRGBColor(::ItemColor);
+	// NOLINTEND
+
+}; // namespace ItemColorUtil

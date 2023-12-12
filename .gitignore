@@ -1,5 +1,8 @@
 # Xmake cache
 .xmake/
+
+.cmake/
+
 # vs studio cache
 .vs/
 # unuse out folder
