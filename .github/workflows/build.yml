@@ -25,15 +25,15 @@ jobs:
       - uses: actions/checkout@v4
   
       - name: Read bdsversion file
-        id: read-version
+        id: read-bdsversion
         run: |
           $content = Get-Content -Path .\bdsversion -Raw
           $type = ($content | Select-String -Pattern 'type=(.*)' | ForEach-Object { $_.Matches.Groups[1].Value }).Trim()
           $version = ($content | Select-String -Pattern 'version=(.*)' | ForEach-Object { $_.Matches.Groups[1].Value }).Trim()
-          echo "version_type=$type" >> $GITHUB_ENV
-          echo "version_number=$version" >> $GITHUB_ENV
-          printf '%s\n' "$version_type"
-          printf '%s\n' "$version_number"
+          echo "::set-output name=version_type::$type"
+          echo "::set-output name=version_number::$version"
+          printf '%s\n' "$type"
+          printf '%s\n' "$version"
 
       - uses: xmake-io/github-action-setup-xmake@v1
   
@@ -46,7 +46,7 @@ jobs:
           key: |
             xmake-dataextractor-windows-x64-${{ github.sha }}
             xmake-dataextractor-windows-x64-${{ github.sha }}
-            bdslib-${{ env.version_type }}-${{ env.version_number }}
+            bdslib-${{ steps.read-bdsversion.outputs.version_type }}-${{ steps.read-bdsversion.outputs.version_number }}
           restore-keys: |
             xmake-dataextractor-windows-x64-
             xmake-dataextractor-windows-x64-
@@ -55,7 +55,7 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake bds-lib -b --$version_type=$version_number
+          xmake bds-lib -b --${{ steps.read-bdsversion.outputs.version_type }}=${{ steps.read-bdsversion.outputs.version_number }}
 
       - run: |
           xmake f -a x64 -m release -p windows -v -y --ccache=n
