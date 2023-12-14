@@ -118,7 +118,6 @@ task("bds-lib")
                 end
                 print("[localbdslibrary] PeEditor.exe downloaded successfully")
             end
-            local lib_path = path.join(config.buildir(), "bds" , "lib")
             local url = nil
             local bds_path = nil
             if option.get("release") then
