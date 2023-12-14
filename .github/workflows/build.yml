@@ -32,6 +32,8 @@ jobs:
           $version = ($content | Select-String -Pattern 'version=(.*)' | ForEach-Object { $_.Matches.Groups[1].Value }).Trim()
           echo "version_type=$type" >> $GITHUB_ENV
           echo "version_number=$version" >> $GITHUB_ENV
+          echo "$version_type"
+          echo "$version_number"
 
       - uses: xmake-io/github-action-setup-xmake@v1
   
