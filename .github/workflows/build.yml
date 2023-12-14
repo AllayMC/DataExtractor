@@ -32,8 +32,8 @@ jobs:
           $version = ($content | Select-String -Pattern 'version=(.*)' | ForEach-Object { $_.Matches.Groups[1].Value }).Trim()
           echo "version_type=$type" >> $GITHUB_ENV
           echo "version_number=$version" >> $GITHUB_ENV
-          echo "$version_type"
-          echo "$version_number"
+          printf '%s\n' "$version_type"
+          printf '%s\n' "$version_number"
 
       - uses: xmake-io/github-action-setup-xmake@v1
   
@@ -55,7 +55,7 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake bds-lib -b --${{ env.version_type }}=${{ env.version_number }}
+          xmake bds-lib -b --$version_type=$version_number
 
       - run: |
           xmake f -a x64 -m release -p windows -v -y --ccache=n
