@@ -27,7 +27,7 @@ jobs:
       - name: Read bdsversion file
         id: read-version
         run: |
-          $content = Get-Content -Path .\bdslibrary -Raw
+          $content = Get-Content -Path .\bdsversion -Raw
           $type = ($content | Select-String -Pattern 'type=(.*)' | ForEach-Object { $_.Matches.Groups[1].Value }).Trim()
           $version = ($content | Select-String -Pattern 'version=(.*)' | ForEach-Object { $_.Matches.Groups[1].Value }).Trim()
           echo "version_type=$type" >> $GITHUB_ENV
