@@ -137,6 +137,9 @@ task("bds-lib")
             print("[localbdslibrary] bedrock_server downloaded successfully")
             local unzip_path = path.join(config.buildir(), "bds" , "instance")
             archive.extract(bds_path, unzip_path)
+            if not os.exists(lib_path) then
+                os.mkdir(lib_path)
+            end
             os.vexec("%s -l -o %s --pdb %s", tools_path, lib_path , path.join(unzip_path, "bedrock_server.pdb"))
         end
     end)
