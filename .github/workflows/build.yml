@@ -46,11 +46,15 @@ jobs:
             build/bds/lib
           key: |
             xmake-dataextractor-windows-x64-${{ github.sha }}
-            xmake-dataextractor-windows-x64-${{ github.sha }}
-            bdslib-${{ steps.read-bdsversion.outputs.version_type }}-${{ steps.read-bdsversion.outputs.version_number }}
           restore-keys: |
             xmake-dataextractor-windows-x64-
-            xmake-dataextractor-windows-x64-
+
+      - uses: actions/cache@v3
+        with:
+          path: |
+            build/bds/lib
+          key: |
+            bdslib-${{ steps.read-bdsversion.outputs.version_type }}-${{ steps.read-bdsversion.outputs.version_number }}
 
       - run: |
           xmake repo -u
