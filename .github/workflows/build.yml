@@ -39,6 +39,7 @@ jobs:
       - uses: xmake-io/github-action-setup-xmake@v1
   
       - uses: actions/cache@v3
+        name: xmake cache
         with:
           path: |
             ~/AppData/Local/.xmake
@@ -50,6 +51,7 @@ jobs:
             xmake-dataextractor-windows-x64-
 
       - uses: actions/cache@v3
+        name: bdslib cache
         with:
           path: |
             build/bds/lib
