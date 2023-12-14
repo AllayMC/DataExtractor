@@ -27,10 +27,11 @@ jobs:
       - name: Read bdsversion file
         id: read-version
         run: |
-          VERSION_TYPE=$(grep -oP 'type=\K[^,]+' bdsversion)
-          VERSION_NUMBER=$(grep -oP 'version=\K[^,]+' bdsversion)
-          echo "version_type=${VERSION_TYPE}" >> $GITHUB_ENV
-          echo "version_number=${VERSION_NUMBER}" >> $GITHUB_ENV
+          $content = Get-Content -Path .\bdslibrary -Raw
+          $type = ($content | Select-String -Pattern 'type=(.*)' | ForEach-Object { $_.Matches.Groups[1].Value }).Trim()
+          $version = ($content | Select-String -Pattern 'version=(.*)' | ForEach-Object { $_.Matches.Groups[1].Value }).Trim()
+          echo "version_type=$type" >> $GITHUB_ENV
+          echo "version_number=$version" >> $GITHUB_ENV
 
       - uses: xmake-io/github-action-setup-xmake@v1
   
