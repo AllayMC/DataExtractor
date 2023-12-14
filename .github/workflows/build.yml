@@ -23,20 +23,36 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+  
+      - name: Read bdsversion file
+        id: read-version
+        run: |
+          VERSION_TYPE=$(grep -oP 'type=\K[^,]+' bdsversion)
+          VERSION_NUMBER=$(grep -oP 'version=\K[^,]+' bdsversion)
+          echo "version_type=${VERSION_TYPE}" >> $GITHUB_ENV
+          echo "version_number=${VERSION_NUMBER}" >> $GITHUB_ENV
 
       - uses: xmake-io/github-action-setup-xmake@v1
-
+  
       - uses: actions/cache@v3
         with:
           path: |
             ~/AppData/Local/.xmake
             .xmake
-          key: xmake-dataextractor-windows-x64-${{ github.sha }}
+            build/bds/lib
+          key: |
+            xmake-dataextractor-windows-x64-${{ github.sha }}
+            xmake-dataextractor-windows-x64-${{ github.sha }}
+            bdslib-${{ env.version_type }}-${{ env.version_number }}
           restore-keys: |
+            xmake-dataextractor-windows-x64-
             xmake-dataextractor-windows-x64-
 
       - run: |
           xmake repo -u
+
+      - run: |
+          xmake bds-lib -b --${{ env.version_type }}=${{ env.version_number }}
 
       - run: |
           xmake f -a x64 -m release -p windows -v -y --ccache=n
