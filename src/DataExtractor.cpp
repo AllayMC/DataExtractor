@@ -375,6 +375,7 @@ std::unique_ptr<class CompoundTag> generateNBTFromItem(const Item& item) {
 		logger.warn("Exception occur when trying to get block for item " + item.getFullItemName());
 	}
 	nbt->putString("descriptionId", item.getDescriptionId());
+	nbt->putString("isComponentBased", item.isComponentBased());
 	nbt->putString("name", item.getFullItemName());
 	nbt->putShort("maxDamage", item.getMaxDamage());//最大耐久
 	nbt->putBoolean("isArmor", item.isArmor());
