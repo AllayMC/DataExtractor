@@ -364,7 +364,7 @@ void dumpBlockAttributesData() {
 
 std::unique_ptr<class CompoundTag> generateNBTFromItem(const Item& item) {
 	Logger logger;
-	auto nbt = createCompound();
+	std::unique_ptr<class CompoundTag> nbt = createCompound();
 	logger.info("Extracting item - " + item.getFullItemName());
 	nbt->putShort("id", item.getId());
 	try {
@@ -374,7 +374,6 @@ std::unique_ptr<class CompoundTag> generateNBTFromItem(const Item& item) {
 	catch (exception& e) {
 		logger.warn("Exception occur when trying to get block for item " + item.getFullItemName());
 	}
-	nbt->putString("descriptionId", item.getDescriptionId());
 	nbt->putBoolean("isComponentBased", item.isComponentBased());
 	nbt->putString("name", item.getFullItemName());
 	nbt->putShort("maxDamage", item.getMaxDamage());//最大耐久
@@ -401,8 +400,22 @@ std::unique_ptr<class CompoundTag> generateNBTFromItem(const Item& item) {
 	nbt->putFloat("viewDamping", item.getViewDamping());
 	nbt->putInt("cooldownTime", item.getCooldownTime());
 	nbt->putString("cooldownType", item.getCooldownType().getString());
-	//必须在最后，因为构建itemstack持有了item
 	nbt->putInt("maxStackSize", (int)ItemStack(item, 1, 0, 0).getMaxStackSize());
+	CompoundTag descriptionId;
+	std::set<string> uniqueStr;
+	for (int i = 0; i <= 256; ++i) {
+		try {
+			if (item.isValidAuxValue(i)) {
+				const auto itemstack = ItemStack(item, 1, i);//ignore some invaild aux exception
+				if (!uniqueStr.contains(itemstack.getDescriptionId())) {
+					uniqueStr.insert(itemstack.getDescriptionId());
+					descriptionId.putString(to_string(i), itemstack.getDescriptionId());
+				}
+			}
+		}
+		catch (...) {}
+	}
+	nbt->putCompound("descriptionId", descriptionId);
 	return nbt;
 }
 
@@ -418,9 +431,11 @@ void dumpItemData() {
 		}
 		std::unique_ptr<class CompoundTag> obj2 = generateNBTFromItem(*item);
 		list->add(obj2->copy());
+		obj2.release();
 		counter++;
 	}
 	tag->put("item", list->copyList());
+	list.release();
 	logger.info("Successfully extract " + to_string(counter) + " items' data!");
 	writeNBT("data/item_data.nbt", tag.get());
 	tag.release();

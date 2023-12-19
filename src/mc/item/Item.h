@@ -134,11 +134,22 @@ public:
     // vIndex: 65, symbol: ?getToughnessValue@Item@@UEBAHXZ
     int getToughnessValue() const;
 
+    // vIndex: 67, symbol: ?isValidAuxValue@Item@@UEBA_NH@Z
+    bool isValidAuxValue(int) const;
+
     // vIndex: 69, symbol: ?getViewDamping@Item@@UEBAMXZ
     float getViewDamping() const;
 
     // vIndex: 83, symbol: ?canUseOnSimTick@Item@@UEBA_NXZ
     bool canUseOnSimTick() const;
+
+    // vIndex: 94, symbol:
+    // ?buildDescriptionName@Item@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
+    std::string buildDescriptionName(class ItemStackBase const&) const;
+
+    // vIndex: 95, symbol:
+    // ?buildDescriptionId@Item@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+    std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
     // vIndex: 103, symbol: ?getCooldownType@Item@@UEBAAEBVHashedString@@XZ
     class HashedString const& getCooldownType() const;
