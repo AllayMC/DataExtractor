@@ -141,7 +141,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     auto out = std::ofstream("data/crafting_data_packet.bin", std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
     out << datacopy;
     out.close();
-    hookLogger.info("create crafting_data_packet.bin success!");
+    hookLogger.info("Create crafting_data_packet.bin success!");
 }
 
 namespace plugin {
@@ -731,6 +731,8 @@ void ext(ll::Logger& logger) {
     dumpBlockAttributesData(logger);
     dumpItemData(logger);
     dumpPalette(logger);
+    dumpBlockTags(logger);
+    dumpItemTags(logger);
 }
 
 Plugin::Plugin(ll::plugin::NativePlugin& self) : mSelf(self) { mSelf.getLogger().info("loading..."); }
