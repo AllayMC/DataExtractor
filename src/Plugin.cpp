@@ -733,6 +733,7 @@ void ext(ll::Logger& logger) {
     dumpPalette(logger);
     dumpBlockTags(logger);
     dumpItemTags(logger);
+    dumpPropertyTypeData(logger);
 }
 
 Plugin::Plugin(ll::plugin::NativePlugin& self) : mSelf(self) { mSelf.getLogger().info("loading..."); }
