@@ -1,78 +1,27 @@
 on:
-  push:
-    branches:
-      - master
-      - dev
-    paths:
-      - .github/workflows/build.yml
-      - scripts/localbdslibrary.lua
-      - src/**
-      - xmake.lua
   pull_request:
-    branches:
-      - master
-      - dev
-    paths:
-      - .github/workflows/build.yml
-      - scripts/localbdslibrary.lua
-      - src/**
-      - xmake.lua
+  push:
   workflow_dispatch:
-
+  
 jobs:
   build:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-  
-      - name: Read bdsversion file
-        id: read-bdsversion
-        run: |
-          $content = Get-Content -Path .\bdsversion -Raw
-          $type = ($content | Select-String -Pattern 'type=(.*)' | ForEach-Object { $_.Matches.Groups[1].Value }).Trim()
-          $version = ($content | Select-String -Pattern 'version=(.*)' | ForEach-Object { $_.Matches.Groups[1].Value }).Trim()
-          echo "::set-output name=version_type::$type"
-          echo "::set-output name=version_number::$version"
-          printf '%s\n' "$type"
-          printf '%s\n' "$version"
 
       - uses: xmake-io/github-action-setup-xmake@v1
-  
-      - uses: actions/cache@v3
-        name: xmake cache
-        with:
-          path: |
-            ~/AppData/Local/.xmake
-            .xmake
-            build/bds/lib
-          key: |
-            xmake-dataextractor-windows-x64-${{ github.sha }}
-          restore-keys: |
-            xmake-dataextractor-windows-x64-
-
-      - uses: actions/cache@v3
-        name: bdslib cache
-        with:
-          path: |
-            build/bds/lib
-          key: |
-            bdslib-${{ steps.read-bdsversion.outputs.version_type }}-${{ steps.read-bdsversion.outputs.version_number }}
-
+      
       - run: |
           xmake repo -u
 
       - run: |
-          xmake bds-lib -b --${{ steps.read-bdsversion.outputs.version_type }}=${{ steps.read-bdsversion.outputs.version_number }}
-
-      - run: |
-          xmake f -a x64 -m release -p windows -v -y --ccache=n
+          xmake f -a x64 -m release -p windows -v -y
 
       - run: |
           xmake -w -y
 
       - uses: actions/upload-artifact@v3
         with:
-          name: DataExtractor-Windows-X64-${{ github.sha }}
+          name: ${{ github.event.repository.name }}-windows-x64-${{ github.sha }}
           path: |
-            build/windows/x64/release/DataExtractor.dll
-            build/windows/x64/release/DataExtractor.pdb
+            bin/
