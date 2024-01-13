@@ -2,15 +2,18 @@
 #include <direct.h>
 #include <fstream>
 #include <iostream>
+#include <memory>
+#include <utility>
 
 // Compress
-#include "zlib.h"
+#include <zlib.h>
 
 // LL
-#include "Plugin.h"
+#include <Plugin.h>
 #include <ll/api/command/DynamicCommand.h>
 #include <ll/api/plugin/NativePlugin.h>
 #include <ll/api/service/Bedrock.h>
+#include <ll/api/memory/Hook.h>
 
 // MC
 // Item
@@ -47,6 +50,9 @@
 // NBT
 #include <mc/nbt/CompoundTag.h>
 #include <mc/nbt/CompoundTagVariant.h>
+// Network
+#include <mc/network/packet/CraftingDataPacket.h>
+#include <mc/deps/core/utility/BinaryStream.h>
 
 
 static bool folderExists(std::string folderName) {
@@ -115,6 +121,27 @@ static std::string aabbToStr(const AABB& aabb) {
     aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x << "," << aabb.max.y << ","
             << aabb.max.z;
     return aabbStr.str();
+}
+
+ll::Logger hookLogger("DataExtractor-Hook");
+
+//Recipe packet
+LL_AUTO_TYPE_INSTANCE_HOOK(
+    CraftingDataPacketHook,
+    ll::memory::HookPriority::Normal,
+    CraftingDataPacket,
+    "?write@CraftingDataPacket@@UEBAXAEAVBinaryStream@@@Z",
+    void,
+    BinaryStream& stream
+) {
+    origin(stream);
+    const std::string& data = stream.getAndReleaseData();
+    std::string datacopy = data;
+    stream.writeString(data, nullptr, nullptr);
+    auto out = std::ofstream("data/crafting_data_packet.bin", std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
+    out << datacopy;
+    out.close();
+    hookLogger.info("create crafting_data_packet.bin success!");
 }
 
 namespace plugin {

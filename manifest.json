@@ -1,5 +1,5 @@
 {
-    "name": "DataExtractor-v2",
-    "entry": "DataExtractor-v2.dll",
+    "name": "DataExtractor",
+    "entry": "DataExtractor.dll",
     "type": "native"
 }
