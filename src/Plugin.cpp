@@ -52,6 +52,7 @@
 #include <mc/nbt/CompoundTagVariant.h>
 // Network
 #include <mc/network/packet/CraftingDataPacket.h>
+#include <mc/network/packet/AvailableCommandsPacket.h>
 #include <mc/deps/core/utility/BinaryStream.h>
 
 
@@ -142,6 +143,25 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     out << datacopy;
     out.close();
     hookLogger.info("Create crafting_data_packet.bin success!");
+}
+
+//Cmd packet
+LL_AUTO_TYPE_INSTANCE_HOOK(
+    AvailableCommandsPacketHook,
+    ll::memory::HookPriority::Normal,
+    AvailableCommandsPacket,
+    "?write@AvailableCommandsPacket@@UEBAXAEAVBinaryStream@@@Z",
+    void,
+    BinaryStream& stream
+) {
+    origin(stream);
+    const std::string& data = stream.getAndReleaseData();
+    std::string datacopy = data;
+    stream.writeString(data, nullptr, nullptr);
+    auto out = std::ofstream("data/available_commands_packet.bin", std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
+    out << datacopy;
+    out.close();
+    hookLogger.info("Create available_commands_packet.bin success!");
 }
 
 namespace plugin {
@@ -726,7 +746,7 @@ void ext(ll::Logger& logger) {
         createFolder(logger, "data");
     }
     dumpBiomeData(logger);
-    // dumpCommandArgData(logger);
+    //dumpCommandArgData(logger);
     dumpCreativeItemData(logger);
     dumpBlockAttributesData(logger);
     dumpItemData(logger);
