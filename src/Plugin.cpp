@@ -164,6 +164,32 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     hookLogger.info("Create available_commands_packet.bin success!");
 }
 
+// LL_AUTO_TYPE_INSTANCE_HOOK(
+//     SymbolToStringHook,
+//     ll::memory::HookPriority::Normal,
+//     CommandRegistry,
+//     "?symbolToString@CommandRegistry@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VSymbol@1@@Z",
+//     std::string,
+//     CommandRegistry::Symbol symbol
+// ) {
+//     const auto name = origin(symbol);
+//     hookLogger.info(name);
+//     return name;
+// }
+
+// LL_AUTO_TYPE_INSTANCE_HOOK(
+//     DescribeHook,
+//     ll::memory::HookPriority::Normal,
+//     CommandRegistry,
+//     "?describe@CommandRegistry@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VSymbol@1@@Z",
+//     std::string,
+//     CommandRegistry::Symbol symbol
+// ) {
+//     const auto desc = origin(symbol);
+//     hookLogger.info(desc);
+//     return desc;
+// }
+
 namespace plugin {
 
 void dumpCreativeItemData(ll::Logger& logger) {
@@ -415,21 +441,58 @@ void dumpPalette(ll::Logger& logger) {
     logger.info(R"(Block palette table has been saved to "data/block_palette.nbt"))");
 }
 
-void dumpCommandArgData(ll::Logger& logger) {
-    CommandRegistry& registry = ll::service::getCommandRegistry();
-    auto             global   = nlohmann::json::object();
+void dumpCommandArgDataV1(ll::Logger& logger) {
+    const auto& registry = ll::service::getMinecraft()->getCommands().getRegistry();
+    auto global = nlohmann::json::object();
     for (auto& symbol : registry.mCommandSymbols) {
-        // symbol�����⣬���û�����쳣
         if (!registry.isValid(symbol)) {
             continue;
         }
         std::string sym = registry.symbolToString(symbol);
         logger.info("Extracting command arg type - " + sym);
-        auto obj     = nlohmann::json::object();
+        auto obj  = nlohmann::json::object();
         obj["value"] = symbol.value();
         obj["index"] = symbol.toIndex();
         global[sym]  = obj;
     }
+    writeJSON("data/command_arg_types.json", global);
+    logger.info("Command arg type data have been saved to \"data/command_arg_types.json\"");
+}
+
+void dumpCommandArgDataV2(ll::Logger& logger) {
+    const auto& registry = ll::service::getMinecraft()->getCommands().getRegistry();
+    auto global = nlohmann::json::object();
+    for (int i = 0; i < 1000; i++) {
+        if (const int symbol = i | 0x100000; registry.isValid(symbol)) {
+            const auto name = registry.symbolToString(symbol);
+            auto description = registry.describe(symbol);
+
+            auto object = nlohmann::json::object();
+            object["id"] = i;
+            object["description"] = description;
+
+            global[name] = object;
+        }
+    }
+    writeJSON("data/command_arg_types.json", global);
+    logger.info("Command arg type data have been saved to \"data/command_arg_types.json\"");
+}
+
+void dumpCommandArgDataV3(ll::Logger& logger) {
+    auto& registry = ll::service::getMinecraft()->getCommands().getRegistry();
+    auto global = nlohmann::json::object();
+    registry.forEachNonTerminal([&registry, &global, &logger](const CommandRegistry::Symbol symbol) {
+        if (!registry.isValid(symbol)) {
+            return;
+        }
+        const std::string name = registry.symbolToString(symbol.value());
+        const std::string desc = registry.describe(symbol.value());
+        logger.info("Extracting command arg type: " + name);
+        auto obj = nlohmann::json::object();
+        obj["desc"] = desc;
+        obj["index"] = symbol.toIndex();
+        global[name]  = obj;
+    });
     writeJSON("data/command_arg_types.json", global);
     logger.info("Command arg type data have been saved to \"data/command_arg_types.json\"");
 }
@@ -746,7 +809,7 @@ void ext(ll::Logger& logger) {
         createFolder(logger, "data");
     }
     dumpBiomeData(logger);
-    //dumpCommandArgData(logger);
+    //dumpCommandArgDataV3(logger);
     dumpCreativeItemData(logger);
     dumpBlockAttributesData(logger);
     dumpItemData(logger);
