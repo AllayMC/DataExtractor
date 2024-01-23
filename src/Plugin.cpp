@@ -818,7 +818,7 @@ namespace plugin {
         if (!folderExists("data")) {
             createFolder(logger, "data");
         }
-        // dumpCommandArgDataV3(logger);
+        dumpCommandArgDataV3(logger);
         dumpBiomeData(logger);
         dumpCreativeItemData(logger);
         dumpBlockAttributesData(logger);
