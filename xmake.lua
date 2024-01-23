@@ -8,7 +8,7 @@ end
 
 -- Option 1: Use the latest version of LeviLamina released on GitHub.
 
-add_requires("levilamina 0.4.1")
+add_requires("levilamina 0.5.1")
 add_requires("zlib-ng 2.1.3")
 
 -- Option 2: Use a specific version of LeviLamina released on GitHub.
