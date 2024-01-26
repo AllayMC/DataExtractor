@@ -61,16 +61,12 @@ namespace plugin {
         struct stat info{};
         if (stat(folderName.c_str(), &info) != 0) {
             return false;
-        } else if (info.st_mode & S_IFDIR) {
-            return true;
-        } else {
-            return false;
         }
+        return info.st_mode & S_IFDIR;
     }
 
     void createFolder(const ll::Logger &logger, const std::string &folderName) {
-        int result = _mkdir(folderName.c_str());
-        if (result != 0) {
+        if (const int result = _mkdir(folderName.c_str()); result != 0) {
             logger.error("Failed to create folder.");
         } else {
             logger.info("Folder " + std::string(folderName) + " created successfully.");
@@ -78,11 +74,11 @@ namespace plugin {
     }
 
     bool gzip_compress(const std::string &original_str, std::string &str) {
-        z_stream d_stream = {0};
+        z_stream d_stream = {nullptr};
         if (Z_OK != deflateInit2(&d_stream, Z_BEST_COMPRESSION, Z_DEFLATED, MAX_WBITS + 16, 9, Z_DEFAULT_STRATEGY)) {
             return false;
         }
-        unsigned long len = compressBound(original_str.size());
+        const unsigned long len = compressBound(original_str.size());
         auto *buf = (unsigned char *) malloc(len);
         if (!buf) {
             return false;
@@ -139,7 +135,7 @@ namespace plugin {
     ) {
         origin(stream);
         const std::string &data = stream.getAndReleaseData();
-        std::string datacopy = data;
+        const std::string datacopy = data;
         stream.writeString(data, nullptr, nullptr);
         auto out = std::ofstream("data/crafting_data_packet.bin",
                                  std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
@@ -159,7 +155,7 @@ namespace plugin {
     ) {
         origin(stream);
         const std::string &data = stream.getAndReleaseData();
-        std::string datacopy = data;
+        const std::string datacopy = data;
         stream.writeString(data, nullptr, nullptr);
         auto out = std::ofstream("data/available_commands_packet.bin",
                                  std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
@@ -188,12 +184,12 @@ namespace plugin {
             if (itemInstance.isBlock()) {
                 obj.putInt("blockStateHash", itemInstance.getBlock()->computeRawSerializationIdHashForNetwork());
             }
-            auto nbt = itemInstance.save();
-            if (nbt->contains("tag")) {
+            if (const auto nbt = itemInstance.save(); nbt->contains("tag")) {
                 obj.put("tag", nbt->getCompound("tag")->copy());
             }
             global.put(std::to_string(index), obj.copy());
             index++;
+            return true;
         });
         writeNBT("data/creative_items.nbt", global);
         logger.info(R"(Creative items data has been saved to "data/creative_items.nbt")");
@@ -220,41 +216,41 @@ namespace plugin {
             nbt.putFloat("translucency", material.getTranslucency());
             nbt.putInt("version", sid->getInt("version"));
             nbt.putInt("runtimeId", block.getRuntimeId());
-            nbt.putInt(
-                "blockStateHash",
-                ((name != "minecraft:unknown") ? block.computeRawSerializationIdHashForNetwork() : -2)
-            );
+            if (name != "minecraft:unknown")
+                nbt.putInt("blockStateHash", block.computeRawSerializationIdHashForNetwork());
+            else
+                nbt.putInt("blockStateHash", -2);
             nbt.putInt("burnChance", block.getFlameOdds());
             nbt.putInt("burnAbility", block.getBurnOdds());
-            nbt.putInt("lightDampening", (int) block.getLight().value);
-            nbt.putInt("lightEmission", (int) block.getLightEmission().value);
+            nbt.putInt("lightDampening", block.getLight().value);
+            nbt.putInt("lightEmission", block.getLightEmission().value);
             mce::Color color = block.getMapColor(
                 ll::service::getLevel()->getDimension(DimensionType(0))->getBlockSourceFromMainChunkSource(),
                 BlockPos(0, 10, 0)
             );
             auto colornbt = CompoundTag();
-            colornbt.putInt("r", (int) (color.r * 255));
-            colornbt.putInt("g", (int) (color.g * 255));
-            colornbt.putInt("b", (int) (color.b * 255));
-            colornbt.putInt("a", (int) (color.a * 255));
+            colornbt.putInt("r", static_cast<int>(color.r * 255));
+            colornbt.putInt("g", static_cast<int>(color.g * 255));
+            colornbt.putInt("b", static_cast<int>(color.b * 255));
+            colornbt.putInt("a", static_cast<int>(color.a * 255));
             colornbt.putString("hexString", color.toHexString());
             nbt.putCompound("color", colornbt);
-            AABB tmp = AABB(0, 0, 0, 0, 0, 0);
+            auto tmp = AABB(0, 0, 0, 0, 0, 0);
             block.getCollisionShapeForCamera(
                 tmp,
-                *(IConstBlockSource *) &ll::service::getLevel()
-                ->getDimension(DimensionType(0))
-                ->getBlockSourceFromMainChunkSource(),
+                *reinterpret_cast<IConstBlockSource *>(&ll::service::getLevel()
+                    ->getDimension(DimensionType(0))
+                    ->getBlockSourceFromMainChunkSource()),
                 BlockPos(0, 0, 0)
             );
             nbt.putString("aabbVisual", aabbToStr(tmp));
-            AABB tmp2 = AABB(0, 0, 0, 0, 0, 0);
-            class optional_ref<class GetCollisionShapeInterface const> nullRef{};
+            auto tmp2 = AABB(0, 0, 0, 0, 0, 0);
+            optional_ref<GetCollisionShapeInterface const> nullRef{};
             block.getCollisionShape(
                 tmp2,
-                *(IConstBlockSource *) &ll::service::getLevel()
-                ->getDimension(DimensionType(0))
-                ->getBlockSourceFromMainChunkSource(),
+                *reinterpret_cast<IConstBlockSource *>(&ll::service::getLevel()
+                    ->getDimension(DimensionType(0))
+                    ->getBlockSourceFromMainChunkSource()),
                 BlockPos(0, 0, 0),
                 nullRef
             );
@@ -359,7 +355,7 @@ namespace plugin {
         nbt.putBoolean("canUseOnSimTick", item.canUseOnSimTick());
         nbt.putBoolean("canBeCharged", item.canBeCharged());
         nbt.putString("creativeGroup", item.getCreativeGroup());
-        nbt.putInt("creativeCategory", (int) item.getCreativeCategory());
+        nbt.putInt("creativeCategory", static_cast<int>(item.getCreativeCategory()));
         nbt.putInt("armorValue", item.getArmorValue());
         nbt.putInt("attackDamage", item.getAttackDamage());
         nbt.putInt("toughnessValue", item.getToughnessValue());
@@ -378,8 +374,7 @@ namespace plugin {
                         descriptionId.putString(std::to_string(i), itemstack.getDescriptionId());
                     }
                 }
-            } catch (...) {
-            }
+            } catch (...) {}
         }
         nbt.putCompound("descriptionId", descriptionId);
         dest.add(nbt);
@@ -389,8 +384,7 @@ namespace plugin {
         auto tag = CompoundTag();
         auto list = ListTag();
         short counter = 0;
-        for (auto &kv: ItemRegistryManager::getItemRegistry().getNameToItemMap()) {
-            auto item = kv.second;
+        for (const auto &item: ItemRegistryManager::getItemRegistry().getNameToItemMap() | std::views::values) {
             extractItem(list, *item, logger);
             counter++;
         }
@@ -403,7 +397,7 @@ namespace plugin {
     void dumpPalette(const ll::Logger &logger) {
         logger.info("Extracting block palette...");
 
-        auto &palette = ll::service::getLevel()->getBlockPalette();
+        const auto &palette = ll::service::getLevel()->getBlockPalette();
 
         auto global = CompoundTag();
         auto blocks = ListTag();
@@ -577,8 +571,7 @@ namespace plugin {
                 blockToBlockStateData[name] = std::vector<std::unique_ptr<class CompoundTag> >();
             }
             auto &blockStates = blockToBlockStateData[name];
-            auto nbt = block.getSerializationId().clone();
-            if (nbt->contains("states") && !nbt->getCompound("states")->isEmpty()) {
+            if (auto nbt = block.getSerializationId().clone(); nbt->contains("states") && !nbt->getCompound("states")->isEmpty()) {
                 blockStates.push_back(nbt->getCompound("states")->clone());
             }
         }
@@ -690,7 +683,7 @@ namespace plugin {
                 for (auto &value: propertyTypeEntry.second.values) {
                     values.push_back(stoi(value));
                 }
-                std::sort(values.begin(), values.end());
+                std::ranges::sort(values);
                 obj["values"] = values;
             } else if (propertyTypeEntry.second.valueType == "BOOLEAN") {
                 std::vector<bool> values{false, true};
