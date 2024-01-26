@@ -57,7 +57,7 @@
 #include <mc/deps/core/utility/BinaryStream.h>
 
 namespace plugin {
-    bool folderExists(std::string folderName) {
+    bool folderExists(const std::string& folderName) {
         struct stat info{};
         if (stat(folderName.c_str(), &info) != 0) {
             return false;
@@ -68,7 +68,7 @@ namespace plugin {
         }
     }
 
-    void createFolder(const ll::Logger &logger, const std::string folderName) {
+    void createFolder(const ll::Logger &logger, const std::string &folderName) {
         int result = _mkdir(folderName.c_str());
         if (result != 0) {
             logger.error("Failed to create folder.");
