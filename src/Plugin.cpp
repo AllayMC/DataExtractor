@@ -167,38 +167,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     hookLogger.info("Create available_commands_packet.bin success!");
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
-    CommandParamHook,
-    ll::memory::HookPriority::Normal,
-    CommandParameterData,
-    "??0CommandParameterData@@QEAA@V?$typeid_t@VCommandRegistry@@@Bedrock@@P8CommandRegistry@@EBA_NPEAXAEBUParseToken@3@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@7@@ZPEBDW4CommandParameterDataType@@77H_NH@Z",
-    void,
-    class Bedrock::typeid_t<class CommandRegistry> typeIndex,
-    ParseFn parser,
-    char const* name,
-    CommandParameterDataType paramType,
-    char const* enumName,
-    char const* postFix,
-    int offset,
-    bool optional,
-    int flagOffset
-) {
-    origin(
-        typeIndex, parser, name,
-        paramType, enumName, postFix,
-        offset, optional, flagOffset
-    );
-    hookLogger.info("====================");
-    hookLogger.info("typeIndex: " + std::to_string(typeIndex.value));
-    if (name != nullptr) hookLogger.info("name: " + std::string(name));
-    hookLogger.info("paramType: " + std::string(magic_enum::enum_name(paramType)));
-    if (enumName != nullptr) hookLogger.info("enumName: " + std::string(enumName));
-    if (postFix != nullptr) hookLogger.info("postFix: " + std::string(postFix));
-    hookLogger.info("offset: " + std::to_string(offset));
-    hookLogger.info("optional: " + std::to_string(optional));
-    hookLogger.info("flagOffset: " + std::to_string(flagOffset));
-}
-
 namespace plugin {
     void dumpCreativeItemData(ll::Logger &logger) {
         logger.info("Extracting creative items...");
@@ -489,7 +457,7 @@ namespace plugin {
     void dumpCommandArgDataV3(ll::Logger &logger) {
         auto &registry = ll::service::getMinecraft()->getCommands().getRegistry();
         auto global = nlohmann::json::object();
-        registry.forEachNonTerminal([&registry, &global, &logger](const CommandRegistry::Symbol symbol) {
+        registry.forEachNonTerminal([&registry, &global, &logger](const CommandRegistry::Symbol &symbol) {
             if (!registry.isValid(symbol)) {
                 return;
             }
