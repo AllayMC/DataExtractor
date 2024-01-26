@@ -56,119 +56,119 @@
 #include <mc/network/packet/AvailableCommandsPacket.h>
 #include <mc/deps/core/utility/BinaryStream.h>
 
-
-static bool folderExists(std::string folderName) {
-    struct stat info{};
-    if (stat(folderName.c_str(), &info) != 0) {
-        return false;
-    } else if (info.st_mode & S_IFDIR) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-static void createFolder(const ll::Logger &logger, const std::string folderName) {
-    int result = _mkdir(folderName.c_str());
-    if (result != 0) {
-        logger.error("Failed to create folder.");
-    } else {
-        logger.info("Folder " + std::string(folderName) + " created successfully.");
-    }
-}
-
-static bool gzip_compress(const std::string &original_str, std::string &str) {
-    z_stream d_stream = {0};
-    if (Z_OK != deflateInit2(&d_stream, Z_BEST_COMPRESSION, Z_DEFLATED, MAX_WBITS + 16, 9, Z_DEFAULT_STRATEGY)) {
-        return false;
-    }
-    unsigned long len = compressBound(original_str.size());
-    auto *buf = (unsigned char *) malloc(len);
-    if (!buf) {
-        return false;
-    }
-    d_stream.next_in = (unsigned char *) (original_str.c_str());
-    d_stream.avail_in = original_str.size();
-    d_stream.next_out = buf;
-    d_stream.avail_out = len;
-    deflate(&d_stream, Z_SYNC_FLUSH);
-    deflateEnd(&d_stream);
-    str.assign((char *) buf, d_stream.total_out);
-    free(buf);
-    return true;
-}
-
-static void writeNBT(const std::string &fileName, const CompoundTag &tag) {
-    std::string compressed;
-    gzip_compress(tag.toBinaryNbt(false), compressed);
-    auto out = std::ofstream(fileName, std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
-    out << compressed;
-    out.close();
-}
-
-static void writeJSON(const std::string &fileName, const nlohmann::json &json) {
-    auto out = std::ofstream(fileName, std::ofstream::out | std::ofstream::trunc);
-    out << json.dump(4);
-    out.close();
-}
-
-static void writeJSON(const std::string &fileName, const Json::Value &json) {
-    auto out = std::ofstream(fileName, std::ofstream::out | std::ofstream::trunc);
-    out << json.toStyledString();
-    out.close();
-}
-
-static std::string aabbToStr(const AABB &aabb) {
-    std::stringstream aabbStr;
-    aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x << "," << aabb.max.y << ","
-            << aabb.max.z;
-    return aabbStr.str();
-}
-
-ll::Logger hookLogger("DataExtractor-Hook");
-
-//Recipe packet
-LL_AUTO_TYPE_INSTANCE_HOOK(
-    CraftingDataPacketHook,
-    ll::memory::HookPriority::Normal,
-    CraftingDataPacket,
-    "?write@CraftingDataPacket@@UEBAXAEAVBinaryStream@@@Z",
-    void,
-    BinaryStream& stream
-) {
-    origin(stream);
-    const std::string &data = stream.getAndReleaseData();
-    std::string datacopy = data;
-    stream.writeString(data, nullptr, nullptr);
-    auto out = std::ofstream("data/crafting_data_packet.bin",
-                             std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
-    out << datacopy;
-    out.close();
-    hookLogger.info("Create crafting_data_packet.bin success!");
-}
-
-//Cmd packet
-LL_AUTO_TYPE_INSTANCE_HOOK(
-    AvailableCommandsPacketHook,
-    ll::memory::HookPriority::Normal,
-    AvailableCommandsPacket,
-    "?write@AvailableCommandsPacket@@UEBAXAEAVBinaryStream@@@Z",
-    void,
-    BinaryStream& stream
-) {
-    origin(stream);
-    const std::string &data = stream.getAndReleaseData();
-    std::string datacopy = data;
-    stream.writeString(data, nullptr, nullptr);
-    auto out = std::ofstream("data/available_commands_packet.bin",
-                             std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
-    out << datacopy;
-    out.close();
-    hookLogger.info("Create available_commands_packet.bin success!");
-}
-
 namespace plugin {
-    void dumpCreativeItemData(ll::Logger &logger) {
+    bool folderExists(std::string folderName) {
+        struct stat info{};
+        if (stat(folderName.c_str(), &info) != 0) {
+            return false;
+        } else if (info.st_mode & S_IFDIR) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    void createFolder(const ll::Logger &logger, const std::string folderName) {
+        int result = _mkdir(folderName.c_str());
+        if (result != 0) {
+            logger.error("Failed to create folder.");
+        } else {
+            logger.info("Folder " + std::string(folderName) + " created successfully.");
+        }
+    }
+
+    bool gzip_compress(const std::string &original_str, std::string &str) {
+        z_stream d_stream = {0};
+        if (Z_OK != deflateInit2(&d_stream, Z_BEST_COMPRESSION, Z_DEFLATED, MAX_WBITS + 16, 9, Z_DEFAULT_STRATEGY)) {
+            return false;
+        }
+        unsigned long len = compressBound(original_str.size());
+        auto *buf = (unsigned char *) malloc(len);
+        if (!buf) {
+            return false;
+        }
+        d_stream.next_in = (unsigned char *) (original_str.c_str());
+        d_stream.avail_in = original_str.size();
+        d_stream.next_out = buf;
+        d_stream.avail_out = len;
+        deflate(&d_stream, Z_SYNC_FLUSH);
+        deflateEnd(&d_stream);
+        str.assign((char *) buf, d_stream.total_out);
+        free(buf);
+        return true;
+    }
+
+    void writeNBT(const std::string &fileName, const CompoundTag &tag) {
+        std::string compressed;
+        gzip_compress(tag.toBinaryNbt(false), compressed);
+        auto out = std::ofstream(fileName, std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
+        out << compressed;
+        out.close();
+    }
+
+    template <typename JSON_TYPE>
+    void writeNlohmannJSON(const std::string &fileName, JSON_TYPE &json) {
+        auto out = std::ofstream(fileName, std::ofstream::out | std::ofstream::trunc);
+        out << json.dump(4);
+        out.close();
+    }
+
+    void writeJSON(const std::string &fileName, const Json::Value &json) {
+        auto out = std::ofstream(fileName, std::ofstream::out | std::ofstream::trunc);
+        out << json.toStyledString();
+        out.close();
+    }
+
+    std::string aabbToStr(const AABB &aabb) {
+        std::stringstream aabbStr;
+        aabbStr << aabb.min.x << "," << aabb.min.y << "," << aabb.min.z << "," << aabb.max.x << "," << aabb.max.y << ","
+                << aabb.max.z;
+        return aabbStr.str();
+    }
+
+    ll::Logger hookLogger("DataExtractor-Hook");
+
+    //Recipe packet
+    LL_AUTO_TYPE_INSTANCE_HOOK(
+        CraftingDataPacketHook,
+        ll::memory::HookPriority::Normal,
+        CraftingDataPacket,
+        "?write@CraftingDataPacket@@UEBAXAEAVBinaryStream@@@Z",
+        void,
+        BinaryStream& stream
+    ) {
+        origin(stream);
+        const std::string &data = stream.getAndReleaseData();
+        std::string datacopy = data;
+        stream.writeString(data, nullptr, nullptr);
+        auto out = std::ofstream("data/crafting_data_packet.bin",
+                                 std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
+        out << datacopy;
+        out.close();
+        hookLogger.info("Create crafting_data_packet.bin success!");
+    }
+
+    //Cmd packet
+    LL_AUTO_TYPE_INSTANCE_HOOK(
+        AvailableCommandsPacketHook,
+        ll::memory::HookPriority::Normal,
+        AvailableCommandsPacket,
+        "?write@AvailableCommandsPacket@@UEBAXAEAVBinaryStream@@@Z",
+        void,
+        BinaryStream& stream
+    ) {
+        origin(stream);
+        const std::string &data = stream.getAndReleaseData();
+        std::string datacopy = data;
+        stream.writeString(data, nullptr, nullptr);
+        auto out = std::ofstream("data/available_commands_packet.bin",
+                                 std::ofstream::out | std::ofstream::binary | std::ofstream::trunc);
+        out << datacopy;
+        out.close();
+        hookLogger.info("Create available_commands_packet.bin success!");
+    }
+
+    void dumpCreativeItemData(const ll::Logger &logger) {
         logger.info("Extracting creative items...");
 
         auto global = CompoundTag();
@@ -199,9 +199,9 @@ namespace plugin {
         logger.info(R"(Creative items data has been saved to "data/creative_items.nbt")");
     }
 
-    static AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
+    AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
 
-    void extractBlock(ListTag &dest, const Block &block, ll::Logger &logger) {
+    void extractBlock(ListTag &dest, const Block &block, const ll::Logger &logger) {
         auto nbt = CompoundTag();
         try {
             auto &legacy = block.getLegacyBlock();
@@ -226,8 +226,8 @@ namespace plugin {
             );
             nbt.putInt("burnChance", block.getFlameOdds());
             nbt.putInt("burnAbility", block.getBurnOdds());
-            nbt.putInt("lightDampening", (int) block.getLight().value); // ����
-            nbt.putInt("lightEmission", (int) block.getLightEmission().value); // ����
+            nbt.putInt("lightDampening", (int) block.getLight().value);
+            nbt.putInt("lightEmission", (int) block.getLightEmission().value);
             mce::Color color = block.getMapColor(
                 ll::service::getLevel()->getDimension(DimensionType(0))->getBlockSourceFromMainChunkSource(),
                 BlockPos(0, 10, 0)
@@ -273,23 +273,23 @@ namespace plugin {
             nbt.putBoolean("isStemBlock", block.isStemBlock());
             nbt.putBoolean("isSlabBlock", block.isSlabBlock());
             nbt.putBoolean("isLiquid", material.isLiquid());
-            nbt.putBoolean("isAlwaysDestroyable", material.isAlwaysDestroyable()); // �Ƿ���Ա������ƻ��һ�ȡ����
-            nbt.putBoolean("isLavaFlammable", block.isLavaFlammable()); // �Ƿ��ȼ
-            nbt.putBoolean("isUnbreakable", block.isUnbreakable()); // �Ƿ񲻿��ƻ�
+            nbt.putBoolean("isAlwaysDestroyable", material.isAlwaysDestroyable());
+            nbt.putBoolean("isLavaFlammable", block.isLavaFlammable());
+            nbt.putBoolean("isUnbreakable", block.isUnbreakable());
             nbt.putBoolean("isPowerSource", block.isSignalSource());
-            // nbt->putBoolean("breaksFallingBlocks", block.breaksFallingBlocks(BaseGameVersion()));δ֪����
-            nbt.putBoolean("isWaterBlocking", block.isWaterBlocking()); // �Ƿ����赲ˮ
-            nbt.putBoolean("isMotionBlockingBlock", block.isMotionBlockingBlock()); // �Ƿ����赲�ƶ�
-            nbt.putBoolean("hasComparatorSignal", block.hasComparatorSignal()); // �Ƿ��ܲ����Ƚ����ź�
-            nbt.putBoolean("pushesUpFallingBlocks", block.pushesUpFallingBlocks()); // �����෽��
-            // nbt->putBoolean("waterSpreadCausesSpawn", block.waterSpreadCausesSpawn());δ֪����
+            // nbt->putBoolean("breaksFallingBlocks", block.breaksFallingBlocks(BaseGameVersion()));
+            nbt.putBoolean("isWaterBlocking", block.isWaterBlocking());
+            nbt.putBoolean("isMotionBlockingBlock", block.isMotionBlockingBlock());
+            nbt.putBoolean("hasComparatorSignal", block.hasComparatorSignal());
+            nbt.putBoolean("pushesUpFallingBlocks", block.pushesUpFallingBlocks());
+            // nbt->putBoolean("waterSpreadCausesSpawn", block.waterSpreadCausesSpawn());
             nbt.putBoolean("canContainLiquid", block.getLegacyBlock().canContainLiquid());
-            // nbt->putBoolean("canBeMovingBlock", material.getBlocksMotion());��isMotionBlockingBlockһ������
-            // nbt->putBoolean("blocksPrecipitation", material.getBlocksPrecipitation());δ֪����
-            nbt.putBoolean("superHot", material.isSuperHot()); // ���Ե����Ż�ķ���
-            // nbt->putBoolean("canBeBrokenFromFalling", block.canBeBrokenFromFalling());δ֪����
+            // nbt->putBoolean("canBeMovingBlock", material.getBlocksMotion());
+            // nbt->putBoolean("blocksPrecipitation", material.getBlocksPrecipitation());
+            nbt.putBoolean("superHot", material.isSuperHot());
+            // nbt->putBoolean("canBeBrokenFromFalling", block.canBeBrokenFromFalling());
             nbt.putBoolean("isSolid", block.isSolid());
-            // nbt->putBoolean("isSolidBlocking", material.isSolidBlocking());δ֪����
+            // nbt->putBoolean("isSolidBlocking", material.isSolidBlocking());
             nbt.putBoolean("isContainerBlock", block.isContainerBlock());
         } catch (std::exception &e) {
             logger.error("Exception caught : " + std::string(e.what()));
@@ -298,9 +298,9 @@ namespace plugin {
         dest.add(nbt);
     }
 
-    static unsigned int blockStateCounter = 0;
+    unsigned int blockStateCounter = 0;
 
-    void dumpBlockAttributesData(ll::Logger &logger) {
+    void dumpBlockAttributesData(const ll::Logger &logger) {
         logger.info("Extracting block states' attributes...");
         const auto &palette = ll::service::getLevel()->getBlockPalette();
         int airCount = 0;
@@ -311,7 +311,6 @@ namespace plugin {
         blockStateCounter = 0;
         while (true) {
             const auto &block = palette.getBlock(blockStateCounter);
-            // HACK: ����ȷ�����size
             if (block.getName().getString() == "minecraft:air") {
                 airCount++;
                 if (airCount == 2) {
@@ -328,7 +327,7 @@ namespace plugin {
         logger.info(R"(Block attribute data have been saved to "data/block_attributes.nbt")");
     }
 
-    void extractItem(ListTag &dest, const Item &item, ll::Logger &logger) {
+    void extractItem(ListTag &dest, const Item &item, const ll::Logger &logger) {
         auto nbt = CompoundTag();
         logger.info("Extracting item - " + item.getFullItemName());
         nbt.putShort("id", item.getId());
@@ -343,7 +342,7 @@ namespace plugin {
         }
         nbt.putBoolean("isComponentBased", item.isComponentBased());
         nbt.putString("name", item.getFullItemName());
-        nbt.putShort("maxDamage", item.getMaxDamage()); // ����;�
+        nbt.putShort("maxDamage", item.getMaxDamage());
         nbt.putBoolean("isArmor", item.isArmor());
         nbt.putBoolean("isBlockPlanterItem", item.isBlockPlanterItem());
         nbt.putBoolean("isDamageable", item.isDamageable());
@@ -367,7 +366,6 @@ namespace plugin {
         nbt.putFloat("viewDamping", item.getViewDamping());
         nbt.putInt("cooldownTime", item.getCooldownTime());
         nbt.putString("cooldownType", item.getCooldownType().getString());
-        // ��Щ��ƷgetMaxStackSize����255����ʱ�����ԭ��
         nbt.putInt("maxStackSize", item.getMaxStackSize(item.buildDescriptor(0, nullptr)));
         CompoundTag descriptionId;
         std::set<std::string> uniqueStr;
@@ -387,7 +385,7 @@ namespace plugin {
         dest.add(nbt);
     }
 
-    void dumpItemData(ll::Logger &logger) {
+    void dumpItemData(const ll::Logger &logger) {
         auto tag = CompoundTag();
         auto list = ListTag();
         short counter = 0;
@@ -402,7 +400,7 @@ namespace plugin {
         logger.info(R"(Items' data have been saved to "data/item_data.nbt")");
     }
 
-    void dumpPalette(ll::Logger &logger) {
+    void dumpPalette(const ll::Logger &logger) {
         logger.info("Extracting block palette...");
 
         auto &palette = ll::service::getLevel()->getBlockPalette();
@@ -417,68 +415,125 @@ namespace plugin {
         logger.info(R"(Block palette table has been saved to "data/block_palette.nbt"))");
     }
 
-    void dumpCommandArgDataV1(ll::Logger &logger) {
+    bool compareCmdSymbolByIndex(const CommandRegistry::Symbol &s1, const CommandRegistry::Symbol &s2) {
+        return s1.toIndex() < s2.toIndex();
+    }
+
+    bool compareCmdSymbolByValue(const CommandRegistry::Symbol &s1, const CommandRegistry::Symbol &s2) {
+        return s1.value() < s2.value();
+    }
+
+    template <typename JSON_TYPE>
+    void dumpCmdSymbol(const ll::Logger &logger, const CommandRegistry &registry, JSON_TYPE &json, const CommandRegistry::Symbol &symbol) {
+        const std::string name = registry.symbolToString(symbol);
+        logger.info("Extracting command arg type - " + name);
+        auto obj = std::map<std::string, std::string>();
+        obj["description"] = registry.describe(symbol);
+        obj["index"] = std::to_string(symbol.toIndex());
+        obj["value"] = std::to_string(symbol.value());
+        json[name] = obj;
+    }
+
+    template <typename JSON_TYPE>
+    void dumpCmdSymbol(const ll::Logger &logger, const CommandRegistry &registry, JSON_TYPE &json, const CommandRegistry::Symbol &symbol, const std::string &key) {
+        const std::string name = registry.symbolToString(symbol);
+        logger.info("Extracting command arg type - " + name);
+        auto obj = std::map<std::string, std::string>();
+        obj["name"] = name;
+        obj["description"] = registry.describe(symbol);
+        obj["index"] = std::to_string(symbol.toIndex());
+        obj["value"] = std::to_string(symbol.value());
+        json[key] = obj;
+    }
+
+    void dumpCommandNameSymbol(const ll::Logger &logger) {
         const auto &registry = ll::service::getMinecraft()->getCommands().getRegistry();
-        auto global = nlohmann::json::object();
+        auto symbols_sortby_index = std::vector<CommandRegistry::Symbol>();
+        auto symbols_sortby_value = std::vector<CommandRegistry::Symbol>();
         for (auto &symbol: registry.mCommandSymbols) {
             if (!registry.isValid(symbol)) {
                 continue;
             }
-            std::string sym = registry.symbolToString(symbol);
-            logger.info("Extracting command arg type - " + sym);
-            auto obj = nlohmann::json::object();
-            obj["value"] = symbol.value();
-            obj["index"] = symbol.toIndex();
-            global[sym] = obj;
+            if (auto name = registry.symbolToString(symbol); name == "ll" || name == "ext") {
+                continue;
+            }
+            symbols_sortby_index.push_back(symbol);
+            symbols_sortby_value.push_back(symbol);
         }
-        writeJSON("data/command_arg_types.json", global);
-        logger.info("Command arg type data have been saved to \"data/command_arg_types.json\"");
+        // Sort symbol by index
+        std::ranges::sort(symbols_sortby_index, compareCmdSymbolByIndex);
+        std::ranges::sort(symbols_sortby_value, compareCmdSymbolByValue);
+        nlohmann::ordered_json global1;
+        for (auto &symbol : symbols_sortby_index) {
+            dumpCmdSymbol(logger, registry, global1, symbol);
+        }
+        writeNlohmannJSON("data/command_name_symbol_i.json", global1);
+        nlohmann::ordered_json global2;
+        for (auto &symbol : symbols_sortby_value) {
+            dumpCmdSymbol(logger, registry, global2, symbol);
+        }
+        writeNlohmannJSON("data/command_name_symbol_v.json", global2);
+        logger.info("Command name symbol have been saved to \"data/command_name_symbol_(i/v).json\"");
     }
 
-    void dumpCommandArgDataV2(ll::Logger &logger) {
+    void dumpCommonCommandArgData(const ll::Logger &logger) {
         const auto &registry = ll::service::getMinecraft()->getCommands().getRegistry();
-        auto global = nlohmann::json::object();
+        nlohmann::ordered_json global;
         for (int i = 0; i < 1000; i++) {
             if (const int symbol = i | 0x100000; registry.isValid(symbol)) {
-                const auto name = registry.symbolToString(symbol);
-                auto description = registry.describe(symbol);
-
-                auto object = nlohmann::json::object();
-                object["id"] = i;
-                object["description"] = description;
-
-                global[name] = object;
+                dumpCmdSymbol(logger, registry, global, symbol);
             }
         }
-        writeJSON("data/command_arg_types.json", global);
-        logger.info("Command arg type data have been saved to \"data/command_arg_types.json\"");
+        writeNlohmannJSON("data/command_arg_types_common_i.json", global);
+        logger.info("Common command arg type have been saved to \"data/command_arg_types_common_i.json\"");
     }
 
-    void dumpCommandArgDataV3(ll::Logger &logger) {
+    void dumpFullCommandArgData(const ll::Logger &logger) {
         auto &registry = ll::service::getMinecraft()->getCommands().getRegistry();
-        auto global = nlohmann::json::object();
-        registry.forEachNonTerminal([&registry, &global, &logger](const CommandRegistry::Symbol &symbol) {
+        auto symbols_sortby_index = std::vector<CommandRegistry::Symbol>();
+        auto symbols_sortby_value = std::vector<CommandRegistry::Symbol>();
+        registry.forEachNonTerminal([&registry, &symbols_sortby_index, &symbols_sortby_value](const CommandRegistry::Symbol &symbol) {
             if (!registry.isValid(symbol)) {
                 return;
             }
-            const std::string name = registry.symbolToString(symbol.value());
-            const std::string desc = registry.describe(symbol.value());
-            logger.info("Extracting command arg type: " + name);
-            auto obj = nlohmann::json::object();
-            obj["desc"] = desc;
-            obj["index"] = symbol.toIndex();
-            global[name] = obj;
+            symbols_sortby_index.push_back(symbol);
+            symbols_sortby_value.push_back(symbol);
         });
-        writeJSON("data/command_arg_types.json", global);
-        logger.info("Command arg type data have been saved to \"data/command_arg_types.json\"");
+        // Sort symbol by index
+        std::ranges::sort(symbols_sortby_index, compareCmdSymbolByIndex);
+        nlohmann::ordered_json global1;
+        for (auto &symbol : symbols_sortby_index) {
+            dumpCmdSymbol(logger, registry, global1, symbol);
+        }
+        writeNlohmannJSON("data/command_arg_types_full_i.json", global1);
+        nlohmann::ordered_json global2;
+        for (auto &symbol : symbols_sortby_value) {
+            dumpCmdSymbol(logger, registry, global2, symbol);
+        }
+        writeNlohmannJSON("data/command_arg_types_full_v.json", global2);
+        logger.info("Full command arg type data have been saved to \"data/command_arg_types_full_(i/v).json\"");
     }
 
-    void dumpBiomeData(ll::Logger &logger) {
+    void dumpCommandmConstrainedValues(const ll::Logger &logger) {
+        auto &registry = ll::service::getMinecraft()->getCommands().getRegistry();
+        auto array = nlohmann::json::array();
+        for (auto &[mValue, mEnum, mConstraints] : registry.mConstrainedValues) {
+            auto obj = nlohmann::json::object();
+            dumpCmdSymbol(logger, registry, obj, mValue, "value");
+            dumpCmdSymbol(logger, registry, obj, mEnum, "enum");
+            obj["constraints"] = mConstraints;
+            array.push_back(obj);
+        }
+        writeNlohmannJSON("data/command_constrained_values.json", array);
+        logger.info("Command constrained values data have been saved to \"data/command_constrained_values.json\"");
+    }
+
+    void dumpBiomeData(const ll::Logger &logger) {
         BiomeRegistry &registry = ll::service::getLevel()->getBiomeRegistry();
         auto biomeInfoMap = nlohmann::json::object();
         auto biomes = CompoundTag();
         TagRegistry<IDType<BiomeTagIDType>, IDType<BiomeTagSetIDType> > &tagReg = registry.getTagRegistry();
-        registry.forEachBiome([&biomes, &registry, &logger, &tagReg, &biomeInfoMap](Biome &biome) {
+        registry.forEachBiome([&biomes, &logger, &tagReg, &biomeInfoMap](Biome &biome) {
             auto &name = biome.getName();
             int id = biome.getId();
             logger.info("Extracting biome data - " + name);
@@ -491,7 +546,7 @@ namespace plugin {
             biomeInfoMap[name] = obj;
         });
         writeNBT("data/biome_definitions.nbt", biomes);
-        writeJSON("data/biome_id_and_type.json", biomeInfoMap);
+        writeNlohmannJSON("data/biome_id_and_type.json", biomeInfoMap);
         logger.info(
             R"(Biome definitions has been saved to "data/biome_definitions.nbt" and "data/biome_id_and_type.json")"
         );
@@ -509,8 +564,7 @@ namespace plugin {
         }
     };
 
-
-    void dumpPropertyTypeData(ll::Logger &logger) {
+    void dumpPropertyTypeData(const ll::Logger &logger) {
         logger.info("Extracting property type data...");
 
         std::map<std::string, std::vector<std::unique_ptr<class CompoundTag> > > blockToBlockStateData;
@@ -587,7 +641,6 @@ namespace plugin {
                     tmpLookUp[propertyName] = propertyType;
                 } else if (tmpLookUp[propertyName] != propertyType && !differentSizePropertyTypes.
                            contains(propertyName)) {
-                    // ȡֵ��Χ��ͬ��ͬ����������
                     logger.warn("Property type \"" + propertyName + "\" has different size in different blocks!");
                     differentSizePropertyTypes.insert(propertyName);
                     auto fullBlockName = "minecraft:" + entry.first;
@@ -633,7 +686,6 @@ namespace plugin {
             obj["serializationName"] = propertyTypeEntry.second.serializationName;
             obj["valueType"] = propertyTypeEntry.second.valueType;
             if (propertyTypeEntry.second.valueType == "INTEGER") {
-                // ���� propertyTypeEntry.second.values �е�ֵ
                 std::vector<int> values;
                 for (auto &value: propertyTypeEntry.second.values) {
                     values.push_back(stoi(value));
@@ -641,7 +693,6 @@ namespace plugin {
                 std::sort(values.begin(), values.end());
                 obj["values"] = values;
             } else if (propertyTypeEntry.second.valueType == "BOOLEAN") {
-                // ת����bool
                 std::vector<bool> values{false, true};
                 obj["values"] = values;
             } else {
@@ -653,11 +704,11 @@ namespace plugin {
         globalJson["propertyTypes"] = propertyTypes;
         globalJson["differentSizePropertyTypes"] = differentSizePropertyTypes;
         globalJson["specialBlockTypes"] = specialBlockTypes;
-        writeJSON("data/block_property_types.json", globalJson);
+        writeNlohmannJSON("data/block_property_types.json", globalJson);
         logger.info("Block property type data have been saved to \"data/block_property_types.json\"");
     }
 
-    void dumpItemTags(ll::Logger &logger) {
+    void dumpItemTags(const ll::Logger &logger) {
         logger.info("Extracting item tags...");
         nlohmann::json res = nlohmann::json::object();
 #define DUMP(TAG)                                                                                                      \
@@ -731,10 +782,10 @@ namespace plugin {
         DUMP(WoodenTier);
         DUMP(Wool);
 #undef DUMP
-        writeJSON("data/item_tags.json", res);
+        writeNlohmannJSON("data/item_tags.json", res);
     }
 
-    void dumpBlockTags(ll::Logger &logger) {
+    void dumpBlockTags(const ll::Logger &logger) {
         logger.info("Extracting block tags...");
         nlohmann::json res = nlohmann::json::object();
 #define DUMP(TAG)                                                                                                      \
@@ -779,14 +830,17 @@ namespace plugin {
         DUMP(Wood);
         DUMP(WoodDiggable);
 #undef DUMP
-        writeJSON("data/block_tags.json", res);
+        writeNlohmannJSON("data/block_tags.json", res);
     }
 
-    void ext(ll::Logger &logger) {
+    void ext(const ll::Logger &logger) {
         if (!folderExists("data")) {
             createFolder(logger, "data");
         }
-        dumpCommandArgDataV3(logger);
+        dumpCommandNameSymbol(logger);
+        dumpCommonCommandArgData(logger);
+        dumpFullCommandArgData(logger);
+        dumpCommandmConstrainedValues(logger);
         dumpBiomeData(logger);
         dumpCreativeItemData(logger);
         dumpBlockAttributesData(logger);
@@ -808,7 +862,7 @@ namespace plugin {
         auto &logger = mSelf.getLogger();
         mSelf.getLogger().info("enabling...");
 
-        auto cmdReg = ll::service::getCommandRegistry();
+        const auto cmdReg = ll::service::getCommandRegistry();
         auto command = DynamicCommand::createCommand(cmdReg, "ext", "ext data", CommandPermissionLevel::Any);
         command->addOverload();
         command->setCallback(
