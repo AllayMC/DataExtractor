@@ -16,6 +16,7 @@
 #include <ll/api/memory/Hook.h>
 
 // MC
+#include <mc/world/Minecraft.h>
 // Item
 #include <mc/world/item/Item.h>
 #include <mc/world/item/ItemDescriptor.h>
@@ -48,6 +49,7 @@
 // Command
 #include <mc/server/commands/CommandRegistry.h>
 #include "mc/server/commands/CommandParameterData.h"
+#include "mc/server/commands/MinecraftCommands.h"
 // NBT
 #include <mc/nbt/CompoundTag.h>
 #include <mc/nbt/CompoundTagVariant.h>
@@ -79,17 +81,17 @@ namespace plugin {
             return false;
         }
         const unsigned long len = compressBound(original_str.size());
-        auto *buf = (unsigned char *) malloc(len);
+        auto *buf = static_cast<unsigned char *>(malloc(len));
         if (!buf) {
             return false;
         }
-        d_stream.next_in = (unsigned char *) (original_str.c_str());
+        d_stream.next_in = (unsigned char *) original_str.c_str();
         d_stream.avail_in = original_str.size();
         d_stream.next_out = buf;
         d_stream.avail_out = len;
         deflate(&d_stream, Z_SYNC_FLUSH);
         deflateEnd(&d_stream);
-        str.assign((char *) buf, d_stream.total_out);
+        str.assign(reinterpret_cast<char *>(buf), d_stream.total_out);
         free(buf);
         return true;
     }
@@ -368,8 +370,7 @@ namespace plugin {
         for (int i = 0; i <= 256; ++i) {
             try {
                 if (item.isValidAuxValue(i)) {
-                    const auto itemstack = ItemStack(item, 1, i); // ignore some invaild aux exception
-                    if (!uniqueStr.contains(itemstack.getDescriptionId())) {
+                    if (const auto itemstack = ItemStack(item, 1, i); !uniqueStr.contains(itemstack.getDescriptionId())) {
                         uniqueStr.insert(itemstack.getDescriptionId());
                         descriptionId.putString(std::to_string(i), itemstack.getDescriptionId());
                     }
