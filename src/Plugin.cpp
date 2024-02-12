@@ -826,6 +826,7 @@ namespace plugin {
         DUMP(Stone);
         DUMP(StoneDiggable);
         DUMP(TextSign);
+        DUMP(Trapdoors);
         DUMP(Water);
         DUMP(Wood);
         DUMP(WoodDiggable);
