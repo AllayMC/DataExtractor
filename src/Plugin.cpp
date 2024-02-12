@@ -9,7 +9,6 @@
 #include <zlib.h>
 
 // LL
-#include <Plugin.h>
 #include <ll/api/command/Command.h>
 #include <ll/api/command/CommandHandle.h>
 #include <ll/api/command/CommandRegistrar.h>
@@ -170,6 +169,8 @@ namespace plugin {
         out.close();
         hookLogger.info("Create available_commands_packet.bin success!");
     }
+
+    std::unique_ptr<std::reference_wrapper<ll::plugin::NativePlugin>> pluginInstance;
 
     void dumpCreativeItemData(const ll::Logger &logger) {
         logger.info("Extracting creative items...");
@@ -850,24 +851,6 @@ namespace plugin {
         dumpPropertyTypeData(logger);
     }
 
-    Plugin::Plugin() = default;
-
-    Plugin& Plugin::getInstance() {
-        static Plugin instance;
-        return instance;
-    }
-
-    ll::plugin::NativePlugin& Plugin::getSelf() const { return *mSelf; }
-
-    // The global plugin instance.
-    std::unique_ptr<Plugin> plugin = nullptr;
-
-    bool Plugin::load(ll::plugin::NativePlugin& self) {
-        mSelf = std::addressof(self);
-        getSelf().getLogger().info("loading...");
-        return true;
-    }
-
     // // Use this if command not works
     // LL_AUTO_TYPE_INSTANCE_HOOK(
     //     TextPacketHandleHook,
@@ -895,11 +878,17 @@ namespace plugin {
         class CommandOutput& output
     ) {
         origin(o, output);
-        ext(Plugin::getInstance().getSelf().getLogger());
+        ext(pluginInstance->get().getLogger());
     }
 
-    bool Plugin::enable() {
-        auto& logger = getSelf().getLogger();
+    bool load(ll::plugin::NativePlugin& self) {
+        self.getLogger().info("loading...");
+        pluginInstance = std::make_unique<std::reference_wrapper<ll::plugin::NativePlugin>>(self);
+        return true;
+    }
+
+    bool enable(ll::plugin::NativePlugin& self) {
+        auto& logger = self.getLogger();
         logger.info("enabling...");
 
         // TODO: It seems not works, replaced with TextPacket hook. Need to fix it in the future
@@ -917,24 +906,18 @@ namespace plugin {
         return true;
     }
 
-    bool Plugin::disable() {
-        getSelf().getLogger().info("disabling...");
+    bool disable(ll::plugin::NativePlugin&) {
+        return true;
+    }
+
+    bool unload(ll::plugin::NativePlugin&) {
         return true;
     }
 
     extern "C" {
-        _declspec(dllexport) bool ll_plugin_load(ll::plugin::NativePlugin& self) {
-            return Plugin::getInstance().load(self);
-        }
-
-        _declspec(dllexport) bool ll_plugin_enable(ll::plugin::NativePlugin&) { return Plugin::getInstance().enable(); }
-
-        _declspec(dllexport) bool ll_plugin_disable(ll::plugin::NativePlugin&) { return Plugin::getInstance().disable(); }
-
-        /// @warning Unloading the plugin may cause a crash if the plugin has not released all of its
-        /// resources. If you are unsure, keep this function commented out.
-        // _declspec(dllexport) bool ll_plugin_unload(ll::plugin::NativePlugin&) {
-        //     return RenameThis::getInstance().unload();
-        // }
+        _declspec(dllexport) auto ll_plugin_disable(ll::plugin::NativePlugin& self) -> bool { return disable(self); }
+        _declspec(dllexport) auto ll_plugin_enable(ll::plugin::NativePlugin& self) -> bool { return enable(self); }
+        _declspec(dllexport) auto ll_plugin_load(ll::plugin::NativePlugin& self) -> bool { return load(self); }
+        _declspec(dllexport) auto ll_plugin_unload(ll::plugin::NativePlugin& self) -> bool { return unload(self); }
     }
 } // namespace plugin
