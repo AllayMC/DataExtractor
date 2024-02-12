@@ -10,7 +10,9 @@
 
 // LL
 #include <Plugin.h>
-#include <ll/api/command/DynamicCommand.h>
+#include <ll/api/command/Command.h>
+#include <ll/api/command/CommandHandle.h>
+#include <ll/api/command/CommandRegistrar.h>
 #include <ll/api/plugin/NativePlugin.h>
 #include <ll/api/service/Bedrock.h>
 #include <ll/api/memory/Hook.h>
@@ -24,7 +26,6 @@
 #include <mc/world/item/ItemTag.h>
 #include <mc/world/item/VanillaItemTags.h>
 #include <mc/world/item/registry/CreativeItemRegistry.h>
-#include <mc/world/item/registry/ItemRegistry.h>
 #include <mc/world/item/registry/ItemRegistryManager.h>
 #include <mc/world/item/registry/ItemRegistryRef.h>
 #include <mc/world/item/registry/ItemStack.h>
@@ -32,9 +33,9 @@
 #include <mc/world/level/block/Block.h>
 #include <mc/world/level/block/VanillaBlockTags.h>
 #include <mc/world/level/block/registry/BlockTypeRegistry.h>
+#include <mc/common/Brightness.h>
 // Level
 #include <mc/world/level/BlockPalette.h>
-#include <mc/world/level/IConstBlockSource.h>
 #include <mc/world/level/Level.h>
 #include <mc/world/level/biome/Biome.h>
 #include <mc/world/level/biome/registry/BiomeRegistry.h>
@@ -48,12 +49,16 @@
 #include <mc/world/phys/AABB.h>
 // Command
 #include <mc/server/commands/CommandRegistry.h>
-#include "mc/server/commands/CommandParameterData.h"
-#include "mc/server/commands/MinecraftCommands.h"
+#include <mc/server/commands/MinecraftCommands.h>
+#include <mc/server/commands/CommandOutput.h>
+#include <mc/server/commands/CommandOrigin.h>
+#include <mc/server/commands/shared/HelpCommand.h>
 // NBT
 #include <mc/nbt/CompoundTag.h>
 #include <mc/nbt/CompoundTagVariant.h>
 // Network
+#include <mc/network/ServerNetworkHandler.h>
+#include <mc/network/packet/TextPacket.h>
 #include <mc/network/packet/CraftingDataPacket.h>
 #include <mc/network/packet/AvailableCommandsPacket.h>
 #include <mc/deps/core/utility/BinaryStream.h>
@@ -529,7 +534,7 @@ namespace plugin {
         auto biomes = CompoundTag();
         TagRegistry<IDType<BiomeTagIDType>, IDType<BiomeTagSetIDType> > &tagReg = registry.getTagRegistry();
         registry.forEachBiome([&biomes, &logger, &tagReg, &biomeInfoMap](Biome &biome) {
-            auto &name = biome.getName();
+            auto &name = biome.getName().getString();
             int id = biome.getId();
             logger.info("Extracting biome data - " + name);
             auto tag = CompoundTag();
@@ -845,28 +850,91 @@ namespace plugin {
         dumpPropertyTypeData(logger);
     }
 
-    Plugin::Plugin(ll::plugin::NativePlugin &self) : mSelf(self) { mSelf.getLogger().info("loading..."); }
+    Plugin::Plugin() = default;
 
-    bool Plugin::disable() {
-        mSelf.getLogger().info("disabling...");
+    Plugin& Plugin::getInstance() {
+        static Plugin instance;
+        return instance;
+    }
+
+    ll::plugin::NativePlugin& Plugin::getSelf() const { return *mSelf; }
+
+    // The global plugin instance.
+    std::unique_ptr<Plugin> plugin = nullptr;
+
+    bool Plugin::load(ll::plugin::NativePlugin& self) {
+        mSelf = std::addressof(self);
+        getSelf().getLogger().info("loading...");
         return true;
     }
 
-    bool Plugin::enable() {
-        auto &logger = mSelf.getLogger();
-        mSelf.getLogger().info("enabling...");
+    // // Use this if command not works
+    // LL_AUTO_TYPE_INSTANCE_HOOK(
+    //     TextPacketHandleHook,
+    //     ll::memory::HookPriority::Normal,
+    //     ServerNetworkHandler,
+    //     "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z",
+    //     void,
+    //     class NetworkIdentifier const& source,
+    //     class TextPacket const& packet
+    // ) {
+    //     origin(source, packet);
+    //     if (packet.mMessage == "ext") {
+    //         ext(Plugin::getInstance().getSelf().getLogger());
+    //     }
+    // }
 
-        const auto cmdReg = ll::service::getCommandRegistry();
-        auto command = DynamicCommand::createCommand(cmdReg, "ext", "ext data", CommandPermissionLevel::Any);
-        command->addOverload();
-        command->setCallback(
-            [&logger](DynamicCommand const &, CommandOrigin const &origin, CommandOutput &output,
-                      std::unordered_map<std::string, DynamicCommand::Result> &) {
-                ext(logger);
-            }
-        );
-        DynamicCommand::setup(cmdReg, std::move(command));
+    // // Another way if command not works. No need to join the server
+    LL_AUTO_TYPE_INSTANCE_HOOK(
+        HelpCommandHook,
+        ll::memory::HookPriority::Normal,
+        HelpCommand,
+        "?execute@HelpCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z",
+        void,
+        class CommandOrigin const& o,
+        class CommandOutput& output
+    ) {
+        origin(o, output);
+        ext(Plugin::getInstance().getSelf().getLogger());
+    }
+
+    bool Plugin::enable() {
+        auto& logger = getSelf().getLogger();
+        logger.info("enabling...");
+
+        // TODO: It seems not works, replaced with TextPacket hook. Need to fix it in the future
+        // auto& cmd = ll::command::CommandRegistrar::getInstance().getOrCreateCommand(
+        //     "ext",
+        //     "extract data",
+        //     CommandPermissionLevel::GameDirectors,
+        //     CommandFlagValue::None
+        // );
+        // cmd.overload().execute<[&](CommandOrigin const&, CommandOutput& output) {
+        //     ext(logger);
+        //     output.success("Success!");
+        // }>();
 
         return true;
+    }
+
+    bool Plugin::disable() {
+        getSelf().getLogger().info("disabling...");
+        return true;
+    }
+
+    extern "C" {
+        _declspec(dllexport) bool ll_plugin_load(ll::plugin::NativePlugin& self) {
+            return Plugin::getInstance().load(self);
+        }
+
+        _declspec(dllexport) bool ll_plugin_enable(ll::plugin::NativePlugin&) { return Plugin::getInstance().enable(); }
+
+        _declspec(dllexport) bool ll_plugin_disable(ll::plugin::NativePlugin&) { return Plugin::getInstance().disable(); }
+
+        /// @warning Unloading the plugin may cause a crash if the plugin has not released all of its
+        /// resources. If you are unsure, keep this function commented out.
+        // _declspec(dllexport) bool ll_plugin_unload(ll::plugin::NativePlugin&) {
+        //     return RenameThis::getInstance().unload();
+        // }
     }
 } // namespace plugin

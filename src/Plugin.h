@@ -5,15 +5,20 @@
 namespace plugin {
 
 class Plugin {
-public:
-    explicit Plugin(ll::plugin::NativePlugin& self);
+    Plugin();
 
+public:
     Plugin(Plugin&&)                 = delete;
     Plugin(const Plugin&)            = delete;
     Plugin& operator=(Plugin&&)      = delete;
     Plugin& operator=(const Plugin&) = delete;
 
-    ~Plugin() = default;
+    static Plugin& getInstance();
+
+    [[nodiscard]] ll::plugin::NativePlugin& getSelf() const;
+
+    /// @return True if the plugin is loaded successfully.
+    bool load(ll::plugin::NativePlugin&);
 
     /// @return True if the plugin is enabled successfully.
     bool enable();
@@ -22,7 +27,7 @@ public:
     bool disable();
 
 private:
-    ll::plugin::NativePlugin& mSelf;
+    ll::plugin::NativePlugin* mSelf{};
 };
 
 } // namespace plugin
