@@ -8,6 +8,9 @@
 // Compress
 #include <zlib.h>
 
+// Json
+#include <nlohmann/json.hpp>
+
 // LL
 #include <ll/api/command/Command.h>
 #include <ll/api/command/CommandHandle.h>
@@ -205,15 +208,14 @@ namespace plugin {
 
     AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
 
-    void extractBlock(ListTag &dest, const Block &block, const ll::Logger &logger) {
+    void extractBlock(ListTag &dest, const Block& block, const ll::Logger &logger) {
         auto nbt = CompoundTag();
         try {
-            auto &legacy = block.getLegacyBlock();
-            auto name = legacy.getNamespace() + ":" + legacy.getRawNameId();
-            logger.info("Extracting block state - " + name + ":" + std::to_string(block.getRuntimeId()));
-            const Material &material = legacy.getMaterial();
             auto sid = block.getSerializationId().clone();
-            nbt.putString("name", sid->getString("name"));
+            auto& name = sid->getString("name");
+            logger.info("Extracting block state - " + name + ":" + std::to_string(block.getRuntimeId()));
+            const Material &material = block.getMaterial();
+            nbt.putString("name", name);
             nbt.putString("descriptionId", block.getDescriptionId());
             nbt.putString("blockEntityName", std::string(magic_enum::enum_name(block.getBlockEntityType())));
             nbt.putCompound("states", sid->getCompound("states")->clone());
@@ -266,7 +268,7 @@ namespace plugin {
             nbt.putBoolean("hasCollision", tmp2 != ZERO_AABB);
             nbt.putBoolean("hasBlockEntity", block.getBlockEntityType() != BlockActorType::Undefined);
             nbt.putBoolean("isAir", block.isAir());
-            nbt.putBoolean("isBounceBlock", block.isAir());
+            nbt.putBoolean("isBounceBlock", block.isBounceBlock());
             nbt.putBoolean("isButtonBlock", block.isButtonBlock());
             nbt.putBoolean("isCropBlock", block.isCropBlock());
             nbt.putBoolean("isDoorBlock", block.isDoorBlock());
@@ -281,17 +283,17 @@ namespace plugin {
             nbt.putBoolean("isLavaFlammable", block.isLavaFlammable());
             nbt.putBoolean("isUnbreakable", block.isUnbreakable());
             nbt.putBoolean("isPowerSource", block.isSignalSource());
-            // nbt->putBoolean("breaksFallingBlocks", block.breaksFallingBlocks(BaseGameVersion()));
+            // nbt->putBoolean("breaksFallingBlocks", block->breaksFallingBlocks(BaseGameVersion()));
             nbt.putBoolean("isWaterBlocking", block.isWaterBlocking());
             nbt.putBoolean("isMotionBlockingBlock", block.isMotionBlockingBlock());
             nbt.putBoolean("hasComparatorSignal", block.hasComparatorSignal());
             nbt.putBoolean("pushesUpFallingBlocks", block.pushesUpFallingBlocks());
-            // nbt->putBoolean("waterSpreadCausesSpawn", block.waterSpreadCausesSpawn());
+            // nbt->putBoolean("waterSpreadCausesSpawn", block->waterSpreadCausesSpawn());
             nbt.putBoolean("canContainLiquid", block.getLegacyBlock().canContainLiquid());
             // nbt->putBoolean("canBeMovingBlock", material.getBlocksMotion());
             // nbt->putBoolean("blocksPrecipitation", material.getBlocksPrecipitation());
             nbt.putBoolean("superHot", material.isSuperHot());
-            // nbt->putBoolean("canBeBrokenFromFalling", block.canBeBrokenFromFalling());
+            // nbt->putBoolean("canBeBrokenFromFalling", block->canBeBrokenFromFalling());
             nbt.putBoolean("isSolid", block.isSolid());
             // nbt->putBoolean("isSolidBlocking", material.isSolidBlocking());
             nbt.putBoolean("isContainerBlock", block.isContainerBlock());
@@ -326,7 +328,7 @@ namespace plugin {
             blockStateCounter++;
         }
         tag.put("block", list.copyList());
-        logger.info("Successfully extract " + std::to_string(blockStateCounter) + " block states' attributes!");
+        // logger.info("Successfully extract " + std::to_string(blockStateCounter) + " block states' attributes!");
         writeNBT("data/block_attributes.nbt", tag);
         logger.info(R"(Block attribute data have been saved to "data/block_attributes.nbt")");
     }
@@ -409,7 +411,8 @@ namespace plugin {
         auto global = CompoundTag();
         auto blocks = ListTag();
         for (int i = 0; i <= blockStateCounter; ++i) {
-            blocks.add(palette.getBlock(i).getSerializationId().clone());
+            // Do not use CompoundTag::clone() here, use CompoundTag's constructor instead!
+            blocks.add(CompoundTag(palette.getBlock(i).getSerializationId()));
         }
         global.put("blocks", blocks);
         writeNBT("data/block_palette.nbt", global);
@@ -845,11 +848,11 @@ namespace plugin {
         dumpBiomeData(logger);
         dumpCreativeItemData(logger);
         dumpBlockAttributesData(logger);
-        dumpItemData(logger);
         dumpPalette(logger);
+        dumpPropertyTypeData(logger);
         dumpBlockTags(logger);
         dumpItemTags(logger);
-        dumpPropertyTypeData(logger);
+        dumpItemData(logger);
     }
 
     // // Use this if command not works
