@@ -877,7 +877,7 @@ namespace plugin {
         dumpCommonCommandArgData(logger);
         dumpFullCommandArgData(logger);
         dumpCommandmConstrainedValues(logger);
-//        dumpBiomeData(logger);
+        dumpBiomeData(logger);
         dumpCreativeItemData(logger);
         dumpBlockAttributesData(logger);
         dumpPalette(logger);
