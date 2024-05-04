@@ -64,6 +64,7 @@
 #include <mc/network/packet/CraftingDataPacket.h>
 #include <mc/network/packet/AvailableCommandsPacket.h>
 #include <mc/deps/core/utility/BinaryStream.h>
+#include <mc/network/packet/BiomeDefinitionListPacket.h>
 
 namespace plugin {
     bool folderExists(const std::string& folderName) {
@@ -152,6 +153,21 @@ namespace plugin {
         out.close();
         hookLogger.info("Create crafting_data_packet.bin success!");
     }
+
+    //Biome definition packet
+    //A way to get biome_definitions from network
+    //LL_AUTO_TYPE_INSTANCE_HOOK(
+    //        BiomeDefinitionListPacketHook,
+    //        ll::memory::HookPriority::Normal,
+    //        BiomeDefinitionListPacket,
+    //        "?write@BiomeDefinitionListPacket@@UEBAXAEAVBinaryStream@@@Z",
+    //        void,
+    //        BinaryStream& stream
+    //) {
+    //    origin(stream);
+    //    writeNBT("biome_definitions.nbt", this->mBiomeData);
+    //    hookLogger.info("Create biome_definitions.nbt success!");
+    //}
 
     //Cmd packet
     LL_AUTO_TYPE_INSTANCE_HOOK(
@@ -532,14 +548,30 @@ namespace plugin {
         logger.info("Command constrained values data have been saved to \"data/command_constrained_values.json\"");
     }
 
+    int getBiomeId(const ll::Logger& logger, const Biome& biome) {
+        try {
+            return ll::memory::dAccess<int>(&biome, 0x80);
+        } catch (...) {
+            logger.error("Failed in getBiomeId()! Please check if the memory offset is right!");
+        }
+    }
+
+    std::string getBiomeName(const ll::Logger& logger, const Biome& biome) {
+        try {
+            return ll::memory::dAccess<HashedString>(&biome, 0x08).getString();
+        } catch (...) {
+            logger.error("Failed in getBiomeName()! Please check if the memory offset is right!");
+        }
+    }
+
     void dumpBiomeData(const ll::Logger &logger) {
         BiomeRegistry &registry = ll::service::getLevel()->getBiomeRegistry();
         auto biomeInfoMap = nlohmann::json::object();
         auto biomes = CompoundTag();
         TagRegistry<IDType<BiomeTagIDType>, IDType<BiomeTagSetIDType> > &tagReg = registry.getTagRegistry();
         registry.forEachBiome([&biomes, &logger, &tagReg, &biomeInfoMap](Biome &biome) {
-            auto &name = biome.getName().getString();
-            int id = biome.getId();
+            auto name = getBiomeName(logger, biome);
+            int  id   = getBiomeId(logger, biome);
             logger.info("Extracting biome data - " + name);
             auto tag = CompoundTag();
             biome.writePacketData(tag, tagReg);
@@ -845,7 +877,7 @@ namespace plugin {
         dumpCommonCommandArgData(logger);
         dumpFullCommandArgData(logger);
         dumpCommandmConstrainedValues(logger);
-        dumpBiomeData(logger);
+//        dumpBiomeData(logger);
         dumpCreativeItemData(logger);
         dumpBlockAttributesData(logger);
         dumpPalette(logger);

@@ -9,7 +9,7 @@ end
 add_requires("zlib-ng 2.1.3")
 
 -- Latest release
-add_requires("levilamina 0.10.2")
+add_requires("levilamina 0.12.3")
 
 -- Latest commit on develop
 -- add_requires("levilamina develop")
