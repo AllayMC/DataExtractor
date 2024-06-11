@@ -31,6 +31,7 @@
 #include <mc/world/item/registry/ItemRegistryManager.h>
 #include <mc/world/item/registry/ItemRegistryRef.h>
 #include <mc/world/item/registry/ItemStack.h>
+#include "mc/world/item/components/ComponentItem.h"
 // Block
 #include <mc/world/level/block/Block.h>
 #include <mc/world/level/block/VanillaBlockTags.h>
@@ -384,9 +385,9 @@ namespace plugin {
         for (int i = 0; i <= 256; ++i) {
             try {
                 if (item.isValidAuxValue(i)) {
-                    if (const auto itemstack = ItemStack(item, 1, i); !uniqueStr.contains(itemstack.getDescriptionId())) {
-                        uniqueStr.insert(itemstack.getDescriptionId());
-                        descriptionId.putString(std::to_string(i), itemstack.getDescriptionId());
+                    if (const auto itemStack = ItemStack(item, 1, i); !uniqueStr.contains(itemStack.getDescriptionId())) {
+                        uniqueStr.insert(itemStack.getDescriptionId());
+                        descriptionId.putString(std::to_string(i), itemStack.getDescriptionId());
                     }
                 }
             } catch (...) {}
@@ -454,7 +455,6 @@ namespace plugin {
     void dumpMaterialData(const ll::Logger &logger) {
         logger.info("Dumping material data...");
 
-        const auto &palette = ll::service::getLevel()->getBlockPalette();
         CompoundTag global = CompoundTag();
         BlockTypeRegistry::forEachBlock([&global](const BlockLegacy& blockLegacy) {
             auto data = CompoundTag();
@@ -473,7 +473,28 @@ namespace plugin {
             return true;
         });
         writeNBT("data/block_material_data.nbt", global);
-    };
+    }
+
+    void dumpBlockCorrectTool(const ll::Logger &logger) {
+        logger.info("Dumping correct tool...");
+
+        CompoundTag global = CompoundTag();
+        BlockTypeRegistry::forEachBlock([&global](const BlockLegacy& blockLegacy) {
+            auto correctItemList = ListTag();
+            auto & block = blockLegacy.getDefaultState();
+            for (const auto &item: ItemRegistryManager::getItemRegistry().getNameToItemMap() | std::views::values) {
+                auto itemStack = ItemStack(*item, 1, 0);
+                if (itemStack.canDestroySpecial(block)) {
+                    correctItemList.add(StringTag(item->getFullItemName()));
+                }
+            }
+            if (correctItemList.size() != 0) {
+                global.put(blockLegacy.getTypeName(), correctItemList);
+            }
+            return true;
+        });
+        writeNBT("data/block_correct_tool.nbt", global);
+    }
 
     bool compareCmdSymbolByIndex(const CommandRegistry::Symbol &s1, const CommandRegistry::Symbol &s2) {
         return s1.toIndex() < s2.toIndex();
@@ -913,6 +934,7 @@ namespace plugin {
         if (!folderExists("data")) {
             createFolder(logger, "data");
         }
+        dumpBlockCorrectTool(logger);
         dumpCommandNameSymbol(logger);
         dumpCommonCommandArgData(logger);
         dumpFullCommandArgData(logger);
