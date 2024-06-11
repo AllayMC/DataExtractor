@@ -304,6 +304,7 @@ namespace plugin {
             nbt.putBoolean("canContainLiquid", block.getLegacyBlock().canContainLiquid());
 //             nbt->putBoolean("canBeBrokenFromFalling", block.canBeBrokenFromFalling());
             nbt.putBoolean("isContainerBlock", block.isContainerBlock());
+            nbt.putBoolean("canHarvestWithHand", block.canDropWithAnyTool());
         } catch (std::exception &e) {
             logger.error("Exception caught : " + std::string(e.what()));
         }
