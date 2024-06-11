@@ -36,6 +36,7 @@
 #include <mc/world/level/block/VanillaBlockTags.h>
 #include <mc/world/level/block/registry/BlockTypeRegistry.h>
 #include <mc/common/Brightness.h>
+#include <mc/enums/MaterialType.h>
 // Level
 #include <mc/world/level/BlockPalette.h>
 #include <mc/world/level/Level.h>
@@ -192,7 +193,7 @@ namespace plugin {
     std::unique_ptr<std::reference_wrapper<ll::plugin::NativePlugin>> pluginInstance;
 
     void dumpCreativeItemData(const ll::Logger &logger) {
-        logger.info("Extracting creative items...");
+        logger.info("Dumping creative items...");
 
         auto global = CompoundTag();
         unsigned int index = 0;
@@ -203,7 +204,7 @@ namespace plugin {
                 );
                 return true;
             }
-            logger.info("Extracting creative item - " + itemInstance.getName() + ", index: " + std::to_string(index));
+            logger.info("Dumping creative item - " + itemInstance.getName() + ", index: " + std::to_string(index));
             auto obj = CompoundTag();
             obj.putInt64("index", index);
             obj.putString("name", itemInstance.getItem()->getFullItemName());
@@ -219,18 +220,17 @@ namespace plugin {
             return true;
         });
         writeNBT("data/creative_items.nbt", global);
-        logger.info(R"(Creative items data has been saved to "data/creative_items.nbt")");
+        logger.info(R"(Creative items data is saved to "data/creative_items.nbt")");
     }
 
     AABB ZERO_AABB = AABB(Vec3(0, 0, 0), Vec3(0, 0, 0));
 
-    void extractBlock(ListTag &dest, const Block& block, const ll::Logger &logger) {
+    void dumpBlock(ListTag &dest, const Block& block, const ll::Logger &logger) {
         auto nbt = CompoundTag();
         try {
             auto sid = block.getSerializationId().clone();
             auto& name = sid->getString("name");
-            logger.info("Extracting block state - " + name + ":" + std::to_string(block.getRuntimeId()));
-            const Material &material = block.getMaterial();
+            logger.info("Dumping block state - " + name + ":" + std::to_string(block.getRuntimeId()));
             nbt.putString("name", name);
             nbt.putString("descriptionId", block.getDescriptionId());
             nbt.putString("blockEntityName", std::string(magic_enum::enum_name(block.getBlockEntityType())));
@@ -239,7 +239,6 @@ namespace plugin {
             nbt.putFloat("friction", block.getFriction());
             nbt.putFloat("hardness", block.getDestroySpeed());
             nbt.putFloat("explosionResistance", block.getExplosionResistance());
-            nbt.putFloat("translucency", material.getTranslucency());
             nbt.putInt("version", sid->getInt("version"));
             nbt.putInt("runtimeId", block.getRuntimeId());
             if (name != "minecraft:unknown")
@@ -283,7 +282,6 @@ namespace plugin {
             nbt.putString("aabbCollision", aabbToStr(tmp2));
             nbt.putBoolean("hasCollision", tmp2 != ZERO_AABB);
             nbt.putBoolean("hasBlockEntity", block.getBlockEntityType() != BlockActorType::Undefined);
-            nbt.putBoolean("isAir", block.isAir());
             nbt.putBoolean("isBounceBlock", block.isBounceBlock());
             nbt.putBoolean("isButtonBlock", block.isButtonBlock());
             nbt.putBoolean("isCropBlock", block.isCropBlock());
@@ -294,8 +292,6 @@ namespace plugin {
             nbt.putBoolean("isFallingBlock", block.isFallingBlock());
             nbt.putBoolean("isStemBlock", block.isStemBlock());
             nbt.putBoolean("isSlabBlock", block.isSlabBlock());
-            nbt.putBoolean("isLiquid", material.isLiquid());
-            nbt.putBoolean("isAlwaysDestroyable", material.isAlwaysDestroyable());
             nbt.putBoolean("isLavaFlammable", block.isLavaFlammable());
             nbt.putBoolean("isUnbreakable", block.isUnbreakable());
             nbt.putBoolean("isPowerSource", block.isSignalSource());
@@ -306,12 +302,7 @@ namespace plugin {
             nbt.putBoolean("pushesUpFallingBlocks", block.pushesUpFallingBlocks());
             // nbt->putBoolean("waterSpreadCausesSpawn", block->waterSpreadCausesSpawn());
             nbt.putBoolean("canContainLiquid", block.getLegacyBlock().canContainLiquid());
-            // nbt->putBoolean("canBeMovingBlock", material.getBlocksMotion());
-            // nbt->putBoolean("blocksPrecipitation", material.getBlocksPrecipitation());
-            nbt.putBoolean("superHot", material.isSuperHot());
-            // nbt->putBoolean("canBeBrokenFromFalling", block->canBeBrokenFromFalling());
-            nbt.putBoolean("isSolid", block.isSolid());
-            // nbt->putBoolean("isSolidBlocking", material.isSolidBlocking());
+//             nbt->putBoolean("canBeBrokenFromFalling", block.canBeBrokenFromFalling());
             nbt.putBoolean("isContainerBlock", block.isContainerBlock());
         } catch (std::exception &e) {
             logger.error("Exception caught : " + std::string(e.what()));
@@ -322,8 +313,8 @@ namespace plugin {
 
     unsigned int blockStateCounter = 0;
 
-    void dumpBlockAttributesData(const ll::Logger &logger) {
-        logger.info("Extracting block states' attributes...");
+    void dumpBlockData(const ll::Logger &logger) {
+        logger.info("Dumping block states' attributes...");
         const auto &palette = ll::service::getLevel()->getBlockPalette();
         int airCount = 0;
         auto array = nlohmann::json::array();
@@ -340,18 +331,18 @@ namespace plugin {
                     break;
                 }
             }
-            extractBlock(list, block, logger);
+            dumpBlock(list, block, logger);
             blockStateCounter++;
         }
         tag.put("block", list.copyList());
         // logger.info("Successfully extract " + std::to_string(blockStateCounter) + " block states' attributes!");
         writeNBT("data/block_attributes.nbt", tag);
-        logger.info(R"(Block attribute data have been saved to "data/block_attributes.nbt")");
+        logger.info(R"(Block attribute data is saved to "data/block_attributes.nbt")");
     }
 
-    void extractItem(ListTag &dest, const Item &item, const ll::Logger &logger) {
+    void dumpItem(ListTag &dest, const Item &item, const ll::Logger &logger) {
         auto nbt = CompoundTag();
-        logger.info("Extracting item - " + item.getFullItemName());
+        logger.info("Dumping item - " + item.getFullItemName());
         nbt.putShort("id", item.getId());
         try {
             if (!item.getLegacyBlock().expired() && item.getLegacyBlock().get() != nullptr)
@@ -365,7 +356,6 @@ namespace plugin {
         nbt.putBoolean("isComponentBased", item.isComponentBased());
         nbt.putString("name", item.getFullItemName());
         nbt.putShort("maxDamage", item.getMaxDamage());
-        nbt.putBoolean("isArmor", item.isArmor());
         nbt.putBoolean("isBlockPlanterItem", item.isBlockPlanterItem());
         nbt.putBoolean("isDamageable", item.isDamageable());
         nbt.putBoolean("isDye", item.isDye());
@@ -373,7 +363,6 @@ namespace plugin {
         nbt.putInt("itemColorRGB", ItemColorUtil::getRGBColor(item.getItemColor()));
         nbt.putBoolean("isFertilizer", item.isFertilizer());
         nbt.putBoolean("isThrowable", item.isThrowable());
-        nbt.putBoolean("isFood", item.isFood());
         nbt.putBoolean("isUseable", item.isUseable());
         nbt.putBoolean("isElytra", item.isElytra());
         nbt.putBoolean("canBeDepleted", item.canBeDepleted());
@@ -410,17 +399,17 @@ namespace plugin {
         auto list = ListTag();
         short counter = 0;
         for (const auto &item: ItemRegistryManager::getItemRegistry().getNameToItemMap() | std::views::values) {
-            extractItem(list, *item, logger);
+            dumpItem(list, *item, logger);
             counter++;
         }
         tag.put("item", list);
-        logger.info("Successfully extract " + std::to_string(counter) + " items' data!");
+        logger.info("Dump " + std::to_string(counter) + " item data successfully!");
         writeNBT("data/item_data.nbt", tag);
-        logger.info(R"(Items' data have been saved to "data/item_data.nbt")");
+        logger.info(R"(Items' data have is to "data/item_data.nbt")");
     }
 
     void dumpPalette(const ll::Logger &logger) {
-        logger.info("Extracting block palette...");
+        logger.info("Dumping block palette...");
 
         const auto &palette = ll::service::getLevel()->getBlockPalette();
 
@@ -432,8 +421,58 @@ namespace plugin {
         }
         global.put("blocks", blocks);
         writeNBT("data/block_palette.nbt", global);
-        logger.info(R"(Block palette table has been saved to "data/block_palette.nbt"))");
+        logger.info(R"(Block palette table is saved to "data/block_palette.nbt"))");
     }
+
+    static const MaterialType materialTypes[] = {
+            MaterialType::Air,MaterialType::Dirt,MaterialType::Wood,MaterialType::Stone,
+            MaterialType::Metal,MaterialType::Water,MaterialType::Lava,MaterialType::Leaves,
+            MaterialType::Plant,MaterialType::SolidPlant,MaterialType::Sponge,MaterialType::Cloth,
+            MaterialType::Bed,MaterialType::Fire,MaterialType::Sand,MaterialType::Decoration,
+            MaterialType::Glass,MaterialType::Explosive,MaterialType::Ice,MaterialType::PackedIce,
+            MaterialType::TopSnow,MaterialType::Snow,MaterialType::PowderSnow,MaterialType::Amethyst,
+            MaterialType::Cactus,MaterialType::Clay,MaterialType::Vegetable,MaterialType::Portal,
+            MaterialType::Cake,MaterialType::Web,MaterialType::RedstoneWire,MaterialType::Carpet,
+            MaterialType::BuildableGlass,MaterialType::Slime,MaterialType::Piston,MaterialType::Allow,
+            MaterialType::Deny,MaterialType::Netherwart,MaterialType::StoneDecoration,MaterialType::Bubble,
+            MaterialType::Egg,MaterialType::SoftEgg,MaterialType::Barrier,MaterialType::Coral,
+            MaterialType::DecorationSolid,MaterialType::Dripstone,MaterialType::ReinforcedStone,MaterialType::Sculk,
+            MaterialType::SculkVein,MaterialType::ClientRequestPlaceholder,MaterialType::StructureVoid,MaterialType::Root,
+            MaterialType::SurfaceTypeTotal,MaterialType::Any
+    };
+
+    MaterialType findMaterialType(const Material & material) {
+        for (MaterialType type : materialTypes) {
+            if (material.isType(type)) {
+                return type;
+            }
+        }
+        return MaterialType::Any;
+    }
+
+    void dumpMaterialData(const ll::Logger &logger) {
+        logger.info("Dumping material data...");
+
+        const auto &palette = ll::service::getLevel()->getBlockPalette();
+        CompoundTag global = CompoundTag();
+        BlockTypeRegistry::forEachBlock([&global](const BlockLegacy& blockLegacy) {
+            auto data = CompoundTag();
+            auto & material = blockLegacy.getMaterial();
+            data.putString("materialType", std::string(magic_enum::enum_name(findMaterialType(material))));
+            data.putBoolean("isSolid", material.isSolid());
+            data.putBoolean("isSolidBlocking", material.isSolidBlocking());
+            data.putBoolean("canBeMovingBlock", material.getBlocksMotion());
+            data.putBoolean("canHavePrecipitation", material.getBlocksPrecipitation());
+            data.putFloat("translucency", material.getTranslucency());
+            data.putBoolean("isAlwaysDestroyable", material.isAlwaysDestroyable());
+            data.putBoolean("isLiquid", material.isLiquid());
+            data.putBoolean("isSuperHot", material.isSuperHot());
+
+            global.put(blockLegacy.getTypeName(), data);
+            return true;
+        });
+        writeNBT("data/block_material_data.nbt", global);
+    };
 
     bool compareCmdSymbolByIndex(const CommandRegistry::Symbol &s1, const CommandRegistry::Symbol &s2) {
         return s1.toIndex() < s2.toIndex();
@@ -446,7 +485,7 @@ namespace plugin {
     template <typename JSON_TYPE>
     void dumpCmdSymbol(const ll::Logger &logger, const CommandRegistry &registry, JSON_TYPE &json, const CommandRegistry::Symbol &symbol) {
         const std::string name = registry.symbolToString(symbol);
-        logger.info("Extracting command arg type - " + name);
+        logger.info("Dumping command arg type - " + name);
         auto obj = std::map<std::string, std::string>();
         obj["description"] = registry.describe(symbol);
         obj["index"] = std::to_string(symbol.toIndex());
@@ -457,7 +496,7 @@ namespace plugin {
     template <typename JSON_TYPE>
     void dumpCmdSymbol(const ll::Logger &logger, const CommandRegistry &registry, JSON_TYPE &json, const CommandRegistry::Symbol &symbol, const std::string &key) {
         const std::string name = registry.symbolToString(symbol);
-        logger.info("Extracting command arg type - " + name);
+        logger.info("Dumping command arg type - " + name);
         auto obj = std::map<std::string, std::string>();
         obj["name"] = name;
         obj["description"] = registry.describe(symbol);
@@ -493,7 +532,7 @@ namespace plugin {
             dumpCmdSymbol(logger, registry, global2, symbol);
         }
         writeNlohmannJSON("data/command_name_symbol_v.json", global2);
-        logger.info("Command name symbol have been saved to \"data/command_name_symbol_(i/v).json\"");
+        logger.info("Command name symbol is saved to \"data/command_name_symbol_(i/v).json\"");
     }
 
     void dumpCommonCommandArgData(const ll::Logger &logger) {
@@ -505,7 +544,7 @@ namespace plugin {
             }
         }
         writeNlohmannJSON("data/command_arg_types_common_i.json", global);
-        logger.info("Common command arg type have been saved to \"data/command_arg_types_common_i.json\"");
+        logger.info("Common command arg type is saved to \"data/command_arg_types_common_i.json\"");
     }
 
     void dumpFullCommandArgData(const ll::Logger &logger) {
@@ -531,7 +570,7 @@ namespace plugin {
             dumpCmdSymbol(logger, registry, global2, symbol);
         }
         writeNlohmannJSON("data/command_arg_types_full_v.json", global2);
-        logger.info("Full command arg type data have been saved to \"data/command_arg_types_full_(i/v).json\"");
+        logger.info("Full command arg type data is saved to \"data/command_arg_types_full_(i/v).json\"");
     }
 
     void dumpCommandmConstrainedValues(const ll::Logger &logger) {
@@ -545,7 +584,7 @@ namespace plugin {
             array.push_back(obj);
         }
         writeNlohmannJSON("data/command_constrained_values.json", array);
-        logger.info("Command constrained values data have been saved to \"data/command_constrained_values.json\"");
+        logger.info("Command constrained values data is saved to \"data/command_constrained_values.json\"");
     }
 
     int getBiomeId(const ll::Logger& logger, const Biome& biome) {
@@ -572,7 +611,7 @@ namespace plugin {
         registry.forEachBiome([&biomes, &logger, &tagReg, &biomeInfoMap](Biome &biome) {
             auto name = getBiomeName(logger, biome);
             int  id   = getBiomeId(logger, biome);
-            logger.info("Extracting biome data - " + name);
+            logger.info("Dumping biome data - " + name);
             auto tag = CompoundTag();
             biome.writePacketData(tag, tagReg);
             biomes.put(name, tag);
@@ -584,7 +623,7 @@ namespace plugin {
         writeNBT("data/biome_definitions.nbt", biomes);
         writeNlohmannJSON("data/biome_id_and_type.json", biomeInfoMap);
         logger.info(
-            R"(Biome definitions has been saved to "data/biome_definitions.nbt" and "data/biome_id_and_type.json")"
+            R"(Biome definitions is saved to "data/biome_definitions.nbt" and "data/biome_id_and_type.json")"
         );
     }
 
@@ -601,7 +640,7 @@ namespace plugin {
     };
 
     void dumpPropertyTypeData(const ll::Logger &logger) {
-        logger.info("Extracting property type data...");
+        logger.info("Dumping property type data...");
 
         std::map<std::string, std::vector<std::unique_ptr<class CompoundTag> > > blockToBlockStateData;
 
@@ -740,11 +779,11 @@ namespace plugin {
         globalJson["differentSizePropertyTypes"] = differentSizePropertyTypes;
         globalJson["specialBlockTypes"] = specialBlockTypes;
         writeNlohmannJSON("data/block_property_types.json", globalJson);
-        logger.info("Block property type data have been saved to \"data/block_property_types.json\"");
+        logger.info("Block property type data is saved to \"data/block_property_types.json\"");
     }
 
     void dumpItemTags(const ll::Logger &logger) {
-        logger.info("Extracting item tags...");
+        logger.info("Dumping item tags...");
         nlohmann::json res = nlohmann::json::object();
 #define DUMP(TAG)                                                                                                      \
     do {                                                                                                               \
@@ -821,14 +860,14 @@ namespace plugin {
     }
 
     void dumpBlockTags(const ll::Logger &logger) {
-        logger.info("Extracting block tags...");
+        logger.info("Dumping block tags...");
         nlohmann::json res = nlohmann::json::object();
 #define DUMP(TAG)                                                                                                      \
     do {                                                                                                               \
         auto arr = nlohmann::json::array();                                                                            \
         BlockTypeRegistry::forEachBlock([&arr](const BlockLegacy& b) {                                                 \
             if (b.hasTag(VanillaBlockTags::##TAG)) {                                                                   \
-                arr.push_back(b.getRawNameId());                                                                       \
+                arr.push_back(b.getTypeName());                                                                       \
             }                                                                                                          \
             return true;                                                                                               \
         });                                                                                                            \
@@ -879,7 +918,8 @@ namespace plugin {
         dumpCommandmConstrainedValues(logger);
         dumpBiomeData(logger);
         dumpCreativeItemData(logger);
-        dumpBlockAttributesData(logger);
+        dumpBlockData(logger);
+        dumpMaterialData(logger);
         dumpPalette(logger);
         dumpPropertyTypeData(logger);
         dumpBlockTags(logger);
