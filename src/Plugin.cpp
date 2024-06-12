@@ -493,7 +493,7 @@ namespace plugin {
             }
             return true;
         });
-        writeNBT("data/block_correct_tool.nbt", global);
+        writeNBT("data/block_correct_tool_special.nbt", global);
     }
 
     bool compareCmdSymbolByIndex(const CommandRegistry::Symbol &s1, const CommandRegistry::Symbol &s2) {
