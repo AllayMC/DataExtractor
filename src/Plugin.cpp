@@ -479,8 +479,8 @@ namespace plugin {
         writeNBT("data/block_material_data.nbt", global);
     }
 
-    void dumpBlockCorrectTool(const ll::Logger &logger) {
-        logger.info("Dumping correct tool...");
+    void dumpBlockCorrectToolSpecial(const ll::Logger &logger) {
+        logger.info("Dumping correct tool special...");
 
         CompoundTag global = CompoundTag();
         BlockTypeRegistry::forEachBlock([&global](const BlockLegacy& blockLegacy) {
@@ -938,7 +938,7 @@ namespace plugin {
         if (!folderExists("data")) {
             createFolder(logger, "data");
         }
-        dumpBlockCorrectTool(logger);
+        dumpBlockCorrectToolSpecial(logger);
         dumpCommandNameSymbol(logger);
         dumpCommonCommandArgData(logger);
         dumpFullCommandArgData(logger);
