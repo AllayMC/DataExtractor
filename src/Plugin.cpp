@@ -4,6 +4,8 @@
 #include <iostream>
 #include <memory>
 #include <utility>
+// Plugin
+#include <Plugin.h>
 
 // Compress
 #include <zlib.h>
@@ -16,6 +18,7 @@
 #include <ll/api/command/CommandHandle.h>
 #include <ll/api/command/CommandRegistrar.h>
 #include <ll/api/plugin/NativePlugin.h>
+#include "ll/api/plugin/RegisterHelper.h"
 #include <ll/api/service/Bedrock.h>
 #include <ll/api/memory/Hook.h>
 
@@ -69,6 +72,9 @@
 #include <mc/network/packet/BiomeDefinitionListPacket.h>
 
 namespace plugin {
+
+    static std::unique_ptr<Plugin> instance;
+
     bool folderExists(const std::string& folderName) {
         struct stat info{};
         if (stat(folderName.c_str(), &info) != 0) {
@@ -190,8 +196,6 @@ namespace plugin {
         out.close();
         hookLogger.info("Create available_commands_packet.bin success!");
     }
-
-    std::unique_ptr<std::reference_wrapper<ll::plugin::NativePlugin>> pluginInstance;
 
     void dumpCreativeItemData(const ll::Logger &logger) {
         logger.info("Dumping creative items...");
@@ -630,7 +634,7 @@ namespace plugin {
         auto biomeInfoMap = nlohmann::json::object();
         auto biomes = CompoundTag();
         TagRegistry<IDType<BiomeTagIDType>, IDType<BiomeTagSetIDType> > &tagReg = registry.getTagRegistry();
-        registry.forEachBiome([&biomes, &logger, &tagReg, &biomeInfoMap](Biome &biome) {
+        registry.forEachBiome([&biomes, &logger, &tagReg, &biomeInfoMap](Biome const &biome) {
             auto name = getBiomeName(logger, biome);
             int  id   = getBiomeId(logger, biome);
             logger.info("Dumping biome data - " + name);
@@ -977,18 +981,19 @@ namespace plugin {
         class CommandOutput& output
     ) {
         origin(o, output);
-        ext(pluginInstance->get().getLogger());
+        ext(instance->getSelf().getLogger());
     }
 
-    bool load(ll::plugin::NativePlugin& self) {
-        self.getLogger().info("loading...");
-        pluginInstance = std::make_unique<std::reference_wrapper<ll::plugin::NativePlugin>>(self);
+    Plugin& Plugin::getInstance() { return *instance; }
+
+    bool Plugin::load() {
+        getSelf().getLogger().info("Loading...");
         return true;
     }
 
-    bool enable(ll::plugin::NativePlugin& self) {
-        auto& logger = self.getLogger();
-        logger.info("enabling...");
+    bool Plugin::enable() {
+        auto& logger = getSelf().getLogger();
+        logger.info("Enabling...");
 
         // TODO: It seems not works, replaced with TextPacket hook. Need to fix it in the future
         // auto& cmd = ll::command::CommandRegistrar::getInstance().getOrCreateCommand(
@@ -1005,18 +1010,10 @@ namespace plugin {
         return true;
     }
 
-    bool disable(ll::plugin::NativePlugin&) {
+    bool Plugin::disable() {
+        getSelf().getLogger().info("Disabling...");
         return true;
-    }
-
-    bool unload(ll::plugin::NativePlugin&) {
-        return true;
-    }
-
-    extern "C" {
-        _declspec(dllexport) auto ll_plugin_disable(ll::plugin::NativePlugin& self) -> bool { return disable(self); }
-        _declspec(dllexport) auto ll_plugin_enable(ll::plugin::NativePlugin& self) -> bool { return enable(self); }
-        _declspec(dllexport) auto ll_plugin_load(ll::plugin::NativePlugin& self) -> bool { return load(self); }
-        _declspec(dllexport) auto ll_plugin_unload(ll::plugin::NativePlugin& self) -> bool { return unload(self); }
     }
 } // namespace plugin
+
+LL_REGISTER_PLUGIN(plugin::Plugin, plugin::instance);
